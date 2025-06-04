@@ -55,19 +55,19 @@
     },
     "leren_als_spiertraining": {
       "titel": "Leren werken met AI: Net als spiertraining! 🏋️‍♀️🧠",
-      "tekst": "Oké, als (toekomstig) fysio snap jij dit meteen: leren is als het trainen van je spieren.",
-      "punten": [
+      "type": "ethical_reflection_grid",
+      "kaarten": [
         {
-          "titel": "Weerstand = Groei:",
-          "tekst": "Net zoals je spieren weerstand nodig hebben om sterker te worden (denk aan *progressive overload*), heeft je brein uitdagingen nodig om te groeien. Dit noemen we 'desirable difficulties': een beetje moeite doen is juist supergoed voor je leerproces!"
+          "titel": "Weerstand = Groei",
+          "beschrijving": "Net zoals je spieren weerstand nodig hebben om sterker te worden (denk aan *progressive overload*), heeft je brein uitdagingen nodig om te groeien. Dit noemen we 'desirable difficulties': een beetje moeite doen is juist supergoed voor je leerproces!"
         },
         {
-          "titel": "Pas op voor de \"E-bike Illusie\":",
-          "tekst": "AI-tools kunnen voelen als een e-bike. Ze brengen je supersnel van A naar B, bijvoorbeeld door een tekst voor je samen te vatten. Klinkt handig, en dat is het vaak ook! Maar… als je *alleen* maar op die e-bike zit en nooit zelf trapt, bouw je geen conditie op. Dit noemen we de 'illusion of fluency': het lijkt alsof je de stof beheerst, maar je mist de diepgang en de echte 'spierkracht' in je brein."
+          "titel": "Pas op voor de 'E-bike Illusie'",
+          "beschrijving": "AI-tools kunnen voelen als een e-bike. Ze brengen je supersnel van A naar B, bijvoorbeeld door een tekst voor je samen te vatten. Klinkt handig, en dat is het vaak ook! Maar… als je *alleen* maar op die e-bike zit en nooit zelf trapt, bouw je geen conditie op. Dit noemen we de 'illusion of fluency': het lijkt alsof je de stof beheerst, maar je mist de diepgang en de echte 'spierkracht' in je brein."
         },
         {
-          "titel": "Jij blijft aan het stuur:",
-          "tekst": "AI kan een fantastische assistent zijn, maar het vervangt jouw denkwerk en expertise niet. In deze module leer je hoe je AI inzet als een hefboom voor je leren, niet als een vervanging ervan."
+          "titel": "Jij blijft aan het stuur",
+          "beschrijving": "AI kan een fantastische assistent zijn, maar het vervangt jouw denkwerk en expertise niet. In deze module leer je hoe je AI inzet als een hefboom voor je leren, niet als een vervanging ervan."
         }
       ]
     },

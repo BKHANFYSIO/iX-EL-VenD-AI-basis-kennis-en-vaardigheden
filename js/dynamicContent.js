@@ -673,17 +673,18 @@ function renderChapter1Content(content) {
             html += `<h3 class="section-title">${sectie.titel}</h3>`;
         }
         if (sectie.tekst) {
-            html += `<p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
+            html += `<p class="content-text">${sectie.tekst.replace(/\n/g, '<br>')}</p>`;
         }
-        if (Array.isArray(sectie.punten)) {
-             sectie.punten.forEach(puntBlok => { // Dit zijn de kaarten binnen 'leren als spiertraining'
-                if (typeof puntBlok === 'object' && puntBlok.titel && puntBlok.tekst) {
-                    html += `<div class="info-card sub-section">`; // sub-section is geen bestaande class, wellicht gewoon info-card?
-                    html += `<h4>${puntBlok.titel}</h4>`;
-                    html += `<p>${puntBlok.tekst.replace(/\\n/g, '<br>')}</p>`;
-                    html += `</div>`;
-                }
+        // Nieuw: render als ethical-reflection-grid als type dat is
+        if (sectie.type === 'ethical_reflection_grid' && Array.isArray(sectie.kaarten)) {
+            html += `<div class="ethical-reflection-grid">`;
+            sectie.kaarten.forEach(kaart => {
+                html += `<div class="ethical-card">`;
+                if (kaart.titel) html += `<h4>${kaart.titel}</h4>`;
+                if (kaart.beschrijving) html += `<p>${kaart.beschrijving.replace(/\n/g, '<br>')}</p>`;
+                html += `</div>`;
             });
+            html += `</div>`;
         }
         html += `</div>`;
     }

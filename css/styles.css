@@ -1496,6 +1496,7 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
+    margin-bottom: 2.5rem; /* Extra ruimte onder de grid */
 }
 
 .ethical-card {
