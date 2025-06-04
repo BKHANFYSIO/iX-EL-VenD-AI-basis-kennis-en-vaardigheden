@@ -1,0 +1,80 @@
+{
+  "titel": "Afsluiting - Afsluitquiz en Certificaat",
+  "afsluitQuizIntro": {
+    "subtitel": "Afsluitende quiz",
+    "tekst": "Je hebt nu alle hoofdstukken doorlopen! Test je kennis met deze afsluitende quiz. Wist je dat actief testen van wat je geleerd hebt een krachtigere manier is om informatie beter in je brein te verankeren dan herlezen? Na afloop kun je de quiz herstarten om je kennis verder te versterken."
+  },
+  "introductie": "Je bent bijna aan het einde van deze e-learning! In deze laatste stap maak je een afsluitende quiz en kun je een certificaat genereren. Dit certificaat is niet alleen een bewijs van afronding, maar helpt je ook om terug te kijken op wat je hebt geleerd en vormt een startpunt voor verdere ontwikkeling.\n\n<strong>Doe nu de afsluitende quiz, lees de tekst bij 'Certificaat en Portfolio' goed door en denk na over hoe je het certificaat wilt inzetten in je eJournal.</strong>",
+  "overCertificaat": {
+    "titel": "Wat kun je met dit certificaat?",
+    "intro": "Dit certificaat geeft een overzicht van jouw antwoorden en reflecties. Het helpt je om:",
+    "punten": [
+      {
+        "kop": "Zelfinzicht te vergroten",
+        "tekst": "Reflecteer op je antwoorden en ontdek waar je kennis al sterk is en waar je nog kunt groeien."
+      },
+      {
+        "kop": "Je leerproces te sturen",
+        "tekst": "Gebruik dit certificaat om je leerproces verder vorm te geven. Je kunt het inzetten om een nieuw leerplan te maken of een bestaand plan bij te stellen. Denk bijvoorbeeld aan het toevoegen van leeractiviteiten om deze stof beter onder de knie te krijgen, je meer te verdiepen, manieren te vinden om het geleerde toe te passen in de praktijk, of juist te focussen op andere leerdoelen die nu belangrijker voor je zijn."
+      },
+      {
+        "kop": "Je kennisniveau aan te tonen",
+        "tekst": "Voeg het certificaat toe aan je eJournal of portfolio als bewijs van je inzet en kennisontwikkeling. Dit kan relevant zijn voor het aantonen van bepaalde leeruitkomsten (EVL's) of onderliggende kennis."
+      }
+    ]
+  },
+  "portfolioIntegratie": {
+    "titel": "Certificaat gebruiken in je eJournal/Portfolio",
+    "tip": "Bewaar je certificaten goed! Een goede tip: voeg ze direct toe aan een relevant datapunt in je eJournal. Je kunt later altijd meer bewijsstukken, zoals nieuwe certificaten van deze of andere e-learnings, aan hetzelfde datapunt toevoegen om je groei zichtbaar te maken.",
+    "vraakUitleg": "Denk bij het toevoegen aan je eJournal na over hoe dit certificaat bijdraagt aan jouw leerdoelen en welke ontwikkeling je laat zien. Het certificaat is een waardevol onderdeel van je portfolio, maar wordt nog krachtiger in combinatie met andere bewijsstukken. Houd hierbij de VRAAK-criteria in gedachten. Certificaten zoals dit kan je vooral goed gebruiken voor 'Relevantie' en 'Kwantiteit', maar juist niet zo goed in Authenticiteit. Bij een certificaat als dit is het lastig om die authenticiteit aan te tonen, omdat het – net als veel schriftelijke producten – zonder toezicht is gemaakt. Zorg daarom ook voor aanvullend bewijsmateriaal waarbij de authenticiteit beter gewaarborgd is. Zie de VRAAK Criteria hieronder:",
+    "vraakCriteria": {
+      "titel": "VRAAK Criteria",
+      "introductie": "Bij het opbouwen van je portfolio is het belangrijk om rekening te houden met de VRAAK criteria:",
+      "criteria": [
+        {
+          "naam": "Variatie",
+          "beschrijving": "Dit betreft de variatie aan bewijsmateriaal vanuit verschillende contexten. Onderzoek het portfolio op een goede balans tussen:",
+          "subpunten": [
+            "schriftelijke producten, presentaties, video en live performances, bewijs voor kennis.",
+            "feedback van verschillende perspectieven (experts/ouderejaars/peers).",
+            "Groepsproducten en individuele producten."
+          ]
+        },
+        {
+          "naam": "Relevantie",
+          "beschrijving": "Dit betreft de mate waarin bewijsmateriaal de meest belangrijke elementen van één (of meerdere) leeruitkomsten dekt.",
+          "subpunten": [
+            "Controleer of het bewijs de leerdoelen van het thema aantonen.",
+            "Bekijk of alle leeruitkomsten worden aangetoond."
+          ]
+        },
+        {
+          "naam": "Authenticiteit",
+          "beschrijving": "Dit verwijst naar het vertrouwen dat bewijsmateriaal een afspiegeling is van de ervaring en deskundigheid van de student.",
+          "subpunten": [
+            "Sluit uit dat er sprake kan zijn van plagiaat.",
+            "Bepaal of er een evenredige bijdrage is bij groepsproducten."
+          ]
+        },
+        {
+          "naam": "Actualiteitswaarde",
+          "beschrijving": "Bewijsmateriaal dient van een redelijk recente datum te zijn en te passen binnen het thema."
+        },
+        {
+          "naam": "Kwantiteit",
+          "beschrijving": "Dit heeft betrekking op de hoeveelheid bewijsmateriaal die de student aanbiedt. Bepaal of het portfolio voldoende bewijs bevat en of dit bewijs goed verdeeld is over de verschillende leeruitkomsten."
+        }
+      ]
+    }
+  },
+  "verderKijkenDanCertificaten": {
+    "titel": "Kijk verder dan het certificaat",
+    "tekst": "Certificaten zijn een goede manier om je kennis en inzet te documenteren. Echter, echte ontwikkeling en expertise toon je door de opgedane kennis toe te passen in de praktijk en te integreren met andere vaardigheden. Gebruik deze e-learning als een fundament en zoek actief naar mogelijkheden om je verder te verdiepen en te verbreden. Denk hierbij aan:",
+    "suggesties": [
+      { "titel": "Praktijktoepassing", "tekst": "Neem zorgtechnologie op in een Performance Assessment. Laat zien hoe je een specifieke zorgtechnologie kunt inzetten in de praktijk en hoe je hierover communiceert met patiënten en collega's." },
+      { "titel": "Kennisdeling", "tekst": "Maak een podcast, presentatie of workshop met medestudenten waarin je laat zien wat je weet over specifieke zorgtechnologie. Bespreek de voor- en nadelen en deel praktijkervaringen." },
+      { "titel": "Kritische analyse en reflectie", "tekst": "Geef een demonstratie van een zorgtechnologie en vraag gerichte feedback. Gebruik modellen zoals het V-model of TAM-model om je analyse en presentatie te structureren en kritisch te reflecteren op de implementatie." },
+      { "titel": "Blijf leren", "tekst": "De wereld van zorgtechnologie ontwikkelt zich snel. Blijf op de hoogte van nieuwe ontwikkelingen via vakliteratuur, webinars, en door in gesprek te gaan met professionals uit het veld." }
+    ]
+  }
+} 

@@ -1,0 +1,97 @@
+{
+  "titel": "De Kracht van Technologie - Voordelen in de Fysiotherapie",
+  "content": {
+    "intro": {
+      "titel": "Waarom Zorgtechnologie?",
+      "tekst": "Zorgtechnologie biedt verschillende voordelen voor zowel de fysiotherapeut als de patiënt. Door deze voordelen goed te begrijpen, kun je beter inschatten welke technologie waardevol kan zijn in jouw praktijk."
+    },
+    "voordelen": [
+      {
+        "titel": "Therapietrouw Verbeteren",
+        "beschrijving": "Technologie kan helpen om patiënten beter bij hun oefenprogramma betrokken te houden.",
+        "voorbeeld": {
+          "titel": "Praktijkvoorbeeld",
+          "tekst": "Een app die dagelijks herinneringen stuurt, voortgang bijhoudt en patiënten beloont voor het voltooien van oefeningen."
+        }
+      },
+      {
+        "titel": "Motivatie door Gamification",
+        "beschrijving": "Door oefeningen in een spelvorm aan te bieden, wordt therapie leuker en uitdagender voor patiënten.",
+        "voorbeeld": {
+          "titel": "Praktijkvoorbeeld",
+          "tekst": "Een VR-spel waarbij patiënten fruit moeten vangen, wat eigenlijk schoudermobilisatie oefeningen zijn. Patiënten zijn zo gefocust op het spel dat ze vergeten dat ze aan het oefenen zijn."
+        }
+      },
+      {
+        "titel": "Effectiever Motorisch Leren",
+        "beschrijving": "Directe feedback en visualisatie kunnen het motorisch leerproces versnellen en verbeteren.",
+        "voorbeeld": {
+          "titel": "Praktijkvoorbeeld",
+          "tekst": "Een bewegingsanalyse-app die direct laat zien of een squat correct wordt uitgevoerd, waarbij de patiënt zijn eigen beweging kan vergelijken met het ideale bewegingspatroon."
+        }
+      },
+      {
+        "titel": "Objectief Meten",
+        "beschrijving": "Technologie maakt het mogelijk om bewegingen en vooruitgang nauwkeurig te meten en vast te leggen.",
+        "voorbeeld": {
+          "titel": "Praktijkvoorbeeld",
+          "tekst": "Sensoren die de bewegingsuitslag van een knie precies kunnen meten, waardoor je objectief kunt aantonen dat een patiënt van 85° naar 110° flexie is gegaan."
+        }
+      },
+      {
+        "titel": "Efficiëntere Blended Care",
+        "beschrijving": "Combinatie van fysieke behandelingen en digitale ondersteuning voor optimale zorg.",
+        "voorbeeld": {
+          "titel": "Praktijkvoorbeeld",
+          "tekst": "Een patiënt komt 1x per week voor behandeling en doet thuis oefeningen via een app. De therapeut kan op afstand de voortgang monitoren en het programma aanpassen."
+        }
+      },
+      {
+        "titel": "Betere Toegankelijkheid",
+        "beschrijving": "Zorg wordt toegankelijker voor patiënten die minder mobiel zijn of ver weg wonen.",
+        "voorbeeld": {
+          "titel": "Praktijkvoorbeeld",
+          "tekst": "Een oudere patiënt met COPD kan via beeldbellen een deel van de behandelingen thuis volgen, wat vooral in de winter prettig is als reizen lastig is."
+        }
+      }
+    ],
+    "praktische_toepassing": {
+      "titel": "Voordelen in de Praktijk Brengen",
+      "tekst": "Als fysiotherapeut is het belangrijk om deze voordelen strategisch in te zetten:",
+      "tips": [
+        "Combineer verschillende voordelen: Bijvoorbeeld een app die zowel de therapietrouw verhoogt als objectieve metingen doet.",
+        "Kies wat past bij je patiënt: Voor sommige patiënten werkt gamification heel goed, voor anderen is eenvoudige monitoring belangrijker.",
+        "Begin klein: Start met één technologie en bouw dit uit als je er vertrouwd mee bent."
+      ]
+    }
+  },
+  "interacties": [
+    {
+      "type": "dragdrop",
+      "id": "h3_dragdrop_1",
+      "vraag": "Sleep elk voordeel naar de technologie waar het het beste bij past:",
+      "items": [
+        { "id": "1", "label": "Verhoogde therapietrouw door dagelijkse herinneringen" },
+        { "id": "2", "label": "Objectieve bewegingsanalyse voor nauwkeurige feedback" },
+        { "id": "3", "label": "Motiverende gameomgeving voor oefeningen" }
+      ],
+      "targets": [
+        { "id": "1", "label": "Bewegingsanalyse-apps<br><span class='tech-example'>(zoals FysioMeter, GaitUp)</span>" },
+        { "id": "2", "label": "Virtual Reality<br><span class='tech-example'>(zoals Corpus VR)</span>" },
+        { "id": "3", "label": "eHealth Platforms<br><span class='tech-example'>(zoals Physitrack)</span>" }
+      ],
+      "correctCombinations": [
+        { "targetId": "1", "itemId": "2" },
+        { "targetId": "2", "itemId": "3" },
+        { "targetId": "3", "itemId": "1" }
+      ],
+      "feedbackCorrect": "Goed gedaan! Je hebt alle technologieën correct gekoppeld aan de voordelen.",
+      "feedbackIncorrect": "Niet alle koppelingen zijn correct. Probeer het opnieuw."
+    },
+    {
+      "type": "reflection",
+      "vraag": "Welk van de besproken voordelen zou volgens jou het meeste impact kunnen hebben in jouw toekomstige werk als fysiotherapeut? Leg uit waarom en geef een concreet voorbeeld van hoe je dit zou willen toepassen.",
+      "id": "h3_reflection_1"
+    }
+  ]
+} 

@@ -1,0 +1,46 @@
+{
+  "titel": "Hoofdstuk 2: Wat is AI eigenlijk?",
+  "secties": [
+    {
+      "type": "tekst",
+      "inhoud": "Je hoort de term 'Artificiële Intelligentie' (AI) overal, maar wat betekent het nu echt? Simpel gezegd is AI het vermogen van computersystemen om taken uit te voeren die normaal menselijke intelligentie vereisen. Denk aan leren, redeneren, problemen oplossen, taal begrijpen en visuele waarneming. Het is alsof we machines leren denken en beslissingen nemen, een beetje zoals wij dat doen."
+    },
+    {
+      "type": "tekst",
+      "titel": "Een duik in het verleden en de motor achter AI",
+      "inhoud": "AI is geen nieuw concept; de droom van denkende machines bestaat al decennia! Vroege ideeën ontstonden al in de jaren '50. Echter, de echte doorbraken kwamen later, vooral dankzij twee krachtige motoren: **Machine Learning (ML)** en **Deep Learning (DL)**.\n\nStel je voor dat je een kind leert een kat van een hond te onderscheiden. Je laat het vele voorbeelden zien. Machine Learning werkt vergelijkbaar: systemen leren van grote hoeveelheden data (voorbeelden) om patronen te herkennen en voorspellingen te doen, zonder expliciet voor elke situatie geprogrammeerd te zijn. Het systeem 'traint' zichzelf als het ware.\n\nDeep Learning gaat nog een stap verder en is een gespecialiseerde vorm van ML. Het maakt gebruik van complexe structuren, zogenaamde neurale netwerken, die geïnspireerd zijn op de werking van het menselijk brein. Deze netwerken bestaan uit vele lagen die informatie verwerken, waardoor ze zeer complexe patronen kunnen herkennen, bijvoorbeeld in beeld-, geluids- of medische data. Dit is de technologie achter veel geavanceerde AI-toepassingen die we vandaag zien."
+    },
+    {
+      "type": "infokaart",
+      "titel": "AI in Actie: Voorbeelden uit Jouw Wereld",
+      "items": [
+        {
+          "titel": "Snapchat/Instagram Filters",
+          "tekst": "Die grappige filters die je gezicht veranderen? AI herkent gezichtskenmerken en past het beeld in real-time aan."
+        },
+        {
+          "titel": "Spotify/Netflix Aanbevelingen",
+          "tekst": "Dat Spotify of Netflix precies lijkt te weten wat je hierna wilt horen of zien? AI analyseert jouw kijk- en luistergedrag en vergelijkt dit met miljoenen anderen om persoonlijke suggesties te doen."
+        },
+        {
+          "titel": "Slimme Wearables in de Zorg",
+          "tekst": "Denk aan een fysiotherapie-wearable die niet alleen je bewegingen telt, maar ook de kwaliteit van revalidatieoefeningen analyseert en direct feedback geeft. Dat is AI die bewegingspatronen leert en interpreteert om de zorg te verbeteren."
+        },
+        {
+          "titel": "Navigatie-apps (Google Maps/Waze)",
+          "tekst": "Hoe weet Google Maps de snelste route, rekening houdend met files? AI analyseert live verkeersdata en historische patronen om de optimale weg te voorspellen."
+        }
+      ]
+    }
+  ],
+  "interacties": [
+    {
+      "id": "h2_reflection_1",
+      "type": "reflection",
+      "vraag": "AI is overal om ons heen! Noem twee apps die jij dagelijks of wekelijks gebruikt waarin AI een rol speelt. Beschrijf voor elke app kort (max. 75 woorden per app) hoe AI jouw ervaring verbetert of verandert. Denk bijvoorbeeld aan aanbevelingen, personalisatie, of slimme functies.",
+      "placeholder": "App 1: [Naam app] - Beschrijving...\nApp 2: [Naam app] - Beschrijving...",
+      "minLength": 20,
+      "maxLength": 300
+    }
+  ]
+} 

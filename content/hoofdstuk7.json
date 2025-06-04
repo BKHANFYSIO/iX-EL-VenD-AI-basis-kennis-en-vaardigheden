@@ -1,0 +1,117 @@
+{
+  "titel": "Jij aan Zet - De Basis V-Competenties",
+  "content": {
+    "intro": {
+      "titel": "Jouw Ontwikkeling in Zorgtechnologie",
+      "tekst": "Als startende fysiotherapeut is het belangrijk om je eerst te richten op de basis V-competenties (de donker gekleurde bovenste V rechtsboven op de afbeelding). Deze vormen het fundament voor het werken met zorgtechnologie. In de eerste twee jaar van je opleiding focus je op deze competenties voor verschillende soorten zorgtechnologie die je in de praktijk tegenkomt.",
+      "bron": "<a href=\"https://www.digivaardigindezorg.nl/v-model-toont-competenties-zorg-en-welzijnsprofessionals-in-omgang-met-technologie/\" target=\"_blank\" title=\"Groeneveld, S., & Den Ouden, M. (2023). V-Model toont competenties zorg- en welzijnsprofessionals in omgang met technologie. Digivaardigindezorg.nl.\">V-model technologiecompetenties</a>"
+    },
+    "v_model": {
+      "afbeelding": "images/v_model.jpeg",
+      "basis_competenties": {
+        "titel": "De Basis V-Competenties",
+        "tekst": "Deze competenties zijn essentieel voor iedere fysiotherapeut:",
+        "competenties": [
+          {
+            "titel": "Veranderen",
+            "beschrijving": "Je staat open voor technologische veranderingen en ziet kansen om het zorgproces te verbeteren. Je bent bereid om je handelen bij te stellen op basis van zelfreflectie.",
+            "voorbeeld": "Je ziet dat een patiënt moeite heeft met therapietrouw en denkt actief mee over hoe een app hierbij kan helpen. Je evalueert regelmatig of de technologie het gewenste effect heeft."
+          },
+          {
+            "titel": "Vinden",
+            "beschrijving": "Je kunt geschikte zorgtechnologie vinden en selecteren voor specifieke zorgvragen, gebaseerd op kwaliteitscriteria en betrouwbare bronnen.",
+            "voorbeeld": "Je gebruikt bronnen zoals Beweegtech.nl om een geschikte oefenapp te vinden voor een patiënt. Je beoordeelt de technologie op basis van criteria zoals gebruiksgemak, veiligheid en effectiviteit."
+          },
+          {
+            "titel": "Vertrouwen",
+            "beschrijving": "Je begrijpt het nut en de veiligheid van technologie en kunt dit uitstralen naar patiënten. Je hebt vertrouwen in je eigen kunnen om met technologie te werken.",
+            "voorbeeld": "Je kunt uitleggen waarom een bepaalde VR-toepassing veilig en effectief is voor revalidatie, en je voelt je comfortabel bij het gebruik ervan."
+          },
+          {
+            "titel": "Vaardig gebruiken",
+            "beschrijving": "Je kunt zorgtechnologie veilig en adequaat inzetten om het zorgproces te ondersteunen. Je bent digitaal vaardig en kunt problemen oplossen.",
+            "voorbeeld": "Je weet hoe je bewegingssensoren moet plaatsen, de data moet interpreteren en kunt technische problemen oplossen."
+          },
+          {
+            "titel": "Vertellen",
+            "beschrijving": "Je kunt patiënten en hun omgeving duidelijk informeren en instrueren over het gebruik en nut van technologie.",
+            "voorbeeld": "Je legt stap voor stap uit hoe een patiënt thuis een oefenapp kan gebruiken en beantwoordt vragen over privacy en veiligheid."
+          }
+        ]
+      },
+      "ethische_reflectie": {
+        "titel": "Ethische Reflectie",
+        "tekst": "Rondom de V-competenties staat ethische reflectie. Dit betekent dat je bij het werken met technologie altijd verschillende perspectieven afweegt en handelt volgens geldende wet- en regelgeving. Dit sluit aan bij wat je in hoofdstuk 4 hebt geleerd over kritisch kijken naar zorgtechnologie.",
+        "aspecten": [
+          {
+            "titel": "Privacy & Veiligheid",
+            "beschrijving": "Je houdt rekening met privacywetgeving en zorgt voor veilig gebruik van technologie."
+          },
+          {
+            "titel": "Toegankelijkheid",
+            "beschrijving": "Je overweegt of technologie voor iedere patiënt geschikt is en past je aanpak aan waar nodig."
+          },
+          {
+            "titel": "Menselijke Maat",
+            "beschrijving": "Je zorgt ervoor dat technologie de menselijke interactie niet vervangt, maar aanvult."
+          }
+        ]
+      },
+      "verdiepende_competenties": {
+        "titel": "Verdiepende Competenties: Voor Later",
+        "tekst": "Later in je opleiding of carrière kun je je verder ontwikkelen met verdiepende competenties zoals vooroplopen, verdiepen, verbinden, voorlichten, verbeteren en vervangen. Deze zijn vooral relevant als je je wilt specialiseren in zorgtechnologie. Natuurlijk ben je vrij om deze verdiepende competenties al te ontwikkelen als je daar interesse in hebt. Echter, de basis V-competenties en ethische reflectie vormen de kern van je ontwikkeling en zijn essentieel voor een solide fundament in zorgtechnologie. Focus je daarom primair op het meester worden van deze basisvaardigheden."
+      },
+      "ontwikkeling": {
+        "titel": "Ontwikkeling van je Competenties",
+        "tekst": "Je ontwikkelt deze competenties door:",
+        "manieren": [
+          "Praktische ervaring op te doen met verschillende zorgtechnologieën in je COP's",
+          "Te oefenen in het iXperium Health, waar je technologie kunt lenen voor thuis of stage",
+          "Specifieke elearnings te volgen over verschillende zorgtechnologieën",
+          "Kritisch te reflecteren op je eigen ervaringen met technologie",
+          "Feedback te vragen van docenten en medestudenten"
+        ]
+      }
+    }
+  },
+  "interacties": [
+    {
+      "id": "h7_dragdrop_1",
+      "type": "dragdrop",
+      "vraag": "Sleep elke V-competentie naar de juiste beschrijving:",
+      "items": [
+        {"id": "1", "label": "Veranderen"},
+        {"id": "2", "label": "Vinden"},
+        {"id": "3", "label": "Vertrouwen"},
+        {"id": "4", "label": "Vaardig gebruiken"},
+        {"id": "5", "label": "Vertellen"}
+      ],
+      "targets": [
+        {"id": "a", "label": "Je staat open voor technologische veranderingen en ziet kansen om het zorgproces te verbeteren."},
+        {"id": "b", "label": "Je kunt geschikte zorgtechnologie vinden en selecteren voor specifieke zorgvragen."},
+        {"id": "c", "label": "Je begrijpt het nut en de veiligheid van technologie en kunt dit uitstralen naar patiënten."},
+        {"id": "d", "label": "Je kunt zorgtechnologie veilig en adequaat inzetten om het zorgproces te ondersteunen."},
+        {"id": "e", "label": "Je kunt patiënten en hun omgeving duidelijk informeren over het gebruik en nut van technologie."}
+      ],
+      "correctCombinations": [
+        { "targetId": "a", "itemId": "1" },
+        { "targetId": "b", "itemId": "2" },
+        { "targetId": "c", "itemId": "3" },
+        { "targetId": "d", "itemId": "4" },
+        { "targetId": "e", "itemId": "5" }
+      ],
+      "feedbackCorrect": "Perfect! Je hebt alle V-competenties correct gekoppeld aan hun beschrijvingen.",
+      "feedbackIncorrect": "Niet alle koppelingen zijn correct. Probeer het nog eens!"
+    },
+    {
+      "id": "h7_selfassessment_1",
+      "type": "selfassessment",
+      "vraag": "Beoordeel jezelf op de vijf basis V-competenties. Kies één specifieke technologie die je al kent of jou interesseert. Misschien heb je al ervaring met VR-gaming, gebruik je een smartwatch voor je eigen training, of heb je wel eens apps gebruikt om je sportprestaties te verbeteren. Heb je nog helemaal geen ervaring met zorgtechnologie? Geen probleem! Die ga je de komende jaren opdoen. Door je te focussen op een technologie die je kent of wilt leren kennen, krijg je beter inzicht in waar je nu staat en waar je je nog kunt ontwikkelen."
+    },
+    {
+      "id": "h7_reflection_1",
+      "type": "reflection",
+      "vraag": "Welke V-competentie is voor jou op dit moment het belangrijkst om je in te ontwikkelen? Waarom is dat nu belangrijk voor jou?"
+    }
+  ]
+} 

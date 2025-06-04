@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-learning Module</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/configManager.js"></script>
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+    <div class="floating-hamburger" id="floatingHamburger">
+        <svg class="progress-ring" viewBox="0 0 60 60">
+            <circle id="progressRing" cx="30" cy="30" r="27" />
+        </svg>
+        <div class="hamburger-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="main-layout">
+        <div class="sticky-wrapper">
+            <div class="sidebar-nav" id="sidebarNav">
+              <div class="sidebar-header">
+                <span class="sidebar-title">Hoofdstukken</span>
+                <button class="sidebar-hamburger" id="sidebarHamburger" aria-label="Toon navigatie">
+                  <span></span><span></span><span></span>
+                </button>
+              </div>
+              <ul class="sidebar-chapters" id="sidebarChapters">
+                <li class="sidebar-chapter" data-section="1">
+                  <span class="chapter-circle" id="circle-1">1</span>
+                  <span class="chapter-title">Introductie</span>
+                </li>
+                <li class="sidebar-chapter" data-section="2">
+                  <span class="chapter-circle" id="circle-2">2</span>
+                  <span class="chapter-title">Wat is AI eigenlijk?</span>
+                </li>
+                <li class="sidebar-chapter" data-section="3">
+                  <span class="chapter-circle" id="circle-3">3</span>
+                  <span class="chapter-title">AI-jargon in 20 minuten</span>
+                </li>
+                <li class="sidebar-chapter" data-section="4">
+                  <span class="chapter-circle" id="circle-4">4</span>
+                  <span class="chapter-title">Prompten kun je leren</span>
+                </li>
+                <li class="sidebar-chapter" data-section="5">
+                  <span class="chapter-circle" id="circle-5">5</span>
+                  <span class="chapter-title">Creatief & bouwen met AI</span>
+                </li>
+                <li class="sidebar-chapter" data-section="6">
+                  <span class="chapter-circle" id="circle-6">6</span>
+                  <span class="chapter-title">Kansen & risico's</span>
+                </li>
+                <li class="sidebar-chapter" data-section="7">
+                  <span class="chapter-circle" id="circle-7">7</span>
+                  <span class="chapter-title">AI in de toekomst</span>
+                </li>
+                <li class="sidebar-chapter" data-section="8">
+                  <span class="chapter-circle" id="circle-8">8</span>
+                  <span class="chapter-title">Afsluiting</span>
+                </li>
+              </ul>
+              <button class="btn btn-clear-progress" id="clearProgressBtn">Wis Alle Voortgang</button>
+              <div class="sidebar-progress">
+                <div class="progress-visual" id="sidebarProgressVisual"></div>
+                <div class="progress-text" id="sidebarProgressText">0%</div>
+              </div>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="content-wrapper">
+                <header>
+                    <div class="header-content">
+                        <img src="images/logo-health-transparant1.png" alt="iXperium Health - Centre of Expertise" class="logo">
+                        <h1 class="header-title">E-learning Module</h1>
+                        <div class="search-container">
+                            <input type="search" id="searchInput" placeholder="Doorzoek de e-learning..." class="search-input">
+                            <span id="searchInfoIcon" class="search-info-icon" tabindex="0" aria-label="Zoekuitleg" title="Klik voor uitleg">&#9432;</span>
+                            <div id="searchInfoTooltip" class="search-info-tooltip" role="tooltip" style="display:none;">
+                                Doorzoek de volledige e-learning.<br>
+                                Let op: door technische beperkingen is de zoekfunctie niet altijd 100% accuraat.<br>
+                                Voor de meest precieze zoekresultaten binnen een specifiek hoofdstuk, gebruik Ctrl+F (of Cmd+F op Mac).<br>
+                                Zoekresultaten worden geel gemarkeerd in de tekst.
+                            </div>
+                            <div id="searchResults" class="search-results"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="container">
+                    <!-- Style Guide Sectie -->
+                    <section id="section0" class="section style-guide" data-section="0">
+                        <h2>Style Guide - Voorbeelden van Content Stijlen</h2>
+                        <div class="section-content">
+                            <div class="style-guide-item">
+                                <h3>Basis Tekst Stijlen</h3>
+                                <p class="content-text">Dit is een normale paragraaf tekst met de class 'content-text'</p>
+                                <p class="note">Dit is een noot met de class 'note'</p>
+                            </div>
+
+                            <div class="style-guide-item">
+                                <h3>Info Cards</h3>
+                                <div class="info-card">
+                                    <h3 class="info-card-title">Info Card Titel</h3>
+                                    <div class="info-card-content">
+                                        <p>Dit is een info card met de classes 'info-card', 'info-card-title' en 'info-card-content'</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="style-guide-item">
+                                <h3>Wist je dat?</h3>
+                                <div class="wist-je-dat">
+                                    <h4 class="wist-je-dat-title">Wist je dat?</h4>
+                                    <p>Dit is een 'wist je dat' blok met de classes 'wist-je-dat' en 'wist-je-dat-title'</p>
+                                </div>
+                            </div>
+
+                            <div class="style-guide-item">
+                                <h3>Reflectie Container</h3>
+                                <div class="reflection-container">
+                                    <p>Dit is een reflectie container met de class 'reflection-container'</p>
+                                    <textarea class="reflection-input" placeholder="Type hier je reflectie..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="style-guide-item">
+                                <h3>Competency Assessment</h3>
+                                <div class="competency-assessment">
+                                    <h4>Competency Assessment</h4>
+                                    <p>Dit is een competency assessment met de class 'competency-assessment'</p>
+                                </div>
+                            </div>
+
+                            <div class="style-guide-item">
+                                <h3>Interactive Block</h3>
+                                <div class="interactive-block">
+                                    <div class="interactive-block-header">
+                                        <h4>Interactive Block</h4>
+                                    </div>
+                                    <div class="interactive-block-content">
+                                        <p>Dit is een interactive block met de classes 'interactive-block', 'interactive-block-header' en 'interactive-block-content'</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="style-guide-item">
+                                <h3>Buttons</h3>
+                                <button class="btn">Standaard knop (.btn)</button>
+                                <button class="btn btn-prev">Vorige (.btn.btn-prev)</button>
+                                <button class="btn btn-next">Volgende (.btn.btn-next)</button>
+                            </div>
+                            <div class="style-guide-item">
+                                <h3>Stat Card</h3>
+                                <div class="stat-card">
+                                    <div class="stat-title">Statistiek Titel</div>
+                                    <div class="stat-image"><img src="images/logo-health-transparant1.png" alt="Voorbeeld afbeelding" style="max-width:60px;"></div>
+                                    <div class="stat-number">123</div>
+                                    <div class="stat-label">Beschrijving</div>
+                                </div>
+                            </div>
+                            <div class="style-guide-item">
+                                <h3>Benefit Card</h3>
+                                <div class="benefit-card">
+                                    <h3>Benefit Titel</h3>
+                                    <div class="benefit-content">Dit is een benefit card met de class 'benefit-card'.</div>
+                                </div>
+                            </div>
+                            <div class="style-guide-item">
+                                <h3>Note Box</h3>
+                                <div class="note-box">
+                                    <h4>Let op!</h4>
+                                    <p>Dit is een note-box met de class 'note-box'.</p>
+                                </div>
+                            </div>
+                            <div class="style-guide-item">
+                                <h3>Lijsten</h3>
+                                <ul class="info-card-content">
+                                    <li>Eerste item</li>
+                                    <li>Tweede item</li>
+                                    <li>Derde item</li>
+                                </ul>
+                            </div>
+                            <div class="style-guide-item">
+                                <h3>Multiple Choice Optie</h3>
+                                <div class="mc-option">Dit is een multiple choice optie (.mc-option)</div>
+                            </div>
+                            <div class="style-guide-item">
+                                <h3>Reflectie Input</h3>
+                                <textarea class="reflection-input" placeholder="Voorbeeld reflectie input..."></textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Sectie 1: Introductie -->
+                    <section id="section1" class="section active" data-section="1">
+                        <h2 class="introductie-titel">Introductie - Waarom moet Jij iets met AI?</h2>
+                        <div class="section-content" id="section1-content-container">
+                            <!-- Content for section 1 will be dynamically loaded here -->
+                            <!-- Placeholder for interactions (already present) -->
+                            <div id="hoofdstuk1-reflection1"></div>
+                            <div id="hoofdstuk1-error"></div>
+                        </div>
+                        <div class="nav-buttons" style="justify-content: flex-end;">
+                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
+                        </div>
+                    </section>
+
+                    <!-- Sectie 2: Wat is AI eigenlijk? -->
+                    <section id="section2" class="section" data-section="2">
+                        <h2>Wat is AI eigenlijk? - Een Introductie</h2>
+                        <div class="section-content" id="section2-content-container">
+                            <!-- Content for section 2 will be dynamically loaded here -->
+                            <!-- Placeholders for interactions (already present) -->
+                            <div id="hoofdstuk2-mc1"></div>
+                            <div id="hoofdstuk2-reflection2"></div>
+                            <div id="hoofdstuk2-error"></div>
+                        </div>
+                        <div class="nav-buttons">
+                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
+                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
+                        </div>
+                    </section>
+
+                    <!-- Sectie 3: AI-jargon in 20 minuten -->
+                    <section id="section3" class="section" data-section="3">
+                        <h2>AI-jargon in 20 minuten - De Basis Begrippen</h2>
+                        <div class="section-content" id="section3-content-container">
+                            <!-- Content for section 3 will be dynamically loaded here -->
+                            <!-- Placeholders for interactions (already present) -->
+                            <div id="hoofdstuk3-dragdrop1"></div>
+                            <div id="hoofdstuk3-reflection3"></div>
+                            <div id="hoofdstuk3-error"></div>
+                        </div>
+                        <div class="nav-buttons">
+                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
+                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
+                        </div>
+                    </section>
+
+                    <!-- Sectie 4: Prompten kun je leren -->
+                    <section id="section4" class="section" data-section="4">
+                        <h2>Prompten kun je leren - Tekst-AI Effectief Gebruiken</h2>
+                        <div class="section-content" id="section4-content-container">
+                            <!-- Content for section 4 will be dynamically loaded here -->
+                            <!-- Placeholders for interactions (already present) -->
+                            <div id="hoofdstuk4-mc_h4_1"></div>
+                            <div id="hoofdstuk4-reflection4"></div>
+                            <div id="hoofdstuk4-error"></div>
+                        </div>
+                        <div class="nav-buttons">
+                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
+                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
+                        </div>
+                    </section>
+
+                    <!-- Sectie 5: Creatief & bouwen met AI -->
+                    <section id="section5" class="section" data-section="5">
+                        <h2>Creatief & bouwen met AI - Van Beelden tot Tools</h2>
+                        <div class="section-content" id="section5-content-container">
+                            <!-- Content for section 5 will be dynamically loaded here -->
+                            <!-- Placeholders for interactions (already present) -->
+                            <div id="hoofdstuk5-mc_h5_1"></div>
+                            <div id="hoofdstuk5-reflection5"></div>
+                            <div id="hoofdstuk5-error"></div>
+                        </div>
+                        <div class="nav-buttons">
+                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
+                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
+                        </div>
+                    </section>
+
+                    <!-- Sectie 6: Kansen & risico's -->
+                    <section id="section6" class="section" data-section="6">
+                        <h2>Kansen & risico's - AI in de (fysio)zorg én samenleving</h2>
+                        <div class="section-content" id="section6-content-container">
+                            <!-- Content for section 6 will be dynamically loaded here -->
+                            <!-- Placeholders for interactions (already present) -->
+                            <div id="hoofdstuk6-h6_mc_1"></div>
+                            <div id="hoofdstuk6-h6_reflection_1"></div>
+                            <div id="hoofdstuk6-error"></div>
+                        </div>
+                        <div class="nav-buttons">
+                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
+                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
+                        </div>
+                    </section>
+
+                    <!-- Sectie 7: AI in de toekomst -->
+                    <section id="section7" class="section" data-section="7">
+                        <h2>AI in de toekomst - Wat staat ons te wachten?</h2>
+                        <div class="section-content" id="section7-content-container">
+                            <!-- Content for section 7 will be dynamically loaded here -->
+                            <!-- Placeholders for interactions (already present) -->
+                            <div id="hoofdstuk7-h7_dragdrop_1"></div>
+                            <div id="hoofdstuk7-h7_selfassessment_1"></div>
+                            <div id="hoofdstuk7-h7_reflection_1"></div>
+                            <div id="hoofdstuk7-error"></div>
+                        </div>
+                        <div class="nav-buttons">
+                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
+                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
+                        </div>
+                    </section>
+
+                    <!-- Sectie 8: Afsluiting -->
+                    <section id="section8" class="section" data-section="8">
+                        <h2 id="afsluiting-titel">Afsluiting: Test je kennis & ontvang je certificaat</h2>
+                        <!-- This is where dynamic text content from hoofdstuk_afsluiting.json will be primarily managed -->
+                        <div class="section-content" id="section8-content-container">
+                            <!-- Content from hoofdstuk_afsluiting.json will populate specific elements below -->
+                            <!-- or be added here if no specific static placeholder exists. -->
+                        </div>
+
+                        <div class="info-card">
+                            <h3 class="info-card-title">Wat ga je hier doen?</h3>
+                            <div class="info-card-content">
+                                <p id="afsluiting-intro"></p> <!-- To be filled by dynamicContent.js -->
+                            </div>
+                        </div>
+                        
+                        <!-- This div might be redundant if section8-content-container holds all dynamic text -->
+                        <!-- Let's keep the quiz-intro-text and quiz-container separate for now -->
+                        <div class="section-content"> <!-- Original generic section-content, quiz-intro was here -->
+                            <p class="quiz-intro-text" id="afsluiting-uitleg"></p> <!-- To be filled by dynamicContent.js -->
+                            
+                            <div id="quiz-container"></div> <!-- Quiz loads here -->
+                            <div id="hoofdstuk8-error" style="margin-bottom: 40px;"></div>
+                            <hr style="margin: 40px 0;">
+
+                            <div id="certificaat-portfolio-container"></div> <!-- Nieuwe container voor certificaat en portfolio info -->
+                            
+                            <div class="certificate-section">
+                                <div class="certificate-title-bar">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6"/><circle cx="17" cy="17" r="2"/><path d="M19 19l-2-2"/></svg>
+                                    Certificaat Genereren
+                                </div>
+                                <p id="afsluiting-certificaat"></p> <!-- To be filled by dynamicContent.js -->
+                                <input type="text" id="student-name" placeholder="Vul hier je volledige naam in" class="input-field">
+                                <button class="btn" id="generatePdfBtn" onclick="generatePDF()">Download Certificaat (PDF)</button>
+                                <p id="afsluiting-portfolio-tip" class="small-text"></p> <!-- To be filled by dynamicContent.js -->
+                            </div>
+                        </div>
+
+                        <div class="nav-buttons">
+                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="js/dynamicContent.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/debug.js"></script> 
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Vercel Speed Insights -->
+    <script type="module">
+      import { inject } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1.2.0/dist/index.module.js';
+      inject();
+    </script>
+</body>
+</html>

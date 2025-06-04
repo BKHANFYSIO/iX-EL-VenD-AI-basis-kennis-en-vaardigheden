@@ -1,0 +1,106 @@
+{
+  "titel": "Vinden van Zorgtechnologie - Waar begin je?",
+  "content": {
+    "intro": {
+      "titel": "Ontdek Jouw Bronnen voor Zorgtechnologie",
+      "tekst": "Natuurlijk kun je altijd een zoekmachine zoals Google gebruiken om zorgtechnologie te vinden. Echter, er bestaan ook gespecialiseerde catalogi en platforms die je gericht helpen bij het ontdekken van technologie die écht past bij jouw behoeften als (toekomstig) fysiotherapeut. Dit hoofdstuk biedt een overzicht van de belangrijkste bronnen.",
+      "subtekst": "We maken onderscheid tussen bronnen specifiek voor HAN-studenten en algemeen toegankelijke platforms. De iXperium Health catalogi zijn primair gericht op studenten van de HAN. Hier kun je technologieën ontdekken, reserveren en zelfs fysiek uitproberen. Ook na je studie blijven deze catalogi een waardevolle inspiratiebron en zijn er mogelijkheden om op locatie geïnspireerd te worden. De overige nationale platforms zijn toegankelijk voor iedere fysiotherapeut en bieden een breder scala aan geteste en beoordeelde zorgtechnologie. Neem even de tijd om de beschrijvingen van elke bron te lezen, de links te openen en kort rond te kijken om een eerste indruk te krijgen."
+    },
+    "ixperium_catalogi": {
+      "titel": "iXperium Health Catalogussen - Direct Beschikbaar op de HAN",
+      "catalogi": [
+        {
+          "titel": "iXperium Health Catalogus",
+          "logo": "images/logo-health-transparant1.png",
+          "beschrijving": "Onze catalogus: Zoek, kom langs of reserveer en probeer zorgtechnologie zelf uit! Alle technologie in deze catalogus is beschikbaar voor studenten en docenten van de HAN.",
+          "qr_code": "images/QR_IX_Catalogus.png",
+          "link": "https://catalogus-ixperium-health.glide.page"
+        },
+        {
+          "titel": "iXperium Makerspace Catalogus",
+          "logo": "images/logo-health-transparant1.png",
+          "beschrijving": "Onze Makerspace catalogus: Specifiek gericht op 3D printen en lasersnijden. Ontdek de mogelijkheden voor het maken van gepersonaliseerde hulpmiddelen.",
+          "qr_code": "images/QR_IX_Makerspace_catalogus.png",
+          "link": "https://ixperiumhealth-makerspace.glide.page"
+        }
+      ]
+    },
+    "nationale_platforms": {
+      "titel": "Nationale Platforms voor Zorgtechnologie",
+      "platforms": [
+        {
+          "titel": "BeweegTech",
+          "logo": "images/Beweegtech_Logo.jpg",
+          "beschrijving": "De zoekmachine voor zorgtechnologie specifiek gericht op fysiotherapeuten. Vind technologie die past bij jouw praktijk en patiënten.",
+          "link": "https://beweegtech.nl/"
+        },
+        {
+          "titel": "GGD AppStore",
+          "logo": "images/GGDAppStore.jpg",
+          "beschrijving": "De GGD AppStore biedt een overzicht van betrouwbare gezondheidsapps, getest op privacy, betrouwbaarheid en gebruiksvriendelijkheid.",
+          "link": "https://www.ggdappstore.nl/Appstore/Homepage"
+        },
+        {
+          "titel": "Zorginnovatie.nl",
+          "logo": "images/Zorginnovatie.jpg",
+          "beschrijving": "Het nationale netwerk voor innovaties in de gezondheid en zorg. Ontdek de laatste onnovaties in de zorg.",
+          "link": "https://zorginnovatie.nl/"
+        },
+        {
+          "titel": "Zorg van Nu",
+          "logo": "images/ZorgvanNu.svg",
+          "beschrijving": "Toont wat slimme zorg is, welke innovaties er zijn en hoe, wanneer en waarom je ze inzet. Een initiatief van het ministerie van VWS.",
+          "link": "https://www.zorgvannu.nl/"
+        }
+      ]
+    }
+  },
+  "interacties": [
+    {
+      "id": "h6_mc_1",
+      "type": "mc",
+      "vraag": "Je wilt een betrouwbare gezondheidsapp aanbevelen aan een patiënt voor thuisoefeningen. Welke bron is het MEEST geschikt om te raadplegen voor een onafhankelijke beoordeling van gezondheidsapps?",
+      "options": [
+        "BeweegTech.nl",
+        "GGD AppStore",
+        "Zorginnovatie.nl",
+        "iXperium Health Catalogus"
+      ],
+      "correctAnswer": 2,
+      "feedback": "De GGD AppStore is specifiek ontworpen om gezondheidsapps te beoordelen op gebruiksvriendelijkheid, privacy, betrouwbaarheid en onderbouwing."
+    },
+    {
+      "id": "h6_dragdrop_1",
+      "type": "dragdrop",
+      "vraag": "Koppel de volgende zoekopdrachten/scenario's aan de meest geschikte informatiebron.",
+      "items": [
+        {"id": "item1", "label": "Ik wil leren 3D printen, waar kan ik informatie vinden hoe ik dat als student kan doen."},
+        {"id": "item2", "label": "Ik wil een overzicht van betrouwbare gezondheidsapps voor thuisoefeningen."},
+        {"id": "item3", "label": "Ik zoek specifiek naar fysiotherapeutische technologie voor mijn praktijk."},
+        {"id": "item4", "label": "Ik wil de nieuwste innovaties in de Nederlandse zorg ontdekken."},
+        {"id": "item5", "label": "Als HAN-student wil ik een VR-bril uitproberen voor revalidatie."}
+      ],
+      "targets": [
+        {"id": "target1", "label": "iXperium Makerspace Catalogus"},
+        {"id": "target2", "label": "GGD AppStore"},
+        {"id": "target3", "label": "BeweegTech"},
+        {"id": "target4", "label": "Zorginnovatie.nl / Zorg van Nu"},
+        {"id": "target5", "label": "iXperium Health Catalogus"}
+      ],
+      "correctCombinations": [
+        {"targetId": "target1", "itemId": "item1"},
+        {"targetId": "target2", "itemId": "item2"},
+        {"targetId": "target3", "itemId": "item3"},
+        {"targetId": "target4", "itemId": "item4"},
+        {"targetId": "target5", "itemId": "item5"}
+      ],
+      "feedbackCorrect": "Goed gedaan! Je weet nu welke bron je kunt raadplegen voor verschillende typen zorgtechnologie.",
+      "feedbackIncorrect": "Nog niet helemaal. Probeer de scenario's te koppelen aan de bron die het beste aansluit bij de beschrijving in het hoofdstuk."
+    },
+    {
+      "id": "h6_reflection_1",
+      "type": "reflection",
+      "vraag": "Na het leren over deze verschillende bronnen, hoe is jouw beeld veranderd over de beschikbaarheid en toegankelijkheid van zorgtechnologie voor (toekomstige) fysiotherapeuten?"
+    }
+  ]
+} 

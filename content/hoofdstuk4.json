@@ -1,0 +1,100 @@
+{
+  "titel": "Kritisch Kijken naar Zorgtechnologie",
+  "content": {
+    "intro": {
+      "titel": "Waarom Kritisch Kijken?",
+      "tekst": "Zorgtechnologie biedt veel mogelijkheden, maar het is belangrijk om kritisch te blijven. Door de juiste vragen te stellen, kun je beter inschatten of een technologie echt waarde toevoegt aan je praktijk en of het past bij jouw werkwijze en patiënten.",
+      "note": "De zes thema's hieronder zijn voorbeelden van belangrijke aspecten om kritisch te bekijken. Dit is geen uitputtende lijst - er zijn nog veel meer manieren om zorgtechnologie kritisch te evalueren."
+    },
+    "themas": [
+      {
+        "titel": "Gebruiksgemak & Implementatie",
+        "icoon": "images/Gebruikersgemak_implementatie.png",
+        "positief_voorbeeld": "Een app met een intuïtieve interface die direct klaar is voor gebruik, zonder ingewikkelde instellingen.",
+        "uitdaging": "Technologie die veel training vereist en moeilijk te integreren is in de dagelijkse routine.",
+        "reflectie_vraag": "Stel je voor: je wilt een nieuwe app introduceren in je praktijk. Hoe zou je het gebruiksgemak testen voordat je het aan alle collega's voorstelt?"
+      },
+      {
+        "titel": "Kwaliteit van Zorg",
+        "icoon": "images/Kwaliteitvanzorg.png",
+        "positief_voorbeeld": "Een bewegingsanalyse-app die objectieve metingen mogelijk maakt, wat leidt tot betere behandelbeslissingen.",
+        "uitdaging": "Technologie die de persoonlijke aandacht voor de patiënt vermindert.",
+        "reflectie_vraag": "Hoe zou je kunnen meten of een nieuwe technologie daadwerkelijk bijdraagt aan betere zorgresultaten?"
+      },
+      {
+        "titel": "Toekomst & Personeel",
+        "icoon": "images/Toekomstenpersoneel.png",
+        "positief_voorbeeld": "Automatische verslaglegging die tijd bespaart, waardoor meer tijd overblijft voor patiëntcontact.",
+        "uitdaging": "Technologie die het werk complexer maakt zonder duidelijke meerwaarde.",
+        "reflectie_vraag": "Stel je voor dat je een eigen praktijk hebt. Welke technologie zou je als eerste willen implementeren om personeelstekorten op te vangen?"
+      },
+      {
+        "titel": "Kosten & Toegankelijkheid",
+        "icoon": "images/Kostenentoegankelijkheid.png",
+        "positief_voorbeeld": "Een betaalbare app die door alle patiënten gebruikt kan worden, ongeacht hun financiële situatie.",
+        "uitdaging": "Dure technologie die alleen toegankelijk is voor grote praktijken.",
+        "reflectie_vraag": "Hoe zou je de kosten-baten analyse van een nieuwe technologie uitvoeren voor je praktijk?"
+      },
+      {
+        "titel": "Patiëntperspectief",
+        "icoon": "images/Patientenperspectief.png",
+        "positief_voorbeeld": "Een app die patiënten meer inzicht geeft in hun herstelproces en hen motiveert.",
+        "uitdaging": "Digitale toepassingen sluiten niet altijd aan op individuele behoeften, wat kan leiden tot verminderde betrokkenheid.",
+        "reflectie_vraag": "Hoe zou je de ervaringen van patiënten met een nieuwe technologie kunnen evalueren?"
+      },
+      {
+        "titel": "Veiligheid & Privacy",
+        "icoon": "images/VeiligheidenPrivacy.png",
+        "positief_voorbeeld": "Een systeem met end-to-end encryptie en duidelijke privacy-instellingen.",
+        "uitdaging": "Technologie die gevoelige patiëntgegevens deelt met derden zonder duidelijke toestemming.",
+        "reflectie_vraag": "Welke privacyvragen zou je stellen aan een leverancier van zorgtechnologie?"
+      }
+    ]
+  },
+  "interacties": [
+    {
+      "id": "h4_critical_analysis_1",
+      "type": "critical_analysis",
+      "vraag": "Kies één van de technologieën die je hebt gezien in deze e-learning (bijvoorbeeld Fysio.ai, Blazepods, Corpus VR of Physitrack) en analyseer deze kritisch op basis van de thema's die we hebben besproken: Toekomst & Personeel, Kosten & Toegankelijkheid, Patiëntperspectief, en Veiligheid & Privacy. Beantwoord de volgende vragen:",
+      "dropdown": [
+        "Fysio.ai",
+        "Blazepods",
+        "Corpus VR",
+        "Physitrack"
+      ],
+      "vragen": [
+        {
+          "id": "sterke_punten",
+          "vraag": "Wat zijn volgens jou de belangrijkste sterke punten van deze technologie?"
+        },
+        {
+          "id": "uitdagingen",
+          "vraag": "Welke uitdagingen zie je bij het implementeren van deze technologie?"
+        },
+        {
+          "id": "implementatie_toekomst",
+          "vraag": "Hoe zou je deze technologie willen implementeren in je toekomstige praktijk?"
+        }
+      ],
+      "opslaanLabel": "Opslaan"
+    },
+    {
+      "id": "h4_mc_1",
+      "type": "mc",
+      "vraag": "Waarom is kritisch kijken naar zorgtechnologie belangrijk?",
+      "options": [
+        "Omdat technologie altijd betrouwbaar is",
+        "Omdat niet elke technologie past bij elke praktijk of patiënt",
+        "Omdat technologie altijd goedkoper is",
+        "Omdat technologie geen risico's kent"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Niet elke technologie past bij elke praktijk of patiënt. Kritisch kijken helpt je om de juiste keuze te maken."
+    },
+    {
+      "id": "h4_reflection_1",
+      "type": "reflection",
+      "vraag": "Privacy en veiligheid zijn belangrijke thema's. Wat zou je willen onderzoeken over de privacyaspecten van een zorg-app voordat je deze aan een patiënt aanbeveelt?"
+    }
+  ]
+} 

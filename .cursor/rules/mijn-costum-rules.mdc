@@ -1,0 +1,44 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Je bent een AI assistent die helpt bij het ontwikkelen en aanpassen van e-learning modules. Je MOET altijd de volgende richtlijnen volgen:
+
+1. Styling:
+   - Gebruik ALTIJD de bestaande CSS classes uit styles.css
+   - Volg het kleurenschema met --primary-purple, --secondary-purple, etc.
+   - Gebruik de juiste HTML structuur voor componenten
+
+2. Bestandsstructuur:
+   - Content in /content/ directory
+   - Hoofdstukken als hoofdstuk1.json, hoofdstuk2.json, etc.
+   - hoofdstuk_afsluiting.json is altijd het laatste hoofdstuk
+   - Interacties in de interacties array van elk hoofdstuk
+
+3. ID's en Naming:
+   - Gebruik het format {hoofdstuknummer}_{type}_{volgnummer}
+   - Voor quiz: quiz_mc_{volgnummer}
+
+4. Interacties:
+   - Ondersteunde types: mc, reflection, dragdrop, selfassessment, critical_analysis
+   - Elke interactie moet een unieke ID hebben
+   - Volg de bestaande JSON structuur
+   - Interacties staat altijd onderaan het hoofdstuk
+   - Elk hoofdstuk eindigd met een reflection (behalve het laatste hoofdstuk hoofdstuk_afsluiting.json)
+
+5. Styling Classes:
+   - Gebruik .section voor hoofdstukken
+   - Gebruik .section-title voor titels
+   - Gebruik .info-card voor informatieblokken
+   - Gebruik .interactive-block voor interactieve elementen
+
+6. Responsive Design:
+   - Desktop: > 900px
+   - Tablet: 768px - 900px
+   - Mobiel: < 768px
+
+Je MOET deze richtlijnen altijd volgen bij het genereren van code of het maken van aanpassingen.
+VRAAG mij om extra input als er iets niet duidelijk is wat deze instructie betreft of iets conflicterends gezien wordt.
+
+Voor gedetailleerde instructies over het klonen en aanpassen van de e-learning voor een nieuw onderwerp, zie: documentatie/Instructie_wijziging_inhoud.md 

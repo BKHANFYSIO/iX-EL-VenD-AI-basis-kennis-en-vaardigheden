@@ -1,0 +1,223 @@
+[
+  {
+    "id": "quiz_mc_1",
+    "title": "Hoofdstuk 1: Urgentie van Zorgtechnologie",
+    "text": "Welke ontwikkeling draagt het meest bij aan de urgentie voor zorgtechnologie in de fysiotherapie?",
+    "options": [
+      "Toename van sportblessures",
+      "Vergrijzing van de bevolking",
+      "Meer fysiotherapeuten beschikbaar",
+      "Daling van de algemene zorgkosten"
+    ],
+    "correctAnswer": 2,
+    "feedback": "De vergrijzing zorgt voor een toenemende zorgvraag, onder andere door meer chronische aandoeningen, wat de inzet van zorgtechnologie urgenter maakt."
+  },
+  {
+    "id": "quiz_mc_2",
+    "title": "Hoofdstuk 1: Passende Zorg",
+    "text": "Wat wordt bedoeld met 'passende zorg' volgens het Integraal Zorgakkoord?",
+    "options": [
+      "Alle zorg dient primair fysiek plaats te vinden",
+      "Zorg wordt uitsluitend digitaal aangeboden om kosten te besparen",
+      "Digitaal als het kan, fysiek als het moet, gericht op de juiste zorg op de juiste plek",
+      "Zorg wordt alleen door medisch specialisten geleverd"
+    ],
+    "correctAnswer": 3,
+    "feedback": "Passende zorg betekent: digitaal als het kan, fysiek als het moet, met als doel de zorg effectief, efficiënt en patiëntgericht te organiseren."
+  },
+  {
+    "id": "quiz_mc_3",
+    "title": "Hoofdstuk 2: Voorbeeld van Zorgtechnologie",
+    "text": "Welke van de volgende is een specifiek voorbeeld van Artificial Intelligence (AI) zoals besproken in de context van fysiotherapie in de cursus?",
+    "options": [
+      "Blazepods voor reactietraining",
+      "Fysio.ai voor geautomatiseerde verslaglegging",
+      "Corpus VR voor virtual reality revalidatie",
+      "Physitrack als eHealth platform voor oefenprogramma's"
+    ],
+    "correctAnswer": 2,
+    "feedback": "Fysio.ai wordt in de cursus genoemd als een AI-toepassing die helpt bij verslaglegging en analyse in de fysiotherapie."
+  },
+  {
+    "id": "quiz_mc_4",
+    "title": "Hoofdstuk 2: Categorieën Zorgtechnologie",
+    "text": "Tot welke hoofdcategorie van zorgtechnologie, zoals onderscheiden in de cursus, behoort Blazepods?",
+    "options": [
+      "Wearables & Sensoren",
+      "Artificial Intelligence (AI)",
+      "Interactieve Trainingshulpmiddelen",
+      "eHealth Platforms"
+    ],
+    "correctAnswer": 3,
+    "feedback": "Blazepods zijn een voorbeeld van 'Interactieve Trainingshulpmiddelen', die worden ingezet voor o.a. reactie- en bewegingstraining."
+  },
+  {
+    "id": "quiz_mc_5",
+    "title": "Hoofdstuk 2: Toepassing van eHealth",
+    "text": "Wat is een belangrijk voordeel van eHealth platforms zoals Physitrack voor de fysiotherapeutische praktijk?",
+    "options": [
+      "Ze vervangen de noodzaak voor een fysiotherapeut volledig",
+      "Ze kunnen therapietrouw bevorderen en maken monitoring op afstand mogelijk",
+      "Ze zijn uitsluitend ontwikkeld voor de revalidatie van topsporters",
+      "Ze dienen primair als administratieve tool zonder patiëntinteractie"
+    ],
+    "correctAnswer": 2,
+    "feedback": "eHealth platforms, zoals Physitrack, kunnen therapietrouw verhogen door o.a. gepersonaliseerde oefenprogramma's en maken monitoring op afstand mogelijk, wat bijdraagt aan efficiëntere zorg."
+  },
+  {
+    "id": "quiz_mc_6",
+    "title": "Hoofdstuk 3: Voordelen van Zorgtechnologie",
+    "text": "Welk specifiek voordeel biedt technologie ter ondersteuning van motorisch leren in de fysiotherapie?",
+    "options": [
+      "Het maakt oefeningen per definitie altijd fysiek zwaarder",
+      "Het kan directe, objectieve feedback en visualisatie van bewegingen bieden",
+      "Het vervangt de noodzaak voor alle vormen van fysieke training en contactmomenten",
+      "Het leidt standaard tot een lagere motivatie bij de meeste patiënten"
+    ],
+    "correctAnswer": 2,
+    "feedback": "Technologie kan directe feedback en visualisatie van bewegingen bieden, wat het motorisch leerproces kan versnellen en verduidelijken."
+  },
+  {
+    "id": "quiz_mc_7",
+    "title": "Hoofdstuk 3: Therapietrouw Bevorderen",
+    "text": "Welke factor is, naast de functionaliteiten van de technologie zelf, cruciaal voor het succesvol inzetten van zorgtechnologie ter bevordering van therapietrouw?",
+    "options": [
+      "De hoeveelheid geavanceerde features die de technologie biedt.",
+      "De mate waarin de technologie geïntegreerd is in het persoonlijke behandelplan en de begeleiding door de therapeut.",
+      "De mogelijkheid voor de patiënt om de technologie volledig autonoom te gebruiken, zonder enige therapeutische interactie.",
+      "De bekendheid en populariteit van het specifieke technologische merk of platform."
+    ],
+    "correctAnswer": 2,
+    "feedback": "Voor een effectieve verbetering van therapietrouw is het essentieel dat technologie goed aansluit bij de patiënt en geïntegreerd wordt in het totale behandelplan, waarbij de therapeut begeleiding en motivatie biedt. Technologie is een hulpmiddel binnen een breder zorgproces."
+  },
+  {
+    "id": "quiz_mc_8",
+    "title": "Hoofdstuk 3: Objectief Meten",
+    "text": "Wat is een primair voordeel van het gebruik van sensortechnologie in de fysiotherapeutische diagnostiek en evaluatie?",
+    "options": [
+      "Ze dienen voornamelijk als een esthetische toevoeging aan de behandeling",
+      "Ze maken een meer verfijnde subjectieve beoordeling door de therapeut mogelijk",
+      "Ze leveren objectieve, kwantificeerbare data over bewegingen en vooruitgang",
+      "Ze kunnen het volledige behandelplan van de fysiotherapeut vervangen"
+    ],
+    "correctAnswer": 3,
+    "feedback": "Sensoren maken het mogelijk om bewegingen en functionele vooruitgang objectief en kwantitatief te meten, wat de evaluatie ondersteunt."
+  },
+  {
+    "id": "quiz_mc_9",
+    "title": "Hoofdstuk 4: Kritisch Kijken",
+    "text": "Waarom is een kritische benadering bij de selectie en implementatie van zorgtechnologie essentieel?",
+    "options": [
+      "Omdat alle nieuwe technologie per definitie betrouwbaar en effectief is",
+      "Omdat niet elke technologie geschikt is voor elke patiënt, context of praktijkvoering",
+      "Omdat technologische oplossingen in de zorg altijd de goedkoopste optie zijn",
+      "Omdat het gebruik van zorgtechnologie geen ethische of privacygerelateerde risico's kent"
+    ],
+    "correctAnswer": 2,
+    "feedback": "Een kritische blik is nodig omdat de effectiviteit, toepasbaarheid en veiligheid van technologie kan variëren. Niet elke technologie past bij elke praktijk, patiënt of zorgdoel."
+  },
+  {
+    "id": "quiz_mc_10",
+    "title": "Hoofdstuk 4: Privacy & Veiligheid",
+    "text": "Welke vraag is cruciaal om te stellen met betrekking tot privacy en gegevensbeveiliging bij de overweging van een nieuwe zorg-app?",
+    "options": [
+      "Is de applicatie volledig gratis te downloaden en te gebruiken?",
+      "Hoe en waar worden patiëntgegevens opgeslagen, en worden deze gedeeld met externe partijen?",
+      "Kan de applicatie op alle merken smartphones en tablets geïnstalleerd worden?",
+      "Heeft de interface van de applicatie een modern en aantrekkelijk design?"
+    ],
+    "correctAnswer": 2,
+    "feedback": "Met het oog op de AVG en patiëntvertrouwen is het essentieel te weten hoe een app omgaat met dataopslag, -beveiliging en het eventueel delen van gegevens met derden."
+  },
+  {
+    "id": "quiz_mc_11",
+    "title": "Hoofdstuk 4: Kwaliteit van Zorg",
+    "text": "Wat is een potentieel nadeel als zorgtechnologie niet zorgvuldig wordt geïntegreerd in het zorgproces?",
+    "options": [
+      "Vermindering van de persoonlijke interactie en aandacht voor de patiënt",
+      "Gegarandeerd betere en snellere behandelresultaten ongeacht de implementatie",
+      "Volledige eliminatie van alle privacyrisico's door digitalisering",
+      "Een onvermijdelijke toename van de administratieve last voor de therapeut"
+    ],
+    "correctAnswer": 1,
+    "feedback": "Indien niet goed geïntegreerd, of als het menselijke aspect wordt verwaarloosd, kan technologie leiden tot minder persoonlijke aandacht, terwijl het doel juist is de zorg te ondersteunen en te verbeteren."
+  },
+  {
+    "id": "quiz_mc_12",
+    "title": "Hoofdstuk 5: Technology Acceptance Model (TAM)",
+    "text": "Welke factor wordt binnen het Technology Acceptance Model (TAM) beschouwd als een fundamentele determinant voor de intentie om een technologie te gebruiken?",
+    "options": [
+      "De esthetische kwaliteit van de technologie",
+      "De waargenomen nuttigheid (Perceived Usefulness)",
+      "De absolute kosten van de aanschaf",
+      "De populariteit van de technologie onder collega's"
+    ],
+    "correctAnswer": 2,
+    "feedback": "Volgens het TAM-model is de waargenomen nuttigheid (perceived usefulness) – de mate waarin men gelooft dat de technologie de prestaties verbetert – een cruciale determinant voor de intentie om technologie te gebruiken."
+  },
+  {
+    "id": "quiz_mc_13",
+    "title": "Hoofdstuk 5: Adoptieproces",
+    "text": "Welk element is GEEN kerncomponent van het Technology Acceptance Model (TAM) zelf, maar eerder een externe factor die invloed kan uitoefenen?",
+    "options": [
+      "Attitude ten opzichte van het gebruik (Attitude Toward Using)",
+      "Gedragsmatige intentie tot gebruik (Behavioral Intention to Use)",
+      "Feitelijk systeemgebruik (Actual System Use)",
+      "De aanschafprijs van de technologie"
+    ],
+    "correctAnswer": 4,
+    "feedback": "De prijs van technologie, hoewel invloedrijk, is een externe variabele en geen expliciete kerncomponent binnen de causale keten (Perceived Usefulness, Perceived Ease of Use, Attitude, Behavioral Intention, Actual System Use) van het TAM-model zelf."
+  },
+  {
+    "id": "quiz_mc_14",
+    "title": "Hoofdstuk 6: Betrouwbare Bronnen",
+    "text": "Welke van de genoemde bronnen in de cursus is specifiek gericht op het bieden van een onafhankelijke beoordeling van de betrouwbaarheid en veiligheid van gezondheidsapps?",
+    "options": [
+      "BeweegTech.nl",
+      "GGD AppStore",
+      "Zorginnovatie.nl",
+      "iXperium Health Catalogus"
+    ],
+    "correctAnswer": 2,
+    "feedback": "De GGD AppStore wordt in de cursus specifiek genoemd als een platform dat gezondheidsapps beoordeelt op criteria zoals betrouwbaarheid, veiligheid en gebruiksvriendelijkheid."
+  },
+  {
+    "id": "quiz_mc_15",
+    "title": "Hoofdstuk 6: Vinden van Zorgtechnologie",
+    "text": "Wat is een kenmerkend aanbod van de iXperium Health Catalogus, zoals beschreven in de cursus?",
+    "options": [
+      "Een database met uitsluitend apps voor medisch specialisten",
+      "Een uitleenservice voor zorgtechnologieën die studenten en docenten kunnen uitproberen",
+      "Een webshop voor het direct aankopen van medische hulpmiddelen",
+      "Een overzicht van internationale privacywetgeving voor zorgdata"
+    ],
+    "correctAnswer": 2,
+    "feedback": "De iXperium Health Catalogus biedt de mogelijkheid om diverse zorgtechnologieën te lenen en uit te proberen, primair gericht op onderwijs en onderzoek binnen de HAN."
+  },
+  {
+    "id": "quiz_mc_16",
+    "title": "Hoofdstuk 7: V-Competenties",
+    "text": "Welke van de volgende opties is GEEN van de vijf basis V-competenties die in de cursus worden genoemd voor zorgprofessionals die met technologie werken?",
+    "options": [
+      "Veranderen (Change)",
+      "Vinden (Find)",
+      "Vertrouwen (Trust)",
+      "Verdiepen (Deepen)"
+    ],
+    "correctAnswer": 4,
+    "feedback": "De vijf basis V-competenties zijn Vinden, Vertrouwen, Verbinden, Veranderen en Verantwoorden. 'Verdiepen' is geen onderdeel van deze specifieke set competenties."
+  },
+  {
+    "id": "quiz_mc_17",
+    "title": "Hoofdstuk 7: Ethische Reflectie",
+    "text": "Wat houdt ethische reflectie in bij de inzet van zorgtechnologie, volgens de cursus?",
+    "options": [
+      "Primair focussen op de kosteneffectiviteit van de technologische oplossing",
+      "Het afwegen van verschillende perspectieven en waarden, en handelen conform wet- en regelgeving en professionele codes",
+      "Het per definitie afwijzen van elke nieuwe technologische ontwikkeling in de zorg",
+      "Het uitsluitend selecteren van de technologisch meest geavanceerde en nieuwste opties"
+    ],
+    "correctAnswer": 2,
+    "feedback": "Ethische reflectie omvat het zorgvuldig afwegen van diverse belangen en perspectieven (patiënt, therapeut, maatschappij), en het handelen conform professionele standaarden en relevante wet- en regelgeving."
+  }
+]
