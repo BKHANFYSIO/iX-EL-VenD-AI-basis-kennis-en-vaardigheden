@@ -540,19 +540,31 @@ function renderGenericChapterContent(content, chapterNumber) {
             }
             // Specifieke rendering voor 'jouw_leerpad' (modules array & afsluiting)
             else if (key === 'jouw_leerpad' && Array.isArray(section.modules)) {
-                html += `<div class="modules-list">`;
-                section.modules.forEach(module => {
-                    html += `<div class="module-item info-card">`;
-                    html += `<h4>Module ${module.nummer}: ${module.naam}</h4>`;
-                    if (module.beschrijving) {
-                        html += `<p>${module.beschrijving.replace(/\n/g, '<br>')}</p>`;
-                    }
-                    html += `</div>`; // module-item
-                });
-                html += `</div>`; // modules-list
-                if (section.afsluiting) {
-                    html += `<p class="content-text">${section.afsluiting.replace(/\n/g, '<br>')}</p>`;
+                html += `<div class="info-card content-section-jouw_leerpad">`;
+                if (sectie.titel) {
+                    html += `<h3 class="info-card-title">${sectie.titel}</h3>`;
                 }
+                if (sectie.tekst) {
+                    html += `<div class="info-card-content"><p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
+                } else {
+                    html += `<div class="info-card-content">`;
+                }
+                if (Array.isArray(sectie.modules)) {
+                    html += `<div class="modules-list">`;
+                    sectie.modules.forEach(module => {
+                        html += `<div class="benefit-card">`;
+                        html += `<h3>${module.naam}</h3>`;
+                        if (module.beschrijving) {
+                            html += `<div class="benefit-content">${module.beschrijving.replace(/\n/g, '<br>')}</div>`;
+                        }
+                        html += `</div>`; // benefit-card
+                    });
+                    html += `</div>`; // modules-list
+                }
+                if (sectie.afsluiting) {
+                    html += `<p class="content-text">${sectie.afsluiting.replace(/\\n/g, '<br>')}</p>`;
+                }
+                html += `</div></div>`; // info-card-content & info-card
             }
             // Generieke rendering voor een 'punten' array (lijst van strings)
             else if (Array.isArray(section.punten)) {
@@ -689,45 +701,71 @@ function renderChapter1Content(content) {
         html += `</div>`;
     }
 
-    if (content.jouw_leerpad) {
-        const sectie = content.jouw_leerpad;
-        html += `<div class="content-section content-section-jouw_leerpad">`;
+    if (content.mag_ik_ai_gebruiken) {
+        const sectie = content.mag_ik_ai_gebruiken;
+        html += `<div class="content-section content-section-mag_ik_ai_gebruiken">`;
         if (sectie.titel) {
             html += `<h3 class="section-title">${sectie.titel}</h3>`;
         }
         if (sectie.tekst) {
+            html += `<p class="content-text">${sectie.tekst.replace(/\n/g, '<br>')}</p>`;
+        }
+        html += `</div>`;
+    }
+
+    if (content.jouw_leerpad) {
+        const sectie = content.jouw_leerpad;
+        html += `<div class="info-card">`; // Start info-card
+        if (sectie.titel) {
+            html += `<h3 class="info-card-title">${sectie.titel}</h3>`;
+        }
+        
+        html += `<div class="info-card-content">`; // Start info-card-content
+        
+        if (sectie.tekst) {
             html += `<p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
         }
         if (Array.isArray(sectie.modules)) {
-            html += `<div class="modules-list">`; // Deze class moet mogelijk gedefinieerd worden in CSS
+            html += `<div class="modules-list-stacked">`; // Gebruik de nieuwe gestapelde lijst
             sectie.modules.forEach(module => {
-                html += `<div class="module-item info-card">`;
-                html += `<h4>Module ${module.nummer}: ${module.naam}</h4>`;
+                html += `<div class="benefit-card">`;
+                html += `<h3>${module.naam}</h3>`;
                 if (module.beschrijving) {
-                    html += `<p>${module.beschrijving.replace(/\\n/g, '<br>')}</p>`;
+                    html += `<div class="benefit-content">${module.beschrijving.replace(/\n/g, '<br>')}</div>`;
                 }
-                html += `</div>`;
+                html += `</div>`; // benefit-card
             });
-            html += `</div>`;
+            html += `</div>`; // modules-list-stacked
         }
         if (sectie.afsluiting) {
             html += `<p class="content-text">${sectie.afsluiting.replace(/\\n/g, '<br>')}</p>`;
         }
-        html += `</div>`;
+        
+        html += `</div>`; // End info-card-content
+        html += `</div>`; // End info-card
     }
 
     if (content.portfolio_booster) {
         const sectie = content.portfolio_booster;
         html += `
-            <div class="info-card portfolio-booster-card">
-                <h4>${sectie.titel || 'Portfolio Booster'}</h4>
-                <p>${sectie.tekst ? sectie.tekst.replace(/\\n/g, '<br>') : ''}</p>
+            <div class="info-card white-bg portfolio-booster-card">
+                <h4 class="info-card-title">${sectie.titel || 'Portfolio Booster'}</h4>
+                <div class="info-card-content">
+                    <p>${sectie.tekst ? sectie.tekst.replace(/\\n/g, '<br>') : ''}</p>
+                </div>
             </div>
         `;
     }
 
     if (content.klaar_voor_start) {
-        html += `<div class="info-card encouragement-card"><p>${content.klaar_voor_start.tekst ? content.klaar_voor_start.tekst.replace(/\\n/g, '<br>') : ''}</p></div>`;
+        const sectie = content.klaar_voor_start;
+        html += `
+            <div class="info-card white-bg encouragement-card">
+                <div class="info-card-content">
+                     <p>${sectie.tekst ? sectie.tekst.replace(/\\n/g, '<br>') : ''}</p>
+                </div>
+            </div>
+        `;
     }
 
     return html;
@@ -736,36 +774,149 @@ function renderChapter1Content(content) {
 function renderChapter2Content(data) { // data is nu het volledige hoofdstuk object, niet data.content
     let html = '';
 
-    // De titel van het hoofdstuk wordt al in index.html gezet of door een algemene functie
-    // We focussen hier op het renderen van de secties.
+    // Introductie en leerdoelen
+    if (data.introductie) {
+        html += `
+            <div class="info-card">
+                <div class="info-card-content">
+                    <p>${data.introductie}</p>
+                </div>
+            </div>
+        `;
+    }
 
+    if (data.leerdoelen && Array.isArray(data.leerdoelen)) {
+        html += `
+            <div class="info-card">
+                <h3 class="info-card-title">Leerdoelen</h3>
+                <div class="info-card-content">
+                    <ul class="list-style-bullets">
+                        ${data.leerdoelen.map(doel => `<li>${doel}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    // De secties
     if (data.secties && Array.isArray(data.secties)) {
         data.secties.forEach(sectie => {
-            if (sectie.type === 'tekst') {
-                html += `
-                    <div class="info-card">
-                        ${sectie.titel ? `<h3 class=\"info-card-title\">${sectie.titel}</h3>` : ''}
-                        <div class="info-card-content">
-                            <p>${sectie.inhoud.replace(/\n/g, '<br>')}</p>
+            switch (sectie.type) {
+                case 'info-card':
+                    html += `
+                        <div class="info-card">
+                            ${sectie.titel ? `<h3 class="info-card-title">${sectie.titel}</h3>` : ''}
+                            <div class="info-card-content">
+                                <p>${sectie.inhoud.replace(/\n/g, '<br>')}</p>
+                            </div>
                         </div>
-                    </div>
-                `;
-            } else if (sectie.type === 'infokaart') {
-                html += `
-                    <div class="info-card">
-                        <h3 class="info-card-title">${sectie.titel}</h3>
-                        <div class="info-card-content">
-                `;
-                if (sectie.items && Array.isArray(sectie.items)) {
-                    html += '<ul class="list-style-bullets">'; // Gebruik een class voor styling als nodig
-                    sectie.items.forEach(item => {
-                        html += `<li><strong>${item.titel}:</strong> ${item.tekst}</li>`;
-                    });
-                    html += '</ul>';
-                }
-                html += '</div></div>';
+                    `;
+                    break;
+
+                case 'timeline':
+                    html += `
+                        <div class="timeline-container">
+                            <h3 class="timeline-title">${sectie.titel}</h3>
+                            <div class="timeline">
+                                ${sectie.items.map(item => `
+                                    <div class="timeline-item">
+                                        <div class="timeline-year">${item.jaar}</div>
+                                        <div class="timeline-content">
+                                            <h4>${item.titel}</h4>
+                                            <p>${item.beschrijving}</p>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                    break;
+
+                case 'table':
+                    html += `
+                        <div class="table-container">
+                            <h3 class="table-title">${sectie.titel}</h3>
+                            <table class="content-table">
+                                <thead>
+                                    <tr>
+                                        ${sectie.kolommen.map(kolom => `<th>${kolom}</th>`).join('')}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${sectie.rijen.map(rij => `
+                                        <tr>
+                                            ${rij.map(cel => `<td>${cel}</td>`).join('')}
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+                    break;
+
+                case 'video_grid_3_col':
+                    html += `
+                        <div class="content-section">
+                            <h3 class="section-title">${sectie.titel}</h3>
+                            <div class="video-grid-container video-grid-container-3-col">
+                                ${sectie.videos.map(video => `
+                                    <div>
+                                        <div class="video-wrapper">
+                                            <iframe src="${video.url}" title="${video.titel}" allowfullscreen></iframe>
+                                        </div>
+                                        <div class="video-grid-item-content">
+                                            <p><strong>${video.titel}</strong></p>
+                                            <p>${video.beschrijving}</p>
+                                            <p class="video-source">${video.bron}</p>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                    break;
+
+                case 'modules-list':
+                    html += `
+                        <div class="modules-list">
+                            <h3 class="modules-title">${sectie.titel}</h3>
+                            ${sectie.items.map(item => `
+                                <div class="benefit-card">
+                                    <h4>${item.titel}</h4>
+                                    <div class="benefit-content">
+                                        ${item.inhoud.replace(/\n/g, '<br>')}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    break;
+
+                case 'tech-showcase':
+                    html += `
+                        <div class="tech-showcase">
+                            <h3 class="showcase-title">${sectie.titel}</h3>
+                            <div class="showcase-grid">
+                                ${sectie.items.map(item => `
+                                    <div class="showcase-item">
+                                        <h4>${item.titel}</h4>
+                                        <p>${item.beschrijving}</p>
+                                        <div class="showcase-meta">
+                                            <span class="showcase-type">${item.type}</span>
+                                            <span class="showcase-source">${item.bron}</span>
+                                            <span class="showcase-duration">${item.duur}</span>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                    break;
+
+                default:
+                    console.warn(`Onbekend sectie type: ${sectie.type}`);
+                    break;
             }
-            // Voeg hier meer 'else if' blokken toe voor andere sectie types indien nodig
         });
     }
 

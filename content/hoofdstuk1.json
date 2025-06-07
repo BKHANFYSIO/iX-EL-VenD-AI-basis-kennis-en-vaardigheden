@@ -2,8 +2,8 @@
   "titel": "Introductie – AI: Jouw Toekomst, Jouw Kracht!",
   "content": {
     "welkom": {
-      "titel": "Hey toekomstige fysiotherapeut!",
-      "tekst": "Welkom bij de e-learning \"AI voor Fysiotherapiestudenten\"! Je staat aan het begin van een superinteressante ontdekkingsreis. Een reis die je klaarstoomt voor een toekomst waarin Kunstmatige Intelligentie (AI) een mega-belangrijke rol speelt in de zorg, en dus ook in jouw vakgebied: fysiotherapie. Misschien denk je nu aan sciencefictionfilms, maar AI is dichterbij dan je denkt en verandert nu al hoe we werken, leren en zorg verlenen."
+      "titel": "Hoi toekomstige fysiotherapeut!",
+      "tekst": "Welkom bij de e-learning \"AI basiskennis en vaardigheden\"! De eerste van drie elearnings over AI in de context van jouw studie. Je staat aan het begin van een superinteressante ontdekkingsreis. Een reis die je klaarstoomt voor een toekomst waarin Kunstmatige Intelligentie (AI) een mega-belangrijke rol speelt in de zorg, en dus ook in jouw vakgebied: fysiotherapie. Misschien denk je nu aan sciencefictionfilms, maar AI is dichterbij dan je denkt en verandert nu al hoe we werken, leren en zorg verlenen."
     },
     "stel_je_voor": {
       "titel": "Stel je eens voor…",
@@ -71,6 +71,10 @@
         }
       ]
     },
+    "mag_ik_ai_gebruiken": {
+      "titel": "Mag ik AI gebruiken? Ja, graag!",
+      "tekst": "Binnen onze opleiding moedigen we je aan om AI-tools te gebruiken als ondersteuning bij je leerproces. AI kan je helpen om efficiënter te leren, bijvoorbeeld door het genereren van ideeën, structureren van teksten of het verkrijgen van feedback. Maar om hier echt voordeel uit te halen, is het belangrijk dat je niet alleen AI-geletterd bent, maar ook leert hoe je effectief leert. Denk hierbij aan strategieën zoals actief ophalen van kennis (retrieval practice), gespreid leren (spaced repetition), jezelf toetsen, samenwerken met anderen en actief om feedback vragen. Pas als je deze strategieën bewust combineert met AI, ga je echt beter leren.\n\nAI speelt ook een steeds grotere rol in de fysiotherapiepraktijk. Door nu al ervaring op te doen met AI-tools, ben je beter voorbereid op de toekomst en vergroot je je kansen op de arbeidsmarkt.\n\nOnze toetsmethoden veranderen mee met de invloed die AI heeft op het onderwijs én het toekomstige beroep van fysiotherapeut: schriftelijke producten krijgen minder nadruk, omdat het moeilijker wordt om te bepalen of het werk authentiek is. Daarom zal je portfolio voldoende bewijs moeten bevatten van je eigen leerproces en ontwikkeling. We verwachten ook dat je in je portfolio en in gesprekken met docenten laat zien dat je AI-geletterd bent en dat je AI op een doordachte manier kunt inzetten in beroepssituaties.\n\nWe vragen je om altijd transparant te zijn over het gebruik van AI. Geef aan wanneer en hoe je AI hebt ingezet bij opdrachten. Dit bevordert eerlijkheid en helpt ons om je leerproces goed te begeleiden.\n\nAI is volop in ontwikkeling en beïnvloedt het onderwijs en het beroep van fysiotherapeut razendsnel. We weten nog niet precies hoe dit zich de komende jaren zal ontwikkelen. Daarom blijven we hierover met jou als student in gesprek, zodat we samen kunnen leren en waar nodig ons beleid kunnen bijstellen."
+    },
     "jouw_leerpad": {
       "titel": "Jouw Leerpad: Een Serie van Drie Modules",
       "tekst": "Deze e-learning is de eerste stap in een serie van drie, speciaal ontworpen om jou stap voor stap wegwijs te maken in de wereld van AI:",
@@ -91,7 +95,7 @@
           "beschrijving": "Hier duiken we dieper in de specifieke toepassingen van AI binnen de fysiotherapie. Van diagnostiek en behandeling tot revalidatie en preventie. Wat gebeurt er al en wat staat ons te wachten?"
         }
       ],
-      "afsluiting": "Onthoud: Effectief leren kost tijd. Begin klein, herhaal en bouw je kennis en vaardigheden stap voor stap op. Deze modules zijn ontworpen om je daarbij te helpen!"
+      "afsluiting": "Onthoud: AI leren toepassen en Effectief leren goed toepassen kost tijd. Begin klein, herhaal en bouw je kennis en vaardigheden stap voor stap op. Deze modules zijn ontworpen om je daarbij te helpen!"
     },
     "portfolio_booster": {
       "titel": "Wat levert dit jou op? Jouw Portfolio Booster! 🚀",
