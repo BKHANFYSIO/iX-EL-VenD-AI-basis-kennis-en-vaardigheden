@@ -824,6 +824,29 @@ document.addEventListener('DOMContentLoaded', async function() {
         clearBtn.addEventListener('click', clearAllProgress);
     }
 
+    // Showcase expand/collapse all
+    const expandAllBtn = document.getElementById('expandAllShowcase');
+    const collapseAllBtn = document.getElementById('collapseAllShowcase');
+    const showcaseCollapsibles = document.querySelectorAll('.style-guide > .collapsible-section > .collapsible');
+
+    if (expandAllBtn && collapseAllBtn && showcaseCollapsibles.length > 0) {
+        expandAllBtn.addEventListener('click', () => {
+            showcaseCollapsibles.forEach(collapsible => {
+                if (!collapsible.classList.contains('active')) {
+                    collapsible.click(); // Simulate a click to trigger the existing logic
+                }
+            });
+        });
+
+        collapseAllBtn.addEventListener('click', () => {
+            showcaseCollapsibles.forEach(collapsible => {
+                if (collapsible.classList.contains('active')) {
+                    collapsible.click(); // Simulate a click to trigger the existing logic
+                }
+            });
+        });
+    }
+
     // Voer migratie uit voordat andere initialisatie
     await migrateOldIdsToNewFormat();
 });
@@ -1010,7 +1033,7 @@ async function generatePDF() {
     // Verwijder alle eerdere setFillColor('#F8F6FF') en rect(0, 0, pageWidth, pageHeight, 'F') voor andere pagina's
 
     // Logo's
-    const hanLogo = 'images/Logo-han-hogeschool-van-arnhem-en-nijmegen.jpg';
+    const hanLogo = 'images/Blijvende_afb/HAN_logo1a.png';
     const ixLogo = config.logo;
     // Helper voor aspect ratio
     async function addImageToDoc(imgPath, x, y, maxW, maxH, alignCenter = false) {

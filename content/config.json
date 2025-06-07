@@ -1,5 +1,5 @@
 {
-  "titel": "AI basis kennis en vaardigheden",
+  "titel": "AI basiskennis en vaardigheden",
   "leerdoelen": [
     "Verklaar in eigen woorden wat AI is en hoe het leert uit data.",
     "Benoem en pas kernbegrippen toe: LLM, context window, token, prompt, AGI, agent, custom instruction, GPT/project/Gem, inferentie, hallucineren, bias.",
@@ -8,12 +8,17 @@
     "Reflecteer op de invloed van AI op jouw studie, beroep en de samenleving.",
     "Pas basisprincipes van vibe-coding toe om een kleine AI-tool te maken."
   ],
-  "organisatie": "iXperium Health / HAN University of Applied Sciences / Opleiding Fysiotherapie",
-  "logo": "images/logo-health-transparant1.png",
+  "hoofdstukken": [
+    "hoofdstuk1.json",
+    "hoofdstuk2.json",
+    "hoofdstuk_afsluiting.json"
+  ],
+  "organisatie": "iXperium Health",
+  "logo": "images/Blijvende_afb/logo-health-transparant1.png",
   "metadata": {
     "versie": "1.0.0",
     "laatsteUpdate": "2024-03-20",
-    "auteur": "Bastiaan Koekoek",
+    "auteur": "iXperium Health",
     "taal": "nl"
   },
   "stijl": {

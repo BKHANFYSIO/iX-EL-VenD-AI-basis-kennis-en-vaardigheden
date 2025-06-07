@@ -614,7 +614,7 @@ function renderChapter1Content(content) {
     if (content.welkom) {
         html += `
             <div class="info-card welcome-card">
-                <h4>${content.welkom.titel || 'Welkom'}</h4>
+                <h4 class="info-card-title">${content.welkom.titel || 'Welkom'}</h4>
                 <p>${content.welkom.tekst ? content.welkom.tekst.replace(/\\n/g, '<br>') : ''}</p>
             </div>
         `;
@@ -771,54 +771,28 @@ function renderChapter1Content(content) {
     return html;
 }
 
-function renderChapter2Content(data) { // data is nu het volledige hoofdstuk object, niet data.content
+function renderChapter2Content(data) {
     let html = '';
 
-    // Introductie en leerdoelen
-    if (data.introductie) {
-        html += `
-            <div class="info-card">
-                <div class="info-card-content">
-                    <p>${data.introductie}</p>
-                </div>
-            </div>
-        `;
-    }
-
-    if (data.leerdoelen && Array.isArray(data.leerdoelen)) {
-        html += `
-            <div class="info-card">
-                <h3 class="info-card-title">Leerdoelen</h3>
-                <div class="info-card-content">
-                    <ul class="list-style-bullets">
-                        ${data.leerdoelen.map(doel => `<li>${doel}</li>`).join('')}
-                    </ul>
-                </div>
-            </div>
-        `;
-    }
-
-    // De secties
-    if (data.secties && Array.isArray(data.secties)) {
-        data.secties.forEach(sectie => {
-            switch (sectie.type) {
+    if (data.content) {
+        Object.values(data.content).forEach(block => {
+            switch (block.type) {
                 case 'info-card':
                     html += `
                         <div class="info-card">
-                            ${sectie.titel ? `<h3 class="info-card-title">${sectie.titel}</h3>` : ''}
+                            <h4 class="info-card-title">${block.titel}</h4>
                             <div class="info-card-content">
-                                <p>${sectie.inhoud.replace(/\n/g, '<br>')}</p>
+                                ${block.inhoud.replace(/\n/g, '<br>')}
                             </div>
                         </div>
                     `;
                     break;
-
                 case 'timeline':
                     html += `
                         <div class="timeline-container">
-                            <h3 class="timeline-title">${sectie.titel}</h3>
+                            <h3 class="timeline-title">${block.titel}</h3>
                             <div class="timeline">
-                                ${sectie.items.map(item => `
+                                ${block.items.map(item => `
                                     <div class="timeline-item">
                                         <div class="timeline-year">${item.jaar}</div>
                                         <div class="timeline-content">
@@ -831,80 +805,16 @@ function renderChapter2Content(data) { // data is nu het volledige hoofdstuk obj
                         </div>
                     `;
                     break;
-
-                case 'table':
-                    html += `
-                        <div class="table-container">
-                            <h3 class="table-title">${sectie.titel}</h3>
-                            <table class="content-table">
-                                <thead>
-                                    <tr>
-                                        ${sectie.kolommen.map(kolom => `<th>${kolom}</th>`).join('')}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    ${sectie.rijen.map(rij => `
-                                        <tr>
-                                            ${rij.map(cel => `<td>${cel}</td>`).join('')}
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-                        </div>
-                    `;
-                    break;
-
-                case 'video_grid_3_col':
-                    html += `
-                        <div class="content-section">
-                            <h3 class="section-title">${sectie.titel}</h3>
-                            <div class="video-grid-container video-grid-container-3-col">
-                                ${sectie.videos.map(video => `
-                                    <div>
-                                        <div class="video-wrapper">
-                                            <iframe src="${video.url}" title="${video.titel}" allowfullscreen></iframe>
-                                        </div>
-                                        <div class="video-grid-item-content">
-                                            <p><strong>${video.titel}</strong></p>
-                                            <p>${video.beschrijving}</p>
-                                            <p class="video-source">${video.bron}</p>
-                                        </div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                    break;
-
                 case 'modules-list':
                     html += `
                         <div class="modules-list">
-                            <h3 class="modules-title">${sectie.titel}</h3>
-                            ${sectie.items.map(item => `
-                                <div class="benefit-card">
-                                    <h4>${item.titel}</h4>
-                                    <div class="benefit-content">
-                                        ${item.inhoud.replace(/\n/g, '<br>')}
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    `;
-                    break;
-
-                case 'tech-showcase':
-                    html += `
-                        <div class="tech-showcase">
-                            <h3 class="showcase-title">${sectie.titel}</h3>
-                            <div class="showcase-grid">
-                                ${sectie.items.map(item => `
-                                    <div class="showcase-item">
+                            <h3 class="modules-list-title">${block.titel}</h3>
+                            <div class="modules-grid">
+                                ${block.items.map(item => `
+                                    <div class="module-card">
                                         <h4>${item.titel}</h4>
-                                        <p>${item.beschrijving}</p>
-                                        <div class="showcase-meta">
-                                            <span class="showcase-type">${item.type}</span>
-                                            <span class="showcase-source">${item.bron}</span>
-                                            <span class="showcase-duration">${item.duur}</span>
+                                        <div class="module-content">
+                                            ${item.inhoud.replace(/\n/g, '<br>')}
                                         </div>
                                     </div>
                                 `).join('')}
@@ -912,9 +822,49 @@ function renderChapter2Content(data) { // data is nu het volledige hoofdstuk obj
                         </div>
                     `;
                     break;
-
+                case 'tech-showcase':
+                    html += `
+                        <h3 class="section-title">${block.titel}</h3>
+                        <div class="video-grid-container video-grid-container-3-col">
+                            ${block.items.map(item => {
+                                // Zet YouTube-link om naar embed-link
+                                let embedUrl = '';
+                                if (item.link && item.link.includes('youtu')) {
+                                    const match = item.link.match(/(?:youtu.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
+                                    if (match && match[1]) {
+                                        embedUrl = `https://www.youtube.com/embed/${match[1]}`;
+                                    }
+                                }
+                                return `
+                                    <div class="video-grid-item">
+                                        ${embedUrl ? `<div class='video-wrapper'><iframe src='${embedUrl}' title='${item.titel}' allowfullscreen></iframe></div>` : ''}
+                                        <p class="video-title">${item.titel}</p>
+                                        <p>${item.beschrijving}</p>
+                                        <div class="video-meta">${item.bron} | ${item.duur}</div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    `;
+                    break;
+                case 'custom-block':
+                    html += `
+                        <h3 class="section-title">${block.titel}</h3>
+                        <div class="info-card">
+                            <div class="info-card-content">
+                                ${block.inhoud.replace(/\n/g, '<br>')}
+                            </div>
+                        </div>
+                    `;
+                    break;
                 default:
-                    console.warn(`Onbekend sectie type: ${sectie.type}`);
+                    // Standaard rendering voor blokken zonder type (zoals definitie)
+                    if (block.titel && block.tekst) {
+                        html += `
+                            <h3 class="section-title">${block.titel}</h3>
+                            <p class="content-text">${block.tekst.replace(/\n/g, '<br>')}</p>
+                        `;
+                    }
                     break;
             }
         });
@@ -1669,5 +1619,7 @@ window.markCardAnswer = function(interactieId, cardIndex, isCorrect) {
 //       card.classList.toggle('flipped');
 //     }
 //   });
+//   window._flashcardFlipHandlerAdded = true;
+// } 
 //   window._flashcardFlipHandlerAdded = true;
 // } 

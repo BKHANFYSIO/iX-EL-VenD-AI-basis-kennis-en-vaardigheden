@@ -121,6 +121,40 @@ Voor de "Stel je eens voor..." scenario's in Hoofdstuk 1 is een specifieke layou
   - `.scenario-container-horizontal` gebruikt Flexbox om de kaarten naast elkaar te plaatsen en te laten "wrappen" op kleinere schermen.
   - `.scenario-card` erft basisstijlen van `.info-card` en voegt specifieke flex-eigenschappen en typografie toe.
 
+#### Gestandaardiseerde Technologie/Platform Kaart (`tech-showcase`)
+Om een consistente weergave van externe technologieën, platformen of tools te garanderen, is het gestandaardiseerde `tech-showcase` component geïntroduceerd. Dit component vervangt alle voorgaande, inconsistente varianten zoals `platform-card` en `resource-card`.
+
+- **HTML Structuur:**
+  - Container: `<div class="tech-showcase">`
+  - Item: `<div class="tech-item">` (voor elke tool/platform)
+    - Logo: `<div class="tech-logo"><img ...></div>`
+    - Beschrijving: `<div class="tech-description"><h3>Titel</h3><p>...</p><a class="tech-link">...</a></div>`
+    - Media: `<div class="tech-media">...</div>` (voor een video-embed of afbeelding)
+
+- **Styling (`css/styles.css`):**
+  - Gebruikt CSS Grid (`display: grid`) voor een responsive layout van de items.
+  - Zorgt voor een uniforme uitlijning en styling, ongeacht of er een logo of media aanwezig is.
+
+#### Video Componenten
+Voor het embedden van video's zijn er specifieke, responsive componenten beschikbaar.
+
+- **HTML Structuur (Basis):**
+  - Wrapper: `<div class="video-wrapper">` (Deze zorgt voor de juiste 16:9 aspect ratio)
+    - Iframe: `<iframe src="..."></iframe>`
+  - Optionele titel: `<p class="video-title">...</p>`
+
+- **Layouts:**
+  1.  **Volledige Breedte**:
+      - Container: `<div class="video-container-full-width">`
+      - Bevat één `video-wrapper`.
+  2.  **Grid (2 of 3 kolommen)**:
+      - Container: `<div class="video-grid-container video-grid-container-2-col">` (of `-3-col`).
+      - Bevat meerdere `div`'s, die elk een `video-wrapper` en optionele `video-title` bevatten.
+
+- **Styling (`css/styles.css`):**
+  - `.video-wrapper` gebruikt de "padding-top" truc (`padding-top: 56.25%`) om de 16:9 verhouding te behouden.
+  - `.video-grid-container` gebruikt CSS Grid (`display: grid`) met `auto-fit` en `minmax()` voor een volledig responsive gedrag. De kolommen vallen automatisch terug naar een enkele kolom op smalle schermen.
+
 ## Clonen voor ander thema
 Bij het aanpassen voor een ander thema:
 1. Behoud de bestandsstructuur

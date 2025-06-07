@@ -11,14 +11,14 @@
       "catalogi": [
         {
           "titel": "iXperium Health Catalogus",
-          "logo": "images/logo-health-transparant1.png",
+          "logo": "images/Blijvende_afb/logo-health-transparant1.png",
           "beschrijving": "Onze catalogus: Zoek, kom langs of reserveer en probeer zorgtechnologie zelf uit! Alle technologie in deze catalogus is beschikbaar voor studenten en docenten van de HAN.",
           "qr_code": "images/QR_IX_Catalogus.png",
           "link": "https://catalogus-ixperium-health.glide.page"
         },
         {
           "titel": "iXperium Makerspace Catalogus",
-          "logo": "images/logo-health-transparant1.png",
+          "logo": "images/Blijvende_afb/logo-health-transparant1.png",
           "beschrijving": "Onze Makerspace catalogus: Specifiek gericht op 3D printen en lasersnijden. Ontdek de mogelijkheden voor het maken van gepersonaliseerde hulpmiddelen.",
           "qr_code": "images/QR_IX_Makerspace_catalogus.png",
           "link": "https://ixperiumhealth-makerspace.glide.page"
@@ -53,7 +53,8 @@
           "link": "https://www.zorgvannu.nl/"
         }
       ]
-    }
+    },
+    "tech_showcase": null
   },
   "interacties": [
     {

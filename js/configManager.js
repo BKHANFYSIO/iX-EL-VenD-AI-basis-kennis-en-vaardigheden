@@ -18,7 +18,7 @@ class ConfigManager {
                 titel: "Zorgtechnologie in de Fysiotherapie: Een Introductie",
                 leerdoelen: [],
                 organisatie: "iXperium Health",
-                logo: "images/logo-health-transparant1.png",
+                logo: "images/Blijvende_afb/logo-health-transparant1.png",
                 metadata: {
                     versie: "1.0.0",
                     laatsteUpdate: "2024-03-20",

@@ -94,6 +94,15 @@ Bij het wijzigen van het aantal hoofdstukken:
 - Laatste hoofdstuk: Laadt altijd `content/hoofdstuk_afsluiting.json`
 - Check gebeurt via: `if (chapterNumber === totalSections)` in `dynamicContent.js`
 
+#### Render-volgorde van Hoofdstukinhoud
+De weergave van de inhoud van een hoofdstuk wordt afgehandeld door functies in `js/dynamicContent.js`. De logica is als volgt:
+1.  **Specifieke Renderer**: Het script zoekt eerst naar een specifieke render-functie voor het betreffende hoofdstuk, genaamd `renderChapter<X>Content` (bijvoorbeeld `renderChapter1Content` voor hoofdstuk 1, `renderChapter2Content` voor hoofdstuk 2, enz.).
+2.  **Generieke Renderer**: Als er geen specifieke render-functie voor dat hoofdstuknummer bestaat, valt het script terug op de algemene functie `renderGenericChapterContent`.
+
+**Belangrijk**: Als je de weergave van een specifiek hoofdstuk wilt aanpassen en er bestaat al een `renderChapter<X>Content` functie voor (zoals `renderChapter1Content`), dan moeten aanpassingen in *die* specifieke functie gedaan worden. Wijzigingen in `renderGenericChapterContent` zullen in dat geval géén effect hebben op dat specifieke hoofdstuk, tenzij de specifieke render-functie zelf de generieke functie aanroept (zoals nu het geval is voor `renderChapter1Content` na recente aanpassingen).
+
+Voor het afsluitende hoofdstuk wordt altijd de functie `renderAfsluitingContent` gebruikt (voorheen `renderChapter8Content`).
+
 ### Speciale behandeling laatste hoofdstuk
 - Gebruikt `renderChapter8Content()` functie (ongeacht het werkelijke nummer)
 - Laadt ook `afsluitquiz.json` voor de eindtoets
@@ -339,7 +348,17 @@ De e-learning is nu volledig flexibel opgezet zonder hardcoded hoofdstuknummers:
 
 ## 10. Styling en Layout
 
-De styling van de e-learning is gecentraliseerd in `css/styles.css` en gebruikt CSS variabelen voor consistentie. Bij het klonen of aanpassen van de e-learning is het belangrijk om de volgende styling-aspecten te begrijpen:
+**Algemene richtlijn voor styling:**
+
+Gebruik altijd de bestaande CSS-classes uit `styles.css` voor álle contentblokken, interactieve elementen en layout in de e-learning. Dit geldt voor:
+- Hoofdstukken (`.section`)
+- Titels (`.section-title`)
+- Informatieblokken (`.info-card`)
+- Interactieve elementen (`.interactive-block`)
+- Voordelen/modules (`.benefit-card` en `.modules-list`)
+- En alle andere standaard componenten
+
+De spacing, kleuren en layout zijn centraal geregeld in de CSS. Voeg dus géén eigen marges, paddings of afwijkende styling toe aan losse elementen. Door de juiste classes te gebruiken, blijft de uitstraling overal consistent en onderhoudbaar.
 
 ### Kleurenschema
 De belangrijkste kleuren zijn gedefinieerd als CSS variabelen:
@@ -416,6 +435,32 @@ De sidebar wordt automatisch een hamburger menu op mobiel.
 - Test de styling op verschillende schermgroottes
 - Behoud de bestaande kleurstructuur
 - Gebruik de juiste HTML structuur voor nieuwe elementen
+
+### Herbruikbare componenten: Benefit Cards en modules-list
+
+Voor het tonen van een reeks modules of voordelen in een hoofdstuk gebruik je altijd de volgende structuur:
+
+- Gebruik `<div class="modules-list">` als container voor de kaarten.
+- Elke kaart krijgt `<div class="benefit-card">` als class.
+- De spacing tussen de kaarten wordt automatisch geregeld via de CSS (Flexbox + gap).
+- Voeg geen extra marges toe aan de kaarten zelf; de CSS regelt dit centraal.
+
+**Voorbeeld:**
+```html
+<div class="modules-list">
+  <div class="benefit-card">
+    <h3>Module 1</h3>
+    <div class="benefit-content">Beschrijving...</div>
+  </div>
+  <div class="benefit-card">
+    <h3>Module 2</h3>
+    <div class="benefit-content">Beschrijving...</div>
+  </div>
+</div>
+```
+
+**Let op:**
+Gebruik altijd de bestaande classes uit `styles.css` voor alle standaard componenten (zoals `.info-card`, `.interactive-block`, `.section`, etc.) voor een uniforme uitstraling.
 
 ## 11. Samengestelde contentblokken toevoegen (zoals contactinformatie of locaties)
 
@@ -992,3 +1037,32 @@ De zoekfunctionaliteit laadt het configuratiebestand asynchroon bij het opstarte
 3. **Veilig**: Fallback mechanisme voorkomt crashes
 4. **Flexibel**: Makkelijk uit te breiden voor nieuwe projecten
 5. **Gedeeld**: Configuratie staat bij de content, niet in de code
+
+### Layout & Structuur - Hoofdstukopbouw
+
+De standaard layout voor hoofdstukken is zoals in Hoofdstuk 1: alle content (zoals info-cards, scenario's, tabellen, etc.) komt direct in de hoofdcontainer of in een brede `.content-block`. Hierdoor loopt de content verder door naar links en rechts en is deze breder dan wanneer je `<section class="section">` gebruikt.
+
+Gebruik `<section class="section">` **alleen** als je bewust een smallere, gecentreerde layout wilt voor een bepaald onderdeel.
+
+**Voorbeeld standaard layout (zoals H1):**
+```html
+<div class="content-block">
+  <div class="info-card">...</div>
+  <div class="info-card">...</div>
+  <!-- etc. -->
+</div>
+```
+
+**Voorbeeld smallere sectie:**
+```html
+<section class="section">
+  <h2 class="section-title">Titel van de sectie</h2>
+  <div class="section-content">
+    <!-- Inhoud -->
+  </div>
+</section>
+```
+
+**Let op:**
+- Gebruik de standaard layout voor alle hoofdcontent van een hoofdstuk.
+- Gebruik `<section class="section">` alleen voor onderdelen die extra focus of een smallere opmaak nodig hebben.

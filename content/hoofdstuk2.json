@@ -1,46 +1,86 @@
 {
   "titel": "Hoofdstuk 2: Wat is AI eigenlijk?",
-  "secties": [
-    {
-      "type": "tekst",
-      "inhoud": "Je hoort de term 'Artificiële Intelligentie' (AI) overal, maar wat betekent het nu echt? Simpel gezegd is AI het vermogen van computersystemen om taken uit te voeren die normaal menselijke intelligentie vereisen. Denk aan leren, redeneren, problemen oplossen, taal begrijpen en visuele waarneming. Het is alsof we machines leren denken en beslissingen nemen, een beetje zoals wij dat doen."
+  "content": {
+    "intro": {
+      "type": "info-card",
+      "titel": "Welkom bij het tweede hoofdstuk!",
+      "inhoud": "In hoofdstuk 1 heb je een eerste indruk gekregen van de AI-tools die relevant zijn voor jouw vak. Maar voordat we dieper duiken in welke tools je het beste kunt kiezen, is het essentieel om een stevige basis te leggen. Want wat is die mysterieuze 'AI' nu eigenlijk precies? Je gebruikt het waarschijnlijk vaker dan je denkt, bijvoorbeeld als Spotify een playlist voor je samenstelt of je telefoon je gezicht herkent."
     },
-    {
-      "type": "tekst",
-      "titel": "Een duik in het verleden en de motor achter AI",
-      "inhoud": "AI is geen nieuw concept; de droom van denkende machines bestaat al decennia! Vroege ideeën ontstonden al in de jaren '50. Echter, de echte doorbraken kwamen later, vooral dankzij twee krachtige motoren: **Machine Learning (ML)** en **Deep Learning (DL)**.\n\nStel je voor dat je een kind leert een kat van een hond te onderscheiden. Je laat het vele voorbeelden zien. Machine Learning werkt vergelijkbaar: systemen leren van grote hoeveelheden data (voorbeelden) om patronen te herkennen en voorspellingen te doen, zonder expliciet voor elke situatie geprogrammeerd te zijn. Het systeem 'traint' zichzelf als het ware.\n\nDeep Learning gaat nog een stap verder en is een gespecialiseerde vorm van ML. Het maakt gebruik van complexe structuren, zogenaamde neurale netwerken, die geïnspireerd zijn op de werking van het menselijk brein. Deze netwerken bestaan uit vele lagen die informatie verwerken, waardoor ze zeer complexe patronen kunnen herkennen, bijvoorbeeld in beeld-, geluids- of medische data. Dit is de technologie achter veel geavanceerde AI-toepassingen die we vandaag zien."
+    "definitie": {
+      "titel": "Wat is AI? (Definitie en Relevantie)",
+      "tekst": "Laten we beginnen met een eenvoudige en praktische definitie die je kunt onthouden.\n\n<strong>Werkdefinitie:</strong> Kunstmatige intelligentie (AI) is technologie waarmee computers menselijk leren, redeneren en beslissen kunnen nabootsen.\n\nSimpel gezegd proberen we met AI machines 'slim' te maken, zodat ze ons kunnen helpen met complexe taken. In plaats van dat een programmeur elke regel of handeling vooraf programmeert, kan een AI-systeem zelf leren van grote hoeveelheden data (gegevens) en op basis daarvan patronen herkennen of beslissingen nemen."
     },
-    {
-      "type": "infokaart",
-      "titel": "AI in Actie: Voorbeelden uit Jouw Wereld",
+    "relevantie": {
+      "type": "info-card",
+      "titel": "Waarom is dit relevant voor jou als fysiotherapeut?",
+      "inhoud": "AI is geen verre toekomstmuziek meer; het wordt nu al ingezet om de zorg te verbeteren. Het is belangrijk om te benadrukken dat AI een <strong>hulpmiddel</strong> is dat jou ondersteunt en je capaciteiten vergroot, niet vervangt. Jouw menselijke expertise, empathie en klinische redenering blijven essentieel. Denk concreet aan AI die helpt bij:\n\n* <strong>Efficiëntere verslaglegging:</strong> AI kan een opgenomen intakegesprek automatisch omzetten in een gestructureerd verslag. Hierdoor houd jij meer tijd over voor de patiënt.\n* <strong>Nauwkeurige bewegingsanalyse:</strong> Apps die via de camera van een smartphone of tablet de houding of een beweging analyseren. De AI \"ziet\" bijvoorbeeld een afwijking in de kniebuiging tijdens een squat en kan dit objectief meten.\n* <strong>E-health triage:</strong> Slimme chatbots die op basis van vragen de urgentie van klachten inschatten en een patiënt adviseren om zelfzorg toe te passen of een afspraak te maken."
+    },
+    "geschiedenis": {
+      "type": "timeline",
+      "titel": "Een sneltrein door de AI-geschiedenis",
+      "items": [
+        { "jaar": "1950", "titel": "De Turingtest", "beschrijving": "De Britse wiskundige Alan Turing stelde de eerste formele test voor om te meten of een machine intelligent gedrag kon vertonen dat niet van een mens te onderscheiden is." },
+        { "jaar": "1956", "titel": "De Dartmouth Conferentie", "beschrijving": "Tijdens deze conferentie werd de term \"Artificial Intelligence\" officieel geboren. Dit markeerde het begin van AI als academisch vakgebied." },
+        { "jaar": "1980-1990", "titel": "De AI-winter", "beschrijving": "Na hooggespannen verwachtingen volgde een periode van teleurstelling. De technologie was nog niet krachtig genoeg, waardoor de financiering en het vertrouwen afnamen." },
+        { "jaar": "2012", "titel": "Doorbraak van Deep Learning", "beschrijving": "Dankzij krachtigere computers en enorme datasets konden AI-systemen ineens beelden (zoals op de ImageNet-database) beter herkennen dan mensen. Dit was het begin van de huidige AI-revolutie." },
+        { "jaar": "2022", "titel": "Doorbraak van Grote Taalmodellen (LLM's)", "beschrijving": "Met de lancering van ChatGPT werd AI die mensachtige tekst kan genereren toegankelijk voor het grote publiek." },
+        { "jaar": "2024", "titel": "Opkomst van Multimodale AI & Agents", "beschrijving": "De nieuwste AI-systemen kunnen meerdere soorten input (tekst, beeld, geluid) combineren en autonoom handelen om een doel te bereiken." }
+      ]
+    },
+    "leren": {
+      "type": "info-card",
+      "titel": "Hoe leert AI?",
+      "inhoud": "Een van de meest fascinerende aspecten van AI is het vermogen om te leren. Dit gebeurt voornamelijk via *Machine Learning* en de geavanceerdere vorm *Deep Learning*.\n\n<strong>Machine Learning (ML)</strong>\nDit is een techniek waarbij algoritmes zichzelf verbeteren door te leren van voorbeelden uit data, zonder dat elke stap expliciet is geprogrammeerd.\n\n<strong>Analogie uit de fysiotherapie: Spierversterking</strong>\nVergelijk Machine Learning met spiertraining. Net zoals je spieren sterker worden door herhaalde training, wordt een ML-model \"slimmer\" en nauwkeuriger door het te trainen met heel veel data.\n\n<strong>Deep Learning (DL)</strong>\nDit is een specifieke, geavanceerde vorm van ML die gebruikmaakt van gelaagde *neurale netwerken*, losjes geïnspireerd op de werking van het menselijk brein. Door de vele lagen kan het systeem zeer complexe patronen herkennen, bijvoorbeeld in beeld of geluid.\n\n<strong>Analogie uit de fysiotherapie: Het zenuwstelsel</strong>\nDenk aan ons zenuwstelsel. Simpele reflexen worden op een lager niveau verwerkt (ruggenmerg), terwijl complexe beslissingen in de hersenschors plaatsvinden. Een 'diep' neuraal netwerk werkt ook met lagen die informatie verwerken, van simpel naar steeds complexer."
+    },
+    "praktijkvoorbeelden": {
+      "type": "modules-list",
+      "titel": "AI in de Praktijk: Een kaartenbox met voorbeelden",
+      "items": [
+        { "titel": "Kaart 1: ZIEN (Visuele AI)", "inhoud": "<strong>Toepassing:</strong> Houdingsanalyse-apps (bijv. PostureScreen)\n\n<strong>Hoe het werkt:</strong> Deze apps gebruiken de camera van een telefoon of tablet. De AI is getraind om het menselijk lichaam te herkennen en kan objectief gewrichtshoeken meten, asymmetrie signaleren of afwijkingen in de houding kwantificeren.\n\n<strong>Voordeel:</strong> Biedt snelle, objectieve metingen en visualisaties die je kunt gebruiken voor analyse en patiënteducatie." },
+        { "titel": "Kaart 2: HOREN (Audio AI)", "inhoud": "<strong>Toepassing:</strong> Automatische transcriptie voor verslaglegging (bijv. Fysio.AI, Otter.ai)\n\n<strong>Hoe het werkt:</strong> De AI zet een opgenomen gesprek tussen therapeut en patiënt om in tekst (spraakherkenning) en kan zelfs een samenvatting maken voor het EPD (Natural Language Processing).\n\n<strong>Voordeel:</strong> Bespaart aanzienlijk veel tijd bij administratieve taken, waardoor je meer aandacht hebt voor de patiënt." },
+        { "titel": "Kaart 3: BEWEGEN (Bewegings-AI)", "inhoud": "<strong>Toepassing:</strong> Wearables en activiteitentrackers (bijv. Apple Watch, Fitbit)\n\n<strong>Hoe het werkt:</strong> Sensoren in de wearable (zoals een versnellingsmeter) meten continu bewegingsdata. De AI analyseert deze datapatronen en herkent of je wandelt, fietst of slaapt, en kan zelfs een val detecteren.\n\n<strong>Voordeel:</strong> Geeft objectieve feedback over het activiteitenniveau en de voortgang van een patiënt, ook buiten de kliniek." },
+        { "titel": "Kaart 4: DENKEN (Cognitieve AI)", "inhoud": "<strong>Toepassing:</strong> Gepersonaliseerde oefenprogramma's (bijv. in apps als Physitrack)\n\n<strong>Hoe het werkt:</strong> Een AI-systeem kan leren welke oefeningen het meest effectief zijn voor specifieke klachtenbeelden door patronen te herkennen in grote datasets met patiënt- en behandelgegevens.\n\n<strong>Voordeel:</strong> Helpt bij het creëren van behandelplannen die beter zijn afgestemd op de individuele patiënt, wat kan leiden tot effectievere behandelingen en betere resultaten." }
+      ]
+    },
+    "bronnen": {
+      "type": "tech-showcase",
+      "titel": "Verder kijken (optionele bronnen)",
       "items": [
         {
-          "titel": "Snapchat/Instagram Filters",
-          "tekst": "Die grappige filters die je gezicht veranderen? AI herkent gezichtskenmerken en past het beeld in real-time aan."
+          "titel": "Het Klokhuis - Wat is artificiële intelligentie?",
+          "beschrijving": "Wat is artificiële intelligentie? Klokhuis legt het uit met herkenbare voorbeelden uit het dagelijks leven. Toegankelijke video voor jong en oud.",
+          "type": "video",
+          "bron": "NTR",
+          "duur": "15 min",
+          "link": "https://youtu.be/xHcv99wuUwA?si=wXamfNMi0tvf7fvV"
         },
         {
-          "titel": "Spotify/Netflix Aanbevelingen",
-          "tekst": "Dat Spotify of Netflix precies lijkt te weten wat je hierna wilt horen of zien? AI analyseert jouw kijk- en luistergedrag en vergelijkt dit met miljoenen anderen om persoonlijke suggesties te doen."
+          "titel": "What is Artificial Intelligence? (Simplilearn)",
+          "beschrijving": "Deze korte video geeft een heldere introductie in de basis van kunstmatige intelligentie en de belangrijkste concepten. In 5 minuten begrijp je de essentie van AI en hoe het ons dagelijks leven beïnvloedt.",
+          "type": "video",
+          "bron": "Simplilearn",
+          "duur": "4:40 min",
+          "link": "https://youtu.be/uMzUB89uSxU?si=AaLFg4OjL-rR35Zt"
         },
         {
-          "titel": "Slimme Wearables in de Zorg",
-          "tekst": "Denk aan een fysiotherapie-wearable die niet alleen je bewegingen telt, maar ook de kwaliteit van revalidatieoefeningen analyseert en direct feedback geeft. Dat is AI die bewegingspatronen leert en interpreteert om de zorg te verbeteren."
-        },
-        {
-          "titel": "Navigatie-apps (Google Maps/Waze)",
-          "tekst": "Hoe weet Google Maps de snelste route, rekening houdend met files? AI analyseert live verkeersdata en historische patronen om de optimale weg te voorspellen."
+          "titel": "Wat is AI? Clipphanger",
+          "beschrijving": "Een ultrakorte animatie die in eenvoudige taal uitlegt wat AI is en hoe je het dagelijks tegenkomt.",
+          "type": "video",
+          "bron": "NTR/Schooltv",
+          "duur": "1,5 min",
+          "link": "https://youtu.be/LjgtORzV4js?si=OZxprFbdsAj49-uL"
         }
       ]
     }
-  ],
+  },
   "interacties": [
     {
       "id": "h2_reflection_1",
       "type": "reflection",
-      "vraag": "AI is overal om ons heen! Noem twee apps die jij dagelijks of wekelijks gebruikt waarin AI een rol speelt. Beschrijf voor elke app kort (max. 75 woorden per app) hoe AI jouw ervaring verbetert of verandert. Denk bijvoorbeeld aan aanbevelingen, personalisatie, of slimme functies.",
-      "placeholder": "App 1: [Naam app] - Beschrijving...\nApp 2: [Naam app] - Beschrijving...",
-      "minLength": 20,
-      "maxLength": 300
+      "vraag": "Welke van de genoemde AI-toepassingen in de 'kaartenbox' vind jij het meest veelbelovend voor jouw toekomst als fysiotherapeut, en waarom?",
+      "minLength": 50,
+      "maxLength": 500,
+      "placeholder": "Beschrijf hier waarom je voor deze toepassing kiest en hoe je deze zou willen inzetten in je praktijk..."
     }
   ]
 } 

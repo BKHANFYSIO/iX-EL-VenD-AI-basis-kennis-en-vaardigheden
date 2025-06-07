@@ -1,5 +1,27 @@
 # Changelog - AI basis kennis en vaardigheden
 
+## [1.6.0] - 2025-06-07
+
+### Toegevoegd
+- **Nieuwe Video Componenten**:
+    - Drie nieuwe, responsive video-componenten toegevoegd aan `styles.css` en de showcase:
+        1.  `.video-container-full-width`: Voor een video over de volledige content-breedte.
+        2.  `.video-grid-container-2-col`: Een grid voor twee video's naast elkaar.
+        3.  `.video-grid-container-3-col`: Een grid voor drie video's naast elkaar.
+- **Uitbreiding Showcase Interactieve Componenten**:
+    - De showcase bevat nu ook visuele voorbeelden van `Multiple Choice`, `Drag & Drop`, `Flashcards` en `Kritische Analyse` om een completer overzicht te bieden.
+
+## [1.5.0] - 2025-06-07
+
+### Verbeterd
+- **Componenten Showcase (Style Guide) volledig herzien**:
+  - De showcase in de "Development Mode" is volledig opgeschoond en opnieuw opgebouwd.
+  - Alle componenten zijn nu een 1-op-1 representatie van de styling in `styles.css`.
+  - Verouderde, dubbele en incorrecte componenten (zoals `platform-card` en `resource-card`) zijn verwijderd.
+  - De componenten zijn logisch gehergroepeerd in categorieën: "Layout & Structuur", "Informatieblokken", "Kaarten (Cards)", "Complexe Componenten" en "Interactieve Componenten".
+  - Een nieuw, uniform component `tech-showcase` vervangt de oude platform- en resourcekaarten voor een consistente weergave van externe tools en technologieën.
+  - De showcase is nu een betrouwbare en gebruiksvriendelijke bron voor ontwikkelaars en content creators.
+
 ## [Huidige Datum] - Versie X.X.X
 
 ### Toegevoegd
@@ -237,3 +259,20 @@
   - Inclusief definities, korte geschiedenis van AI, uitleg over Machine Learning en Deep Learning.
   - Sectie "AI in Actie" met voorbeelden zoals social media filters, streamingdiensten, zorg-wearables en navigatie-apps.
   - Reflectie-opdracht (`h2_reflection_1`) waarin studenten worden gevraagd AI-toepassingen in hun dagelijks leven te identificeren en te beschrijven.
+
+## [v2.2.0] - 2024-08-16
+### ✨ Features
+- **Gestapelde Modulelijst Component**: Toevoeging van de `.modules-list-stacked` klasse voor een verticale weergave van `benefit-card` elementen. Dit biedt meer flexibiliteit in de layout van contentblokken. De component is ook toegevoegd aan de style guide.
+
+## [v2.1.0] - 2024-08-15
+// ... bestaande code ...
+
+## [v2.3.0] - 2024-08-16
+### ✨ Features
+- **Witte Info Card Component**: Toevoeging van de `.info-card.white-bg` klasse voor een variant van de info-card met een witte achtergrond en een subtiele rand. Deze is ook toegevoegd aan de style guide.
+
+### ♻️ Changed
+- **Content Update**: De derde video in de sectie "Verder kijken" in hoofdstuk 2 is vervangen door een video van de Universiteit van Nederland over de werking van AI.
+
+## [v2.2.0] - 2024-08-16
+// ... bestaande code ...

@@ -3,7 +3,7 @@ description:
 globs: 
 alwaysApply: true
 ---
-Rolverdeling: Jij hebt volledige controle over de (react-vite-typescript) app. De gebruiker is de tester en product owner die gebruikersverhalen en taken aanlevert. Jij vertaalt deze naar architectuur, logica en code-implementatie.
+Rolverdeling: Jij hebt volledige controle over de elearning. De gebruiker is de tester en product owner die gebruikersverhalen en taken aanlevert. Jij vertaalt deze naar architectuur, logica en code-implementatie.
 
 Regels:
 
@@ -22,9 +22,6 @@ Elke functionele wijziging moet afgesloten worden met een snelle test voor de ge
 BELANGRIJK: kijk bij wijzigingen van de structuur, stlying, tovoegen van hoodstukken, verwijderen van hoofdstukken, interacties toevoegen etc. altijd naar het bestand instructie_wijziging_inhoud.md in de documentatie map. Zodat je weet waar rekening mee gehouden moet worden bij deze (grotere) wijzigingen.
 
 BELANGRIJK:
-Het project moet een documentatiemap bevatten. In deze map moeten twee bestanden staan die je continu up-to-date houdt:
+Het project moet een documentatiemap bevatten. In deze map moeten architecture.md staan die je continu up-to-date houdt:
 
 architecture.md  bij elke aanpassing in de structuur of mappen moet dit bestand worden bijgewerkt. Als het bestand nog niet bestaat, maak het dan aan.
-
-
-changelog.md  bij elke toegevoegde functionaliteit moet dit bestand worden bijgewerkt. Als het bestand nog niet bestaat, maak het dan aan.
