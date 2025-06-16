@@ -1,0 +1,298 @@
+/* ==========================================================================
+   Interactive Components
+   ========================================================================== */
+
+/* Generic wrapper for interactive blocks */
+.interactive-block {
+    background-color: var(--white);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: var(--border-radius-large);
+    border: 1px solid var(--medium-gray);
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.interactive-block-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.interactive-block-header .icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+}
+
+.interactive-block-header h4 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--primary-purple);
+}
+
+.interactive-block-content {
+    padding-top: 1rem;
+    border-top: 1px solid var(--medium-gray);
+}
+
+
+/* Multiple Choice (MC) Questions */
+.mc-question {
+    margin-bottom: 2rem;
+}
+
+.mc-question .interaction-title,
+.mc-question h4 {
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+}
+
+.mc-options {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.mc-option {
+    padding: 0.8rem 1rem;
+    margin: 0.5rem 0;
+    background-color: #f8f9fa; /* Consistent with styles.css */
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mc-option:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+.mc-option.selected {
+    background-color: #e3f2fd; /* Blue theme from styles.css */
+    border-color: #2196f3;
+}
+
+.mc-option.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Using combined classes from styles.css for review */
+.mc-option.selected.correct,
+.mc-option.answered.correct {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.mc-option.selected.incorrect,
+.mc-option.answered.incorrect {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    display: none; /* Hide by default */
+}
+
+.feedback.correct {
+    display: block; /* Show when correct */
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.feedback.incorrect {
+    display: block; /* Show when incorrect */
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* Drag and Drop Exercise */
+.interactive-exercise {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.drag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.draggable {
+    background: #3498db; /* Blue theme from styles.css */
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    cursor: move;
+    user-select: none;
+    transition: background 0.3s ease;
+}
+
+.draggable:hover {
+    background: #2980b9;
+}
+
+.drop-targets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.drop-target {
+    border: 2px dashed #bdc3c7;
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.drop-target.dragover {
+    background: rgba(52, 152, 219, 0.1);
+    border-color: #3498db;
+}
+
+.drop-target h4 {
+    margin-bottom: 0.5rem;
+}
+
+.drop-target .draggable {
+    margin-top: 0.5rem;
+    width: 90%;
+}
+
+.interactive-block .btn {
+    margin-top: 1.5rem;
+}
+
+
+/* Flashcards */
+.flashcard-container {
+    perspective: 1000px;
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+.flashcard {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+.flashcard-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow);
+}
+
+.flashcard-front {
+    background-color: var(--white);
+    border: 1px solid var(--medium-gray);
+}
+
+.flashcard-back {
+    background-color: var(--accent-purple);
+    transform: rotateY(180deg);
+}
+
+
+/* Accordion (for VRAAK criteria etc.) */
+.accordion {
+    margin-bottom: 1rem;
+}
+
+.accordion-toggle {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    transition: 0.4s;
+    border-radius: var(--border-radius-standard);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.accordion-toggle:hover {
+    background-color: #d8dbe0;
+}
+
+.accordion-toggle.open {
+    background-color: var(--medium-gray);
+}
+
+.accordion-toggle .triangle {
+    transition: transform 0.3s ease;
+}
+
+.accordion-toggle.open .triangle {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border: 1px solid transparent;
+    border-top: none;
+    border-radius: 0 0 var(--border-radius-standard) var(--border-radius-standard);
+}
+
+.accordion-content.open {
+  max-height: 500px; /* Adjust as needed */
+  padding: 18px;
+  border-color: var(--medium-gray);
+} 

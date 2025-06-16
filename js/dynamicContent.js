@@ -445,7 +445,7 @@ async function loadContentForSection(sectionNumber) {
 //     }
 // });
 
-console.log('dynamicContent.js loaded');
+devLog('dynamicContent.js loaded');
 
 // Generic chapter renderer for chapters without specific render functions
 function renderGenericChapterContent(content, chapterNumber) {
@@ -477,7 +477,7 @@ function renderGenericChapterContent(content, chapterNumber) {
             html += `<div class="content-section content-section-${key}">`;
 
             if (section.titel && typeof section.titel === 'string') {
-                html += `<h3 class="section-title">${section.titel}</h3>`;
+                html += `<h3 class="content-subtitle">${section.titel}</h3>`;
             }
 
             if (section.tekst && typeof section.tekst === 'string') {
@@ -510,7 +510,7 @@ function renderGenericChapterContent(content, chapterNumber) {
                 section.blokken.forEach(blok => {
                     html += `<div class="content-block info-card ${blok.type}-block">`;
                     if (blok.titel) {
-                        html += `<h4 class="block-title">${blok.titel}</h4>`;
+                        html += `<h4 class="section-subtitle block-title">${blok.titel}</h4>`;
                     }
                     if (blok.tekst_voor_statistiek) {
                         html += `<p>${blok.tekst_voor_statistiek}</p>`;
@@ -521,8 +521,8 @@ function renderGenericChapterContent(content, chapterNumber) {
                     if (blok.tekst_na_statistiek) {
                         html += `<p>${blok.tekst_na_statistiek}</p>`;
                     }
-                    if (blok.tekst && blok.type === 'fun_fact') {
-                         html += `<p>${blok.tekst.replace(/\n/g, '<br>')}</p>`;
+                    if (blok.tekst && blok.type === 'fun_fact') { // specifiek voor fun_fact
+                         html += `<p>${blok.tekst.replace(/\\n/g, '<br>')}</p>`;
                     }
                     html += `</div>`; // content-block
                 });
@@ -533,7 +533,7 @@ function renderGenericChapterContent(content, chapterNumber) {
                     if (typeof puntBlok === 'object' && puntBlok.titel && puntBlok.tekst) {
                         html += `<div class="info-card sub-section">`;
                         html += `<h4>${puntBlok.titel}</h4>`;
-                        html += `<p>${puntBlok.tekst.replace(/\n/g, '<br>')}</p>`;
+                        html += `<p class="content-text">${puntBlok.tekst.replace(/\n/g, '<br>')}</p>`;
                         html += `</div>`;
                     }
                 });
@@ -591,7 +591,7 @@ window.renderChapter5Content = renderChapter5Content;
 window.renderChapter6Content = renderChapter6Content;
 window.renderChapter7Content = renderChapter7Content;
 
-console.log('dynamicContent.js loaded');
+devLog('dynamicContent.js loaded');
 
 function renderChapter1Content(content) {
     let html = '';
@@ -621,8 +621,7 @@ function renderChapter1Content(content) {
     }
 
     if (content.stel_je_voor && content.stel_je_voor.scenarios && content.stel_je_voor.scenarios.length > 0) {
-        html += `<div class="content-block">`; // Gebruik content-block voor consistente marges/padding
-        html += `<h3 class="section-title">${content.stel_je_voor.titel || 'Stel je eens voor...'}</h3>`;
+        html += `<h2 class="section-title">${content.stel_je_voor.titel || 'Stel je eens voor...'}</h2>`;
         html += `<div class="scenario-container-horizontal">`;
         content.stel_je_voor.scenarios.forEach(scenario => {
             html += `
@@ -642,14 +641,12 @@ function renderChapter1Content(content) {
             html += `</div>`; // End scenario-card
         });
         html += `</div>`; // End scenario-container-horizontal
-        html += `</div>`; // End content-block for stel_je_voor
     }
 
     if (content.waarom_nu_relevant) {
         const sectie = content.waarom_nu_relevant;
-        html += `<div class="content-section content-section-waarom_nu_relevant">`;
         if (sectie.titel) {
-            html += `<h3 class="section-title">${sectie.titel}</h3>`;
+            html += `<h2 class="section-title">${sectie.titel}</h2>`;
         }
         if (sectie.tekst) {
             html += `<p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
@@ -658,7 +655,7 @@ function renderChapter1Content(content) {
             sectie.blokken.forEach(blok => {
                 html += `<div class="content-block info-card ${blok.type}-block">`;
                 if (blok.titel) {
-                    html += `<h4 class="block-title">${blok.titel}</h4>`;
+                    html += `<h4 class="section-subtitle block-title">${blok.titel}</h4>`;
                 }
                 if (blok.tekst_voor_statistiek) {
                     html += `<p>${blok.tekst_voor_statistiek}</p>`;
@@ -675,17 +672,15 @@ function renderChapter1Content(content) {
                 html += `</div>`;
             });
         }
-        html += `</div>`;
     }
 
     if (content.leren_als_spiertraining) {
         const sectie = content.leren_als_spiertraining;
-        html += `<div class="content-section content-section-leren_als_spiertraining">`;
         if (sectie.titel) {
-            html += `<h3 class="section-title">${sectie.titel}</h3>`;
+            html += `<h2 class="section-title">${sectie.titel}</h2>`;
         }
         if (sectie.tekst) {
-            html += `<p class="content-text">${sectie.tekst.replace(/\n/g, '<br>')}</p>`;
+            html += `<p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
         }
         // Nieuw: render als ethical-reflection-grid als type dat is
         if (sectie.type === 'ethical_reflection_grid' && Array.isArray(sectie.kaarten)) {
@@ -693,24 +688,21 @@ function renderChapter1Content(content) {
             sectie.kaarten.forEach(kaart => {
                 html += `<div class="ethical-card">`;
                 if (kaart.titel) html += `<h4>${kaart.titel}</h4>`;
-                if (kaart.beschrijving) html += `<p>${kaart.beschrijving.replace(/\n/g, '<br>')}</p>`;
+                if (kaart.beschrijving) html += `<p>${kaart.beschrijving.replace(/\\n/g, '<br>')}</p>`;
                 html += `</div>`;
             });
             html += `</div>`;
         }
-        html += `</div>`;
     }
 
     if (content.mag_ik_ai_gebruiken) {
         const sectie = content.mag_ik_ai_gebruiken;
-        html += `<div class="content-section content-section-mag_ik_ai_gebruiken">`;
         if (sectie.titel) {
-            html += `<h3 class="section-title">${sectie.titel}</h3>`;
+            html += `<h2 class="section-title">${sectie.titel}</h2>`;
         }
         if (sectie.tekst) {
-            html += `<p class="content-text">${sectie.tekst.replace(/\n/g, '<br>')}</p>`;
+            html += `<p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
         }
-        html += `</div>`;
     }
 
     if (content.jouw_leerpad) {
@@ -857,6 +849,129 @@ function renderChapter2Content(data) {
                         </div>
                     `;
                     break;
+                case 'info-card-list':
+                    html += `
+                        <div class="info-card">
+                            <h4 class="info-card-title">${block.titel}</h4>
+                            <div class="info-card-content">
+                                <p>${block.inhoud.replace(/\n/g, '<br>')}</p>
+                                <ul class="points-list">
+                                    ${block.lijst.map(item => `
+                                        <li><strong>${item.titel}:</strong> ${item.tekst}</li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'section-title':
+                    html += `<h3 class="content-subtitle">${block.titel}</h3>`;
+                    break;
+                case 'content-text':
+                    html += `<p class="content-text">${block.tekst}</p>`;
+                    break;
+                case 'benefits-grid':
+                    html += `<div class="benefits-grid">`;
+                    block.items.forEach(item => {
+                        html += `
+                            <div class="benefit-card">
+                                <h3>${item.titel || ''}</h3>
+                                <div class="benefit-content">
+                                    <p>${item.beschrijving || ''}</p>
+                                    ${item.voorbeeld ? `
+                                        <div class="example-box">
+                                            <h4>${item.voorbeeld.titel || ''}</h4>
+                                            <p>${item.voorbeeld.tekst || ''}</p>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                    break;
+                case 'critical-themes-grid':
+                    if (block.titel) {
+                        html += `<h4 class="critical-themes-title">${block.titel}</h4>`;
+                    }
+                    html += '<div class="critical-themes-grid">';
+                    block.items.forEach(thema => {
+                        html += `
+                            <div class="critical-theme-card">
+                                ${thema.subtitel ? `<h4 class="theme-subtitle">${thema.subtitel}</h4>` : ''}
+                                ${thema.icoon ? `<div class="theme-icon"><img src="${thema.icoon}" alt="${thema.titel || ''} icoon"></div>` : ''}
+                                <h3>${thema.titel || ''}</h3>
+                                <div class="theme-content">
+                                    ${thema.inhoud ? `<p>${thema.inhoud}</p>` : ''}
+                                </div>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                    break;
+                case 'competency-grid':
+                    html += `
+                        <section class="competency-section">
+                            <h3 class="section-title">${block.titel}</h3>
+                            <p>${block.intro || ''}</p>
+                            <div class="competency-grid">
+                                ${block.termen.map(term => `
+                                    <div class="competency-card">
+                                        <h4>${term.term}</h4>
+                                        <p>${term.uitleg}</p>
+                                        <div class="example-box"><p>${term.praktisch}</p></div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </section>
+                    `;
+                    break;
+                case 'benefit-card':
+                    if (block.items) {
+                        html += `<div class="benefits-grid">`;
+                        block.items.forEach(item => {
+                            html += `<div class="benefit-card">`;
+                            if (item.titel) {
+                                html += `<h3>${item.titel}</h3>`;
+                            }
+                            html += `<div class="benefit-content">`;
+                            if (item.content) {
+                                html += `<p>${item.content}</p>`;
+                            }
+                            if (item.example) {
+                                html += `<div class="example-box">
+                                            <h4>Voorbeeld</h4>
+                                            <p>${item.example}</p>
+                                         </div>`;
+                            }
+                            html += `</div></div>`;
+                        });
+                        html += `</div>`;
+                    }
+                    break;
+                case 'modules-list':
+                case 'modules-list-stacked':
+                    const listClass = block.type === 'modules-list' ? 'modules-list' : 'modules-list-stacked';
+                    html += `<div class="${listClass}">`;
+                    if (block.titel) {
+                         html += `<h3 class="modules-list-title">${block.titel}</h3>`;
+                    }
+                    block.items.forEach(item => {
+                        html += `<div class="benefit-card benefit-card--list-item">`; // Modifier class toegevoegd
+                        if (item.titel) {
+                            html += `<h3>${item.titel}</h3>`;
+                        }
+                        html += `<div class="benefit-content">`;
+                        if (item.content) {
+                            html += `<p>${item.content}</p>`;
+                        }
+                        html += `</div></div>`;
+                    });
+                    html += `</div>`;
+                    break;
+                case 'quiz_mc':
+                    html += generateQuizHTML(block);
+                    break;
                 default:
                     // Standaard rendering voor blokken zonder type (zoals definitie)
                     if (block.titel && block.tekst) {
@@ -880,7 +995,6 @@ function renderChapter3Content(content) {
     if (content.intro) {
         html += `
             <div class="info-card">
-                <h3 class="info-card-title">${content.intro.titel || 'Waarom Zorgtechnologie?'}</h3>
                 <div class="info-card-content">
                     <p>${content.intro.tekst || ''}</p>
                 </div>
@@ -888,50 +1002,201 @@ function renderChapter3Content(content) {
         `;
     }
 
-    // Voordelen
-    if (content.voordelen && content.voordelen.length > 0) {
-        html += '<div class="benefits-grid">';
-        content.voordelen.forEach(voordeel => {
-            html += `
-                <div class="benefit-card">
-                    <h3>${voordeel.titel || ''}</h3>
-                    <div class="benefit-content">
-                        <p>${voordeel.beschrijving || ''}</p>
-                        ${voordeel.voorbeeld ? `
-                            <div class="example-box">
-                                <h4>${voordeel.voorbeeld.titel || 'Praktijkvoorbeeld'}</h4>
-                                <p>${voordeel.voorbeeld.tekst || ''} ${voordeel.voorbeeld.bron ? `<span class="source">(${voordeel.voorbeeld.bron})</span>` : ''}</p>
+    // Chatbots sectie
+    if (content.chatbots) {
+        // Titel
+        if (content.chatbots.titel) {
+            html += `<h2 class="section-title">${content.chatbots.titel.tekst}</h2>`;
+        }
+
+        // Intro tekst
+        if (content.chatbots.intro) {
+            html += `<div class="content-text">${content.chatbots.intro.tekst}</div>`;
+        }
+
+        // Platforms
+        if (content.chatbots.platforms && content.chatbots.platforms.items) {
+            html += '<div class="platforms-container">';
+            content.chatbots.platforms.items.forEach(platform => {
+                // Bepaal het juiste logo bestand op basis van de titel
+                let logoFile = '';
+                if (platform.titel.includes('ChatGPT')) {
+                    logoFile = 'ChatGPT-Logo.svg.png';
+                } else if (platform.titel.includes('Gemini')) {
+                    logoFile = 'Gemini-logo.png';
+                } else if (platform.titel.includes('NotebookLM')) {
+                    logoFile = 'notebooklm-logo.png';
+                } else if (platform.titel.includes('Claude')) {
+                    logoFile = 'claude-logo.png';
+                } else if (platform.titel.includes('Mistral')) {
+                    logoFile = 'Mistral_AI_logo.png';
+                }
+
+                html += `
+                    <div class="platform-card">
+                        ${logoFile ? `
+                            <div class="platform-logo">
+                                <img src="images/${logoFile}" alt="${platform.titel} logo">
                             </div>
                         ` : ''}
+                        <h3>${platform.titel}</h3>
+                        <p>${platform.beschrijving}</p>
+                        ${platform.link ? `<a href="https://${platform.link}" target="_blank" class="btn">Bezoek chatbot</a>` : ''}
                     </div>
-                </div>
-            `;
-        });
-        html += '</div>';
+                `;
+            });
+            html += '</div>';
+        }
     }
 
-    // Praktische toepassing
-    if (content.praktische_toepassing) {
-        html += `
-            <div class="info-card">
-                <h3 class="info-card-title">${content.praktische_toepassing.titel || 'Voordelen in de Praktijk Brengen'}</h3>
-                <div class="info-card-content">
-                    ${content.praktische_toepassing.tekst ? `<p>${content.praktische_toepassing.tekst}</p>` : ''}
-        `;
-        if (content.praktische_toepassing.tips && content.praktische_toepassing.tips.length > 0) {
-            html += '<ul>';
-            content.praktische_toepassing.tips.forEach(tip => {
-                // Make the first part of the tip bold if it contains a colon
-                const parts = tip.split(':');
-                if (parts.length > 1) {
-                    html += `<li><strong>${parts[0]}:</strong>${parts.slice(1).join(':')}</li>`;
-                } else {
-                    html += `<li>${tip}</li>`;
-                }
-            });
-            html += '</ul>';
+    // Chatbot functies sectie (NIEUW)
+    if (content.chatbot_functies) {
+        // Titel
+        if (content.chatbot_functies.titel) {
+            html += `<h2 class="section-title">${content.chatbot_functies.titel.tekst}</h2>`;
         }
-        html += '</div></div>'; // Close info-card-content and info-card
+        // Tabelgroep (meerdere tabellen)
+        if (content.chatbot_functies.tabel && content.chatbot_functies.tabel.type === 'table-container-group') {
+            const groep = content.chatbot_functies.tabel;
+            if (groep.intro) {
+                html += `<div class="info-card"><div class="info-card-content"><p>${groep.intro}</p></div></div>`;
+            }
+            groep.tables.forEach(tabel => {
+                html += `<div class="table-container">`;
+                if (tabel.titel) {
+                    html += `<div class="table-title">${tabel.titel}</div>`;
+                }
+                html += `<table class="content-table">`;
+                // Headers
+                if (Array.isArray(tabel.headers)) {
+                    html += '<thead><tr>';
+                    tabel.headers.forEach(header => {
+                        html += `<th>${header}</th>`;
+                    });
+                    html += '</tr></thead>';
+                }
+                // Rows
+                if (Array.isArray(tabel.rows)) {
+                    html += '<tbody>';
+                    tabel.rows.forEach(row => {
+                        html += '<tr>';
+                        row.forEach(cell => {
+                            html += `<td>${cell}</td>`;
+                        });
+                        html += '</tr>';
+                    });
+                    html += '</tbody>';
+                }
+                html += `</table></div>`;
+            });
+            if (groep.note) {
+                html += `<div class="note">${groep.note}</div>`;
+            }
+        }
+        // Oude enkele tabel (fallback)
+        else if (content.chatbot_functies.tabel) {
+            const tabel = content.chatbot_functies.tabel;
+            html += `<div class="table-container">`;
+            if (tabel.titel) {
+                html += `<div class="table-title">${tabel.titel}</div>`;
+            }
+            html += `<table class="content-table">`;
+            // Headers
+            if (Array.isArray(tabel.headers)) {
+                html += '<thead><tr>';
+                tabel.headers.forEach(header => {
+                    html += `<th>${header}</th>`;
+                });
+                html += '</tr></thead>';
+            }
+            // Rows
+            if (Array.isArray(tabel.rows)) {
+                html += '<tbody>';
+                tabel.rows.forEach(row => {
+                    html += '<tr>';
+                    row.forEach(cell => {
+                        html += `<td>${cell}</td>`;
+                    });
+                    html += '</tr>';
+                });
+                html += '</tbody>';
+            }
+            html += `</table></div>`;
+        }
+    }
+
+    // Andere tools sectie
+    if (content.andere_tools) {
+        // Titel
+        if (content.andere_tools.titel) {
+            html += `<h2 class="section-title">${content.andere_tools.titel.tekst}</h2>`;
+        }
+
+        html += '<div class="info-card"><div class="info-card-content">';
+
+        // Intro tekst
+        if (content.andere_tools.intro) {
+            html += `<p>${content.andere_tools.intro.tekst}</p>`;
+        }
+
+        // Tools
+        if (content.andere_tools.tools && content.andere_tools.tools.items) {
+            html += '<div class="modules-list-stacked">';
+            content.andere_tools.tools.items.forEach(tool => {
+                html += `
+                    <div class="benefit-card">
+                        <h3>${tool.titel}</h3>
+                        <p>${tool.beschrijving}</p>
+                        ${tool.link ? `<a href="${tool.link}" target="_blank" class="btn">Bezoek TurboScribe</a>` : ''}
+                    </div>
+                `;
+            });
+            html += '</div>';
+        }
+        
+        html += '</div></div>';
+    }
+
+    // Tool vinden sectie
+    if (content.tool_vinden) {
+        // Titel
+        if (content.tool_vinden.titel) {
+            html += `<h2 class="section-title">${content.tool_vinden.titel.tekst}</h2>`;
+        }
+
+        // Intro tekst
+        if (content.tool_vinden.intro) {
+            html += `<div class="content-text">${content.tool_vinden.intro.tekst}</div>`;
+        }
+
+        // Platforms
+        if (content.tool_vinden.platforms && content.tool_vinden.platforms.items) {
+            html += '<div class="platforms-container">';
+            content.tool_vinden.platforms.items.forEach(platform => {
+                html += `
+                    <div class="platform-card">
+                        <h3>${platform.titel}</h3>
+                        <p>${platform.beschrijving}</p>
+                        ${platform.link ? `<a href="https://${platform.link}" target="_blank" class="btn">Bezoek tool</a>` : ''}
+                        ${platform.icon ? `<div class="${platform.icon}"></div>` : ''}
+                    </div>
+                `;
+            });
+            html += '</div>';
+        }
+    }
+
+    // Betaald vs gratis sectie
+    if (content.betaald_vs_gratis) {
+        // Titel
+        if (content.betaald_vs_gratis.titel) {
+            html += `<h2 class="section-title">${content.betaald_vs_gratis.titel.tekst}</h2>`;
+        }
+
+        // Tekst
+        if (content.betaald_vs_gratis.tekst) {
+            html += `<div class="content-text">${content.betaald_vs_gratis.tekst.tekst}</div>`;
+        }
     }
 
     return html;
@@ -939,37 +1204,153 @@ function renderChapter3Content(content) {
 
 function renderChapter4Content(content) {
     let html = '';
-
-    // Intro
+    
+    // Intro info card
     if (content.intro) {
         html += `
             <div class="info-card">
-                <h3 class="info-card-title">${content.intro.titel || 'Waarom Kritisch Kijken?'}</h3>
+                <h3 class="info-card-title">${content.intro.titel}</h3>
                 <div class="info-card-content">
-                    <p>${content.intro.tekst || ''}</p>
-                    ${content.intro.note ? `<p class="note">${content.intro.note}</p>` : ''}
+                    ${content.intro.tekst}
                 </div>
             </div>
         `;
     }
 
-    // Themas
-    if (content.themas && content.themas.length > 0) {
+    // Section title
+    if (content.section_title) {
+        html += `<h3 class="content-subtitle">${content.section_title}</h3>`;
+    }
+
+    // Critical themes grid
+    if (content.critical_themes_grid && content.critical_themes_grid.themes) {
         html += '<div class="critical-themes-grid">';
-        content.themas.forEach(thema => {
+        content.critical_themes_grid.themes.forEach(theme => {
             html += `
                 <div class="critical-theme-card">
-                    ${thema.icoon ? `<div class="theme-icon"><img src="${thema.icoon}" alt="${thema.titel || ''} icoon"></div>` : ''}
-                    <h3>${thema.titel || ''}</h3>
+                    <div class="theme-icon">
+                        <img src="${theme.icoon}" alt="${theme.titel}">
+                    </div>
+                    <h3>${theme.titel}</h3>
                     <div class="theme-content">
-                        ${thema.positief_voorbeeld ? `<p><strong>Positief voorbeeld:</strong> ${thema.positief_voorbeeld}</p>` : ''}
-                        ${thema.uitdaging ? `<p><strong>Uitdaging:</strong> ${thema.uitdaging}</p>` : ''}
-                        ${thema.reflectie_vraag ? `<div class="reflection-prompt"><p>${thema.reflectie_vraag}</p></div>` : ''}
+                        <p><strong>Positief voorbeeld:</strong> ${theme.positief_voorbeeld}</p>
+                        <p><strong>Uitdaging:</strong> ${theme.uitdaging}</p>
+                        <div class="reflection-prompt">
+                            <p>${theme.reflectie_vraag}</p>
+                        </div>
                     </div>
                 </div>
             `;
         });
         html += '</div>';
+    }
+
+    // Basisprincipes
+    if (content.basisprincipes) {
+        html += `<h3 class="content-subtitle">${content.basisprincipes.titel}</h3>`;
+        html += `<p class="content-text">${content.basisprincipes.tekst}</p>`;
+        html += `<div class="benefits-grid">`;
+        content.basisprincipes.benefits.forEach(benefit => {
+            html += `<div class="benefit-card">`;
+            html += `<h3>${benefit.titel}</h3>`;
+            html += `<div class="benefit-content">`;
+            html += `<p>${benefit.beschrijving}</p>`;
+            if (benefit.voorbeelden) {
+                benefit.voorbeelden.forEach(voorbeeld => {
+                    html += `<div class="example-box">`;
+                    if (voorbeeld.niet) html += `<p><strong>Niet doen:</strong> ${voorbeeld.niet}</p>`;
+                    if (voorbeeld.wel) html += `<p><strong>Wel doen:</strong> ${voorbeeld.wel}</p>`;
+                    if (voorbeeld.context) html += `<p><strong>Context:</strong> ${voorbeeld.context}</p>`;
+                    if (voorbeeld.rol) html += `<p><strong>Rol:</strong> ${voorbeeld.rol}</p>`;
+                    if (voorbeeld.voorbeeld) html += `<p><strong>Voorbeeld:</strong> ${voorbeeld.voorbeeld}</p>`;
+                    html += `</div>`;
+                });
+            }
+            html += `</div>`; // benefit-content
+            html += `</div>`; // benefit-card
+        });
+        html += `</div>`; // benefits-grid
+    }
+
+    // Voorbeeld prompt
+    if (content.voorbeeld_prompt) {
+        html += `<h3 class="content-subtitle">${content.voorbeeld_prompt.titel}</h3>`;
+        html += `<p class="content-text">${content.voorbeeld_prompt.tekst}</p>`;
+        html += `<div class="table-container">`;
+        html += `<table class="content-table">`;
+        html += `<thead><tr><th>Prompt</th><th>Analyse</th></tr></thead>`;
+        html += `<tbody>`;
+        content.voorbeeld_prompt.tabel.rijen.forEach(rij => {
+            const encodedPrompt = encodeURIComponent(rij.prompt);
+            html += `<tr>`;
+            html += `<td>${rij.prompt}<br><a href="https://chat.openai.com/?model=text-davinci-003&prompt=${encodedPrompt}" target="_blank" class="btn btn-secondary" style="margin-top:8px;display:inline-block;">Probeer deze prompt in ChatGPT</a></td>`;
+            html += `<td>${rij.analyse}</td>`;
+            html += `</tr>`;
+        });
+        html += `</tbody></table></div>`;
+    }
+
+    // Ezelsbruggetje
+    if (content.ezelsbruggetje) {
+        html += `
+            <h3 class="content-subtitle">${content.ezelsbruggetje.titel}</h3>
+            <div class="info-card">
+                <ul class="rock-list">
+                    ${content.ezelsbruggetje.items.map(item => `
+                        <li>
+                            <strong>${item.letter} - </strong>${item.beschrijving}
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+    }
+
+    // Slimme technieken
+    if (content.slimme_technieken) {
+        html += `<h3 class="content-subtitle">${content.slimme_technieken.titel}</h3>`;
+        html += `<p class="content-text">${content.slimme_technieken.tekst}</p>`;
+        html += `<div class="benefits-grid">`;
+        content.slimme_technieken.benefits.forEach(benefit => {
+            html += `<div class="benefit-card">`;
+            html += `<h3>${benefit.titel}</h3>`;
+            html += `<div class="benefit-content">`;
+            html += `<p>${benefit.beschrijving}</p>`;
+            if (benefit.voorbeeld) {
+                html += `<div class="example-box"><p><strong>Voorbeeld:</strong> ${benefit.voorbeeld}</p></div>`;
+            }
+            html += `</div>`; // benefit-content
+            html += `</div>`; // benefit-card
+        });
+        html += `</div>`; // benefits-grid
+    }
+
+    // Privacy waarschuwing
+    if (content.privacy_waarschuwing) {
+        html += `
+            <h3 class="content-subtitle">${content.privacy_waarschuwing.titel}</h3>
+            <div class="info-card warning-card">
+                ${content.privacy_waarschuwing.items.map(item => `
+                    <div class="warning-item">
+                        <h4>${item.titel}</h4>
+                        <p>${item.tekst}</p>
+                    </div>
+                `).join('')}
+            </div>
+            ${content.privacy_waarschuwing.andere_valkuilen ? `
+                <div class="other-pitfalls">
+                    <h4>${content.privacy_waarschuwing.andere_valkuilen.titel}</h4>
+                    <div class="pitfalls-grid">
+                        ${content.privacy_waarschuwing.andere_valkuilen.items.map(item => `
+                            <div class="pitfall-card">
+                                <h5>${item.titel}</h5>
+                                <p>${item.tekst}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : ''}
+        `;
     }
 
     return html;
@@ -1228,7 +1609,7 @@ function renderChapter7Content(content) { // Wordt nu de implementatie van de OU
 
 // Renamed from renderChapter8Content to renderAfsluitingContent for flexibility
 function renderAfsluitingContent(content) {
-    console.log("Rendering Afsluiting content with data:", content);
+    devLog("Rendering Afsluiting content with data:", content);
 
     if (!content) {
         // Attempt to populate a generic error message in the main container if data is missing
@@ -1468,7 +1849,11 @@ function initializeFlashcardInteraction(interactie, chapterNumber) {
 
     function toonKaart(idx) {
         const kaartIndex = kaartenTeDoen[idx];
-        const card = interactie.cards[kaartIndex];
+        // Mapping voor correcte veldnamen uit JSON
+        let card = interactie.cards[kaartIndex];
+        // Ondersteun zowel oude als nieuwe structuur
+        const voorkant = card.voorzijde || card.term;
+        const achterkant = card.achterzijde || card.uitleg;
         function getHerhalingLabel(n) {
             if (!n || n === 1) return '';
             if (n === 2) return '1e herhaling';
@@ -1480,11 +1865,11 @@ function initializeFlashcardInteraction(interactie, chapterNumber) {
             <div class="flashcard" id="${baseId}_card_${kaartIndex}">
                 <div class="flashcard-inner">
                     <div class="flashcard-front">
-                        <p>${card.voorzijde}</p>
+                        <p>${voorkant}</p>
                     </div>
                     <div class="flashcard-back">
                         ${herhalingTekst ? `<div class=\"flashcard-repeat-label\">${herhalingTekst}</div>` : ''}
-                        <p class="flashcard-answer-text">${card.achterzijde}</p>
+                        <p class="flashcard-answer-text">${achterkant}</p>
                         <div class="flashcard-answer-buttons">
                             <button class="btn btn-success" data-flashcard-know="true">Ik wist het</button>
                             <button class="btn btn-danger" data-flashcard-know="false">Ik wist het niet</button>

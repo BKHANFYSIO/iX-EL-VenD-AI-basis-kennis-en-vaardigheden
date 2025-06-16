@@ -1,6 +1,63 @@
-# Handleiding: E-learning klonen en aanpassen voor een nieuw onderwerp
+# Handleiding: Een nieuwe e-learning cursus opzetten
 
-Deze e-learning is ontworpen om eenvoudig te hergebruiken voor andere thema's. Je hoeft alleen de inhoudsbestanden aan te passen en eventueel afbeeldingen/logo's te vervangen. De structuur en PDF-generatie zijn volledig dynamisch: alle hoofdstukken en interactieve elementen worden automatisch meegenomen, ook in het certificaat.
+Deze handleiding beschrijft het proces voor het klonen en aanpassen van deze e-learning voor een nieuw onderwerp. De structuur is flexibel en ontworpen voor hergebruik.
+
+## Aanbevolen Workflow: Werken met een AI Assistent
+
+De snelste en meest consistente manier om een nieuwe cursus op te zetten is door een AI-assistent te gebruiken. We hebben hiervoor een set kant-en-klare prompts voorbereid die je kunt kopiëren en plakken.
+
+Deze prompts begeleiden je door het hele proces, van het opzetten van de structuur tot het vullen van de content en de eindquiz.
+
+- **Vind de prompts hier: [AI Prompts voor het beheren van de E-learning](./ai_prompts.md)**
+
+---
+
+## Handmatig Proces
+
+Als je het proces liever handmatig uitvoert, volg dan de onderstaande stappen.
+
+### Stap 1: Project Voorbereiden
+
+1.  **Kopieer de volledige projectmap** naar een nieuwe locatie voor je nieuwe cursus.
+2.  **(Optioneel) Leeg de `content` map**, met uitzondering van `config.json`, `hoofdstuk_afsluiting.json`, en `afsluitquiz.json` om met een schone lei te beginnen.
+3.  **Start een lokale webserver** in de projectmap om je wijzigingen direct in de browser te kunnen zien.
+    ```bash
+    npx live-server
+    ```
+
+### Stap 2: Cursus Configureren
+
+Pas het `content/config.json` bestand aan met de basisinformatie van je nieuwe cursus:
+- `title`: De hoofdtitel van de e-learning.
+- `leerdoelen`: De leerdoelen die op het certificaat en aan het begin getoond worden.
+- `organisation`: De naam van de organisatie.
+- `logo`: Het pad naar het logo dat je wilt gebruiken.
+
+### Stap 3: Content Creëren en Vullen
+
+1.  **Maak `hoofdstukX.json` bestanden aan** in de `/content` map voor elk nieuw hoofdstuk.
+2.  **Schrijf de inhoud** voor elk hoofdstuk. Om de content op te maken met de juiste stijlen (zoals info-kaarten, video's, etc.), gebruik je de componenten die zijn beschreven in onze stijlgids. Deze gids is ook perfect om te geven aan een AI-chatbot die je helpt met het schrijven van de teksten.
+    - **Zie: [Stijlgids voor E-learning Content](./stijlgids.md)**
+3.  **Voeg interacties toe** aan de `interacties` array in elk hoofdstuk.
+4.  **Pas de eindquiz aan** in `content/afsluitquiz.json`.
+
+### Stap 4: Integratie
+
+Om de nieuwe hoofdstukken correct weer te geven in de navigatie en voortgangslogica, moet je twee bestanden bijwerken:
+
+1.  **`js/script.js`**:
+    - Pas de `totalSections` variabele aan. Dit is het aantal hoofdstukken dat je hebt gemaakt, plus 1 voor het afsluitende hoofdstuk.
+    - Werk de `chapters` array bij met de titels van je nieuwe hoofdstukken in de juiste volgorde.
+2.  **`index.html`**:
+    - Voeg de hoofdstukken toe (of verwijder ze) in de `nav`-sectie (de sidebar), zodat de navigatie overeenkomt met je nieuwe structuur.
+
+---
+
+## Technische Documentatie
+
+Voor een diepgaand begrip van de technische werking, de bestandsstructuur, hoe de render-logica werkt en details over de CSS, raadpleeg je de architectuurdocumentatie.
+
+- **Zie: [Architectuur Overzicht](./architecture.md)**
 
 ## 1. Structuur van de inhoud
 
@@ -1066,3 +1123,19 @@ Gebruik `<section class="section">` **alleen** als je bewust een smallere, gecen
 **Let op:**
 - Gebruik de standaard layout voor alle hoofdcontent van een hoofdstuk.
 - Gebruik `<section class="section">` alleen voor onderdelen die extra focus of een smallere opmaak nodig hebben.
+
+<div class="critical-theme-card">
+    <div class="theme-subtitle">Hier de titel (optioneel)</div>
+    <div class="theme-icon">
+        <img src="images/Blijvende_afb/Test_logo_showcase.png" alt="Test Logo">
+    </div>
+    <h3>Thema Kaart (Kritische Analyse)</h3>
+    <div class="theme-content">
+        <p><strong>Positief voorbeeld:</strong> Een beschrijving van een positief aspect van het thema.</p>
+        <p><strong>Uitdaging:</strong> Een beschrijving van een uitdaging binnen het thema.</p>
+        <div class="reflection-prompt">
+            <p>Een reflectievraag om de gebruiker aan het denken te zetten.</p>
+        </div>
+    </div>
+</div>
+<p>Gebruik <code>.critical-themes-grid &gt; .critical-theme-card</code>.</p>

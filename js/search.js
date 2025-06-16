@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initSearchModule() {
     const searchInput = document.getElementById('searchInput');
     const searchResultsContainer = document.getElementById('searchResults');
     let searchableData = [];
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Stel event listeners in
             setupSearchEventListeners();
             
-            console.log('Zoekfunctionaliteit succesvol geïnitialiseerd');
+            devLog('Zoekfunctionaliteit succesvol geïnitialiseerd');
         } catch (error) {
             console.error('Fout bij initialiseren zoekfunctionaliteit:', error);
         }
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             searchConfig = await response.json();
-            console.log('Search configuratie geladen:', searchConfig);
+            devLog('Search configuratie geladen:', searchConfig);
         } catch (error) {
             console.error('Fout bij laden search configuratie, gebruik fallback:', error);
             // Fallback configuratie
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            console.log(`Doorzoekbare data voorbereid: ${searchableData.length} items`);
+            devLog(`Doorzoekbare data voorbereid: ${searchableData.length} items`);
         } catch (error) {
             console.error("Fout tijdens voorbereiden zoekdata:", error);
             if (searchResultsContainer) searchResultsContainer.innerHTML = '<p class="error-message">Fout bij initialiseren zoekfunctie.</p>';
@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (sectionElement) {
                     const sectionNumberInt = parseInt(result.sectionId.replace('section', ''), 10);
                     
-                    console.log(`Zoekresultaat geklikt:`, result);
+                    devLog(`Zoekresultaat geklikt:`, result);
 
                     if (typeof showSection === 'function') showSection(sectionNumberInt);
                     else if (typeof setActiveSection === 'function') setActiveSection(sectionNumberInt);
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const vraakToggle = document.getElementById('vraak-accordion-toggle');
                             const vraakContent = document.getElementById('vraak-accordion-content');
                             if (vraakToggle && vraakContent && !vraakContent.classList.contains('open')) {
-                                console.log("VRAAK Accordion wordt geopend (vanwege itemPath: " + result.itemPath + ")...");
+                                devLog("VRAAK Accordion wordt geopend (vanwege itemPath: " + result.itemPath + ")...");
                                 vraakContent.classList.add('open');
                                 vraakToggle.classList.add('open');
                                 vraakToggle.setAttribute('aria-expanded', 'true');
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const MIN_TEXT_LENGTH_NO_CONTEXT = 8; // Iets korter gemaakt
 
                         if (result.isListItem) {
-                            console.log("Resultaat is een lijstitem. Gebruik volledige originalText als text fragment, met minimale bewerking.");
+                            devLog("Resultaat is een lijstitem. Gebruik volledige originalText als text fragment, met minimale bewerking.");
                             textForFragment = result.originalText.trim(); // Begin met de volledige, getrimde tekst
                             useSimpleTextFragment = true;
                             const queryLower = query.toLowerCase();
@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             suffixForFragment = '';
 
                         } else {
-                            console.log("Resultaat is GEEN lijstitem. Gebruik prefix/suffix strategie.");
+                            devLog("Resultaat is GEEN lijstitem. Gebruik prefix/suffix strategie.");
                             // Gebruik de bestaande logica voor prefix/suffix
                             const queryLower = query.toLowerCase();
                             const snippetLower = cleanSnippetForFragment.toLowerCase(); // cleanSnippetForFragment is beschikbaar van buiten de timeout
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         }
                         
-                        console.log(`Voorbereid voor Text Fragment: isListItem=${result.isListItem}, useSimple=${useSimpleTextFragment}, prefix="${prefixForFragment}", text="${textForFragment}", suffix="${suffixForFragment}"`);
+                        devLog(`Voorbereid voor Text Fragment: isListItem=${result.isListItem}, useSimple=${useSimpleTextFragment}, prefix="${prefixForFragment}", text="${textForFragment}", suffix="${suffixForFragment}"`);
 
                         const targetSection = document.getElementById(result.sectionId);
                         let canUseFragment = false;
@@ -493,15 +493,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                     fragmentParams += `&suffix=${encodeURIComponent(suffixForFragment)}`;
                                 }
                                 const fragmentUrl = `#${result.sectionId}:~:${fragmentParams}`;
-                                console.log("Proberen te navigeren naar Text Fragment URL:", fragmentUrl);
+                                devLog("Proberen te navigeren naar Text Fragment URL:", fragmentUrl);
                                 window.location.hash = fragmentUrl;
                             } catch (e) {
-                                console.warn(`Kon geen Text Fragment URL maken:`, e, {result, textForFragment, prefixForFragment, suffixForFragment});
+                                devLog(`Kon geen Text Fragment URL maken:`, e, {result, textForFragment, prefixForFragment, suffixForFragment});
                                 history.pushState(null, '', `#${result.sectionId}`);
                                 targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }
                         } else if (targetSection) {
-                            console.log("Condities voor Text Fragment niet voldaan. Scrollen naar begin van sectie:", result.sectionId, {canUseFragment, textLength: textForFragment.length, prefix: prefixForFragment, suffix: suffixForFragment});
+                            devLog("Condities voor Text Fragment niet voldaan. Scrollen naar begin van sectie:", result.sectionId, {canUseFragment, textLength: textForFragment.length, prefix: prefixForFragment, suffix: suffixForFragment});
                             history.pushState(null, '', `#${result.sectionId}`);
                             targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
@@ -557,4 +557,4 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error("Zoekveld (searchInput) niet gevonden.");
         }
     }
-});
+}

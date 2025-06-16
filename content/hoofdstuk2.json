@@ -11,9 +11,43 @@
       "tekst": "Laten we beginnen met een eenvoudige en praktische definitie die je kunt onthouden.\n\n<strong>Werkdefinitie:</strong> Kunstmatige intelligentie (AI) is technologie waarmee computers menselijk leren, redeneren en beslissen kunnen nabootsen.\n\nSimpel gezegd proberen we met AI machines 'slim' te maken, zodat ze ons kunnen helpen met complexe taken. In plaats van dat een programmeur elke regel of handeling vooraf programmeert, kan een AI-systeem zelf leren van grote hoeveelheden data (gegevens) en op basis daarvan patronen herkennen of beslissingen nemen."
     },
     "relevantie": {
-      "type": "info-card",
+      "type": "info-card-list",
       "titel": "Waarom is dit relevant voor jou als fysiotherapeut?",
-      "inhoud": "AI is geen verre toekomstmuziek meer; het wordt nu al ingezet om de zorg te verbeteren. Het is belangrijk om te benadrukken dat AI een <strong>hulpmiddel</strong> is dat jou ondersteunt en je capaciteiten vergroot, niet vervangt. Jouw menselijke expertise, empathie en klinische redenering blijven essentieel. Denk concreet aan AI die helpt bij:\n\n* <strong>Efficiëntere verslaglegging:</strong> AI kan een opgenomen intakegesprek automatisch omzetten in een gestructureerd verslag. Hierdoor houd jij meer tijd over voor de patiënt.\n* <strong>Nauwkeurige bewegingsanalyse:</strong> Apps die via de camera van een smartphone of tablet de houding of een beweging analyseren. De AI \"ziet\" bijvoorbeeld een afwijking in de kniebuiging tijdens een squat en kan dit objectief meten.\n* <strong>E-health triage:</strong> Slimme chatbots die op basis van vragen de urgentie van klachten inschatten en een patiënt adviseren om zelfzorg toe te passen of een afspraak te maken."
+      "inhoud": "Als machines slim worden 'net als mensen', wat betekend dat dan voor jou als fysiotherapeut? Zoals je in het vorige hoofdstuk zag, is AI geen verre toekomstmuziek meer; het wordt nu al ingezet om de zorg te verbeteren. Het is belangrijk om te benadrukken dat AI een <strong>hulpmiddel</strong> is dat jou ondersteunt en je capaciteiten vergroot, niet vervangt. Jouw menselijke expertise, empathie en klinische redenering blijven essentieel. Al is dat voor de langere termijn ook discutabel. Onderstaand een overzicht van een aantal toepassingen van AI in de fysiotherapie. Die deels al worden toegepast.",
+      "lijst": [
+        {
+          "titel": "Efficiëntere verslaglegging",
+          "tekst": "AI kan een opgenomen intakegesprek automatisch omzetten in een gestructureerd verslag. Hierdoor houd jij meer tijd over voor de patiënt."
+        },
+        {
+          "titel": "Nauwkeurige bewegingsanalyse",
+          "tekst": "Apps die via de camera van een smartphone of tablet de houding of een beweging analyseren. De AI 'ziet' bijvoorbeeld een afwijking in de kniebuiging tijdens een squat en kan dit objectief meten."
+        },
+        {
+          "titel": "E-health triage",
+          "tekst": "Slimme chatbots die op basis van vragen de urgentie van klachten inschatten en een patiënt adviseren om zelfzorg toe te passen of een afspraak te maken."
+        },
+        {
+          "titel": "Motivatietools & ondersteuning",
+          "tekst": "AI-chatbots herinneren oefeningen, geven realtime feedback & stimuleren therapietrouw."
+        },
+        {
+          "titel": "AI-collega/sparringspartner",
+          "tekst": "\"AI assistants\" analyseren data, helpen bij hypothesevorming, ondersteunen klinische besluitvorming (bv. chatCPG)."
+        },
+        {
+          "titel": "Personalisatie & prognose",
+          "tekst": "Predictive AI geeft uitspraken over herstelkansen en risico op operatie (Sword Health, Flok, NHS)."
+        },
+        {
+          "titel": "Robotica & wearables",
+          "tekst": "Rehab-robots & exoskeletten helpen beweging herhalen, meten progressie (Bionik Labs, Sword Health)."
+        }
+      ]
+    },
+    "geschiedenis_section": {
+      "type": "section-title",
+      "titel": "AI-geschiedenis"
     },
     "geschiedenis": {
       "type": "timeline",
@@ -27,19 +61,80 @@
         { "jaar": "2024", "titel": "Opkomst van Multimodale AI & Agents", "beschrijving": "De nieuwste AI-systemen kunnen meerdere soorten input (tekst, beeld, geluid) combineren en autonoom handelen om een doel te bereiken." }
       ]
     },
-    "leren": {
-      "type": "info-card",
-      "titel": "Hoe leert AI?",
-      "inhoud": "Een van de meest fascinerende aspecten van AI is het vermogen om te leren. Dit gebeurt voornamelijk via *Machine Learning* en de geavanceerdere vorm *Deep Learning*.\n\n<strong>Machine Learning (ML)</strong>\nDit is een techniek waarbij algoritmes zichzelf verbeteren door te leren van voorbeelden uit data, zonder dat elke stap expliciet is geprogrammeerd.\n\n<strong>Analogie uit de fysiotherapie: Spierversterking</strong>\nVergelijk Machine Learning met spiertraining. Net zoals je spieren sterker worden door herhaalde training, wordt een ML-model \"slimmer\" en nauwkeuriger door het te trainen met heel veel data.\n\n<strong>Deep Learning (DL)</strong>\nDit is een specifieke, geavanceerde vorm van ML die gebruikmaakt van gelaagde *neurale netwerken*, losjes geïnspireerd op de werking van het menselijk brein. Door de vele lagen kan het systeem zeer complexe patronen herkennen, bijvoorbeeld in beeld of geluid.\n\n<strong>Analogie uit de fysiotherapie: Het zenuwstelsel</strong>\nDenk aan ons zenuwstelsel. Simpele reflexen worden op een lager niveau verwerkt (ruggenmerg), terwijl complexe beslissingen in de hersenschors plaatsvinden. Een 'diep' neuraal netwerk werkt ook met lagen die informatie verwerken, van simpel naar steeds complexer."
+    "leren_section": {
+      "type": "section-title",
+      "titel": "Hoe leert AI?"
     },
-    "praktijkvoorbeelden": {
-      "type": "modules-list",
-      "titel": "AI in de Praktijk: Een kaartenbox met voorbeelden",
+    "leren_intro": {
+      "type": "content-text",
+      "tekst": "Een van de meest fascinerende aspecten van AI is het vermogen om te leren. Dit gebeurt voornamelijk via *Machine Learning* en de geavanceerdere vorm *Deep Learning*."
+    },
+    "leren_benefits": {
+      "type": "benefits-grid",
       "items": [
-        { "titel": "Kaart 1: ZIEN (Visuele AI)", "inhoud": "<strong>Toepassing:</strong> Houdingsanalyse-apps (bijv. PostureScreen)\n\n<strong>Hoe het werkt:</strong> Deze apps gebruiken de camera van een telefoon of tablet. De AI is getraind om het menselijk lichaam te herkennen en kan objectief gewrichtshoeken meten, asymmetrie signaleren of afwijkingen in de houding kwantificeren.\n\n<strong>Voordeel:</strong> Biedt snelle, objectieve metingen en visualisaties die je kunt gebruiken voor analyse en patiënteducatie." },
-        { "titel": "Kaart 2: HOREN (Audio AI)", "inhoud": "<strong>Toepassing:</strong> Automatische transcriptie voor verslaglegging (bijv. Fysio.AI, Otter.ai)\n\n<strong>Hoe het werkt:</strong> De AI zet een opgenomen gesprek tussen therapeut en patiënt om in tekst (spraakherkenning) en kan zelfs een samenvatting maken voor het EPD (Natural Language Processing).\n\n<strong>Voordeel:</strong> Bespaart aanzienlijk veel tijd bij administratieve taken, waardoor je meer aandacht hebt voor de patiënt." },
-        { "titel": "Kaart 3: BEWEGEN (Bewegings-AI)", "inhoud": "<strong>Toepassing:</strong> Wearables en activiteitentrackers (bijv. Apple Watch, Fitbit)\n\n<strong>Hoe het werkt:</strong> Sensoren in de wearable (zoals een versnellingsmeter) meten continu bewegingsdata. De AI analyseert deze datapatronen en herkent of je wandelt, fietst of slaapt, en kan zelfs een val detecteren.\n\n<strong>Voordeel:</strong> Geeft objectieve feedback over het activiteitenniveau en de voortgang van een patiënt, ook buiten de kliniek." },
-        { "titel": "Kaart 4: DENKEN (Cognitieve AI)", "inhoud": "<strong>Toepassing:</strong> Gepersonaliseerde oefenprogramma's (bijv. in apps als Physitrack)\n\n<strong>Hoe het werkt:</strong> Een AI-systeem kan leren welke oefeningen het meest effectief zijn voor specifieke klachtenbeelden door patronen te herkennen in grote datasets met patiënt- en behandelgegevens.\n\n<strong>Voordeel:</strong> Helpt bij het creëren van behandelplannen die beter zijn afgestemd op de individuele patiënt, wat kan leiden tot effectievere behandelingen en betere resultaten." }
+        {
+          "titel": "Machine Learning (ML)",
+          "beschrijving": "Dit is een techniek waarbij algoritmes zichzelf verbeteren door te leren van voorbeelden uit data, zonder dat elke stap expliciet is geprogrammeerd.",
+          "voorbeeld": {
+            "titel": "Analogie uit de fysiotherapie: Spierversterking",
+            "tekst": "Vergelijk Machine Learning met spiertraining. Net zoals je spieren sterker worden door herhaalde training, wordt een ML-model 'slimmer' en nauwkeuriger door het te trainen met heel veel data."
+          }
+        },
+        {
+          "titel": "Deep Learning (DL)",
+          "beschrijving": "Dit is een specifieke, geavanceerde vorm van ML die gebruikmaakt van gelaagde <em>neurale netwerken</em>, losjes geïnspireerd op de werking van het menselijk brein. Door de vele lagen kan het systeem zeer complexe patronen herkennen, bijvoorbeeld in beeld of geluid.",
+          "voorbeeld": {
+            "titel": "Analogie uit de fysiotherapie: Het zenuwstelsel",
+            "tekst": "Denk aan ons zenuwstelsel. Simpele reflexen worden op een lager niveau verwerkt (ruggenmerg), terwijl complexe beslissingen in de hersenschors plaatsvinden. Een 'diep' neuraal netwerk werkt ook met lagen die informatie verwerken, van simpel naar steeds complexer."
+          }
+        }
+      ]
+    },
+    "belangrijke_termen": {
+      "type": "competency-grid",
+      "titel": "Belangrijke termen in AI",
+      "intro": "Hieronder vind je een overzicht van essentiële AI-termen met uitleg en hun praktische betekenis voor jouw studie en werk.",
+      "termen": [
+        {
+          "term": "Token",
+          "uitleg": "Een token is een basiseenheid van tekst die AI gebruikt – dit kan een woorddeel, leesteken of kort woord zijn. AI rekent en verwerkt tekst in deze kleine stukjes.",
+          "praktisch": "Tokens bepalen hoeveel tekst een AI-model tegelijk kan verwerken of genereren. Ze zijn direct verbonden met de contextlimiet én kosten (je betaalt meestal per aantal tokens). Wees dus bewust van lengte en formulering van je prompt of output."
+        },
+        {
+          "term": "Context window",
+          "uitleg": "Het context window is de maximale hoeveelheid tokens (invoer + uitvoer) die een AI-model tegelijk kan verwerken.",
+          "praktisch": "Als je gesprek te lang wordt, vergeet de AI het begin. Dit kan leiden tot minder consistente of relevante antwoorden. Start bij lange dialogen of taken opnieuw om 'vergeten' informatie te voorkomen."
+        },
+        {
+          "term": "Prompt",
+          "uitleg": "Een prompt is de instructie of opdracht die je aan AI geeft, bijvoorbeeld een vraag, verzoek of instructie.",
+          "praktisch": "Een goede prompt is duidelijk, specifiek en doelgericht."
+        },
+        {
+          "term": "Iterate",
+          "uitleg": "Itereren betekent dat je de output van de AI beoordeelt en vervolgens een aanvullende of aangepaste prompt geeft om het resultaat te verbeteren of te verfijnen. Het is een cyclisch proces van proberen, evalueren en bijsturen.",
+          "praktisch": "Itereren helpt je om stapsgewijs samen met de AI tot een beter eindresultaat te komen. Je werkt niet steeds met dezelfde prompt, maar stuurt bij op basis van de gegenereerde output – net zoals je behandelplannen bijstelt op basis van voortgang en observaties."
+        },
+        {
+          "term": "LLM (Large Language Model)",
+          "uitleg": "Een LLM is een AI-model dat getraind is op enorme tekstverzamelingen om patronen te herkennen en tekst te genereren op basis van waarschijnlijkheid.",
+          "praktisch": "Een LLM 'begrijpt' tekst niet zoals mensen dat doen. Het baseert zijn antwoorden op statistiek, niet op waarheid. Blijf dus kritisch en controleer altijd belangrijke inhoud."
+        },
+        {
+          "term": "Agent",
+          "uitleg": "Een agent is een AI-systeem dat zelfstandig stappen kan plannen en uitvoeren richting een doel, vaak met meerdere beslismomenten.",
+          "praktisch": "Een AI-agent kan zelfstandig taken uitvoeren, zoals het opstellen van behandelvoorstellen of het genereren van patiëntverslagen. Nuttig, maar altijd onder supervisie van een professional."
+        },
+        {
+          "term": "Reasoning layers",
+          "uitleg": "Dit zijn lagen binnen een AI-agent die zorgen voor redeneren, beslissen en plannen, op basis van informatieverwerking.",
+          "praktisch": "Deze lagen bootsen cognitieve processen na, maar werken op kansberekening. Ze maken complexe interactie mogelijk, maar kunnen nog steeds fouten maken. Gebruik AI daarom altijd als ondersteunend hulpmiddel."
+        },
+        {
+          "term": "AGI (Artificial General Intelligence)",
+          "uitleg": "AGI is een hypothetisch AI-systeem dat elk cognitief vermogen van mensen kan evenaren – inclusief redeneren, leren en creativiteit.",
+          "praktisch": "AGI bestaat (nog) niet. Huidige AI is 'narrow' en beperkt tot specifieke taken. Verwacht dus geen mensachtige denkkracht of brede intelligentie van huidige systemen."
+        }
       ]
     },
     "bronnen": {
@@ -75,12 +170,31 @@
   },
   "interacties": [
     {
+      "id": "h2_flashcard_1",
+      "type": "flashcard",
+      "titel": "Flashcards: Belangrijke AI-termen",
+      "vraag": "Oefen met de belangrijkste begrippen uit dit hoofdstuk. Klik op de kaart om het antwoord te zien.",
+      "cards": [
+        { "term": "Kunstmatige Intelligentie (AI)", "uitleg": "Technologie waarmee computers menselijk leren, redeneren en beslissen kunnen nabootsen." },
+        { "term": "Machine Learning (ML)", "uitleg": "Techniek waarbij algoritmes zichzelf verbeteren door te leren van voorbeelden uit data, zonder dat elke stap expliciet is geprogrammeerd." },
+        { "term": "Deep Learning (DL)", "uitleg": "Geavanceerde vorm van ML die gebruikmaakt van gelaagde neurale netwerken, geïnspireerd op het menselijk brein." },
+        { "term": "Token", "uitleg": "Basiseenheid van tekst die AI gebruikt – kan een woorddeel, leesteken of kort woord zijn." },
+        { "term": "Context window", "uitleg": "Maximale hoeveelheid tokens (invoer + uitvoer) die een AI-model tegelijk kan verwerken." },
+        { "term": "Prompt", "uitleg": "De instructie of opdracht die je aan AI geeft, bijvoorbeeld een vraag, verzoek of instructie." },
+        { "term": "Iterate", "uitleg": "Het cyclisch proces van proberen, evalueren en bijsturen van prompts om betere output te krijgen." },
+        { "term": "LLM (Large Language Model)", "uitleg": "AI-model getraind op enorme tekstverzamelingen om patronen te herkennen en tekst te genereren." },
+        { "term": "Agent", "uitleg": "AI-systeem dat zelfstandig stappen kan plannen en uitvoeren richting een doel." },
+        { "term": "Reasoning layers", "uitleg": "Lagen binnen een AI-agent die zorgen voor redeneren, beslissen en plannen." },
+        { "term": "AGI (Artificial General Intelligence)", "uitleg": "Hypothetisch AI-systeem dat elk cognitief vermogen van mensen kan evenaren." }
+      ]
+    },
+    {
       "id": "h2_reflection_1",
       "type": "reflection",
-      "vraag": "Welke van de genoemde AI-toepassingen in de 'kaartenbox' vind jij het meest veelbelovend voor jouw toekomst als fysiotherapeut, en waarom?",
+      "vraag": "Welke toepassing van AI in de fysiotherapie spreekt jou het meest aan na het lezen van dit hoofdstuk, en waarom? Geef een concreet voorbeeld van hoe je deze toepassing zou willen inzetten in jouw toekomstige werk.",
       "minLength": 50,
-      "maxLength": 500,
-      "placeholder": "Beschrijf hier waarom je voor deze toepassing kiest en hoe je deze zou willen inzetten in je praktijk..."
+      "maxLength": 1500,
+      "placeholder": "Beschrijf hier jouw keuze en licht toe waarom deze AI-toepassing relevant is voor jouw praktijk als (toekomstig) fysiotherapeut."
     }
   ]
 } 

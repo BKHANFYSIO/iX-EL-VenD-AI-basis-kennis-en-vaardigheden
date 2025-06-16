@@ -1,96 +1,185 @@
 {
-  "titel": "De Kracht van Technologie - Voordelen in de Fysiotherapie",
+  "titel": "AI-tools: Wat kies ik?",
   "content": {
     "intro": {
-      "titel": "Waarom Zorgtechnologie?",
-      "tekst": "Zorgtechnologie biedt verschillende voordelen voor zowel de fysiotherapeut als de patiënt. Door deze voordelen goed te begrijpen, kun je beter inschatten welke technologie waardevol kan zijn in jouw praktijk."
+      "type": "info-card",
+      "tekst": "Een wegwijzer in het snel veranderende AI-landschap\n\nIn de vorige hoofdstukken heb je kennisgemaakt met de basisprincipes van kunstmatige intelligentie en hoe je effectief kunt communiceren met AI-modellen. Nu duiken we in de praktische kant: welke tools kun je daadwerkelijk gebruiken? De wereld van AI is constant in beweging. Bijna wekelijks verschijnen er nieuwe, krachtigere taalmodellen, worden bestaande tools uitgebreid met nieuwe functies en verbetert de capaciteit om informatie te verwerken (het 'context window').\n\nDit snelle tempo maakt het lastig om bij te houden welke tool op welk moment 'de beste' is. De ene week loopt een bepaalde chatbot voorop, de volgende week wordt hij ingehaald door een concurrent met een baanbrekende update. Dit 'stuivertje wisselen' betekent dat dé beste tool niet bestaat; de beste tool is de tool die op dat moment het beste past bij jouw specifieke taak of vraag. Dit hoofdstuk geeft je een overzicht van de meest relevante en bruikbare tools van dit moment."
     },
-    "voordelen": [
-      {
-        "titel": "Therapietrouw Verbeteren",
-        "beschrijving": "Technologie kan helpen om patiënten beter bij hun oefenprogramma betrokken te houden.",
-        "voorbeeld": {
-          "titel": "Praktijkvoorbeeld",
-          "tekst": "Een app die dagelijks herinneringen stuurt, voortgang bijhoudt en patiënten beloont voor het voltooien van oefeningen."
-        }
+    "chatbots": {
+      "titel": {
+        "type": "section-title",
+        "tekst": "Veelgebruikte Chatbots"
       },
-      {
-        "titel": "Motivatie door Gamification",
-        "beschrijving": "Door oefeningen in een spelvorm aan te bieden, wordt therapie leuker en uitdagender voor patiënten.",
-        "voorbeeld": {
-          "titel": "Praktijkvoorbeeld",
-          "tekst": "Een VR-spel waarbij patiënten fruit moeten vangen, wat eigenlijk schoudermobilisatie oefeningen zijn. Patiënten zijn zo gefocust op het spel dat ze vergeten dat ze aan het oefenen zijn."
-        }
+      "intro": {
+        "type": "content-text",
+        "tekst": "Chatbots, ook wel conversationele AI of taalmodellen genoemd, zijn ontworpen om menselijke conversatie na te bootsen. Je kunt ze vragen stellen, opdrachten geven, teksten laten schrijven, ideeën laten genereren en nog veel meer. Ze zijn getraind op een enorme hoeveelheid tekst en data, waardoor ze over een brede algemene kennis beschikken.\n\nSommige chatbots, zoals NotebookLM, zijn speciaal ontwikkeld om je te ondersteunen bij het leren en studeren met je eigen documenten, webpagina's of video's. Je kunt ze vragen stellen over je eigen materiaal en zo complexe leerstof sneller eigen maken.\n\nHieronder vind je een aantal van de meest populaire chatbots."
       },
-      {
-        "titel": "Effectiever Motorisch Leren",
-        "beschrijving": "Directe feedback en visualisatie kunnen het motorisch leerproces versnellen en verbeteren.",
-        "voorbeeld": {
-          "titel": "Praktijkvoorbeeld",
-          "tekst": "Een bewegingsanalyse-app die direct laat zien of een squat correct wordt uitgevoerd, waarbij de patiënt zijn eigen beweging kan vergelijken met het ideale bewegingspatroon."
-        }
-      },
-      {
-        "titel": "Objectief Meten",
-        "beschrijving": "Technologie maakt het mogelijk om bewegingen en vooruitgang nauwkeurig te meten en vast te leggen.",
-        "voorbeeld": {
-          "titel": "Praktijkvoorbeeld",
-          "tekst": "Sensoren die de bewegingsuitslag van een knie precies kunnen meten, waardoor je objectief kunt aantonen dat een patiënt van 85° naar 110° flexie is gegaan."
-        }
-      },
-      {
-        "titel": "Efficiëntere Blended Care",
-        "beschrijving": "Combinatie van fysieke behandelingen en digitale ondersteuning voor optimale zorg.",
-        "voorbeeld": {
-          "titel": "Praktijkvoorbeeld",
-          "tekst": "Een patiënt komt 1x per week voor behandeling en doet thuis oefeningen via een app. De therapeut kan op afstand de voortgang monitoren en het programma aanpassen."
-        }
-      },
-      {
-        "titel": "Betere Toegankelijkheid",
-        "beschrijving": "Zorg wordt toegankelijker voor patiënten die minder mobiel zijn of ver weg wonen.",
-        "voorbeeld": {
-          "titel": "Praktijkvoorbeeld",
-          "tekst": "Een oudere patiënt met COPD kan via beeldbellen een deel van de behandelingen thuis volgen, wat vooral in de winter prettig is als reizen lastig is."
-        }
+      "platforms": {
+        "type": "platforms-container",
+        "items": [
+          {
+            "type": "platform-card",
+            "titel": "ChatGPT (van OpenAI)",
+            "beschrijving": "De meest bekende en wijdverspreide chatbot die de AI-revolutie in een stroomversnelling bracht. Het is een zeer veelzijdige tool die uitblinkt in creatieve taken, tekstgeneratie, samenvatten en programmeren.",
+            "link": "chat.openai.com"
+          },
+          {
+            "type": "platform-card",
+            "titel": "Gemini (van Google)",
+            "beschrijving": "Google's antwoord op ChatGPT. Gemini is sterk geïntegreerd met de kennis van het internet en kan daardoor zeer actuele antwoorden geven. Het is ook sterk in logisch redeneren en het verwerken van informatie in verschillende formats.",
+            "link": "gemini.google.com"
+          },
+          {
+            "type": "platform-card",
+            "titel": "NotebookLM (van Google)",
+            "beschrijving": "NotebookLM is een chatbot van Google waarmee je vragen kunt stellen over je eigen documenten, webpagina's of video's. Ideaal om snel inzicht te krijgen in complexe leerstof.",
+            "link": "notebooklm.google.com"
+          },
+          {
+            "type": "platform-card",
+            "titel": "Claude (van Anthropic)",
+            "beschrijving": "Claude staat bekend om zijn grote 'context window', wat betekent dat het zeer grote hoeveelheden tekst (zoals complete boeken of onderzoeksrapporten) in één keer kan analyseren. Het wordt vaak geprezen om zijn vermogen tot genuanceerd en diepgaand redeneren.",
+            "link": "claude.ai"
+          },
+          {
+            "type": "platform-card",
+            "titel": "Mistral (van Mistral AI)",
+            "beschrijving": "Een opkomende Europese speler die krachtige open-source modellen ontwikkelt. Mistral wordt geroemd om zijn efficiëntie en prestaties, en wordt vaak gezien als een sterk, privacy-vriendelijker alternatief.",
+            "link": "chat.mistral.ai"
+          }
+        ]
       }
-    ],
-    "praktische_toepassing": {
-      "titel": "Voordelen in de Praktijk Brengen",
-      "tekst": "Als fysiotherapeut is het belangrijk om deze voordelen strategisch in te zetten:",
-      "tips": [
-        "Combineer verschillende voordelen: Bijvoorbeeld een app die zowel de therapietrouw verhoogt als objectieve metingen doet.",
-        "Kies wat past bij je patiënt: Voor sommige patiënten werkt gamification heel goed, voor anderen is eenvoudige monitoring belangrijker.",
-        "Begin klein: Start met één technologie en bouw dit uit als je er vertrouwd mee bent."
-      ]
+    },
+    "chatbot_functies": {
+      "titel": {
+        "type": "section-title",
+        "tekst": "Wat kunnen chatbots eigenlijk?"
+      },
+      "tabel": {
+        "type": "table-container-group",
+        "intro": "Onderstaande tabellen helpen je om inzicht te krijgen in de belangrijkste functies van AI-chatbots. Houd er wel rekening mee dat functies per chatbot kunnen verschillen, soms andere benamingen hebben en dat er door de snelle ontwikkelingen geregeld nieuwe mogelijkheden worden toegevoegd.",
+        "tables": [
+          {
+            "titel": "📄 Tekst en spraak",
+            "headers": ["Functie", "Wat doet het?"],
+            "rows": [
+              ["Tekst genereren / samenvatten", "De AI kan teksten schrijven, samenvatten, vertalen en herschrijven. Dit gebeurt op basis van het AI-taalmodel. Je kunt ook zelf bronnen toevoegen of vragen om informatie van internet (indien beschikbaar)."],
+              ["Web search", "De AI haalt actuele informatie van internet (alleen als de functie actief is) om vragen te beantwoorden of extra context te geven."],
+              ["Deep research", "De AI kan grote hoeveelheden tekst (zoals artikelen, richtlijnen of handleidingen) analyseren en structureren om complexe vragen te beantwoorden. Je kunt hiermee bijvoorbeeld automatisch een compleet rapport laten schrijven op basis van meerdere bronnen."],
+              ["Canvas / Artefact", "Een interactieve werkruimte waarin je samen met de AI werkt, vergelijkbaar met samenwerken in een Word-document. Je kunt bijvoorbeeld teksten invoeren, aanpassen, herschrijven of bepaalde stukken selecteren en de AI vragen om alleen dat deel te verbeteren. Zo bouw je samen aan documenten, opdrachten of verslagen."],
+              ["Multimodale input", "Je kunt naast tekst ook afbeeldingen, video's of spraakfragmenten toevoegen als input. De AI kan deze interpreteren en gebruiken om je verder te helpen."],
+              ["Spraakoutput / Gesprekken voeren", "De AI kan antwoorden geven in gesproken vorm. Dit maakt het mogelijk om echte gesprekken te voeren met de AI, wat handig is bij bijvoorbeeld oefenen van anamnese of uitleg."]
+            ]
+          },
+          {
+            "titel": "🖼️ Visueel en multimediaal",
+            "headers": ["Functie", "Wat doet het?"],
+            "rows": [
+              ["Afbeeldingen genereren", "De AI maakt afbeeldingen op basis van jouw tekstuele beschrijving (prompt). Dit gebeurt niet meer via het taalmodel (LLM) zelf, maar via een koppeling met een ander AI-model dat gespecialiseerd is in beeldgeneratie. Je kunt bijvoorbeeld vragen om een anatomisch schema, een illustratie voor een poster of zelfs een grafiek of tabel op basis van toegevoegde gegevens. Dit laatste valt soms ook onder 'code genereren' als er berekeningen of visualisaties nodig zijn."],
+              ["Video's genereren", "De AI kan video's maken op basis van tekst of afbeeldingen. Dit gebeurt via een koppeling met een extern model voor videogeneratie. Je kunt bijvoorbeeld een korte animatie laten maken die een anatomisch proces uitlegt, of een visuele samenvatting van een behandeltraject."]
+            ]
+          },
+          {
+            "titel": "🛠️ Technisch / bouwend",
+            "headers": ["Functie", "Wat doet het?"],
+            "rows": [
+              ["Code genereren", "De AI schrijft code, helpt fouten oplossen of legt programmeercode uit. Hiermee kun je zelfs zonder programmeerkennis je eigen apps maken, bijvoorbeeld voor eenvoudige tools of e-healthtoepassingen. De AI begeleidt je stap voor stap. Hierover lees je meer in een volgend hoofdstuk."]
+            ]
+          }
+        ],
+        "note": "Heb je suggesties of toepassingen die hierbij passen? Vul het canvas gerust aan!"
+      }
+    },
+    "andere_tools": {
+      "titel": {
+        "type": "section-title",
+        "tekst": "Andere AI-tools"
+      },
+      "intro": {
+        "type": "content-text",
+        "tekst": "Naast de brede, conversationele chatbots is er een rijk en groeiend ecosysteem van gespecialiseerde AI-tools. Deze tools zijn ontworpen om uit te blinken in één specifieke taak, zoals het omzetten van spraak naar tekst, het bouwen van presentaties, of het genereren van afbeeldingen. Door de juiste tool voor de juiste taak te kiezen, kun je je productiviteit en creativiteit aanzienlijk verhogen. Onderstaand wat meer informatie over enkele van deze (soorten) tools."
+      },
+      "tools": {
+        "type": "modules-list-stacked",
+        "items": [
+          {
+            "type": "benefit-card",
+            "titel": "Transcribeertool: TurboScribe",
+            "beschrijving": "Met TurboScribe kun je audio- en videobestanden razendsnel omzetten naar tekst (transcriberen). Met een gratis account kun je dagelijks tot 30 minuten aan materiaal uploaden. Dit is ontzettend handig voor je studie. Neem bijvoorbeeld een oefengesprek, een anamnese of een overleg op, transcribeer het bestand en plak de tekst in een chatbot. Vervolgens kun je de chatbot vragen om feedback op je gesprekstechnieken, een samenvatting te maken of de belangrijkste actiepunten te identificeren.\n\nLet op! Wees altijd uiterst voorzichtig met gevoelige (persoons)gegevens. Gebruik geen echte patiëntgegevens en vraag altijd expliciet toestemming aan alle aanwezigen voordat je een opname maakt en deze uploadt naar een online service.",
+            "link": "https://turboscribe.ai/nl/"
+          },
+          {
+            "type": "benefit-card",
+            "titel": "GPT's en Gepersonaliseerde AI-assistenten",
+            "beschrijving": "Binnen het ecosysteem van ChatGPT kun je zogenaamde GPT's gebruiken. Dit zijn versies van ChatGPT die door gebruikers zijn aangepast voor een heel specifieke taak, bijvoorbeeld 'Academische Schrijfassistent' of 'Presentatie Bouwer'. Je kunt zelf GPT's maken voor eigen gebruik of ze delen met anderen. Ook andere platformen ontwikkelen vergelijkbare functies voor gepersonaliseerde AI-assistenten, al varieert de naamgeving."
+          },
+          {
+            "type": "benefit-card",
+            "titel": "Allerlei gespecialiseerde tools",
+            "beschrijving": "Er bestaan duizenden andere AI-tools, elk met een eigen specialisme. Denk aan tools die je helpen bij het maken van invuloefeningen, het ontwerpen van presentaties, het genereren van afbeeldingen, het creëren van interactieve websites en zelfs het componeren van muziek."
+          }
+        ]
+      }
+    },
+    "tool_vinden": {
+      "titel": {
+        "type": "section-title",
+        "tekst": "Hoe vind je de juiste AI-tool voor je studie?"
+      },
+      "intro": {
+        "type": "content-text",
+        "tekst": "Het enorme aanbod kan overweldigend zijn. Gelukkig zijn er platformen die je helpen de juiste tool voor jouw taak te vinden."
+      },
+      "platforms": {
+        "type": "platforms-container",
+        "items": [
+          {
+            "type": "platform-card",
+            "titel": "FysioAI LeerToolbox",
+            "beschrijving": "De FysioAI LeerToolbox is een verzameling AI-tools speciaal ontwikkeld en geselecteerd voor fysiotherapiestudenten van de HAN. De tools helpen je effectiever te leren: je leert met behulp van AI, of gebruikt leermiddelen die door AI zijn ondersteund. Gebruik de filters om snel die tools te vinden die passen bij jouw leerdoelen en leerbehoeften.",
+            "link": "ai-tools-phi-one.vercel.app",
+            "icon": "qr-code-icon"
+          },
+          {
+            "type": "platform-card",
+            "titel": "There's An AI For That",
+            "beschrijving": "Dit is een gigantische, doorzoekbare database van AI-tools voor vrijwel elke denkbare taak. Zoek je een tool om mindmaps te maken? Een tool om je te helpen met statistiek? De kans is groot dat je hem hier vindt. Het is de meest uitgebreide verzamelsite voor AI-applicaties.",
+            "link": "theresanaiforthat.com",
+            "icon": "qr-code-icon"
+          }
+        ]
+      }
+    },
+    "betaald_vs_gratis": {
+      "titel": {
+        "type": "section-title",
+        "tekst": "Betaalde versus gratis accounts"
+      },
+      "tekst": {
+        "type": "content-text",
+        "tekst": "Moet je nu betalen voor AI of niet? Voor de meeste studietaken zijn de gratis accounts van de grote aanbieders al meer dan krachtig genoeg. Ze geven je toegang tot zeer capabele modellen waarmee je het merendeel van je werk kunt doen.\n\nMet een betaald account haal je echter het maximale uit de technologie. Je krijgt doorgaans toegang tot de allernieuwste en krachtigste modellen, meer geavanceerde functies (zoals het genereren van afbeeldingen of data-analyse), hogere gebruikslimieten en snellere reactietijden.\n\nEen interessante trend is dat veel functies die eerst exclusief voor betaalde gebruikers waren, na verloop van tijd beschikbaar komen in de gratis versie, soms met bepaalde limieten. Het heeft weinig zin om hier een exacte lijst te geven van wat wel en niet kan met een gratis of betaald account. De ontwikkelingen gaan zo snel dat die informatie morgen alweer verouderd kan zijn. Het beste advies is om te starten met de gratis versies en pas te overwegen om te betalen als je merkt dat je tegen de limieten aanloopt of een specifieke, geavanceerde functie nodig hebt."
+      }
     }
   },
   "interacties": [
     {
-      "type": "dragdrop",
-      "id": "h3_dragdrop_1",
-      "vraag": "Sleep elk voordeel naar de technologie waar het het beste bij past:",
-      "items": [
-        { "id": "1", "label": "Verhoogde therapietrouw door dagelijkse herinneringen" },
-        { "id": "2", "label": "Objectieve bewegingsanalyse voor nauwkeurige feedback" },
-        { "id": "3", "label": "Motiverende gameomgeving voor oefeningen" }
+      "type": "mc",
+      "id": "h3_quiz_mc_1",
+      "vraag": "Stel: je wilt zeker weten dat een chatbot alleen informatie gebruikt uit jouw eigen geselecteerde bronnen (zoals geüploade documenten of webpagina's). Welke van de onderstaande chatbots is daar het meest geschikt voor?",
+      "options": [
+        "ChatGPT (van OpenAI)",
+        "Gemini (van Google)",
+        "NotebookLM (van Google)",
+        "Claude (van Anthropic)",
+        "Mistral (van Mistral AI)"
       ],
-      "targets": [
-        { "id": "1", "label": "Bewegingsanalyse-apps<br><span class='tech-example'>(zoals FysioMeter, GaitUp)</span>" },
-        { "id": "2", "label": "Virtual Reality<br><span class='tech-example'>(zoals Corpus VR)</span>" },
-        { "id": "3", "label": "eHealth Platforms<br><span class='tech-example'>(zoals Physitrack)</span>" }
-      ],
-      "correctCombinations": [
-        { "targetId": "1", "itemId": "2" },
-        { "targetId": "2", "itemId": "3" },
-        { "targetId": "3", "itemId": "1" }
-      ],
-      "feedbackCorrect": "Goed gedaan! Je hebt alle technologieën correct gekoppeld aan de voordelen.",
-      "feedbackIncorrect": "Niet alle koppelingen zijn correct. Probeer het opnieuw."
+      "correctAnswer": 3,
+      "feedbackCorrect": "Goed! NotebookLM is speciaal ontwikkeld om te werken met jouw eigen bronnen. Je kunt documenten, webpagina's of zelfs YouTube-video's uploaden en de AI gebruikt alleen deze informatie om jouw vragen te beantwoorden. Uniek aan NotebookLM is dat je niet alleen kunt chatten over je eigen bronnen, maar ook automatisch samenvattingen, mindmaps, toetsvragen of zelfs een podcastscript kunt laten maken op basis van alleen jouw geüploade materiaal. Andere chatbots, zoals ChatGPT, Gemini, Claude en Mistral, kunnen soms wel met eigen documenten werken, maar combineren deze informatie vaak met hun algemene kennis of internetdata. Alleen bij NotebookLM weet je zeker dat de antwoorden uitsluitend gebaseerd zijn op jouw geselecteerde bronnen.",
+      "feedbackIncorrect": "Niet helemaal. NotebookLM is de enige chatbot in dit rijtje die gegarandeerd alleen jouw eigen bronnen gebruikt. Je kunt documenten, webpagina's of video's uploaden en de AI gebruikt uitsluitend deze informatie om jouw vragen te beantwoorden. Bovendien kun je met NotebookLM automatisch samenvattingen, mindmaps, toetsvragen of zelfs een podcast laten maken op basis van alleen jouw bronnen. Andere chatbots, zoals ChatGPT, Gemini, Claude en Mistral, kunnen soms wel met eigen documenten werken, maar combineren deze informatie vaak met hun algemene kennis of internetdata. Daardoor heb je bij die chatbots minder controle over de gebruikte broninformatie."
     },
     {
       "type": "reflection",
-      "vraag": "Welk van de besproken voordelen zou volgens jou het meeste impact kunnen hebben in jouw toekomstige werk als fysiotherapeut? Leg uit waarom en geef een concreet voorbeeld van hoe je dit zou willen toepassen.",
+      "vraag": "Welke AI-tool(s) uit dit hoofdstuk spreken jou het meest aan, of heb je misschien al ervaring met één of meerdere van deze tools? Beschrijf hoe je deze tool(s) zou willen inzetten (of al hebt ingezet) tijdens je studie of stage. Wat levert het je op, of wat verwacht je ervan? Geef een concreet voorbeeld uit je eigen praktijk of een situatie waarin je de tool zou willen gebruiken.",
       "id": "h3_reflection_1"
     }
   ]

@@ -1,0 +1,130 @@
+/* 
+==============================================
+  IMAGE COMPONENT STYLES
+==============================================
+*/
+
+/* Basisstijl voor alle afbeeldingsfiguren */
+.image-container {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Standaard afronding voor alle afbeeldingen */
+}
+
+.image-container figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+    text-align: right;
+    font-style: italic;
+}
+
+.image-container figcaption::before {
+    content: "Bron: ";
+}
+
+.image-container figcaption.no-source::before {
+    content: ""; /* Geen "Bron: " tekst als er geen bron is */
+}
+
+/* 1. Ingekaderde, responsive afbeelding */
+.img-framed-responsive {
+    border: 8px solid #f8f9fa;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.img-framed-responsive img {
+    border-radius: 0;
+}
+
+/* 2. Gesplitst scherm: afbeelding en tekst */
+.img-split-screen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.img-split-screen .image-content {
+    /* De afbeelding zelf zit hier niet direct in, maar de container ervan */
+}
+
+.img-split-screen .text-content {
+    /* Stijlen voor de tekstinhoud */
+}
+
+/* Responsive voor split screen */
+@media (max-width: 768px) {
+    .img-split-screen {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 3. Polaroid-stijl */
+.img-polaroid {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    padding-bottom: 3rem; /* Meer ruimte onderaan voor de 'polaroid' look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: rotate(-3deg);
+    transition: transform 0.2s ease-in-out;
+    width: fit-content; /* Breedte aanpassen aan inhoud */
+    max-width: 400px; /* Maximale breedte instellen */
+    margin-left: 2rem; /* Een beetje ruimte geven */
+}
+
+.img-polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 10;
+}
+
+.img-polaroid figcaption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    text-align: center;
+    font-style: normal;
+    color: #333;
+}
+
+/* 4. Afbeeldingen Grid */
+.image-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.image-grid .image-container {
+    margin: 0; /* Reset margin for items in grid */
+}
+
+/* Grid met 2 kolommen */
+.image-grid-2-col {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+}
+
+/* Grid met 3 kolommen */
+.image-grid-3-col {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+}
+
+@media (min-width: 768px) {
+    .image-grid-2-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .image-grid-3-col {
+        grid-template-columns: repeat(3, 1fr);
+    }
+} 

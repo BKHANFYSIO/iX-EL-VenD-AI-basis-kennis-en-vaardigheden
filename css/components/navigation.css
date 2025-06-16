@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Navigation and Progress Bar
+   ========================================================================== */
+
+/* Main header title */
+.header-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-purple, #6C3EB6);
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+  margin-top: 4px;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 1.2rem;
+  }
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  font-weight: 400;
+}
+
+/* Progress container */
+.progress-container {
+  background-color: var(--white);
+  padding: 8px 20px 25px;
+  margin: 0;
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: var(--dark-gray);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.progress-chapters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 0;
+}
+
+.chapter-point {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  background-color: var(--white);
+  border: 2px solid var(--medium-gray);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-gray);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.chapter-point.active {
+  background-color: var(--primary-purple);
+  border-color: var(--primary-purple);
+  color: var(--white);
+}
+
+.chapter-point:hover {
+  background-color: var(--accent-purple);
+  border-color: var(--primary-purple);
+}
+
+.chapter-point.completed {
+  background-color: var(--primary-purple);
+  border-color: var(--primary-purple);
+  color: var(--white);
+}
+
+.chapter-label {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--dark-gray);
+  text-align: center;
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.progress-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--medium-gray);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--primary-purple);
+  transition: width 0.3s ease;
+}
+
+.progress-percentage {
+  position: absolute;
+  right: 0;
+  top: -25px;
+  font-size: 0.9rem;
+  color: var(--primary-purple);
+  font-weight: 500;
+}
+
+/* Hide original nav-menu on mobile */
+@media (max-width: 768px) {
+  .chapter-label {
+    display: none;
+  }
+  
+  .progress-chapters {
+    margin: 10px 0;
+  }
+  
+  .chapter-point {
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+  }
+} 

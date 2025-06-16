@@ -1,0 +1,77 @@
+/* --- Video Component Stijlen --- */
+
+/* Wrapper voor individuele video's (responsive) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    background-color: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Container voor een video op volledige breedte */
+.video-container-full-width {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.video-container-full-width .video-title {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+/* Grid container voor video's in kolommen */
+.video-grid-container {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.video-grid-container-2-col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.video-grid-container-3-col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.video-grid-container .video-title {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.video-grid-item-content p.video-source {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+
+/* Responsive aanpassingen voor de grids */
+@media (max-width: 900px) {
+    .video-grid-container-3-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .video-grid-container-2-col,
+    .video-grid-container-3-col {
+        grid-template-columns: 1fr;
+    }
+} 

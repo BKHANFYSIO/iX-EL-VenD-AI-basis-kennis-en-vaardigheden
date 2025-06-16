@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Main Page Layout
+   ========================================================================== */
+
+/* Algemene layout structuur */
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+.sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.content-area {
+    flex: 1;
+    margin-left: 270px; /* Should match sidebar width */
+    min-height: 100vh;
+    background-color: var(--light-gray);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #fff;
+    border-bottom: 1px solid var(--medium-gray);
+    box-shadow: var(--shadow);
+    padding: 0;
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.header-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Secties */
+.section {
+  background-color: var(--white);
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.section-title {
+  color: var(--primary-purple);
+  font-size: 2rem;
+  margin-top: 48px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--accent-purple);
+}
+
+.section-content {
+  margin-bottom: 40px;
+}
+
+/* Styling for subtitles within a section */
+.content-subtitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+/* Styling for a standard h2 inside a section, that is NOT a main .section-title */
+.section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 900px) {
+    .content-area {
+        margin-left: 0 !important;
+    }
+
+    .content-wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    header {
+        border-radius: 0;
+        margin: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .header-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .container {
+        margin: 10px auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    body.sidebar-open .content-area {
+        position: relative;
+    }
+} 
