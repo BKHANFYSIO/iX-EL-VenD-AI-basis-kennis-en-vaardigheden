@@ -6,9 +6,14 @@
     <title>Stijlgids E-learning</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/stijlgids.css">
+    <!-- Extra component-stijlen die nodig zijn voor de volledige weergave -->
+    <link rel="stylesheet" href="css/components/cards.css">
     <link rel="stylesheet" href="css/components/images.css">
-    <link rel="stylesheet" href="css/components/showcase.css">
+    <link rel="stylesheet" href="css/components/video.css">
+    <link rel="stylesheet" href="css/components/process-flow.css">
+    <link rel="stylesheet" href="css/components/layout.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         body { padding: 2rem; background-color: #f9fafb; }
         .style-guide { max-width: 900px; margin: auto; }
@@ -16,645 +21,56 @@
     </style>
 </head>
 <body>
-    <main class="container">
-        <section id="section0" class="section style-guide" data-section="0" style="display: block;">
-            <h2>Componenten Showcase</h2>
-            <p>Dit is een live overzicht van de beschikbare bouwblokken voor de e-learning. Gebruik de class-namen in de notities om deze componenten in nieuwe content toe te passen.</p>
-        
-            <div class="showcase-controls">
-                <button id="expandAllShowcase" class="btn btn-secondary">Vouw alles uit</button>
-                <button id="collapseAllShowcase" class="btn btn-secondary">Vouw alles in</button>
+    <header>
+        <h1>Stijlgids E-learning</h1>
+    </header>
+    <main>
+        <section class="stijlgids-sectie" id="dynamic-styleguide-section">
+            <h2 class="stijlgids-hoofdtitel">Componenten Catalogus</h2>
+            <p class="stijlgids-intro">Hieronder wordt de volledige content van <code>documentatie/voorbeeld_hoofdstuk.json</code> dynamisch geladen. Dit is een live 1-op-1 weergave van alle beschikbare componenten.</p>
+            <div id="dynamic-styleguide-content" class="container">
+                <!-- Voorbeeldhoofdstuk content komt hier -->
             </div>
-
-            <!-- Layout & Structuur -->
-            <div class="collapsible-section">
-                <button class="collapsible" type="button">Layout & Structuur</button>
-                <div class="collapsible-content">
-                    <div class="style-guide-item">
-                        <h3>Standaard (Brede) Layout</h3>
-                        <div class="content-block" style="padding: 1.5rem; margin: 0; border: 1px solid var(--medium-gray);">
-                            <h2 class="section-title">Hoofdtitel van het blok (h2)</h2>
-                            <h3 class="section-title" style="margin-top: 1rem;">Subtitel van het blok (h3)</h3>
-                            <div class="content-text" style="margin-top: 1rem;">Dit is een standaard tekstblok. Onder een titel kun je elk type content plaatsen.</div>
-                            <div class="info-card" style="margin-top: 1rem;">
-                                <div class="info-card-content">Dit is een info-card onder de titel.</div>
-                            </div>
-                        </div>
-                        <p class="note">
-                            <strong>Standaard layout:</strong> Gebruik een <code>.content-block</code> voor de brede opmaak. Plaats een <code>&lt;h2&gt;</code> of (meestal) <code>&lt;h3&gt;</code> met de class <code>section-title</code> bovenaan voor een titel met een streep. Onder de titel kun je alle soorten content kwijt.<br><br>
-                            <strong>Voorbeeld:</strong><br>
-                            <code>&lt;div class="content-block"&gt;<br>&nbsp;&nbsp;&lt;h3 class="section-title"&gt;Subtitel van het blok&lt;/h3&gt;<br>&nbsp;&nbsp;&lt;div class="content-text"&gt;Gewone tekst...&lt;/div&gt;<br>&nbsp;&nbsp;&lt;div class="info-card"&gt;...&lt;/div&gt;<br>&lt;/div&gt;</code>
-                        </p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Afwijkende (Smallere) Layout</h3>
-                        <div class="section" style="padding: 1.5rem; margin: 0; border: 1px solid var(--medium-gray);">
-                            <h2 class="section-title" style="margin-top:0;">Titel van de smallere sectie</h2>
-                            <div class="section-content">
-                                Dit is de inhoud van een smallere, gecentreerde sectie.
-                            </div>
-                        </div>
-                        <p class="note">
-                            <strong>Voor focus of een andere layout:</strong> Gebruik een <code>&lt;section&gt;</code> met de class <code>section</code>. Dit creëert een smallere, gecentreerde container.<br><br>
-                            <strong>Voorbeeld:</strong><br>
-                            <code>&lt;section class="section"&gt;<br>&nbsp;&nbsp;&lt;h2 class="section-title"&gt;Titel...&lt;/h2&gt;<br>&nbsp;&nbsp;&lt;div class="section-content"&gt;...&lt;/div&gt;<br>&lt;/section&gt;</code>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Tekst & Informatieblokken -->
-            <div class="collapsible-section">
-                <button class="collapsible" type="button">Tekst & Informatieblokken</button>
-                <div class="collapsible-content">
-                    <div class="style-guide-item">
-                        <h3>Content Text (standaard tekstblok)</h3>
-                        <div class="content-text">
-                            Dit is een standaard tekstblok voor paragrafen, uitleg of langere stukken tekst. Gebruik <code>.content-text</code> voor gewone tekst in een hoofdstuk of sectie. Je kunt hier ook <strong>vetgedrukte</strong> of <em>cursieve</em> tekst gebruiken, en links toevoegen.
-                        </div>
-                        <p class="note">
-                            Gebruik <code>.content-text</code> voor alle gewone tekst. Dit is het meest neutrale tekstblok en zorgt voor consistente opmaak en leesbaarheid.
-                        </p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Info Card</h3>
-                        <div class="info-card">
-                            <h4 class="info-card-title">Titel van de infokaart</h4>
-                            <div class="info-card-content">Dit blok is ideaal voor het uitlichten van belangrijke informatie, definities of een korte introductie.</div>
-                        </div>
-                        <p class="note">Gebruik <code>.info-card</code>, <code>.info-card-title</code> en <code>.info-card-content</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Info Card (Witte Achtergrond)</h3>
-                        <div class="info-card white-bg">
-                            <h4 class="info-card-title">Titel van de witte infokaart</h4>
-                            <div class="info-card-content">Dit is een variant met een witte achtergrond en een subtiele rand, handig voor content die wel uitgelicht moet worden maar geen paarse achtergrond nodig heeft.</div>
-                        </div>
-                        <p class="note">Gebruik <code>.info-card.white-bg</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Info Card met Horizontale Concepten</h3>
-                        <div class="info-card">
-                            <h3 class="info-card-title">Kernconcepten van TAM</h3>
-                            <div class="info-card-content">
-                                <div class="concept-cards">
-                                    <div class="concept-card">
-                                        <h4>Perceived Usefulness (U)</h4>
-                                        <p class="concept-dutch">Nederlands: Waargenomen Nut</p>
-                                        <p>De mate waarin iemand gelooft dat het gebruik van een technologie zijn of haar werkprestaties verbetert.</p>
-                                        <div class="example-box" style="background: white; border: 1px solid #eee; padding: 0.8rem;"><p style="margin:0;">Voorbeeld: Een fysiotherapeut die gelooft dat een app voor thuisoefeningen de therapietrouw verhoogt.</p></div>
-                                    </div>
-                                    <div class="concept-card">
-                                        <h4>Perceived Ease of Use (E)</h4>
-                                        <p class="concept-dutch">Nederlands: Waargenomen Gebruiksgemak</p>
-                                        <p>De mate waarin iemand gelooft dat het gebruik van een technologie weinig inspanning kost.</p>
-                                         <div class="example-box" style="background: white; border: 1px solid #eee; padding: 0.8rem;"><p style="margin:0;">Voorbeeld: Een patiënt die een app makkelijk vindt te gebruiken omdat deze intuïtief is opgezet.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="note">Gebruik <code>.info-card</code> > <code>.concept-cards</code> > <code>.concept-card</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Wist je dat?</h3>
-                        <div class="wist-je-dat">
-                            <h4 class="wist-je-dat-title">Wist je dat?</h4>
-                            <div>Dit blok is bedoeld voor opvallende feiten of weetjes. De paarse balk aan de linkerkant trekt de aandacht.</div>
-                        </div>
-                        <p class="note">Gebruik <code>.wist-je-dat</code> en <code>.wist-je-dat-title</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Notitie / Aandachtspunt</h3>
-                        <div class="note-box">
-                            <h4>Belangrijke notitie</h4>
-                            <p>Gebruik dit blok voor belangrijke aandachtspunten, waarschuwingen of extra opmerkingen die de gebruiker niet mag missen.</p>
-                        </div>
-                        <p class="note">Gebruik <code>.note-box</code>. De rode kleur wordt gebruikt om de aandacht te vestigen op belangrijke informatie.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Tip Box</h3>
-                        <div class="tip-box">
-                            <h4>Handige Tip</h4>
-                            <p>Gebruik dit blok voor het geven van praktische tips, suggesties of 'good-to-know' informatie.</p>
-                        </div>
-                        <p class="note">Gebruik <code>.tip-box</code> voor suggesties en tips.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Accordion / Uitklapbare uitleg</h3>
-                        <button class="collapsible" type="button">Klik om uit te klappen</button>
-                        <div class="collapsible-content">
-                            <p>Dit is een uitklapbare uitleg. Je kunt hier extra informatie kwijt die standaard verborgen is.</p>
-                        </div>
-                        <p class="note">Gebruik <code>&lt;button class="collapsible"&gt;</code> en een direct volgend <code>&lt;div class="collapsible-content"&gt;</code>.</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Lijsten & Tabellen -->
-            <div class="collapsible-section">
-                <button class="collapsible" type="button">Lijsten & Tabellen</button>
-                <div class="collapsible-content">
-                    <div class="style-guide-item">
-                        <h3>Info Card met Lijst</h3>
-                        <div class="info-card">
-                            <h4 class="info-card-title">Het Adoptieproces</h4>
-                            <div class="info-card-content">
-                                <p>Het TAM-model laat zien dat adoptie een proces is dat wordt beïnvloed door verschillende factoren:</p>
-                                <ul>
-                                    <li><strong>Attitude:</strong> De algemene indruk van de technologie, gevormd door U (Perceived Usefulness) en E (Perceived Ease of Use)</li>
-                                    <li><strong>Behavioral Intention:</strong> De intentie om de technologie te gebruiken</li>
-                                    <li><strong>Actual System Use:</strong> Het daadwerkelijke gebruik van de technologie</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="note">Een standaard <code>.info-card</code> kan ook een <code>&lt;ul&gt;</code> bevatten voor een lijst met opsommingstekens.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Tabel</h3>
-                        <div class="table-container">
-                            <h3 class="table-title">Titel van de tabel</h3>
-                            <table class="content-table">
-                                <thead>
-                                    <tr>
-                                        <th>Kolom 1</th>
-                                        <th>Kolom 2</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Data 1</td>
-                                        <td>Data 2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Data 3</td>
-                                        <td>Data 4</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="note">Gebruik <code>.table-container</code> > <code>.content-table</code>.</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Kaarten (Cards) -->
-            <div class="collapsible-section">
-                <button class="collapsible" type="button">Kaarten (Cards)</button>
-                <div class="collapsible-content">
-                    <div class="style-guide-item">
-                        <h3>Info Card</h3>
-                        <div class="info-card">
-                            <h4 class="info-card-title">Titel van de infokaart</h4>
-                            <div class="info-card-content">Dit blok is ideaal voor het uitlichten van belangrijke informatie, definities of een korte introductie.</div>
-                        </div>
-                        <p class="note">Gebruik <code>.info-card</code>, <code>.info-card-title</code> en <code>.info-card-content</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Statistieken Kaart</h3>
-                        <div class="stats-container" style="gap: 1rem;">
-                            <div class="stat-card">
-                                <div class="stat-image"><img src="https://placehold.co/150x150/662483/F2E6F7?text=Icon" alt="Statistiek icoon"></div>
-                                <h4 class="stat-title">Titel van Statistiek</h4>
-                                <div class="stat-number">85%</div>
-                                <p class="stat-label">Beschrijving van de data</p>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-image"><img src="https://placehold.co/150x150/662483/F2E6F7?text=Icon" alt="Statistiek icoon"></div>
-                                <h4 class="stat-title">Andere Statistiek</h4>
-                                <div class="stat-number">120</div>
-                                <p class="stat-label">Aantal deelnemers</p>
-                            </div>
-                        </div>
-                        <p class="note">Gebruik <code>.stats-container</code> > <code>.stat-card</code>. De kaart bevat <code>.stat-image</code>, <code>.stat-title</code>, <code>.stat-number</code>, en <code>.stat-label</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Benefit Card (in een grid)</h3>
-                        <div class="benefits-grid">
-                            <div class="benefit-card">
-                                <h3>Voordeel 1</h3>
-                                <div class="benefit-content">
-                                    <p>Dit is de beschrijving van een voordeel. De kaart heeft een paarse header.</p>
-                                </div>
-                            </div>
-                            <div class="benefit-card">
-                                <h3>Voordeel 2</h3>
-                                <div class="benefit-content">
-                                    <p>Een tweede voordeel om de grid-layout te tonen.</p>
-                                    <div class="example-box">
-                                        <h4>Voorbeeld</h4>
-                                        <p>Dit is een voorbeeld-box binnen de kaart.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="note">Gebruik <code>.benefits-grid</code> > <code>.benefit-card</code>. Een kaart kan een <code>.example-box</code> bevatten.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Benefit Card (in een lijst)</h3>
-                        <div class="modules-list-stacked">
-                            <div class="benefit-card benefit-card--list-item">
-                                <h3>Module 1</h3>
-                                <div class="benefit-content">
-                                    <p>Dit is een kaart in een lijst. Dankzij de <code>.benefit-card--list-item</code> class heeft deze een paarse rand links.</p>
-                                </div>
-                            </div>
-                            <div class="benefit-card benefit-card--list-item">
-                                <h3>Module 2</h3>
-                                <div class="benefit-content">
-                                    <p>Een tweede module in de lijst.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="note">Gebruik <code>.modules-list-stacked</code> > <code>.benefit-card.benefit-card--list-item</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Competentie Kaart</h3>
-                        <div class="competency-grid">
-                            <div class="competency-card">
-                                <h4>Competentie Titel</h4>
-                                <p>Deze kaart is ontworpen om een specifieke competentie of vaardigheid uit te lichten.</p>
-                            </div>
-                             <div class="competency-card">
-                                <h4>Andere Competentie</h4>
-                                <p>De kaart heeft een dikke paarse rand om op te vallen.</p>
-                            </div>
-                        </div>
-                         <p class="note">Gebruik <code>.competency-grid</code> > <code>.competency-card</code>.</p>
-                    </div>
-                     <div class="style-guide-item">
-                        <h3>Kritische Thema Kaart</h3>
-                        <div class="critical-themes-grid">
-                            <div class="critical-theme-card">
-                                <div class="theme-icon"><img src="https://placehold.co/80x80/ffffff/662483?text=!" alt="Thema Icoon"></div>
-                                <div class="theme-content">
-                                    <h3>Titel van Kritisch Thema</h3>
-                                    <p class="theme-subtitle">Subtitel of korte duiding</p>
-                                    <p>Deze kaart wordt gebruikt voor het presenteren van belangrijke thema's die reflectie vragen.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="note">Gebruik <code>.critical-themes-grid</code> > <code>.critical-theme-card</code>. Vereist een <code>.theme-icon</code> en <code>.theme-content</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Ethische Reflectie Kaart</h3>
-                        <div class="ethical-reflection-grid">
-                            <div class="ethical-card">
-                                <h4>Ethische Kwestie 1</h4>
-                                <p>Deze kaart is bedoeld voor het aanbieden van een ethisch dilemma of een reflectievraag. De kaart heeft een subtiele paarse schaduw.</p>
-                            </div>
-                             <div class="ethical-card">
-                                <h4>Ethische Kwestie 2</h4>
-                                <p>Een tweede kwestie om de grid-opmaak te laten zien.</p>
-                            </div>
-                        </div>
-                        <p class="note">Gebruik <code>.ethical-reflection-grid</code> > <code>.ethical-card</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>iXperium Catalogus Kaart</h3>
-                        <div class="ixperium-catalogs">
-                            <div class="catalog-card">
-                                <img src="https://placehold.co/100x50/F2E6F7/662483?text=Logo" alt="Placeholder Logo" class="catalog-logo">
-                                <p>Verwijzing naar een specifieke catalogus of externe bron van iXperium.</p>
-                                <img src="https://placehold.co/80x80/333333/ffffff?text=QR" alt="QR Code" class="qr-code">
-                            </div>
-                        </div>
-                        <p class="note">Gebruik <code>.ixperium-catalogs</code> > <code>.catalog-card</code>. Bevat een <code>.catalog-logo</code> en een <code>.qr-code</code>.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Media & Interactief -->
-            <div class="collapsible-section">
-                <button class="collapsible" type="button">Media & Interactief</button>
-                <div class="collapsible-content">
-                   <div class="style-guide-item">
-                        <h3>Platform/Technologie Showcase</h3>
-                        <div class="tech-showcase">
-                            <div class="tech-item">
-                                <div class="tech-logo">
-                                    <img src="images/Blijvende_afb/Test_logo_showcase.png" alt="Voorbeeld Logo">
-                                </div>
-                                <div class="tech-description">
-                                    <h3>Naam van de Technologie</h3>
-                                    <p>Een beschrijving van de technologie, het platform of de tool. Dit component is bedoeld om externe tools of resources uit te lichten.</p>
-                                    <a href="#" class="tech-link">Bezoek website</a>
-                                </div>
-                                <div class="tech-media">
-                                     <iframe width="250" height="140" src="https://www.youtube.com/embed/1Q8fG0TtVAY" title="Voorbeeld video" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                             <div class="tech-item">
-                                <div class="tech-logo">
-                                    <img src="images/Blijvende_afb/Test_logo_showcase.png" alt="Voorbeeld Logo 2">
-                                </div>
-                                <div class="tech-description">
-                                    <h3>Technologie zonder video</h3>
-                                    <p>Deze variant toont hoe het component eruitziet als er geen media (zoals een video) beschikbaar is.</p>
-                                    <a href="#" class="tech-link">Bezoek website</a>
-                                </div>
-                                <div class="tech-media">
-                                    <span>Geen video beschikbaar</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="note">Dit vervangt de oude 'Platform Card' en 'Resource Card'. Gebruik <code>.tech-showcase</code> > <code>.tech-item</code>. Een <code>.tech-item</code> bevat <code>.tech-logo</code>, <code>.tech-description</code> en <code>.tech-media</code>.</p>
-                   </div>
-                   <div class="style-guide-item">
-                        <h3>Video (Volledige Breedte)</h3>
-                        <div class="video-container-full-width">
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/1Q8fG0TtVAY" title="Voorbeeld video" allowfullscreen></iframe>
-                            </div>
-                            <p class="video-title">Optionele titel voor de video</p>
-                        </div>
-                        <p class="note">Gebruik <code>.video-container-full-width</code> > <code>.video-wrapper</code> voor een responsive video over de volledige breedte.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Video Grid (2 kolommen)</h3>
-                        <div class="video-grid-container video-grid-container-2-col">
-                            <div>
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/1Q8fG0TtVAY" title="Voorbeeld video" allowfullscreen></iframe>
-                                </div>
-                                <p class="video-title">Titel video 1</p>
-                            </div>
-                            <div>
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/1Q8fG0TtVAY" title="Voorbeeld video" allowfullscreen></iframe>
-                                </div>
-                                <p class="video-title">Titel video 2</p>
-                            </div>
-                        </div>
-                         <p class="note">Gebruik <code>.video-grid-container.video-grid-container-2-col</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Video Grid (3 kolommen)</h3>
-                        <div class="video-grid-container video-grid-container-3-col">
-                            <div>
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/1Q8fG0TtVAY" title="Voorbeeld video" allowfullscreen></iframe>
-                                </div>
-                                <p class="video-title">Titel video 1</p>
-                            </div>
-                            <div>
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/1Q8fG0TtVAY" title="Voorbeeld video" allowfullscreen></iframe>
-                                </div>
-                                <p class="video-title">Titel video 2</p>
-                            </div>
-                            <div>
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/1Q8fG0TtVAY" title="Voorbeeld video" allowfullscreen></iframe>
-                                </div>
-                                <p class="video-title">Titel video 3</p>
-                            </div>
-                        </div>
-                         <p class="note">Gebruik <code>.video-grid-container.video-grid-container-3-col</code>.</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Interacties -->
-            <div class="collapsible-section">
-                <button class="collapsible" type="button">Interactieve Componenten</button>
-                <div class="collapsible-content">
-                    <div class="style-guide-item">
-                        <h3>Reflectie</h3>
-                        <div class="reflection-container">
-                            <p class="reflection-question">Dit is de reflectievraag.</p>
-                            <textarea class="reflection-input" placeholder="Typ hier je reflectie..."></textarea>
-                            <button class="btn" style="margin-top: 1rem;">Opslaan</button>
-                        </div>
-                        <p class="note">Gebruik <code>.reflection-container</code>, <code>.reflection-question</code> en <code>.reflection-input</code>.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Competentie Zelfevaluatie</h3>
-                        <div class="competency-assessment">
-                            <div class="assessment-scale"><span>Niet bekwaam</span><span>Enigszins bekwaam</span><span>Bekwaam</span></div>
-                            <div class="assessment-item">
-                                <label for="showcase-assessment">Voorbeeld Competentie</label>
-                                <select id="showcase-assessment" class="assessment-select">
-                                    <option>Kies een niveau</option>
-                                    <option>1 - Niet bekwaam</option>
-                                    <option>2 - Enigszins bekwaam</option>
-                                    <option>3 - Bekwaam</option>
-                                </select>
-                            </div>
-                        </div>
-                         <p class="note">Gebruik <code>.competency-assessment</code>, <code>.assessment-scale</code> en <code>.assessment-item</code>.</p>
-                    </div>
-                     <div class="style-guide-item">
-                         <p>Andere interacties zoals Multiple Choice (MC), Drag & Drop, etc. worden dynamisch gegenereerd en hebben minder vaste 'externe' styling. Hun uiterlijk wordt bepaald door de combinatie van JavaScript en basis CSS-classes.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Multiple Choice (MC)</h3>
-                        <div class="interactive-block">
-                            <div class="interactive-block-header">
-                                <svg viewBox="0 0 24 24" class="icon"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
-                                <h4>Meerkeuze Vraag</h4>
-                            </div>
-                            <div class="interactive-block-content">
-                                <p class="interaction-question">Dit is de vraagstelling voor de multiple choice.</p>
-                                <ul class="mc-options">
-                                    <li class="mc-option" data-id="1">Optie 1</li>
-                                    <li class="mc-option" data-id="2">Optie 2 (correct)</li>
-                                    <li class="mc-option" data-id="3">Optie 3</li>
-                                </ul>
-                                <div class="feedback">Dit is de feedback die verschijnt na het kiezen van een antwoord.</div>
-                            </div>
-                        </div>
-                        <p class="note">Een standaard meerkeuzevraag. De styling wordt door `renderMCInteraction` gegenereerd.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Drag & Drop</h3>
-                         <div class="interactive-block">
-                            <div class="interactive-block-header">
-                                <svg viewBox="0 0 24 24" class="icon"><path d="M16 6l4 4-4 4-4-4 4-4zm0 8l4 4-4 4-4-4 4-4zM8 6l4 4-4 4-4-4 4-4zm0 8l4 4-4 4-4-4 4-4z"></path></svg>
-                                <h4>Drag & Drop</h4>
-                            </div>
-                            <div class="interactive-block-content">
-                                 <h5 class="interaction-title">Sleep de items naar de juiste categorie</h5>
-                                 <div class="drag-container" style="margin-bottom: 1rem;">
-                                     <div class="draggable" draggable="true">Sleepbaar item 1</div>
-                                     <div class="draggable" draggable="true">Sleepbaar item 2</div>
-                                 </div>
-                                 <div class="drop-targets">
-                                     <div class="drop-target" style="min-height: 80px;">
-                                         <h5>Doel Categorie 1</h5>
-                                         <div class="dropped-items-container"></div> 
-                                     </div>
-                                      <div class="drop-target" style="min-height: 80px;">
-                                         <h5>Doel Categorie 2</h5>
-                                         <div class="dropped-items-container"></div> 
-                                     </div>
-                                 </div>
-                                 <div class="dragdrop-feedback" style="margin-top: 1rem;">Dit is de feedback na controle.</div>
-                                 <button class="btn" style="margin-top: 1rem;">Controleer</button>
-                            </div>
-                         </div>
-                        <p class="note">Een sleep-oefening. De layout wordt door `renderDragDropInteraction` gegenereerd.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Flashcards</h3>
-                        <div class="interactive-block">
-                            <div class="interactive-block-header">
-                                <svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
-                                <h4>Flashcards</h4>
-                            </div>
-                            <div class="interactive-block-content">
-                                <div class="flashcard-stack" style="min-height: 150px; display:flex; align-items:center; justify-content:center;">
-                                    <div class="flashcard">
-                                        <div class="flashcard-inner">
-                                            <div class="flashcard-front"><p>Voorkant van de flashcard (de term).</p></div>
-                                            <div class="flashcard-back"><p>Achterkant van de flashcard (de uitleg).</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                 <div class="flashcard-answer-buttons" style="margin-top: 1rem; text-align:center;">
-                                    <button class="btn btn-success">Ik wist het</button>
-                                    <button class="btn btn-danger">Ik wist het niet</button>
-                                </div>
-                            </div>
-                        </div>
-                         <p class="note">Een set van flashcards om te oefenen. Klik op de kaart om hem om te draaien (in de echte module). Gebruikt `renderFlashcardContent`.</p>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>Kritische Analyse</h3>
-                        <div class="interactive-block">
-                            <div class="interactive-block-header">
-                                <svg viewBox="0 0 24 24" class="icon"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-                                <h4>Kritische Analyse</h4>
-                            </div>
-                            <div class="interactive-block-content">
-                                <p class="interaction-question">Analyseer de volgende technologie.</p>
-                                <div class="form-group">
-                                    <label>Selecteer een technologie:</label>
-                                    <select class="form-control"><option>Keuze 1</option><option>Keuze 2</option></select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Wat zijn de voordelen?</label>
-                                    <textarea class="critical-analysis-input form-control" rows="3"></textarea>
-                                </div>
-                                 <div class="form-group">
-                                    <label>Wat zijn de nadelen?</label>
-                                    <textarea class="critical-analysis-input form-control" rows="3"></textarea>
-                                </div>
-                                <button class="btn left-align-btn">Opslaan</button>
-                            </div>
-                        </div>
-                        <p class="note">Een formulier voor een kritische analyse, gegenereerd door `renderCriticalAnalysisInteraction`.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Media & Afbeeldingen -->
-            <div class="collapsible-section">
-                <button class="collapsible" type="button">Media & Afbeeldingen</button>
-                <div class="collapsible-content">
-                    <div class="style-guide-item">
-                        <h3>1. Afbeelding - Ingekaderd & Responsive</h3>
-                        <p class="note">Gebruik <code>.img-framed-responsive</code> op de <code>&lt;figure&gt;</code>-tag. Dit plaatst een subtiel kader om de afbeelding, die zich aanpast aan de breedte van de content-container.</p>
-                        <figure class="image-container img-framed-responsive">
-                            <img src="https://placehold.co/1200x400/662483/FFF?text=Ingekaderde+Afbeelding" alt="Voorbeeld van een ingekaderde afbeelding">
-                            <figcaption>Deze afbeelding past zich aan de container aan.</figcaption>
-                        </figure>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>2. Afbeelding - Gesplitst Scherm (50/50)</h3>
-                        <p class="note">Gebruik <code>.img-split-screen</code> op een container-<code>&lt;div&gt;</code>. Plaats daarin een <code>.image-content</code> en een <code>.text-content</code>. Op mobiel wordt dit automatisch een enkele kolom.</p>
-                        <div class="img-split-screen">
-                            <div class="image-content">
-                                <figure class="image-container">
-                                    <img src="https://placehold.co/600x400/9B59B6/FFF?text=Afbeelding" alt="Voorbeeld van een split-screen afbeelding">
-                                    <figcaption>Eigen afbeelding</figcaption>
-                                </figure>
-                            </div>
-                            <div class="text-content">
-                                <h4>Titel naast de afbeelding</h4>
-                                <p>Deze layout is perfect om een concept visueel te ondersteunen met tekst ernaast. De tekst kan bestaan uit paragrafen, lijsten of andere elementen.</p>
-                                <ul>
-                                    <li>Punt 1</li>
-                                    <li>Punt 2</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>3. Afbeelding - Polaroid Stijl</h3>
-                         <p class="note">Gebruik <code>.img-polaroid</code> op de <code>&lt;figure&gt;</code>-tag voor een speels, gekanteld effect. Werkt het beste met wat ruimte eromheen.</p>
-                        <figure class="image-container img-polaroid" style="margin-top: 3rem; margin-bottom: 3rem;">
-                            <img src="https://placehold.co/400x300/2ECC71/FFF?text=Verrassing!" alt="Voorbeeld van een polaroid afbeelding">
-                            <figcaption class="no-source">Geen bronvermelding nodig</figcaption>
-                        </figure>
-                    </div>
-                    <div class="style-guide-item">
-                        <h3>4. Afbeeldingen Grid (2 kolommen)</h3>
-                        <p class="note">Gebruik <code>.image-grid</code> en <code>.image-grid-2-col</code> op een container-<code>&lt;div&gt;</code>. Plaats daarin de <code>&lt;figure&gt;</code>-elementen.</p>
-                        <div class="image-grid image-grid-2-col">
-                            <figure class="image-container">
-                                <img src="https://placehold.co/600x400/3498DB/FFF?text=Grid+Item+1" alt="Grid afbeelding 1">
-                                <figcaption>Afbeelding 1</figcaption>
-                            </figure>
-                            <figure class="image-container">
-                                <img src="https://placehold.co/600x400/E74C3C/FFF?text=Grid+Item+2" alt="Grid afbeelding 2">
-                                <figcaption>Afbeelding 2</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                     <div class="style-guide-item">
-                        <h3>5. Afbeeldingen Grid (3 kolommen)</h3>
-                        <p class="note">Gebruik <code>.image-grid</code> en <code>.image-grid-3-col</code> op een container-<code>&lt;div&gt;</code>.</p>
-                        <div class="image-grid image-grid-3-col">
-                            <figure class="image-container">
-                                <img src="https://placehold.co/400x300/F1C40F/FFF?text=Item+A" alt="Grid afbeelding A">
-                                <figcaption>Afbeelding A</figcaption>
-                            </figure>
-                            <figure class="image-container">
-                                <img src="https://placehold.co/400x300/27AE60/FFF?text=Item+B" alt="Grid afbeelding B">
-                                <figcaption>Afbeelding B</figcaption>
-                            </figure>
-                            <figure class="image-container">
-                                <img src="https://placehold.co/400x300/8E44AD/FFF?text=Item+C" alt="Grid afbeelding C">
-                                <figcaption>Afbeelding C</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="showcase-end-bar">Einde componenten Showcase</div>
         </section>
     </main>
 
+    <!-- Scripts om de dynamische content te laden -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const collapsibles = document.querySelectorAll('.collapsible');
-            const expandAllBtn = document.getElementById('expandAllShowcase');
-            const collapseAllBtn = document.getElementById('collapseAllShowcase');
+        // Dummy-functie om de 'devLog is not defined' error te voorkomen.
+        // In de echte applicatie wordt deze functie door een ander script gedefinieerd.
+        function devLog() {} 
+    </script>
+    <script src="js/dynamicContent.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('dynamic-styleguide-content');
+            if (!container) return;
 
-            collapsibles.forEach(collapsible => {
-                collapsible.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    const content = this.nextElementSibling;
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + 'px';
+            try {
+                const response = await fetch('documentatie/voorbeeld_hoofdstuk.json');
+                if (!response.ok) {
+                    throw new Error(`Kon voorbeeld_hoofdstuk.json niet laden: ${response.statusText}`);
+                }
+                const voorbeeldHoofdstuk = await response.json();
+                
+                if (voorbeeldHoofdstuk.content && typeof renderGenericChapterContent === 'function') {
+                    // Roep de render-functie aan (chapterNumber is hier niet kritisch, dus we gebruiken 1)
+                    const htmlContent = renderGenericChapterContent(voorbeeldHoofdstuk.content, 1);
+                    container.innerHTML = htmlContent;
+
+                    // Voer de QR-code generatie uit na het renderen
+                    if (typeof generateQRCodesForContent === 'function') {
+                        setTimeout(() => {
+                           generateQRCodesForContent(voorbeeldHoofdstuk.content, 1);
+                        }, 100); // Kleine vertraging om zeker te zijn dat de DOM is bijgewerkt
                     }
-                });
-            });
+                } else {
+                    throw new Error('JSON-formaat is incorrect of render-functie is niet beschikbaar.');
+                }
 
-            if (expandAllBtn && collapseAllBtn) {
-                expandAllBtn.addEventListener('click', () => {
-                    collapsibles.forEach(c => {
-                        if (!c.classList.contains('active')) c.click();
-                    });
-                });
-                collapseAllBtn.addEventListener('click', () => {
-                    collapsibles.forEach(c => {
-                        if (c.classList.contains('active')) c.click();
-                    });
-                });
+            } catch (error) {
+                container.innerHTML = `<div class="info-card warning-card"><h4 class="info-card-title">Fout bij laden</h4><p>${error.message}</p></div>`;
+                console.error('Fout bij het renderen van de dynamische stijlgids:', error);
             }
         });
     </script>

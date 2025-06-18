@@ -1,0 +1,223 @@
+/* ==========================================================================
+   Afsluiting & Certificaat Pagina Stijlen
+   ========================================================================== */ 
+
+/* Specifieke layout overrides voor de afsluiting sectie */
+.afsluiting-section .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.afsluiting-section .section-content ul {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.afsluiting-section .section-content li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.afsluiting-section .development-options {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 2rem 0;
+}
+
+.afsluiting-section .option-card {
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 370px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .afsluiting-section .development-options {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .afsluiting-section .option-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+.afsluiting-section .pdf-generation {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.afsluiting-section .name-input-container {
+    margin: 2rem 0;
+}
+
+.afsluiting-section .name-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.afsluiting-section .btn-yellow {
+    background-color: #ffc107;
+    color: #000;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+}
+
+.afsluiting-section .small-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* Quiz container op de afsluiting pagina */
+.afsluiting-section #quiz-container {
+  background: #ede9fe;
+  border: 2px solid #a78bfa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 rgba(167,139,250,0.08);
+  padding: 32px 20px 24px 20px;
+  margin-bottom: 32px;
+  margin-top: 16px;
+}
+
+/* Lichtpaars kader voor certificaat/portfolio op afsluiting pagina */
+.purple-kader {
+  background: var(--accent-purple, #F2E6F7);
+  border: 1.5px solid var(--secondary-purple, #8A4A9E);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 32px 24px 24px 24px;
+  margin: 32px 0 32px 0;
+}
+
+/* Suggesties grid (tegels naast elkaar) op afsluiting pagina */
+.suggesties-grid {
+  display: flex;
+  gap: 24px;
+  margin: 24px 0 24px 0;
+  flex-wrap: wrap;
+}
+
+.suggestie-tegel {
+  background: #fff;
+  border: 1px solid var(--medium-gray);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 18px 16px;
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.suggestie-tegel h4 {
+  color: var(--primary-purple);
+  margin-bottom: 8px;
+}
+
+/* Certificate Section Styling */
+.certificate-section {
+  margin-top: 20px;
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--medium-gray);
+  text-align: center;
+}
+
+.certificate-section h3 {
+  color: var(--primary-purple);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--accent-purple);
+}
+
+.certificate-section p {
+    margin-bottom: 20px;
+}
+
+.certificate-section .input-field {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 450px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 4px;
+}
+
+/* Accordion voor VRAAK criteria */
+.accordion {
+    margin-bottom: 1rem;
+}
+
+.accordion-toggle {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    transition: 0.4s;
+    border-radius: var(--border-radius-standard);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.accordion-toggle:hover {
+    background-color: #d8dbe0;
+}
+
+.accordion-toggle.open {
+    background-color: var(--medium-gray);
+}
+
+.accordion-toggle .triangle {
+    transition: transform 0.3s ease;
+}
+
+.accordion-toggle.open .triangle {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border: 1px solid transparent;
+    border-top: none;
+    border-radius: 0 0 var(--border-radius-standard) var(--border-radius-standard);
+}
+
+.accordion-content.open {
+  max-height: 500px; /* Adjust as needed */
+  padding: 18px;
+  border-color: var(--medium-gray);
+} 

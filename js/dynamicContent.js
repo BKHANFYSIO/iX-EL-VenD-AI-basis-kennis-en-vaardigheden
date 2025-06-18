@@ -1,12 +1,15 @@
-const baseContentPath = 'content/hoofdstuk'; // Assuming your content folder is named 'content'
+const baseContentPath = 'content/';
 
 async function fetchChapterData(chapterNumber) {
-    let filePath = `${baseContentPath}${chapterNumber}.json`;
-    // Check if it's the last section, and if so, use the specific afsluiting.json filename
-    if (chapterNumber === totalSections) { // totalSections is globally defined in script.js, ensure accessible here or pass it
-        filePath = 'content/hoofdstuk_afsluiting.json';
-        console.log(`Fetching final chapter content from: ${filePath}`);
+    // Zoek het juiste hoofdstuk in de globale 'chapters' array
+    const chapterInfo = chapters.find(c => c.section === chapterNumber);
+
+    if (!chapterInfo) {
+        console.error(`Informatie voor hoofdstuk ${chapterNumber} niet gevonden in de globale configuratie.`);
+        return null;
     }
+
+    const filePath = `${baseContentPath}${chapterInfo.file}`;
 
     try {
         const response = await fetch(filePath);
@@ -20,7 +23,7 @@ async function fetchChapterData(chapterNumber) {
         if (errorContainer) {
             errorContainer.innerHTML = `<p class="error-message">Kon hoofdstuk ${chapterNumber} data niet laden. Controleer het pad en de bestandsnaam: ${filePath}</p>`;
         }
-        return null; // Return null or some indicator of failure
+        return null;
     }
 }
 
@@ -57,25 +60,38 @@ function renderChapter(chapterNumber, data) {
         // This is the afsluiting chapter, use special renderer
         htmlContent = renderAfsluitingContent(data);
     } else {
-        // Try to find a specific renderer for this chapter
-        const renderFunctionName = `renderChapter${chapterNumber}Content`;
-        if (typeof window[renderFunctionName] === 'function') {
-            // Voor hoofdstuk 2, geef het volledige data object mee, anders data.content
-            if (renderFunctionName === 'renderChapter2Content') {
-                htmlContent = window[renderFunctionName](data);
-            } else {
-                htmlContent = window[renderFunctionName](data.content);
-            }
-        } else {
-            // Use generic renderer if no specific one exists
-            console.warn(`No specific renderer for chapter ${chapterNumber}, using generic renderer`);
-            htmlContent = renderGenericChapterContent(data.content, chapterNumber);
-        }
+        // ALTIJD de generieke renderer gebruiken voor standaard hoofdstukken.
+        htmlContent = renderGenericChapterContent(data.content, chapterNumber);
     }
     // Only set innerHTML if htmlContent is not empty. 
     // This is important for renderers like renderChapter8Content that modify existing DOM directly.
     if (htmlContent && htmlContent.trim() !== '') {
         mainContentContainer.innerHTML = htmlContent;
+        // After rendering, find and generate all QR codes
+        setTimeout(() => {
+            if (chapterNumber === totalSections) {
+                generateQRCodesForContent(data.afsluitQuizIntro.content, chapterNumber);
+            } else {
+                generateQRCodesForContent(data.content, chapterNumber);
+            }
+        }, 100);
+    }
+
+    // Specifieke post-render logica voor de afsluiting (zoals de accordeon)
+    if (chapterNumber === totalSections) {
+        const toggle = document.getElementById('vraak-accordion-toggle');
+        const contentDiv = document.getElementById('vraak-accordion-content');
+        if (toggle && contentDiv) {
+            toggle.addEventListener('click', function() {
+                const isOpen = contentDiv.classList.toggle('open');
+                toggle.classList.toggle('open', isOpen);
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                const triangle = toggle.querySelector('.triangle');
+                if (triangle) {
+                    triangle.innerHTML = isOpen ? '&#9660;' : '&#9654;';
+                }
+            });
+        }
     }
 
     // Render interactions
@@ -448,13 +464,14 @@ async function loadContentForSection(sectionNumber) {
 devLog('dynamicContent.js loaded');
 
 // Generic chapter renderer for chapters without specific render functions
-function renderGenericChapterContent(content, chapterNumber) {
+function renderGenericChapterContent(content, chapterNumber, parentBlockId = '') {
     let html = '';
-    if (!content || typeof content !== 'object') {
-        return '<p>Geen content beschikbaar voor dit hoofdstuk.</p>';
+    // De content voor de generieke renderer is nu een array
+    if (!Array.isArray(content)) {
+        console.error('Content for generic renderer is not an array for chapter', chapterNumber);
+        return '<p>Content-formaat is onjuist voor dit hoofdstuk.</p>';
     }
 
-    // Helper to create a list from an array of strings or objects with a 'tekst' property
     const createListHtml = (itemsArray, listClass = 'points-list') => {
         if (!Array.isArray(itemsArray) || itemsArray.length === 0) return '';
         let listHtml = `<ul class="${listClass}">`;
@@ -462,148 +479,6 @@ function renderGenericChapterContent(content, chapterNumber) {
             if (typeof item === 'string') {
                 listHtml += `<li>${item}</li>`;
             } else if (typeof item === 'object' && item.tekst) {
-                listHtml += `<li>${item.tekst}</li>`;
-            }
-        });
-        listHtml += '</ul>';
-        return listHtml;
-    };
-
-    for (const key in content) {
-        if (content.hasOwnProperty(key)) {
-            const section = content[key];
-            if (!section || typeof section !== 'object') continue; // Skip non-object sections
-
-            html += `<div class="content-section content-section-${key}">`;
-
-            if (section.titel && typeof section.titel === 'string') {
-                html += `<h3 class="content-subtitle">${section.titel}</h3>`;
-            }
-
-            if (section.tekst && typeof section.tekst === 'string') {
-                html += `<p class="content-text">${section.tekst.replace(/\n/g, '<br>')}</p>`;
-            }
-
-            // Specifieke rendering voor 'stel_je_voor' (scenario_container)
-            if (key === 'stel_je_voor' && section.type === 'scenario_container' && Array.isArray(section.scenarios)) {
-                html += `<div class="scenario-container">`;
-                section.scenarios.forEach(scenario => {
-                    html += `<div class="scenario-tile info-card">`;
-                    if (scenario.titel) {
-                        html += `<h4 class="scenario-title">${scenario.titel}</h4>`;
-                    }
-                    if (scenario.beschrijving) {
-                        html += `<p class="scenario-description">${scenario.beschrijving.replace(/\n/g, '<br>')}</p>`;
-                    }
-                    if (Array.isArray(scenario.punten)) {
-                        html += createListHtml(scenario.punten);
-                    }
-                    if (scenario.conclusie) {
-                        html += `<p class="scenario-conclusie">${scenario.conclusie.replace(/\n/g, '<br>')}</p>`;
-                    }
-                    html += `</div>`; // scenario-tile
-                });
-                html += `</div>`; // scenario-container
-            }
-            // Specifieke rendering voor 'waarom_nu_relevant' (blokken)
-            else if (key === 'waarom_nu_relevant' && Array.isArray(section.blokken)) {
-                section.blokken.forEach(blok => {
-                    html += `<div class="content-block info-card ${blok.type}-block">`;
-                    if (blok.titel) {
-                        html += `<h4 class="section-subtitle block-title">${blok.titel}</h4>`;
-                    }
-                    if (blok.tekst_voor_statistiek) {
-                        html += `<p>${blok.tekst_voor_statistiek}</p>`;
-                    }
-                    if (blok.focus_tekst) {
-                        html += `<p class="focus-text"><strong>${blok.focus_tekst}</strong></p>`;
-                    }
-                    if (blok.tekst_na_statistiek) {
-                        html += `<p>${blok.tekst_na_statistiek}</p>`;
-                    }
-                    if (blok.tekst && blok.type === 'fun_fact') { // specifiek voor fun_fact
-                         html += `<p>${blok.tekst.replace(/\\n/g, '<br>')}</p>`;
-                    }
-                    html += `</div>`; // content-block
-                });
-            }
-            // Specifieke rendering voor 'leren_als_spiertraining' (punten array van objecten)
-            else if (key === 'leren_als_spiertraining' && Array.isArray(section.punten)) {
-                 section.punten.forEach(puntBlok => {
-                    if (typeof puntBlok === 'object' && puntBlok.titel && puntBlok.tekst) {
-                        html += `<div class="info-card sub-section">`;
-                        html += `<h4>${puntBlok.titel}</h4>`;
-                        html += `<p class="content-text">${puntBlok.tekst.replace(/\n/g, '<br>')}</p>`;
-                        html += `</div>`;
-                    }
-                });
-            }
-            // Specifieke rendering voor 'jouw_leerpad' (modules array & afsluiting)
-            else if (key === 'jouw_leerpad' && Array.isArray(section.modules)) {
-                html += `<div class="info-card content-section-jouw_leerpad">`;
-                if (sectie.titel) {
-                    html += `<h3 class="info-card-title">${sectie.titel}</h3>`;
-                }
-                if (sectie.tekst) {
-                    html += `<div class="info-card-content"><p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
-                } else {
-                    html += `<div class="info-card-content">`;
-                }
-                if (Array.isArray(sectie.modules)) {
-                    html += `<div class="modules-list">`;
-                    sectie.modules.forEach(module => {
-                        html += `<div class="benefit-card">`;
-                        html += `<h3>${module.naam}</h3>`;
-                        if (module.beschrijving) {
-                            html += `<div class="benefit-content">${module.beschrijving.replace(/\n/g, '<br>')}</div>`;
-                        }
-                        html += `</div>`; // benefit-card
-                    });
-                    html += `</div>`; // modules-list
-                }
-                if (sectie.afsluiting) {
-                    html += `<p class="content-text">${sectie.afsluiting.replace(/\\n/g, '<br>')}</p>`;
-                }
-                html += `</div></div>`; // info-card-content & info-card
-            }
-            // Generieke rendering voor een 'punten' array (lijst van strings)
-            else if (Array.isArray(section.punten)) {
-                html += createListHtml(section.punten);
-            }
-            // Generieke rendering voor een 'items' array (lijst van strings of objecten met 'tekst')
-            // Dit is bijvoorbeeld voor de leerdoelen in de oude structuur, of vergelijkbaar.
-            else if (Array.isArray(section.items)) {
-                 html += createListHtml(section.items, 'items-list');
-            }
-
-            html += `</div>`; // content-section-${key}
-        }
-    }
-    return html;
-}
-
-// Make render functions available globally so they can be called dynamically
-window.renderChapter1Content = renderChapter1Content;
-window.renderChapter2Content = renderChapter2Content;
-window.renderChapter3Content = renderChapter3Content;
-window.renderChapter4Content = renderChapter4Content;
-window.renderChapter5Content = renderChapter5Content;
-window.renderChapter6Content = renderChapter6Content;
-window.renderChapter7Content = renderChapter7Content;
-
-devLog('dynamicContent.js loaded');
-
-function renderChapter1Content(content) {
-    let html = '';
-
-    // Helper to create a list from an array of strings or objects with a 'tekst' property
-    const createListHtml = (itemsArray, listClass = 'points-list') => {
-        if (!Array.isArray(itemsArray) || itemsArray.length === 0) return '';
-        let listHtml = `<ul class="${listClass}">`;
-        itemsArray.forEach(item => {
-            if (typeof item === 'string') {
-                listHtml += `<li>${item}</li>`;
-            } else if (typeof item === 'object' && item.tekst) { // Specific for 'leren_als_spiertraining'
                 listHtml += `<li><strong>${item.titel}:</strong> ${item.tekst}</li>`;
             }
         });
@@ -611,183 +486,158 @@ function renderChapter1Content(content) {
         return listHtml;
     };
 
-    if (content.welkom) {
-        html += `
-            <div class="info-card welcome-card">
-                <h4 class="info-card-title">${content.welkom.titel || 'Welkom'}</h4>
-                <p>${content.welkom.tekst ? content.welkom.tekst.replace(/\\n/g, '<br>') : ''}</p>
-            </div>
-        `;
-    }
+    content.forEach((block, blockIndex) => {
+        const currentBlockId = `${parentBlockId}block${blockIndex}`;
+        if (!block || !block.type) return;
 
-    if (content.stel_je_voor && content.stel_je_voor.scenarios && content.stel_je_voor.scenarios.length > 0) {
-        html += `<h2 class="section-title">${content.stel_je_voor.titel || 'Stel je eens voor...'}</h2>`;
-        html += `<div class="scenario-container-horizontal">`;
-        content.stel_je_voor.scenarios.forEach(scenario => {
-            html += `
-                <div class="info-card scenario-card">
-                    <h4>${scenario.titel || ''}</h4>
-                    <p>${scenario.beschrijving ? scenario.beschrijving.replace(/\\n/g, '<br>') : ''}</p>`;
-            if (scenario.punten && scenario.punten.length > 0) {
-                html += `<ul>`;
-                scenario.punten.forEach(punt => {
-                    html += `<li>${punt}</li>`;
-                });
-                html += `</ul>`;
-            }
-            if (scenario.conclusie) {
-                html += `<p class="conclusie"><strong>${scenario.conclusie.replace(/\\n/g, '<br>')}</strong></p>`;
-            }
-            html += `</div>`; // End scenario-card
-        });
-        html += `</div>`; // End scenario-container-horizontal
-    }
-
-    if (content.waarom_nu_relevant) {
-        const sectie = content.waarom_nu_relevant;
-        if (sectie.titel) {
-            html += `<h2 class="section-title">${sectie.titel}</h2>`;
-        }
-        if (sectie.tekst) {
-            html += `<p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
-        }
-        if (Array.isArray(sectie.blokken)) {
-            sectie.blokken.forEach(blok => {
-                html += `<div class="content-block info-card ${blok.type}-block">`;
-                if (blok.titel) {
-                    html += `<h4 class="section-subtitle block-title">${blok.titel}</h4>`;
+        switch (block.type) {
+            case 'divider':
+                html += '<hr class="component-divider">';
+                break;
+            case 'info-card':
+                let cardContentHtml = '';
+                
+                // Handle 'tekst' property
+                if (block.tekst) {
+                    cardContentHtml += `<p>${block.tekst.replace(/\n/g, '<br>')}</p>`;
                 }
-                if (blok.tekst_voor_statistiek) {
-                    html += `<p>${blok.tekst_voor_statistiek}</p>`;
+
+                // Handle 'items' array
+                if (block.items && Array.isArray(block.items)) {
+                    cardContentHtml += `<ul class="points-list">`;
+                    block.items.forEach(item => {
+                        if (item.titel && item.tekst) {
+                            cardContentHtml += `<li><strong>${item.titel}:</strong> ${item.tekst}</li>`;
+                        } else if (item.letter && item.beschrijving) { // For R.O.C.K. card
+                            cardContentHtml += `<li><strong>${item.letter}:</strong> ${item.beschrijving}</li>`;
+                        } else if (typeof item === 'string') {
+                            cardContentHtml += `<li>${item}</li>`;
+                        }
+                    });
+                    cardContentHtml += `</ul>`;
                 }
-                if (blok.focus_tekst) {
-                    html += `<p class="focus-text"><strong>${blok.focus_tekst}</strong></p>`;
+
+                // Handle 'andere_valkuilen' object
+                if (block.andere_valkuilen && typeof block.andere_valkuilen === 'object') {
+                    if (block.andere_valkuilen.titel) {
+                        cardContentHtml += `<h5 class="info-card-subtitle">${block.andere_valkuilen.titel}</h5>`;
+                    }
+                    if (block.andere_valkuilen.items && Array.isArray(block.andere_valkuilen.items)) {
+                        cardContentHtml += `<ul class="points-list">`;
+                        block.andere_valkuilen.items.forEach(item => {
+                            if (item.titel && item.tekst) {
+                                cardContentHtml += `<li><strong>${item.titel}:</strong> ${item.tekst}</li>`;
+                            }
+                        });
+                        cardContentHtml += `</ul>`;
+                    }
                 }
-                if (blok.tekst_na_statistiek) {
-                    html += `<p>${blok.tekst_na_statistiek}</p>`;
+
+                // Recursief renderen van geneste content
+                if (block.content && Array.isArray(block.content)) {
+                    cardContentHtml += renderGenericChapterContent(block.content, chapterNumber, `${currentBlockId}-`);
                 }
-                if (blok.tekst && blok.type === 'fun_fact') { // specifiek voor fun_fact
-                     html += `<p>${blok.tekst.replace(/\\n/g, '<br>')}</p>`;
-                }
-                html += `</div>`;
-            });
-        }
-    }
 
-    if (content.leren_als_spiertraining) {
-        const sectie = content.leren_als_spiertraining;
-        if (sectie.titel) {
-            html += `<h2 class="section-title">${sectie.titel}</h2>`;
-        }
-        if (sectie.tekst) {
-            html += `<p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
-        }
-        // Nieuw: render als ethical-reflection-grid als type dat is
-        if (sectie.type === 'ethical_reflection_grid' && Array.isArray(sectie.kaarten)) {
-            html += `<div class="ethical-reflection-grid">`;
-            sectie.kaarten.forEach(kaart => {
-                html += `<div class="ethical-card">`;
-                if (kaart.titel) html += `<h4>${kaart.titel}</h4>`;
-                if (kaart.beschrijving) html += `<p>${kaart.beschrijving.replace(/\\n/g, '<br>')}</p>`;
-                html += `</div>`;
-            });
-            html += `</div>`;
-        }
-    }
-
-    if (content.mag_ik_ai_gebruiken) {
-        const sectie = content.mag_ik_ai_gebruiken;
-        if (sectie.titel) {
-            html += `<h2 class="section-title">${sectie.titel}</h2>`;
-        }
-        if (sectie.tekst) {
-            html += `<p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
-        }
-    }
-
-    if (content.jouw_leerpad) {
-        const sectie = content.jouw_leerpad;
-        html += `<div class="info-card">`; // Start info-card
-        if (sectie.titel) {
-            html += `<h3 class="info-card-title">${sectie.titel}</h3>`;
-        }
-        
-        html += `<div class="info-card-content">`; // Start info-card-content
-        
-        if (sectie.tekst) {
-            html += `<p class="content-text">${sectie.tekst.replace(/\\n/g, '<br>')}</p>`;
-        }
-        if (Array.isArray(sectie.modules)) {
-            html += `<div class="modules-list-stacked">`; // Gebruik de nieuwe gestapelde lijst
-            sectie.modules.forEach(module => {
-                html += `<div class="benefit-card">`;
-                html += `<h3>${module.naam}</h3>`;
-                if (module.beschrijving) {
-                    html += `<div class="benefit-content">${module.beschrijving.replace(/\n/g, '<br>')}</div>`;
-                }
-                html += `</div>`; // benefit-card
-            });
-            html += `</div>`; // modules-list-stacked
-        }
-        if (sectie.afsluiting) {
-            html += `<p class="content-text">${sectie.afsluiting.replace(/\\n/g, '<br>')}</p>`;
-        }
-        
-        html += `</div>`; // End info-card-content
-        html += `</div>`; // End info-card
-    }
-
-    if (content.portfolio_booster) {
-        const sectie = content.portfolio_booster;
-        html += `
-            <div class="info-card white-bg portfolio-booster-card">
-                <h4 class="info-card-title">${sectie.titel || 'Portfolio Booster'}</h4>
-                <div class="info-card-content">
-                    <p>${sectie.tekst ? sectie.tekst.replace(/\\n/g, '<br>') : ''}</p>
-                </div>
-            </div>
-        `;
-    }
-
-    if (content.klaar_voor_start) {
-        const sectie = content.klaar_voor_start;
-        html += `
-            <div class="info-card white-bg encouragement-card">
-                <div class="info-card-content">
-                     <p>${sectie.tekst ? sectie.tekst.replace(/\\n/g, '<br>') : ''}</p>
-                </div>
-            </div>
-        `;
-    }
-
-    return html;
-}
-
-function renderChapter2Content(data) {
-    let html = '';
-
-    if (data.content) {
-        Object.values(data.content).forEach(block => {
-            switch (block.type) {
-                case 'info-card':
+                html += `
+                    <div class="info-card ${block.classes || ''}">
+                        ${block.titel ? `<h4 class="info-card-title">${block.titel}</h4>` : ''}
+                        <div class="info-card-content">
+                            ${cardContentHtml}
+                        </div>
+                    </div>
+                `;
+                break;
+            case 'section-title':
+                html += `<h2 class="section-title">${block.titel}</h2>`;
+                break;
+            case 'content-text':
+                html += `<p class="content-text">${block.tekst.replace(/\n/g, '<br>')}</p>`;
+                break;
+            case 'scenario-container-horizontal':
+                 html += `<div class="scenario-container-horizontal">`;
+                 block.scenarios.forEach(scenario => {
+                     html += `
+                         <div class="info-card scenario-card">
+                             <h4>${scenario.titel || ''}</h4>
+                             <p>${scenario.beschrijving ? scenario.beschrijving.replace(/\n/g, '<br>') : ''}</p>
+                             ${scenario.punten && scenario.punten.length > 0 ? `<ul>${scenario.punten.map(p => `<li>${p}</li>`).join('')}</ul>` : ''}
+                             ${scenario.conclusie ? `<p class="conclusie"><strong>${scenario.conclusie.replace(/\n/g, '<br>')}</strong></p>` : ''}
+                         </div>`;
+                 });
+                 html += `</div>`;
+                 break;
+            case 'dual-content-block':
+                html += `<div class="dual-content-container">`;
+                block.blokken.forEach(b => {
                     html += `
-                        <div class="info-card">
-                            <h4 class="info-card-title">${block.titel}</h4>
-                            <div class="info-card-content">
-                                ${block.inhoud.replace(/\n/g, '<br>')}
-                            </div>
+                        <div class="content-block info-card ${b.type}-block">
+                            ${b.titel ? `<h4 class="section-subtitle block-title">${b.titel}</h4>` : ''}
+                            ${b.tekst_voor_statistiek ? `<p>${b.tekst_voor_statistiek}</p>` : ''}
+                            ${b.focus_tekst ? `<p class="focus-text"><strong>${b.focus_tekst}</strong></p>` : ''}
+                            ${b.tekst_na_statistiek ? `<p>${b.tekst_na_statistiek}</p>` : ''}
+                            ${b.tekst && b.type === 'fun_fact' ? `<p>${b.tekst.replace(/\n/g, '<br>')}</p>`: ''}
                         </div>
                     `;
-                    break;
-                case 'timeline':
+                });
+                html += `</div>`;
+                break;
+            case 'accent-blok':
+                let bronHtml = '';
+                if (block.bron) {
+                    if (block.bron.url) {
+                        bronHtml = `<a href="${block.bron.url}" target="_blank" class="accent-blok-bron">${block.bron.naam}</a>`;
+                    } else {
+                        bronHtml = `<span class="accent-blok-bron">${block.bron.naam}</span>`;
+                    }
+                }
+                html += `
+                    <div class="accent-blok info-card accent-blok--${block.variant || 'default'}">
+                        ${block.titel ? `<h4 class="accent-blok-titel">${block.titel}</h4>` : ''}
+                        <div class="accent-blok-content">
+                            <p>${block.tekst}</p>
+                            ${bronHtml ? `<footer class="accent-blok-footer">${bronHtml}</footer>` : ''}
+                        </div>
+                    </div>
+                `;
+                break;
+            case 'ethical-reflection-grid':
+                html += `<div class="ethical-reflection-grid">`;
+                block.kaarten.forEach(kaart => {
                     html += `
-                        <div class="timeline-container">
-                            <h3 class="timeline-title">${block.titel}</h3>
-                            <div class="timeline">
+                        <div class="ethical-card">
+                            ${kaart.titel ? `<h4>${kaart.titel}</h4>` : ''}
+                            ${kaart.beschrijving ? `<p>${kaart.beschrijving.replace(/\n/g, '<br>')}</p>` : ''}
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+                break;
+            case 'modules-list-stacked':
+                 html += `<div class="info-card">
+                    ${block.titel ? `<h3 class="info-card-title">${block.titel}</h3>` : ''}
+                    <div class="info-card-content">
+                        ${block.tekst ? `<p class="content-text">${block.tekst.replace(/\n/g, '<br>')}</p>` : ''}
+                        <div class="modules-list-stacked">
+                            ${block.items.map(item => `
+                                <div class="benefit-card">
+                                    <h3>${item.titel}</h3>
+                                    <div class="benefit-content">${item.beschrijving.replace(/\n/g, '<br>')}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        ${block.afsluiting ? `<p class="content-text">${block.afsluiting.replace(/\n/g, '<br>')}</p>` : ''}
+                    </div>
+                 </div>`;
+                 break;
+             case 'process-flow':
+                    html += `
+                        <div class="process-flow-container">
+                            <h3 class="process-flow-title">${block.titel}</h3>
+                            <div class="process-flow">
                                 ${block.items.map(item => `
-                                    <div class="timeline-item">
-                                        <div class="timeline-year">${item.jaar}</div>
-                                        <div class="timeline-content">
+                                    <div class="process-flow-item">
+                                        <div class="process-flow-year">${item.stap}</div>
+                                        <div class="process-flow-content">
                                             <h4>${item.titel}</h4>
                                             <p>${item.beschrijving}</p>
                                         </div>
@@ -797,982 +647,438 @@ function renderChapter2Content(data) {
                         </div>
                     `;
                     break;
-                case 'modules-list':
-                    html += `
-                        <div class="modules-list">
-                            <h3 class="modules-list-title">${block.titel}</h3>
-                            <div class="modules-grid">
-                                ${block.items.map(item => `
-                                    <div class="module-card">
-                                        <h4>${item.titel}</h4>
-                                        <div class="module-content">
-                                            ${item.inhoud.replace(/\n/g, '<br>')}
-                                        </div>
-                                    </div>
+            case 'video-grid':
+                const kolommenClass = block.kolommen === 2 ? 'video-grid-container-2-col' : 'video-grid-container-3-col';
+                html += `
+                    ${block.titel ? `<h3 class="section-title">${block.titel}</h3>` : ''}
+                    <div class="video-grid-container ${kolommenClass}">
+                        ${block.items.map(item => {
+                            let embedUrl = '';
+                            if (item.link && item.link.includes('youtu')) {
+                                const match = item.link.match(/(?:youtu.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
+                                if (match && match[1]) {
+                                    embedUrl = `https://www.youtube.com/embed/${match[1]}`;
+                                }
+                            }
+                            const metaHtml = (item.bron || item.duur) ? `<div class="video-meta">${[item.bron, item.duur].filter(Boolean).join(' | ')}</div>` : '';
+
+                            return `
+                                <div class="video-grid-item">
+                                    ${embedUrl ? `<div class='video-wrapper'><iframe src='${embedUrl}' title='${item.titel}' allowfullscreen></iframe></div>` : ''}
+                                    <p class="video-title">${item.titel}</p>
+                                    <p>${item.beschrijving}</p>
+                                    ${metaHtml}
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+                break;
+            case 'info-card-list':
+                html += `
+                    <div class="info-card">
+                        <h4 class="info-card-title">${block.titel}</h4>
+                        <div class="info-card-content">
+                            <p>${block.inhoud.replace(/\n/g, '<br>')}</p>
+                            <ul class="points-list">
+                                ${block.lijst.map(item => `
+                                    <li><strong>${item.titel}:</strong> ${item.tekst}</li>
                                 `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                break;
+            case 'card-grid':
+                html += `<div class="benefits-grid">`;
+                block.items.forEach(item => {
+                    html += `
+                        <div class="benefit-card">
+                            <h3>${item.titel || ''}</h3>
+                            <div class="benefit-content">
+                                <p>${item.beschrijving || ''}</p>
+                                ${item.voorbeeld ? `
+                                    <div class="example-box">
+                                        <h4>${item.voorbeeld.titel || 'Voorbeeld'}</h4>
+                                        <p>${item.voorbeeld.tekst || ''}</p>
+                                    </div>
+                                ` : ''}
                             </div>
                         </div>
                     `;
-                    break;
-                case 'tech-showcase':
-                    html += `
-                        <h3 class="section-title">${block.titel}</h3>
-                        <div class="video-grid-container video-grid-container-3-col">
-                            ${block.items.map(item => {
-                                // Zet YouTube-link om naar embed-link
-                                let embedUrl = '';
-                                if (item.link && item.link.includes('youtu')) {
-                                    const match = item.link.match(/(?:youtu.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
-                                    if (match && match[1]) {
-                                        embedUrl = `https://www.youtube.com/embed/${match[1]}`;
-                                    }
-                                }
+                });
+                html += '</div>';
+                break;
+            case 'competency-grid':
+                html += `
+                    <section class="competency-section">
+                        ${block.titel ? `<h3 class="section-title">${block.titel}</h3>` : ''}
+                        <p>${block.intro || ''}</p>
+                        <div class="competency-grid">
+                            ${block.termen.map(term => `
+                                <div class="competency-card">
+                                    <h4>${term.term}</h4>
+                                    <p>${term.uitleg}</p>
+                                    <div class="example-box"><p>${term.praktisch}</p></div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </section>
+                `;
+                break;
+            case 'resource-grid-container':
+                const gridId = `ch${chapterNumber}-${currentBlockId}`;
+                html += `
+                    <div class="tech-resources">
+                        ${block.titel ? `<h3>${block.titel}</h3>` : ''}
+                        <div class="resource-grid">
+                            ${block.items.map((item, itemIndex) => {
+                                const qrId = `qr-${gridId}-item${itemIndex}`;
                                 return `
-                                    <div class="video-grid-item">
-                                        ${embedUrl ? `<div class='video-wrapper'><iframe src='${embedUrl}' title='${item.titel}' allowfullscreen></iframe></div>` : ''}
-                                        <p class="video-title">${item.titel}</p>
-                                        <p>${item.beschrijving}</p>
-                                        <div class="video-meta">${item.bron} | ${item.duur}</div>
-                                    </div>
-                                `;
+                                <div class="resource-card">
+                                    ${item.logo ? `<img src="${item.logo}" alt="${item.titel} Logo" class="resource-logo">` : ''}
+                                    <h4>${item.titel}</h4>
+                                    <p>${item.beschrijving}</p>
+                                    ${item.link ? `<div id="${qrId}" class="qr-code-container"></div>` : ''}
+                                    ${item.link ? `<a href="${item.link}" class="btn" target="_blank">Bezoek platform</a>` : ''}
+                                </div>
+                                `
                             }).join('')}
                         </div>
-                    `;
-                    break;
-                case 'custom-block':
-                    html += `
-                        <h3 class="section-title">${block.titel}</h3>
-                        <div class="info-card">
-                            <div class="info-card-content">
-                                ${block.inhoud.replace(/\n/g, '<br>')}
-                            </div>
-                        </div>
-                    `;
-                    break;
-                case 'info-card-list':
-                    html += `
-                        <div class="info-card">
-                            <h4 class="info-card-title">${block.titel}</h4>
-                            <div class="info-card-content">
-                                <p>${block.inhoud.replace(/\n/g, '<br>')}</p>
-                                <ul class="points-list">
-                                    ${block.lijst.map(item => `
-                                        <li><strong>${item.titel}:</strong> ${item.tekst}</li>
-                                    `).join('')}
-                                </ul>
-                            </div>
-                        </div>
-                    `;
-                    break;
-                case 'section-title':
-                    html += `<h3 class="content-subtitle">${block.titel}</h3>`;
-                    break;
-                case 'content-text':
-                    html += `<p class="content-text">${block.tekst}</p>`;
-                    break;
-                case 'benefits-grid':
-                    html += `<div class="benefits-grid">`;
-                    block.items.forEach(item => {
-                        html += `
-                            <div class="benefit-card">
-                                <h3>${item.titel || ''}</h3>
-                                <div class="benefit-content">
-                                    <p>${item.beschrijving || ''}</p>
-                                    ${item.voorbeeld ? `
-                                        <div class="example-box">
-                                            <h4>${item.voorbeeld.titel || ''}</h4>
-                                            <p>${item.voorbeeld.tekst || ''}</p>
-                                        </div>
-                                    ` : ''}
-                                </div>
-                            </div>
-                        `;
-                    });
-                    html += '</div>';
-                    break;
-                case 'critical-themes-grid':
-                    if (block.titel) {
-                        html += `<h4 class="critical-themes-title">${block.titel}</h4>`;
-                    }
-                    html += '<div class="critical-themes-grid">';
-                    block.items.forEach(thema => {
-                        html += `
-                            <div class="critical-theme-card">
-                                ${thema.subtitel ? `<h4 class="theme-subtitle">${thema.subtitel}</h4>` : ''}
-                                ${thema.icoon ? `<div class="theme-icon"><img src="${thema.icoon}" alt="${thema.titel || ''} icoon"></div>` : ''}
-                                <h3>${thema.titel || ''}</h3>
-                                <div class="theme-content">
-                                    ${thema.inhoud ? `<p>${thema.inhoud}</p>` : ''}
-                                </div>
-                            </div>
-                        `;
-                    });
-                    html += '</div>';
-                    break;
-                case 'competency-grid':
-                    html += `
-                        <section class="competency-section">
-                            <h3 class="section-title">${block.titel}</h3>
-                            <p>${block.intro || ''}</p>
-                            <div class="competency-grid">
-                                ${block.termen.map(term => `
-                                    <div class="competency-card">
-                                        <h4>${term.term}</h4>
-                                        <p>${term.uitleg}</p>
-                                        <div class="example-box"><p>${term.praktisch}</p></div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </section>
-                    `;
-                    break;
-                case 'benefit-card':
-                    if (block.items) {
-                        html += `<div class="benefits-grid">`;
-                        block.items.forEach(item => {
-                            html += `<div class="benefit-card">`;
-                            if (item.titel) {
-                                html += `<h3>${item.titel}</h3>`;
-                            }
-                            html += `<div class="benefit-content">`;
-                            if (item.content) {
-                                html += `<p>${item.content}</p>`;
-                            }
-                            if (item.example) {
-                                html += `<div class="example-box">
-                                            <h4>Voorbeeld</h4>
-                                            <p>${item.example}</p>
-                                         </div>`;
-                            }
-                            html += `</div></div>`;
-                        });
-                        html += `</div>`;
-                    }
-                    break;
-                case 'modules-list':
-                case 'modules-list-stacked':
-                    const listClass = block.type === 'modules-list' ? 'modules-list' : 'modules-list-stacked';
-                    html += `<div class="${listClass}">`;
-                    if (block.titel) {
-                         html += `<h3 class="modules-list-title">${block.titel}</h3>`;
-                    }
-                    block.items.forEach(item => {
-                        html += `<div class="benefit-card benefit-card--list-item">`; // Modifier class toegevoegd
-                        if (item.titel) {
-                            html += `<h3>${item.titel}</h3>`;
-                        }
-                        html += `<div class="benefit-content">`;
-                        if (item.content) {
-                            html += `<p>${item.content}</p>`;
-                        }
-                        html += `</div></div>`;
-                    });
-                    html += `</div>`;
-                    break;
-                case 'quiz_mc':
-                    html += generateQuizHTML(block);
-                    break;
-                default:
-                    // Standaard rendering voor blokken zonder type (zoals definitie)
-                    if (block.titel && block.tekst) {
-                        html += `
-                            <h3 class="section-title">${block.titel}</h3>
-                            <p class="content-text">${block.tekst.replace(/\n/g, '<br>')}</p>
-                        `;
-                    }
-                    break;
-            }
-        });
-    }
-
-    return html;
-}
-
-function renderChapter3Content(content) {
-    let html = '';
-
-    // Intro
-    if (content.intro) {
-        html += `
-            <div class="info-card">
-                <div class="info-card-content">
-                    <p>${content.intro.tekst || ''}</p>
-                </div>
-            </div>
-        `;
-    }
-
-    // Chatbots sectie
-    if (content.chatbots) {
-        // Titel
-        if (content.chatbots.titel) {
-            html += `<h2 class="section-title">${content.chatbots.titel.tekst}</h2>`;
-        }
-
-        // Intro tekst
-        if (content.chatbots.intro) {
-            html += `<div class="content-text">${content.chatbots.intro.tekst}</div>`;
-        }
-
-        // Platforms
-        if (content.chatbots.platforms && content.chatbots.platforms.items) {
-            html += '<div class="platforms-container">';
-            content.chatbots.platforms.items.forEach(platform => {
-                // Bepaal het juiste logo bestand op basis van de titel
-                let logoFile = '';
-                if (platform.titel.includes('ChatGPT')) {
-                    logoFile = 'ChatGPT-Logo.svg.png';
-                } else if (platform.titel.includes('Gemini')) {
-                    logoFile = 'Gemini-logo.png';
-                } else if (platform.titel.includes('NotebookLM')) {
-                    logoFile = 'notebooklm-logo.png';
-                } else if (platform.titel.includes('Claude')) {
-                    logoFile = 'claude-logo.png';
-                } else if (platform.titel.includes('Mistral')) {
-                    logoFile = 'Mistral_AI_logo.png';
-                }
-
-                html += `
-                    <div class="platform-card">
-                        ${logoFile ? `
-                            <div class="platform-logo">
-                                <img src="images/${logoFile}" alt="${platform.titel} logo">
-                            </div>
-                        ` : ''}
-                        <h3>${platform.titel}</h3>
-                        <p>${platform.beschrijving}</p>
-                        ${platform.link ? `<a href="https://${platform.link}" target="_blank" class="btn">Bezoek chatbot</a>` : ''}
                     </div>
                 `;
-            });
-            html += '</div>';
-        }
-    }
-
-    // Chatbot functies sectie (NIEUW)
-    if (content.chatbot_functies) {
-        // Titel
-        if (content.chatbot_functies.titel) {
-            html += `<h2 class="section-title">${content.chatbot_functies.titel.tekst}</h2>`;
-        }
-        // Tabelgroep (meerdere tabellen)
-        if (content.chatbot_functies.tabel && content.chatbot_functies.tabel.type === 'table-container-group') {
-            const groep = content.chatbot_functies.tabel;
-            if (groep.intro) {
-                html += `<div class="info-card"><div class="info-card-content"><p>${groep.intro}</p></div></div>`;
-            }
-            groep.tables.forEach(tabel => {
-                html += `<div class="table-container">`;
-                if (tabel.titel) {
-                    html += `<div class="table-title">${tabel.titel}</div>`;
-                }
-                html += `<table class="content-table">`;
-                // Headers
-                if (Array.isArray(tabel.headers)) {
-                    html += '<thead><tr>';
-                    tabel.headers.forEach(header => {
-                        html += `<th>${header}</th>`;
+                
+                // Generate QR codes after the HTML is rendered
+                setTimeout(() => {
+                    block.items.forEach((item, itemIndex) => {
+                        if (item.link) {
+                            const qrId = `qr-${gridId}-item${itemIndex}`;
+                            const qrContainer = document.getElementById(qrId);
+                            if (qrContainer) {
+                                // Clear container first to avoid duplicates on re-render
+                                qrContainer.innerHTML = '';
+                                new QRCode(qrContainer, {
+                                    text: item.link,
+                                    width: 128,
+                                    height: 128,
+                                    colorDark: "#662483", // HAN paars
+                                    colorLight: "#ffffff",
+                                    correctLevel: QRCode.CorrectLevel.H
+                                });
+                            }
+                        }
                     });
-                    html += '</tr></thead>';
+                }, 100);
+                break;
+            case 'table-container-group':
+                if (block.intro) {
+                    html += `<div class="info-card"><div class="info-card-content"><p>${block.intro}</p></div></div>`;
                 }
-                // Rows
-                if (Array.isArray(tabel.rows)) {
-                    html += '<tbody>';
-                    tabel.rows.forEach(row => {
-                        html += '<tr>';
-                        row.forEach(cell => {
-                            html += `<td>${cell}</td>`;
-                        });
-                        html += '</tr>';
+                if(block.tables) {
+                    block.tables.forEach(tabel => {
+                        html += `<div class="table-container">`;
+                        if (tabel.titel) {
+                            html += `<div class="table-title">${tabel.titel}</div>`;
+                        }
+                        html += `<table class="content-table">`;
+                        if (Array.isArray(tabel.headers)) {
+                            html += '<thead><tr>';
+                            tabel.headers.forEach(header => { html += `<th>${header}</th>`; });
+                            html += '</tr></thead>';
+                        }
+                        if (Array.isArray(tabel.rows)) {
+                            html += '<tbody>';
+                            tabel.rows.forEach(row => {
+                                html += '<tr>';
+                                row.forEach(cell => { html += `<td>${cell}</td>`; });
+                                html += '</tr>';
+                            });
+                            html += '</tbody>';
+                        }
+                        html += `</table></div>`;
                     });
-                    html += '</tbody>';
                 }
-                html += `</table></div>`;
-            });
-            if (groep.note) {
-                html += `<div class="note">${groep.note}</div>`;
-            }
-        }
-        // Oude enkele tabel (fallback)
-        else if (content.chatbot_functies.tabel) {
-            const tabel = content.chatbot_functies.tabel;
-            html += `<div class="table-container">`;
-            if (tabel.titel) {
-                html += `<div class="table-title">${tabel.titel}</div>`;
-            }
-            html += `<table class="content-table">`;
-            // Headers
-            if (Array.isArray(tabel.headers)) {
-                html += '<thead><tr>';
-                tabel.headers.forEach(header => {
-                    html += `<th>${header}</th>`;
+                 if (block.note) {
+                    html += `<div class="note">${block.note}</div>`;
+                }
+                break;
+            case 'icon-card-grid':
+                 html += '<div class="critical-themes-grid">';
+                 block.themes.forEach(theme => {
+                     // Dynamische veldnamen ondersteuning
+                     let dynamicFields = '';
+                     
+                     // Dynamische velden via configuratie
+                     if (theme.dynamische_velden && Array.isArray(theme.dynamische_velden)) {
+                         theme.dynamische_velden.forEach(veld => {
+                             if (theme[veld.veldnaam]) {
+                                 dynamicFields += `<div class="theme-dynamic-field"><strong>${veld.label}:</strong> <span>${theme[veld.veldnaam]}</span></div>`;
+                             }
+                         });
+                     }
+                     
+                     html += `
+                        <div class="critical-theme-card">
+                            ${theme.subtitel ? `<h4 class="theme-subtitle">${theme.subtitel}</h4>` : ''}
+                            ${theme.icoon ? `<div class="theme-icon"><img src="${theme.icoon}" alt="${theme.titel || ''} icoon"></div>` : ''}
+                            <h3>${theme.titel || ''}</h3>
+                            <div class="theme-content">
+                                ${dynamicFields}
+                            </div>
+                        </div>
+                    `;
+                 });
+                 html += '</div>';
+                 break;
+            case 'image-grid':
+                html += `
+                    <div class="image-grid ${block.kolommen === 3 ? 'image-grid-3-col' : 'image-grid-2-col'}">
+                        ${block.afbeeldingen.map(img => `
+                            <div class="image-container">
+                                <img src="${img.src}" alt="${img.alt || ''}">
+                                ${img.onderschrift ? `<figcaption>${img.onderschrift}</figcaption>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                break;
+            case 'split-screen-image-text':
+                html += `
+                    <div class="img-split-screen">
+                        <div class="image-content">
+                            <div class="image-container">
+                                <img src="${block.afbeelding.src}" alt="${block.afbeelding.alt || ''}">
+                                ${block.afbeelding.onderschrift ? `<figcaption>${block.afbeelding.onderschrift}</figcaption>` : ''}
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            ${block.tekst_content.map(p => `<p>${p}</p>`).join('')}
+                        </div>
+                    </div>
+                `;
+                break;
+            case 'stats-card-grid':
+                html += `<div class="stats-container">`;
+                block.kaarten.forEach(kaart => {
+                    html += `
+                        <div class="stat-card">
+                            ${kaart.titel ? `<h3 class="stat-title">${kaart.titel}</h3>` : ''}
+                            ${kaart.afbeelding ? `<div class="stat-image"><img src="${kaart.afbeelding}" alt="${kaart.titel || ''}"></div>` : ''}
+                            ${kaart.getal ? `<div class="stat-number">${kaart.getal}</div>` : ''}
+                            ${kaart.label ? `<p class="stat-label">${kaart.label}</p>` : ''}
+                        </div>
+                    `;
                 });
-                html += '</tr></thead>';
-            }
-            // Rows
-            if (Array.isArray(tabel.rows)) {
-                html += '<tbody>';
-                tabel.rows.forEach(row => {
-                    html += '<tr>';
-                    row.forEach(cell => {
-                        html += `<td>${cell}</td>`;
-                    });
-                    html += '</tr>';
-                });
-                html += '</tbody>';
-            }
-            html += `</table></div>`;
-        }
-    }
-
-    // Andere tools sectie
-    if (content.andere_tools) {
-        // Titel
-        if (content.andere_tools.titel) {
-            html += `<h2 class="section-title">${content.andere_tools.titel.tekst}</h2>`;
-        }
-
-        html += '<div class="info-card"><div class="info-card-content">';
-
-        // Intro tekst
-        if (content.andere_tools.intro) {
-            html += `<p>${content.andere_tools.intro.tekst}</p>`;
-        }
-
-        // Tools
-        if (content.andere_tools.tools && content.andere_tools.tools.items) {
-            html += '<div class="modules-list-stacked">';
-            content.andere_tools.tools.items.forEach(tool => {
+                html += `</div>`;
+                break;
+            case 'video-full-width':
+                let embedUrl = '';
+                if (block.link && block.link.includes('youtu')) {
+                    const match = block.link.match(/(?:youtu.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
+                    if (match && match[1]) {
+                        embedUrl = `https://www.youtube.com/embed/${match[1]}`;
+                    }
+                }
+                html += `
+                    <div class="video-container-full-width">
+                        ${embedUrl ? `<div class='video-wrapper'><iframe src='${embedUrl}' title='${block.titel}' allowfullscreen></iframe></div>` : ''}
+                        ${block.titel ? `<p class="video-title">${block.titel}</p>` : ''}
+                    </div>
+                `;
+                break;
+            case 'image-block':
+                html += `
+                    <div class="image-container ${block.stijl || ''}">
+                        <img src="${block.src}" alt="${block.alt || ''}" class="${block.classes || ''}">
+                        ${block.onderschrift ? `<figcaption>${block.onderschrift}</figcaption>` : ''}
+                    </div>
+                `;
+                break;
+            case 'benefit-card':
                 html += `
                     <div class="benefit-card">
-                        <h3>${tool.titel}</h3>
-                        <p>${tool.beschrijving}</p>
-                        ${tool.link ? `<a href="${tool.link}" target="_blank" class="btn">Bezoek TurboScribe</a>` : ''}
+                        <h3>${block.titel}</h3>
+                        <div class="benefit-content">${block.beschrijving.replace(/\n/g, '<br>')}</div>
                     </div>
                 `;
-            });
-            html += '</div>';
+                break;
+            case 'ethical-reflection-grid':
+                html += `<div class="ethical-reflection-grid">`;
+                block.kaarten.forEach(kaart => {
+                    html += `
+                        <div class="ethical-card">
+                            ${kaart.titel ? `<h4>${kaart.titel}</h4>` : ''}
+                            ${kaart.beschrijving ? `<p>${kaart.beschrijving.replace(/\n/g, '<br>')}</p>` : ''}
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+                break;
         }
-        
-        html += '</div></div>';
-    }
-
-    // Tool vinden sectie
-    if (content.tool_vinden) {
-        // Titel
-        if (content.tool_vinden.titel) {
-            html += `<h2 class="section-title">${content.tool_vinden.titel.tekst}</h2>`;
-        }
-
-        // Intro tekst
-        if (content.tool_vinden.intro) {
-            html += `<div class="content-text">${content.tool_vinden.intro.tekst}</div>`;
-        }
-
-        // Platforms
-        if (content.tool_vinden.platforms && content.tool_vinden.platforms.items) {
-            html += '<div class="platforms-container">';
-            content.tool_vinden.platforms.items.forEach(platform => {
-                html += `
-                    <div class="platform-card">
-                        <h3>${platform.titel}</h3>
-                        <p>${platform.beschrijving}</p>
-                        ${platform.link ? `<a href="https://${platform.link}" target="_blank" class="btn">Bezoek tool</a>` : ''}
-                        ${platform.icon ? `<div class="${platform.icon}"></div>` : ''}
-                    </div>
-                `;
-            });
-            html += '</div>';
-        }
-    }
-
-    // Betaald vs gratis sectie
-    if (content.betaald_vs_gratis) {
-        // Titel
-        if (content.betaald_vs_gratis.titel) {
-            html += `<h2 class="section-title">${content.betaald_vs_gratis.titel.tekst}</h2>`;
-        }
-
-        // Tekst
-        if (content.betaald_vs_gratis.tekst) {
-            html += `<div class="content-text">${content.betaald_vs_gratis.tekst.tekst}</div>`;
-        }
-    }
-
+    });
     return html;
 }
 
-function renderChapter4Content(content) {
+function generateQRCodesForContent(content, chapterNumber, parentBlockId = '') {
+    if (!Array.isArray(content)) return;
+
+    content.forEach((block, blockIndex) => {
+        const currentBlockId = `${parentBlockId}block${blockIndex}`;
+        
+        if (block.type === 'resource-grid-container') {
+            const gridId = `ch${chapterNumber}-${currentBlockId}`;
+            block.items.forEach((item, itemIndex) => {
+                if (item.link) {
+                    const qrId = `qr-${gridId}-item${itemIndex}`;
+                    const qrContainer = document.getElementById(qrId);
+                    if (qrContainer && qrContainer.innerHTML === '') {
+                        new QRCode(qrContainer, {
+                            text: item.link,
+                            width: 128,
+                            height: 128,
+                            colorDark: "#662483",
+                            colorLight: "#ffffff",
+                            correctLevel: QRCode.CorrectLevel.H
+                        });
+                    }
+                }
+            });
+        }
+
+        // Recursively call for nested content, e.g., in info-cards
+        if (block.content && Array.isArray(block.content)) {
+            generateQRCodesForContent(block.content, chapterNumber, `${currentBlockId}-`);
+        }
+    });
+}
+
+function renderAfsluitingContent(content) {
+    devLog('Rendering Afsluiting content with data:', content);
     let html = '';
-    
-    // Intro info card
-    if (content.intro) {
+
+    // "Wat ga je hier doen?" kaart
+    if (content.introductie) {
         html += `
             <div class="info-card">
-                <h3 class="info-card-title">${content.intro.titel}</h3>
+                <h3 class="info-card-title">Wat ga je hier doen?</h3>
                 <div class="info-card-content">
-                    ${content.intro.tekst}
+                    <p>${content.introductie.replace(/\n/g, '<br>')}</p>
                 </div>
             </div>
         `;
     }
 
-    // Section title
-    if (content.section_title) {
-        html += `<h3 class="content-subtitle">${content.section_title}</h3>`;
+    // "Afsluitende quiz" kaart
+    if (content.afsluitQuizIntro) {
+        html += `
+            <div class="info-card">
+                <h3 class="info-card-title">${content.afsluitQuizIntro.subtitel || 'Afsluitende quiz'}</h3>
+                <div class="info-card-content">
+                    <p>${content.afsluitQuizIntro.tekst.replace(/\n/g, '<br>')}</p>
+                </div>
+            </div>
+        `;
     }
 
-    // Critical themes grid
-    if (content.critical_themes_grid && content.critical_themes_grid.themes) {
-        html += '<div class="critical-themes-grid">';
-        content.critical_themes_grid.themes.forEach(theme => {
-            html += `
-                <div class="critical-theme-card">
-                    <div class="theme-icon">
-                        <img src="${theme.icoon}" alt="${theme.titel}">
-                    </div>
-                    <h3>${theme.titel}</h3>
-                    <div class="theme-content">
-                        <p><strong>Positief voorbeeld:</strong> ${theme.positief_voorbeeld}</p>
-                        <p><strong>Uitdaging:</strong> ${theme.uitdaging}</p>
-                        <div class="reflection-prompt">
-                            <p>${theme.reflectie_vraag}</p>
+    // Functionele container voor de quiz
+    html += '<div id="quiz-container"></div>';
+    html += '<hr style="margin: 40px 0;">';
+    
+    // Wrapper voor Certificaat en Portfolio secties
+    html += '<div class="certificaat-portfolio-wrapper">';
+    html += '<h2 class="section-title">Certificaat en Portfolio</h2>';
+
+    // "Wat kun je met dit certificaat?" sectie
+    if (content.overCertificaat) {
+        html += `
+            <div class="info-card purple-kader">
+                <h3 class="info-card-title">${content.overCertificaat.titel}</h3>
+                <div class="info-card-content">
+                    ${content.overCertificaat.intro ? `<p>${content.overCertificaat.intro}</p>` : ''}
+                    ${content.overCertificaat.punten && content.overCertificaat.punten.length > 0 ? `
+                        <ul class="checklist">
+                            ${content.overCertificaat.punten.map(punt => `<li><strong>${punt.kop}:</strong> ${punt.tekst}</li>`).join('')}
+                        </ul>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+    }
+
+    // "Certificaat gebruiken in je eJournal/Portfolio" sectie met VRAAK accordion
+    if (content.portfolioIntegratie) {
+        html += `
+            <div class="info-card purple-kader">
+                <h3 class="info-card-title">${content.portfolioIntegratie.titel}</h3>
+                <div class="info-card-content">
+                    <p>${content.portfolioIntegratie.tip}</p>
+                    <p>${content.portfolioIntegratie.vraakUitleg}</p>
+                    ${content.portfolioIntegratie.vraakCriteria ? `
+                    <div class="accordion">
+                        <button class="accordion-toggle" id="vraak-accordion-toggle" aria-expanded="false">
+                            <span class="triangle">&#9654;</span> ${content.portfolioIntegratie.vraakCriteria.titel}
+                        </button>
+                        <div class="accordion-content" id="vraak-accordion-content">
+                            <p>${content.portfolioIntegratie.vraakCriteria.introductie}</p>
+                            <ol class="vraak-criteria-lijst" style="margin-bottom: 0;">
+                                ${content.portfolioIntegratie.vraakCriteria.criteria.map(c => `
+                                    <li style="margin-bottom: 1.2em;">
+                                        <strong>${c.naam}:</strong> ${c.beschrijving}
+                                        ${c.subpunten && c.subpunten.length > 0 ? `
+                                            <ul class="vraak-subpunten" style="margin-top: 0.5em; margin-bottom: 0.5em; margin-left: 1.5em;">
+                                                ${c.subpunten.map(sub => `<li style="list-style-type: disc; margin-bottom: 0.2em;">${sub}</li>`).join('')}
+                                            </ul>
+                                        ` : ''}
+                                    </li>
+                                `).join('')}
+                            </ol>
                         </div>
                     </div>
+                    ` : ''}
                 </div>
-            `;
-        });
-        html += '</div>';
-    }
-
-    // Basisprincipes
-    if (content.basisprincipes) {
-        html += `<h3 class="content-subtitle">${content.basisprincipes.titel}</h3>`;
-        html += `<p class="content-text">${content.basisprincipes.tekst}</p>`;
-        html += `<div class="benefits-grid">`;
-        content.basisprincipes.benefits.forEach(benefit => {
-            html += `<div class="benefit-card">`;
-            html += `<h3>${benefit.titel}</h3>`;
-            html += `<div class="benefit-content">`;
-            html += `<p>${benefit.beschrijving}</p>`;
-            if (benefit.voorbeelden) {
-                benefit.voorbeelden.forEach(voorbeeld => {
-                    html += `<div class="example-box">`;
-                    if (voorbeeld.niet) html += `<p><strong>Niet doen:</strong> ${voorbeeld.niet}</p>`;
-                    if (voorbeeld.wel) html += `<p><strong>Wel doen:</strong> ${voorbeeld.wel}</p>`;
-                    if (voorbeeld.context) html += `<p><strong>Context:</strong> ${voorbeeld.context}</p>`;
-                    if (voorbeeld.rol) html += `<p><strong>Rol:</strong> ${voorbeeld.rol}</p>`;
-                    if (voorbeeld.voorbeeld) html += `<p><strong>Voorbeeld:</strong> ${voorbeeld.voorbeeld}</p>`;
-                    html += `</div>`;
-                });
-            }
-            html += `</div>`; // benefit-content
-            html += `</div>`; // benefit-card
-        });
-        html += `</div>`; // benefits-grid
-    }
-
-    // Voorbeeld prompt
-    if (content.voorbeeld_prompt) {
-        html += `<h3 class="content-subtitle">${content.voorbeeld_prompt.titel}</h3>`;
-        html += `<p class="content-text">${content.voorbeeld_prompt.tekst}</p>`;
-        html += `<div class="table-container">`;
-        html += `<table class="content-table">`;
-        html += `<thead><tr><th>Prompt</th><th>Analyse</th></tr></thead>`;
-        html += `<tbody>`;
-        content.voorbeeld_prompt.tabel.rijen.forEach(rij => {
-            const encodedPrompt = encodeURIComponent(rij.prompt);
-            html += `<tr>`;
-            html += `<td>${rij.prompt}<br><a href="https://chat.openai.com/?model=text-davinci-003&prompt=${encodedPrompt}" target="_blank" class="btn btn-secondary" style="margin-top:8px;display:inline-block;">Probeer deze prompt in ChatGPT</a></td>`;
-            html += `<td>${rij.analyse}</td>`;
-            html += `</tr>`;
-        });
-        html += `</tbody></table></div>`;
-    }
-
-    // Ezelsbruggetje
-    if (content.ezelsbruggetje) {
-        html += `
-            <h3 class="content-subtitle">${content.ezelsbruggetje.titel}</h3>
-            <div class="info-card">
-                <ul class="rock-list">
-                    ${content.ezelsbruggetje.items.map(item => `
-                        <li>
-                            <strong>${item.letter} - </strong>${item.beschrijving}
-                        </li>
-                    `).join('')}
-                </ul>
             </div>
         `;
     }
 
-    // Slimme technieken
-    if (content.slimme_technieken) {
-        html += `<h3 class="content-subtitle">${content.slimme_technieken.titel}</h3>`;
-        html += `<p class="content-text">${content.slimme_technieken.tekst}</p>`;
-        html += `<div class="benefits-grid">`;
-        content.slimme_technieken.benefits.forEach(benefit => {
-            html += `<div class="benefit-card">`;
-            html += `<h3>${benefit.titel}</h3>`;
-            html += `<div class="benefit-content">`;
-            html += `<p>${benefit.beschrijving}</p>`;
-            if (benefit.voorbeeld) {
-                html += `<div class="example-box"><p><strong>Voorbeeld:</strong> ${benefit.voorbeeld}</p></div>`;
-            }
-            html += `</div>`; // benefit-content
-            html += `</div>`; // benefit-card
-        });
-        html += `</div>`; // benefits-grid
-    }
-
-    // Privacy waarschuwing
-    if (content.privacy_waarschuwing) {
+    // "Kijk verder dan het certificaat" sectie
+    if (content.verderKijkenDanCertificaten) {
         html += `
-            <h3 class="content-subtitle">${content.privacy_waarschuwing.titel}</h3>
-            <div class="info-card warning-card">
-                ${content.privacy_waarschuwing.items.map(item => `
-                    <div class="warning-item">
-                        <h4>${item.titel}</h4>
-                        <p>${item.tekst}</p>
-                    </div>
-                `).join('')}
-            </div>
-            ${content.privacy_waarschuwing.andere_valkuilen ? `
-                <div class="other-pitfalls">
-                    <h4>${content.privacy_waarschuwing.andere_valkuilen.titel}</h4>
-                    <div class="pitfalls-grid">
-                        ${content.privacy_waarschuwing.andere_valkuilen.items.map(item => `
-                            <div class="pitfall-card">
-                                <h5>${item.titel}</h5>
-                                <p>${item.tekst}</p>
+            <div class="info-card">
+                <h3 class="info-card-title">${content.verderKijkenDanCertificaten.titel}</h3>
+                <div class="info-card-content">
+                    <p>${content.verderKijkenDanCertificaten.tekst}</p>
+                    <div class="suggesties-grid">
+                        ${content.verderKijkenDanCertificaten.suggesties.map(s => `
+                            <div class="suggestie-tegel card">
+                                <h4>${s.titel}</h4>
+                                <p>${s.tekst}</p>
                             </div>
                         `).join('')}
                     </div>
                 </div>
-            ` : ''}
-        `;
-    }
-
-    return html;
-}
-
-function renderChapter5Content(content) {
-    let html = '';
-
-    // Intro - TAM Model
-    if (content.intro) {
-        html += `
-            <div class="info-card">
-                <h3 class="info-card-title">${content.intro.titel || 'Het Technology Acceptance Model (TAM)'}</h3>
-                <div class="info-card-content">
-                    <p>${content.intro.tekst || ''}</p>
-                </div>
             </div>
         `;
     }
 
-    // TAM Model details
-    if (content.tam_model) {
-        html += '<div class="tam-model">';
-        if (content.tam_model.afbeelding) {
-            html += `<img src="${content.tam_model.afbeelding}" alt="Technology Acceptance Model (TAM)" class="model-image">`;
-        }
-        html += '<div class="tam-explanation">';
-
-        // Kernconcepten
-        if (content.tam_model.kernconcepten && content.tam_model.kernconcepten.concepten && content.tam_model.kernconcepten.concepten.length > 0) {
-            html += `
-                <div class="info-card">
-                    <h3 class="info-card-title">${content.tam_model.kernconcepten.titel || 'Kernconcepten van TAM'}</h3>
-                    <div class="info-card-content">
-                        <div class="concept-cards">
-            `;
-            content.tam_model.kernconcepten.concepten.forEach(concept => {
-                html += `
-                    <div class="concept-card">
-                        <h4>${concept.titel || ''}</h4>
-                        ${concept.nederlands ? `<p class="concept-dutch">Nederlands: ${concept.nederlands}</p>` : ''}
-                        <p>${concept.beschrijving || ''}</p>
-                        ${concept.voorbeeld ? `<p class="example">Voorbeeld: ${concept.voorbeeld}</p>` : ''}
-                    </div>
-                `;
-            });
-            html += '</div></div></div>'; // Close concept-cards, info-card-content, info-card
-        }
-
-        // Adoptieproces
-        if (content.tam_model.adoptieproces) {
-            html += `
-                <div class="info-card">
-                    <h3 class="info-card-title">${content.tam_model.adoptieproces.titel || 'Het Adoptieproces'}</h3>
-                    <div class="info-card-content">
-                        ${content.tam_model.adoptieproces.tekst ? `<p>${content.tam_model.adoptieproces.tekst}</p>` : ''}
-            `;
-            if (content.tam_model.adoptieproces.factoren && content.tam_model.adoptieproces.factoren.length > 0) {
-                html += '<ul>';
-                content.tam_model.adoptieproces.factoren.forEach(factor => {
-                    html += `<li><strong>${factor.titel}:</strong> ${factor.beschrijving}</li>`;
-                });
-                html += '</ul>';
-            }
-            html += '</div></div>'; // Close info-card-content, info-card
-        }
-        html += '</div></div>'; // Close tam-explanation, tam-model
-    }
-
-    // Praktische toepassing
-    if (content.praktische_toepassing) {
-        html += `
-            <div class="info-card">
-                <h3 class="info-card-title">${content.praktische_toepassing.titel || 'Praktische Toepassing'}</h3>
-                <div class="info-card-content">
-                    ${content.praktische_toepassing.tekst ? `<p>${content.praktische_toepassing.tekst}</p>` : ''}
-        `;
-        if (content.praktische_toepassing.toepassingen && content.praktische_toepassing.toepassingen.length > 0) {
-            html += '<ul>';
-            content.praktische_toepassing.toepassingen.forEach(toepassing => {
-                html += `<li>${toepassing}</li>`;
-            });
-            html += '</ul>';
-        }
-        html += '</div></div>'; // Close info-card-content, info-card
-    }
-
-    return html;
-}
-
-function renderChapter6Content(content) { // Wordt nu de implementatie van de OUDE renderChapter7Content
-    let html = '';
-
-    // Intro
-    if (content.intro) {
-        html += `
-            <div class="info-card">
-                <h3 class="info-card-title">${content.intro.titel || 'Van competenties naar concrete technologie'}</h3>
-                <div class="info-card-content">
-                    <p>${content.intro.tekst || ''}</p>
-                    ${content.intro.subtekst ? `<p>${content.intro.subtekst}</p>` : ''}
-                </div>
+    html += '</div>'; // sluit certificaat-portfolio-wrapper
+    
+    // "Certificaat Genereren" sectie
+    html += `
+        <div class="certificate-section">
+            <div class="certificate-title-bar">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6"/><circle cx="17" cy="17" r="2"/><path d="M19 19l-2-2"/></svg>
+                Certificaat Genereren
             </div>
-        `;
-    }
+            <p>Vul hieronder je naam in om een certificaat te genereren met je antwoorden en reflecties.</p>
+            <input type="text" id="student-name" placeholder="Vul hier je volledige naam in" class="input-field">
+            <button class="btn" id="generatePdfBtn" onclick="generatePDF()">Download Certificaat (PDF)</button>
+            ${content.portfolioIntegratie?.tip ? `<p id="afsluiting-portfolio-tip" class="small-text"><strong>Tip:</strong> ${content.portfolioIntegratie.tip}</p>`: ''}
+        </div>
+    `;
 
-    // iXperium Health Catalogussen
-    if (content.ixperium_catalogi) {
-        html += `
-            <div class="featured-ixperium">
-                <h3>${content.ixperium_catalogi.titel || 'iXperium Health Catalogussen'}</h3>
-                <div class="ixperium-catalogs">
-        `;
-        if (content.ixperium_catalogi.catalogi && content.ixperium_catalogi.catalogi.length > 0) {
-            content.ixperium_catalogi.catalogi.forEach(catalog => {
-                html += `
-                    <div class="catalog-card">
-                        ${catalog.logo ? `<img src="${catalog.logo}" alt="${catalog.titel || 'Catalogus'} Logo" class="catalog-logo">` : ''}
-                        <h4>${catalog.titel || ''}</h4>
-                        <p>${catalog.beschrijving || ''}</p>
-                        ${catalog.qr_code ? `<img src="${catalog.qr_code}" alt="QR Code ${catalog.titel || ''}" class="qr-code">` : ''}
-                        ${catalog.link ? `<a href="${catalog.link}" class="btn" target="_blank">Bekijk catalogus</a>` : ''}
-                    </div>
-                `;
-            });
-        }
-        html += '</div></div>'; // Close ixperium-catalogs and featured-ixperium
-    }
-
-    // Nationale Platforms
-    if (content.nationale_platforms) {
-        html += `
-            <div class="tech-resources">
-                <h3>${content.nationale_platforms.titel || 'Nationale Platforms voor Zorgtechnologie'}</h3>
-                <div class="resource-grid">
-        `;
-        if (content.nationale_platforms.platforms && content.nationale_platforms.platforms.length > 0) {
-            content.nationale_platforms.platforms.forEach(platform => {
-                html += `
-                    <div class="resource-card">
-                        ${platform.logo ? `<img src="${platform.logo}" alt="${platform.titel || 'Platform'} Logo" class="resource-logo">` : ''}
-                        <h4>${platform.titel || ''}</h4>
-                        <p>${platform.beschrijving || ''}</p>
-                        ${platform.link ? `<a href="${platform.link}" class="btn" target="_blank">Bezoek platform</a>` : ''}
-                    </div>
-                `;
-            });
-        }
-        html += '</div></div>'; // Close resource-grid and tech-resources
-    }
-
+    // De container wordt gevuld, en DAARNA voegen we de event listener voor de accordeon toe.
+    // Dit kan niet hier, maar moet in de 'renderChapter' functie gebeuren NADAT de HTML in de DOM is gezet.
     return html;
-}
-
-function renderChapter7Content(content) { // Wordt nu de implementatie van de OUDE renderChapter6Content (V-Model)
-    let html = '';
-
-    // Intro
-    if (content.intro) {
-        html += `
-            <div class="info-card">
-                <h3 class="info-card-title">${content.intro.titel || 'Jouw Ontwikkeling in Zorgtechnologie'}</h3>
-                <div class="info-card-content">
-                    <p>${content.intro.tekst || ''}</p>
-                    ${content.intro.bron ? `<p class="source">Bron: ${content.intro.bron}</p>` : ''}
-                </div>
-            </div>
-        `;
-    }
-
-    // V-Model
-    if (content.v_model) {
-        html += '<div class="v-model">';
-        if (content.v_model.afbeelding) {
-            html += `<img src="${content.v_model.afbeelding}" alt="V-model voor digitale competenties" class="model-image">`;
-        }
-        html += '<div class="v-model-explanation">';
-
-        // Basis Competenties
-        if (content.v_model.basis_competenties) {
-            html += `
-                <div class="competency-section basic">
-                    <h3>${content.v_model.basis_competenties.titel || 'De Basis V-Competenties'}</h3>
-                    ${content.v_model.basis_competenties.tekst ? `<p>${content.v_model.basis_competenties.tekst}</p>` : ''}
-            `;
-            if (content.v_model.basis_competenties.competenties && content.v_model.basis_competenties.competenties.length > 0) {
-                html += '<div class="competency-grid">';
-                content.v_model.basis_competenties.competenties.forEach(comp => {
-                    html += `
-                        <div class="competency-card">
-                            <h4>${comp.titel || ''}</h4>
-                            <p>${comp.beschrijving || ''}</p>
-                            ${comp.voorbeeld ? `<div class="example-box"><p><strong>Voorbeeld:</strong> ${comp.voorbeeld}</p></div>` : ''}
-                        </div>
-                    `;
-                });
-                html += '</div>'; // Close competency-grid
-            }
-            html += '</div>'; // Close competency-section basic
-        }
-
-        // Ethische Reflectie
-        if (content.v_model.ethische_reflectie) {
-            html += `
-                <div class="info-card">
-                    <h3 class="info-card-title">${content.v_model.ethische_reflectie.titel || 'Ethische Reflectie'}</h3>
-                    <div class="info-card-content">
-                        <p>${content.v_model.ethische_reflectie.tekst || ''}</p>
-            `;
-            if (content.v_model.ethische_reflectie.aspecten && content.v_model.ethische_reflectie.aspecten.length > 0) {
-                html += '<div class="ethical-reflection-grid">';
-                content.v_model.ethische_reflectie.aspecten.forEach(aspect => {
-                    html += `
-                        <div class="ethical-card">
-                            <h4>${aspect.titel || ''}</h4>
-                            <p>${aspect.beschrijving || ''}</p>
-                        </div>
-                    `;
-                });
-                html += '</div>'; // Close ethical-reflection-grid
-            }
-            html += '</div></div>'; // Close info-card-content and info-card
-        }
-
-        // Verdiepende competenties
-        if (content.v_model.verdiepende_competenties) {
-            html += `
-                <div class="note-box">
-                    <h4>${content.v_model.verdiepende_competenties.titel || 'Verdiepende Competenties: Voor Later'}</h4>
-                    <p>${content.v_model.verdiepende_competenties.tekst || ''}</p>
-                </div>
-            `;
-        }
-
-        // Ontwikkeling
-        if (content.v_model.ontwikkeling) {
-            html += `
-                <div class="info-card">
-                    <h3 class="info-card-title">${content.v_model.ontwikkeling.titel || 'Ontwikkeling van je Competenties'}</h3>
-                    <div class="info-card-content">
-                        ${content.v_model.ontwikkeling.tekst ? `<p>${content.v_model.ontwikkeling.tekst}</p>` : ''}
-            `;
-            if (content.v_model.ontwikkeling.manieren && content.v_model.ontwikkeling.manieren.length > 0) {
-                html += '<ul>';
-                content.v_model.ontwikkeling.manieren.forEach(manier => {
-                    html += `<li>${manier}</li>`;
-                });
-                html += '</ul>';
-            }
-            html += '</div></div>'; // Close info-card-content and info-card
-        }
-        html += '</div></div>'; // Close v-model-explanation and v-model
-    }
-    return html;
-}
-
-// Renamed from renderChapter8Content to renderAfsluitingContent for flexibility
-function renderAfsluitingContent(content) {
-    devLog("Rendering Afsluiting content with data:", content);
-
-    if (!content) {
-        // Attempt to populate a generic error message in the main container if data is missing
-        const errorContainer = document.getElementById(`section${totalSections}-content-container`);
-        if (errorContainer) {
-            errorContainer.innerHTML = '<p class="error-message">Content voor het afsluitende hoofdstuk kon niet geladen worden. Controleer <code>content/hoofdstuk_afsluiting.json</code>.</p>';
-        }
-        return; // Return empty or minimal HTML string if error was already set
-    }
-
-    // Update de hoofdtitel
-    const titelEl = document.getElementById('afsluiting-titel');
-    if (titelEl && content.titel) {
-        titelEl.textContent = content.titel;
-    }
-
-    // Update de intro in de info-card
-    const introEl = document.getElementById('afsluiting-intro');
-    if (introEl && content.introductie) {
-        // Split op dubbele newline en render elk deel als aparte paragraaf
-        introEl.innerHTML = content.introductie.split(/\n\n/).map(par => `<p>${par}</p>`).join('');
-    }
-
-    // Quiz uitleg - nu via nieuwe sectie
-    const uitlegEl = document.getElementById('afsluiting-uitleg');
-    if (uitlegEl && content.afsluitQuizIntro) {
-        uitlegEl.innerHTML = `
-            <div class="info-card purple-kader">
-                <h4 class="info-card-title">${content.afsluitQuizIntro.subtitel}</h4>
-                <div class="info-card-content">${content.afsluitQuizIntro.tekst}</div>
-            </div>
-        `;
-    }
-
-    // Render de nieuwe structuur in certificaat-portfolio-container
-    const certificaatPortfolioContainer = document.getElementById('certificaat-portfolio-container');
-    if (certificaatPortfolioContainer) {
-        let html = '<div class="certificaat-portfolio-wrapper">';
-
-        // Nieuwe titel voor Certificaat en Portfolio
-        html += '<h2 class="section-title">Certificaat en Portfolio</h2>';
-
-        // Over Certificaat sectie
-        if (content.overCertificaat) {
-            html += `
-                <div class="info-card purple-kader">
-                    <h3 class="info-card-title">${content.overCertificaat.titel}</h3>
-                    <div class="info-card-content">
-                        ${content.overCertificaat.intro ? `<p>${content.overCertificaat.intro}</p>` : ''}
-                        ${content.overCertificaat.punten && content.overCertificaat.punten.length > 0 ? `
-                            <ul class="checklist">
-                                ${content.overCertificaat.punten.map(punt => `<li><strong>${punt.kop}:</strong> ${punt.tekst}</li>`).join('')}
-                            </ul>
-                        ` : ''}
-                    </div>
-                </div>
-            `;
-        }
-
-        // Stimulans Herhaling Leren sectie
-        if (content.stimulansHerhalingLeren) {
-            html += `
-                <div class="info-card">
-                    <h3 class="info-card-title">${content.stimulansHerhalingLeren.titel}</h3>
-                    <div class="info-card-content">
-                        ${content.stimulansHerhalingLeren.tekst.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('')}
-                    </div>
-                </div>
-            `;
-        }
-
-        // Portfolio Integratie sectie (nu met VRAAK-criteria als accordion binnen dit blok)
-        if (content.portfolioIntegratie) {
-            html += `
-                <div class="info-card">
-                    <h3 class="info-card-title">${content.portfolioIntegratie.titel}</h3>
-                    <div class="info-card-content">
-                        <p>${content.portfolioIntegratie.tip}</p>
-                        <p>${content.portfolioIntegratie.vraakUitleg}</p>
-                        ${content.portfolioIntegratie.vraakCriteria ? `
-                        <div class="accordion">
-                            <button class="accordion-toggle" id="vraak-accordion-toggle" aria-expanded="false">
-                                <span class="triangle">&#9654;</span> ${content.portfolioIntegratie.vraakCriteria.titel}
-                            </button>
-                            <div class="accordion-content" id="vraak-accordion-content">
-                                <p>${content.portfolioIntegratie.vraakCriteria.introductie}</p>
-                                <ol class="vraak-criteria-lijst" style="margin-bottom: 0;">
-                                    ${content.portfolioIntegratie.vraakCriteria.criteria.map(c => `
-                                        <li style="margin-bottom: 1.2em;">
-                                            <strong>${c.naam}:</strong> ${c.beschrijving}
-                                            ${c.subpunten && c.subpunten.length > 0 ? `
-                                                <ul class="vraak-subpunten" style="margin-top: 0.5em; margin-bottom: 0.5em; margin-left: 1.5em;">
-                                                    ${c.subpunten.map(sub => `<li style="list-style-type: disc; margin-bottom: 0.2em;">${sub}</li>`).join('')}
-                                                </ul>
-                                            ` : ''}
-                                        </li>
-                                    `).join('')}
-                                </ol>
-                            </div>
-                        </div>
-                        ` : ''}
-                    </div>
-                </div>
-            `;
-        }
-
-        // Verder Kijken Dan Certificaten sectie
-        if (content.verderKijkenDanCertificaten) {
-            html += `
-                <div class="info-card">
-                    <h3 class="info-card-title">${content.verderKijkenDanCertificaten.titel}</h3>
-                    <div class="info-card-content">
-                        <p>${content.verderKijkenDanCertificaten.tekst}</p>
-                        <div class="suggesties-grid">
-            `;
-            content.verderKijkenDanCertificaten.suggesties.forEach(s => {
-                html += `
-                    <div class="suggestie-tegel card">
-                        <h4>${s.titel}</h4>
-                        <p>${s.tekst}</p>
-                    </div>
-                `;
-            });
-            html += `
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        html += '</div>'; // Close certificaat-portfolio-wrapper
-        certificaatPortfolioContainer.innerHTML = html;
-
-        // Accordion functionaliteit toevoegen
-        const toggle = document.getElementById('vraak-accordion-toggle');
-        const contentDiv = document.getElementById('vraak-accordion-content');
-        if (toggle && contentDiv) {
-            toggle.addEventListener('click', function() {
-                const isOpen = contentDiv.classList.toggle('open');
-                toggle.classList.toggle('open', isOpen);
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                // Draai driehoekje
-                const triangle = toggle.querySelector('.triangle');
-                if (triangle) {
-                    triangle.innerHTML = isOpen ? '&#9660;' : '&#9654;';
-                }
-            });
-        }
-    }
-
-    // Update certificaat uitleg
-    const certificaatUitlegEl = document.getElementById('afsluiting-certificaat');
-    if (certificaatUitlegEl) {
-        certificaatUitlegEl.textContent = "Vul hieronder je naam in om een certificaat te genereren met je antwoorden en reflecties.";
-    }
-
-    // Update portfolio tip
-    const portfolioTipEl = document.getElementById('afsluiting-portfolio-tip');
-    if (portfolioTipEl && content.portfolioIntegratie) {
-        portfolioTipEl.innerHTML = `<strong>Tip:</strong> ${content.portfolioIntegratie.tip}`;
-    }
-
-    return ''; // Return empty string as we are modifying existing DOM elements
 }
 
 function renderFlashcardContent(interactie, chapterNumber) {
@@ -1979,32 +1285,3 @@ function initializeFlashcardInteraction(interactie, chapterNumber) {
         });
     }
 }
-
-// Add to window object for onclick handlers
-window.markCardAnswer = function(interactieId, cardIndex, isCorrect) {
-    const interactie = document.getElementById(interactieId);
-    const answeredCards = new Set(JSON.parse(localStorage.getItem(`${interactieId}_answered`) || '[]'));
-    answeredCards.add(cardIndex);
-    localStorage.setItem(`${interactieId}_answered`, JSON.stringify([...answeredCards]));
-    
-    // Check if all cards are answered correctly
-    const allCorrect = [...answeredCards].length === interactie.cards.length;
-    if (allCorrect) {
-        const saveButton = document.getElementById(`${interactieId}_save`);
-        saveButton.style.display = 'block';
-        localStorage.setItem(`${interactieId}_completed`, 'true');
-    }
-};
-
-// Verwijder de globale event delegation voor flashcard flip
-// if (!window._flashcardFlipHandlerAdded) {
-//   document.addEventListener('click', function(e) {
-//     const card = e.target.closest('.flashcard');
-//     if (card && !e.target.closest('.flashcard-answer-buttons')) {
-//       card.classList.toggle('flipped');
-//     }
-//   });
-//   window._flashcardFlipHandlerAdded = true;
-// } 
-//   window._flashcardFlipHandlerAdded = true;
-// } 

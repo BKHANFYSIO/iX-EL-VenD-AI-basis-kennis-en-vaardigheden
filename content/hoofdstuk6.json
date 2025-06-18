@@ -1,61 +1,37 @@
 {
   "titel": "Vinden van Zorgtechnologie - Waar begin je?",
-  "content": {
-    "intro": {
+  "content": [
+    {
+      "type": "info-card",
       "titel": "Ontdek Jouw Bronnen voor Zorgtechnologie",
-      "tekst": "Natuurlijk kun je altijd een zoekmachine zoals Google gebruiken om zorgtechnologie te vinden. Echter, er bestaan ook gespecialiseerde catalogi en platforms die je gericht helpen bij het ontdekken van technologie die écht past bij jouw behoeften als (toekomstig) fysiotherapeut. Dit hoofdstuk biedt een overzicht van de belangrijkste bronnen.",
-      "subtekst": "We maken onderscheid tussen bronnen specifiek voor HAN-studenten en algemeen toegankelijke platforms. De iXperium Health catalogi zijn primair gericht op studenten van de HAN. Hier kun je technologieën ontdekken, reserveren en zelfs fysiek uitproberen. Ook na je studie blijven deze catalogi een waardevolle inspiratiebron en zijn er mogelijkheden om op locatie geïnspireerd te worden. De overige nationale platforms zijn toegankelijk voor iedere fysiotherapeut en bieden een breder scala aan geteste en beoordeelde zorgtechnologie. Neem even de tijd om de beschrijvingen van elke bron te lezen, de links te openen en kort rond te kijken om een eerste indruk te krijgen."
+      "tekst": "Natuurlijk kun je altijd een zoekmachine zoals Google gebruiken om zorgtechnologie te vinden. Echter, er bestaan ook gespecialiseerde catalogi en platforms die je gericht helpen bij het ontdekken van technologie die écht past bij jouw behoeften als (toekomstig) fysiotherapeut. Dit hoofdstuk biedt een overzicht van de belangrijkste bronnen.\n\nWe maken onderscheid tussen bronnen specifiek voor HAN-studenten en algemeen toegankelijke platforms. De iXperium Health catalogi zijn primair gericht op studenten van de HAN. Hier kun je technologieën ontdekken, reserveren en zelfs fysiek uitproberen. Ook na je studie blijven deze catalogi een waardevolle inspiratiebron en zijn er mogelijkheden om op locatie geïnspireerd te worden. De overige nationale platforms zijn toegankelijk voor iedere fysiotherapeut en bieden een breder scala aan geteste en beoordeelde zorgtechnologie. Neem even de tijd om de beschrijvingen van elke bron te lezen, de links te openen en kort rond te kijken om een eerste indruk te krijgen."
     },
-    "ixperium_catalogi": {
+    {
+      "type": "info-card",
+      "classes": "featured-ixperium",
       "titel": "iXperium Health Catalogussen - Direct Beschikbaar op de HAN",
-      "catalogi": [
+      "content": [
         {
-          "titel": "iXperium Health Catalogus",
-          "logo": "images/Blijvende_afb/logo-health-transparant1.png",
-          "beschrijving": "Onze catalogus: Zoek, kom langs of reserveer en probeer zorgtechnologie zelf uit! Alle technologie in deze catalogus is beschikbaar voor studenten en docenten van de HAN.",
-          "qr_code": "images/QR_IX_Catalogus.png",
-          "link": "https://catalogus-ixperium-health.glide.page"
-        },
-        {
-          "titel": "iXperium Makerspace Catalogus",
-          "logo": "images/Blijvende_afb/logo-health-transparant1.png",
-          "beschrijving": "Onze Makerspace catalogus: Specifiek gericht op 3D printen en lasersnijden. Ontdek de mogelijkheden voor het maken van gepersonaliseerde hulpmiddelen.",
-          "qr_code": "images/QR_IX_Makerspace_catalogus.png",
-          "link": "https://ixperiumhealth-makerspace.glide.page"
+          "type": "resource-grid-container",
+          "titel": "",
+          "items": [
+            { "titel": "iXperium Health Catalogus", "logo": "images/Blijvende_afb/logo-health-transparant1.png", "beschrijving": "Onze catalogus: Zoek, kom langs of reserveer en probeer zorgtechnologie zelf uit! Alle technologie in deze catalogus is beschikbaar voor studenten en docenten van de HAN.", "link": "https://catalogus-ixperium-health.glide.page", "qr_code": "images/QR_IX_Catalogus.png" },
+            { "titel": "iXperium Makerspace Catalogus", "logo": "images/Blijvende_afb/logo-health-transparant1.png", "beschrijving": "Onze Makerspace catalogus: Specifiek gericht op 3D printen en lasersnijden. Ontdek de mogelijkheden voor het maken van gepersonaliseerde hulpmiddelen.", "link": "https://ixperiumhealth-makerspace.glide.page", "qr_code": "images/QR_IX_Makerspace_catalogus.png" }
+          ]
         }
       ]
     },
-    "nationale_platforms": {
+    {
+      "type": "resource-grid-container",
       "titel": "Nationale Platforms voor Zorgtechnologie",
-      "platforms": [
-        {
-          "titel": "BeweegTech",
-          "logo": "images/Beweegtech_Logo.jpg",
-          "beschrijving": "De zoekmachine voor zorgtechnologie specifiek gericht op fysiotherapeuten. Vind technologie die past bij jouw praktijk en patiënten.",
-          "link": "https://beweegtech.nl/"
-        },
-        {
-          "titel": "GGD AppStore",
-          "logo": "images/GGDAppStore.jpg",
-          "beschrijving": "De GGD AppStore biedt een overzicht van betrouwbare gezondheidsapps, getest op privacy, betrouwbaarheid en gebruiksvriendelijkheid.",
-          "link": "https://www.ggdappstore.nl/Appstore/Homepage"
-        },
-        {
-          "titel": "Zorginnovatie.nl",
-          "logo": "images/Zorginnovatie.jpg",
-          "beschrijving": "Het nationale netwerk voor innovaties in de gezondheid en zorg. Ontdek de laatste onnovaties in de zorg.",
-          "link": "https://zorginnovatie.nl/"
-        },
-        {
-          "titel": "Zorg van Nu",
-          "logo": "images/ZorgvanNu.svg",
-          "beschrijving": "Toont wat slimme zorg is, welke innovaties er zijn en hoe, wanneer en waarom je ze inzet. Een initiatief van het ministerie van VWS.",
-          "link": "https://www.zorgvannu.nl/"
-        }
+      "items": [
+        { "titel": "BeweegTech", "logo": "images/Beweegtech_Logo.jpg", "beschrijving": "De zoekmachine voor zorgtechnologie specifiek gericht op fysiotherapeuten. Vind technologie die past bij jouw praktijk en patiënten.", "link": "https://beweegtech.nl/" },
+        { "titel": "GGD AppStore", "logo": "images/GGDAppStore.jpg", "beschrijving": "De GGD AppStore biedt een overzicht van betrouwbare gezondheidsapps, getest op privacy, betrouwbaarheid en gebruiksvriendelijkheid.", "link": "https://www.ggdappstore.nl/Appstore/Homepage" },
+        { "titel": "Zorginnovatie.nl", "logo": "images/Zorginnovatie.jpg", "beschrijving": "Het nationale netwerk voor innovaties in de gezondheid en zorg. Ontdek de laatste onnovaties in de zorg.", "link": "https://zorginnovatie.nl/" },
+        { "titel": "Zorg van Nu", "logo": "images/ZorgvanNu.svg", "beschrijving": "Toont wat slimme zorg is, welke innovaties er zijn en hoe, wanneer en waarom je ze inzet. Een initiatief van het ministerie van VWS.", "link": "https://www.zorgvannu.nl/" }
       ]
-    },
-    "tech_showcase": null
-  },
+    }
+  ],
   "interacties": [
     {
       "id": "h6_mc_1",

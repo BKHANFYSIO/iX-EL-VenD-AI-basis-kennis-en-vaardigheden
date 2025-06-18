@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Timeline Component
+   ========================================================================== */
+
+.process-flow-container {
+    margin: 40px 0;
+}
+
+.process-flow-title {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: var(--primary-purple);
+}
+
+.process-flow {
+    position: relative;
+    padding: 20px 0;
+}
+
+.process-flow::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--medium-gray);
+    border-radius: 2px;
+}
+
+.process-flow-item {
+    position: relative;
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.process-flow-item:nth-child(odd) {
+    left: 0;
+    padding-right: 90px; /* Meer padding voor bredere pil */
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.process-flow-item:nth-child(even) {
+    left: 50%;
+    padding-left: 90px; /* Meer padding voor bredere pil */
+}
+
+.process-flow-year {
+    position: absolute;
+    top: 50%;
+    width: 140px; /* Vaste, ruimere breedte */
+    height: auto;
+    padding: 10px;
+    border-radius: 999px;
+    background: var(--primary-purple);
+    color: white;
+    font-weight: bold;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 4px var(--primary-purple);
+    z-index: 1;
+    text-align: center;
+}
+
+.process-flow-item:nth-child(odd) .process-flow-year {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.process-flow-item:nth-child(even) .process-flow-year {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.process-flow-content {
+    padding: 20px;
+    background: var(--light-purple-background);
+    border-radius: 8px;
+    width: calc(100% - 40px);
+}
+
+.process-flow-content h4 {
+    color: var(--primary-purple);
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive aanpassingen voor mobiele schermen */
+@media (max-width: 768px) {
+    .process-flow::before {
+        left: 70px; /* Plaats de lijn iets verder van de rand */
+        transform: translateX(0);
+    }
+
+    .process-flow-item,
+    .process-flow-item:nth-child(even) {
+        width: 100%;
+        left: 0;
+        padding-left: 140px; /* Genoeg ruimte voor de pil en marge */
+        padding-right: 15px;
+    }
+
+    .process-flow-item:nth-child(odd) {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .process-flow-year,
+    .process-flow-item:nth-child(odd) .process-flow-year,
+    .process-flow-item:nth-child(even) .process-flow-year {
+        left: 70px; /* Centreer op dezelfde positie als de lijn */
+        transform: translate(-50%, -50%);
+        width: 100px; /* Vaste, consistente breedte voor mobiel */
+        padding: 10px;
+    }
+
+    .process-flow-content {
+        width: 100%;
+    }
+} 

@@ -260,8 +260,9 @@ async function generatePDF() {
         doc.setFontSize(17);
         doc.setTextColor(config.stijl.primairKleur);
         
-        // Hoofdstuktitel met automatische regelafbreking om overflow te voorkomen
-        const hoofdstukTitel = `Hoofdstuk ${h}: ${hoofdstukData.titel || ''}`;
+        // Hoofdstuktitel uit de globale 'chapters' array halen
+        const chapterInfo = chapters.find(c => c.section === h);
+        const hoofdstukTitel = `Hoofdstuk ${h}: ${chapterInfo ? chapterInfo.title : 'Onbekende Titel'}`;
         const splitHoofdstukTitel = doc.splitTextToSize(hoofdstukTitel, pageWidth-2*sideMargin-20);
         doc.text(splitHoofdstukTitel, sideMargin, yH);
         yH += splitHoofdstukTitel.length * 20 + 8;

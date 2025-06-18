@@ -80,12 +80,11 @@ header {
 }
 
 .section-title {
-  color: var(--primary-purple);
-  font-size: 2rem;
-  margin-top: 48px;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid var(--accent-purple);
+  color: var(--dark-gray);
+  font-size: 1.6em;
+  margin-top: 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--medium-gray);
 }
 
 .section-content {
@@ -153,4 +152,33 @@ header {
     body.sidebar-open .content-area {
         position: relative;
     }
+}
+
+/* Chapter Title Header Styling */
+.chapter-main-title {
+    background-color: var(--light-purple-background);
+    color: var(--primary-purple);
+    padding: 20px 25px;
+    margin-bottom: 30px; /* Ruimte tussen de titel-header en de eerste content */
+    border-radius: 8px;
+    font-size: 2.2em; /* Maakt het duidelijk de hoofdtitel */
+    font-weight: 700;
+    border-left: 5px solid var(--primary-purple);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+.component-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--medium-gray);
+    margin: 3rem 0;
+}
+
+/* Header sectie */
+header {
+    background-color: var(--white);
 } 

@@ -1,132 +1,84 @@
 # E-learning Architectuur
 
-Dit document biedt een diepgaand technisch overzicht van de e-learning module. Voor een gebruikersgerichte handleiding over het opzetten van een nieuwe cursus, zie [Handleiding: Een nieuwe e-learning cursus opzetten](./Instructie_wijziging_inhoud.md).
+Dit document biedt een diepgaand technisch overzicht van de e-learning module.
 
-## 1. Overzicht & Bestandsstructuur
+## 1. Architectuur & Dataflow
 
-De e-learning bestaat uit N reguliere hoofdstukken plus 1 afsluitend hoofdstuk. De belangrijkste bestanden voor de inhoud en configuratie bevinden zich in de `/content` map.
+Deze e-learning is gebouwd op een dynamische architectuur waarbij de content en structuur volledig zijn losgekoppeld van de weergave. De `config.json` fungeert als de "Single Source of Truth".
 
--   `/content/`
-    -   `config.json`: Algemene configuratie (titel, leerdoelen, etc.).
+### Initialisatie-volgorde:
+1.  **`js/main.js` (`initializeElearning`)** wordt als eerste uitgevoerd bij het laden van de pagina.
+2.  Het script haalt **`content/config.json`** op.
+3.  Op basis van de `hoofdstukken`-array in de config, worden de globale variabelen `chapters` en `totalSections` gevuld in `js/script.js`.
+4.  Vervolgens wordt de HTML-structuur dynamisch opgebouwd:
+    *   De navigatie-items in de sidebar worden gegenereerd.
+    *   De `<section>`-elementen voor elk hoofdstuk worden in de hoofdpagina geplaatst.
+5.  Tot slot wordt de overige applicatielogica in `js/script.js` uitgevoerd (event listeners, voortgangsberekening, etc.).
+
+---
+
+## 2. Bestandsstructuur & Rollen
+
+-   `/content/`: Bevat alle content en de centrale configuratie.
+    -   **`config.json`**: **Het belangrijkste configuratiebestand.** Definieert de algemene titel, leerdoelen, en de volledige structuur van de hoofdstukken (bestandsnamen en titels).
     -   `hoofdstuk1.json` t/m `hoofdstukN.json`: Inhoud voor de reguliere hoofdstukken.
-    -   `hoofdstuk_afsluiting.json`: De content voor het laatste, afsluitende hoofdstuk.
+    -   `hoofdstuk_afsluiting.json`: De content voor het laatste, afsluitende hoofdstuk, dat een unieke structuur heeft.
     -   `afsluitquiz.json`: De vragen voor de eindquiz.
     -   `search_config.json`: Configuratie voor de zoekfunctionaliteit.
--   `/js/`
-    -   `script.js`: Hoofdscript voor de algemene logica, navigatie en initialisatie.
-    -   `dynamicContent.js`: Verantwoordelijk voor het laden en renderen van de content uit de JSON-bestanden.
+-   `/js/`: Bevat de logica van de applicatie.
+    -   **`main.js`**: De "orkestrator". Start de applicatie, leest de configuratie en bouwt de dynamische UI.
+    -   **`script.js`**: Bevat de algemene logica voor de gebruikersinterface, zoals navigatie (volgende/vorige), voortgangsupdates en het afhandelen van interacties.
+    -   **`dynamicContent.js`**: Verantwoordelijk voor het laden en renderen van de specifieke content van een hoofdstuk wanneer dit wordt geactiveerd.
     -   `pdfGenerator.js`: Genereert het PDF-certificaat.
     -   `quiz.js`: Regelt de logica voor de eindquiz.
     -   `search.js`: Behandelt de zoekfunctionaliteit.
--   `/css/`
-    -   `styles.css`: De hoofd-stylesheet met alle basisstijlen, variabelen en componenten.
-    -   `/components/`: Map voor eventuele losse, complexere component-stylesheets.
+-   `/css/`: Bevat alle styling.
+-   `index.html`: Dient als een "schil" met lege containers die dynamisch worden gevuld door `js/main.js`.
 
 ---
 
-## 2. Content Structuur & JSON Schema's
+## 3. Content Structuur & JSON Schema's
 
-De content is volledig losgekoppeld van de code en wordt gedefinieerd in JSON-bestanden.
-
-### `hoofdstukX.json`
-Elk regulier hoofdstuk heeft de volgende basisstructuur:
+### `config.json`
+Het hart van de e-learning. De `hoofdstukken`-array bepaalt de volgorde en titels.
 
 ```json
 {
-  "titel": "Titel van het Hoofdstuk",
-  "content": {
-    // HTML-content wordt hier geplaatst.
-    // Dit wordt idealiter gegenereerd op basis van de stijlgids.
-  },
-  "interacties": [
-    // Array met interactieve elementen, zie schema hieronder.
-  ]
+  "titel": "AI basiskennis en vaardigheden",
+  "leerdoelen": [...],
+  "hoofdstukken": [
+    { "file": "hoofdstuk1.json", "titel": "Introductie" },
+    { "file": "hoofdstuk2.json", "titel": "Wat is AI eigenlijk?" },
+    // ...meer hoofdstukken...
+    { "file": "hoofdstuk_afsluiting.json", "titel": "Afsluiting" }
+  ],
+  "organisatie": "iXperium Health",
+  // ... rest van de config ...
 }
 ```
 
-### Interactie-schema's
-De `interacties` array bevat objecten die elk een interactief element representeren. Elk object vereist een unieke `id` en een `type`.
+### `hoofdstukX.json` en Interacties
+De structuur van de hoofdstuk-JSON bestanden en de interactie-schema's blijven ongewijzigd.
 
 **ID-structuur:** `{hoofdstuknummer}_{type}_{volgnummer}` (bijv. `h1_mc_1`)
 
-**Ondersteunde types:**
+---
 
--   **`reflection` (Reflectie):**
-    ```json
-    {
-      "id": "h1_reflection_1",
-      "type": "reflection",
-      "vraag": "Reflectiervraag hier",
-      "minLength": 10,
-      "maxLength": 500,
-      "placeholder": "Typ hier je antwoord"
-    }
-    ```
--   **`mc` (Meerkeuzevraag):**
-    ```json
-    {
-      "id": "h1_mc_1",
-      "type": "mc",
-      "titel": "Optionele titel",
-      "vraag": "De vraag",
-      "options": ["Optie 1", "Optie 2", "Optie 3"],
-      "correctAnswer": 2,  // Let op: 1-based index!
-      "feedback": "Feedback na beantwoording"
-    }
-    ```
--   **`dragdrop` (Sleepvraag):**
-    ```json
-    {
-      "id": "h2_dragdrop_1",
-      "type": "dragdrop",
-      "vraag": "Sleep de items naar de juiste categorie",
-      "items": [{"id": "item1", "label": "Item 1"}],
-      "targets": [{"id": "target1", "label": "Categorie 1"}],
-      "correctCombinations": [{"targetId": "target1", "itemId": "item1"}],
-      "feedbackCorrect": "Goed gedaan!",
-      "feedbackIncorrect": "Probeer het nog eens."
-    }
-    ```
+## 4. Een Hoofdstuk Wijzigen, Toevoegen of Verwijderen
 
-### `hoofdstuk_afsluiting.json`
-Dit bestand heeft een unieke structuur, gericht op het afronden van de cursus en het certificaat. Het bevat **geen** `interacties` array. De structuur is flexibel en de rendering wordt volledig afgehandeld door de `renderAfsluitingContent` functie in `dynamicContent.js`, die de objecten in dit bestand omzet naar HTML.
+Dankzij de dynamische architectuur is het aanpassen van de structuur zeer eenvoudig:
 
-### `afsluitquiz.json`
-Bevat een array met de vragen voor de eindquiz.
+1.  **Open `content/config.json`**.
+2.  **Pas de `hoofdstukken`-array aan**:
+    *   **Wijzigen**: Verander de `titel` van een object.
+    *   **Toevoegen**: Voeg een nieuw object `{ "file": "nieuw_hoofdstuk.json", "titel": "Nieuwe Titel" }` toe op de gewenste positie. Maak het bijbehorende JSON-bestand aan in de `/content` map.
+    *   **Verwijderen**: Verwijder een object uit de array.
 
-**ID-structuur:** `quiz_mc_{volgnummer}`
-
-```json
-[
-  {
-    "id": "quiz_mc_1",
-    "text": "Wat is de hoofdstad van Nederland?",
-    "options": ["Rotterdam", "Amsterdam", "Den Haag"],
-    "correctAnswer": 2, // Let op: 1-based index!
-    "feedback": "Amsterdam is de hoofdstad.",
-    "title": "Afsluitquiz: Vraag 1"
-  }
-]
-```
+De gehele applicatie (navigatie, secties, titels, voortgang) past zich automatisch aan. Er zijn **geen wijzigingen** in `index.html` of andere JavaScript-bestanden nodig.
 
 ---
 
-## 3. Laad- en Renderlogica
-
-De e-learning is ontworpen om flexibel te zijn in het aantal hoofdstukken.
-
-### Dynamisch Hoofdstukken Laden
--   In `js/script.js` bepalen de variabelen `totalSections` (aantal hoofdstukken + 1) en de `chapters` array de structuur van de cursus.
--   De functie `loadChapter(chapterNumber)` in `dynamicContent.js` laadt de content.
--   Het script detecteert het laatste hoofdstuk dynamisch via `if (chapterNumber === totalSections)` en laadt dan `hoofdstuk_afsluiting.json`.
--   Voor alle andere hoofdstukken wordt de content generiek gerenderd door `renderGenericChapterContent`, tenzij er een specifieke `renderChapterXContent` functie bestaat.
-
-### Content Rendering
--   De content uit de JSON (`content` object) wordt direct als HTML in de pagina geplaatst. Het is de verantwoordelijkheid van de content creator (of de AI-assistent) om te zorgen dat deze HTML correct is opgemaakt volgens de [Stijlgids](./stijlgids.md).
-
----
-
-## 4. Voortgang & Dataopslag (`localStorage`)
+## 5. Voortgang & Dataopslag (`localStorage`)
 
 De voortgang en antwoorden van de gebruiker worden opgeslagen in `localStorage`. Dit stelt de gebruiker in staat om de cursus te verlaten en later terug te keren zonder de voortgang te verliezen.
 
@@ -139,7 +91,7 @@ De voortgang en antwoorden van de gebruiker worden opgeslagen in `localStorage`.
 
 ---
 
-## 5. PDF Certificaat Generatie (`jsPDF`)
+## 6. PDF Certificaat Generatie (`jsPDF`)
 
 Het PDF-certificaat wordt volledig dynamisch gegenereerd door `pdfGenerator.js` met behulp van de jsPDF-bibliotheek. De generator haalt alle opgeslagen antwoorden uit `localStorage` op.
 
@@ -153,7 +105,7 @@ Door deze dynamische opzet worden alle hoofdstukken en interacties automatisch m
 
 ---
 
-## 6. CSS Architectuur en Componenten
+## 7. CSS Architectuur en Componenten
 
 De styling is gecentraliseerd in `css/styles.css` en maakt gebruik van CSS-variabelen voor eenvoudige thematisering.
 
@@ -171,15 +123,15 @@ De styling is gecentraliseerd in `css/styles.css` en maakt gebruik van CSS-varia
     -   `.section-title`: De standaard titel voor een sectie.
     -   `.info-card`: Een uitgelicht blok met een paarse rand, voor quotes of belangrijke mededelingen.
     -   `.interactive-block`: De container voor een interactief element.
+    -   `.accent-blok`: Een flexibel blok om tekst uit te lichten, zoals statistieken, weetjes of citaten. Kent varianten zoals `accent-blok--statistiek` en `accent-blok--weetje` die de styling aanpassen.
     -   `.modules-list` & `.benefit-card`: Voor een grid-layout met kaarten (voor voordelen, modules, etc.).
-    -   `.tech-showcase` & `.tech-item`: Voor het gestandaardiseerd tonen van technologieën of tools.
     -   `.video-container-full-width` & `.video-wrapper`: Voor responsive video-embeds.
 
 De bedoeling is om altijd deze bestaande klassen te gebruiken om een consistente look & feel te garanderen.
 
 ---
 
-## 7. Development & Debugging
+## 8. Development & Debugging
 
 -   **Browser Console (F12):** De eerste plek om te kijken voor foutmeldingen.
 -   **LocalStorage Inspecteren:** In de Developer Tools (F12), ga naar het `Application` (of `Opslag`) tabblad en selecteer `Local Storage` om alle opgeslagen data te bekijken.

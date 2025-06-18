@@ -141,4 +141,272 @@
     padding: 10px 2vw 10px 2vw;
     border-radius: 10px;
   }
+}
+
+/* Styling for the new Quiz Navigation and Review States from styles.css */
+.quiz-navigation-buttons {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quiz-navigation-buttons .btn {
+    padding: 10px 15px;
+    font-size: 0.95em;
+}
+
+.mc-question.answered .mc-option:not(.selected) {
+    opacity: 0.7;
+}
+
+.mc-option.disabled {
+    cursor: not-allowed;
+    background-color: #f8f9fa; /* Light gray for disabled options */
+    color: #6c757d;
+}
+
+.mc-option.selected.correct {
+    border-left: 5px solid #28a745; /* Green border for correct selected answers */
+}
+
+.mc-option.selected.incorrect {
+    border-left: 5px solid #dc3545; /* Red border for incorrect selected answers */
+}
+
+/* For review mode: highlight the actual correct answer if it wasn't selected by user */
+.mc-options.review-options .mc-option.correct-unselected {
+    background-color: #e6ffe6; /* Light green background */
+    border: 1px solid #28a745;
+    font-weight: bold;
+}
+
+.mc-options.review-options .mc-option.selected.incorrect {
+    /* Make user's wrong choice more prominent if needed, but red border is already there */
+    /* background-color: #ffe6e6; */ /* Optional: light red if desired */
+}
+
+#quiz-results-summary {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#quiz-results-summary h2 {
+    margin-top: 0;
+}
+
+.quiz-result-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.quiz-result-item.correct-answer {
+    border-left: 5px solid #28a745;
+    background-color: #f0fff0;
+}
+
+.quiz-result-item.incorrect-answer {
+    border-left: 5px solid #dc3545;
+    background-color: #fff0f0;
+}
+
+.quiz-result-item h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.review-mode .mc-options .mc-option {
+    /* Ensure all options are visually distinct in review mode, even if not selected/correct */
+    opacity: 1 !important;
+}
+
+/* Ensure feedback text is clearly visible */
+.feedback.correct {
+    color: #155724; /* Dark green for correct feedback text */
+    background-color: #d4edda; /* Light green background for feedback box */
+    border-color: #c3e6cb;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.feedback.incorrect {
+    color: #721c24; /* Dark red for incorrect feedback text */
+    background-color: #f8d7da; /* Light red background for feedback box */
+    border-color: #f5c6cb;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* Ensure buttons in quiz nav are spaced a bit */
+.quiz-navigation-buttons button + button {
+    margin-left: 10px;
+}
+
+/* Enhanced Quiz Results Styling */
+#quiz-results-container {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#quiz-results-container.results-excellent {
+    border-top: 5px solid #28a745;
+}
+
+#quiz-results-container.results-passed {
+    border-top: 5px solid #28a745;
+}
+
+#quiz-results-container.results-warning {
+    border-top: 5px solid #ffc107;
+}
+
+#quiz-results-container.results-failed {
+    border-top: 5px solid #dc3545;
+}
+
+.results-header h2 {
+    color: var(--primary-purple);
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+.results-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.score-visual {
+    width: 120px;
+    height: 120px;
+}
+
+.circular-chart {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 4;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.5s ease-in-out;
+}
+
+#quiz-results-container.results-passed .circle {
+    stroke: #28a745; /* Green */
+}
+#quiz-results-container.results-failed .circle {
+    stroke: #dc3545; /* Red */
+}
+
+.percentage-text {
+    fill: var(--dark-gray);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6em; /* Relative to SVG viewbox */
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+.score-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-text p {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.score-text .pass-message {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.score-text .fail-message {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.quiz-actions {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--medium-gray);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.quiz-actions .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    display: inline-flex; /* To align icon and text */
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    /* Add filter if icons are single color and need to match button text, e.g.: */
+    /* filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(10deg) brightness(105%) contrast(101%); */
+}
+
+/* Review Mode Icons */
+.mc-options.review-options .mc-option {
+    display: flex;
+    align-items: center;
+}
+
+.option-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.option-icon.correct-icon,
+.option-icon.correct-icon-outline {
+    /* Assuming SVGs, color can be controlled by fill/stroke in SVG or CSS if they are inline */
+    /* For img src SVGs, they need to be colored correctly or use filters if they are monochrome */
+}
+
+.option-icon.incorrect-icon {
+    /* As above */
+}
+
+.review-nav-buttons {
+    margin-top: 15px;
+}
+
+#quiz-review-details-container .mc-question {
+    background-color: #f9f9f9; /* Slightly different bg for reviewed question */
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
 } 

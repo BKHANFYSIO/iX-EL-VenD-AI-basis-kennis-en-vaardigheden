@@ -1,0 +1,464 @@
+{
+  "titel": "Componenten Catalogus",
+  "content": [
+    {
+      "type": "info-card",
+      "classes": "welcome-card",
+      "titel": "Welkom bij de Componenten Catalogus",
+      "tekst": "Dit document is een levende stijlgids en toont alle beschikbare content-blokken. Elk hoofdstuk in de e-learning start met een dergelijke 'info-card' om de aandacht van de student te trekken, leerdoelen te introduceren of een brug te slaan met voorgaande onderwerpen. Gebruik dit document als referentie voor het maken van nieuwe hoofdstukken."
+    },
+    {
+      "type": "section-title",
+      "titel": "Basis Content Blokken"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Dit is een standaard `content-text` paragraaf. Gebruik dit voor lopende tekst, uitleg en algemene informatie. Het is de aanbevolen manier om een sectie na een `section-title` te starten en context te bieden."
+    },
+    {
+      "type": "info-card-list",
+      "titel": "Info Card met een Lijst",
+      "inhoud": "Dit component combineert een paragraaf met een gestructureerde lijst. Handig voor definities met voorbeelden.",
+      "lijst": [
+        { "titel": "Punt 1", "tekst": "Beschrijving van het eerste punt." },
+        { "titel": "Punt 2", "tekst": "Beschrijving van het tweede punt." }
+      ]
+    },
+    { "type": "divider" },
+    {
+      "type": "info-card",
+      "classes": "warning-card",
+      "titel": "Belangrijke Waarschuwing",
+      "tekst": "Een `info-card` met de `warning-card` klasse. Gebruik dit om de aandacht te vestigen op cruciale informatie, risico's of veelgemaakte fouten."
+    },
+    {
+      "type": "section-title",
+      "titel": "Tabellen en Scenario's"
+    },
+    {
+      "type": "content-text",
+      "tekst": "De `table-container-group` wordt gebruikt om een of meerdere tabellen weer te geven. Ideaal voor het gestructureerd presenteren van data of het maken van vergelijkingen."
+    },
+    {
+        "type": "table-container-group",
+        "intro": "Optionele introductietekst voor de tabel(len).",
+        "tables": [
+          { 
+            "titel": "Tabel 1: Vergelijking",
+            "headers": ["Feature", "Voordeel", "Nadeel"], 
+            "rows": [
+                ["Snelheid", "Hoge verwerkingssnelheid", "Kan oppervlakkig zijn"],
+                ["Kosten", "Lage kosten per query", "Vereist veel data"]
+            ] 
+          }
+        ],
+        "note": "Optionele notitie onder de tabel(len)."
+    },
+    { "type": "divider" },
+    {
+        "type": "content-text",
+        "tekst": "Een `scenario-container-horizontal` toont twee scenario-kaarten naast elkaar. Dit is een effectieve manier om twee situaties, perspectieven of casussen te vergelijken."
+    },
+    {
+        "type": "scenario-container-horizontal",
+        "scenarios": [
+            {
+                "titel": "Scenario A: Proactieve Benadering",
+                "beschrijving": "In dit scenario wordt de technologie direct bij de start van het zorgproces geïntroduceerd.",
+                "punten": ["Snellere adoptie door het team.", "Directe feedback van de patiënt."],
+                "conclusie": "Conclusie: leidt tot betere integratie."
+            },
+            {
+                "titel": "Scenario B: Reactieve Benadering",
+                "beschrijving": "Hier wordt de technologie pas ingezet nadat er een probleem is geconstateerd.",
+                "punten": ["Minder training vooraf nodig.", "Implementatie kan overhaast zijn."],
+                "conclusie": "Conclusie: kan leiden tot weerstand."
+            }
+        ]
+    },
+    {
+      "type": "section-title",
+      "titel": "Grids en Visuele Blokken"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Grids zijn ideaal om content visueel aantrekkelijk en overzichtelijk in meerdere kolommen te presenteren. Hieronder vallen verschillende kaart- en icoon-gebaseerde layouts. Elk grid-type wordt hieronder apart toegelicht."
+    },
+    {
+      "type": "content-text",
+      "tekst": "Een `card-grid` is perfect voor het uitlichten van voordelen, kenmerken of belangrijke concepten in een kaart-layout. Elke kaart heeft een titel en een beschrijving, en kan optioneel een praktijkvoorbeeld bevatten. In een regulier hoofdstuk kun je de `titel` eigenschap gebruiken, maar voor de duidelijkheid van deze catalogus wordt deze hier leeg gelaten."
+    },
+    {
+      "type": "card-grid",
+      "titel": "",
+      "items": [
+        { "titel": "Kaart 1", "beschrijving": "Een beschrijving van het eerste item.", "voorbeeld": { "titel": "Praktijkvoorbeeld", "tekst": "Een concrete uitwerking." } },
+        { "titel": "Kaart 2", "beschrijving": "Een beschrijving van het tweede item." }
+      ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
+      "tekst": "Gebruik een `icon-card-grid` wanneer je thema's of concepten visueel wilt ondersteunen met een icoon. Dit versterkt de herkenbaarheid en maakt de content scanbaar. Het component is volledig flexibel en ondersteunt dynamische veldnamen via configuratie."
+    },
+    {
+        "type": "icon-card-grid",
+        "titel": "Standaard Gebruik",
+        "themes": [
+          { 
+            "icoon": "images/icons/brain.svg", 
+            "titel": "Concept 1", 
+            "inhoud": "Beschrijving van het eerste concept, ondersteund door een icoon.",
+            "dynamische_velden": [
+              {"veldnaam": "inhoud", "label": "Beschrijving"}
+            ]
+          },
+          { 
+            "icoon": "images/icons/eye.svg", 
+            "titel": "Concept 2", 
+            "inhoud": "Beschrijving van het tweede concept.",
+            "dynamische_velden": [
+              {"veldnaam": "inhoud", "label": "Beschrijving"}
+            ]
+          }
+        ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
+      "tekst": "Het component ondersteunt ook specifieke velden voor bepaalde use cases, zoals onderstaand voorbeeld waar we 'positief_voorbeeld', 'uitdaging' en 'reflectie_vraag' gebruiken."
+    },
+    {
+        "type": "icon-card-grid",
+        "titel": "Uitgebreid Gebruik",
+        "themes": [
+          { 
+            "icoon": "images/icons/brain.svg", 
+            "titel": "Voorbeeld Thema", 
+            "positief_voorbeeld": "Een goed gestructureerde aanpak leidt tot betere resultaten.", 
+            "uitdaging": "Vage of onduidelijke benaderingen resulteren in problemen.", 
+            "reflectie_vraag": "Hoe zorg jij ervoor dat je aanpak duidelijk en gestructureerd is?",
+            "dynamische_velden": [
+              {"veldnaam": "positief_voorbeeld", "label": "Positief voorbeeld"},
+              {"veldnaam": "uitdaging", "label": "Uitdaging"},
+              {"veldnaam": "reflectie_vraag", "label": "Reflectievraag"}
+            ]
+          },
+          { 
+            "icoon": "images/icons/eye.svg", 
+            "titel": "Tweede Thema", 
+            "positief_voorbeeld": "Door actief betrokken te blijven krijg je betere resultaten.", 
+            "uitdaging": "Passief blijven en niet meedenken.", 
+            "reflectie_vraag": "In hoeverre ben jij actief betrokken versus passief?",
+            "dynamische_velden": [
+              {"veldnaam": "positief_voorbeeld", "label": "Positief voorbeeld"},
+              {"veldnaam": "uitdaging", "label": "Uitdaging"},
+              {"veldnaam": "reflectie_vraag", "label": "Reflectievraag"}
+            ]
+          }
+        ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
+      "tekst": "Het `competency-grid` is ontworpen om een lijst van competenties, termen of definities te presenteren. Het biedt een gestructureerde weergave met een term, uitleg en een praktisch voorbeeld."
+    },
+    {
+        "type": "competency-grid",
+        "titel": "",
+        "intro": "Gebruik dit grid om een lijst van competenties, termen of definities te tonen in een duidelijke structuur.",
+        "termen": [
+          { "term": "Competentie A", "uitleg": "De uitleg van wat deze competentie inhoudt.", "praktisch": "Een praktisch voorbeeld van hoe dit in de praktijk wordt toegepast." },
+          { "term": "Competentie B", "uitleg": "De uitleg van een andere competentie.", "praktisch": "Nog een praktisch voorbeeld." }
+        ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
+      "tekst": "Het `resource-grid-container` toont externe tools, bronnen of platforms in een visueel rooster. Het is de standaard manier om een grid van externe links te presenteren."
+    },
+    {
+      "type": "resource-grid-container",
+      "items": [
+        {
+            "logo": "images/Blijvende_afb/HAN_logo1a.png",
+            "titel": "Platform A",
+            "beschrijving": "Een beschrijving van wat dit platform biedt en waarom het relevant is.",
+            "link": "https://www.han.nl"
+        },
+        {
+            "logo": "images/Blijvende_afb/Test_logo_showcase.png",
+            "titel": "Tool B",
+            "beschrijving": "Een handige tool voor data-analyse en visualisatie in de zorg.",
+            "link": "https://www.google.com"
+        }
+      ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
+      "tekst": "Een `process-flow` is ideaal voor het visualiseren van een stappenplan, tijdlijn of gefaseerd proces. Elke stap heeft een eigen titel en beschrijving."
+    },
+    {
+      "type": "process-flow",
+      "titel": "",
+      "items": [
+        { "stap": "Fase 1", "titel": "Idee & Analyse", "beschrijving": "Wat er gebeurt in de eerste fase." },
+        { "stap": "Fase 2", "titel": "Ontwikkeling", "beschrijving": "Een belangrijke ontwikkeling in de tweede fase." }
+      ]
+    },
+    { "type": "divider" },
+    {
+        "type": "content-text",
+        "tekst": "Het `ethical-reflection-grid` is specifiek ontworpen om ethische dilemma's of reflectiepunten in een gestructureerd grid te tonen. Elke kaart heeft een duidelijke titel en een beschrijving van de ethische overweging."
+    },
+    {
+        "type": "ethical-reflection-grid",
+        "kaarten": [
+            {
+                "titel": "Autonomie van de Patiënt",
+                "beschrijving": "Hoe waarborgen we dat de patiënt controle houdt over zijn eigen data en de technologie die wordt gebruikt?"
+            },
+            {
+                "titel": "Gelijkheid in Toegang",
+                "beschrijving": "Zorgt deze technologie voor een digitale kloof, of is deze toegankelijk voor iedereen, ongeacht technische vaardigheden?"
+            }
+        ]
+    },
+    { "type": "divider" },
+    {
+      "type": "section-title",
+      "titel": "Afbeelding Componenten"
+    },
+    {
+        "type": "content-text",
+        "tekst": "Componenten specifiek voor het tonen van afbeeldingen. Elk component wordt hieronder apart toegelicht."
+    },
+    {
+        "type": "content-text",
+        "tekst": "Het `split-screen-image-text` component plaatst een grote afbeelding naast een of meerdere alinea's tekst. Dit is uitermate geschikt om een concept visueel te ondersteunen met een gedetailleerde uitleg."
+    },
+    {
+        "type": "split-screen-image-text",
+        "afbeelding": {
+            "src": "images/Zien.png",
+            "alt": "Decoratieve afbeelding",
+            "onderschrift": "Optioneel onderschrift"
+        },
+        "tekst_content": [
+            "Dit is een 'split-screen' layout. Het is perfect om een concept visueel te ondersteunen met een afbeelding aan de ene kant en een gedetailleerde uitleg aan de andere kant.",
+            "De layout is volledig responsive en de tekstkolom past zich netjes aan."
+        ]
+    },
+    {
+        "type": "content-text",
+        "tekst": "Gebruik een `image-grid` om meerdere afbeeldingen in een galerij-stijl weer te geven. Je kunt het aantal kolommen specificeren voor een flexibele layout."
+    },
+    {
+        "type": "image-grid",
+        "kolommen": 3,
+        "afbeeldingen": [
+            { "src": "images/Brein.png", "alt": "Afbeelding 1" },
+            { "src": "images/Horen.png", "alt": "Afbeelding 2" },
+            { "src": "images/Bewegen.png", "alt": "Afbeelding 3", "onderschrift": "Een grid van 3" }
+        ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
+      "tekst": "Een `image-block` is de standaard manier om een enkele afbeelding met een onderschrift te tonen. Door de `img-polaroid` klasse toe te voegen, krijgt de afbeelding een speelse polaroid-stijl."
+    },
+    {
+      "type": "image-block",
+      "src": "images/Zien.png",
+      "alt": "Standaard afbeelding",
+      "onderschrift": "Dit is een standaard afbeelding met onderschrift."
+    },
+    { "type": "divider" },
+    {
+      "type": "image-block",
+      "classes": "img-polaroid",
+      "src": "images/Bewegen.png",
+      "alt": "Polaroid afbeelding",
+      "onderschrift": "Polaroid Stijl"
+    },
+    {
+      "type": "section-title",
+      "titel": "Video Componenten"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Gebruik video-componenten om externe video's te embedden in de content. Dit kan in een grid-layout of als een video die de volledige breedte inneemt. Elk type wordt hieronder apart toegelicht."
+    },
+    {
+      "type": "content-text",
+      "tekst": "Het `video-grid` component is voor het tonen van meerdere video's in een rooster. Je kunt het aantal kolommen (2 of 3) specificeren."
+    },
+    {
+      "type": "video-grid",
+      "titel": "",
+      "kolommen": 2,
+      "items": [
+        { "titel": "Uitleg Video 1", "beschrijving": "Korte beschrijving van de video.", "bron": "YouTube", "duur": "5 min", "link": "https://youtu.be/1Q8fG0TtVAY" },
+        { "titel": "Uitleg Video 2", "beschrijving": "Korte beschrijving van de video.", "bron": "Vimeo", "duur": "10 min", "link": "https://youtu.be/1Q8fG0TtVAY" }
+      ]
+    },
+    { "type": "divider" },
+    {
+      "type": "video-grid",
+      "titel": "",
+      "kolommen": 3,
+      "items": [
+        { "titel": "Uitleg Video A", "beschrijving": "Korte beschrijving.", "link": "https://youtu.be/1Q8fG0TtVAY" },
+        { "titel": "Uitleg Video B", "beschrijving": "Korte beschrijving.", "link": "https://youtu.be/1Q8fG0TtVAY" },
+        { "titel": "Uitleg Video C", "beschrijving": "Korte beschrijving.", "link": "https://youtu.be/1Q8fG0TtVAY" }
+      ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
+      "tekst": "De `video-full-width` component is voor het prominent tonen van één enkele video over de volledige breedte van de content-container."
+    },
+    {
+      "type": "video-full-width",
+      "titel": "",
+      "link": "https://youtu.be/1Q8fG0TtVAY"
+    },
+    { "type": "divider" },
+    {
+      "type": "section-title",
+      "titel": "Data & Statistieken"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Deze componenten zijn ontworpen om numerieke data, statistieken of belangrijke kerngetallen op een visueel impactvolle manier te presenteren."
+    },
+    {
+        "type": "content-text",
+        "tekst": "De `stats-card-grid` is ontworpen om kerngetallen en statistieken op een visueel aantrekkelijke manier uit te lichten, vaak ondersteund door een icoon en een kort label."
+    },
+    {
+        "type": "stats-card-grid",
+        "kaarten": [
+            { "titel": "Statistiek A", "afbeelding": "images/icons/brain.svg", "getal": "80%", "label": "van de gebruikers is tevreden" },
+            { "titel": "Statistiek B", "afbeelding": "images/icons/move.svg", "getal": "3M+", "label": "actieve installaties" }
+        ]
+    },
+    { "type": "divider" },
+    {
+        "type": "content-text",
+        "tekst": "Het `accent-blok` is een flexibel blok om tekst uit te lichten, zoals statistieken, weetjes of citaten. Het kent varianten (`statistiek` en `weetje`) die de styling aanpassen. De bronvermelding onderaan is optioneel en wordt klikbaar als er een URL is opgegeven."
+    },
+    {
+      "type": "accent-blok",
+      "variant": "statistiek",
+      "titel": "Voorbeeld: Eyeopener-statistiek",
+      "tekst": "Experts voorspellen dat tot <strong>80%</strong> van de administratieve taken in de zorg tegen 2027-2029 door AI geautomatiseerd kan worden. Dit blok is ideaal om een belangrijke statistiek uit te lichten.",
+      "bron": {
+        "naam": "Bronvermelding (optioneel)"
+      }
+    },
+    {
+      "type": "accent-blok",
+      "variant": "weetje",
+      "titel": "Voorbeeld: Fun fact",
+      "tekst": "Wist je dat negen op de tien studenten ooit AI heeft gebruikt? Dit 'weetje' blok is perfect voor een verrassend feitje of een herkenbare anekdote.",
+      "bron": {
+        "naam": "Klikbare bron (optioneel)",
+        "url": "#"
+      }
+    },
+    { "type": "divider" },
+    {
+      "type": "section-title",
+      "titel": "Complexe & Uitgelichte Componenten"
+    },
+    {
+      "type": "content-text",
+      "tekst": "De ware kracht van dit systeem zit in het combineren van componenten. Met de flexibele **'doos-in-doos' structuur** kun je basiscomponenten (zoals tekst, grids of kaarten) binnen een `info-card` plaatsen. Dit stelt je in staat om zelf complexe, uitgelichte blokken te creëren die visueel worden gegroepeerd met een eigen achtergrond. De voorbeelden hieronder tonen deze techniek in de praktijk."
+    },
+    {
+      "type": "content-text",
+      "tekst": "Een goed voorbeeld van de 'doos-in-doos' aanpak is het visualiseren van een leerpad. Door `benefit-card` componenten binnen een `info-card` te plaatsen, creëer je een visueel gegroepeerd overzicht. <br><br><strong>Voordeel:</strong> het creëert een duidelijke, visuele eenheid. <br><strong>Nadeel:</strong> de inhoud wordt smaller, wat op mobiele schermen tot een langere, smallere kolom kan leiden."
+    },
+    {
+        "type": "info-card",
+        "titel": "Overzicht van de Cursusmodules",
+        "content": [
+            {
+                "type": "content-text",
+                "tekst": "Deze e-learning is opgebouwd uit de volgende modules, die elk een kernaspect van het onderwerp behandelen."
+            },
+            {
+                "type": "benefit-card",
+                "titel": "Module 1: De Basis",
+                "beschrijving": "Een introductie tot de fundamentele concepten en terminologie."
+            },
+            {
+                "type": "benefit-card",
+                "titel": "Module 2: De Toepassing",
+                "beschrijving": "Praktische voorbeelden en case studies over hoe de theorie in de praktijk wordt gebracht."
+            },
+            {
+                "type": "content-text",
+                "tekst": "Na het voltooien van alle modules, volgt de eindtoets."
+            }
+        ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Dankzij de **flexibele 'doos-in-doos' structuur** kun je nu elk component binnen een `info-card` plaatsen. Dit geeft je de vrijheid om complexe, uitgelichte blokken te maken door componenten te combineren. Hieronder zie je een `stats-card-grid` en een `content-text` die samen in één `info-card` zijn genest."
+    },
+    {
+        "type": "info-card",
+        "titel": "Samengesteld Blok: Statistieken en Uitleg",
+        "content": [
+            {
+                "type": "content-text",
+                "tekst": "De volgende data toont de groei van het platform in het afgelopen kwartaal."
+            },
+            {
+                "type": "stats-card-grid",
+                "kaarten": [
+                    { "titel": "Nieuwe Gebruikers", "afbeelding": "images/icons/check-circle.svg", "getal": "1,200+", "label": "Aanmeldingen" },
+                    { "titel": "Actieve Sessies", "afbeelding": "images/icons/brain.svg", "getal": "85%", "label": "Maandelijks actief" }
+                ]
+            },
+            {
+                "type": "content-text",
+                "tekst": "Deze cijfers tonen een positieve trend en onderstrepen het succes van onze strategie."
+            }
+        ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+        "type": "content-text",
+        "tekst": "Voor het uitlichten van speciale content, zoals verwijzingen naar externe bronnen, kun je de flexibele doos-in-doos structuur gebruiken. Hieronder zie je een voorbeeld van hoe je een uitgelichte sectie kunt maken met een `resource-grid-container` binnen een `info-card`."
+    },
+    {
+        "type": "info-card",
+        "classes": "featured-ixperium",
+        "titel": "Uitgelicht: De iXperium Health Catalogus",
+        "content": [
+            {
+                "type": "resource-grid-container",
+                "titel": "",
+                "items": [
+                    {
+                        "logo": "images/Blijvende_afb/logo-health-transparant1.png",
+                        "titel": "Ontdek Meer Technologie",
+                        "beschrijving": "Op zoek naar meer innovatieve zorgtechnologieën? Bezoek onze uitgebreide catalogus voor inspiratie en praktische voorbeelden.",
+                        "link": "https://www.ixperium.nl/health/catalogus/"
+                    }
+                ]
+            }
+        ]
+    },
+    { "type": "divider" }
+  ]
+}

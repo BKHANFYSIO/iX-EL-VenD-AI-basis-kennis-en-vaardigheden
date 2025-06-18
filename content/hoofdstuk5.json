@@ -1,58 +1,75 @@
 {
   "titel": "Adoptie & Gedrag - Technologie in de Praktijk",
-  "content": {
-    "intro": {
+  "content": [
+    {
+      "type": "info-card",
       "titel": "Het Technology Acceptance Model (TAM)",
       "tekst": "Waarom worden sommige technologieën snel omarmd, terwijl andere nooit echt doorbreken? Het Technology Acceptance Model (TAM) biedt inzicht in hoe mensen technologie accepteren en gebruiken. Dit model is een eenvoudig en praktisch model voor het begrijpen van technologische adoptie in de zorg."
     },
-    "tam_model": {
-      "afbeelding": "images/tam_model.png",
-      "kernconcepten": {
-        "titel": "Kernconcepten van TAM",
-        "concepten": [
-          {
-            "titel": "Perceived Usefulness (U)",
-            "nederlands": "Waargenomen Nut",
-            "beschrijving": "De mate waarin iemand gelooft dat het gebruik van een technologie zijn of haar werkprestaties verbetert. Dit is de belangrijkste factor voor adoptie.",
-            "voorbeeld": "Een fysiotherapeut die gelooft dat een app voor thuisoefeningen de therapietrouw van patiënten verhoogt."
-          },
-          {
-            "titel": "Perceived Ease of Use (E)",
-            "nederlands": "Waargenomen Gebruiksgemak",
-            "beschrijving": "De mate waarin iemand gelooft dat het gebruik van een technologie weinig inspanning kost. Dit is de tweede belangrijkste factor voor adoptie.",
-            "voorbeeld": "Een patiënt die een app makkelijk vindt te gebruiken omdat deze intuïtief is opgezet."
-          }
-        ]
-      },
-      "adoptieproces": {
-        "titel": "Het Adoptieproces",
-        "tekst": "Het TAM-model laat zien dat adoptie een proces is dat wordt beïnvloed door verschillende factoren:",
-        "factoren": [
-          {
-            "titel": "Attitude",
-            "beschrijving": "De algemene indruk van de technologie, gevormd door U (Perceived Usefulness) en E (Perceived Ease of Use)"
-          },
-          {
-            "titel": "Behavioral Intention",
-            "beschrijving": "De intentie om de technologie te gebruiken"
-          },
-          {
-            "titel": "Actual System Use",
-            "beschrijving": "Het daadwerkelijke gebruik van de technologie"
-          }
-        ]
-      }
+    {
+      "type": "content-text",
+      "tekst": "Hieronder zie je het TAM-model visueel weergegeven, gevolgd door een uitleg van de kernconcepten."
     },
-    "praktische_toepassing": {
+    {
+      "type": "image-grid",
+      "kolommen": 1,
+      "afbeeldingen": [
+        {
+          "src": "images/tam_model.png",
+          "alt": "Technology Acceptance Model (TAM)",
+          "titel": "Het Technology Acceptance Model"
+        }
+      ]
+    },
+    {
+      "type": "info-card",
+      "titel": "Kernconcepten van TAM",
+      "content": [
+        {
+          "type": "card-grid",
+          "titel": "",
+          "items": [
+            {
+              "titel": "Perceived Usefulness (U) - Waargenomen Nut",
+              "beschrijving": "De mate waarin iemand gelooft dat het gebruik van een technologie zijn of haar werkprestaties verbetert. Dit is de belangrijkste factor voor adoptie.",
+              "voorbeeld": {
+                "titel": "Praktijkvoorbeeld",
+                "tekst": "Een fysiotherapeut die gelooft dat een app voor thuisoefeningen de therapietrouw van patiënten verhoogt."
+              }
+            },
+            {
+              "titel": "Perceived Ease of Use (E) - Waargenomen Gebruiksgemak",
+              "beschrijving": "De mate waarin iemand gelooft dat het gebruik van een technologie weinig inspanning kost. Dit is de tweede belangrijkste factor voor adoptie.",
+              "voorbeeld": {
+                "titel": "Praktijkvoorbeeld",
+                "tekst": "Een patiënt die een app makkelijk vindt te gebruiken omdat deze intuïtief is opgezet."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "info-card",
+      "titel": "Het Adoptieproces",
+      "tekst": "Het TAM-model laat zien dat adoptie een proces is dat wordt beïnvloed door verschillende factoren:",
+      "list_items": [
+        "Attitude: De algemene indruk van de technologie, gevormd door U (Perceived Usefulness) en E (Perceived Ease of Use)",
+        "Behavioral Intention: De intentie om de technologie te gebruiken",
+        "Actual System Use: Het daadwerkelijke gebruik van de technologie"
+      ]
+    },
+    {
+      "type": "info-card",
       "titel": "Praktische Toepassing",
       "tekst": "Als fysiotherapeut kun je het TAM-model gebruiken om:",
-      "toepassingen": [
+      "list_items": [
         "Bewuster te kiezen welke technologie je wilt implementeren",
         "De acceptatie van technologie bij collega's te bevorderen door het nut en gebruiksgemak te benadrukken",
         "Patiënten te helpen bij het accepteren en gebruiken van technologie door aandacht te besteden aan hun perceptie van nut en gebruiksgemak"
       ]
     }
-  },
+  ],
   "interacties": [
     {
       "id": "h5_mc_1",

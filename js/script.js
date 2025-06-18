@@ -1,20 +1,18 @@
 // Navigation and section handling
 let currentSection = 1;
-const totalSections = 8;
-
-// Initialize ConfigManager
-const configManager = new ConfigManager();
+let totalSections = 0;
 
 let chapters = [];
 
-function updateChaptersFromSidebar() {
-  const sidebarChapters = document.querySelectorAll('.sidebar-chapter');
-  chapters = Array.from(sidebarChapters).map(ch => {
-    const section = parseInt(ch.getAttribute('data-section'), 10);
-    const titleSpan = ch.querySelector('.chapter-title');
-    const title = titleSpan ? (titleSpan.getAttribute('title') || titleSpan.textContent.trim()) : `Hoofdstuk ${section}`;
-    return { section, title };
-  }).sort((a, b) => a.section - b.section);
+// Functie om de globale variabelen te initialiseren na het laden van de config
+function initializeGlobals(config) {
+    totalSections = config.hoofdstukken.length;
+    chapters = config.hoofdstukken.map((hoofdstuk, index) => ({
+        section: index + 1,
+        title: hoofdstuk.titel,
+        file: hoofdstuk.file
+    }));
+    devLog('Global variables initialized:', { totalSections, chapters });
 }
 
 function updateProgress() {
@@ -339,16 +337,8 @@ function setupSidebarHamburger() {
     });
 }
 
-
-
-// ALLERLAATST IN HET BESTAND:
-document.addEventListener('DOMContentLoaded', async function() {
-    // Load configuration first
-    await configManager.loadConfig();
-    
-    // Haal hoofdstuktitels dynamisch uit de sidebar zodat andere modules (zoals zoekfunctie) altijd up-to-date zijn
-    updateChaptersFromSidebar();
-
+// De rest van de DOMContentLoaded logica verhuist naar een nieuwe functie
+function runApplicationLogic() {
     // Initialiseer de zoekmodule nu de hoofdstukken bekend zijn
     if (typeof initSearchModule === 'function') {
         initSearchModule();
@@ -359,39 +349,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupSidebarNavigation();
     setupSidebarHamburger();
     
-    // Initial section display and content load
-    showSection(currentSection); // This will also call loadContentForSection internally for the currentSection
+    showSection(currentSection);
 
-    // updateAllChapterProgress(); // This is called after interactions too, might be redundant here if showSection/loadContent handles it
-    
-    // Load quiz questions for section 8 (Afsluitquiz)
-    // This is specific to section 8 and not part of the general chapter loading.
-    // It might be better to call this when section 8 becomes active.
-    // if (document.getElementById('quiz-container')) { // Check if the container exists
-    //     await loadMCQuiz(); 
-    // }
-
-    // If section8 is active on initial load (e.g. due to bookmark or refresh)
-    // and it has specific non-JSON dependent setup (like quiz init), handle it.
-    // However, loadAfsluitingContent if it loads chapter JSON might conflict.
-    // Best to have loadAfsluitingContent only do things not covered by hoofdstuk8.json
-    const activeSectionElement = document.querySelector('section.active');
-    let initialSection = currentSection; // Default to global currentSection
-    if (activeSectionElement) {
-        const sectionNumAttr = activeSectionElement.getAttribute('data-section');
-        if (sectionNumAttr) {
-            initialSection = parseInt(sectionNumAttr);
-        }
-    }
-    
-    if (initialSection === 8) {
-        // If loadContentForSection for section 8 handles all text from JSON,
-        // loadAfsluitingContent should only do things like initialize the quiz that are separate.
-        // await loadAfsluitingContent(); // This was loading hoofdstuk_afsluiting.json
-        // The new loadMCQuiz loads afsluitquiz.json, which is better.
-        await loadMCQuiz(); // Load the quiz specific to section 8
-    }
-    await updateAllChapterProgress(); // Ensure progress is updated after all initial loads.
+    updateAllChapterProgress();
 
     // Event handler voor Wis Alle Voortgang knop
     const clearBtn = document.getElementById('clearProgressBtn');
@@ -400,8 +360,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     // Voer migratie uit voordat andere initialisatie
-    await migrateOldIdsToNewFormat();
-});
+    // migrateOldIdsToNewFormat(); // Deze migratie is waarschijnlijk niet meer nodig, kan later worden verwijderd.
+}
 
 // New global function to handle MC answer checking
 async function checkMCAnswer(interactionId, selectedAnswer, correctAnswerIndex, sectionNumber, mcElement, allOptions) {
@@ -541,36 +501,6 @@ async function clearAllProgress() {
         await updateAllChapterProgress(); 
         showSection(1); 
         alert("Alle voortgang is gewist.");
-    }
-}
-
-async function loadAfsluitingContent() {
-    try {
-        const res = await fetch('content/hoofdstuk_afsluiting.json');
-        if (!res.ok) throw new Error('Afsluitend hoofdstuk JSON niet gevonden of laden mislukt');
-        const data = await res.json();
-        if (data.titel) {
-            const titelEl = document.getElementById('afsluiting-titel');
-            if (titelEl) titelEl.textContent = data.titel;
-        }
-        if (data.intro) {
-            const introEl = document.getElementById('afsluiting-intro');
-            if (introEl) introEl.textContent = data.intro;
-        }
-        if (data.uitleg) {
-            const uitlegEl = document.getElementById('afsluiting-uitleg');
-            if (uitlegEl) uitlegEl.textContent = data.uitleg;
-        }
-        if (data.certificaatUitleg) {
-            const certEl = document.getElementById('afsluiting-certificaat');
-            if (certEl) certEl.textContent = data.certificaatUitleg;
-        }
-        if (data.portfolioTip) {
-            const tipEl = document.getElementById('afsluiting-portfolio-tip');
-            if (tipEl) tipEl.textContent = data.portfolioTip;
-        }
-    } catch (e) {
-        console.error('Fout bij laden van afsluitend hoofdstuk:', e);
     }
 }
 

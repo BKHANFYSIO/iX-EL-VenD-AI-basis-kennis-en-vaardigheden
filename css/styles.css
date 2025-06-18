@@ -1,19 +1,18 @@
 @import url("components/cards.css");
 @import url("components/buttons.css");
-@import url("components/forms.css");
 @import url("components/interactive.css");
 @import url("components/layout.css");
 @import url("components/navigation.css");
-@import url("components/sidebar.css");
+@import url("components/process-flow.css");
 @import url("components/quiz.css");
-@import url("components/showcase.css");
 @import url("components/header.css");
 @import url("components/video.css");
 @import url("components/search.css");
-@import url("components/scenario.css");
-@import url("components/flashcards.css");
-@import url("components/timeline.css");
+@import url("components/sidebar.css");
 @import url("components/images.css");
+@import url("components/afsluiting.css");
+@import url("components/stijlgids.css");
+@import url("components/accent-blok.css");
 
 /* Forced Colors Mode support */
 @media (forced-colors: active) {
@@ -44,6 +43,11 @@
   --success-green: #10B981;
   --error-red: #EF4444;
   --warning-orange: #F59E0B;
+  --accent-blue: #0077C8;
+  --accent-orange: #F5A623;
+  --background-white: #FFFFFF;
+  --background-light-gray: #F8F9FA;
+  --background-medium-gray: #E9ECEF;
 }
 
 html {
@@ -142,22 +146,7 @@ img {
     margin-bottom: 15px;
 }
 
-/* Section 8 specific styles (alleen unieke styles hier houden) */
-#section8 .section-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-}
 
-#section8 .section-content ul {
-    margin: 1.5rem 0;
-    padding-left: 2rem;
-}
-
-#section8 .section-content li {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
 
 /* Note Box Styling */
 .note-box {
@@ -199,11 +188,18 @@ img {
     margin-bottom: 1.5rem;
 }
 
-.resource-grid {
+.resource-grid, .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    grid-template-columns: 1fr; /* 1 kolom op mobiel */
     gap: 2rem;
     margin-top: 1.5rem;
+}
+
+/* 2 kolommen voor schermen breder dan 600px */
+@media (min-width: 600px) {
+    .resource-grid, .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .resource-card {
@@ -341,143 +337,6 @@ img {
     line-height: 1.6;
 }
 
-.development-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-#section8 .development-options { /* Specifieke aanpassingen voor section8 */
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: 2rem 0;
-}
-
-.option-card {
-    padding: 1.5rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-}
-
-#section8 .option-card { /* Specifieke aanpassingen voor section8 */
-    flex: 1 1 300px;
-    min-width: 280px;
-    max-width: 370px;
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-@media (max-width: 900px) {
-  #section8 .development-options {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  #section8 .option-card {
-    max-width: 100%;
-    min-width: 0;
-  }
-}
-
-.option-card:hover {
-    transform: translateY(-2px);
-}
-
-.option-card h5 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.option-card p {
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* PDF Generation Styles */
-.pdf-generation {
-    margin: 3rem 0;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    text-align: center;
-}
-
-#section8 .pdf-generation { /* Specifieke aanpassingen voor section8 */
-    margin-top: 3rem;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-}
-
-.name-input-container {
-    margin: 2rem 0;
-}
-
-#section8 .name-input-container { /* Specifieke aanpassingen voor section8 */
-    margin: 2rem 0;
-}
-
-.name-input {
-    width: 100%;
-    max-width: 400px;
-    padding: 0.8rem 1rem;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    font-size: 1rem;
-    margin: 0.5rem 0;
-}
-
-#section8 .name-input { /* Specifieke aanpassingen voor section8 */
-    width: 100%;
-    max-width: 400px;
-    padding: 0.8rem;
-    margin-top: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.btn-yellow {
-    background-color: #ffc107;
-    color: #2c3e50;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-#section8 .btn-yellow { /* Specifieke aanpassingen voor section8 */
-    background-color: #ffc107;
-    color: #000;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    margin: 1.5rem 0;
-}
-
-.btn-yellow:hover {
-    background-color: #ffca28;
-}
-
-.small-text {
-    font-size: 0.9rem;
-    color: #6c757d;
-    margin-top: 1rem;
-}
-
-#section8 .small-text { /* Specifieke aanpassingen voor section8 */
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 1rem;
-}
-
 .source {
     font-size: 0.85em;
     color: #666;
@@ -574,113 +433,6 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
     border-color: #D32F2F; /* Sterkere rode randkleur */
     box-shadow: 0 4px 16px rgba(211,47,47,0.12);
     transform: scale(1.04);
-}
-
-/* Styling for the new Quiz Navigation and Review States */
-.quiz-navigation-buttons {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.quiz-navigation-buttons .btn {
-    padding: 10px 15px;
-    font-size: 0.95em;
-}
-
-.mc-question.answered .mc-option:not(.selected) {
-    opacity: 0.7;
-}
-
-.mc-option.disabled {
-    cursor: not-allowed;
-    background-color: #f8f9fa; /* Light gray for disabled options */
-    color: #6c757d;
-}
-
-.mc-option.selected.correct {
-    border-left: 5px solid #28a745; /* Green border for correct selected answers */
-}
-
-.mc-option.selected.incorrect {
-    border-left: 5px solid #dc3545; /* Red border for incorrect selected answers */
-}
-
-/* For review mode: highlight the actual correct answer if it wasn't selected by user */
-.mc-options.review-options .mc-option.correct-unselected {
-    background-color: #e6ffe6; /* Light green background */
-    border: 1px solid #28a745;
-    font-weight: bold;
-}
-
-.mc-options.review-options .mc-option.selected.incorrect {
-    /* Make user's wrong choice more prominent if needed, but red border is already there */
-    /* background-color: #ffe6e6; */ /* Optional: light red if desired */
-}
-
-#quiz-results-summary {
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-#quiz-results-summary h2 {
-    margin-top: 0;
-}
-
-.quiz-result-item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-}
-
-.quiz-result-item.correct-answer {
-    border-left: 5px solid #28a745;
-    background-color: #f0fff0;
-}
-
-.quiz-result-item.incorrect-answer {
-    border-left: 5px solid #dc3545;
-    background-color: #fff0f0;
-}
-
-.quiz-result-item h4 {
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.review-mode .mc-options .mc-option {
-    /* Ensure all options are visually distinct in review mode, even if not selected/correct */
-    opacity: 1 !important;
-}
-
-/* Ensure feedback text is clearly visible */
-.feedback.correct {
-    color: #155724; /* Dark green for correct feedback text */
-    background-color: #d4edda; /* Light green background for feedback box */
-    border-color: #c3e6cb;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 4px;
-}
-
-.feedback.incorrect {
-    color: #721c24; /* Dark red for incorrect feedback text */
-    background-color: #f8d7da; /* Light red background for feedback box */
-    border-color: #f5c6cb;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 4px;
-}
-
-/* Ensure buttons in quiz nav are spaced a bit */
-.quiz-navigation-buttons button + button {
-    margin-left: 10px;
 }
 
 /* Certificate Section Styling */
@@ -883,109 +635,9 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
     border-radius: 8px;
 }
 
-#section8 #quiz-container {
-  background: #ede9fe;
-  border: 2px solid #a78bfa;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px 0 rgba(167,139,250,0.08);
-  padding: 32px 20px 24px 20px;
-  margin-bottom: 32px;
-  margin-top: 16px;
-}
-
-/* Lichtpaars kader voor certificaat/portfolio */
-.purple-kader {
-  background: var(--accent-purple, #F2E6F7);
-  border: 1.5px solid var(--secondary-purple, #8A4A9E);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  padding: 32px 24px 24px 24px;
-  margin: 32px 0 32px 0;
-}
-
-/* Suggesties grid (tegels naast elkaar) */
-.suggesties-grid {
-  display: flex;
-  gap: 24px;
-  margin: 24px 0 24px 0;
-  flex-wrap: wrap;
-}
-.suggestie-tegel {
-  background: #fff;
-  border: 1px solid var(--medium-gray);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  padding: 18px 16px;
-  flex: 1 1 220px;
-  min-width: 220px;
-  max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.suggestie-tegel h4 {
-  color: var(--primary-purple);
-  margin-bottom: 8px;
-}
-
-/* Accordion voor VRAAK criteria */
-.accordion {
-  margin-top: 24px;
-}
-.accordion-toggle {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--primary-purple);
-  background: none;
-  border: none;
-  font-size: 1.1em;
-  padding: 0;
-  margin-bottom: 8px;
-  transition: color 0.2s;
-}
-.accordion-toggle .triangle {
-  display: inline-block;
-  margin-right: 8px;
-  transition: transform 0.2s;
-  font-size: 1.2em;
-}
-.accordion-toggle.open .triangle {
-  transform: rotate(90deg);
-}
-.accordion-content {
-  display: none;
-  margin-top: 8px;
-  padding-left: 4px;
-}
-.accordion-content.open {
-  display: block;
-}
-.vraak-criteria-lijst {
-  margin: 0 0 0 16px;
-  padding: 0;
-}
-.vraak-criteria-lijst li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-
 /* Extra inspringing voor locaties bullets in hoofdstuk 1 */
 .locaties-list-indent {
   padding-left: 2.5em;
-}
-
-/* Kaarten (Cards) */
-.benefits-grid,
-.platforms-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.platforms-container {
-    margin-top: 1.5rem;
 }
 
 .style-guide-item .benefit-card h3 {
@@ -995,6 +647,18 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
 .qr-code-icon {
     margin: 1.5rem 0;
     color: var(--primary-purple);
+}
+
+.qr-code-container {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-code-container img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .style-guide-item .benefit-card h3 {

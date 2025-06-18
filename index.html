@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components/header.css">
     <link rel="stylesheet" href="css/components/images.css">
-    <script src="js/configManager.js"></script>
-    <!-- Inlined favicon zodat /favicon.ico 404 verdwijnt -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23662483'/%3E%3Ctext x='8' y='12' font-size='10' text-anchor='middle' fill='white'%3EAI%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="images/Blijvende_afb/iX-favicon-150x150.png" type="image/png">
 </head>
 <body>
     <div class="sidebar-overlay"></div>
@@ -35,38 +33,7 @@
                 </button>
               </div>
               <ul class="sidebar-chapters" id="sidebarChapters">
-                <li class="sidebar-chapter" data-section="1">
-                  <span class="chapter-circle" id="circle-1">1</span>
-                  <span class="chapter-title" title="Introductie">Introductie</span>
-                </li>
-                <li class="sidebar-chapter" data-section="2">
-                  <span class="chapter-circle" id="circle-2">2</span>
-                  <span class="chapter-title" title="Wat is AI eigenlijk?">Wat is AI eigenlijk?</span>
-                </li>
-                <li class="sidebar-chapter" data-section="3">
-                  <span class="chapter-circle" id="circle-3">3</span>
-                  <span class="chapter-title" title="AI Tools: Wat kies ik?">AI Tools: Wat kies ik?</span>
-                </li>
-                <li class="sidebar-chapter" data-section="4">
-                  <span class="chapter-circle" id="circle-4">4</span>
-                  <span class="chapter-title" title="Prompten kun je leren">Prompten kun je leren</span>
-                </li>
-                <li class="sidebar-chapter" data-section="5">
-                  <span class="chapter-circle" id="circle-5">5</span>
-                  <span class="chapter-title" title="Creatief & bouwen met AI">Creatief & bouwen met AI</span>
-                </li>
-                <li class="sidebar-chapter" data-section="6">
-                  <span class="chapter-circle" id="circle-6">6</span>
-                  <span class="chapter-title" title="Kansen & risico's">Kansen & risico's</span>
-                </li>
-                <li class="sidebar-chapter" data-section="7">
-                  <span class="chapter-circle" id="circle-7">7</span>
-                  <span class="chapter-title" title="AI in de toekomst">AI in de toekomst</span>
-                </li>
-                <li class="sidebar-chapter" data-section="8">
-                  <span class="chapter-circle" id="circle-8">8</span>
-                  <span class="chapter-title" title="Afsluiting">Afsluiting</span>
-                </li>
+                <!-- Hoofdstukken worden hier dynamisch geladen door js/main.js -->
               </ul>
               <button class="btn btn-clear-progress" id="clearProgressBtn">Wis Alle Voortgang</button>
               <div class="sidebar-progress">
@@ -95,160 +62,7 @@
                     </div>
                 </header>
                 <main class="container">
-                    <!-- Sectie 1: Introductie -->
-                    <section id="section1" class="section active" data-section="1">
-                        <h2 class="introductie-titel">Introductie - Waarom moet Jij iets met AI?</h2>
-                        <div class="section-content" id="section1-content-container">
-                            <!-- Content for section 1 will be dynamically loaded here -->
-                            <!-- Placeholder for interactions (already present) -->
-                            <div id="hoofdstuk1-reflection1"></div>
-                            <div id="hoofdstuk1-error"></div>
-                        </div>
-                        <div class="nav-buttons" style="justify-content: flex-end;">
-                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
-                        </div>
-                    </section>
-
-                    <!-- Sectie 2: Wat is AI eigenlijk? -->
-                    <section id="section2" class="section" data-section="2">
-                        <h2>Wat is AI eigenlijk? - Een Introductie</h2>
-                        <div class="section-content" id="section2-content-container">
-                            <!-- Content for section 2 will be dynamically loaded here -->
-                            <!-- Placeholders for interactions (already present) -->
-                            <div id="hoofdstuk2-mc1"></div>
-                            <div id="hoofdstuk2-reflection2"></div>
-                            <div id="hoofdstuk2-error"></div>
-                        </div>
-                        <div class="nav-buttons">
-                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
-                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
-                        </div>
-                    </section>
-
-                    <!-- Sectie 3: AI-jargon in 20 minuten -->
-                    <section id="section3" class="section" data-section="3">
-                        <h2>AI Tools: Wat kies ik?</h2>
-                        <div class="section-content" id="section3-content-container">
-                            <!-- Content for section 3 will be dynamically loaded here -->
-                            <!-- Placeholders for interactions (already present) -->
-                            <div id="hoofdstuk3-dragdrop1"></div>
-                            <div id="hoofdstuk3-reflection3"></div>
-                            <div id="hoofdstuk3-error"></div>
-                        </div>
-                        <div class="nav-buttons">
-                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
-                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
-                        </div>
-                    </section>
-
-                    <!-- Sectie 4: Prompten kun je leren -->
-                    <section id="section4" class="section" data-section="4">
-                        <h2>Prompten kun je leren - Tekst-AI Effectief Gebruiken</h2>
-                        <div class="section-content" id="section4-content-container">
-                            <!-- Content for section 4 will be dynamically loaded here -->
-                            <!-- Placeholders for interactions (already present) -->
-                            <div id="hoofdstuk4-mc_h4_1"></div>
-                            <div id="hoofdstuk4-reflection4"></div>
-                            <div id="hoofdstuk4-error"></div>
-                        </div>
-                        <div class="nav-buttons">
-                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
-                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
-                        </div>
-                    </section>
-
-                    <!-- Sectie 5: Creatief & bouwen met AI -->
-                    <section id="section5" class="section" data-section="5">
-                        <h2>Creatief & bouwen met AI - Van Beelden tot Tools</h2>
-                        <div class="section-content" id="section5-content-container">
-                            <!-- Content for section 5 will be dynamically loaded here -->
-                            <!-- Placeholders for interactions (already present) -->
-                            <div id="hoofdstuk5-mc_h5_1"></div>
-                            <div id="hoofdstuk5-reflection5"></div>
-                            <div id="hoofdstuk5-error"></div>
-                        </div>
-                        <div class="nav-buttons">
-                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
-                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
-                        </div>
-                    </section>
-
-                    <!-- Sectie 6: Kansen & risico's -->
-                    <section id="section6" class="section" data-section="6">
-                        <h2>Kansen & risico's - AI in de (fysio)zorg én samenleving</h2>
-                        <div class="section-content" id="section6-content-container">
-                            <!-- Content for section 6 will be dynamically loaded here -->
-                            <!-- Placeholders for interactions (already present) -->
-                            <div id="hoofdstuk6-h6_mc_1"></div>
-                            <div id="hoofdstuk6-h6_reflection_1"></div>
-                            <div id="hoofdstuk6-error"></div>
-                        </div>
-                        <div class="nav-buttons">
-                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
-                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
-                        </div>
-                    </section>
-
-                    <!-- Sectie 7: AI in de toekomst -->
-                    <section id="section7" class="section" data-section="7">
-                        <h2>AI in de toekomst - Wat staat ons te wachten?</h2>
-                        <div class="section-content" id="section7-content-container">
-                            <!-- Content for section 7 will be dynamically loaded here -->
-                            <!-- Placeholders for interactions (already present) -->
-                            <div id="hoofdstuk7-h7_dragdrop_1"></div>
-                            <div id="hoofdstuk7-h7_selfassessment_1"></div>
-                            <div id="hoofdstuk7-h7_reflection_1"></div>
-                            <div id="hoofdstuk7-error"></div>
-                        </div>
-                        <div class="nav-buttons">
-                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
-                            <button class="btn btn-next" onclick="nextSection()">Volgende</button>
-                        </div>
-                    </section>
-
-                    <!-- Sectie 8: Afsluiting -->
-                    <section id="section8" class="section" data-section="8">
-                        <h2 id="afsluiting-titel">Afsluiting: Test je kennis & ontvang je certificaat</h2>
-                        <!-- This is where dynamic text content from hoofdstuk_afsluiting.json will be primarily managed -->
-                        <div class="section-content" id="section8-content-container">
-                            <!-- Content from hoofdstuk_afsluiting.json will populate specific elements below -->
-                            <!-- or be added here if no specific static placeholder exists. -->
-                        </div>
-
-                        <div class="info-card">
-                            <h3 class="info-card-title">Wat ga je hier doen?</h3>
-                            <div class="info-card-content">
-                                <p id="afsluiting-intro"></p> <!-- To be filled by dynamicContent.js -->
-                            </div>
-                        </div>
-                        
-                        <!-- This div might be redundant if section8-content-container holds all dynamic text -->
-                        <!-- Let's keep the quiz-intro-text and quiz-container separate for now -->
-                        <div class="section-content"> <!-- Original generic section-content, quiz-intro was here -->
-                            <p class="quiz-intro-text" id="afsluiting-uitleg"></p> <!-- To be filled by dynamicContent.js -->
-                            
-                            <div id="quiz-container"></div> <!-- Quiz loads here -->
-                            <div id="hoofdstuk8-error" style="margin-bottom: 40px;"></div>
-                            <hr style="margin: 40px 0;">
-
-                            <div id="certificaat-portfolio-container"></div> <!-- Nieuwe container voor certificaat en portfolio info -->
-                            
-                            <div class="certificate-section">
-                                <div class="certificate-title-bar">
-                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6"/><circle cx="17" cy="17" r="2"/><path d="M19 19l-2-2"/></svg>
-                                    Certificaat Genereren
-                                </div>
-                                <p id="afsluiting-certificaat"></p> <!-- To be filled by dynamicContent.js -->
-                                <input type="text" id="student-name" placeholder="Vul hier je volledige naam in" class="input-field">
-                                <button class="btn" id="generatePdfBtn" onclick="generatePDF()">Download Certificaat (PDF)</button>
-                                <p id="afsluiting-portfolio-tip" class="small-text"></p> <!-- To be filled by dynamicContent.js -->
-                            </div>
-                        </div>
-
-                        <div class="nav-buttons">
-                            <button class="btn btn-prev" onclick="prevSection()">Vorige</button>
-                        </div>
-                    </section>
+                    <!-- Secties worden hier dynamisch geladen door js/main.js -->
                 </main>
             </div>
         </div>
@@ -256,9 +70,9 @@
     <!-- Externe libraries eerst -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     
     <!-- Eigen applicatie scripts -->
-    <script src="js/configManager.js"></script>
     <script src="js/main.js"></script>
     <script src="js/dynamicContent.js"></script>
     <script src="js/script.js"></script>

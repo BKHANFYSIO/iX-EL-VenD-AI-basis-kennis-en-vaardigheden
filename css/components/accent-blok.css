@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Accent Blok Component
+   ========================================================================== */
+
+.accent-blok {
+    background-color: var(--background-white);
+    border-left: 5px solid var(--secondary-purple);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.accent-blok::before {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.accent-blok-titel {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-purple);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.accent-blok-content p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.accent-blok-content p strong {
+    color: var(--primary-purple);
+    font-weight: 700;
+}
+
+.accent-blok-footer {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    text-align: right;
+}
+
+.accent-blok-bron {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+.accent-blok-bron:hover {
+    color: var(--primary-purple);
+    text-decoration: underline;
+}
+
+/* Varianten */
+.accent-blok--statistiek {
+    border-left-color: var(--accent-blue);
+}
+.accent-blok--statistiek .accent-blok-titel,
+.accent-blok--statistiek p strong {
+    color: var(--accent-blue);
+}
+.accent-blok--statistiek::before {
+    background-image: url('../../images/icons/chart-line.svg'); /* Zorg dat dit icoon bestaat */
+}
+
+.accent-blok--weetje {
+    border-left-color: var(--accent-orange);
+}
+.accent-blok--weetje .accent-blok-titel,
+.accent-blok--weetje p strong {
+    color: var(--accent-orange);
+}
+.accent-blok--weetje::before {
+     background-image: url('../../images/icons/lightbulb-on.svg'); /* Zorg dat dit icoon bestaat */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .accent-blok {
+        padding: 1rem;
+    }
+    .accent-blok-titel {
+        font-size: 1rem;
+    }
+    .accent-blok::before {
+        width: 50px;
+        height: 50px;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+} 

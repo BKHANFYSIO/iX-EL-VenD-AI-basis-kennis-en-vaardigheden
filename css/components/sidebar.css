@@ -42,7 +42,7 @@
     align-items: center;
     padding: 12px 20px;
     cursor: pointer;
-    border-left: 4px solid transparent;
+    border-left: 5px solid transparent;
     transition: all 0.3s ease;
 }
 
@@ -54,6 +54,8 @@
 .sidebar-chapter.active:hover {
     background-color: var(--accent-purple);
     border-left-color: var(--primary-purple);
+    border-top-left-radius: 8px; /* Afronding die matcht met de titel-header */
+    border-bottom-left-radius: 8px; /* Afronding die matcht met de titel-header */
 }
 
 .chapter-circle {
