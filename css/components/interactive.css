@@ -58,21 +58,21 @@
 .mc-option {
     padding: 0.8rem 1rem;
     margin: 0.5rem 0;
-    background-color: #f8f9fa; /* Consistent with styles.css */
-    border: 1px solid #dee2e6;
+    background-color: var(--background-light-gray);
+    border: 1px solid var(--border-color-medium);
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .mc-option:hover {
-    background-color: #e9ecef;
-    border-color: #ced4da;
+    background-color: var(--background-medium-gray);
+    border-color: var(--border-color-dark);
 }
 
 .mc-option.selected {
-    background-color: #e3f2fd; /* Blue theme from styles.css */
-    border-color: #2196f3;
+    background-color: var(--info-background);
+    border-color: var(--info-border);
 }
 
 .mc-option.disabled {
@@ -83,16 +83,16 @@
 /* Using combined classes from styles.css for review */
 .mc-option.selected.correct,
 .mc-option.answered.correct {
-    background-color: #d4edda;
-    border-color: #28a745;
-    color: #155724;
+    background-color: var(--success-background);
+    border-color: var(--success-border);
+    color: var(--success-text);
 }
 
 .mc-option.selected.incorrect,
 .mc-option.answered.incorrect {
-    background-color: #f8d7da;
-    border-color: #dc3545;
-    color: #721c24;
+    background-color: var(--error-background);
+    border-color: var(--error-border);
+    color: var(--error-text);
 }
 
 .feedback {
@@ -105,22 +105,22 @@
 
 .feedback.correct {
     display: block; /* Show when correct */
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: var(--success-background);
+    color: var(--success-text);
+    border: 1px solid var(--success-border-light);
 }
 
 .feedback.incorrect {
     display: block; /* Show when incorrect */
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background-color: var(--error-background);
+    color: var(--error-text);
+    border: 1px solid var(--error-border-light);
 }
 
 
 /* Drag and Drop Exercise */
 .interactive-exercise {
-    background: #f8f9fa;
+    background: var(--background-light-gray);
     border-radius: 12px;
     padding: 2rem;
     margin: 2rem 0;
@@ -134,8 +134,8 @@
 }
 
 .draggable {
-    background: #3498db; /* Blue theme from styles.css */
-    color: white;
+    background: var(--info-blue);
+    color: var(--white);
     padding: 0.8rem 1.2rem;
     border-radius: 6px;
     cursor: move;
@@ -144,7 +144,7 @@
 }
 
 .draggable:hover {
-    background: #2980b9;
+    background: var(--info-blue-dark);
 }
 
 .drop-targets {
@@ -155,7 +155,7 @@
 }
 
 .drop-target {
-    border: 2px dashed #bdc3c7;
+    border: 2px dashed var(--border-color-dashed);
     border-radius: 8px;
     padding: 1rem;
     min-height: 100px;
@@ -168,8 +168,8 @@
 }
 
 .drop-target.dragover {
-    background: rgba(52, 152, 219, 0.1);
-    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.1); /* This is a very light version of info-blue, rgba is tricky for a variable */
+    border-color: var(--info-blue);
 }
 
 .drop-target h4 {
@@ -278,7 +278,7 @@
 }
 
 .reflection-input::placeholder {
-    color: #999;
+    color: var(--text-light);
     font-style: italic;
 }
 
@@ -294,7 +294,7 @@
 
 /* General Form Styling (used in Critical Analysis etc.) */
 .analysis-form, .form-container { /* .form-container as a generic alternative */
-    background: #fff;
+    background: var(--white);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

@@ -1285,3 +1285,41 @@ function initializeFlashcardInteraction(interactie, chapterNumber) {
         });
     }
 }
+
+/**
+ * Rendert een 'losstaand' hoofdstuk, onafhankelijk van de standaard sectie-structuur.
+ * Gebruikt voor de developer-modus en potentieel andere features.
+ * @param {object} chapterData - De JSON data van het hoofdstuk.
+ * @param {HTMLElement} targetContainer - De container waarin de content gerenderd moet worden.
+ */
+function renderStandaloneChapter(chapterData, targetContainer) {
+    if (!chapterData || !targetContainer) {
+        console.error('Ontbrekende data of container voor renderStandaloneChapter');
+        return;
+    }
+
+    targetContainer.innerHTML = ''; // Maak de container leeg
+
+    // Gebruik de 'title' property uit de JSON
+    const h2 = document.createElement('h2');
+    h2.textContent = chapterData.title; // Gebruik de standaard 'title' property
+    h2.className = 'chapter-main-title'; // Pas eventueel class aan
+    targetContainer.appendChild(h2);
+
+    // Render de content-onderdelen uit de 'content' array
+    if (chapterData.content && Array.isArray(chapterData.content)) {
+        const contentHtml = renderGenericChapterContent(chapterData.content, 'dev');
+        targetContainer.innerHTML += contentHtml;
+    }
+    
+    // Render de interacties
+    if (chapterData.interacties && Array.isArray(chapterData.interacties)) {
+        chapterData.interacties.forEach(interaction => {
+            const interactionContainer = document.createElement('div');
+            interactionContainer.id = `dev-${interaction.id}`;
+            targetContainer.appendChild(interactionContainer);
+            // We gebruiken 'dev' als chapterNumber-placeholder
+            renderInteraction(interaction, 'dev', interactionContainer);
+        });
+    }
+}

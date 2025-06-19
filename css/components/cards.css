@@ -12,8 +12,8 @@
 }
 
 .info-card.warning-card {
-    background-color: #fffbe6; /* Een zachte gele tint */
-    border-left: 5px solid #f8c000; /* Een duidelijke gele rand */
+    background-color: var(--warning-background); /* Een zachte gele tint */
+    border-left: 5px solid var(--warning-border); /* Een duidelijke gele rand */
 }
 
 .info-card.warning-card .info-card-title {
@@ -348,7 +348,7 @@
 }
 
 .critical-theme-card {
-    background: #fff;
+    background: var(--white);
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -403,7 +403,7 @@
 }
 
 .theme-content {
-    color: #34495e;
+    color: var(--text-dark-blue);
     margin-top: 1rem;
 }
 
@@ -413,8 +413,8 @@
 }
 
 .reflection-prompt {
-    background: #f8f9fa;
-    border-left: 4px solid #3498db;
+    background: var(--background-light-gray);
+    border-left: 4px solid var(--info-blue);
     padding: 1rem;
     margin-top: 1rem;
     border-radius: 0 4px 4px 0;
@@ -423,7 +423,7 @@
 .reflection-prompt p {
     margin: 0;
     font-style: italic;
-    color: #2c3e50;
+    color: var(--text-dark-blue-2);
 }
 
 @media (max-width: 768px) {
@@ -686,7 +686,7 @@
     display: grid;
     grid-template-columns: 150px 1fr 300px;
     gap: 1.5rem;
-    background: #fff;
+    background: var(--white);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 1.5rem;
@@ -721,7 +721,7 @@
 }
 
 .tech-description h3 {
-    color: #7b2082;
+    color: var(--secondary-purple);
     margin: 0;
     font-size: 1.25rem;
 }
@@ -732,7 +732,7 @@
 }
 
 .tech-link {
-    color: #00a19a;
+    color: var(--accent-teal);
     text-decoration: none;
     font-weight: 500;
     margin-top: auto;
@@ -757,7 +757,7 @@
 .tech-note {
     text-align: center;
     font-style: italic;
-    color: #666;
+    color: var(--text-medium);
     margin: 2rem 0;
 }
 

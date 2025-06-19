@@ -4,7 +4,7 @@
     {
       "type": "info-card",
       "classes": "welcome-card",
-      "titel": "Hoi toekomstige fysiotherapeut!",
+      "titel": "Hé toekomstige fysiotherapeut!",
       "tekst": "Welkom bij de e-learning \"AI basiskennis en vaardigheden\"! De eerste van drie elearnings over AI in de context van jouw studie. Je staat aan het begin van een superinteressante ontdekkingsreis. Een reis die je klaarstoomt voor een toekomst waarin Kunstmatige Intelligentie (AI) een mega-belangrijke rol speelt in de zorg, en dus ook in jouw vakgebied: fysiotherapie. Misschien denk je nu aan sciencefictionfilms, maar AI is dichterbij dan je denkt en verandert nu al hoe we werken, leren en zorg verlenen."
     },
     {
@@ -124,7 +124,7 @@
         },
         {
           "type": "content-text",
-          "tekst": "Onthoud: AI leren toepassen en Effectief leren goed toepassen kost tijd. Begin klein, herhaal en bouw je kennis en vaardigheden stap voor stap op. Deze modules zijn ontworpen om je daarbij te helpen!"
+          "tekst": "Onthoud: zowel leren werken met AI als effectief leren leren kost tijd — vooral dat laatste. Begin klein, blijf herhalen en bouw stap voor stap aan je kennis en vaardigheden. Deze modules begeleiden je daarbij."
         }
       ]
     },

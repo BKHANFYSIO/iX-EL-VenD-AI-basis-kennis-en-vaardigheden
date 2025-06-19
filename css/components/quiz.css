@@ -6,7 +6,7 @@
   max-width: 900px;
   width: 100%;
   margin: 32px auto;
-  background: #fff;
+  background: var(--white);
   border-radius: 18px;
   box-shadow: 0 4px 24px 0 rgba(60,80,120,0.10);
   padding: 20px 12px 16px 12px;
@@ -18,7 +18,7 @@
   gap: 10px;
 }
 .mc-quiz-progress {
-  color: #3a6cf6;
+  color: var(--accent-color-primary);
   font-weight: 600;
   font-size: 1rem;
   margin-bottom: 0;
@@ -26,12 +26,12 @@
 .mc-quiz-title {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #2a2a2a;
+  color: var(--accent-color-text);
   margin-bottom: 0;
 }
 .mc-quiz-question {
   font-size: 1rem;
-  color: #222;
+  color: var(--accent-color-text-darker);
   margin-bottom: 4px;
 }
 .mc-quiz-options {
@@ -43,7 +43,7 @@
   gap: 8px;
 }
 .mc-quiz-option {
-  background: #f6f8fc;
+  background: var(--accent-color-background-light);
   border-radius: 8px;
   padding: 8px 12px;
   cursor: pointer;
@@ -52,32 +52,32 @@
   font-size: 1rem;
 }
 .mc-quiz-option.selected {
-  border: 2px solid #3a6cf6;
-  background: #eaf1ff;
+  border: 2px solid var(--accent-color-primary);
+  background: var(--accent-color-background-medium);
 }
 .mc-quiz-option.correct {
-  border: 2px solid #3ad29f;
-  background: #eafff4;
+  border: 2px solid var(--accent-color-secondary);
+  background: var(--success-background-light);
 }
 .mc-quiz-option.incorrect {
-  border: 2px solid #f66c6c;
-  background: #fff0f0;
+  border: 2px solid var(--accent-color-error);
+  background: var(--accent-color-error-background);
 }
 .mc-quiz-option:active {
-  background: #e0e7f6;
+  background: var(--accent-color-background-dark);
 }
 .mc-quiz-feedback {
   min-height: 20px;
   font-size: 0.98rem;
-  color: #3a6cf6;
+  color: var(--accent-color-primary);
   font-weight: 500;
   margin-bottom: 0;
 }
 .mc-quiz-frame .btn.mc-quiz-next {
   align-self: flex-end;
   margin-top: 2px;
-  background: #3a6cf6;
-  color: #fff;
+  background: var(--accent-color-primary);
+  color: var(--white);
   border-radius: 6px;
   font-weight: 600;
   font-size: 1rem;
@@ -86,38 +86,38 @@
   transition: background 0.15s;
 }
 .mc-quiz-frame .btn.mc-quiz-next:disabled {
-  background: #b7c7f6;
-  color: #fff;
+  background: var(--accent-color-background-dark);
+  color: var(--white);
   cursor: not-allowed;
 }
 .mc-quiz-score {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #3a6cf6;
+  color: var(--accent-color-primary);
   margin-bottom: 12px;
 }
 .mc-quiz-score-bar {
   width: 100%;
   height: 12px;
-  background: #eaf1ff;
+  background: var(--accent-color-background-medium);
   border-radius: 6px;
   margin-bottom: 18px;
   overflow: hidden;
 }
 .mc-quiz-score-bar > div {
   height: 100%;
-  background: linear-gradient(90deg, #3a6cf6 60%, #3ad29f 100%);
+  background: linear-gradient(90deg, var(--accent-color-primary) 60%, var(--accent-color-secondary) 100%);
   border-radius: 6px;
   transition: width 0.5s;
 }
 .mc-quiz-review-frame {
   margin-bottom: 32px;
-  border-bottom: 1px solid #eaf1ff;
+  border-bottom: 1px solid var(--accent-color-background-medium);
   padding-bottom: 18px;
 }
 .mc-quiz-frame .btn.mc-quiz-review, .mc-quiz-frame .btn.mc-quiz-restart {
-  background: #3ad29f;
-  color: #fff;
+  background: var(--accent-color-secondary);
+  color: var(--white);
   border-radius: 6px;
   font-weight: 600;
   font-size: 1rem;
@@ -127,7 +127,7 @@
   transition: background 0.15s;
 }
 .mc-quiz-frame .btn.mc-quiz-review:hover, .mc-quiz-frame .btn.mc-quiz-restart:hover {
-  background: #2bbf8a;
+  background: var(--accent-color-secondary-dark);
 }
 
 @media (max-width: 1024px) {
@@ -147,7 +147,7 @@
 .quiz-navigation-buttons {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-color-extralight);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -164,33 +164,33 @@
 
 .mc-option.disabled {
     cursor: not-allowed;
-    background-color: #f8f9fa; /* Light gray for disabled options */
-    color: #6c757d;
+    background-color: var(--background-light-gray);
+    color: var(--text-muted);
 }
 
 .mc-option.selected.correct {
-    border-left: 5px solid #28a745; /* Green border for correct selected answers */
+    border-left: 5px solid var(--success-border);
 }
 
 .mc-option.selected.incorrect {
-    border-left: 5px solid #dc3545; /* Red border for incorrect selected answers */
+    border-left: 5px solid var(--error-border);
 }
 
 /* For review mode: highlight the actual correct answer if it wasn't selected by user */
 .mc-options.review-options .mc-option.correct-unselected {
-    background-color: #e6ffe6; /* Light green background */
-    border: 1px solid #28a745;
+    background-color: var(--success-background-light);
+    border: 1px solid var(--success-border);
     font-weight: bold;
 }
 
 .mc-options.review-options .mc-option.selected.incorrect {
     /* Make user's wrong choice more prominent if needed, but red border is already there */
-    /* background-color: #ffe6e6; */ /* Optional: light red if desired */
+    /* background-color: var(--error-background-lighter); */ /* Optional: light red if desired */
 }
 
 #quiz-results-summary {
     padding: 15px;
-    background-color: #f8f9fa;
+    background-color: var(--background-light-gray);
     border-radius: 5px;
     margin-bottom: 20px;
 }
@@ -200,20 +200,20 @@
 }
 
 .quiz-result-item {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color-light);
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
 }
 
 .quiz-result-item.correct-answer {
-    border-left: 5px solid #28a745;
-    background-color: #f0fff0;
+    border-left: 5px solid var(--success-border);
+    background-color: var(--success-background-lighter);
 }
 
 .quiz-result-item.incorrect-answer {
-    border-left: 5px solid #dc3545;
-    background-color: #fff0f0;
+    border-left: 5px solid var(--error-border);
+    background-color: var(--error-background-lighter);
 }
 
 .quiz-result-item h4 {
@@ -228,18 +228,18 @@
 
 /* Ensure feedback text is clearly visible */
 .feedback.correct {
-    color: #155724; /* Dark green for correct feedback text */
-    background-color: #d4edda; /* Light green background for feedback box */
-    border-color: #c3e6cb;
+    color: var(--success-text);
+    background-color: var(--success-background);
+    border-color: var(--success-border-light);
     padding: 10px;
     margin-top: 10px;
     border-radius: 4px;
 }
 
 .feedback.incorrect {
-    color: #721c24; /* Dark red for incorrect feedback text */
-    background-color: #f8d7da; /* Light red background for feedback box */
-    border-color: #f5c6cb;
+    color: var(--error-text);
+    background-color: var(--error-background);
+    border-color: var(--error-border-light);
     padding: 10px;
     margin-top: 10px;
     border-radius: 4px;
@@ -261,19 +261,19 @@
 }
 
 #quiz-results-container.results-excellent {
-    border-top: 5px solid #28a745;
+    border-top: 5px solid var(--success-border);
 }
 
 #quiz-results-container.results-passed {
-    border-top: 5px solid #28a745;
+    border-top: 5px solid var(--success-border);
 }
 
 #quiz-results-container.results-warning {
-    border-top: 5px solid #ffc107;
+    border-top: 5px solid var(--primary-yellow);
 }
 
 #quiz-results-container.results-failed {
-    border-top: 5px solid #dc3545;
+    border-top: 5px solid var(--error-border);
 }
 
 .results-header h2 {
@@ -305,7 +305,7 @@
 
 .circle-bg {
     fill: none;
-    stroke: #eee;
+    stroke: var(--border-color-extralight);
     stroke-width: 3.8;
 }
 
@@ -317,10 +317,10 @@
 }
 
 #quiz-results-container.results-passed .circle {
-    stroke: #28a745; /* Green */
+    stroke: var(--success-border);
 }
 #quiz-results-container.results-failed .circle {
-    stroke: #dc3545; /* Red */
+    stroke: var(--error-border);
 }
 
 .percentage-text {
@@ -344,12 +344,12 @@
 }
 
 .score-text .pass-message {
-    color: #28a745;
+    color: var(--success-border);
     font-weight: bold;
 }
 
 .score-text .fail-message {
-    color: #dc3545;
+    color: var(--error-border);
     font-weight: bold;
 }
 
@@ -405,8 +405,8 @@
 }
 
 #quiz-review-details-container .mc-question {
-    background-color: #f9f9f9; /* Slightly different bg for reviewed question */
-    border: 1px solid #e0e0e0;
+    background-color: var(--background-light-gray); /* Slightly different bg for reviewed question */
+    border: 1px solid var(--medium-gray);
     padding: 20px;
     border-radius: 8px;
 } 

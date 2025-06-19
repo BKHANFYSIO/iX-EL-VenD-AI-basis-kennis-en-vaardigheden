@@ -54,15 +54,15 @@
 }
 
 .btn-yellow {
-    background-color: #ffc107;
-    color: #000;
+    background-color: var(--primary-yellow);
+    color: var(--black);
     padding: 1rem 2rem;
     font-size: 1.1rem;
     margin: 1.5rem 0;
 }
 
 .btn-yellow:hover {
-    background-color: #ffca2c;
+    background-color: var(--secondary-yellow);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 

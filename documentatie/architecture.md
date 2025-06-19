@@ -58,7 +58,37 @@ Het hart van de e-learning. De `hoofdstukken`-array bepaalt de volgorde en titel
 ```
 
 ### `hoofdstukX.json` en Interacties
-De structuur van de hoofdstuk-JSON bestanden en de interactie-schema's blijven ongewijzigd.
+Elk hoofdstukbestand definieert de content en de interactieve elementen. De structuur scheidt de statische content (tekst, afbeeldingen) van de interacties (vragen, opdrachten).
+
+**Basisstructuur:**
+```json
+{
+  "title": "Titel van het Hoofdstuk",
+  "hoofdstuk": "hoofdstuk1", // of een unieke identifier
+  "content": [
+    {
+      "type": "text",
+      "content": "Paragraaf met tekst..."
+    },
+    {
+      "type": "image",
+      "src": "images/voorbeeld.png",
+      "alt": "Beschrijving van de afbeelding"
+    }
+  ],
+  "interacties": [
+    {
+      "id": "h1_mc_1",
+      "type": "mc",
+      "title": "Titel van de Interactie",
+      "question": "De vraag die gesteld wordt...",
+      // ...andere velden specifiek voor het interactietype
+    }
+  ]
+}
+```
+
+De `interacties`-array bevat objecten die de verschillende interactieve elementen van het hoofdstuk definiëren. De `id` van elke interactie moet uniek zijn.
 
 **ID-structuur:** `{hoofdstuknummer}_{type}_{volgnummer}` (bijv. `h1_mc_1`)
 
@@ -124,6 +154,8 @@ De styling is gecentraliseerd in `css/styles.css` en maakt gebruik van CSS-varia
     -   `.info-card`: Een uitgelicht blok met een paarse rand, voor quotes of belangrijke mededelingen.
     -   `.interactive-block`: De container voor een interactief element.
     -   `.accent-blok`: Een flexibel blok om tekst uit te lichten, zoals statistieken, weetjes of citaten. Kent varianten zoals `accent-blok--statistiek` en `accent-blok--weetje` die de styling aanpassen.
+    -   `.resource-grid-container` & `.resource-card`: Voor het tonen van een grid met externe bronnen, inclusief logo en een (automatisch gegenereerde) QR-code.
+    -   **Doos-in-doos structuur**: Door componenten (zoals een `resource-grid-container`) te nesten binnen de `content`-array van een `info-card`, kunnen complexe, visueel gegroepeerde blokken worden gemaakt.
     -   `.modules-list` & `.benefit-card`: Voor een grid-layout met kaarten (voor voordelen, modules, etc.).
     -   `.video-container-full-width` & `.video-wrapper`: Voor responsive video-embeds.
 
@@ -145,4 +177,26 @@ De bedoeling is om altijd deze bestaande klassen te gebruiken om een consistente
 
     // Check een specifiek antwoord
     console.log(localStorage.getItem('reflection_h1_reflection_1_answered'));
-    ``` 
+    ```
+
+## Dynamische Content
+
+De content van de e-learning wordt dynamisch geladen uit JSON-bestanden in de `/content` map.
+
+-   `content/config.json`: Bevat de algemene configuratie, zoals de titel van de e-learning en een lijst van alle hoofdstukken met hun bestandsnamen.
+-   `content/hoofdstukX.json`: Elk hoofdstuk heeft zijn eigen JSON-bestand met de specifieke content-onderdelen en interacties.
+-   `js/main.js`: Leest `config.json` en bouwt de basis-UI (sidebar, secties).
+-   `js/dynamicContent.js`: Bevat de logica om de content van een specifiek hoofdstuk op te halen en te renderen in de juiste sectie.
+-   `js/script.js`: Bevat de hoofd-applicatielogica, zoals navigatie tussen secties.
+
+## Developer Mode
+
+Om het testen van interactieve componenten te vergemakkelijken, is er een "Developer Mode" ingebouwd die alleen beschikbaar is wanneer de applicatie lokaal wordt gedraaid (`localhost` of `127.0.0.1`).
+
+-   **Activatie**: De modus wordt automatisch ingeschakeld op basis van de `hostname`.
+-   **Knop**: In de header verschijnt een knop "Interacties Testen".
+-   **Content**: Als op de knop wordt geklikt, wordt de content van `content/voorbeeld_interacties.json` geladen. Dit bestand bevat voorbeelden van alle beschikbare interactietypes (`mc`, `reflection`, `dragdrop`, etc.).
+-   **Implementatie**:
+    -   `js/main.js` (`initializeDevMode`): Detecteert de lokale omgeving, maakt de knop zichtbaar en voegt een event listener toe.
+    -   `js/dynamicContent.js` (`renderStandaloneChapter`): Een speciale functie om een hoofdstuk te renderen buiten de standaard paginastructuur, specifiek voor deze modus.
+    -   Een "Terug"-knop wordt toegevoegd aan de header om de pagina te herladen en terug te keren naar de normale e-learningweergave. 

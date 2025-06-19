@@ -110,7 +110,6 @@ async function saveSelfAssessment(sectionNumber, selfAssessmentId) {
     });
 
     const feedbackEl = document.getElementById(`feedback-${sectionNumber}-${selfAssessmentId}`);
-    const button = document.querySelector(`.selfassessment-interaction button[onclick*="saveSelfAssessment(${sectionNumber}, '${selfAssessmentId}')"]`);
 
     if (!allAnswered) {
         if (feedbackEl) {
@@ -121,24 +120,29 @@ async function saveSelfAssessment(sectionNumber, selfAssessmentId) {
     }
     localStorage.setItem(`selfassessment_${sectionNumber}_${selfAssessmentId}_done`, JSON.stringify(assessmentData));
     
-    if (feedbackEl) {
-        feedbackEl.textContent = 'Zelfbeoordeling opgeslagen!';
-        feedbackEl.className = 'feedback-message correct';
-    }
-    if (button) {
-        button.textContent = 'Opgeslagen';
-        button.disabled = true;
-        button.classList.add('btn-opgeslagen');
-    }
-    // Disable all select elements as well
-    ids.forEach(idName => {
-        const selectElement = document.getElementById(`${idName}-${sectionNumber}-${selfAssessmentId}`);
-        if (selectElement) {
-            selectElement.disabled = true;
-        }
-    });
+    // Re-render de component om de 'opgeslagen' staat te tonen
+    const containerId = sectionNumber === 'dev' 
+        ? `dev-${selfAssessmentId}` 
+        : `hoofdstuk${sectionNumber}-${selfAssessmentId}`;
+    const container = document.getElementById(containerId);
 
-    await updateAllChapterProgress();
+    if (container && typeof renderInteraction === 'function') {
+        setTimeout(async () => {
+            const chapterData = sectionNumber === 'dev' 
+                ? window.devChapterData 
+                : await fetchChapterData(sectionNumber);
+            if (chapterData && chapterData.interacties) {
+                const freshInteractionData = chapterData.interacties.find(i => i.id === selfAssessmentId);
+                if (freshInteractionData) {
+                    renderInteraction(freshInteractionData, sectionNumber, container);
+                }
+            }
+        }, 100);
+    }
+    
+    if (sectionNumber !== 'dev') {
+        await updateAllChapterProgress();
+    }
 }
 
 // Reinstated saveReflection
@@ -146,7 +150,6 @@ async function saveReflection(sectionNumber, reflectionId) {
     const reflectionInput = document.getElementById(`${reflectionId}-input`); 
     if (!reflectionInput) {
         console.error(`Reflection input field with ID ${reflectionId}-input not found.`);
-        // alert('Fout: reflectieveld niet gevonden.'); // Verwijderd
         const feedbackEl = document.getElementById(`feedback-${sectionNumber}-${reflectionId}`);
         if (feedbackEl) {
             feedbackEl.textContent = 'Fout: reflectieveld niet gevonden.';
@@ -161,7 +164,6 @@ async function saveReflection(sectionNumber, reflectionId) {
     const feedbackEl = document.getElementById(`feedback-${sectionNumber}-${reflectionId}`);
 
     if (answer.length < minLength) {
-        // alert(`Je antwoord moet minimaal ${minLength} tekens bevatten.`); // Verwijderd
         if (feedbackEl) {
             feedbackEl.textContent = `Je antwoord moet minimaal ${minLength} tekens bevatten.`;
             feedbackEl.className = 'feedback-message incorrect';
@@ -170,20 +172,30 @@ async function saveReflection(sectionNumber, reflectionId) {
     }
     const storageKey = `reflection_${sectionNumber}_${reflectionId}_answered`; 
     localStorage.setItem(storageKey, answer);
-    // alert('Reflectie opgeslagen!'); // Verwijderd
+
+    // Re-render de component om de 'opgeslagen' staat te tonen
+    const containerId = sectionNumber === 'dev' 
+        ? `dev-${reflectionId}` 
+        : `hoofdstuk${sectionNumber}-${reflectionId}`;
+    const container = document.getElementById(containerId);
+
+    if (container && typeof renderInteraction === 'function') {
+        setTimeout(async () => {
+            const chapterData = sectionNumber === 'dev' 
+                ? window.devChapterData 
+                : await fetchChapterData(sectionNumber);
+            if (chapterData && chapterData.interacties) {
+                const freshInteractionData = chapterData.interacties.find(i => i.id === reflectionId);
+                if (freshInteractionData) {
+                    renderInteraction(freshInteractionData, sectionNumber, container);
+                }
+            }
+        }, 100);
+    }
     
-    const button = reflectionInput.nextElementSibling;
-    if (button && button.tagName === 'BUTTON' && button.classList.contains('btn-save-reflection')) {
-        button.textContent = 'Opgeslagen';
-        button.disabled = true;
-        button.classList.add('btn-opgeslagen');
-        reflectionInput.readOnly = true; // Maak textarea ook readonly
+    if (sectionNumber !== 'dev') {
+        await updateAllChapterProgress();
     }
-    if (feedbackEl) {
-        feedbackEl.textContent = 'Reflectie opgeslagen!';
-        feedbackEl.className = 'feedback-message correct';
-    }
-    await updateAllChapterProgress();
     return true;
 }
 
@@ -364,51 +376,55 @@ function runApplicationLogic() {
 }
 
 // New global function to handle MC answer checking
-async function checkMCAnswer(interactionId, selectedAnswer, correctAnswerIndex, sectionNumber, mcElement, allOptions) {
+async function checkMCAnswer(interactionId, selectedAnswerIndex, correctAnswerIndex, sectionNumber, mcElement, allOptions) {
     if (!mcElement || mcElement.classList.contains('answered')) return;
 
-    const isCorrect = selectedAnswer === correctAnswerIndex;
+    const isCorrect = selectedAnswerIndex === correctAnswerIndex;
     const feedbackEl = mcElement.querySelector(`#feedback-${interactionId}`);
     
+    // Visuele feedback op de gekozen optie
     allOptions.forEach(opt => {
-        opt.classList.remove('selected', 'correct', 'incorrect');
-        const optId = parseInt(opt.getAttribute('data-id'));
-        if (optId === selectedAnswer) {
-            opt.classList.add('selected');
-            opt.classList.add(isCorrect ? 'correct' : 'incorrect');
+        const optIndex = parseInt(opt.getAttribute('data-id')) - 1;
+        if (optIndex === selectedAnswerIndex) {
+            opt.classList.add('selected', isCorrect ? 'correct' : 'incorrect');
         }
+        opt.style.pointerEvents = 'none'; // Maak alle opties niet-klikbaar
     });
 
-    allOptions.forEach(opt => opt.style.pointerEvents = 'none');
     mcElement.classList.add('answered');
 
-    // Haal volledige interactie data op (inclusief feedbackCorrect/feedbackIncorrect)
+    // Haal de volledige interactiedata op voor de feedbacktekst
     const fullInteractionData = await getInteractionData(sectionNumber, interactionId);
 
-    if (feedbackEl && fullInteractionData) {
-        if (isCorrect && fullInteractionData.feedbackCorrect) {
-            feedbackEl.textContent = fullInteractionData.feedbackCorrect;
-        } else if (!isCorrect && fullInteractionData.feedbackIncorrect) {
-            feedbackEl.textContent = fullInteractionData.feedbackIncorrect;
-        } else if (fullInteractionData.feedback) {
-            feedbackEl.textContent = fullInteractionData.feedback;
-        } else {
-            feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect, probeer het nog eens of ga verder.';
-        }
+    if (feedbackEl && fullInteractionData && fullInteractionData.feedback) {
+        const feedbackText = isCorrect ? fullInteractionData.feedback.correct : fullInteractionData.feedback.incorrect;
+        feedbackEl.textContent = feedbackText || (isCorrect ? 'Correct!' : 'Incorrect.');
         feedbackEl.className = 'feedback ' + (isCorrect ? 'correct' : 'incorrect');
     }
 
     localStorage.setItem(`mc_${sectionNumber}_${interactionId}_answered`, 'true');
     localStorage.setItem(`mc_${sectionNumber}_${interactionId}_correct`, isCorrect ? '1' : '0');
-    localStorage.setItem(`mc_${sectionNumber}_${interactionId}_selected`, selectedAnswer.toString());
+    localStorage.setItem(`mc_${sectionNumber}_${interactionId}_selected`, selectedAnswerIndex.toString());
 
-    await updateAllChapterProgress();
+    if (sectionNumber !== 'dev') {
+        await updateAllChapterProgress();
+    }
 }
 
 // Helper function to get interaction data (needed for feedback messages)
 async function getInteractionData(sectionNumber, interactionId) {
+    // Speciaal geval voor de dev/test-pagina
+    if (sectionNumber === 'dev' && window.devChapterData) {
+        return window.devChapterData.interacties.find(i => i.id === interactionId);
+    }
     try {
-        const res = await fetch(`content/hoofdstuk${sectionNumber}.json`);
+        // Gebruik de globale 'chapters' array om het juiste bestand te vinden
+        const chapterInfo = chapters.find(c => c.section == sectionNumber);
+        if (!chapterInfo) {
+            console.error(`Could not find chapter file for section ${sectionNumber}`);
+            return null;
+        }
+        const res = await fetch(`content/${chapterInfo.file}`);
         if (!res.ok) return null;
         const chapterData = await res.json();
         return chapterData.interacties.find(i => i.id === interactionId);
@@ -536,15 +552,13 @@ function initializeSpecificDragDrop(containerSelector, sectionNumber, dragDropId
             e.preventDefault();
             this.classList.remove('dragover');
             const draggedId = e.dataTransfer.getData('text/plain');
-            // Important: Ensure the draggableElement is sought within the specific drag-drop instance (container)
             const draggableElement = container.querySelector(`.draggable[data-id="${draggedId}"]`);
-            if (draggableElement) {
-                const existingDraggable = target.querySelector('.draggable');
-                if (existingDraggable && existingDraggable !== draggableElement) {
-                    // Return to the general drag container within this specific D&D instance
-                    container.querySelector('.drag-container').appendChild(existingDraggable);
-                }
-                target.appendChild(draggableElement);
+            
+            // Zoek de specifieke container voor gesleepte items
+            const droppedItemsContainer = this.querySelector('.dropped-items-container');
+            if (draggableElement && droppedItemsContainer) {
+                // Voeg het element toe aan de container, vervang niet
+                droppedItemsContainer.appendChild(draggableElement);
             }
         });
     });
@@ -578,64 +592,53 @@ async function checkDragDrop(containerTargetId, sectionNumber, dragDropId) {
       return;
     }
     
-    const chapterRes = await fetch(`content/hoofdstuk${sectionNumber}.json`);
-    if (!chapterRes.ok) {
-        console.error(`Failed to fetch chapter data for section ${sectionNumber} in checkDragDrop`);
-        return;
-    }
-    const chapterJson = await chapterRes.json();
-    const ddData = chapterJson.interacties.find(i => i.id === dragDropId);
+    // Gebruik getInteractionData om de data te krijgen, werkt ook voor 'dev' modus
+    const ddData = await getInteractionData(sectionNumber, dragDropId);
 
     if (!ddData || !ddData.correctCombinations) {
-        console.error(`Drag & drop data or correctCombinations not found for ${dragDropId} in hoofdstuk${sectionNumber}.json`);
+        console.error(`Drag & drop data or correctCombinations not found for ${dragDropId}.`);
         return;
     }
 
-    let correctMap = {};
-    if (Array.isArray(ddData.correctCombinations)) {
-        ddData.correctCombinations.forEach(pair => {
-            correctMap[pair.targetId] = pair.itemId;
-        });
-    } else {
-        correctMap = ddData.correctCombinations;
-    }
+    const correctMap = ddData.correctCombinations; // Verwacht { "itemId": "targetId", ... }
 
     let allCorrect = true;
-    let placedCount = 0;
     const interactiveExercise = container.querySelector('.interactive-exercise');
     const dropTargets = interactiveExercise.querySelectorAll('.drop-target');
-    const currentDropState = [];
+    const allPlacedItems = new Set();
 
+    // Valideer alle items in de drop targets
     dropTargets.forEach(target => {
-        const targetZoneId = target.getAttribute('data-id');
-        const draggableElement = target.querySelector('.draggable');
-        if (draggableElement) {
-            placedCount++;
-            const draggableItemId = draggableElement.getAttribute('data-id');
-            currentDropState.push({ targetId: targetZoneId, itemId: draggableItemId }); // Sla de huidige plaatsing op
-            if (correctMap[targetZoneId] === draggableItemId) {
-                draggableElement.classList.add('correct');
-                draggableElement.classList.remove('incorrect');
+        const targetId = target.getAttribute('data-id');
+        const draggableElements = target.querySelectorAll('.draggable');
+        
+        draggableElements.forEach(item => {
+            const itemId = item.getAttribute('data-id');
+            allPlacedItems.add(itemId); // Registreer dat dit item geplaatst is
+            
+            if (correctMap[itemId] === targetId) {
+                item.classList.add('correct');
+                item.classList.remove('incorrect');
             } else {
                 allCorrect = false;
-                draggableElement.classList.add('incorrect');
-                draggableElement.classList.remove('correct');
+                item.classList.add('incorrect');
+                item.classList.remove('correct');
             }
-        } else {
-            if (Object.keys(correctMap).includes(targetZoneId)) {
-                 allCorrect = false;
-            }
-        }
+        });
     });
-    const initialItemsData = JSON.parse(interactiveExercise.dataset.initialItems || '[]');
-    const totalDraggableItems = initialItemsData.length;
-    if (placedCount < totalDraggableItems) {
+
+    // Controleer of alle items wel geplaatst zijn
+    const initialItemsData = ddData.items || [];
+    if (allPlacedItems.size !== initialItemsData.length) {
         allCorrect = false;
     }
+
+    // Controleer of er geen items meer in de startcontainer zitten
     const itemsInDragContainer = interactiveExercise.querySelectorAll('.drag-container .draggable');
     if (itemsInDragContainer.length > 0) {
         allCorrect = false;
     }
+    
     const feedbackEl = interactiveExercise.querySelector(`#feedback-${sectionNumber}-${dragDropId}`);
     const resetButton = interactiveExercise.querySelector('.btn-reset-dragdrop');
     const checkButton = interactiveExercise.querySelector('.btn-check-dragdrop');
@@ -649,7 +652,7 @@ async function checkDragDrop(containerTargetId, sectionNumber, dragDropId) {
             feedbackEl.className = 'dragdrop-feedback correct';
         }
         localStorage.setItem(storageKeyCorrect, 'true');
-        localStorage.setItem(storageKeyState, JSON.stringify(currentDropState)); // Sla de succesvolle staat op
+        localStorage.setItem(storageKeyState, JSON.stringify(Array.from(allPlacedItems))); // Sla de succesvolle staat op
         if (resetButton) resetButton.style.display = 'none';
         if (checkButton) {
             checkButton.disabled = true;
@@ -669,7 +672,9 @@ async function checkDragDrop(containerTargetId, sectionNumber, dragDropId) {
         if (resetButton) resetButton.style.display = 'inline-block';
         if (checkButton) checkButton.disabled = false;
     }
-    await updateAllChapterProgress();
+    if (sectionNumber !== 'dev') {
+        await updateAllChapterProgress();
+    }
 }
 
 function resetDragDrop(sectionNumber, dragDropId, containerTargetId) {
@@ -735,7 +740,9 @@ function resetDragDrop(sectionNumber, dragDropId, containerTargetId) {
 
     localStorage.removeItem(`dragdrop_${sectionNumber}_${dragDropId}_correct`);
     localStorage.removeItem(`dragdrop_${sectionNumber}_${dragDropId}_state`); // Verwijder ook de state
-    updateAllChapterProgress(); 
+    if (sectionNumber !== 'dev') {
+        updateAllChapterProgress();
+    }
 }
 
 // Migratie functie voor oude ID's naar nieuwe format
@@ -804,15 +811,15 @@ function initializeMCInteraction(containerId, interactionData, sectionNumber) {
         return;
     }
     const options = mcContainer.querySelectorAll('li.mc-option');
-    const mcElement = mcContainer.querySelector('.mc-interaction'); // This is the element with id like 'mc-reflection1'
+    const mcElement = mcContainer.querySelector('.mc-interaction');
 
     options.forEach(option => {
         option.addEventListener('click', async function () {
             if (mcElement && mcElement.classList.contains('answered')) return;
 
-            const selectedAnswerValue = parseInt(this.getAttribute('data-id'));
-            // Call checkMCAnswer with the necessary details
-            await checkMCAnswer(interactionData.id, selectedAnswerValue, interactionData.correctAnswer, sectionNumber, mcElement, options);
+            const selectedAnswerIndex = parseInt(this.getAttribute('data-id')) - 1; // Corrigeer naar 0-gebaseerd
+            // Call checkMCAnswer with the correct 0-based index
+            await checkMCAnswer(interactionData.id, selectedAnswerIndex, interactionData.correct_answer, sectionNumber, mcElement, options);
         });
     });
 }
@@ -870,11 +877,19 @@ async function saveCriticalAnalysis(sectionNumber, interactionId) {
         feedbackEl.className = 'feedback-message correct';
     }
 
-    const container = document.getElementById(`hoofdstuk${sectionNumber}-${interactionId}`);
+    // De container ID is anders in de dev-modus
+    const containerId = sectionNumber === 'dev' 
+        ? `dev-${interactionId}` 
+        : `hoofdstuk${sectionNumber}-${interactionId}`;
+    const container = document.getElementById(containerId);
+
     if (container && typeof renderInteraction === 'function') {
         setTimeout(async () => {
-             // Ensure currentChapterData is available and find the interaction data
-            const chapterData = window.currentChapterData || await fetchChapterData(sectionNumber); 
+             // Haal de juiste data op (uit window.devChapterData of via fetch)
+            const chapterData = sectionNumber === 'dev' 
+                ? window.devChapterData 
+                : await fetchChapterData(sectionNumber);
+
             if (chapterData && chapterData.interacties) {
                 const freshInteractionData = chapterData.interacties.find(i => i.id === interactionId);
                 if (freshInteractionData) {
@@ -883,6 +898,43 @@ async function saveCriticalAnalysis(sectionNumber, interactionId) {
             }
         }, 600);
     }
-    updateAllChapterProgress();
+    if (sectionNumber !== 'dev') {
+        updateAllChapterProgress();
+    }
 }
+
+/**
+ * Wist alle voortgang die specifiek is voor de 'Interacties Testen' modus.
+ */
+function clearDevProgress() {
+    if (!confirm("Weet je zeker dat je de voortgang van deze testpagina wilt wissen?")) {
+        return;
+    }
+
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        // Zoek naar keys die het '_dev_' patroon bevatten.
+        if (key.includes('_dev_')) {
+            keysToRemove.push(key);
+        }
+    }
+
+    keysToRemove.forEach(key => {
+        localStorage.removeItem(key);
+        devLog(`Removed dev key: ${key}`);
+    });
+
+    // Her-render de testpagina om de wijzigingen te tonen.
+    const mainContainer = document.querySelector('main.container');
+    if (window.devChapterData && mainContainer && typeof renderStandaloneChapter === 'function') {
+        renderStandaloneChapter(window.devChapterData, mainContainer);
+        alert("De voortgang van de testpagina is gewist.");
+    } else {
+        // Fallback als er iets misgaat
+        window.location.reload();
+    }
+}
+
+
 

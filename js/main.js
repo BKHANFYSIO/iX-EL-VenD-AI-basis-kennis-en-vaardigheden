@@ -150,4 +150,60 @@ function populateUI(config) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', initializeElearning); 
+async function initializeDevMode() {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        const devButton = document.getElementById('dev-mode-button');
+        if (devButton) {
+            devButton.style.display = 'inline-block';
+            devButton.addEventListener('click', async () => {
+                try {
+                    const response = await fetch('content/voorbeeld_interacties.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const chapterData = await response.json();
+                    
+                    // Sla de data globaal op voor de testomgeving
+                    window.devChapterData = chapterData;
+
+                    const mainContainer = document.querySelector('main.container');
+                    const sidebar = document.querySelector('.sidebar-nav');
+                    const header = document.querySelector('header');
+                    
+                    // Verberg de normale content en sidebar
+                    mainContainer.setAttribute('data-original-content', mainContainer.innerHTML);
+                    sidebar.style.display = 'none';
+
+                    // Verwijder eventuele oude knoppen voordat we nieuwe toevoegen
+                    header.querySelectorAll('.dev-mode-btn').forEach(btn => btn.remove());
+
+                    // Toon een "Terug" knop in de header
+                    const backButton = document.createElement('button');
+                    backButton.textContent = 'Terug naar E-learning';
+                    backButton.className = 'button button-primary dev-mode-btn';
+                    backButton.onclick = () => window.location.reload();
+                    header.appendChild(backButton);
+
+                    // Toon een "Wis Voortgang" knop in de header
+                    const clearButton = document.createElement('button');
+                    clearButton.textContent = 'Wis Test Voortgang';
+                    clearButton.className = 'button button-secondary dev-mode-btn';
+                    clearButton.style.marginLeft = '10px';
+                    clearButton.onclick = () => clearDevProgress();
+                    header.appendChild(clearButton);
+                    
+                    // Render de dev content
+                    renderStandaloneChapter(chapterData, mainContainer);
+
+                } catch (error) {
+                    console.error('Fout bij laden van interactievoorbeelden:', error);
+                }
+            });
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeElearning();
+    initializeDevMode();
+}); 

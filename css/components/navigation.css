@@ -6,7 +6,7 @@
 .header-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-purple, #6C3EB6);
+  color: var(--primary-purple);
   margin: 0;
   line-height: 1.2;
   text-align: center;

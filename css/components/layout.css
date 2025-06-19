@@ -38,7 +38,7 @@
 }
 
 header {
-    background: #fff;
+    background: var(--white);
     border-bottom: 1px solid var(--medium-gray);
     box-shadow: var(--shadow);
     padding: 0;

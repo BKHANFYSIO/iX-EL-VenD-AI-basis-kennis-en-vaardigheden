@@ -1,0 +1,84 @@
+{
+    "title": "Voorbeelden van Interacties",
+    "hoofdstuk": "voorbeelden",
+    "content": [
+        {
+            "type": "text",
+            "content": "Op deze pagina kun je alle beschikbare interactietypes binnen deze e-learning uitproberen. Dit helpt je om te zien hoe ze werken en hoe je erop kunt reageren."
+        }
+    ],
+    "interacties": [
+        {
+            "id": "voorbeeld_mc_1",
+            "type": "mc",
+            "titel": "Meerkeuze Vraag",
+            "vraag": "Dit is een voorbeeld van een multiple-choice vraag. Wat is de hoofdstad van Frankrijk?",
+            "options": [
+                "Berlijn",
+                "Madrid",
+                "Parijs",
+                "Rome"
+            ],
+            "correct_answer": 2,
+            "feedback": {
+                "correct": "Goed zo! Parijs is inderdaad de hoofdstad van Frankrijk.",
+                "incorrect": "Helaas, dat is niet het juiste antwoord. Het correcte antwoord is Parijs."
+            }
+        },
+        {
+            "id": "voorbeeld_reflection_1",
+            "type": "reflection",
+            "titel": "Reflectie",
+            "vraag": "Dit is een voorbeeld van een reflectievraag. Wat zijn uw gedachten over het gebruik van AI in de gezondheidszorg?",
+            "placeholder": "Begin hier met typen...",
+            "min_words": 10
+        },
+        {
+            "id": "voorbeeld_dragdrop_1",
+            "type": "dragdrop",
+            "vraag": "Dit is een voorbeeld van een drag-en-drop interactie. Sleep de AI-tools naar de juiste categorie.",
+            "items": [
+                { "id": "item1", "label": "ChatGPT" },
+                { "id": "item2", "label": "Gemini" },
+                { "id": "item3", "label": "Claude" }
+            ],
+            "targets": [
+                { "id": "cat1", "label": "Conversational AI" },
+                { "id": "cat2", "label": "Beeldherkenning" }
+            ],
+            "correctCombinations": {
+                "item1": "cat1",
+                "item2": "cat1",
+                "item3": "cat1"
+            },
+            "feedback": {
+                "correct": "Uitstekend! Je hebt alle tools correct gecategoriseerd.",
+                "incorrect": "Bijna goed. Probeer het nog eens om de juiste combinaties te vinden."
+            }
+        },
+        {
+            "id": "voorbeeld_selfassessment_1",
+            "type": "selfassessment",
+            "vraag": "Dit is een voorbeeld van een self-assessment. Hoe zeker voelt u zich over het toepassen van deze kennis?",
+            "competences": [
+                "Veranderen", "Vinden", "Vertrouwen", "Vaardig gebruiken", "Vertellen"
+            ]
+        },
+        {
+            "id": "voorbeeld_critical_analysis_1",
+            "type": "critical_analysis",
+            "vraag": "Analyseer het volgende scenario en geef uw oordeel.",
+            "scenario": "Een zorginstelling overweegt een AI-systeem te implementeren dat artsen helpt bij het diagnosticeren van huidaandoeningen op basis van foto's. Het systeem heeft een nauwkeurigheid van 95%, maar is getraind op data die voornamelijk afkomstig is van patiënten met een lichte huidskleur.",
+            "dropdown": [
+                "Technologie A: Beeldherkenning voor diagnostiek",
+                "Technologie B: Spraakherkenning voor notities",
+                "Technologie C: NLP voor samenvattingen"
+            ],
+            "vragen": [
+                { "id": "ca_q1", "vraag": "Wat zijn de potentiële voordelen van dit AI-systeem?" },
+                { "id": "ca_q2", "vraag": "Wat zijn de belangrijkste ethische risico's en vooroordelen (bias)?" },
+                { "id": "ca_q3", "vraag": "Welke stappen moet de zorginstelling nemen voordat ze dit systeem implementeren?" }
+            ]
+        }
+    ]
+} 

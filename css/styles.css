@@ -48,6 +48,62 @@
   --background-white: #FFFFFF;
   --background-light-gray: #F8F9FA;
   --background-medium-gray: #E9ECEF;
+
+  /* Nieuwe variabelen voor een robuuster thema */
+  --black: #000000;
+  
+  /* Neutrale en grijstinten */
+  --text-medium: #666666; /* Voor minder belangrijke tekst, ondertitels */
+  --text-light: #999999; /* Voor placeholders, uitgeschakelde tekst */
+  --border-color-light: #dddddd;
+  --border-color-medium: #dee2e6;
+  --border-color-dark: #ced4da;
+  --border-color-extralight: #eeeeee;
+  --border-color-dashed: #bdc3c7;
+  
+  /* Statuskleuren: Success, Error, Info, Warning */
+  --success-text: #155724;
+  --success-background: #d4edda;
+  --success-border: #28a745;
+  --success-border-light: #c3e6cb;
+  --success-background-light: #e6ffe6;
+  --success-background-lighter: #f0fff0;
+  
+  --error-text: #721c24;
+  --error-text-strong: #D32F2F;
+  --error-background: #f8d7da;
+  --error-background-light: #FFF0F0;
+  --error-background-lighter: #fff0f0;
+  --error-border: #dc3545;
+  --error-border-light: #f5c6cb;
+
+  --info-text: #004085;
+  --info-background: #e3f2fd;
+  --info-border: #2196f3;
+  --info-blue: #3498db;
+  --info-blue-dark: #2980b9;
+  
+  --warning-background: #fffbe6;
+  --warning-border: #f8c000;
+
+  /* Quiz & Accentkleuren */
+  --accent-color-primary: #3a6cf6;
+  --accent-color-secondary: #3ad29f;
+  --accent-color-error: #f66c6c;
+  --accent-color-text: #2a2a2a;
+  --accent-color-text-darker: #222;
+  --accent-color-background-light: #f6f8fc;
+  --accent-color-background-medium: #eaf1ff;
+  --accent-color-background-dark: #b7c7f6;
+  --accent-color-secondary-dark: #2bbf8a;
+  --accent-color-error-background: #fff0f0;
+
+  /* Aanvullende merkkleuren */
+  --accent-purple-light: #ede9fe;
+  --accent-purple-medium: #a78bfa;
+  --text-dark-blue: #34495e;
+  --text-dark-blue-2: #2c3e50;
+  --accent-teal: #00a19a;
 }
 
 html {
@@ -308,7 +364,7 @@ img {
 
 .category-content li:before {
     content: "•";
-    color: #3498db;
+    color: var(--info-blue);
     position: absolute;
     left: 0;
 }
@@ -328,7 +384,7 @@ img {
 }
 
 .certificate-info h4 {
-    color: #2c3e50;
+    color: var(--text-dark-blue-2);
     margin: 1.5rem 0 1rem;
 }
 
@@ -339,7 +395,7 @@ img {
 
 .source {
     font-size: 0.85em;
-    color: #666;
+    color: var(--text-medium);
     font-style: italic;
     margin-left: 0.5em;
 }
@@ -372,7 +428,7 @@ img {
 
 .floating-hamburger .progress-ring circle {
   fill: none;
-  stroke: #ffffff;
+  stroke: var(--white);
   stroke-width: 4;
   stroke-linecap: round;
   transform: rotate(-90deg);
@@ -391,7 +447,7 @@ img {
 .floating-hamburger .hamburger-lines span {
   width: 20px;
   height: 2px;
-  background: #ffffff;
+  background: var(--white);
   transition: 0.3s;
 }
 
@@ -428,9 +484,9 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
 }
 
 .btn-clear-progress:hover {
-    background-color: #FFF0F0; /* Lichte rood/roze achtergrond */
-    color: #D32F2F; /* Sterkere rode tekstkleur */
-    border-color: #D32F2F; /* Sterkere rode randkleur */
+    background-color: var(--error-background-light); /* Lichte rood/roze achtergrond */
+    color: var(--error-text-strong); /* Sterkere rode tekstkleur */
+    border-color: var(--error-text-strong); /* Sterkere rode randkleur */
     box-shadow: 0 4px 16px rgba(211,47,47,0.12);
     transform: scale(1.04);
 }
@@ -485,23 +541,23 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
 }
 
 #quiz-results-container.results-excellent {
-    border-top: 5px solid #28a745;
+    border-top: 5px solid var(--success-border);
 }
 
 #quiz-results-container.results-passed {
-    border-top: 5px solid #28a745;
+    border-top: 5px solid var(--success-border);
 }
 
 #quiz-results-container.results-warning {
-    border-top: 5px solid #ffc107;
+    border-top: 5px solid var(--primary-yellow);
 }
 
 #quiz-results-container.results-failed {
-    border-top: 5px solid #dc3545;
+    border-top: 5px solid var(--error-border);
 }
 
 .results-header h2 {
-    color: var(--primary-purple);
+    color: var(--dark-gray);
     font-size: 2em;
     margin-bottom: 25px;
 }
