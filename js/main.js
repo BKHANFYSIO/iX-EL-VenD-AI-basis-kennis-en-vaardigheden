@@ -60,9 +60,12 @@ function populateUI(config) {
     const mainContainer = document.querySelector('main.container');
     const headerTitle = document.querySelector('.header-title');
 
-    // Update de algemene e-learning titel in de header
-    if (headerTitle && config.titel) {
-        headerTitle.textContent = config.titel;
+    // Update de algemene e-learning titel in de header en document title
+    if (config.titel) {
+        if (headerTitle) {
+            headerTitle.textContent = config.titel;
+        }
+        document.title = config.titel;
     }
 
     if (!sidebarChaptersContainer || !mainContainer) {
