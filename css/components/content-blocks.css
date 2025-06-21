@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Accent Blok Component
+   Content Blocks Components (Accent Blokken & Accordions)
    ========================================================================== */
 
 .accent-blok {
@@ -83,6 +83,27 @@
      background-image: url('../../images/icons/lightbulb-on.svg'); /* Zorg dat dit icoon bestaat */
 }
 
+.accent-blok--quote {
+    border-left-color: var(--success-green);
+}
+.accent-blok--quote .accent-blok-titel,
+.accent-blok--quote p strong {
+    color: var(--success-green);
+}
+.accent-blok--quote::before {
+    content: '"';
+    background-image: none;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--success-green);
+    opacity: 0.2;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .accent-blok {
@@ -97,4 +118,64 @@
         top: 0.5rem;
         right: 0.5rem;
     }
-} 
+}
+
+/* ==========================================================================
+   Accordion Component
+   ========================================================================== */
+
+/* Accordion voor VRAAK criteria en andere uitklapbare content */
+.accordion {
+    margin-bottom: 1rem;
+}
+
+.accordion-toggle {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    transition: 0.4s;
+    border-radius: var(--border-radius-standard);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.accordion-toggle:hover {
+    background-color: #d8dbe0;
+}
+
+.accordion-toggle.open {
+    background-color: var(--medium-gray);
+}
+
+.accordion-toggle .triangle {
+    transition: transform 0.3s ease;
+}
+
+.accordion-toggle.open .triangle {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border: 1px solid transparent;
+    border-top: none;
+    border-radius: 0 0 var(--border-radius-standard) var(--border-radius-standard);
+}
+
+.accordion-content.open {
+    max-height: 1000px; /* Increased for longer content like VRAAK criteria */
+    padding: 18px;
+    border-color: var(--medium-gray);
+}

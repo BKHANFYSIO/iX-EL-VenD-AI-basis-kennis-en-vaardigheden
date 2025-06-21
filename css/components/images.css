@@ -15,6 +15,7 @@
     height: auto;
     display: block;
     border-radius: 8px; /* Standaard afronding voor alle afbeeldingen */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Standaard schaduw voor consistentie */
 }
 
 .image-container figcaption {
@@ -45,6 +46,7 @@
 
 .img-framed-responsive img {
     border-radius: 0;
+    box-shadow: none; /* Verwijder de standaard schaduw als er een frame is */
 }
 
 /* 2. Gesplitst scherm: afbeelding en tekst */
@@ -74,14 +76,18 @@
 .img-polaroid {
     background-color: var(--white);
     border: 1px solid var(--border-color-light);
-    padding: 1rem;
-    padding-bottom: 3rem; /* Meer ruimte onderaan voor de 'polaroid' look */
+    padding: 1rem 1rem 3.5rem 1rem; /* Meer padding-bottom voor tekst */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transform: rotate(-3deg);
     transition: transform 0.2s ease-in-out;
     width: fit-content; /* Breedte aanpassen aan inhoud */
     max-width: 400px; /* Maximale breedte instellen */
     margin-left: 2rem; /* Een beetje ruimte geven */
+    position: relative; /* Nodig voor absolute positionering van de figcaption */
+}
+
+.img-polaroid img {
+    box-shadow: none; /* Verwijder de standaard schaduw voor de polaroid-afbeelding zelf */
 }
 
 .img-polaroid:hover {
@@ -91,40 +97,112 @@
 
 .img-polaroid figcaption {
     position: absolute;
-    bottom: 1rem;
+    bottom: 1rem; /* Plaats 1rem vanaf de onderkant */
     left: 1rem;
     right: 1rem;
     text-align: center;
     font-style: normal;
     color: var(--dark-gray);
+    line-height: 1.4; /* Betere leesbaarheid voor meerdere regels */
 }
 
 /* 4. Afbeeldingen Grid */
-.image-grid {
+.image-grid-container {
     display: grid;
     gap: 1.5rem;
     margin: 2rem 0;
 }
 
-.image-grid .image-container {
-    margin: 0; /* Reset margin for items in grid */
+.image-grid-container.columns-2 {
+    grid-template-columns: repeat(2, 1fr);
 }
 
-/* Grid met 2 kolommen */
-.image-grid-2-col {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+.image-grid-container.columns-3 {
+    grid-template-columns: repeat(3, 1fr);
 }
 
-/* Grid met 3 kolommen */
-.image-grid-3-col {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+.image-grid-container .image-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
-@media (min-width: 768px) {
-    .image-grid-2-col {
+.image-grid-container .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+.image-caption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #555;
+    font-style: normal;
+    text-align: center;
+}
+
+.caption-text {
+    display: block;
+}
+
+.caption-source {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.caption-source a {
+    color: var(--primary-purple);
+    text-decoration: none;
+}
+
+.caption-source a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive media queries voor de grid */
+@media (max-width: 768px) {
+    .image-grid-container.columns-3 {
         grid-template-columns: repeat(2, 1fr);
     }
-    .image-grid-3-col {
-        grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 480px) {
+    .image-grid-container.columns-2,
+    .image-grid-container.columns-3 {
+        grid-template-columns: 1fr;
     }
+}
+
+.img-polaroid {
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+    transform: rotate(-2deg);
+    transition: transform 0.2s ease-in-out;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-polaroid:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+.img-polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.img-polaroid figcaption {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive; /* Zorg ervoor dat dit lettertype is geladen */
+    color: #333;
 } 

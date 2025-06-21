@@ -1,9 +1,8 @@
 {
-  "titel": "Hoofdstuk 2: Wat is AI eigenlijk?",
   "content": [
     {
       "type": "info-card",
-      "titel": "Welkom bij het tweede hoofdstuk!",
+      "titel": "AI onder de motorkap: Wat is het écht?",
       "tekst": "In hoofdstuk 1 heb je een eerste indruk gekregen van de AI-tools die relevant zijn voor jouw vak. Maar voordat we dieper duiken in welke tools je het beste kunt kiezen, is het essentieel om een stevige basis te leggen. Want wat is die mysterieuze 'AI' nu eigenlijk precies? Je gebruikt het waarschijnlijk vaker dan je denkt, bijvoorbeeld als Spotify een playlist voor je samenstelt of je telefoon je gezicht herkent."
     },
     {
@@ -50,10 +49,10 @@
     },
     {
       "type": "content-text",
-      "tekst": "Een van de meest fascinerende aspecten van AI is het vermogen om te leren. Dit gebeurt voornamelijk via *Machine Learning* en de geavanceerdere vorm *Deep Learning*."
+      "tekst": "Een van de meest fascinerende aspecten van AI is het vermogen om te leren. In dit stuk richten we ons op <strong>Machine Learning</strong> en de meer geavanceerde vorm <strong>Deep Learning</strong> – in de volgende twee kaders (Kader 1 voor ML, Kader 2 voor DL) lees je met een fysiotherapie‑analogie hoe deze methodes werken. Deze uitleg is voldoende om de kernbegrippen te begrijpen. Daarbij is het goed om te weten dat er daarnaast tal van andere krachtige leermethoden bestaan – zoals reinforcement learning, meta‑learning, neuro‑symbolische AI en neuro‑evolution – die continu verder worden ontwikkeld."
     },
     {
-      "type": "benefits-grid",
+      "type": "card-grid",
       "items": [
         { "titel": "Machine Learning (ML)", "beschrijving": "Dit is een techniek waarbij algoritmes zichzelf verbeteren door te leren van voorbeelden uit data, zonder dat elke stap expliciet is geprogrammeerd.", "voorbeeld": { "titel": "Analogie uit de fysiotherapie: Spierversterking", "tekst": "Vergelijk Machine Learning met spiertraining. Net zoals je spieren sterker worden door herhaalde training, wordt een ML-model 'slimmer' en nauwkeuriger door het te trainen met heel veel data." }},
         { "titel": "Deep Learning (DL)", "beschrijving": "Dit is een specifieke, geavanceerde vorm van ML die gebruikmaakt van gelaagde <em>neurale netwerken</em>, losjes geïnspireerd op de werking van het menselijk brein. Door de vele lagen kan het systeem zeer complexe patronen herkennen, bijvoorbeeld in beeld of geluid.", "voorbeeld": { "titel": "Analogie uit de fysiotherapie: Het zenuwstelsel", "tekst": "Denk aan ons zenuwstelsel. Simpele reflexen worden op een lager niveau verwerkt (ruggenmerg), terwijl complexe beslissingen in de hersenschors plaatsvinden. Een 'diep' neuraal netwerk werkt ook met lagen die informatie verwerken, van simpel naar steeds complexer." }}

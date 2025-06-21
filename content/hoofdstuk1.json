@@ -1,5 +1,4 @@
 {
-  "titel": "Introductie – AI: Jouw Toekomst, Jouw Kracht!",
   "content": [
     {
       "type": "info-card",
@@ -65,6 +64,16 @@
       "bron": {
         "naam": "Intern onderzoek Avans Hogeschool",
         "url": "https://www.avans.nl/over-avans/nieuws/details%3Fid%3Durn:han:bin:prg:pub:22261"
+        }
+    },
+    {
+      "type": "accent-blok",
+      "variant": "statistiek",
+      "titel": "AI als studiehulpmiddel - de cijfers:",
+      "tekst": "Studenten scoorden <strong>48% hoger</strong> op een examen met het gebruik van een basismodel van AI in de voorbereiding. Echter, als ze vervolgens zonder AI moeten voorbereiden scoren ze <strong>17% lager</strong> dan de controlegroep. Een derde groep met een AI-Tutor GPT scoorde echter <strong>127% hoger</strong> en had ook betere kennisretentie.",
+      "bron": {
+        "naam": "Bastani et al., 2024",
+        "url": "https://hamsabastani.github.io/education_llm.pdf"
         }
     },
     {

@@ -1,93 +1,222 @@
 {
-  "titel": "Adoptie & Gedrag - Technologie in de Praktijk",
   "content": [
     {
       "type": "info-card",
-      "titel": "Het Technology Acceptance Model (TAM)",
-      "tekst": "Waarom worden sommige technologieën snel omarmd, terwijl andere nooit echt doorbreken? Het Technology Acceptance Model (TAM) biedt inzicht in hoe mensen technologie accepteren en gebruiken. Dit model is een eenvoudig en praktisch model voor het begrijpen van technologische adoptie in de zorg."
+      "classes": "chapter-intro-card",
+      "titel": "Welkom bij Hoofdstuk 5: Creatief & bouwen met AI",
+      "tekst": "In dit hoofdstuk duiken we dieper in de creatieve en praktische toepassingen van AI, verder dan alleen tekstgeneratie. We verkennen hoe je AI kunt inzetten om visuele content te creëren, te 'vibe-coden' en zelfs kleine tools te bouwen met behulp van Generative Pre-trained Transformers (GPT's). Dit document dient als jouw gids voor het benutten van AI's creatieve kracht."
+    },
+    {
+      "type": "section-title",
+      "titel": "5.1 Beeld-AI voor visualisaties (afbeeldingen/video)"
     },
     {
       "type": "content-text",
-      "tekst": "Hieronder zie je het TAM-model visueel weergegeven, gevolgd door een uitleg van de kernconcepten."
+      "tekst": "Beeld-AI is een revolutionaire ontwikkeling die het mogelijk maakt om met behulp van tekstuele prompts indrukwekkende afbeeldingen en zelfs video's te genereren. Modellen zoals Midjourney, DALL-E en Stable Diffusion zijn hier voorbeelden van. Ze openen de deuren naar onbeperkte creativiteit, van conceptuele kunst tot realistische scènes.\n\n**Hoe werkt het?**\nJe beschrijft wat je wilt zien in een \"prompt\". De AI interpreteert deze beschrijving en genereert een bijpassende afbeelding. De kwaliteit van de output hangt sterk af van de specificiteit en creativiteit van je prompt."
     },
     {
-      "type": "image-grid",
-      "kolommen": 1,
-      "afbeeldingen": [
+      "type": "info-card-list",
+      "titel": "Toepassingen van Beeld-AI",
+      "inhoud": "Beeld-AI biedt een breed scala aan toepassingsmogelijkheden:",
+      "lijst": [
         {
-          "src": "images/tam_model.png",
-          "alt": "Technology Acceptance Model (TAM)",
-          "titel": "Het Technology Acceptance Model"
+          "titel": "Marketing en Design",
+          "tekst": "Snel concepten visualiseren, unieke beelden creëren voor campagnes."
+        },
+        {
+          "titel": "Educatie",
+          "tekst": "Lesmateriaal verrijken met op maat gemaakte illustraties, complexe concepten visueel uitleggen."
+        },
+        {
+          "titel": "Prototyping",
+          "tekst": "Productideeën snel visualiseren zonder de noodzaak van designsoftware of modellen."
         }
       ]
     },
     {
-      "type": "info-card",
-      "titel": "Kernconcepten van TAM",
-      "content": [
+      "type": "info-card-list",
+      "titel": "Tips voor effectieve prompts",
+      "inhoud": "De kwaliteit van je afbeeldingen hangt af van je prompt. Hier zijn enkele tips:",
+      "lijst": [
         {
-          "type": "card-grid",
-          "titel": "",
-          "items": [
-            {
-              "titel": "Perceived Usefulness (U) - Waargenomen Nut",
-              "beschrijving": "De mate waarin iemand gelooft dat het gebruik van een technologie zijn of haar werkprestaties verbetert. Dit is de belangrijkste factor voor adoptie.",
-              "voorbeeld": {
-                "titel": "Praktijkvoorbeeld",
-                "tekst": "Een fysiotherapeut die gelooft dat een app voor thuisoefeningen de therapietrouw van patiënten verhoogt."
-              }
-            },
-            {
-              "titel": "Perceived Ease of Use (E) - Waargenomen Gebruiksgemak",
-              "beschrijving": "De mate waarin iemand gelooft dat het gebruik van een technologie weinig inspanning kost. Dit is de tweede belangrijkste factor voor adoptie.",
-              "voorbeeld": {
-                "titel": "Praktijkvoorbeeld",
-                "tekst": "Een patiënt die een app makkelijk vindt te gebruiken omdat deze intuïtief is opgezet."
-              }
-            }
-          ]
+          "titel": "Wees specifiek",
+          "tekst": "Beschrijf het onderwerp, de stijl, de kleuren, de stemming en de compositie."
+        },
+        {
+          "titel": "Gebruik trefwoorden",
+          "tekst": "Denk aan kunststijlen (kubisme, impressionisme), namen van kunstenaars, cameraperspectieven (close-up, groothoek)."
+        },
+        {
+          "titel": "Negatieve prompts",
+          "tekst": "Soms kun je specificeren wat je *niet* wilt zien (bijv. \"geen wazige achtergrond\")."
         }
       ]
     },
     {
-      "type": "info-card",
-      "titel": "Het Adoptieproces",
-      "tekst": "Het TAM-model laat zien dat adoptie een proces is dat wordt beïnvloed door verschillende factoren:",
-      "list_items": [
-        "Attitude: De algemene indruk van de technologie, gevormd door U (Perceived Usefulness) en E (Perceived Ease of Use)",
-        "Behavioral Intention: De intentie om de technologie te gebruiken",
-        "Actual System Use: Het daadwerkelijke gebruik van de technologie"
+      "type": "content-text",
+      "tekst": "**AI in de fysiotherapie:** Beeld-AI kan fysiotherapeuten helpen bij het creëren van gepersonaliseerde oefenbladen met visuele instructies, het visualiseren van anatomische structuren voor patiëntvoorlichting, of het ontwerpen van infographics over blessurepreventie.\n\n**AI in het leren:** Voor studenten biedt beeld-AI de mogelijkheid om visuele samenvattingen van studiemateriaal te maken, complexe onderwerpen te illustreren of zelfs conceptuele kunst te genereren die helpt bij het onthouden van feiten."
+    },
+    {
+      "type": "section-title",
+      "titel": "5.2 Vibe-coding: AI als jouw programmeerassistent"
+    },
+    {
+      "type": "content-text",
+      "tekst": "\"Vibe-coding\" is een term die de laatste tijd opduikt en verwijst naar het gebruik van AI om te helpen bij het schrijven, debuggen en begrijpen van code, vaak gebaseerd op een 'vibe' of een hoge-level beschrijving van wat je wilt bereiken. Denk aan tools zoals GitHub Copilot, of simpelweg het vragen aan een chatbot om code voor je te genereren.\n\n**Wat is het?**\nAI kan codefragmenten voorstellen, hele functies genereren, code van de ene programmeertaal naar de andere vertalen, fouten opsporen en zelfs uitleg geven over complexe code."
+    },
+    {
+      "type": "info-card-list",
+      "titel": "Voordelen van Vibe-coding",
+      "inhoud": "De voordelen van vibe-coding zijn divers:",
+      "lijst": [
+        {
+          "titel": "Snelheid",
+          "tekst": "Versneld ontwikkelproces door automatisering van repetitieve taken."
+        },
+        {
+          "titel": "Efficiëntie",
+          "tekst": "Minder tijd kwijt aan syntaxfouten en het zoeken naar oplossingen."
+        },
+        {
+          "titel": "Leren",
+          "tekst": "Een uitstekende manier om nieuwe programmeertalen of concepten te leren door AI om voorbeelden of uitleg te vragen."
+        }
       ]
     },
     {
-      "type": "info-card",
-      "titel": "Praktische Toepassing",
-      "tekst": "Als fysiotherapeut kun je het TAM-model gebruiken om:",
-      "list_items": [
-        "Bewuster te kiezen welke technologie je wilt implementeren",
-        "De acceptatie van technologie bij collega's te bevorderen door het nut en gebruiksgemak te benadrukken",
-        "Patiënten te helpen bij het accepteren en gebruiken van technologie door aandacht te besteden aan hun perceptie van nut en gebruiksgemak"
+      "type": "content-text",
+      "tekst": "**Bolt.new:** Een mooi voorbeeld van een platform dat de kracht van AI en low-code/no-code combineert, is [Bolt.new](https://bolt.new/). Met Bolt.new kun je snel en zonder diepgaande programmeerkennis kleine webapplicaties bouwen door middel van een intuïtieve interface en slimme assistentie. Dit past perfect bij het concept van 'bouwen met AI'.\n\n**AI in de fysiotherapie:** Stel je voor dat je snel een kleine webapplicatie wilt maken om patiëntvoortgang bij te houden, of een eenvoudige app die oefeningen categoriseert en aanbeveelt op basis van patiëntgegevens. Met vibe-coding en platforms zoals Bolt.new kunnen fysiotherapeuten dergelijke tools creëren zonder een professionele ontwikkelaar in te huren.\n\n**AI in het leren:** Studenten kunnen AI gebruiken om programmeerconcepten te oefenen, kleine scripts te genereren voor data-analyse, of zelfs eenvoudige webpagina's te bouwen om hun kennis te demonstreren. De focus ligt op het begrijpen van de logica en het snel tot resultaat komen."
+    },
+    {
+      "type": "section-title",
+      "titel": "5.3 GPT: Meer dan alleen tekst"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Generative Pre-trained Transformers (GPT's) zijn krachtige AI-modellen die bekend staan om hun vermogen om mensachtige tekst te genereren. Maar hun toepassingen reiken veel verder dan alleen schrijven. Je kunt GPT's gebruiken om gestructureerde data te genereren, interactieve ervaringen te creëren en zelfs eenvoudige 'apps' binnen de chatbotomgeving te simuleren.\n\n**De kracht van prompt engineering:** De sleutel tot het benutten van de volledige potentie van GPT's is \"prompt engineering\" – de kunst van het formuleren van de juiste instructies om de gewenste output te krijgen. Dit omvat niet alleen wat je wilt, maar ook in welk formaat, welke stijl, en met welke beperkingen.\n\n**Functies en modellen:** Sommige geavanceerde chatbotplatforms bieden specifieke functies aan, zoals een 'canvas'-modus voor visuele output of de mogelijkheid om een specifiek model te kiezen dat beter is in bepaalde taken (bijv. code genereren vs. creatief schrijven). Het is belangrijk om deze opties te verkennen als ze beschikbaar zijn in de chatbot die je gebruikt."
+    },
+    {
+      "type": "info-card-list",
+      "titel": "AI in de fysiotherapie",
+      "inhoud": "Enkele toepassingen voor GPT's in de fysiotherapie:",
+      "lijst": [
+        {
+          "titel": "Interactieve patiëntvoorlichting",
+          "tekst": "Een GPT kan fungeren als een chatbot die veelgestelde vragen van patiënten beantwoordt over blessures of behandelingen, op maat gemaakte informatie verschaft."
+        },
+        {
+          "titel": "Gepersonaliseerde oefenschema's",
+          "tekst": "Hoewel dit later uitgebreider aan bod komt, kunnen GPT's nu al tekstgebaseerde oefenplannen genereren op basis van patiëntprofielen en doelen."
+        },
+        {
+          "titel": "Scenariotraining",
+          "tekst": "Studenten fysiotherapie kunnen GPT's gebruiken om realistische patiëntcases te simuleren voor oefening in diagnose en communicatie."
+        }
       ]
+    },
+    {
+      "type": "info-card-list",
+      "titel": "AI in het leren",
+      "inhoud": "GPT's kunnen je leerproces op diverse manieren ondersteunen:",
+      "lijst": [
+        {
+          "titel": "Flashcard-generatie",
+          "tekst": "Genereer automatisch flashcards over een specifiek onderwerp."
+        },
+        {
+          "titel": "Samenvattingstools",
+          "tekst": "Vat lange teksten samen in kernpunten."
+        },
+        {
+          "titel": "Interactieve quizzes",
+          "tekst": "Creëer gepersonaliseerde quizvragen of scenario's om kennis te testen."
+        },
+        {
+          "titel": "Simuleerde gesprekken",
+          "tekst": "Oefen een vreemde taal of bereid je voor op interviews door met de AI te 'praten'."
+        }
+      ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "**Let op:** In de vervolg e-learning modules zal dieper worden ingegaan op de geavanceerde mogelijkheden van AI in specifieke domeinen zoals de fysiotherapie en geavanceerde leerstrategieën."
+    },
+    {
+      "type": "section-title",
+      "titel": "Mini-opdracht: Bouw je eigen AI-tool!"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Kies één van onderstaande opties en probeer een kleine tool te bouwen met behulp van een chatbot (zoals ChatGPT, Gemini, Copilot, etc.). Volg de instructies en experimenteer!\n\n**Algemene instructies:**\n1. Open je favoriete chatbot.\n2. Kopieer de prompt die bij jouw gekozen opdracht hoort.\n3. Plak de prompt in de chatbot en druk op Enter.\n4. Lees de instructies van de chatbot en pas eventueel aan.\n5. Soms moet je een specifiek model kiezen of een functie activeren (bijv. \"canvas\" als dit beschikbaar is voor visuele output in jouw chatbot)."
+    },
+    {
+      "type": "content-text",
+      "tekst": "### Optie 1: Afbeelding genereren\n\n**Doel:** Genereer een inspirerende afbeelding gerelateerd aan fysiotherapie of leren.\n\n**Kopieerbare prompt:**\n```\nGenereer een realistische afbeelding van een fysiotherapeut die een oudere patiënt helpt met oefeningen in een moderne, lichte praktijkruimte, met de nadruk op bewegingsvrijheid en positiviteit. De stijl moet uplifting en hoopvol zijn.\n```\n**Korte instructie:** Als de chatbot een beeldgeneratie-functie heeft (bijv. DALL-E 3 integratie in ChatGPT Plus of Gemini's ingebouwde beeldgeneratie), zal deze de afbeelding direct creëren. Zo niet, vraag dan aan de chatbot welk AI-model het beste is voor jouw verzoek en hoe je dat kunt gebruiken."
+    },
+    {
+      "type": "content-text",
+      "tekst": "### Optie 2: Rad-van-Fortuin-app (Vibe-coding)\n\n**Doel:** Creëer een eenvoudige Rad-van-Fortuin-app met code, die je later kunt aanpassen.\n\n**Kopieerbare prompt:**\n```\nGenereer de complete HTML, CSS en JavaScript code voor een eenvoudig 'Rad van Fortuin' webapplicatie. Het rad moet minstens 5 secties hebben (bijv. \"Prijs 1\", \"Prijs 2\", etc.) en er moet een knop zijn om het rad te laten draaien. De secties moeten willekeurig stoppen en de winnende sectie moet duidelijk worden weergegeven. Zorg voor een nette, moderne uitstraling met Tailwind CSS.\n```\n**Korte instructie:** De chatbot zal je de code geven. Kopieer deze code en plak deze in een HTML-bestand (bijv. `index.html`). Open dit bestand in je webbrowser. Experimenteer met de secties door de tekst in de HTML-code aan te passen."
+    },
+    {
+      "type": "content-text",
+      "tekst": "### Optie 3: Flashcard-GPT (GPT)\n\n**Doel:** Genereer flashcards over een specifiek onderwerp.\n\n**Kopieerbare prompt:**\n```\nIk ben een student fysiotherapie en wil graag flashcards maken over de anatomie van de schouder. Genereer 10 flashcards met aan de ene kant een term (bijv. \"Rotator Cuff\") en aan de andere kant een korte, duidelijke uitleg of functie. Gebruik het formaat: \"Term: [Term] | Uitleg: [Uitleg]\".\n```\n**Korte instructie:** De chatbot zal de flashcards voor je genereren. Je kunt deze kopiëren en gebruiken om te studeren, of ze importeren in een flashcard-app als Anki. Varieer de onderwerpen en het aantal flashcards."
+    },
+    {
+      "type": "content-text",
+      "tekst": "### Optie 4: Mini-game (Vibe-coding)\n\n**Doel:** Creëer een zeer eenvoudige webgebaseerde mini-game.\n\n**Kopieerbare prompt:**\n```\nGenereer de complete HTML, CSS en JavaScript code voor een minimalistisch \"klikspel\". Er moet een knop zijn waarop de gebruiker kan klikken. Elke klik verhoogt een teller. Er moet ook een timer zijn van 30 seconden. Als de timer afloopt, stopt het spel en wordt de eindscore weergegeven. De game moet responsief zijn en er modern uitzien met Tailwind CSS.\n```\n**Korte instructie:** De chatbot zal je de code geven. Kopieer de HTML, CSS en JavaScript en plak deze in een HTML-bestand. Open dit bestand in je webbrowser om het spel te spelen. Probeer de timerduur of de klikmechanismen aan te passen in de code."
+    },
+    {
+      "type": "content-text",
+      "tekst": "Veel succes met je opdrachten en het verder ontdekken van de creatieve kracht van AI!"
     }
   ],
   "interacties": [
     {
       "id": "h5_mc_1",
       "type": "mc",
-      "vraag": "Wat is volgens het TAM-model de belangrijkste factor voor acceptatie van technologie?",
+      "vraag": "Welke van de volgende is GEEN voorbeeld van een beeld-AI model?",
       "options": [
-        "Gebruiksgemak",
-        "Nuttigheid",
-        "Kosten",
-        "Populariteit"
+        "Midjourney",
+        "DALL-E",
+        "ChatGPT",
+        "Stable Diffusion"
+      ],
+      "correctAnswer": 3,
+      "feedback": "ChatGPT is een tekstgebaseerd large language model, geen beeld-AI. De andere opties zijn wel beeld-AI modellen."
+    },
+    {
+      "id": "h5_mc_2",
+      "type": "mc",
+      "vraag": "Wat is 'vibe-coding' volgens dit hoofdstuk?",
+      "options": [
+        "Het programmeren van muziekapplicaties",
+        "Het gebruik van AI om te helpen bij programmeren op basis van hoge-level beschrijvingen",
+        "Een nieuwe programmeertaal",
+        "Het programmeren in groepsverband"
       ],
       "correctAnswer": 2,
-      "feedback": "Volgens het TAM-model is nuttigheid (perceived usefulness) de belangrijkste factor voor acceptatie."
+      "feedback": "Vibe-coding verwijst naar het gebruik van AI om te helpen bij het schrijven en begrijpen van code, vaak gebaseerd op een 'vibe' of hoge-level beschrijving."
+    },
+    {
+      "id": "h5_mc_3",
+      "type": "mc",
+      "vraag": "Wat is volgens het hoofdstuk de sleutel tot het benutten van de volledige potentie van GPT's?",
+      "options": [
+        "Het gebruik van de nieuwste hardware",
+        "Prompt engineering",
+        "Het leren van programmeertalen",
+        "Het kopen van dure software"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Prompt engineering - de kunst van het formuleren van juiste instructies - is volgens het hoofdstuk de sleutel tot het benutten van GPT's volledige potentie."
     },
     {
       "id": "h5_reflection_1",
       "type": "reflection",
-      "vraag": "Wat zou voor jou zwaarder wegen bij het adopteren van nieuwe technologie: het waargenomen nut of het waargenomen gebruiksgemak? Waarom?"
+      "vraag": "Na het lezen van dit hoofdstuk: welke creatieve AI-toepassing (beeld-AI, vibe-coding, of geavanceerd GPT-gebruik) spreekt jou het meest aan voor jouw studie of toekomstige werk als fysiotherapeut? Leg uit waarom en geef een concreet voorbeeld van hoe je deze toepassing zou willen gebruiken.",
+      "minLength": 75,
+      "maxLength": 300,
+      "placeholder": "Beschrijf welke AI-toepassing je het meest aanspreekt en hoe je deze praktisch zou willen inzetten..."
     }
   ]
 } 

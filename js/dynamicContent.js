@@ -77,22 +77,10 @@ function renderChapter(chapterNumber, data) {
         }, 100);
     }
 
-    // Specifieke post-render logica voor de afsluiting (zoals de accordeon)
-    if (chapterNumber === totalSections) {
-        const toggle = document.getElementById('vraak-accordion-toggle');
-        const contentDiv = document.getElementById('vraak-accordion-content');
-        if (toggle && contentDiv) {
-            toggle.addEventListener('click', function() {
-                const isOpen = contentDiv.classList.toggle('open');
-                toggle.classList.toggle('open', isOpen);
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                const triangle = toggle.querySelector('.triangle');
-                if (triangle) {
-                    triangle.innerHTML = isOpen ? '&#9660;' : '&#9654;';
-                }
-            });
-        }
-    }
+
+
+    // Initialize accordion functionality for all chapters
+    initializeAccordions(chapterNumber);
 
     // Render interactions
     const interactionsContainer = document.getElementById(`section${chapterNumber}-interactions-container`) || mainContentContainer; // Use a dedicated container or fallback to main
@@ -111,6 +99,29 @@ function renderChapter(chapterNumber, data) {
             renderInteraction(interaction, chapterNumber, interactionElement);
         });
     }
+}
+
+// Initialize accordion functionality for all accordions in a chapter
+function initializeAccordions(chapterNumber) {
+    setTimeout(() => {
+        const accordionToggles = document.querySelectorAll(`#section${chapterNumber} .accordion-toggle`);
+        accordionToggles.forEach(toggle => {
+            const targetId = toggle.getAttribute('data-accordion-target');
+            const contentDiv = document.getElementById(targetId);
+            
+            if (contentDiv) {
+                toggle.addEventListener('click', function() {
+                    const isOpen = contentDiv.classList.toggle('open');
+                    toggle.classList.toggle('open', isOpen);
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    const triangle = toggle.querySelector('.triangle');
+                    if (triangle) {
+                        triangle.innerHTML = isOpen ? '&#9660;' : '&#9654;';
+                    }
+                });
+            }
+        });
+    }, 100);
 }
 
 // renderInteraction now accepts chapterNumber and the direct container element
@@ -550,6 +561,9 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
             case 'section-title':
                 html += `<h2 class="section-title">${block.titel}</h2>`;
                 break;
+            case 'content-subtitle':
+                html += `<h3 class="content-subtitle">${block.titel}</h3>`;
+                break;
             case 'content-text':
                 html += `<p class="content-text">${block.tekst.replace(/\n/g, '<br>')}</p>`;
                 break;
@@ -591,7 +605,7 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                     }
                 }
                 html += `
-                    <div class="accent-blok info-card accent-blok--${block.variant || 'default'}">
+                    <div class="accent-blok accent-blok--${block.variant || 'default'}">
                         ${block.titel ? `<h4 class="accent-blok-titel">${block.titel}</h4>` : ''}
                         <div class="accent-blok-content">
                             <p>${block.tekst}</p>
@@ -712,7 +726,7 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
             case 'competency-grid':
                 html += `
                     <section class="competency-section">
-                        ${block.titel ? `<h3 class="section-title">${block.titel}</h3>` : ''}
+                        ${block.titel ? `<h3 class="content-subtitle">${block.titel}</h3>` : ''}
                         <p>${block.intro || ''}</p>
                         <div class="competency-grid">
                             ${block.termen.map(term => `
@@ -803,7 +817,7 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                 }
                 break;
             case 'icon-card-grid':
-                 html += '<div class="critical-themes-grid">';
+                 html += '<div class="icon-card-grid">';
                  block.themes.forEach(theme => {
                      // Dynamische veldnamen ondersteuning
                      let dynamicFields = '';
@@ -812,17 +826,17 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                      if (theme.dynamische_velden && Array.isArray(theme.dynamische_velden)) {
                          theme.dynamische_velden.forEach(veld => {
                              if (theme[veld.veldnaam]) {
-                                 dynamicFields += `<div class="theme-dynamic-field"><strong>${veld.label}:</strong> <span>${theme[veld.veldnaam]}</span></div>`;
+                                 dynamicFields += `<div class="icon-dynamic-field"><strong>${veld.label}:</strong> <span>${theme[veld.veldnaam]}</span></div>`;
                              }
                          });
                      }
                      
                      html += `
-                        <div class="critical-theme-card">
-                            ${theme.subtitel ? `<h4 class="theme-subtitle">${theme.subtitel}</h4>` : ''}
-                            ${theme.icoon ? `<div class="theme-icon"><img src="${theme.icoon}" alt="${theme.titel || ''} icoon"></div>` : ''}
+                        <div class="icon-card">
+                            ${theme.subtitel ? `<h4 class="icon-subtitle">${theme.subtitel}</h4>` : ''}
+                            ${theme.icoon ? `<div class="icon-image"><img src="${theme.icoon}" alt="${theme.titel || ''} icoon"></div>` : ''}
                             <h3>${theme.titel || ''}</h3>
-                            <div class="theme-content">
+                            <div class="icon-content">
                                 ${dynamicFields}
                             </div>
                         </div>
@@ -831,25 +845,57 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                  html += '</div>';
                  break;
             case 'image-grid':
-                html += `
-                    <div class="image-grid ${block.kolommen === 3 ? 'image-grid-3-col' : 'image-grid-2-col'}">
-                        ${block.afbeeldingen.map(img => `
-                            <div class="image-container">
-                                <img src="${img.src}" alt="${img.alt || ''}">
-                                ${img.onderschrift ? `<figcaption>${img.onderschrift}</figcaption>` : ''}
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
+                html += `<div class="image-grid-container columns-${block.kolommen || 3}">`;
+                block.afbeeldingen.forEach(img => {
+                    let captionHtml = '';
+                    if (img.onderschrift || img.bron) {
+                        captionHtml += '<figcaption class="image-caption">';
+                        if (img.onderschrift) {
+                            captionHtml += `<span class="caption-text">${img.onderschrift}</span>`;
+                        }
+                        if (img.bron) {
+                            if (img.bron.url) {
+                                captionHtml += `<a href="${img.bron.url}" target="_blank" class="caption-source">${img.bron.naam}</a>`;
+                            } else {
+                                captionHtml += `<span class="caption-source">${img.bron.naam}</span>`;
+                            }
+                        }
+                        captionHtml += '</figcaption>';
+                    }
+
+                    html += `
+                        <figure class="image-container">
+                            <img src="${img.src}" alt="${img.alt}">
+                            ${captionHtml}
+                        </figure>
+                    `;
+                });
+                html += '</div>';
                 break;
             case 'split-screen-image-text':
+                let splitCaptionHtml = '';
+                if (block.afbeelding.onderschrift || block.afbeelding.bron) {
+                    splitCaptionHtml += '<figcaption>';
+                    if (block.afbeelding.onderschrift) {
+                        splitCaptionHtml += `<span class="caption-text">${block.afbeelding.onderschrift}</span>`;
+                    }
+                    if (block.afbeelding.bron) {
+                        if (block.afbeelding.bron.url) {
+                            splitCaptionHtml += `<a href="${block.afbeelding.bron.url}" target="_blank" class="caption-source">${block.afbeelding.bron.naam}</a>`;
+                        } else {
+                            splitCaptionHtml += `<span class="caption-source">${block.afbeelding.bron.naam}</span>`;
+                        }
+                    }
+                    splitCaptionHtml += '</figcaption>';
+                }
+
                 html += `
                     <div class="img-split-screen">
                         <div class="image-content">
-                            <div class="image-container">
+                            <figure class="image-container">
                                 <img src="${block.afbeelding.src}" alt="${block.afbeelding.alt || ''}">
-                                ${block.afbeelding.onderschrift ? `<figcaption>${block.afbeelding.onderschrift}</figcaption>` : ''}
-                            </div>
+                                ${splitCaptionHtml}
+                            </figure>
                         </div>
                         <div class="text-content">
                             ${block.tekst_content.map(p => `<p>${p}</p>`).join('')}
@@ -887,11 +933,27 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                 `;
                 break;
             case 'image-block':
+                let captionHtml = '';
+                if (block.onderschrift || block.bron) {
+                    captionHtml += '<figcaption>';
+                    if (block.onderschrift) {
+                        captionHtml += `<span class="caption-text">${block.onderschrift}</span>`;
+                    }
+                    if (block.bron) {
+                        if (block.bron.url) {
+                            captionHtml += `<a href="${block.bron.url}" target="_blank" class="caption-source">${block.bron.naam}</a>`;
+                        } else {
+                            captionHtml += `<span class="caption-source">${block.bron.naam}</span>`;
+                        }
+                    }
+                    captionHtml += '</figcaption>';
+                }
+
                 html += `
-                    <div class="image-container ${block.stijl || ''}">
-                        <img src="${block.src}" alt="${block.alt || ''}" class="${block.classes || ''}">
-                        ${block.onderschrift ? `<figcaption>${block.onderschrift}</figcaption>` : ''}
-                    </div>
+                    <figure class="image-container ${block.classes || ''}">
+                        <img src="${block.src}" alt="${block.alt || ''}">
+                        ${captionHtml}
+                    </figure>
                 `;
                 break;
             case 'benefit-card':
@@ -913,6 +975,50 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                     `;
                 });
                 html += `</div>`;
+                break;
+            case 'concept-cards':
+                html += `<div class="concept-cards">`;
+                block.items.forEach(item => {
+                    html += `
+                        <div class="concept-card">
+                            ${item.titel ? `<h4>${item.titel}</h4>` : ''}
+                            ${item.nederlands ? `<div class="concept-dutch">${item.nederlands}</div>` : ''}
+                            ${item.uitleg ? `<p>${item.uitleg}</p>` : ''}
+                            ${item.voorbeeld ? `<div class="example">${item.voorbeeld}</div>` : ''}
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+                break;
+            case 'accordion':
+                const accordionId = `accordion-${chapterNumber}-${currentBlockId}`;
+                const toggleId = `accordion-toggle-${chapterNumber}-${currentBlockId}`;
+                const contentId = `accordion-content-${chapterNumber}-${currentBlockId}`;
+                
+                html += `
+                    <div class="accordion">
+                        <button class="accordion-toggle" id="${toggleId}" aria-expanded="false" data-accordion-target="${contentId}">
+                            <span class="triangle">&#9654;</span> ${block.titel}
+                        </button>
+                        <div class="accordion-content" id="${contentId}">
+                            ${block.introductie ? `<p>${block.introductie}</p>` : ''}
+                            ${block.content && Array.isArray(block.content) ? `
+                                <ol class="accordion-list" style="margin-bottom: 0;">
+                                    ${block.content.map(item => `
+                                        <li style="margin-bottom: 1.2em;">
+                                            <strong>${item.titel || item.naam}:</strong> ${item.beschrijving}
+                                            ${item.subpunten && item.subpunten.length > 0 ? `
+                                                <ul class="accordion-subpunten" style="margin-top: 0.5em; margin-bottom: 0.5em; margin-left: 1.5em;">
+                                                    ${item.subpunten.map(sub => `<li style="list-style-type: disc; margin-bottom: 0.2em;">${sub}</li>`).join('')}
+                                                </ul>
+                                            ` : ''}
+                                        </li>
+                                    `).join('')}
+                                </ol>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
                 break;
         }
     });
@@ -957,12 +1063,12 @@ function renderAfsluitingContent(content) {
     let html = '';
 
     // "Wat ga je hier doen?" kaart
-    if (content.introductie) {
+    if (content.introductieBlok) {
         html += `
             <div class="info-card">
-                <h3 class="info-card-title">Wat ga je hier doen?</h3>
+                <h3 class="info-card-title">${content.introductieBlok.titel}</h3>
                 <div class="info-card-content">
-                    <p>${content.introductie.replace(/\n/g, '<br>')}</p>
+                    <p>${content.introductieBlok.tekst.replace(/\n/g, '<br>')}</p>
                 </div>
             </div>
         `;
@@ -972,7 +1078,7 @@ function renderAfsluitingContent(content) {
     if (content.afsluitQuizIntro) {
         html += `
             <div class="info-card">
-                <h3 class="info-card-title">${content.afsluitQuizIntro.subtitel || 'Afsluitende quiz'}</h3>
+                <h3 class="info-card-title">${content.afsluitQuizIntro.titel}</h3>
                 <div class="info-card-content">
                     <p>${content.afsluitQuizIntro.tekst.replace(/\n/g, '<br>')}</p>
                 </div>
@@ -1005,7 +1111,7 @@ function renderAfsluitingContent(content) {
         `;
     }
 
-    // "Certificaat gebruiken in je eJournal/Portfolio" sectie met VRAAK accordion
+    // "Certificaat gebruiken in je eJournal/Portfolio" sectie
     if (content.portfolioIntegratie) {
         html += `
             <div class="info-card purple-kader">
@@ -1013,28 +1119,7 @@ function renderAfsluitingContent(content) {
                 <div class="info-card-content">
                     <p>${content.portfolioIntegratie.tip}</p>
                     <p>${content.portfolioIntegratie.vraakUitleg}</p>
-                    ${content.portfolioIntegratie.vraakCriteria ? `
-                    <div class="accordion">
-                        <button class="accordion-toggle" id="vraak-accordion-toggle" aria-expanded="false">
-                            <span class="triangle">&#9654;</span> ${content.portfolioIntegratie.vraakCriteria.titel}
-                        </button>
-                        <div class="accordion-content" id="vraak-accordion-content">
-                            <p>${content.portfolioIntegratie.vraakCriteria.introductie}</p>
-                            <ol class="vraak-criteria-lijst" style="margin-bottom: 0;">
-                                ${content.portfolioIntegratie.vraakCriteria.criteria.map(c => `
-                                    <li style="margin-bottom: 1.2em;">
-                                        <strong>${c.naam}:</strong> ${c.beschrijving}
-                                        ${c.subpunten && c.subpunten.length > 0 ? `
-                                            <ul class="vraak-subpunten" style="margin-top: 0.5em; margin-bottom: 0.5em; margin-left: 1.5em;">
-                                                ${c.subpunten.map(sub => `<li style="list-style-type: disc; margin-bottom: 0.2em;">${sub}</li>`).join('')}
-                                            </ul>
-                                        ` : ''}
-                                    </li>
-                                `).join('')}
-                            </ol>
-                        </div>
-                    </div>
-                    ` : ''}
+                    ${content.content && Array.isArray(content.content) ? renderGenericChapterContent(content.content, totalSections) : ''}
                 </div>
             </div>
         `;

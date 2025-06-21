@@ -1,4 +1,35 @@
 /* ==========================================================================
+   STIJLGIDS.CSS - ONTWIKKELINGSHULPMIDDEL
+   ==========================================================================
+   
+   DOEL VAN DIT BESTAND:
+   Dit bestand bevat ALLEEN styling voor de stijlgids pagina (stijlgids.html).
+   Het is een ontwikkelingshulpmiddel om alle beschikbare e-learning componenten
+   te tonen en te testen.
+   
+   ⚠️  BELANGRIJKE WAARSCHUWINGEN:
+   - Dit bestand is NIET voor e-learning componenten
+   - E-learning styling moet altijd in de juiste component-bestanden staan:
+     * content-blocks.css  -> voor accent-blokken & accordions
+     * cards.css          -> voor info-cards, benefit-cards, etc.
+     * interactive.css    -> voor quiz, reflection, dragdrop, etc.
+     * layout.css         -> voor algemene layout componenten
+     * buttons.css        -> voor knoppen en controls
+     * etc.
+   
+   ✅  WAT WEL HIER THUISHOORT:
+   - Styling voor de stijlgids pagina structuur
+   - Stijlgids-specifieke layout en navigatie
+   
+   ❌  WAT NIET HIER THUISHOORT:
+   - E-learning component styling
+   - Algemene UI elementen
+   - Content-specifieke styling
+   
+   ZIE OOK: documentatie/architecture.md voor volledige CSS-architectuur
+   ========================================================================== */
+
+/* ==========================================================================
    Development Mode - Stijlgids Pagina
    ========================================================================== */
 
@@ -25,79 +56,6 @@ body.development-mode .style-guide {
     padding-bottom: 0.5rem;
 }
 
-/* Collapsible sections for the showcase */
-.collapsible-section {
-    margin-bottom: 0.75rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.collapsible {
-    background-color: var(--primary-yellow);
-    color: var(--primary-dark-purple);
-    cursor: pointer;
-    padding: 18px 35px 18px 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    position: relative;
-}
-
-.collapsible:hover {
-    background-color: var(--secondary-yellow);
-}
-
-.collapsible::after {
-    content: '';
-    position: absolute;
-    top: 18px;
-    right: 20px;
-    width: 8px;
-    height: 8px;
-    border: solid var(--primary-dark-purple);
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-    transition: transform 0.3s ease, top 0.3s ease;
-}
-
-.collapsible.active::after {
-    top: 22px;
-    transform: rotate(-135deg);
-}
-
-.collapsible-content {
-    padding: 20px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.collapsible-content .info-card:not(.accent-blok) {
-    background-color: var(--light-purple);
-    border: 1px dashed var(--primary-purple);
-}
-
-/* Accent-blok altijd wit in de stijlgids, ongeacht container */
-.accent-blok.info-card {
-    background-color: var(--background-white) !important;
-    border: none;
-    border-left: 5px solid var(--secondary-purple);
-}
-.accent-blok--statistiek {
-    border-left-color: var(--accent-blue);
-}
-.accent-blok--weetje {
-    border-left-color: var(--accent-orange);
-}
-
 .showcase-controls {
     display: flex;
     gap: 1rem;
@@ -107,7 +65,22 @@ body.development-mode .style-guide {
     border-radius: 8px;
 }
 
-.style-guide-item .info-card {
-    background-color: var(--light-purple);
-    border: 1px dashed var(--primary-purple);
+/* Stijlgids-specifieke classes */
+.stijlgids-sectie {
+    margin-bottom: 2rem;
+}
+
+.stijlgids-hoofdtitel {
+    color: var(--primary-purple);
+    border-bottom: 2px solid var(--accent-purple);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stijlgids-intro {
+    background-color: var(--accent-purple);
+    padding: 1rem;
+    border-radius: var(--border-radius-standard);
+    margin-bottom: 2rem;
+    font-style: italic;
 } 

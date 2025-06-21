@@ -1,6 +1,22 @@
 # Handleiding: Een nieuwe e-learning cursus opzetten
 
-Deze handleiding beschrijft het proces voor het klonen en aanpassen van deze e-learning voor een nieuw onderwerp. De structuur is flexibel en ontworpen voor hergebruik.
+Deze handleiding beschrijft het proces voor het klonen en aanpassen van deze e-learning voor een nieuw onderwerp. De structuur is volledig dynamisch en ontworpen voor hergebruik.
+
+## De Eenvoudige Werkwijze
+
+Dankzij de dynamische architectuur is het opzetten van een nieuwe cursus of het aanpassen van de structuur zeer eenvoudig. Alle wijzigingen worden centraal geregeld vanuit de `/content` map. **Je hoeft geen code (HTML of JavaScript) aan te passen.**
+
+1.  **Kopieer de projectmap** voor je nieuwe cursus.
+2.  **Pas `content/config.json` aan.** Dit is het hart van de e-learning.
+    *   Pas de `titel`, `leerdoelen`, `organisatie`, etc. aan.
+    *   Pas de `hoofdstukken` array aan om hoofdstukken toe te voegen, te verwijderen of de volgorde te wijzigen.
+        *   **Toevoegen:** Voeg een object toe, bijv. `{ "file": "hoofdstukNieuw.json", "titel": "Nieuw Hoofdstuk" }`.
+        *   **Verwijderen:** Haal een object uit de array.
+        *   **Hernoemen:** Verander de `titel`.
+3.  **Bewerk de hoofdstukbestanden.** Pas de inhoud van de JSON-bestanden in de `/content` map aan (bv. `hoofdstuk1.json`, etc.).
+4.  **Test je wijzigingen.** Start een lokale webserver om het resultaat te bekijken. De navigatie, voortgang en content passen zich automatisch aan.
+
+---
 
 ## Aanbevolen Workflow: Werken met een AI Assistent
 
@@ -9,47 +25,6 @@ De snelste en meest consistente manier om een nieuwe cursus op te zetten is door
 Deze prompts begeleiden je door het hele proces, van het opzetten van de structuur tot het vullen van de content en de eindquiz.
 
 - **Vind de prompts hier: [AI Prompts voor het beheren van de E-learning](./ai_prompts.md)**
-
----
-
-## Handmatig Proces
-
-Als je het proces liever handmatig uitvoert, volg dan de onderstaande stappen.
-
-### Stap 1: Project Voorbereiden
-
-1.  **Kopieer de volledige projectmap** naar een nieuwe locatie voor je nieuwe cursus.
-2.  **(Optioneel) Leeg de `content` map**, met uitzondering van `config.json`, `hoofdstuk_afsluiting.json`, en `afsluitquiz.json` om met een schone lei te beginnen.
-3.  **Start een lokale webserver** in de projectmap om je wijzigingen direct in de browser te kunnen zien.
-    ```bash
-    npx live-server
-    ```
-
-### Stap 2: Cursus Configureren
-
-Pas het `content/config.json` bestand aan met de basisinformatie van je nieuwe cursus:
-- `title`: De hoofdtitel van de e-learning.
-- `leerdoelen`: De leerdoelen die op het certificaat en aan het begin getoond worden.
-- `organisation`: De naam van de organisatie.
-- `logo`: Het pad naar het logo dat je wilt gebruiken.
-
-### Stap 3: Content Creëren en Vullen
-
-1.  **Maak `hoofdstukX.json` bestanden aan** in de `/content` map voor elk nieuw hoofdstuk.
-2.  **Schrijf de inhoud** voor elk hoofdstuk. Om de content op te maken met de juiste stijlen (zoals info-kaarten, video's, etc.), gebruik je de componenten die zijn beschreven in onze stijlgids. Deze gids is ook perfect om te geven aan een AI-chatbot die je helpt met het schrijven van de teksten.
-    - **Zie: [Stijlgids voor E-learning Content](./stijlgids.md)**
-3.  **Voeg interacties toe** aan de `interacties` array in elk hoofdstuk.
-4.  **Pas de eindquiz aan** in `content/afsluitquiz.json`.
-
-### Stap 4: Integratie
-
-Om de nieuwe hoofdstukken correct weer te geven in de navigatie en voortgangslogica, moet je twee bestanden bijwerken:
-
-1.  **`js/script.js`**:
-    - Pas de `totalSections` variabele aan. Dit is het aantal hoofdstukken dat je hebt gemaakt, plus 1 voor het afsluitende hoofdstuk.
-    - Werk de `chapters` array bij met de titels van je nieuwe hoofdstukken in de juiste volgorde.
-2.  **`index.html`**:
-    - Voeg de hoofdstukken toe (of verwijder ze) in de `nav`-sectie (de sidebar), zodat de navigatie overeenkomt met je nieuwe structuur.
 
 ---
 
@@ -69,9 +44,9 @@ Voor een diepgaand begrip van de technische werking, de bestandsstructuur, hoe d
 
 ## 2. Hoofdstukken en inhoud aanpassen
 
-- Elk hoofdstuk heeft een eigen JSON-bestand (`hoofdstuk1.json`, `hoofdstuk2.json`, etc.).
-- Je kunt hoofdstukken toevoegen, verwijderen of hernoemen. Zorg dat de nummering aansluit bij de navigatie in de sidebar (zie `index.html`).
-- In elk hoofdstukbestand kun je de titel, inleidende tekst en de array `interacties` aanpassen.
+Het aanpassen van de structuur, zoals het toevoegen, verwijderen, hernoemen of veranderen van de volgorde van hoofdstukken, doe je **uitsluitend** in `content/config.json`. De applicatie past de navigatie, voortgangsberekening en content-lading automatisch aan.
+
+- In elk hoofdstukbestand (`hoofdstuk1.json`, etc.) kun je de titel, inleidende tekst en de array `interacties` aanpassen.
 
 ### ID's voor interacties
 Om ID-conflicten te voorkomen, gebruik je altijd het volgende format voor ID's:
@@ -147,24 +122,25 @@ Bij het wijzigen van het aantal hoofdstukken:
 - Zet `totalSections = 6` in `script.js`
 
 ### Hoofdstuk laden - Technische details
-- Reguliere hoofdstukken: Laden via `content/hoofdstuk{nummer}.json`
-- Laatste hoofdstuk: Laadt altijd `content/hoofdstuk_afsluiting.json`
-- Check gebeurt via: `if (chapterNumber === totalSections)` in `dynamicContent.js`
+- Reguliere hoofdstukken: Laden dynamisch op basis van de `file` property in `config.json`.
+- Laatste hoofdstuk: Laadt altijd het laatste hoofdstuk uit de `hoofdstukken` array in `config.json`. Dit is doorgaans `hoofdstuk_afsluiting.json`.
+- Detectie van het laatste hoofdstuk gebeurt automatisch (`if (chapterNumber === totalSections)`).
 
-#### Render-volgorde van Hoofdstukinhoud
-De weergave van de inhoud van een hoofdstuk wordt afgehandeld door functies in `js/dynamicContent.js`. De logica is als volgt:
-1.  **Specifieke Renderer**: Het script zoekt eerst naar een specifieke render-functie voor het betreffende hoofdstuk, genaamd `renderChapter<X>Content` (bijvoorbeeld `renderChapter1Content` voor hoofdstuk 1, `renderChapter2Content` voor hoofdstuk 2, enz.).
-2.  **Generieke Renderer**: Als er geen specifieke render-functie voor dat hoofdstuknummer bestaat, valt het script terug op de algemene functie `renderGenericChapterContent`.
+#### Render-logica
+De weergave van de inhoud van een hoofdstuk wordt afgehandeld in `js/dynamicContent.js` en volgt een duidelijke, duurzame strategie:
 
-**Belangrijk**: Als je de weergave van een specifiek hoofdstuk wilt aanpassen en er bestaat al een `renderChapter<X>Content` functie voor (zoals `renderChapter1Content`), dan moeten aanpassingen in *die* specifieke functie gedaan worden. Wijzigingen in `renderGenericChapterContent` zullen in dat geval géén effect hebben op dat specifieke hoofdstuk, tenzij de specifieke render-functie zelf de generieke functie aanroept (zoals nu het geval is voor `renderChapter1Content` na recente aanpassingen).
+1.  **Generieke Renderer voor Standaard Hoofdstukken**: Alle reguliere hoofdstukken worden weergegeven door één centrale functie: `renderGenericChapterContent`. Deze functie kan een breed scala aan content-componenten (zoals tekstblokken, info-kaarten, video's, etc.) verwerken op basis van de JSON-structuur.
+    *   **Voordeel**: Als je een nieuw type contentblok wilt toevoegen, hoef je dit maar op één plek te implementeren, waarna het in alle hoofdstukken beschikbaar is.
 
-Voor het afsluitende hoofdstuk wordt altijd de functie `renderAfsluitingContent` gebruikt (voorheen `renderChapter8Content`).
+2.  **Specifieke Renderer voor het Afsluitende Hoofdstuk**: Het laatste hoofdstuk (de "afsluiting") wordt altijd weergegeven door een aparte functie: `renderAfsluitingContent`.
+    *   **Voordeel**: Dit hoofdstuk heeft unieke functionaliteit (zoals de quiz en certificaatgeneratie) die losstaat van de standaard content. Een eigen renderer houdt de code schoon en overzichtelijk.
+
+Deze aanpak zorgt ervoor dat de e-learning makkelijk te onderhouden en uit te breiden is, zonder voor elk hoofdstuk aparte code te moeten schrijven.
 
 ### Speciale behandeling laatste hoofdstuk
-- Gebruikt `renderChapter8Content()` functie (ongeacht het werkelijke nummer)
+- Gebruikt `renderAfsluitingContent()` functie (ongeacht het werkelijke nummer)
 - Laadt ook `afsluitquiz.json` voor de eindtoets
 - Bevat certificaat generatie functionaliteit
-- Heeft afwijkende HTML structuur in `index.html`
 - Bevat portfolio tips en VRAAK criteria
 
 ## 4. Quizvragen aanpassen
@@ -352,47 +328,13 @@ De PDF wordt volledig dynamisch opgebouwd met de volgende structuur:
 
 ## 8. Nieuwe cursus maken (clonen)
 
-1. **Kopieer de hele map** van de e-learning.
-2. **Pas de JSON-bestanden in `/content/` aan** voor je nieuwe onderwerp.
-3. **Update `config.json`** met nieuwe titel, leerdoelen, organisatie info.
-4. **(Optioneel) Vervang het logo** in `/images/` en update het pad in `config.json`.
-5. **Test de e-learning** door deze te openen in de browser en een certificaat te genereren.
-6. **Klaar!** Alles werkt direct, inclusief voortgang, interacties en PDF.
-
-### Let op bij clonen:
-- Behoud de bestandsstructuur
-- `hoofdstuk_afsluiting.json` blijft het afsluitende hoofdstuk
-- Pas `totalSections` aan naar het totaal aantal secties (reguliere hoofdstukken + 1)
-- Update de `chapters` array in `script.js`
-- Pas de sidebar navigatie aan in `index.html`
-
-### Voorbeeld: Van 7 naar 5 hoofdstukken
-1. Verwijder `hoofdstuk6.json` en `hoofdstuk7.json`
-2. Pas aan in `script.js`:
-   - `totalSections = 6` (5 reguliere + 1 afsluiting)
-   - Verwijder hoofdstuk 6 en 7 uit `chapters` array
-3. Update `index.html`: verwijder de sidebar items voor hoofdstuk 6 en 7
-4. `hoofdstuk_afsluiting.json` wordt nu automatisch sectie 6
-
-### Flexibele Architectuur (Update 2025)
-De e-learning is nu volledig flexibel opgezet zonder hardcoded hoofdstuknummers:
-
-1. **Dynamische hoofdstuk rendering**:
-   - Hoofdstukken met een specifieke render functie gebruiken `renderChapterXContent()`
-   - Hoofdstukken zonder specifieke functie gebruiken de generieke `renderGenericChapterContent()`
-   - Het laatste hoofdstuk gebruikt altijd `renderAfsluitingContent()`
-
-2. **Geen hardcoded switch statements meer**:
-   - De oude switch met cases 1-8 is vervangen door dynamische functie lookup
-   - Werkt automatisch voor elk aantal hoofdstukken
-
-3. **Laatste hoofdstuk detectie**:
-   - Gebruikt `if (sectionNumber === totalSections)` in plaats van hardcoded `=== 8`
-   - Quiz wordt automatisch geladen voor het laatste hoofdstuk
-
-4. **HTML aanpassingen**:
-   - De HTML voor het laatste hoofdstuk moet het juiste sectienummer hebben
-   - Bijvoorbeeld: als je 5 reguliere hoofdstukken hebt, wordt het `section6` in plaats van `section8`
+1.  **Kopieer de hele map** van de e-learning.
+2.  **Pas de JSON-bestanden in `/content/` aan** voor je nieuwe onderwerp.
+    -   Pas `config.json` aan (titel, leerdoelen, hoofdstukken).
+    -   Pas de inhoud van de `hoofdstuk...json` bestanden aan.
+3.  **(Optioneel) Vervang het logo** in `/images/` en update het pad in `config.json`.
+4.  **Test de e-learning** door deze te openen in de browser.
+5.  **Klaar!** Alles werkt direct, inclusief voortgang, interacties en PDF. Je hoeft **geen code aan te passen**.
 
 ## 9. Tips
 
@@ -1124,13 +1066,13 @@ Gebruik `<section class="section">` **alleen** als je bewust een smallere, gecen
 - Gebruik de standaard layout voor alle hoofdcontent van een hoofdstuk.
 - Gebruik `<section class="section">` alleen voor onderdelen die extra focus of een smallere opmaak nodig hebben.
 
-<div class="critical-theme-card">
-    <div class="theme-subtitle">Hier de titel (optioneel)</div>
-    <div class="theme-icon">
+<div class="icon-card">
+    <div class="icon-subtitle">Hier de titel (optioneel)</div>
+    <div class="icon-image">
         <img src="images/Blijvende_afb/Test_logo_showcase.png" alt="Test Logo">
     </div>
-    <h3>Thema Kaart (Kritische Analyse)</h3>
-    <div class="theme-content">
+    <h3>Icon Kaart (Grid Component)</h3>
+    <div class="icon-content">
         <p><strong>Positief voorbeeld:</strong> Een beschrijving van een positief aspect van het thema.</p>
         <p><strong>Uitdaging:</strong> Een beschrijving van een uitdaging binnen het thema.</p>
         <div class="reflection-prompt">
@@ -1138,4 +1080,4 @@ Gebruik `<section class="section">` **alleen** als je bewust een smallere, gecen
         </div>
     </div>
 </div>
-<p>Gebruik <code>.critical-themes-grid &gt; .critical-theme-card</code>.</p>
+<p>Gebruik <code>.icon-card-grid &gt; .icon-card</code>.</p>

@@ -12,7 +12,7 @@
 @import url("components/images.css");
 @import url("components/afsluiting.css");
 @import url("components/stijlgids.css");
-@import url("components/accent-blok.css");
+@import url("components/content-blocks.css");
 
 /* Forced Colors Mode support */
 @media (forced-colors: active) {
@@ -401,13 +401,6 @@ img {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-    .theme-icon {
-        width: 150px;
-        height: 150px;
-        padding: 10px;
-    }
-}
 
 .header-content,
 .container {

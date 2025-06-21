@@ -93,13 +93,13 @@ header {
 
 /* Styling for subtitles within a section */
 .content-subtitle {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 600;
     color: var(--primary-purple);
     margin-top: 2rem;
     margin-bottom: 1.5rem;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--light-gray);
 }
 
 /* Styling for a standard h2 inside a section, that is NOT a main .section-title */

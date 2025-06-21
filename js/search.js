@@ -369,24 +369,27 @@ function initSearchModule() {
                     }
 
                     setTimeout(() => {
-                        // --- Open de VRAAK-accordion indien de tekst in de buurt is ---
+                        // --- Open accordion indien de tekst erin staat ---
                         if (
                             result.sectionId === `section${totalChapterSections}` &&
                             result.itemPath &&
-                            (result.itemPath.includes('portfolioIntegratie.vraakCriteria') || result.itemPath.includes('portfolioIntegratie.vraakUitleg'))
+                            result.itemPath.includes('content')
                         ) {
-                            const vraakToggle = document.getElementById('vraak-accordion-toggle');
-                            const vraakContent = document.getElementById('vraak-accordion-content');
-                            if (vraakToggle && vraakContent && !vraakContent.classList.contains('open')) {
-                                devLog("VRAAK Accordion wordt geopend (vanwege itemPath: " + result.itemPath + ")...");
-                                vraakContent.classList.add('open');
-                                vraakToggle.classList.add('open');
-                                vraakToggle.setAttribute('aria-expanded', 'true');
-                                const triangle = vraakToggle.querySelector('.triangle');
-                                if (triangle) triangle.innerHTML = '&#9660;'; // Pijltje naar beneden
+                            // Zoek dynamisch naar accordion in afsluitende hoofdstuk
+                            const sectionElement = document.getElementById(result.sectionId);
+                            if (sectionElement) {
+                                const accordionToggle = sectionElement.querySelector('.accordion-toggle');
+                                const accordionContent = sectionElement.querySelector('.accordion-content');
+                                if (accordionToggle && accordionContent && !accordionContent.classList.contains('open')) {
+                                    devLog("Accordion wordt geopend (vanwege itemPath: " + result.itemPath + ")...");
+                                    accordionContent.classList.add('open');
+                                    accordionToggle.classList.add('open');
+                                    accordionToggle.setAttribute('aria-expanded', 'true');
+                                    const triangle = accordionToggle.querySelector('.triangle');
+                                    if (triangle) triangle.innerHTML = '&#9660;'; // Pijltje naar beneden
+                                }
                             }
                         }
-                        // --- EINDE NIEUWE CODE ---
 
                         let textForFragment = '';
                         let prefixForFragment = '';

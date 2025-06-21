@@ -19,7 +19,7 @@
   - Alle componenten zijn nu een 1-op-1 representatie van de styling in `styles.css`.
   - Verouderde, dubbele en incorrecte componenten (zoals `platform-card` en `resource-card`) zijn verwijderd.
   - De componenten zijn logisch gehergroepeerd in categorieën: "Layout & Structuur", "Informatieblokken", "Kaarten (Cards)", "Complexe Componenten" en "Interactieve Componenten".
-  - Een nieuw, uniform component `tech-showcase` vervangt de oude platform- en resourcekaarten voor een consistente weergave van externe tools en technologieën.
+  - Een nieuw, uniform component `icon-card-grid` vervangt de oude platform- en resourcekaarten voor een consistente weergave van externe tools, technologieën en andere content ondersteund door iconen.
   - De showcase is nu een betrouwbare en gebruiksvriendelijke bron voor ontwikkelaars en content creators.
 
 ## [Huidige Datum] - Versie X.X.X

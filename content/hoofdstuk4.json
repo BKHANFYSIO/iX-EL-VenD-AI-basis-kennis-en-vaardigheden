@@ -1,6 +1,5 @@
 {
-  "titel": "Prompten dus...",
-  "content": [
+   "content": [
     {
       "type": "info-card",
       "titel": "Prompten dus...",
@@ -48,11 +47,11 @@
         "tekst": "Om ervoor te zorgen dat je geen \"garbage\" in de AI stopt, en er dus ook geen \"garbage\" uitkomt, zijn er een aantal basisprincipes. Een goede prompt is als een duidelijke opdracht aan een slimme assistent: hoe beter de instructie, hoe beter het resultaat."
     },
     {
-      "type": "benefits-grid",
-      "items": [
-        { "titel": "Wees Duidelijk en Specifiek", "beschrijving": "Vermijd vage vragen. Formuleer precies wat je wilt weten.", "voorbeeld": { "niet": "Vertel iets over een enkelletsel.", "wel": "Wat zijn de meest voorkomende symptomen van een inversietrauma van de enkel bij een volwassen sporter?" } },
-        { "titel": "Geef Context en een Rol", "beschrijving": "Vertel de AI wie jij bent en welke rol de AI moet aannemen. Dit helpt de AI om de toon, stijl en diepgang van het antwoord aan te passen.", "voorbeeld": { "context": "Ik ben een tweedejaars student fysiotherapie.", "rol": "Gedraag je als een ervaren sportfysiotherapeut en leg het uit." } },
-        { "titel": "Definieer het Outputformat", "beschrijving": "Vertel de AI hoe je het antwoord wilt ontvangen. Dit helpt om de informatie gestructureerd en direct bruikbaar te maken.", "voorbeeld": { "voorbeeld1": "Geef het antwoord in een tabel met de kolommen 'Symptoom', 'Mogelijke Oorzaak' en 'Eerste Hulp'.", "voorbeeld2": "Maak een bullet list van de belangrijkste revalidatie-oefeningen." } }
+        "type": "card-grid",
+  "items": [
+    { "titel": "Wees Duidelijk en Specifiek", "beschrijving": "Vermijd vage vragen. Formuleer precies wat je wilt weten.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "NIET: 'Vertel iets over een enkelletsel.'\nWEL: 'Wat zijn de meest voorkomende symptomen van een inversietrauma van de enkel bij een volwassen sporter?'" } },
+    { "titel": "Geef Context en een Rol", "beschrijving": "Vertel de AI wie jij bent en welke rol de AI moet aannemen. Dit helpt de AI om de toon, stijl en diepgang van het antwoord aan te passen.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "Context: 'Ik ben een tweedejaars student fysiotherapie.'\nRol: 'Gedraag je als een ervaren sportfysiotherapeut en leg het uit.'" } },
+    { "titel": "Definieer het Outputformat", "beschrijving": "Vertel de AI hoe je het antwoord wilt ontvangen. Dit helpt om de informatie gestructureerd en direct bruikbaar te maken.", "voorbeeld": { "titel": "Voorbeelden", "tekst": "1. 'Geef het antwoord in een tabel met de kolommen \"Symptoom\", \"Mogelijke Oorzaak\" en \"Eerste Hulp\".'\n2. 'Maak een bullet list van de belangrijkste revalidatie-oefeningen.'" } }
       ]
     },
     {
@@ -89,7 +88,7 @@
       "tekst": "Als je de basis onder de knie hebt, kun je experimenteren met geavanceerdere technieken."
     },
     {
-      "type": "benefits-grid",
+      "type": "card-grid",
       "items": [
         { "titel": "Vraag de AI om \"Stap-voor-Stap te Denken\"", "beschrijving": "Bij complexe vraagstukken, zoals klinisch redeneren, kun je de AI vragen om zijn redenering stap voor stap uit te leggen. Dit heet Chain-of-Thought prompting.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "Een patiënt heeft schouderpijn bij het heffen van de arm. Denk stap-voor-stap na over mogelijke differentiaaldiagnoses en beschrijf welke tests je zou overwegen." } },
         { "titel": "Geef de AI Voorbeelden", "beschrijving": "Leid de AI door een of twee voorbeelden te geven van wat je wilt. Dit heet Few-Shot Prompting.", "voorbeeld": { "titel": "Voorbeeld", "tekst": "Vertaal de volgende fysiotherapeutische termen naar patiëntvriendelijke taal. Voorbeeld 1: Input: 'Epicondylitis lateralis', Output: 'Een tenniselleboog'. Nu, vertaal: 'Subacromiaal pijnsyndroom'." } }

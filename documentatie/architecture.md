@@ -163,7 +163,83 @@ De bedoeling is om altijd deze bestaande klassen te gebruiken om een consistente
 
 ---
 
-## 8. Development & Debugging
+## 8. CSS Bestandsorganisatie en Conventies
+
+### CSS Bestandsstructuur
+De styling is georganiseerd in een modulaire structuur voor optimale onderhoudbaarheid:
+
+```
+/css/
+├── styles.css                    # Hoofdbestand met CSS-variabelen en globale stijlen
+└── components/                   # Component-specifieke styling
+    ├── accent-blok.css          # Accent-blokken (statistieken, weetjes, citaten)
+    ├── cards.css                # Info-cards, benefit-cards, portfolio-booster-cards
+    ├── interactive.css          # Quiz, reflection, dragdrop, selfassessment
+    ├── layout.css               # Algemene layout componenten en containers
+    ├── buttons.css              # Knoppen, controls en interactieve elementen
+    ├── navigation.css           # Sidebar, navigatie en voortgangsindicatoren
+    ├── sidebar.css              # Sidebar-specifieke styling
+    ├── header.css               # Header en titel styling
+    ├── images.css               # Afbeeldingen, iconen en media
+    ├── video.css                # Video containers en embeds
+    ├── process-flow.css         # Stappenplannen en tijdlijnen
+    ├── quiz.css                 # Quiz-specifieke styling
+    ├── search.css               # Zoekfunctionaliteit
+    ├── afsluiting.css           # Afsluitende hoofdstuk styling
+    └── stijlgids.css            # ONTWIKKELINGSHULPMIDDEL - alleen voor stijlgids.html
+```
+
+### Belangrijke Conventies
+
+#### ✅ Waar styling thuishoort:
+- **Component-specifieke styling**: In het bijbehorende component-bestand
+- **Algemene styling**: In `styles.css` (CSS-variabelen, globale stijlen)
+- **Stijlgids styling**: Alleen in `stijlgids.css`
+
+#### ❌ Wat NIET in stijlgids.css thuishoort:
+- E-learning component styling
+- Algemene UI elementen
+- Content-specifieke styling
+
+#### Naming Conventies:
+- **Component classes**: Gebruik kebab-case (bijv. `.accent-blok`, `.info-card`)
+- **Varianten**: Gebruik BEM-notatie (bijv. `.accent-blok--statistiek`)
+- **States**: Gebruik BEM-notatie (bijv. `.button--active`, `.card--disabled`)
+
+#### CSS Variabelen:
+Alle kleuren, spacing en andere design tokens zijn gedefinieerd in `styles.css`:
+```css
+:root {
+  --primary-purple: #662483;
+  --secondary-purple: #8A4A9E;
+  --accent-purple: #E6E6FA;
+  --border-radius-standard: 8px;
+  --border-radius-large: 12px;
+  /* ... etc */
+}
+```
+
+### Ontwikkelingsrichtlijnen
+
+#### Bij het toevoegen van nieuwe styling:
+1. **Identificeer het component type** (card, interactive, layout, etc.)
+2. **Plaats styling in het juiste component-bestand**
+3. **Gebruik bestaande CSS-variabelen** voor consistentie
+4. **Test in de stijlgids** om te controleren of het correct wordt weergegeven
+
+#### Bij het wijzigen van bestaande styling:
+1. **Controleer eerst de stijlgids** om de impact te zien
+2. **Gebruik CSS-variabelen** voor thematisering
+3. **Test op verschillende schermformaten** (responsive design)
+
+#### Stijlgids als ontwikkelingshulpmiddel:
+- `stijlgids.html` toont alle beschikbare componenten
+- Gebruik dit voor het testen van nieuwe styling
+- Alle wijzigingen zijn direct zichtbaar
+
+---
+
+## 9. Development & Debugging
 
 -   **Browser Console (F12):** De eerste plek om te kijken voor foutmeldingen.
 -   **LocalStorage Inspecteren:** In de Developer Tools (F12), ga naar het `Application` (of `Opslag`) tabblad en selecteer `Local Storage` om alle opgeslagen data te bekijken.

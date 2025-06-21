@@ -58,6 +58,27 @@
                     const htmlContent = renderGenericChapterContent(voorbeeldHoofdstuk.content, 1);
                     container.innerHTML = htmlContent;
 
+                    // Initialiseer accordions na het renderen (aangepaste versie voor stijlgids)
+                    setTimeout(() => {
+                        const accordionToggles = document.querySelectorAll('#dynamic-styleguide-content .accordion-toggle');
+                        accordionToggles.forEach(toggle => {
+                            const targetId = toggle.getAttribute('data-accordion-target');
+                            const contentDiv = document.getElementById(targetId);
+                            
+                            if (contentDiv) {
+                                toggle.addEventListener('click', function() {
+                                    const isOpen = contentDiv.classList.toggle('open');
+                                    toggle.classList.toggle('open', isOpen);
+                                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                                    const triangle = toggle.querySelector('.triangle');
+                                    if (triangle) {
+                                        triangle.innerHTML = isOpen ? '&#9660;' : '&#9654;';
+                                    }
+                                });
+                            }
+                        });
+                    }, 50);
+
                     // Voer de QR-code generatie uit na het renderen
                     if (typeof generateQRCodesForContent === 'function') {
                         setTimeout(() => {

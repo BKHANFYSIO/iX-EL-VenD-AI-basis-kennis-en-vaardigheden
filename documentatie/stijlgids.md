@@ -71,24 +71,25 @@ Gebruik dit om een lijst van voordelen, modules of andere gegroepeerde items wee
     - Scheid de verschillende kaarten van elkaar met `---` op een nieuwe regel.
     - Gebruik `###` voor de titel van elke kaart.
 
-### Technologie Showcase
-Een gestandaardiseerde weergave voor tools, technologieën of externe platformen.
+### Icon Card Grid
+Een flexibel grid voor het tonen van thema's, concepten of tools ondersteund door iconen. Ideaal voor het visueel groeperen van gerelateerde items.
 
 - **Shortcode-structuur:**
   ```
-  [TECH-SHOWCASE]
-  [TECH: Naam van de Tool, pad/naar/logo.png]
-  Een beschrijving van de tool. Je kunt hier ook [hyperlinks](https://www.google.com) gebruiken.
+  [ICON-GRID]
+  [ITEM: Titel van het item, pad/naar/icoon.svg]
+  Beschrijving van het item. Je kunt hier ook [hyperlinks](https://www.google.com) gebruiken.
   ---
-  [TECH: Een Andere Tool, pad/naar/anderlogo.png]
-  Een beschrijving van een andere tool.
-  [/TECH-SHOWCASE]
+  [ITEM: Ander item, pad/naar/ander-icoon.svg]
+  Beschrijving van het andere item.
+  [/ICON-GRID]
   ```
-- **Resultaat:** Een container (`.tech-showcase`) met daarin meerdere items (`.tech-item`).
+- **Resultaat:** Een grid container (`.icon-card-grid`) met daarin meerdere kaarten (`.icon-card`).
 - **Details:**
-    - Omsluit de hele sectie met `[TECH-SHOWCASE]` en `[/TECH-SHOWCASE]`.
-    - Begin elk item met `[TECH: Titel, pad/naar/logo]`.
+    - Omsluit de hele sectie met `[ICON-GRID]` en `[/ICON-GRID]`.
+    - Begin elk item met `[ITEM: Titel, pad/naar/icoon]`.
     - Scheid de items van elkaar met `---` op een nieuwe regel.
+    - Geschikt voor tools, technologieën, concepten, thema's of elk ander onderwerp dat visueel ondersteund kan worden door een icoon.
 
 ### Scenario Kaarten
 Voor het tonen van meerdere "stel je voor..." of casus-scenario's naast elkaar.
@@ -107,4 +108,45 @@ Voor het tonen van meerdere "stel je voor..." of casus-scenario's naast elkaar.
 - **Details:**
     - Omsluit de sectie met `[SCENARIOS]` en `[/SCENARIOS]`.
     - Gebruik `###` voor de titel van elk scenario.
-    - Scheid de scenario's van elkaar met `---` op een nieuwe regel. 
+    - Scheid de scenario's van elkaar met `---` op een nieuwe regel.
+
+### Ethische Reflectie Grid
+Gebruik dit voor het tonen van meerdere ethische dilemma's of reflectiepunten naast elkaar in een grid.
+
+- **Shortcode-structuur:**
+  ```
+  [REFLECTIE-GRID]
+  ### Titel van Dilemma 1
+  Beschrijving van het dilemma.
+  ---
+  ### Titel van Reflectiepunt 2
+  Beschrijving van het reflectiepunt.
+  [/REFLECTIE-GRID]
+  ```
+- **Resultaat:** Een container (`.ethical-reflection-grid`) met daarin meerdere kaarten (`.ethical-card`).
+- **Details:**
+    - Omsluit de sectie met `[REFLECTIE-GRID]` en `[/REFLECTIE-GRID]`.
+    - Gebruik `###` voor de titel van elke kaart.
+    - Scheid de kaarten van elkaar met `---` op een nieuwe regel.
+
+### Concept Kaarten (Woordenboek)
+Gebruik dit voor het uitleggen van specifieke begrippen, jargon of termen.
+
+- **Shortcode-structuur:**
+  ```
+  [CONCEPTEN]
+  [CONCEPT: Hallucinatie, Een 'verzinsel' van de AI]
+  Wanneer een AI feitelijk onjuiste of onzinnige informatie presenteert alsof het een feit is.
+  *Voorbeeld:* Vraag: 'Wie was de eerste mens op Mars?' AI Antwoord: 'Neil Armstrong landde op Mars in 1978.'
+  ---
+  [CONCEPT: Bias, Vooringenomenheid]
+  Systematische fouten in een AI-model die leiden tot oneerlijke of onjuiste uitkomsten voor bepaalde groepen.
+  [/CONCEPTEN]
+  ```
+- **Resultaat:** Een set kaarten (`.concept-cards`) die ideaal zijn voor definities.
+- **Details:**
+    - Omsluit de hele sectie met `[CONCEPTEN]` en `[/CONCEPTEN]`.
+    - Begin elke kaart met `[CONCEPT: Titel van het concept, Nederlandse vertaling]`.
+    - De regel(s) eronder is de uitleg.
+    - Een regel die start met `*Voorbeeld:*` wordt als voorbeeld weergegeven.
+    - Scheid de kaarten van elkaar met `---` op een nieuwe regel. 

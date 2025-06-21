@@ -26,6 +26,37 @@
     },
     { "type": "divider" },
     {
+      "type": "content-text",
+      "tekst": "Het `accordion` component is ideaal voor uitklapbare content die veel ruimte inneemt, zoals veelgestelde vragen, criteria lijsten of gedetailleerde uitleg die de gebruiker op verzoek kan bekijken."
+    },
+    {
+      "type": "accordion",
+      "titel": "Voorbeelden van AI Criteria",
+      "introductie": "Hieronder vind je de belangrijkste criteria die van belang zijn bij het beoordelen van AI-systemen.",
+      "content": [
+        {
+          "titel": "Betrouwbaarheid",
+          "beschrijving": "De AI moet consistente en nauwkeurige resultaten leveren over tijd en verschillende gebruikssituaties.",
+          "subpunten": ["Consistente resultaten bij herhaling", "Nauwkeurige voorspellingen", "Stabiele prestaties"]
+        },
+        {
+          "titel": "Transparantie", 
+          "beschrijving": "Het moet duidelijk zijn hoe de AI tot een beslissing is gekomen, zodat gebruikers de uitkomsten kunnen begrijpen en vertrouwen.",
+          "subpunten": ["Inzichtelijke beslissingsprocessen", "Duidelijke uitleg van resultaten", "Traceerbare logica"]
+        },
+        {
+          "titel": "Gebruiksvriendelijkheid",
+          "beschrijving": "De interface moet intuïtief en toegankelijk zijn voor eindgebruikers, ongeacht hun technische achtergrond.",
+          "subpunten": ["Intuïtieve bediening", "Toegankelijk voor alle gebruikers", "Duidelijke feedback"]
+        },
+        {
+          "titel": "Privacy & Veiligheid",
+          "beschrijving": "Gebruikersdata moet worden beschermd volgens geldende wetgeving en veiligheidsnormen."
+        }
+      ]
+    },
+    { "type": "divider" },
+    {
       "type": "info-card",
       "classes": "warning-card",
       "titel": "Belangrijke Waarschuwing",
@@ -86,14 +117,38 @@
     },
     {
       "type": "content-text",
+      "tekst": "De `concept-card` is ideaal voor het uitleggen van specifieke begrippen, jargon of termen. De kaart presenteert een term, een Nederlandse vertaling, een uitleg en een concreet voorbeeld, wat het een krachtig hulpmiddel maakt voor definities."
+    },
+    {
+      "type": "concept-cards",
+      "items": [
+        {
+          "titel": "Hallucinatie",
+          "nederlands": "Een 'verzinsel' van de AI",
+          "uitleg": "Wanneer een AI feitelijk onjuiste of onzinnige informatie presenteert alsof het een feit is. Dit gebeurt wanneer het model probeert een patroon voort te zetten, maar niet over de juiste feitelijke data beschikt.",
+          "voorbeeld": "Vraag: 'Wie was de eerste Nederlandse koning die op de fiets naar zijn werk ging?' AI Antwoord: 'Koning Willem I stond erom bekend in de ochtend een rondje door Den Haag te fietsen.'"
+        },
+        {
+          "titel": "Bias",
+          "nederlands": "Vooringenomenheid",
+          "uitleg": "Systematische fouten in een AI-model die leiden tot oneerlijke, onnauwkeurige of discriminerende uitkomsten. Bias ontstaat vaak doordat de trainingsdata een oneerlijke weergave van de realiteit bevat.",
+          "voorbeeld": "Een AI voor het beoordelen van CV's die systematisch kandidaten met een buitenlands klinkende naam lager rangschikt, omdat het getraind is op data van een bedrijf dat in het verleden voornamelijk mensen met lokaal klinkende namen aannam."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-text",
       "tekst": "Een `card-grid` is perfect voor het uitlichten van voordelen, kenmerken of belangrijke concepten in een kaart-layout. Elke kaart heeft een titel en een beschrijving, en kan optioneel een praktijkvoorbeeld bevatten. In een regulier hoofdstuk kun je de `titel` eigenschap gebruiken, maar voor de duidelijkheid van deze catalogus wordt deze hier leeg gelaten."
     },
     {
       "type": "card-grid",
-      "titel": "",
       "items": [
         { "titel": "Kaart 1", "beschrijving": "Een beschrijving van het eerste item.", "voorbeeld": { "titel": "Praktijkvoorbeeld", "tekst": "Een concrete uitwerking." } },
-        { "titel": "Kaart 2", "beschrijving": "Een beschrijving van het tweede item." }
+        { "titel": "Kaart 2", "beschrijving": "Een beschrijving van het tweede item." },
+        { "titel": "Kaart 3", "beschrijving": "Een beschrijving van het derde item.", "onderschrift": "Een visuele representatie van verschillende AI-modellen." }
       ]
     },
     { "type": "divider" },
@@ -241,15 +296,20 @@
     {
         "type": "split-screen-image-text",
         "afbeelding": {
-            "src": "images/Zien.png",
-            "alt": "Decoratieve afbeelding",
-            "onderschrift": "Optioneel onderschrift"
+            "src": "images/Human_in_the_loop.png",
+            "alt": "Afbeelding en tekst naast elkaar",
+            "onderschrift": "Tekst en afbeelding naast elkaar.",
+            "bron": {
+                "naam": "Klikbare bron: Google",
+                "url": "https://google.com"
+            }
         },
         "tekst_content": [
-            "Dit is een 'split-screen' layout. Het is perfect om een concept visueel te ondersteunen met een afbeelding aan de ene kant en een gedetailleerde uitleg aan de andere kant.",
+            "Met de `split-screen-image-text` kun je een afbeelding naast een of meerdere alinea's tekst plaatsen.",
             "De layout is volledig responsive en de tekstkolom past zich netjes aan."
         ]
     },
+    { "type": "divider" },
     {
         "type": "content-text",
         "tekst": "Gebruik een `image-grid` om meerdere afbeeldingen in een galerij-stijl weer te geven. Je kunt het aantal kolommen specificeren voor een flexibele layout."
@@ -258,9 +318,31 @@
         "type": "image-grid",
         "kolommen": 3,
         "afbeeldingen": [
-            { "src": "images/Brein.png", "alt": "Afbeelding 1" },
-            { "src": "images/Horen.png", "alt": "Afbeelding 2" },
-            { "src": "images/Bewegen.png", "alt": "Afbeelding 3", "onderschrift": "Een grid van 3" }
+            { 
+                "src": "images/Brein.png", 
+                "alt": "Een illustratie van een menselijk brein.", 
+                "onderschrift": "Menselijk brein",
+                "bron": {
+                    "naam": "iXperium Health"
+                }
+            },
+            { 
+                "src": "images/Horen.png", 
+                "alt": "Een illustratie van een menselijk oor.", 
+                "onderschrift": "Menselijk oor",
+                "bron": {
+                    "naam": "Bron: Voorbeeld.com",
+                    "url": "https://voorbeeld.com"
+                }
+            },
+            { 
+                "src": "images/Bewegen.png", 
+                "alt": "Een illustratie van een rennend persoon.", 
+                "onderschrift": "Rennend persoon",
+                "bron": {
+                    "naam": "HAN"
+                }
+            }
         ]
     },
     { "type": "divider" },
@@ -272,15 +354,27 @@
       "type": "image-block",
       "src": "images/Zien.png",
       "alt": "Standaard afbeelding",
-      "onderschrift": "Dit is een standaard afbeelding met onderschrift."
+      "onderschrift": "Dit is een standaard afbeelding met onderschrift.",
+      "bron": {
+        "naam": "Klikbare bron: iXperium Health",
+        "url": "https://www.ixperium.nl/health/"
+      }
     },
     { "type": "divider" },
+    {
+      "type": "content-text",
+      "tekst": "De `img-polaroid` klasse geeft een afbeelding een speelse, schuin geplaatste stijl. Ideaal voor een minder formele noot."
+    },
     {
       "type": "image-block",
       "classes": "img-polaroid",
       "src": "images/Bewegen.png",
       "alt": "Polaroid afbeelding",
-      "onderschrift": "Polaroid Stijl"
+      "onderschrift": "Polaroid Stijl",
+      "bron": {
+        "naam": "Klikbare bron: HAN",
+        "url": "https://www.han.nl"
+      }
     },
     {
       "type": "section-title",
@@ -366,6 +460,16 @@
       "bron": {
         "naam": "Klikbare bron (optioneel)",
         "url": "#"
+      }
+    },
+    {
+      "type": "accent-blok",
+      "variant": "quote",
+      "titel": "Voorbeeld: Inspirerende quote",
+      "tekst": "De beste manier om de toekomst te voorspellen is door deze zelf te creëren. Dit 'quote' blok is ideaal voor inspirerende citaten, wijze woorden of belangrijke uitspraken die de aandacht verdienen.",
+      "bron": {
+        "naam": "Peter Drucker",
+        "url": "https://example.com"
       }
     },
     { "type": "divider" },

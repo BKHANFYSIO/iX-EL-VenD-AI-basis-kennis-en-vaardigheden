@@ -1,34 +1,402 @@
 {
-  "titel": "Vinden van Zorgtechnologie - Waar begin je?",
   "content": [
     {
       "type": "info-card",
-      "titel": "Ontdek Jouw Bronnen voor Zorgtechnologie",
-      "tekst": "Natuurlijk kun je altijd een zoekmachine zoals Google gebruiken om zorgtechnologie te vinden. Echter, er bestaan ook gespecialiseerde catalogi en platforms die je gericht helpen bij het ontdekken van technologie die écht past bij jouw behoeften als (toekomstig) fysiotherapeut. Dit hoofdstuk biedt een overzicht van de belangrijkste bronnen.\n\nWe maken onderscheid tussen bronnen specifiek voor HAN-studenten en algemeen toegankelijke platforms. De iXperium Health catalogi zijn primair gericht op studenten van de HAN. Hier kun je technologieën ontdekken, reserveren en zelfs fysiek uitproberen. Ook na je studie blijven deze catalogi een waardevolle inspiratiebron en zijn er mogelijkheden om op locatie geïnspireerd te worden. De overige nationale platforms zijn toegankelijk voor iedere fysiotherapeut en bieden een breder scala aan geteste en beoordeelde zorgtechnologie. Neem even de tijd om de beschrijvingen van elke bron te lezen, de links te openen en kort rond te kijken om een eerste indruk te krijgen."
+      "classes": "welcome-card",
+      "titel": "Hoofdstuk 6: Kansen & Risico's van AI",
+      "tekst": "Welkom bij een cruciaal hoofdstuk over de impact van Kunstmatige Intelligentie! AI is overal. Van gepersonaliseerde aanbevelingen online tot slimme hulpmiddelen in de zorg, de invloed ervan groeit razendsnel. Maar met elke nieuwe mogelijkheid komen ook nieuwe vragen en uitdagingen. In dit hoofdstuk duiken we dieper in de twee kanten van AI: de enorme kansen die het biedt, en de serieuze risico's die we moeten kennen en beheersen. AI is een super handig hulpmiddel, maar het is pas echt waardevol als we het op een verantwoorde manier gebruiken. Denk terug aan de eerdere hoofdstukken, waarin we de basis van AI hebben verkend. We hebben gezien hoe AI leert en beslissingen neemt. Nu is het tijd om te snappen wat die beslissingen betekenen in de praktijk, zowel positief als negatief. Of je nu AI gebruikt tijdens het studeren en leren, of straks als fysiotherapeut aan de slag gaat, de principes van verantwoorde AI zijn overal belangrijk. Dit hoofdstuk bereidt je voor om de kansen te pakken en de risico's in toom te houden, zodat je AI niet alleen kunt gebruiken, maar het ook op een slimme en veilige manier kunt toepassen."
     },
     {
-      "type": "info-card",
-      "classes": "featured-ixperium",
-      "titel": "iXperium Health Catalogussen - Direct Beschikbaar op de HAN",
-      "content": [
+      "type": "section-title",
+      "titel": "AI als Katalysator voor Vooruitgang: Kansen in de Praktijk"
+    },
+    {
+      "type": "content-text",
+      "tekst": "AI is niet langer toekomstmuziek; het is een krachtig hulpmiddel dat nu al zorgt voor slimme oplossingen, zowel tijdens je studie als in de fysiotherapiepraktijk. Laten we eens kijken hoe AI je kan helpen om efficiënter en effectiever te werken."
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Slimme Ondersteuning: Decision Support"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Stel je voor dat je toegang hebt tot een assistent die razendsnel grote hoeveelheden informatie kan analyseren en je de meest relevante inzichten presenteert. Dat is 'Decision Support' AI. Het helpt je om betere, snellere beslissingen te nemen door complexe data te verwerken."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Tijdens je studie:</strong> Denk aan tools die je helpen bij het vinden van relevante wetenschappelijke artikelen, het samenvatten van lange teksten voor snelle overzichten, of het analyseren van studieresultaten om zwakke punten te identificeren.</li></ul>"
+    },
+    {
+      "type": "image-block",
+      "src": "images/decision_support_student.png",
+      "alt": "Een student die een laptop gebruikt met een AI-assistent die studieresultaten analyseert en leermateriaal aanbeveelt."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>In de fysiotherapiepraktijk:</strong> AI kan bijvoorbeeld patiëntdata (zoals medische geschiedenis, diagnosebeelden of bewegingsanalyses) analyseren om te helpen bij het stellen van een diagnose, het opstellen van een behandelplan, of het voorspellen van hersteltijden. Het is een extra 'paar ogen' dat patronen ziet die een mens misschien mist.</li></ul>"
+    },
+    {
+      "type": "card-grid",
+      "items": [
         {
-          "type": "resource-grid-container",
-          "titel": "",
-          "items": [
-            { "titel": "iXperium Health Catalogus", "logo": "images/Blijvende_afb/logo-health-transparant1.png", "beschrijving": "Onze catalogus: Zoek, kom langs of reserveer en probeer zorgtechnologie zelf uit! Alle technologie in deze catalogus is beschikbaar voor studenten en docenten van de HAN.", "link": "https://catalogus-ixperium-health.glide.page", "qr_code": "images/QR_IX_Catalogus.png" },
-            { "titel": "iXperium Makerspace Catalogus", "logo": "images/Blijvende_afb/logo-health-transparant1.png", "beschrijving": "Onze Makerspace catalogus: Specifiek gericht op 3D printen en lasersnijden. Ontdek de mogelijkheden voor het maken van gepersonaliseerde hulpmiddelen.", "link": "https://ixperiumhealth-makerspace.glide.page", "qr_code": "images/QR_IX_Makerspace_catalogus.png" }
+          "titel": "Betere Beslissingen",
+          "beschrijving": "Ondersteunt professionals met data-gedreven inzichten."
+        },
+        {
+          "titel": "Tijdsbesparing",
+          "beschrijving": "Versnelt het analyseproces van grote datasets."
+        },
+        {
+          "titel": "Kennisuitbreiding",
+          "beschrijving": "Biedt toegang tot een schat aan informatie en expertise."
+        },
+        {
+          "titel": "Gepersonaliseerde Zorg",
+          "beschrijving": "Maakt behandelingen en adviezen nog beter afgestemd op de individuele patiënt."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "De Digitale Receptionist: Triage-bots"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Triage-bots zijn AI-systemen die de eerste lijn van contact vormen. Ze kunnen vragen beantwoorden, informatie verzamelen en je doorverwijzen naar de juiste persoon of afdeling. Dit zorgt voor een snellere service en ontlast de menselijke medewerkers."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Tijdens je studie:</strong> Een chatbot van je onderwijsinstelling die veelgestelde vragen over roosters, deadlines of studiepunten direct kan beantwoorden.</li></ul>"
+    },
+    {
+      "type": "image-block",
+      "src": "images/triage_bot_student.png",
+      "alt": "Een student die interactie heeft met een chatbot op een website of app."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>In de fysiotherapiepraktijk:</strong> Denk aan een bot op de website van de praktijk die nieuwe patiënten basisvragen stelt over hun klachten en hen vervolgens een afspraak laat plannen bij de juiste specialist, of basisadvies geeft over veelvoorkomende klachten. Dit kan de druk op de frontoffice enorm verminderen.</li></ul>"
+    },
+    {
+      "type": "scenario-container-horizontal",
+      "scenarios": [
+        {
+          "titel": "Efficiënte Patiënt Triage",
+          "beschrijving": "Een patiënt heeft 's avonds laat acute nekpijn en twijfelt of een bezoek aan de huisarts nodig is.",
+          "punten": [
+            "Traditioneel: Patiënt zoekt online, belts misschien de huisartsenpost, of wacht tot de volgende dag.",
+            "Met Triage-bot: Patiënt opent de app van de praktijk, beschrijft de klachten aan een AI-triagebot. De bot stelt gerichte vragen, en adviseert op basis van de antwoorden om een afspraak te maken bij de fysiotherapeut voor de volgende ochtend, of in acute gevallen direct contact op te nemen met de huisartsenpost. Dit vermindert onnodige spoedbezoeken en versnelt de toegang tot de juiste zorg."
+          ]
+        },
+        {
+          "titel": "Studiehulp via Chatbot",
+          "beschrijving": "Je bent bezig met een complexe huiswerkopdracht en loopt vast op een specifiek concept. Je docent is nu niet bereikbaar.",
+          "punten": [
+            "Traditioneel: Je zoekt zelf urenlang naar informatie, of wacht tot de volgende les.",
+            "Met Triage-bot (Studiehulp): De bot geeft je direct een heldere uitleg, verwijst naar relevante pagina's in je studiemateriaal of naar extra oefeningen, en kan je zelfs meteen helpen de stof écht goed te leren voor in je lange termijn geheugen, zodat je direct verder kunt met je opdracht."
           ]
         }
       ]
     },
     {
-      "type": "resource-grid-container",
-      "titel": "Nationale Platforms voor Zorgtechnologie",
+      "type": "divider"
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Lichtere Lasten: Administratieve Verlichting"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Papierwerk en administratieve taken kosten veel tijd en energie. AI kan hier een enorme rol spelen door routinetaken te automatiseren, waardoor professionals meer tijd overhouden voor hun kerntaken: de patiënt of de student."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Tijdens je studie:</strong> AI kan je helpen bij het organiseren van je notities, het structureren van studiemateriaal voor snelle overzichten die je vervolgens met behulp van AI zelf actief verwerkt, of zelfs het controleren van je spelling en grammatica in verslagen.</li></ul>"
+    },
+    {
+      "type": "image-block",
+      "src": "images/administrative_relief_student.png",
+      "alt": "Een student die georganiseerd werkt met digitale documenten, geassisteerd door AI."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>In de fysiotherapiepraktijk:</strong> Denk aan AI die automatisch patiëntendossiers bijwerkt op basis van dicteerde aantekeningen, de declaratieverwerking versnelt door data automatisch te controleren, of de planning van afspraken optimaliseert door rekening te houden met reistijden en beschikbaarheid van behandelkamers. Dit vermindert de administratieve last aanzienlijk.</li></ul>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Slimme Oefenpartner: AI voor Actief Leren en Oefenen"
+    },
+    {
+      "type": "content-text",
+      "tekst": "AI is niet alleen handig voor informatie, maar kan ook een persoonlijke trainingspartner zijn die je helpt om stof echt te doorgronden en je vaardigheden te oefenen. Dit gaat verder dan alleen samenvattingen lezen; het daagt je uit om actief met de stof aan de slag te gaan, waardoor kennis beter blijft hangen."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>AI als Simulator (oefenen met virtuele patiënten):</strong> Stel je voor dat je kunt oefenen met het voeren van intakegesprekken of het beoordelen van virtuele patiënten, voordat je met echte mensen aan de slag gaat. AI kan de rol van een patiënt spelen, reageren op jouw vragen en handelingen, en je zelfs feedback geven op je communicatie of beslissingen. Dit is een veilige manier om te experimenteren en fouten te maken, zonder risico's voor echte patiënten.</li></ul>"
+    },
+    {
+      "type": "image-block",
+      "src": "images/ai_simulator_fysio.png",
+      "alt": "Een fysiotherapiestudent die een VR-headset draagt en interactie heeft met een virtuele patiënt in een gesimuleerde omgeving."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>AI voor Dieper Leren en Lange Termijn Geheugen:</strong> Om te voorkomen dat je alleen oppervlakkig leert, kan AI slimme oefeningen voor je maken. Denk aan:"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Aangepaste Quizzen:</strong> AI stelt vragen over precies die onderwerpen waar jij nog moeite mee hebt, waardoor je brein harder moet 'werken' om de antwoorden te vinden en de stof echt eigen te maken.</li><li><strong>Herhalingsschema's (Spaced Repetition):</strong> De AI onthoudt welke stof je al goed kent en welke je vaker moet herhalen, en plant herhaalmomenten in op het juiste moment, zodat kennis echt in je lange termijn geheugen komt.</li><li><strong>Praktijkcases:</strong> AI presenteert je met realistische casussen of dilemma's die je moet oplossen, en geeft daarna gedetailleerde feedback op je aanpak.</li></ul>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Deze vormen van AI-ondersteuning zorgen ervoor dat je actief bezig bent met de leerstof en dat je uitgedaagd wordt om kritisch na te denken. Dit helpt je om niet in de 'illusie van vloeiendheid' te trappen – het gevoel dat je iets snapt terwijl dat nog niet zo is – en draagt bij aan duurzame kennis."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>Video Suggestie:</strong> Wil je zien hoe AI fysiotherapeuten kan helpen tijd te besparen en de patiëntenzorg te verbeteren? Bekijk deze video:"
+    },
+    {
+      "type": "video-full-width",
+      "titel": "How AI Can Save You Time & Improve Patient Care in PT",
+      "link": "https://www.youtube.com/watch?v=rdbR2JeqRAE",
+      "onderschrift": "Duur: 20:30. Focus vooral op de tijdstempels 1:20 (dagelijkse documentatie), 7:30 (workload) en 14:30 (administratieve workflows) voor relevante voorbeelden."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "De Schaduwzijde van AI: Belangrijke Risico's om te Overwegen"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Hoewel AI ongelooflijke kansen biedt, is het cruciaal om ook de mogelijke risico's en valkuilen te kennen. Verantwoord gebruik van AI betekent dat je je bewust bent van de schaduwzijde en weet hoe je hiermee om moet gaan."
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Privacygevoeligheid: Jouw Gegevens en de AVG (GDPR)"
+    },
+    {
+      "type": "content-text",
+      "tekst": "AI-systemen hebben vaak veel data nodig om te 'leren'. Wanneer het om persoonlijke gegevens gaat, is privacy een groot en belangrijk aandachtspunt. In Europa beschermt de Algemene Verordening Gegevensbescherming (AVG), ook bekend als GDPR (General Data Protection Regulation), onze privacy."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>De kern van de AVG:</strong> Deze wet zegt dat organisaties zorgvuldig moeten omgaan met persoonsgegevens. Dit betekent dat data verzameld moet worden voor een duidelijk doel, veilig moet worden opgeslagen en alleen met toestemming gebruikt mag worden.</li></ul>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>AI en privacyrisico's:</strong>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Datalekken:</strong> Als AI-systemen slecht beveiligd zijn, kunnen gevoelige patiëntdata of studieresultaten in verkeerde handen vallen.</li><li><strong>Onbedoeld gebruik:</strong> Informatie die voor één doel verzameld is, kan door AI onbedoeld voor iets anders gebruikt worden, zonder dat je daarvan op de hoogte bent.</li><li><strong>Identificatie:</strong> Zelfs anonieme data kan, als AI er slimme combinaties mee maakt, soms toch terugleiden naar een persoon.</li></ul>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Specifiek voor fysiotherapie:</strong> Patiëntdossiers, behandelgeschiedenissen en zelfs bewegingsdata zijn zeer persoonlijk. Het verkeerd omgaan hiermee kan leiden tot grote vertrouwensbreuken en juridische problemen. AI-systemen moeten daarom voldoen aan de strengste privacyeisen.</li></ul>"
+    },
+    {
+      "type": "concept-cards",
       "items": [
-        { "titel": "BeweegTech", "logo": "images/Beweegtech_Logo.jpg", "beschrijving": "De zoekmachine voor zorgtechnologie specifiek gericht op fysiotherapeuten. Vind technologie die past bij jouw praktijk en patiënten.", "link": "https://beweegtech.nl/" },
-        { "titel": "GGD AppStore", "logo": "images/GGDAppStore.jpg", "beschrijving": "De GGD AppStore biedt een overzicht van betrouwbare gezondheidsapps, getest op privacy, betrouwbaarheid en gebruiksvriendelijkheid.", "link": "https://www.ggdappstore.nl/Appstore/Homepage" },
-        { "titel": "Zorginnovatie.nl", "logo": "images/Zorginnovatie.jpg", "beschrijving": "Het nationale netwerk voor innovaties in de gezondheid en zorg. Ontdek de laatste onnovaties in de zorg.", "link": "https://zorginnovatie.nl/" },
-        { "titel": "Zorg van Nu", "logo": "images/ZorgvanNu.svg", "beschrijving": "Toont wat slimme zorg is, welke innovaties er zijn en hoe, wanneer en waarom je ze inzet. Een initiatief van het ministerie van VWS.", "link": "https://www.zorgvannu.nl/" }
+        {
+          "titel": "AVG / GDPR",
+          "nederlands": "Algemene Verordening Gegevensbescherming",
+          "uitleg": "Een Europese wet die regelt hoe persoonsgegevens verwerkt en beschermd moeten worden, om de privacy van individuen te waarborgen."
+        },
+        {
+          "titel": "Datalek",
+          "nederlands": "Onbevoegde toegang tot data",
+          "uitleg": "Een beveiligingsincident waarbij persoonsgegevens onbedoeld of onrechtmatig worden ingezien, gewijzigd, verwijderd, of openbaar gemaakt."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Onzichtbare Ongelijkheid: Bias in AI"
+    },
+    {
+      "type": "content-text",
+      "tekst": "AI leert van de data die het krijgt. Als die data onvolledig is, bevooroordeeld is, of bepaalde groepen mensen ondervertegenwoordigd, dan kan de AI die vooroordelen overnemen en zelfs versterken. Dit noemen we 'bias'."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>Hoe bias ontstaat:</strong>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Vooroordelen in data:</strong> Als de trainingsdata voornamelijk bestaat uit informatie over één specifieke groep, zal de AI minder goed presteren voor andere groepen.</li><li><strong>Menselijke bias overgenomen:</strong> Als de mensen die de AI trainen onbewuste vooroordelen hebben, kunnen deze in het systeem terechtkomen.</li></ul>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>Gevolgen van bias:</strong> AI-systemen kunnen onbedoeld discrimineren, bijvoorbeeld door:"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Ongelijke behandeling:</strong> Bepaalde groepen krijgen minder goede adviezen of worden anders beoordeeld.</li><li><strong>Verkeerde uitkomsten:</strong> Diagnoses of aanbevelingen kunnen onjuist zijn voor specifieke patiënten, met ernstige gevolgen.</li></ul>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Specifiek voor fysiotherapie:</strong> Stel je voor dat een AI-diagnosetool vooral getraind is op data van mannelijke patiënten. Het kan dan minder accuraat zijn in het herkennen van blessures bij vrouwelijke patiënten, of juist de klachten van bepaalde etnische groepen over het hoofd zien. Dit is een groot risico voor gelijke en goede zorg.</li></ul>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Te Veel Vertrouwen: Cognitieve Offloading en de Illusie van Vloeiendheid"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Waar AI kan helpen bij het verlichten van taken, schuilt hierin ook een risico. Te veel leunen op AI kan leiden tot 'cognitieve offloading', waarbij je minder zelf nadenkt en je eigen kennis en kritisch vermogen minder traint. Hierdoor ontstaat de 'illusie van vloeiendheid', waarbij je dénkt dat je de stof snapt, terwijl je in werkelijkheid de AI het werk hebt laten doen. Eerder in dit hoofdstuk zagen we dat AI ook juist kan helpen je brein te laten zweten. Hier gaat het om de valkuil."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>Gevaren tijdens je studie:</strong>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Kopiëren zonder begrijpen:</strong> Automatisch samenvattingen genereren is handig, maar als je ze niet actief verwerkt, sla je de informatie niet op in je lange termijn geheugen.</li><li><strong>Minder kritisch denken:</strong> Als een AI je altijd de \"juiste\" antwoorden geeft, oefen je minder met het zelf analyseren van problemen en het oplossen ervan. Je wordt afhankelijk.</li><li><strong>Verlies van vaardigheden:</strong> Als je altijd op AI vertrouwt voor basisberekeningen of diagnoses, kun je bepaalde fundamentele vaardigheden verliezen of niet volledig ontwikkelen.</li></ul>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Specifiek voor fysiotherapie:</strong> Als een AI een behandelplan voorstelt, is het essentieel dat jij als toekomstige fysiotherapeut de redenering erachter kunt volgen en zelf kunt beoordelen of het plan passend en veilig is. Blindelings vertrouwen op de AI, zonder zelf de kritische vragen te stellen, kan leiden tot minder effectieve of zelfs schadelijke behandelingen en kan er ook voor zorgen dat je er minder van leert, omdat je zelf minder actief hoeft na te denken.</li></ul>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Navigeren door het AI-landschap: Richtlijnen en Verantwoordelijkheid"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Nu je een goed beeld hebt van zowel de kansen als de risico's van AI, is het belangrijk om te begrijpen hoe we ervoor zorgen dat AI op een verantwoorde en veilige manier wordt ingezet. Dit draait om duidelijke richtlijnen en onze eigen verantwoordelijkheid."
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Regelgeving & Ethiek: De Noodzaak van Kaders"
+    },
+    {
+      "type": "content-text",
+      "tekst": "AI ontwikkelt zich razendsnel, en dat vraagt om duidelijke regels. Overheden en organisaties werken aan ethische kaders en wetgeving om ervoor te zorgen dat AI ten goede komt aan de samenleving, zonder ongewenste neveneffecten."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>Waarom ethiek en regelgeving?</strong>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Veiligheid:</strong> Voorkomen dat AI-systemen schade veroorzaken (bijvoorbeeld door fouten of misbruik).</li><li><strong>Rechtvaardigheid:</strong> Zorgen dat AI eerlijk is en geen groepen discrimineert (terugkomend op het punt van bias).</li><li><strong>Transparantie:</strong> Begrijpen hoe AI beslissingen neemt, zodat we het kunnen controleren en bijsturen.</li><li><strong>Verantwoordelijkheid:</strong> Vaststellen wie verantwoordelijk is als er iets misgaat met een AI-systeem.</li></ul>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Praktische impact:</strong> Deze kaders beïnvloeden hoe AI-applicaties worden ontwikkeld, getest en geïmplementeerd. Als toekomstig fysiotherapeut zul je misschien te maken krijgen met AI-tools die aan specifieke certificeringen of audits moeten voldoen.</li></ul>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Human in the Loop: Onze Onmisbare Rol"
+    },
+    {
+      "type": "content-text",
+      "tekst": "We hebben in Hoofdstuk 4 al kort stilgestaan bij het concept van 'Human in the Loop'. Ondanks alle slimme mogelijkheden van AI, blijft de menselijke factor cruciaal. Dit concept benadrukt dat AI vooral een hulpmiddel is, en geen vervanging voor menselijke expertise, empathie en kritisch denkvermogen."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>Wat betekent 'Human in the Loop'?</strong>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Controle:</strong> AI-systemen moeten altijd gecontroleerd en gevalideerd worden door mensen. De AI doet een voorstel, de mens neemt de definitieve beslissing.</li><li><strong>Beoordeling:</strong> Mensen zijn nodig om de output van AI te beoordelen op juistheid, ethiek en context. Een AI kan bijvoorbeeld een analyse doen, maar alleen jij kunt de nuances van een patiëntsituatie volledig inschatten.</li><li><strong>Bijsturing:</strong> Als AI-systemen fouten maken of onbedoelde effecten hebben, zijn mensen nodig om ze te corrigeren en te verbeteren.</li><li><strong>Empathie en interactie:</strong> Zeker in de fysiotherapie is menselijk contact, empathie en intuïtie onvervangbaar. AI kan ondersteunen, maar de therapeut-patiëntrelatie blijft centraal staan.</li></ul>"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Waarom jij belangrijk blijft:</strong> AI kan efficiënter zijn in data-analyse of routinetaken, maar het mist het vermogen tot empathie, moreel oordeel, creativiteit en het omgaan met onverwachte, complexe menselijke situaties. Deze menselijke kwaliteiten maken jou als professional onmisbaar, en AI kan je juist helpen om je hier nog meer op te richten.</li></ul>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Human in the Lead: De HAN-Visie"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Naast 'Human in the Loop' spreken we bij de HAN ook over 'Human in the Lead'. Dit legt nog meer nadruk op het feit dat de mens altijd de regie houdt en het laatste woord heeft. AI is een assistent, geen beslisser. Het gaat erom dat jij als professional de leiding neemt en AI gebruikt om je eigen mogelijkheden te vergroten, niet om taken uit handen te geven zonder kritische blik."
+    },
+    {
+      "type": "icon-card-grid",
+      "themes": [
+        {
+          "icoon": "images/icon_human_in_loop.png",
+          "titel": "Human in the Loop",
+          "inhoud": "Een principe waarbij de mens de resultaten van een AI-systeem controleert, valideert en eventueel aanpast. De mens is onderdeel van de AI-workflow."
+        },
+        {
+          "icoon": "images/icon_human_in_lead.png",
+          "titel": "Human in the Lead",
+          "inhoud": "Een principe dat verder gaat dan 'Human in the Loop', waarbij de mens altijd de eindverantwoordelijkheid en de regie behoudt over beslissingen, en AI puur als ondersteunend hulpmiddel dient. Jouw professionele handtekening staat er altijd onder, wat betekent dat jij de uiteindelijke verantwoordelijkheid draagt voor de keuzes die gemaakt worden, ook met AI-ondersteuning. De mens is de leider, AI de assistent."
+        }
+      ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>Video Suggestie:</strong> Om het principe van \"Human in the Loop\" duidelijker te maken, kun je zoeken naar een korte animatie of uitlegvideo over dit concept, bij voorkeur in het Nederlands of met Engelse ondertitels. Zoektermen: \"Human in the Loop AI explained\", \"Mens in de Lus AI uitleg\"."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Afsluiting & Mini-opdracht"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Je hebt in dit hoofdstuk gezien dat AI een dubbelzijdig verhaal is: vol kansen, maar ook met duidelijke risico's. Het is een hulpmiddel dat ons kan helpen efficiënter te werken en dieper te leren, zowel in je studie als straks in de praktijk. Maar het is cruciaal om altijd kritisch te blijven en je bewust te zijn van aspecten zoals privacy, bias en het risico van cognitieve offloading (het te veel leunen op de AI, waardoor je minder zelf leert)."
+    },
+    {
+      "type": "content-text",
+      "tekst": "Onthoud dat de mens altijd 'Human in the Lead' is. AI is jouw assistent, die je ondersteunt, maar de uiteindelijke beslissing en verantwoordelijkheid liggen altijd bij jou. Jouw professionele oordeel en handtekening zijn onmisbaar."
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Ethische Reflectie: Denk Na!"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Nu je de kansen én risico's kent, is het belangrijk om hierover na te denken. AI is een hulpmiddel, en wij bepalen hoe we het gebruiken."
+    },
+    {
+      "type": "ethical-reflection-grid",
+      "kaarten": [
+        {
+          "titel": "Dilemma 1: AI-diagnose en Menselijk Oordeel in Fysiotherapie",
+          "beschrijving": "Een nieuwe AI-tool in de fysiotherapie beweert met hoge nauwkeurigheid diagnoses te stellen voor veelvoorkomende blessures. Je merkt dat collega's steeds meer op de AI vertrouwen en minder tijd besteden aan hun eigen klinische redenering. Hoe zorg je ervoor dat de efficiëntie van de AI behouden blijft, terwijl je voorkomt dat menselijke expertise en kritisch denkvermogen afnemen? Wie is uiteindelijk verantwoordelijk als de AI een foutieve diagnose stelt?"
+        },
+        {
+          "titel": "Dilemma 2: Gepersonaliseerd Leren met AI: Efficiëntie vs. Diepgang",
+          "beschrijving": "Je gebruikt een AI-gestuurd leerplatform dat perfecte samenvattingen en oefeningen genereert, precies afgestemd op jouw leerstijl. Je merkt dat je minder tijd kwijt bent aan studeren, maar vraagt je af of je de stof wel écht diepgaand begrijpt, of dat de AI veel van het denkwerk overneemt (cognitieve offloading). Hoe vind je een balans tussen efficiëntie en diepgang van je leerproces, en hoe gebruik je de AI als 'Human in the Lead'?"
+        },
+        {
+          "titel": "Dilemma 3: AI-gestuurde Patiëntmonitoring en Privacy",
+          "beschrijving": "Een nieuwe revalidatie-app gebruikt AI om via de camera van de smartphone de uitvoering van oefeningen te analyseren en realtime feedback te geven aan de patiënt. Deze data, inclusief videobeelden van de oefeningen, wordt opgeslagen. Welke privacyrisico's zie je hierbij (denk aan AVG/GDPR)? Hoe zorg je ervoor dat de voordelen van gepersonaliseerde feedback opwegen tegen de privacyzorgen?"
+        },
+        {
+          "titel": "Dilemma 4: Bias in AI voor Patiëntplanning",
+          "beschrijving": "Jouw fysiotherapiepraktijk overweegt een AI-systeem voor afsprakenplanning dat de efficiëntie moet verhogen door patiënten automatisch te matchen met beschikbare therapeuten. Het systeem is getraind op historische data, waarin onbedoeld een voorkeur voor bepaalde demografische groepen is ontstaan. Hoe identificeer je dit risico op bias en welke stappen zou je nemen om ervoor te zorgen dat alle patiënten eerlijke en gelijke toegang krijgen tot zorg, ongeacht de aanbevelingen van de AI?"
+        }
       ]
     }
   ],
@@ -36,48 +404,48 @@
     {
       "id": "h6_mc_1",
       "type": "mc",
-      "vraag": "Je wilt een betrouwbare gezondheidsapp aanbevelen aan een patiënt voor thuisoefeningen. Welke bron is het MEEST geschikt om te raadplegen voor een onafhankelijke beoordeling van gezondheidsapps?",
+      "vraag": "Wat is het grootste risico van 'cognitieve offloading' bij het gebruik van AI tijdens je studie?",
       "options": [
-        "BeweegTech.nl",
-        "GGD AppStore",
-        "Zorginnovatie.nl",
-        "iXperium Health Catalogus"
+        "Dat je minder tijd besteedt aan studeren",
+        "Dat je AI te duur vindt om te gebruiken",
+        "Dat je de illusie krijgt dat je de stof snapt terwijl je eigenlijk minder leert",
+        "Dat AI altijd foute antwoorden geeft"
       ],
-      "correctAnswer": 2,
-      "feedback": "De GGD AppStore is specifiek ontworpen om gezondheidsapps te beoordelen op gebruiksvriendelijkheid, privacy, betrouwbaarheid en onderbouwing."
+      "correctAnswer": 3,
+      "feedback": "Cognitieve offloading kan leiden tot de 'illusie van vloeiendheid' waarbij je denkt dat je de stof snapt, terwijl je eigenlijk minder actief leert omdat de AI het denkwerk doet."
     },
     {
       "id": "h6_dragdrop_1",
       "type": "dragdrop",
-      "vraag": "Koppel de volgende zoekopdrachten/scenario's aan de meest geschikte informatiebron.",
+      "vraag": "Koppel de AI-risico's aan de juiste uitleg.",
       "items": [
-        {"id": "item1", "label": "Ik wil leren 3D printen, waar kan ik informatie vinden hoe ik dat als student kan doen."},
-        {"id": "item2", "label": "Ik wil een overzicht van betrouwbare gezondheidsapps voor thuisoefeningen."},
-        {"id": "item3", "label": "Ik zoek specifiek naar fysiotherapeutische technologie voor mijn praktijk."},
-        {"id": "item4", "label": "Ik wil de nieuwste innovaties in de Nederlandse zorg ontdekken."},
-        {"id": "item5", "label": "Als HAN-student wil ik een VR-bril uitproberen voor revalidatie."}
+        {"id": "item1", "label": "Bias in AI"},
+        {"id": "item2", "label": "Privacy/AVG schending"},
+        {"id": "item3", "label": "Cognitieve offloading"},
+        {"id": "item4", "label": "Gebrek aan transparantie"}
       ],
       "targets": [
-        {"id": "target1", "label": "iXperium Makerspace Catalogus"},
-        {"id": "target2", "label": "GGD AppStore"},
-        {"id": "target3", "label": "BeweegTech"},
-        {"id": "target4", "label": "Zorginnovatie.nl / Zorg van Nu"},
-        {"id": "target5", "label": "iXperium Health Catalogus"}
+        {"id": "target1", "label": "AI neemt vooroordelen over uit trainingsdata"},
+        {"id": "target2", "label": "Persoonlijke gegevens worden onveilig opgeslagen of misbruikt"},
+        {"id": "target3", "label": "Te veel vertrouwen op AI waardoor je zelf minder kritisch denkt"},
+        {"id": "target4", "label": "Onduidelijk hoe AI tot beslissingen komt"}
       ],
       "correctCombinations": [
         {"targetId": "target1", "itemId": "item1"},
         {"targetId": "target2", "itemId": "item2"},
         {"targetId": "target3", "itemId": "item3"},
-        {"targetId": "target4", "itemId": "item4"},
-        {"targetId": "target5", "itemId": "item5"}
+        {"targetId": "target4", "itemId": "item4"}
       ],
-      "feedbackCorrect": "Goed gedaan! Je weet nu welke bron je kunt raadplegen voor verschillende typen zorgtechnologie.",
-      "feedbackIncorrect": "Nog niet helemaal. Probeer de scenario's te koppelen aan de bron die het beste aansluit bij de beschrijving in het hoofdstuk."
+      "feedbackCorrect": "Uitstekend! Je begrijpt de belangrijkste AI-risico's en hun betekenis.",
+      "feedbackIncorrect": "Nog niet helemaal. Lees de uitleg over de risico's nog eens door en probeer opnieuw."
     },
     {
       "id": "h6_reflection_1",
       "type": "reflection",
-      "vraag": "Na het leren over deze verschillende bronnen, hoe is jouw beeld veranderd over de beschikbaarheid en toegankelijkheid van zorgtechnologie voor (toekomstige) fysiotherapeuten?"
+      "vraag": "Na het lezen van dit hoofdstuk: Welke AI-kans spreekt je het meest aan voor jouw toekomstige fysiotherapiepraktijk, en welk risico vind je het meest zorgwekkend? Leg uit hoe je als 'Human in the Lead' zou omgaan met beide aspecten.",
+      "minLength": 100,
+      "maxLength": 1000,
+      "placeholder": "Beschrijf je keuze voor een AI-kans en een AI-risico, en leg uit hoe je hier als professional mee om zou gaan..."
     }
   ]
 } 
