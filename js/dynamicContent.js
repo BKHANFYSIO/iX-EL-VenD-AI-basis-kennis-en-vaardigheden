@@ -906,12 +906,22 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
             case 'stats-card-grid':
                 html += `<div class="stats-container">`;
                 block.kaarten.forEach(kaart => {
+                    let bronHtml = '';
+                    if (kaart.bron) {
+                        if (kaart.bron.url) {
+                            bronHtml = `<a href="${kaart.bron.url}" target="_blank" class="stat-card-bron">${kaart.bron.naam}</a>`;
+                        } else {
+                            bronHtml = `<span class="stat-card-bron">${kaart.bron.naam}</span>`;
+                        }
+                    }
+
                     html += `
                         <div class="stat-card">
                             ${kaart.titel ? `<h3 class="stat-title">${kaart.titel}</h3>` : ''}
                             ${kaart.afbeelding ? `<div class="stat-image"><img src="${kaart.afbeelding}" alt="${kaart.titel || ''}"></div>` : ''}
                             ${kaart.getal ? `<div class="stat-number">${kaart.getal}</div>` : ''}
                             ${kaart.label ? `<p class="stat-label">${kaart.label}</p>` : ''}
+                            ${bronHtml ? `<footer class="stat-card-footer">${bronHtml}</footer>` : ''}
                         </div>
                     `;
                 });

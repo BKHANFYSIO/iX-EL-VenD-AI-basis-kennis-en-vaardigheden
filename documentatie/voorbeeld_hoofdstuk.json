@@ -434,8 +434,25 @@
     {
         "type": "stats-card-grid",
         "kaarten": [
-            { "titel": "Statistiek A", "afbeelding": "images/icons/brain.svg", "getal": "80%", "label": "van de gebruikers is tevreden" },
-            { "titel": "Statistiek B", "afbeelding": "images/icons/move.svg", "getal": "3M+", "label": "actieve installaties" }
+            { 
+                "titel": "Statistiek A", 
+                "afbeelding": "images/icons/brain.svg", 
+                "getal": "80%", 
+                "label": "van de gebruikers is tevreden",
+                "bron": {
+                    "naam": "Intern rapport Q2",
+                    "url": "https://example.com/rapport"
+                }
+            },
+            { 
+                "titel": "Statistiek B", 
+                "afbeelding": "images/icons/move.svg", 
+                "getal": "3M+", 
+                "label": "actieve installaties",
+                "bron": {
+                    "naam": "Openbare data"
+                }
+            }
         ]
     },
     { "type": "divider" },

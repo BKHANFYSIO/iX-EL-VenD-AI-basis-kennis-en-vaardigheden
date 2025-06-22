@@ -352,13 +352,22 @@ component C (enige component, dus geen divider)
 
 ### 21. Statistieken Grid
 - **Type:** `stats-card-grid`
-- **Gebruik:** Een opvallend grid om belangrijke statistieken, cijfers of KPI's te tonen.
+- **Gebruik:** Een opvallend grid om belangrijke statistieken, cijfers of KPI's te tonen. Elke kaart kan nu ook een bronvermelding bevatten.
 - **JSON Structuur:**
   ```json
   {
     "type": "stats-card-grid",
     "kaarten": [
-      { "titel": "Titel van de statistiek", "afbeelding": "path/to/icon.svg", "getal": "80%", "label": "Beschrijvend label onder het getal" }
+      { 
+        "titel": "Titel van de statistiek", 
+        "afbeelding": "path/to/icon.svg", 
+        "getal": "80%", 
+        "label": "Beschrijvend label onder het getal",
+        "bron": {
+            "naam": "Naam van de bron",
+            "url": "https://optionele-link.nl"
+        }
+      }
     ]
   }
   ```

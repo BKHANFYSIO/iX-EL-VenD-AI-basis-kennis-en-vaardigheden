@@ -136,6 +136,25 @@
     order: 4;
 }
 
+.stat-card-footer {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    order: 5; /* Zorgt dat de footer altijd onderaan komt */
+}
+
+.stat-card-bron {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+.stat-card-bron:hover {
+    color: var(--primary-purple);
+    text-decoration: underline;
+}
+
 @media (max-width: 550px) {
     .stats-container {
         flex-direction: column;
