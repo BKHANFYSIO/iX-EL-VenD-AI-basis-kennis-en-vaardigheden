@@ -15,24 +15,43 @@
     <link rel="stylesheet" href="css/components/layout.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
-        body { padding: 2rem; background-color: #f9fafb; }
-        .style-guide { max-width: 900px; margin: auto; }
-        main { max-width: 900px; margin: auto; }
+        body { 
+            background-color: #f9fafb; /* Zorgt voor de grijze achtergrond */
+        }
+        /* De padding is verwijderd om de layout van index.html na te bootsen */
     </style>
 </head>
 <body>
-    <header>
-        <h1>Stijlgids E-learning</h1>
-    </header>
-    <main>
-        <section class="stijlgids-sectie" id="dynamic-styleguide-section">
-            <h2 class="stijlgids-hoofdtitel">Componenten Catalogus</h2>
-            <p class="stijlgids-intro">Hieronder wordt de volledige content van <code>documentatie/voorbeeld_hoofdstuk.json</code> dynamisch geladen. Dit is een live 1-op-1 weergave van alle beschikbare componenten.</p>
-            <div id="dynamic-styleguide-content" class="container">
-                <!-- Voorbeeldhoofdstuk content komt hier -->
+    <div class="main-layout">
+        <div class="sticky-wrapper">
+            <div class="sidebar-nav" id="sidebarNav">
+              <div class="sidebar-header">
+                <span class="sidebar-title">Componenten</span>
+              </div>
+              <ul class="sidebar-chapters" id="sidebarChaptersStyleguide">
+                <!-- Links worden hier dynamisch geladen -->
+              </ul>
             </div>
-        </section>
-    </main>
+        </div>
+        <div class="content-area">
+            <div class="content-wrapper">
+                <header>
+                    <div class="header-content" style="text-align: center;">
+                        <h1>Stijlgids E-learning</h1>
+                    </div>
+                </header>
+                <main class="container">
+                    <section class="section" id="componenten-catalogus">
+                        <h2 class="chapter-main-title">Componenten Catalogus</h2>
+                        <p class="stijlgids-intro">Hieronder wordt de volledige content van <code>documentatie/voorbeeld_hoofdstuk.json</code> dynamisch geladen. Dit is een live 1-op-1 weergave van alle beschikbare componenten.</p>
+                        <div id="dynamic-styleguide-content">
+                            <!-- Voorbeeldhoofdstuk content komt hier -->
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts om de dynamische content te laden -->
     <script>
@@ -44,7 +63,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             const container = document.getElementById('dynamic-styleguide-content');
-            if (!container) return;
+            const sidebarList = document.getElementById('sidebarChaptersStyleguide');
+            if (!container || !sidebarList) return;
 
             try {
                 const response = await fetch('documentatie/voorbeeld_hoofdstuk.json');
@@ -53,41 +73,86 @@
                 }
                 const voorbeeldHoofdstuk = await response.json();
                 
+                // 1. Render de hoofdcontent
                 if (voorbeeldHoofdstuk.content && typeof renderGenericChapterContent === 'function') {
-                    // Roep de render-functie aan (chapterNumber is hier niet kritisch, dus we gebruiken 1)
                     const htmlContent = renderGenericChapterContent(voorbeeldHoofdstuk.content, 1);
                     container.innerHTML = htmlContent;
-
-                    // Initialiseer accordions na het renderen (aangepaste versie voor stijlgids)
-                    setTimeout(() => {
-                        const accordionToggles = document.querySelectorAll('#dynamic-styleguide-content .accordion-toggle');
-                        accordionToggles.forEach(toggle => {
-                            const targetId = toggle.getAttribute('data-accordion-target');
-                            const contentDiv = document.getElementById(targetId);
-                            
-                            if (contentDiv) {
-                                toggle.addEventListener('click', function() {
-                                    const isOpen = contentDiv.classList.toggle('open');
-                                    toggle.classList.toggle('open', isOpen);
-                                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                                    const triangle = toggle.querySelector('.triangle');
-                                    if (triangle) {
-                                        triangle.innerHTML = isOpen ? '&#9660;' : '&#9654;';
-                                    }
-                                });
-                            }
-                        });
-                    }, 50);
-
-                    // Voer de QR-code generatie uit na het renderen
-                    if (typeof generateQRCodesForContent === 'function') {
-                        setTimeout(() => {
-                           generateQRCodesForContent(voorbeeldHoofdstuk.content, 1);
-                        }, 100); // Kleine vertraging om zeker te zijn dat de DOM is bijgewerkt
-                    }
                 } else {
                     throw new Error('JSON-formaat is incorrect of render-functie is niet beschikbaar.');
                 }
+
+                // 2. Vul de sidebar
+                // Helper function to create a slug (must be identical to the one in dynamicContent.js)
+                const createSlug = (text) => {
+                    if (!text) return '';
+                    return text.toLowerCase()
+                        .replace(/&/g, 'en')
+                        .replace(/[^\w\s-]/g, '')
+                        .trim()
+                        .replace(/\s+/g, '-')
+                        .replace(/--+/g, '-');
+                };
+
+                // Functie om een navigatie-item te maken
+                const createNavItem = (text, slug) => {
+                    const li = document.createElement('li');
+                    li.className = 'sidebar-chapter';
+                    const a = document.createElement('a');
+                    a.href = `#${slug}`;
+                    a.textContent = text;
+                    a.className = 'chapter-title';
+                    a.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        document.querySelectorAll('#sidebarChaptersStyleguide .sidebar-chapter').forEach(item => item.classList.remove('active'));
+                        li.classList.add('active');
+                        const targetElement = document.getElementById(this.getAttribute('href').substring(1));
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                    li.appendChild(a);
+                    return li;
+                };
+
+                // Voeg de 'Componenten Catalogus' als eerste toe
+                const catalogusItem = createNavItem('Componenten Catalogus', 'componenten-catalogus');
+                sidebarList.appendChild(catalogusItem);
+                
+                // Stel de eerste link als actief in
+                catalogusItem.classList.add('active');
+
+                const sectionTitles = voorbeeldHoofdstuk.content.filter(block => block.type === 'section-title');
+                sectionTitles.forEach(section => {
+                    const slug = createSlug(section.titel);
+                    const navItem = createNavItem(section.titel, slug);
+                    sidebarList.appendChild(navItem);
+                });
+
+                // 3. Initialiseer overige functionaliteit
+                setTimeout(() => {
+                    // Initialiseer accordions
+                    const accordionToggles = document.querySelectorAll('#dynamic-styleguide-content .accordion-toggle');
+                    accordionToggles.forEach(toggle => {
+                        const targetId = toggle.getAttribute('data-accordion-target');
+                        const contentDiv = document.getElementById(targetId);
+                        if (contentDiv) {
+                            toggle.addEventListener('click', function() {
+                                const isOpen = contentDiv.classList.toggle('open');
+                                toggle.classList.toggle('open', isOpen);
+                                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                                const triangle = toggle.querySelector('.triangle');
+                                if (triangle) {
+                                    triangle.innerHTML = isOpen ? '&#9660;' : '&#9654;';
+                                }
+                            });
+                        }
+                    });
+                    
+                    // Genereer QR codes
+                    if (typeof generateQRCodesForContent === 'function') {
+                        generateQRCodesForContent(voorbeeldHoofdstuk.content, 1);
+                    }
+                }, 100);
 
             } catch (error) {
                 container.innerHTML = `<div class="info-card warning-card"><h4 class="info-card-title">Fout bij laden</h4><p>${error.message}</p></div>`;

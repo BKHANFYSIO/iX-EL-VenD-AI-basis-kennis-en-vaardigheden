@@ -20,27 +20,35 @@
       "kaarten": [
         {
           "titel": "Economische Groei",
-          "afbeelding": "images/icons/chart-line.svg",
-          "getal": "$15.7 Biljoen",
-          "label": "Potentiële bijdrage van AI aan de wereldeconomie tegen 2030."
+          "afbeelding": "images/Economische-groei.png",
+          "getal": "$15.7",
+          "label": "Biljoen potentiële bijdrage van AI aan de wereldeconomie tegen 2030.",
+          "bron": {
+            "naam": "PwC, 2017",
+            "url": "https://www.pwc.com/gx/en/issues/analytics/assets/pwc-ai-analysis-sizing-the-prize-report.pdf"
+          }
         },
         {
           "titel": "Arbeidsmarkt Transformatie",
-          "afbeelding": "images/icons/move.svg",
+          "afbeelding": "images/Arbeidsmarkt-transformatie.png",
           "getal": "40%",
-          "label": "Van alle banen wereldwijd beïnvloed door AI."
+          "label": "Van alle banen wereldwijd beïnvloed door AI.",
+          "bron": {
+            "naam": "IMF, 2024",
+            "url": "https://www.imf.org/en/Blogs/Articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity"
+          }
         },
         {
           "titel": "Wereldwijde Adoptie",
-          "afbeelding": "images/icons/brain.svg",
+          "afbeelding": "images/Werelwijde-adoptie-AI.png",
           "getal": "78%",
-          "label": "Van bedrijven wereldwijd gebruikt al AI."
+          "label": "Van bedrijven wereldwijd gebruikt al AI.",
+          "bron": {
+            "naam": "McKinsey, 2024",
+            "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-in-2024-gen-ai-s-breakout-year"
+          }
         }
       ]
-    },
-    {
-      "type": "content-text",
-      "tekst": "Deze cijfers laten zien dat AI niet langer een futuristisch concept is, maar een drijvende kracht achter ongekende veranderingen in vrijwel elke sector. De snelheid waarmee AI-technologieën zich ontwikkelen en worden geïntegreerd, vereist van ons allemaal een proactieve houding om de kansen te benutten en de uitdagingen het hoofd te bieden. Het gaat niet alleen om de technologie zelf, maar om de diepgaande verschuivingen die het teweegbrengt in hoe we leven, werken en met elkaar omgaan.<br><br><strong>Bronnen van de statistieken:</strong><ul><li><strong>Economische Groei:</strong> PwC, 'Sizing the prize' rapport (2017). Beschikbaar via: <a href=\"https://www.pwc.com/gx/en/issues/analytics/assets/pwc-ai-analysis-sizing-the-prize-report.pdf\">PwC.com</a></li><li><strong>Arbeidsmarkt Transformatie:</strong> Internationaal Monetair Fonds (IMF ), 'AI will transform the global economy' (2024). Beschikbaar via: <a href=\"https://www.imf.org/en/Blogs/Articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity\">IMF.org</a></li><li><strong>Wereldwijde Adoptie:</strong> McKinsey & Company, 'The state of AI in 2024' (2024 ). Beschikbaar via: <a href=\"https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-in-2024-gen-ai-s-breakout-year\">McKinsey.com</a></li></ul>"
     },
     {
       "type": "section-title",

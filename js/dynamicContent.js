@@ -559,7 +559,18 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                 `;
                 break;
             case 'section-title':
-                html += `<h2 class="section-title">${block.titel}</h2>`;
+                // Helper function to create a URL-friendly slug from a title
+                const createSlug = (text) => {
+                    if (!text) return '';
+                    return text.toLowerCase()
+                        .replace(/&/g, 'en') // Replace & with 'en'
+                        .replace(/[^\w\s-]/g, '') // Remove all non-word chars except spaces and hyphens
+                        .trim() // Trim whitespace from start and end
+                        .replace(/\s+/g, '-') // Replace spaces with -
+                        .replace(/--+/g, '-'); // Replace multiple - with single -
+                };
+                const id = createSlug(block.titel);
+                html += `<h2 class="section-title" id="${id}">${block.titel}</h2>`;
                 break;
             case 'content-subtitle':
                 html += `<h3 class="content-subtitle">${block.titel}</h3>`;
@@ -626,23 +637,7 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                 });
                 html += `</div>`;
                 break;
-            case 'modules-list-stacked':
-                 html += `<div class="info-card">
-                    ${block.titel ? `<h3 class="info-card-title">${block.titel}</h3>` : ''}
-                    <div class="info-card-content">
-                        ${block.tekst ? `<p class="content-text">${block.tekst.replace(/\n/g, '<br>')}</p>` : ''}
-                        <div class="modules-list-stacked">
-                            ${block.items.map(item => `
-                                <div class="benefit-card">
-                                    <h3>${item.titel}</h3>
-                                    <div class="benefit-content">${item.beschrijving.replace(/\n/g, '<br>')}</div>
-                                </div>
-                            `).join('')}
-                        </div>
-                        ${block.afsluiting ? `<p class="content-text">${block.afsluiting.replace(/\n/g, '<br>')}</p>` : ''}
-                    </div>
-                 </div>`;
-                 break;
+
              case 'process-flow':
                     html += `
                         <div class="process-flow-container">
@@ -702,6 +697,24 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                         </div>
                     </div>
                 `;
+                break;
+            case 'benefits-grid':
+                if (block.titel) {
+                    html += `<h3 class="grid-title">${block.titel}</h3>`;
+                }
+                html += `<div class="benefits-grid ${block.classes || ''}">`;
+                html += block.items.map(item => `
+                    <div class="benefit-card ${item.classes || ''}">
+                        <h3>
+                            ${item.icoon ? `<img src="images/icons/${item.icoon}.svg" class="icon" alt="">` : ''}
+                            ${item.titel}
+                        </h3>
+                        <div class="benefit-content">
+                            <p>${item.tekst || item.beschrijving}</p>
+                        </div>
+                    </div>
+                `).join('');
+                html += '</div>';
                 break;
             case 'card-grid':
                 html += `<div class="benefits-grid">`;
@@ -909,19 +922,44 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                     let bronHtml = '';
                     if (kaart.bron) {
                         if (kaart.bron.url) {
-                            bronHtml = `<a href="${kaart.bron.url}" target="_blank" class="stat-card-bron">${kaart.bron.naam}</a>`;
+                            bronHtml = `<a href="${kaart.bron.url}" target="_blank" class="stat-source">${kaart.bron.naam}</a>`;
                         } else {
-                            bronHtml = `<span class="stat-card-bron">${kaart.bron.naam}</span>`;
+                            bronHtml = `<span class="stat-source">${kaart.bron.naam}</span>`;
                         }
                     }
 
-                    html += `
-                        <div class="stat-card">
+                    const isCompact = block.layout === 'compact';
+                    const cardClass = isCompact ? 'stat-card--compact' : '';
+                    
+                    let cardContentHtml = '';
+                    if(isCompact) {
+                        // Compact layout HTML structure
+                        cardContentHtml = `
+                            <div class="stat-card-header-compact">
+                                ${kaart.afbeelding ? `<div class="stat-image"><img src="${kaart.afbeelding}" alt="${kaart.titel || ''}"></div>` : ''}
+                                ${kaart.titel ? `<h3 class="stat-title">${kaart.titel}</h3>` : ''}
+                            </div>
+                            <div class="stat-card-body-compact">
+                                ${kaart.getal ? `<div class="stat-number">${kaart.getal}</div>` : ''}
+                                ${kaart.label ? `<p class="stat-label">${kaart.label}</p>` : ''}
+                            </div>
+                        `;
+                    } else {
+                        // Default layout HTML structure
+                        cardContentHtml = `
                             ${kaart.titel ? `<h3 class="stat-title">${kaart.titel}</h3>` : ''}
                             ${kaart.afbeelding ? `<div class="stat-image"><img src="${kaart.afbeelding}" alt="${kaart.titel || ''}"></div>` : ''}
                             ${kaart.getal ? `<div class="stat-number">${kaart.getal}</div>` : ''}
                             ${kaart.label ? `<p class="stat-label">${kaart.label}</p>` : ''}
-                            ${bronHtml ? `<footer class="stat-card-footer">${bronHtml}</footer>` : ''}
+                        `;
+                    }
+
+                    html += `
+                        <div class="stat-card ${cardClass}">
+                            <div class="stat-card-content">
+                                ${cardContentHtml}
+                            </div>
+                            ${bronHtml ? `<div class="stat-card-footer">${bronHtml}</div>` : ''}
                         </div>
                     `;
                 });

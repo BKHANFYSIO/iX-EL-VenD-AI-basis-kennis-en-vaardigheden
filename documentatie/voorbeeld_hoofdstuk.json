@@ -117,6 +117,41 @@
     },
     {
       "type": "content-text",
+      "tekst": "De `benefit-card` is een veelzijdige kaart om voordelen, kenmerken of modules uit te lichten. De achtergrond is standaard wit, maar kan met de class `benefit-card--purple` worden aangepast. Hieronder zie je de weergave in een grid en een gestapelde weergave."
+    },
+    {
+      "type": "benefits-grid",
+      "titel": "Grid Weergave",
+      "items": [
+        { "titel": "Voordeel 1 (Standaard)", "icoon": "check-circle", "tekst": "Dit is de standaard `benefit-card` in een grid." },
+        { "titel": "Voordeel 2 (Kleurvariant)", "classes": "benefit-card--purple", "icoon": "lightbulb-on", "tekst": "Deze kaart heeft de class `benefit-card--purple` gekregen." },
+        { "titel": "Voordeel 3 (Standaard)", "icoon": "check-circle", "tekst": "Nog een standaard kaart om het grid te vullen." }
+      ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
+      "tekst": "Voor een gestapelde weergave (kaarten onder elkaar), plaats je losse `benefit-card` componenten binnen een `info-card`. De `info-card` fungeert dan als container. Dit is de standaard methode voor o.a. module-overzichten."
+    },
+    {
+      "type": "info-card",
+      "titel": "Gestapelde Weergave",
+      "content": [
+        { 
+          "type": "benefit-card", 
+          "titel": "Module A", 
+          "beschrijving": "Door `benefit-card`s in een `info-card` te plaatsen, worden ze netjes onder elkaar weergegeven."
+        },
+        { 
+          "type": "benefit-card",
+          "titel": "Module B",
+          "beschrijving": "Dit is handig voor een lijst van modules of stappen die een duidelijke verticale volgorde hebben."
+        }
+      ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
       "tekst": "De `concept-card` is ideaal voor het uitleggen van specifieke begrippen, jargon of termen. De kaart presenteert een term, een Nederlandse vertaling, een uitleg en een concreet voorbeeld, wat het een krachtig hulpmiddel maakt voor definities."
     },
     {
@@ -454,6 +489,44 @@
                 }
             }
         ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Hieronder zie je de <strong>compacte variant</strong> van de `stats-card-grid`. Je activeert deze weergave door `\"layout\": \"compact\"` toe te voegen aan het `stats-card-grid` blok. Dit is ideaal voor situaties waar de statistieken beknopter gepresenteerd moeten worden."
+    },
+    {
+      "type": "stats-card-grid",
+      "layout": "compact",
+      "kaarten": [
+        {
+          "titel": "Compact Voorbeeld 1",
+          "afbeelding": "images/icons/check-circle-outline.svg",
+          "getal": "100+",
+          "label": "Actieve gebruikers.",
+          "bron": {
+            "naam": "Interne data"
+          }
+        },
+        {
+          "titel": "Compact Voorbeeld met een wat langere titel",
+          "afbeelding": "images/icons/chart-line.svg",
+          "getal": "25%",
+          "label": "Groei in het afgelopen kwartaal.",
+          "bron": {
+            "naam": "Q3 Rapport",
+            "url": "#"
+          }
+        },
+        {
+          "titel": "Derde Compact Kaart",
+          "afbeelding": "images/icons/lightbulb-on.svg",
+          "getal": "5",
+          "label": "Nieuwe ideeën geïmplementeerd."
+        }
+      ]
     },
     { "type": "divider" },
     {

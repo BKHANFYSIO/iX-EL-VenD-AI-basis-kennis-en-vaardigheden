@@ -826,7 +826,11 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
 }
 
 .content-table tr:nth-child(even) {
-    background: var(--light-gray);
+    background: var(--medium-gray);
+}
+
+.content-table tr:nth-child(even) td {
+    border-color: var(--white);
 }
 
 /* Analyses */

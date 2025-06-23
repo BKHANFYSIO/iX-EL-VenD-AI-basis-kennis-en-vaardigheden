@@ -72,75 +72,88 @@
 
 /* Statistieken kaarten */
 .stats-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    justify-content: center; /* Centreert de kaarten als er ruimte over is */
-    margin: 2rem 0;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .stat-card {
-    background-color: var(--white);
-    border-radius: 12px;
-    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.8rem;
     text-align: center;
-    width: 220px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border: 1px solid var(--medium-gray);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--primary-purple-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+.stat-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .stat-title {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--primary-purple);
-    margin: 0;
-    order: 1;
+    margin-bottom: 1rem;
+    min-height: 4rem; /* Zorgt voor consistente hoogte, pas aan indien nodig */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stat-image {
-    margin: 1rem auto; /* Zorgt voor verticale en horizontale centrering */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 120px;
-    border: 1px solid var(--medium-gray);
+    margin: 0 auto 1rem auto;
+    padding: 1rem;
+    border: 1px solid #EAEAEA;
     border-radius: 8px;
-    padding: 10px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stat-image img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100px;
+    width: auto;
 }
 
 .stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-purple);
-    margin: 10px 0;
-    order: 3;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--secondary-purple);
+    margin-bottom: 0.5rem;
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    color: var(--dark-gray);
-    margin: 0;
-    order: 4;
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Zorgt dat de label-ruimte groeit */
 }
 
 .stat-card-footer {
-    margin-top: 1rem;
+    margin-top: auto; /* Duwt de footer naar de bodem */
+    padding-top: 1rem;
+    border-top: 1px solid #EAEAEA;
+}
+
+.stat-source {
     font-size: 0.8rem;
-    text-align: center;
-    order: 5; /* Zorgt dat de footer altijd onderaan komt */
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.stat-source:hover {
+    text-decoration: underline;
 }
 
 .stat-card-bron {
@@ -186,7 +199,7 @@
 
 /* Basis .benefit-card stijl */
 .benefit-card {
-    background-color: var(--white);
+    background-color: var(--white) !important;
     border: 1px solid var(--medium-gray);
     border-radius: var(--border-radius-large);
     box-shadow: var(--shadow);
@@ -196,6 +209,10 @@
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative; /* Nodig voor pseudo-elementen in varianten */
+}
+
+.benefit-card.benefit-card--purple {
+    background-color: var(--accent-purple) !important;
 }
 
 .benefit-card:hover {
@@ -210,17 +227,6 @@
     padding: 1rem 1.5rem;
     margin: 0;
     font-size: 1.2rem;
-}
-
-/* Specifieke styling voor de modulelijst */
-.modules-list-stacked .benefit-card {
-    margin-bottom: 1.5rem; /* Voegt ruimte toe tussen de modules */
-    border: 1px solid var(--medium-gray); /* Optioneel: voeg een rand toe voor duidelijkere scheiding */
-}
-
-/* Verwijder de margin van het laatste kind om dubbele ruimte te voorkomen */
-.modules-list-stacked .benefit-card:last-child {
-    margin-bottom: 0;
 }
 
 .benefit-content {
@@ -734,4 +740,52 @@
     padding: 0;
     margin-top: 1rem;
     border: none;
+}
+
+/* Compact Stat Card Variant */
+.stat-card--compact {
+    text-align: left;
+}
+
+.stat-card--compact .stat-card-header-compact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.stat-card--compact .stat-image {
+    width: 50px;
+    height: 50px;
+    margin: 0 1rem 0 0;
+    padding: 0.5rem;
+}
+
+.stat-card--compact .stat-image img {
+    height: 30px;
+}
+
+.stat-card--compact .stat-title {
+    min-height: initial;
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 1.1rem;
+    justify-content: flex-start;
+}
+
+.stat-card--compact .stat-number,
+.stat-card--compact .stat-label {
+    text-align: left;
+}
+
+.stat-card--compact .stat-number {
+    font-size: 2.2rem;
+}
+
+.stat-card--compact .stat-label {
+    margin-bottom: 0;
+}
+
+/* Benefit Card */
+.benefit-card {
+    background-color: var(--secondary-purple-light);
 } 

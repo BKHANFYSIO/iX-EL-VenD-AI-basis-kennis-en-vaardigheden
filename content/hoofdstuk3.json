@@ -28,14 +28,44 @@
       "titel": "Wat kunnen chatbots eigenlijk?"
     },
     {
+      "type": "content-text",
+      "tekst": "Onderstaande tabellen helpen je om inzicht te krijgen in de belangrijkste functies van AI-chatbots. Houd er wel rekening mee dat functies per chatbot kunnen verschillen, soms andere benamingen hebben en dat er door de snelle ontwikkelingen geregeld nieuwe mogelijkheden worden toegevoegd."
+    },
+    {
+        "type": "content-subtitle",
+        "titel": "📄 Tekst en spraak"
+    },
+    {
       "type": "table-container-group",
-      "intro": "Onderstaande tabellen helpen je om inzicht te krijgen in de belangrijkste functies van AI-chatbots. Houd er wel rekening mee dat functies per chatbot kunnen verschillen, soms andere benamingen hebben en dat er door de snelle ontwikkelingen geregeld nieuwe mogelijkheden worden toegevoegd.",
       "tables": [
-        { "titel": "📄 Tekst en spraak", "headers": ["Functie", "Wat doet het?"], "rows": [["Tekst genereren / samenvatten", "De AI kan teksten schrijven, samenvatten, vertalen en herschrijven. Dit gebeurt op basis van het AI-taalmodel. Je kunt ook zelf bronnen toevoegen of vragen om informatie van internet (indien beschikbaar)."], ["Web search", "De AI haalt actuele informatie van internet (alleen als de functie actief is) om vragen te beantwoorden of extra context te geven."], ["Deep research", "De AI kan grote hoeveelheden tekst (zoals artikelen, richtlijnen of handleidingen) analyseren en structureren om complexe vragen te beantwoorden. Je kunt hiermee bijvoorbeeld automatisch een compleet rapport laten schrijven op basis van meerdere bronnen."], ["Canvas / Artefact", "Een interactieve werkruimte waarin je samen met de AI werkt, vergelijkbaar met samenwerken in een Word-document. Je kunt bijvoorbeeld teksten invoeren, aanpassen, herschrijven of bepaalde stukken selecteren en de AI vragen om alleen dat deel te verbeteren. Zo bouw je samen aan documenten, opdrachten of verslagen."], ["Multimodale input", "Je kunt naast tekst ook afbeeldingen, video's of spraakfragmenten toevoegen als input. De AI kan deze interpreteren en gebruiken om je verder te helpen."], ["Spraakoutput / Gesprekken voeren", "De AI kan antwoorden geven in gesproken vorm. Dit maakt het mogelijk om echte gesprekken te voeren met de AI, wat handig is bij bijvoorbeeld oefenen van anamnese of uitleg."]] },
-        { "titel": "🖼️ Visueel en multimediaal", "headers": ["Functie", "Wat doet het?"], "rows": [["Afbeeldingen genereren", "De AI maakt afbeeldingen op basis van jouw tekstuele beschrijving (prompt). Dit gebeurt niet meer via het taalmodel (LLM) zelf, maar via een koppeling met een ander AI-model dat gespecialiseerd is in beeldgeneratie. Je kunt bijvoorbeeld vragen om een anatomisch schema, een illustratie voor een poster of zelfs een grafiek of tabel op basis van toegevoegde gegevens. Dit laatste valt soms ook onder 'code genereren' als er berekeningen of visualisaties nodig zijn."], ["Video's genereren", "De AI kan video's maken op basis van tekst of afbeeldingen. Dit gebeurt via een koppeling met een extern model voor videogeneratie. Je kunt bijvoorbeeld een korte animatie laten maken die een anatomisch proces uitlegt, of een visuele samenvatting van een behandeltraject."]] },
-        { "titel": "🛠️ Technisch / bouwend", "headers": ["Functie", "Wat doet het?"], "rows": [["Code genereren", "De AI schrijft code, helpt fouten oplossen of legt programmeercode uit. Hiermee kun je zelfs zonder programmeerkennis je eigen apps maken, bijvoorbeeld voor eenvoudige tools of e-healthtoepassingen. De AI begeleidt je stap voor stap. Hierover lees je meer in een volgend hoofdstuk."]] }
-      ],
-      "note": "Heb je suggesties of toepassingen die hierbij passen? Vul het canvas gerust aan!"
+        { "headers": ["Functie", "Wat doet het?"], "rows": [["Tekst genereren / samenvatten", "De AI kan teksten schrijven, samenvatten, vertalen en herschrijven. Dit gebeurt op basis van het AI-taalmodel. Je kunt ook zelf bronnen toevoegen of vragen om informatie van internet (indien beschikbaar)."], ["Web search", "De AI haalt actuele informatie van internet (alleen als de functie actief is) om vragen te beantwoorden of extra context te geven."], ["Deep research", "De AI kan grote hoeveelheden tekst (zoals artikelen, richtlijnen of handleidingen) analyseren en structureren om complexe vragen te beantwoorden. Je kunt hiermee bijvoorbeeld automatisch een compleet rapport laten schrijven op basis van meerdere bronnen."], ["Canvas / Artefact", "Een interactieve werkruimte waarin je samen met de AI werkt, vergelijkbaar met samenwerken in een Word-document. Je kunt bijvoorbeeld teksten invoeren, aanpassen, herschrijven of bepaalde stukken selecteren en de AI vragen om alleen dat deel te verbeteren. Zo bouw je samen aan documenten, opdrachten of verslagen."], ["Multimodale input", "Je kunt naast tekst ook afbeeldingen, video's of spraakfragmenten toevoegen als input. De AI kan deze interpreteren en gebruiken om je verder te helpen."], ["Spraakoutput / Gesprekken voeren", "De AI kan antwoorden geven in gesproken vorm. Dit maakt het mogelijk om echte gesprekken te voeren met de AI, wat handig is bij bijvoorbeeld oefenen van anamnese of uitleg."]] }
+      ]
+    },
+    {
+        "type": "divider"
+    },
+    {
+        "type": "content-subtitle",
+        "titel": "🖼️ Visueel en multimediaal"
+    },
+    {
+      "type": "table-container-group",
+        "tables": [
+        { "headers": ["Functie", "Wat doet het?"], "rows": [["Afbeeldingen genereren", "De AI maakt afbeeldingen op basis van jouw tekstuele beschrijving (prompt). Dit gebeurt niet meer via het taalmodel (LLM) zelf, maar via een koppeling met een ander AI-model dat gespecialiseerd is in beeldgeneratie. Je kunt bijvoorbeeld vragen om een anatomisch schema, een illustratie voor een poster of zelfs een grafiek of tabel op basis van toegevoegde gegevens. Dit laatste valt soms ook onder 'code genereren' als er berekeningen of visualisaties nodig zijn."], ["Video's genereren", "De AI kan video's maken op basis van tekst of afbeeldingen. Dit gebeurt via een koppeling met een extern model voor videogeneratie. Je kunt bijvoorbeeld een korte animatie laten maken die een anatomisch proces uitlegt, of een visuele samenvatting van een behandeltraject."]] }
+      ]
+    },
+    {
+        "type": "divider"
+    },
+    {
+        "type": "content-subtitle",
+        "titel": "🛠️ Technisch / bouwend"
+    },
+    {
+      "type": "table-container-group",
+      "tables": [
+        { "headers": ["Functie", "Wat doet het?"], "rows": [["Code genereren", "De AI schrijft code, helpt fouten oplossen of legt programmeercode uit. Hiermee kun je zelfs zonder programmeerkennis je eigen apps maken, bijvoorbeeld voor eenvoudige tools of e-healthtoepassingen. De AI begeleidt je stap voor stap. Hierover lees je meer in een volgend hoofdstuk."]] }
+      ]
     },
     {
       "type": "section-title",
@@ -46,11 +76,23 @@
       "tekst": "Naast de brede, conversationele chatbots is er een rijk en groeiend ecosysteem van gespecialiseerde AI-tools. Deze tools zijn ontworpen om uit te blinken in één specifieke taak, zoals het omzetten van spraak naar tekst, het bouwen van presentaties, of het genereren van afbeeldingen. Door de juiste tool voor de juiste taak te kiezen, kun je je productiviteit en creativiteit aanzienlijk verhogen. Onderstaand wat meer informatie over enkele van deze (soorten) tools."
     },
     {
-      "type": "modules-list-stacked",
-      "items": [
-        { "titel": "Transcribeertool: TurboScribe", "beschrijving": "Met TurboScribe kun je audio- en videobestanden razendsnel omzetten naar tekst (transcriberen). Met een gratis account kun je dagelijks tot 30 minuten aan materiaal uploaden. Dit is ontzettend handig voor je studie. Neem bijvoorbeeld een oefengesprek, een anamnese of een overleg op, transcribeer het bestand en plak de tekst in een chatbot. Vervolgens kun je de chatbot vragen om feedback op je gesprekstechnieken, een samenvatting te maken of de belangrijkste actiepunten te identificeren.\n\nLet op! Wees altijd uiterst voorzichtig met gevoelige (persoons)gegevens. Gebruik geen echte patiëntgegevens en vraag altijd expliciet toestemming aan alle aanwezigen voordat je een opname maakt en deze uploadt naar een online service.", "link": "https://turboscribe.ai/nl/" },
-        { "titel": "GPT's en Gepersonaliseerde AI-assistenten", "beschrijving": "Binnen het ecosysteem van ChatGPT kun je zogenaamde GPT's gebruiken. Dit zijn versies van ChatGPT die door gebruikers zijn aangepast voor een heel specifieke taak, bijvoorbeeld 'Academische Schrijfassistent' of 'Presentatie Bouwer'. Je kunt zelf GPT's maken voor eigen gebruik of ze delen met anderen. Ook andere platformen ontwikkelen vergelijkbare functies voor gepersonaliseerde AI-assistenten, al varieert de naamgeving." },
-        { "titel": "Allerlei gespecialiseerde tools", "beschrijving": "Er bestaan duizenden andere AI-tools, elk met een eigen specialisme. Denk aan tools die je helpen bij het maken van invuloefeningen, het ontwerpen van presentaties, het genereren van afbeeldingen, het creëren van interactieve websites en zelfs het componeren van muziek." }
+      "type": "info-card",
+      "content": [
+        { 
+          "type": "benefit-card",
+          "titel": "Transcribeertool: TurboScribe",
+          "beschrijving": "Met TurboScribe kun je audio- en videobestanden razendsnel omzetten naar tekst (transcriberen). Met een gratis account kun je dagelijks tot 30 minuten aan materiaal uploaden. Dit is ontzettend handig voor je studie. Neem bijvoorbeeld een oefengesprek, een anamnese of een overleg op, transcribeer het bestand en plak de tekst in een chatbot. Vervolgens kun je de chatbot vragen om feedback op je gesprekstechnieken, een samenvatting te maken of de belangrijkste actiepunten te identificeren.\n\nLet op! Wees altijd uiterst voorzichtig met gevoelige (persoons)gegevens. Gebruik geen echte patiëntgegevens en vraag altijd expliciet toestemming aan alle aanwezigen voordat je een opname maakt en deze uploadt naar een online service."
+        },
+        { 
+          "type": "benefit-card",
+          "titel": "GPT's en Gepersonaliseerde AI-assistenten",
+          "beschrijving": "Binnen het ecosysteem van ChatGPT kun je zogenaamde GPT's gebruiken. Dit zijn versies van ChatGPT die door gebruikers zijn aangepast voor een heel specifieke taak, bijvoorbeeld 'Academische Schrijfassistent' of 'Presentatie Bouwer'. Je kunt zelf GPT's maken voor eigen gebruik of ze delen met anderen. Ook andere platformen ontwikkelen vergelijkbare functies voor gepersonaliseerde AI-assistenten, al varieert de naamgeving."
+        },
+        { 
+          "type": "benefit-card",
+          "titel": "Allerlei gespecialiseerde tools",
+          "beschrijving": "Er bestaan duizenden andere AI-tools, elk met een eigen specialisme. Denk aan tools die je helpen bij het maken van invuloefeningen, het ontwerpen van presentaties, het genereren van afbeeldingen, het creëren van interactieve websites en zelfs het componeren van muziek."
+        }
       ]
     },
     {

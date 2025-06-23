@@ -116,7 +116,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 6. Info Card met Lijst
+### 5. Info Card met Lijst
 - **Type:** `info-card-list`
 - **Gebruik:** Combineert een inleidende tekst met een gestructureerde lijst.
 - **JSON Structuur:**
@@ -129,7 +129,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 7. Accordion (Uitklapbare Content)
+### 6. Accordion (Uitklapbare Content)
 - **Type:** `accordion`
 - **Gebruik:** Voor uitklapbare content die veel ruimte inneemt, zoals criteria, FAQ's of gedetailleerde uitleg die gebruikers op verzoek kunnen bekijken.
 - **Eigenschappen:** 
@@ -156,7 +156,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 8. Tabel
+### 7. Tabel
 - **Type:** `table-container-group`
 - **Gebruik:** Voor het tonen van gestructureerde data in een of meerdere tabellen.
 - **JSON Structuur:**
@@ -171,18 +171,54 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 9. Card Grid
-- **Type:** `card-grid`
-- **Gebruik:** Om items (voordelen, kenmerken, etc.) in een grid te presenteren.
-- **JSON Structuur:**
-  ```json
-  {
-    "type": "card-grid",
-    "items": [{ "titel": "Kaart Titel", "beschrijving": "Beschrijving." }]
-  }
-  ```
+### 8. Benefit Card
+- **Type:** `benefit-card` (als los item) of `benefits-grid` (als container)
+- **Gebruik:** Een veelzijdige kaart om voordelen, kenmerken, modules of andere uitgelichte content te tonen.
+- **Twee Weergavemethoden:**
 
-### 10. Icon Card Grid
+  1. **Gestapelde Weergave (Onder elkaar):**
+     - **Hoe:** Plaats individuele `benefit-card` componenten binnen de `content` array van een `info-card`. De `info-card` fungeert als witte container en de kaarten worden automatisch onder elkaar geplaatst.
+     - **Wanneer:** Ideaal voor een verticale lijst van modules of stappen (zie Hoofdstuk 1 & 3).
+     - **JSON Structuur (Gestapeld):**
+       ```json
+       {
+         "type": "info-card",
+         "content": [
+           { 
+             "type": "benefit-card",
+             "titel": "Module 1: De Basis",
+             "beschrijving": "Een introductie tot de concepten."
+           }
+         ]
+       }
+       ```
+
+  2. **Grid Weergave (Naast elkaar):**
+     - **Hoe:** Gebruik de `benefits-grid` container. Deze plaatst de `items` automatisch in een responsief grid.
+     - **Wanneer:** Perfect voor het vergelijken van voordelen of het tonen van meerdere gerelateerde items naast elkaar.
+     - **Kleurvariant:** Geef een `item` de class `benefit-card--purple` voor een paarse achtergrond.
+     - **JSON Structuur (Grid):**
+       ```json
+       {
+         "type": "benefits-grid",
+         "titel": "Optionele titel boven het grid",
+         "items": [
+           { 
+             "titel": "Voordeel A", 
+             "icoon": "check-circle", 
+             "tekst": "Beschrijving van dit voordeel."
+           },
+           { 
+             "titel": "Voordeel B (uitgelicht)", 
+             "classes": "benefit-card--purple",
+             "icoon": "lightbulb-on", 
+             "tekst": "Deze kaart heeft een andere kleur."
+           }
+         ]
+       }
+       ```
+
+### 9. Icon Card Grid
 - **Type:** `icon-card-grid`
 - **Gebruik:** Een grid van kaarten, elk ondersteund door een visueel icoon.
 - **JSON Structuur:**
@@ -193,7 +229,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 11. Competentie Grid
+### 10. Competentie Grid
 - **Type:** `competency-grid`
 - **Gebruik:** Voor het uitleggen van competenties of termen met een praktijkvoorbeeld.
 - **JSON Structuur:**
@@ -206,7 +242,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 12. Video Grid
+### 11. Video Grid
 - **Type:** `video-grid`
 - **Gebruik:** Voor het embedden van YouTube video's.
 - **JSON Structuur:**
@@ -218,7 +254,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 13. Enkele Video
+### 12. Enkele Video
 - **Type:** `video-full-width`
 - **Gebruik:** Voor het tonen van één enkele, responsive video.
 - **JSON Structuur:**
@@ -230,7 +266,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 14. Afbeelding
+### 13. Afbeelding
 - **Type:** `image-block`
 - **Gebruik:** Voor het tonen van een standaard afbeelding.
 - **Variaties:** Gebruik de `classes` property voor speciale opmaak: `img-polaroid`.
@@ -249,7 +285,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 15. Resource Grid
+### 14. Resource Grid
 - **Type:** `resource-grid-container`
 - **Gebruik:** Een grid om te linken naar externe tools, bronnen of platforms, elk met een logo.
 - **JSON Structuur:**
@@ -261,7 +297,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 16. Processtappen / Tijdlijn
+### 15. Processtappen / Tijdlijn
 - **Type:** `process-flow`
 - **Gebruik:** Om stappen in een proces of tijdlijn weer te geven.
 - **JSON Structuur:**
@@ -273,7 +309,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 17. Twee-koloms Blok
+### 16. Twee-koloms Blok
 - **Type:** `dual-content-block`
 - **Gebruik:** Voor het naast elkaar plaatsen van twee blokken, zoals een statistiek en een 'wist-je-dat'.
 - **JSON Structuur:**
@@ -287,7 +323,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 18. Accent Blok
+### 17. Accent Blok
 - **Type:** `accent-blok`
 - **Gebruik:** Een flexibel blok om tekst uit te lichten, zoals statistieken, weetjes of citaten.
 - **Variaties:** Gebruik de `variant` property. Mogelijke waarden zijn `statistiek`, `weetje`, `citaat`, of `default`.
@@ -305,7 +341,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 19. Afbeelding & Tekst (Gesplitst Scherm)
+### 18. Afbeelding & Tekst (Gesplitst Scherm)
 - **Type:** `split-screen-image-text`
 - **Gebruik:** Om een afbeelding naast een blok tekst te plaatsen. Ideaal voor het uitdiepen van een visueel concept.
 - **JSON Structuur:**
@@ -328,7 +364,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 20. Afbeeldingen Grid
+### 19. Afbeeldingen Grid
 - **Type:** `image-grid`
 - **Gebruik:** Om een reeks afbeeldingen netjes in een grid van 2 of 3 kolommen te tonen.
 - **JSON Structuur:**
@@ -350,9 +386,18 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 21. Statistieken Grid
+### 20. Statistieken Grid
 - **Type:** `stats-card-grid`
 - **Gebruik:** Een opvallend grid om belangrijke statistieken, cijfers of KPI's te tonen. Elke kaart kan nu ook een bronvermelding bevatten.
+- **Eigenschappen:**
+  - **`titel` (string):** De titel van de statistiek.
+  - **`afbeelding` (string):** Het pad naar het icoon of afbeelding.
+  - **`getal` (string):** Het belangrijke getal of cijfer.
+  - **`label` (string):** Een beschrijvend label onder het getal.
+  - **`bron` (object, optioneel):** Een object voor bronvermelding.
+    - **`naam` (string):** De naam van de bron.
+    - **`url` (string, optioneel):** De URL naar de bron.
+  - **`layout` (string, optioneel):** Voeg `"layout": "compact"` toe voor een compacte weergave waarbij de afbeelding links van de titel staat. Zonder deze eigenschap wordt de standaard layout gebruikt.
 - **JSON Structuur:**
   ```json
   {
@@ -372,7 +417,47 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 22. Ethische Reflectie Grid
+#### JSON Voorbeeld (Standaard Layout)
+
+```json
+{
+  "type": "stats-card-grid",
+  "kaarten": [
+    {
+      "titel": "Wereldwijde Adoptie",
+      "afbeelding": "images/icons/brain.svg",
+      "getal": "78%",
+      "label": "Van bedrijven wereldwijd gebruikt al AI.",
+      "bron": {
+        "naam": "Bron C",
+        "url": "https://voorbeeld.com"
+      }
+    }
+  ]
+}
+```
+
+#### JSON Voorbeeld (Compact Layout)
+
+```json
+{
+  "type": "stats-card-grid",
+  "layout": "compact",
+  "kaarten": [
+    {
+      "titel": "Actieve Gebruikers",
+      "afbeelding": "images/icons/check-circle.svg",
+      "getal": "150+",
+      "label": "Totaal aantal actieve gebruikers op het platform.",
+      "bron": {
+        "naam": "Interne data"
+      }
+    }
+  ]
+}
+```
+
+### 21. Ethische Reflectie Grid
 - **Type:** `ethical-reflection-grid`
 - **Gebruik:** Voor het presenteren van ethische dilemma's of reflectiepunten in een grid. Ideaal voor het aanzetten tot nadenken over complexe onderwerpen.
 - **JSON Structuur:**
@@ -386,7 +471,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 23. Horizontale Scenario Kaarten
+### 22. Horizontale Scenario Kaarten
 - **Type:** `scenario-container-horizontal`
 - **Gebruik:** Voor het tonen van meerdere "stel je voor..." of casus-scenario's naast elkaar.
 - **JSON Structuur:**
@@ -399,7 +484,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 24. Concept Cards
+### 23. Concept Cards
 - **Type:** `concept-cards`
 - **Gebruik:** Voor het uitleggen van specifieke begrippen of jargon, inclusief vertaling en voorbeeld.
 - **JSON Structuur:**
@@ -417,7 +502,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 25. Divider (Visuele Scheiding)
+### 24. Divider (Visuele Scheiding)
 - **Type:** `divider`
 - **Gebruik:** Voor visuele scheiding tussen content componenten binnen een sectie. Zie hoofdstukstructuur voor exacte regels.
 - **JSON Structuur:**
@@ -427,7 +512,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 26. Uitgelichte Afbeelding met Kaarten (Complex)
+### 25. Uitgelichte Afbeelding met Kaarten (Complex)
 - **Types:** Geen specifieke types meer nodig
 - **Gebruik:** Voor complexe layouts kun je de bestaande componenten combineren met de 'doos-in-doos' structuur.
 - **JSON Structuur:** Gebruik `info-card` met `content` array om componenten te nesten.

@@ -340,12 +340,12 @@
       "type": "icon-card-grid",
       "themes": [
         {
-          "icoon": "images/icon_human_in_loop.png",
+          "icoon": "images/Human_in_the_loop.png",
           "titel": "Human in the Loop",
           "inhoud": "Een principe waarbij de mens de resultaten van een AI-systeem controleert, valideert en eventueel aanpast. De mens is onderdeel van de AI-workflow."
         },
         {
-          "icoon": "images/icon_human_in_lead.png",
+          "icoon": "images/Human_in_the_lead.png",
           "titel": "Human in the Lead",
           "inhoud": "Een principe dat verder gaat dan 'Human in the Loop', waarbij de mens altijd de eindverantwoordelijkheid en de regie behoudt over beslissingen, en AI puur als ondersteunend hulpmiddel dient. Jouw professionele handtekening staat er altijd onder, wat betekent dat jij de uiteindelijke verantwoordelijkheid draagt voor de keuzes die gemaakt worden, ook met AI-ondersteuning. De mens is de leider, AI de assistent."
         }
