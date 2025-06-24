@@ -26,10 +26,6 @@
     font-style: italic;
 }
 
-.image-container figcaption::before {
-    content: "Bron: ";
-}
-
 .image-container figcaption.no-source::before {
     content: ""; /* Geen "Bron: " tekst als er geen bron is */
 }
@@ -122,23 +118,37 @@
 }
 
 .image-grid-container .image-container {
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    height: 100%;
+    min-height: 220px; /* optioneel, voor een minimale hoogte */
+    background-color: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius-large);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.image-grid-container .image-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .image-grid-container .image-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    object-fit: cover;
+    max-height: 220px;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
 }
 
 .image-caption {
-    margin-top: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
     font-size: 0.9rem;
     color: #555;
     font-style: normal;
@@ -147,11 +157,17 @@
 
 .caption-text {
     display: block;
+    margin-bottom: 0.25rem;
+}
+
+.caption-source::before {
+    content: "Bron: ";
+    font-style: italic;
+    color: #777;
 }
 
 .caption-source {
     display: block;
-    margin-top: 0.25rem;
     font-size: 0.8rem;
     color: #777;
 }

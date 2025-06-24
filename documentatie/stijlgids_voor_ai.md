@@ -254,7 +254,27 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 12. Enkele Video
+### 12. Audio Grid
+- **Type:** `audio-grid`
+- **Gebruik:** Voor het tonen van audio-bestanden zoals podcasts, muziek of AI-gegenereerde audio.
+- **JSON Structuur:**
+  ```json
+  {
+    "type": "audio-grid",
+    "kolommen": 1,
+    "items": [
+      {
+        "titel": "Audio Titel",
+        "beschrijving": "Beschrijving van de audio.",
+        "bron": "ElevenLabs",
+        "duur": "2:30",
+        "src": "audio/bestandsnaam.wav"
+      }
+    ]
+  }
+  ```
+
+### 13. Enkele Video
 - **Type:** `video-full-width`
 - **Gebruik:** Voor het tonen van één enkele, responsive video.
 - **JSON Structuur:**
@@ -266,7 +286,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 13. Afbeelding
+### 14. Afbeelding
 - **Type:** `image-block`
 - **Gebruik:** Voor het tonen van een standaard afbeelding.
 - **Variaties:** Gebruik de `classes` property voor speciale opmaak: `img-polaroid`.
@@ -285,7 +305,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 14. Resource Grid
+### 15. Resource Grid
 - **Type:** `resource-grid-container`
 - **Gebruik:** Een grid om te linken naar externe tools, bronnen of platforms, elk met een logo.
 - **JSON Structuur:**
@@ -297,7 +317,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 15. Processtappen / Tijdlijn
+### 16. Processtappen / Tijdlijn
 - **Type:** `process-flow`
 - **Gebruik:** Om stappen in een proces of tijdlijn weer te geven.
 - **JSON Structuur:**
@@ -309,7 +329,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 16. Twee-koloms Blok
+### 17. Twee-koloms Blok
 - **Type:** `dual-content-block`
 - **Gebruik:** Voor het naast elkaar plaatsen van twee blokken, zoals een statistiek en een 'wist-je-dat'.
 - **JSON Structuur:**
@@ -323,7 +343,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 17. Accent Blok
+### 18. Accent Blok
 - **Type:** `accent-blok`
 - **Gebruik:** Een flexibel blok om tekst uit te lichten, zoals statistieken, weetjes of citaten.
 - **Variaties:** Gebruik de `variant` property. Mogelijke waarden zijn `statistiek`, `weetje`, `citaat`, of `default`.
@@ -341,7 +361,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 18. Afbeelding & Tekst (Gesplitst Scherm)
+### 19. Afbeelding & Tekst (Gesplitst Scherm)
 - **Type:** `split-screen-image-text`
 - **Gebruik:** Om een afbeelding naast een blok tekst te plaatsen. Ideaal voor het uitdiepen van een visueel concept.
 - **JSON Structuur:**
@@ -364,7 +384,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 19. Afbeeldingen Grid
+### 20. Afbeeldingen Grid
 - **Type:** `image-grid`
 - **Gebruik:** Om een reeks afbeeldingen netjes in een grid van 2 of 3 kolommen te tonen.
 - **JSON Structuur:**
@@ -386,7 +406,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 20. Statistieken Grid
+### 21. Statistieken Grid
 - **Type:** `stats-card-grid`
 - **Gebruik:** Een opvallend grid om belangrijke statistieken, cijfers of KPI's te tonen. Elke kaart kan nu ook een bronvermelding bevatten.
 - **Eigenschappen:**
@@ -457,7 +477,7 @@ component C (enige component, dus geen divider)
 }
 ```
 
-### 21. Ethische Reflectie Grid
+### 22. Ethische Reflectie Grid
 - **Type:** `ethical-reflection-grid`
 - **Gebruik:** Voor het presenteren van ethische dilemma's of reflectiepunten in een grid. Ideaal voor het aanzetten tot nadenken over complexe onderwerpen.
 - **JSON Structuur:**
@@ -471,7 +491,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 22. Horizontale Scenario Kaarten
+### 23. Horizontale Scenario Kaarten
 - **Type:** `scenario-container-horizontal`
 - **Gebruik:** Voor het tonen van meerdere "stel je voor..." of casus-scenario's naast elkaar.
 - **JSON Structuur:**
@@ -484,7 +504,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 23. Concept Cards
+### 24. Concept Cards
 - **Type:** `concept-cards`
 - **Gebruik:** Voor het uitleggen van specifieke begrippen of jargon, inclusief vertaling en voorbeeld.
 - **JSON Structuur:**
@@ -502,7 +522,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 24. Divider (Visuele Scheiding)
+### 25. Divider (Visuele Scheiding)
 - **Type:** `divider`
 - **Gebruik:** Voor visuele scheiding tussen content componenten binnen een sectie. Zie hoofdstukstructuur voor exacte regels.
 - **JSON Structuur:**
@@ -512,7 +532,7 @@ component C (enige component, dus geen divider)
   }
   ```
 
-### 25. Uitgelichte Afbeelding met Kaarten (Complex)
+### 26. Uitgelichte Afbeelding met Kaarten (Complex)
 - **Types:** Geen specifieke types meer nodig
 - **Gebruik:** Voor complexe layouts kun je de bestaande componenten combineren met de 'doos-in-doos' structuur.
 - **JSON Structuur:** Gebruik `info-card` met `content` array om componenten te nesten.

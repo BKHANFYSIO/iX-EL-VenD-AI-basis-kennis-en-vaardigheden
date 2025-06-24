@@ -683,6 +683,32 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                     </div>
                 `;
                 break;
+            case 'audio-grid':
+                const audioKolommenClass = block.kolommen === 1 ? 'audio-grid-container-1-col' : 
+                                          block.kolommen === 2 ? 'audio-grid-container-2-col' : 'audio-grid-container-3-col';
+                html += `
+                    ${block.titel ? `<h3 class="section-title">${block.titel}</h3>` : ''}
+                    <div class="audio-grid-container ${audioKolommenClass}">
+                        ${block.items.map(item => {
+                            const metaHtml = (item.bron || item.duur) ? `<div class="audio-meta">${[item.bron, item.duur].filter(Boolean).join(' | ')}</div>` : '';
+
+                            return `
+                                <div class="audio-grid-item">
+                                    <h4 class="audio-title">${item.titel}</h4>
+                                    <p>${item.beschrijving}</p>
+                                    <div class="audio-player">
+                                        <audio controls>
+                                            <source src="${item.src}" type="audio/mpeg">
+                                            Je browser ondersteunt geen audio element.
+                                        </audio>
+                                    </div>
+                                    ${metaHtml}
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+                break;
             case 'info-card-list':
                 html += `
                     <div class="info-card">

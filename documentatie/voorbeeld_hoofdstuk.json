@@ -446,6 +446,24 @@
     { "type": "divider" },
     {
       "type": "content-text",
+      "tekst": "Het `audio-grid` component is voor het tonen van audio-bestanden zoals podcasts, muziek of AI-gegenereerde audio. Je kunt het aantal kolommen specificeren (1, 2 of 3)."
+    },
+    {
+      "type": "audio-grid",
+      "kolommen": 1,
+      "items": [
+        {
+          "titel": "Voorbeeld Podcast",
+          "beschrijving": "Een korte podcast over AI-toepassingen, volledig gegenereerd met AI.",
+          "bron": "ElevenLabs",
+          "duur": "2:30",
+          "src": "audio/voorbeeld_podcast.mp3"
+        }
+      ]
+    },
+    { "type": "divider" },
+    {
+      "type": "content-text",
       "tekst": "De `video-full-width` component is voor het prominent tonen van één enkele video over de volledige breedte van de content-container."
     },
     {

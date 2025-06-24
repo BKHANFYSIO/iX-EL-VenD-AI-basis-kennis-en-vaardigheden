@@ -8,166 +8,224 @@
     },
     {
       "type": "section-title",
-      "titel": "5.1 Beeld-AI voor visualisaties (afbeeldingen/video)"
+      "titel": "Media-AI (afbeeldingen/video/audio)"
     },
     {
       "type": "content-text",
-      "tekst": "Beeld-AI is een revolutionaire ontwikkeling die het mogelijk maakt om met behulp van tekstuele prompts indrukwekkende afbeeldingen en zelfs video's te genereren. Modellen zoals Midjourney, DALL-E en Stable Diffusion zijn hier voorbeelden van. Ze openen de deuren naar onbeperkte creativiteit, van conceptuele kunst tot realistische scènes.\n\n**Hoe werkt het?**\nJe beschrijft wat je wilt zien in een \"prompt\". De AI interpreteert deze beschrijving en genereert een bijpassende afbeelding. De kwaliteit van de output hangt sterk af van de specificiteit en creativiteit van je prompt."
+      "tekst": "AI maakt het mogelijk om in een paar seconden zelf afbeeldingen, video's en audio te genereren. Of je nu een poster voor je studieproject wilt maken, een uitlegvideo voor een patiënt, of een eigen podcast wilt opnemen: met Media-AI kun je creatief aan de slag, zonder dat je een expert hoeft te zijn. Ontdek hieronder hoe je deze tools slim inzet voor je studie en toekomstige werk!"
     },
     {
-      "type": "info-card-list",
-      "titel": "Toepassingen van Beeld-AI",
-      "inhoud": "Beeld-AI biedt een breed scala aan toepassingsmogelijkheden:",
-      "lijst": [
-        {
-          "titel": "Marketing en Design",
-          "tekst": "Snel concepten visualiseren, unieke beelden creëren voor campagnes."
-        },
-        {
-          "titel": "Educatie",
-          "tekst": "Lesmateriaal verrijken met op maat gemaakte illustraties, complexe concepten visueel uitleggen."
-        },
-        {
-          "titel": "Prototyping",
-          "tekst": "Productideeën snel visualiseren zonder de noodzaak van designsoftware of modellen."
-        }
-      ]
+      "type": "content-subtitle",
+      "titel": "Afbeeldingen genereren"
     },
     {
-      "type": "info-card-list",
+      "type": "content-text",
+      "tekst": "Met AI kun je supersnel zelf afbeeldingen maken voor je studie, presentaties of uitleg aan een patiënt. Je hoeft alleen maar te beschrijven wat je wilt zien en de AI doet de rest. Bekijk hieronder in de image-grid een paar voorbeelden, zoals de 'Human-in-the-Loop'-afbeelding die in deze e-learning is gebruikt.\n\nWil je meerdere afbeeldingen in dezelfde stijl? Upload of verwijs naar een voorbeeld en vraag de AI om iets vergelijkbaars te maken. Zoals ook in deze elearning gedaan is bij veel afbeeldingen.\n\nJe kunt AI-afbeeldingen ook makkelijk bewerken: selecteer een deel van de afbeelding en geef aan wat je wilt veranderen (bijvoorbeeld iets verwijderen of vervangen). Zo hoef je niet steeds helemaal opnieuw te beginnen.\n\nHieronder vind je nog meer tips om je op weg te helpen. Let op: de beschikbaarheid van functies kan per AI-tool verschillen."
+    },
+    {
+      "type": "accordion",
       "titel": "Tips voor effectieve prompts",
-      "inhoud": "De kwaliteit van je afbeeldingen hangt af van je prompt. Hier zijn enkele tips:",
-      "lijst": [
+      "content": [
         {
-          "titel": "Wees specifiek",
-          "tekst": "Beschrijf het onderwerp, de stijl, de kleuren, de stemming en de compositie."
+          "naam": "Wees specifiek",
+          "beschrijving": "Beschrijf het onderwerp, de stijl, kleuren, sfeer en compositie."
         },
         {
-          "titel": "Gebruik trefwoorden",
-          "tekst": "Denk aan kunststijlen (kubisme, impressionisme), namen van kunstenaars, cameraperspectieven (close-up, groothoek)."
+          "naam": "Gebruik trefwoorden",
+          "beschrijving": "Denk aan kunststijlen, namen van kunstenaars, of cameraperspectieven."
         },
         {
-          "titel": "Negatieve prompts",
-          "tekst": "Soms kun je specificeren wat je *niet* wilt zien (bijv. \"geen wazige achtergrond\")."
+          "naam": "Gebruik negatieve prompts",
+          "beschrijving": "Geef aan wat je juist niet wilt zien (bijv. 'geen wazige achtergrond')."
+        },
+        {
+          "naam": "Gebruik een Voorbeeld",
+          "beschrijving": "Upload een afbeelding als voorbeeld voor een vergelijkbare stijl, sfeer of compositie."
+        },
+        {
+          "naam": "Herhaal en Verfijn",
+          "beschrijving": "Genereer, evalueer en pas je prompt aan. Herhaling is vaak de sleutel tot een perfect resultaat."
+        },
+        {
+          "naam": "Wees de Regisseur",
+          "beschrijving": "Gebruik fotografie- of filmtermen zoals 'close-up' of 'cinematische belichting' voor meer controle."
+        },
+        {
+          "naam": "Voeg Tekst Toe",
+          "beschrijving": "Om tekst in je afbeelding te krijgen, plaats je de gewenste tekst tussen aanhalingstekens in je prompt."
         }
       ]
     },
     {
+      "type": "image-grid",
+      "kolommen": 3,
+      "afbeeldingen": [
+        { 
+          "src": "images/Human_in_the_loop.png", 
+          "alt": "Een illustratie van mens-AI samenwerking in een loop.", 
+          "onderschrift": "Voorbeeld van een AI-gegenereerde afbeelding voor deze e-learning",
+          "bron": {
+            "naam": "ChatGPT DALL-E"
+          }
+        },
+        { 
+          "src": "images/Squat-instructie.png", 
+          "alt": "Een instructie-afbeelding voor een squat-oefening.", 
+          "onderschrift": "Voorbeeld van een afbeelding voor patiëntfolders of apps",
+          "bron": {
+            "naam": "ChatGPT DALL-E"
+          }
+        },
+        { 
+          "src": "images/oefenzaal.png", 
+          "alt": "Een realistische afbeelding van een fysiotherapie oefenzaal.", 
+          "onderschrift": "Voorbeeld van een realistische afbeelding voor een praktijkfolder",
+          "bron": {
+            "naam": "ChatGPT DALL-E"
+          }
+        }
+      ]
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Video genereren"
+    },
+    {
       "type": "content-text",
-      "tekst": "**AI in de fysiotherapie:** Beeld-AI kan fysiotherapeuten helpen bij het creëren van gepersonaliseerde oefenbladen met visuele instructies, het visualiseren van anatomische structuren voor patiëntvoorlichting, of het ontwerpen van infographics over blessurepreventie.\n\n**AI in het leren:** Voor studenten biedt beeld-AI de mogelijkheid om visuele samenvattingen van studiemateriaal te maken, complexe onderwerpen te illustreren of zelfs conceptuele kunst te genereren die helpt bij het onthouden van feiten."
+      "tekst": "Met AI kun je tegenwoordig ook eenvoudig video's maken of bewerken. Handig voor bijvoorbeeld een uitlegvideo bij een opdracht, een animatie voor een presentatie, of een korte instructievideo voor een patiënt. Je hoeft vaak alleen te beschrijven wat je wilt zien, of je uploadt een paar beelden en laat de AI de rest doen. Sinds VEO 3 (2025) kunnen video's zelfs met bijpassend geluid worden gemaakt, zoals achtergrondgeluiden maar ook uitgesproken tekst."
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Voorbeelden van door AI gegenereerde video's"
+    },
+    {
+      "type": "video-grid",
+      "kolommen": 2,
+      "items": [
+        {
+          "titel": "Voorbeeldvideo gemaakt met VEO 3 (Google)",
+          "beschrijving": "Demo van Google zelf: AI-video met automatisch gegenereerd geluid, gemaakt met VEO 3 van Google.",
+          "bron": "VEO 3 van Google",
+          "duur": "-",
+          "link": "https://youtu.be/mCFMn0UkRt0?si=Dp2wRH6AVAopYrWi"
+        },
+        {
+          "titel": "Voorbeeldvideo gemaakt met VEO 2 (Google)",
+          "beschrijving": "AI-video zonder geluid, gegenereerd met VEO 2 van Google. Toont een COP lokaal met docent die toespreekt en studenten die op de achtergrond aan het oefenen zijn.",
+          "bron": "VEO 2 van Google",
+          "duur": "-",
+          "link": "https://youtu.be/nyMsubctoLc"
+        }
+      ]
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Audio genereren"
+    },
+    {
+      "type": "content-text",
+      "tekst": "AI maakt het mogelijk om professionele audio te genereren zonder dure apparatuur of studio-opnames. Perfect voor je studieprojecten! Maak bijvoorbeeld een podcast over bepaalde bronnen van een onderwerp, of creëer een leuke intro-muziek voor een presentatie. Tools zoals ElevenLabs, Suno en Udio zijn momenteel toonaangevend in AI-audio generatie.\n\nHet meest bijzondere? Je kunt zelfs je eigen stem klonen en die alles laten uitspreken wat je maar wilt. Handig voor het maken van consistente audio-content of het vertalen van teksten naar verschillende talen met je eigen stem."
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "Voorbeelden van door AI gegenereerde audio"
+    },
+    {
+      "type": "audio-grid",
+      "kolommen": 1,
+      "items": [
+        {
+          "titel": "Voorbeeld podcast over recente AI-ontwikkelingen in onderwijs",
+          "beschrijving": "Een korte podcast over recente (juni 2025) ontwikkelingen in leren en onderwijs met AI, gemaakt met NotebookLM.",
+          "bron": "NotebookLM",
+          "src": "audio/Podcast-NotebookLM-voorbeeld.wav"
+        }
+      ]
     },
     {
       "type": "section-title",
-      "titel": "5.2 Vibe-coding: AI als jouw programmeerassistent"
+      "titel": "Vibe-coding: Maak je eigen app, tool of website"
     },
     {
       "type": "content-text",
-      "tekst": "\"Vibe-coding\" is een term die de laatste tijd opduikt en verwijst naar het gebruik van AI om te helpen bij het schrijven, debuggen en begrijpen van code, vaak gebaseerd op een 'vibe' of een hoge-level beschrijving van wat je wilt bereiken. Denk aan tools zoals GitHub Copilot, of simpelweg het vragen aan een chatbot om code voor je te genereren.\n\n**Wat is het?**\nAI kan codefragmenten voorstellen, hele functies genereren, code van de ene programmeertaal naar de andere vertalen, fouten opsporen en zelfs uitleg geven over complexe code."
+      "tekst": "Stel je voor dat je een idee hebt voor een app of een handige tool, maar je hebt nog nooit een regel code geschreven. Goed nieuws: met AI kan dat! Dit noemen we 'Vibe-coding'. Je beschrijft in gewone taal wat je wilt bouwen – de 'vibe' – en de AI genereert de code voor je.<br><br><b>Deze e-learning die je nu gebruikt, is daar het perfecte voorbeeld van!</b> Hij is volledig gebouwd met Vibe-coding door een docent zonder programmeerervaring. AI schreef de code en hielp met de inhoud, terwijl de docent de leiding hield (Human in the Lead).<br><br>Met Vibe-coding kun je, soms al in enkele minuten, een eenvoudige tool bouwen. Voor een meer geavanceerde app heb je misschien een paar uur of een middag nodig. Het principe is simpel: je start met een goed idee en de juiste prompt. Na de eerste output van de AI stel je het resultaat bij met vervolgprompts, net zo lang tot je tevreden bent en alle functionaliteiten werken. Het mooie is: de apps die je maakt, kun je direct delen met medestudenten. Zij kunnen de door jou gemaakte app dan meteen gebruiken!<br><br>We focussen ons hier op twee krachtige tools die je kunt gebruiken: <b>Google Gemini</b> en <b>Bolt.new</b> (zie het overzicht hieronder). In de tabel daaronder vind je vervolgens kopieerbare prompts om direct aan de slag te gaan!"
     },
     {
-      "type": "info-card-list",
-      "titel": "Voordelen van Vibe-coding",
-      "inhoud": "De voordelen van vibe-coding zijn divers:",
-      "lijst": [
-        {
-          "titel": "Snelheid",
-          "tekst": "Versneld ontwikkelproces door automatisering van repetitieve taken."
+      "type": "resource-grid-container",
+      "items": [
+        { 
+          "titel": "Google Gemini", 
+          "beschrijving": "Een krachtige, all-round chatbot van Google. Uitstekend voor het genereren van code, het debuggen en het beantwoorden van technische vragen. Vergeet niet te vragen om de output op een 'canvas' te tonen voor visuele resultaten.<br><br><i>Let op: Functies en gratis mogelijkheden kunnen wijzigen. Ten tijde van dit schrijven is de tool beperkt gratis te gebruiken.</i>", 
+          "link": "https://gemini.google.com" 
         },
-        {
-          "titel": "Efficiëntie",
-          "tekst": "Minder tijd kwijt aan syntaxfouten en het zoeken naar oplossingen."
-        },
-        {
-          "titel": "Leren",
-          "tekst": "Een uitstekende manier om nieuwe programmeertalen of concepten te leren door AI om voorbeelden of uitleg te vragen."
+        { 
+          "titel": "Bolt.new", 
+          "beschrijving": "Een platform dat specifiek is ontworpen om met AI-assistentie snel webapplicaties te bouwen. Ideaal om je vibe-coding prompts direct om te zetten in een werkende tool.<br><br><i>Let op: Functies en gratis mogelijkheden kunnen wijzigen. Ten tijde van dit schrijven krijg je dagelijks een aantal gratis credits om de tool te gebruiken.</i>", 
+          "link": "https://bolt.new" 
         }
       ]
     },
     {
-      "type": "content-text",
-      "tekst": "**Bolt.new:** Een mooi voorbeeld van een platform dat de kracht van AI en low-code/no-code combineert, is [Bolt.new](https://bolt.new/). Met Bolt.new kun je snel en zonder diepgaande programmeerkennis kleine webapplicaties bouwen door middel van een intuïtieve interface en slimme assistentie. Dit past perfect bij het concept van 'bouwen met AI'.\n\n**AI in de fysiotherapie:** Stel je voor dat je snel een kleine webapplicatie wilt maken om patiëntvoortgang bij te houden, of een eenvoudige app die oefeningen categoriseert en aanbeveelt op basis van patiëntgegevens. Met vibe-coding en platforms zoals Bolt.new kunnen fysiotherapeuten dergelijke tools creëren zonder een professionele ontwikkelaar in te huren.\n\n**AI in het leren:** Studenten kunnen AI gebruiken om programmeerconcepten te oefenen, kleine scripts te genereren voor data-analyse, of zelfs eenvoudige webpagina's te bouwen om hun kennis te demonstreren. De focus ligt op het begrijpen van de logica en het snel tot resultaat komen."
+      "type": "table-container-group",
+      "titel": "Kopieer & Creëer: Jouw Eerste AI-Apps",
+      "tables": [
+        {
+          "headers": ["Applicatie-idee", "Beschrijving & Kopieerbare Prompt"],
+          "rows": [
+            [
+              "<b>Rad van Fortuin App</b>",
+              "Een webapp met een draaiend rad. Handig om beurten aan te wijzen in de klas. Je kunt zelf de namen aanpassen.<br><br><b>Tip:</b> Vraag in Gemini of ChatGPT om de output op een 'canvas' te tonen voor een visueel resultaat.<br><br><b>Prompt:</b><em>Genereer de complete HTML, CSS en JavaScript code voor een 'Rad van Fortuin' webapplicatie. Het rad moet minimaal 5 aanpasbare secties hebben. Er moet een invoerveld zijn waar gebruikers namen kunnen toevoegen, en een knop om het rad te laten draaien. De winnende sectie moet duidelijk worden getoond. Gebruik Tailwind CSS voor een moderne, strakke uitstraling.</em>"
+            ],
+            [
+              "<b>Flashcard Tool voor Studie</b>",
+              "Een simpele tool om flashcards te oefenen over een specifiek onderwerp. Ideaal om begrippen of principes te leren.<br><br><b>Tip:</b> Voor een nog betere tool kun je de AI eerst 'voeden'. Upload een document of de transcriptie van een video met goede uitleg, en vraag de AI om op basis daarvan de flashcards te genereren.<br><br><b>Waarschuwing:</b> Controleer de gegenereerde flashcards altijd goed. AI kan 'hallucineren' (feitelijke onzin verzinnen) of verouderde informatie gebruiken.<br><br><b>Prompt:</b><em>Creëer de HTML, CSS, en JavaScript voor een flashcard-app. De app moet de volgende trainingsleerprincipes voor fysiotherapie bevatten: 'Overload', 'Specificiteit', 'Reversibiliteit', 'Individualiteit', en 'Periodisering'. De voorkant toont de term, de achterkant de uitleg. Gebruikers moeten door de kaarten kunnen klikken.</em>"
+            ],
+            [
+              "<b>Patiënten-info App: Enkelletsel</b>",
+              "Een eenvoudige webapp die je aan een patiënt met enkelletsel kunt meegeven. De app geeft per fase van herstel duidelijke uitleg en advies.<br><br><b>Prompt:</b><em>Bouw een eenvoudige, mobielvriendelijke webapp met HTML, CSS en JavaScript over de herstelfasen van enkelletsel. Maak een hoofdmenu met drie fasen: 'Fase 1: Acuut (0-3 dagen)', 'Fase 2: Herstel (3 dagen - 6 weken)', 'Fase 3: Functioneel (na 6 weken)'. Elke fase moet een eigen pagina hebben met uitleg over wat de patiënt kan verwachten en wat goede oefeningen zijn. Zorg voor een rustige, professionele uitstraling. Gebruik voor de inhoud alleen recente, evidence-based informatie, zoals KNGF-richtlijnen. Maak GEEN gebruik van de RICE- of POLICE-principes.</em><br><br><b>Waarschuwing:</b> Controleer de output van de AI altijd zorgvuldig. Verifieer of de informatie echt up-to-date en correct is. Is dat niet zo? Geef de AI dan feedback en vraag om aanpassingen totdat de inhoud volledig klopt."
+            ],
+            [
+                "<b>Klassieke 'Breakout' Game</b>",
+                "Een webapplicatie voor een klassieke Breakout-game. Het doel is om een visueel aantrekkelijke en speelbare versie te ontwikkelen.<br><br><b>Prompt:</b><em>Creëer een webapplicatie voor een klassieke Breakout-game met HTML, CSS, en JavaScript. Zorg voor duidelijke graphics (blokken, bal, peddel), vloeiende animaties, en basis geluidseffecten. De game moet een startscherm, scoreweergave en een responsief ontwerp hebben.</em><br><br><b>Tip:</b> Werkt de gegenereerde game niet direct? Maak een screenshot van de foutmelding of het probleem, en plak die samen met een beschrijving van wat er misgaat terug in de chat. De AI kan je dan vaak helpen de fout op te lossen."
+            ]
+          ]
+        }
+      ]
     },
     {
       "type": "section-title",
-      "titel": "5.3 GPT: Meer dan alleen tekst"
+      "titel": "Je Eigen AI-Assistent Bouwen"
     },
     {
       "type": "content-text",
-      "tekst": "Generative Pre-trained Transformers (GPT's) zijn krachtige AI-modellen die bekend staan om hun vermogen om mensachtige tekst te genereren. Maar hun toepassingen reiken veel verder dan alleen schrijven. Je kunt GPT's gebruiken om gestructureerde data te genereren, interactieve ervaringen te creëren en zelfs eenvoudige 'apps' binnen de chatbotomgeving te simuleren.\n\n**De kracht van prompt engineering:** De sleutel tot het benutten van de volledige potentie van GPT's is \"prompt engineering\" – de kunst van het formuleren van de juiste instructies om de gewenste output te krijgen. Dit omvat niet alleen wat je wilt, maar ook in welk formaat, welke stijl, en met welke beperkingen.\n\n**Functies en modellen:** Sommige geavanceerde chatbotplatforms bieden specifieke functies aan, zoals een 'canvas'-modus voor visuele output of de mogelijkheid om een specifiek model te kiezen dat beter is in bepaalde taken (bijv. code genereren vs. creatief schrijven). Het is belangrijk om deze opties te verkennen als ze beschikbaar zijn in de chatbot die je gebruikt."
+      "tekst": "Ben je het zat om steeds dezelfde, lange prompts te moeten schrijven voor terugkerende taken? Dan is het tijd om je eigen, gepersonaliseerde AI-assistent te bouwen! Diensten zoals ChatGPT (met 'GPTs') en Google Gemini (met de aangekondigde 'Gems') laten je een AI configureren voor een specifieke taak. <br><br>Het grote voordeel: je stelt één keer de perfecte instructie en achtergrondinformatie in. Daarna voert de AI die taak altijd precies zo uit als jij wilt. Je kunt je eigen assistenten zelfs delen met medestudenten."
     },
     {
-      "type": "info-card-list",
-      "titel": "AI in de fysiotherapie",
-      "inhoud": "Enkele toepassingen voor GPT's in de fysiotherapie:",
-      "lijst": [
-        {
-          "titel": "Interactieve patiëntvoorlichting",
-          "tekst": "Een GPT kan fungeren als een chatbot die veelgestelde vragen van patiënten beantwoordt over blessures of behandelingen, op maat gemaakte informatie verschaft."
-        },
-        {
-          "titel": "Gepersonaliseerde oefenschema's",
-          "tekst": "Hoewel dit later uitgebreider aan bod komt, kunnen GPT's nu al tekstgebaseerde oefenplannen genereren op basis van patiëntprofielen en doelen."
-        },
-        {
-          "titel": "Scenariotraining",
-          "tekst": "Studenten fysiotherapie kunnen GPT's gebruiken om realistische patiëntcases te simuleren voor oefening in diagnose en communicatie."
+      "type": "benefits-grid",
+      "titel": "Voorbeelden van Eigen AI-Assistenten",
+      "items": [
+          {
+              "titel": "De Perfecte Samenvatter",
+              "beschrijving": "Maak een assistent die wetenschappelijke artikelen altijd in jouw favoriete format samenvat. Geef hem een paar goede voorbeelden en instructies over de gewenste stijl, lengte en structuur (bijv. 'maak altijd een conclusie van maximaal 50 woorden'). Upload vervolgens een artikel en vraag om een samenvatting."
+          },
+          {
+              "titel": "Fysio-Casus Generator",
+              "beschrijving": "Bouw een assistent die realistische patiëntcasussen genereert om mee te oefenen. Voed hem met KNGF-richtlijnen en voorbeelden van goede casuïstiek. Vervolgens kun je vragen om 'een casus over een 45-jarige man met lage rugpijn na het tillen' en de AI creëert een scenario inclusief rode vlaggen om te beoordelen."
+          },
+          {
+            "titel": "Ontdek Meer in de Toolbox",
+            "beschrijving": "In de <b>FysioAI LeerToolbox</b> vind je mogelijk ook door docenten gemaakte, specifieke AI-assistenten die je kunt gebruiken voor je studie. Neem een kijkje om te zien wat er beschikbaar is en doe inspiratie op voor je eigen creaties!"
         }
       ]
     },
-    {
-      "type": "info-card-list",
-      "titel": "AI in het leren",
-      "inhoud": "GPT's kunnen je leerproces op diverse manieren ondersteunen:",
-      "lijst": [
-        {
-          "titel": "Flashcard-generatie",
-          "tekst": "Genereer automatisch flashcards over een specifiek onderwerp."
-        },
-        {
-          "titel": "Samenvattingstools",
-          "tekst": "Vat lange teksten samen in kernpunten."
-        },
-        {
-          "titel": "Interactieve quizzes",
-          "tekst": "Creëer gepersonaliseerde quizvragen of scenario's om kennis te testen."
-        },
-        {
-          "titel": "Simuleerde gesprekken",
-          "tekst": "Oefen een vreemde taal of bereid je voor op interviews door met de AI te 'praten'."
-        }
-      ]
-    },
-    {
-      "type": "content-text",
-      "tekst": "**Let op:** In de vervolg e-learning modules zal dieper worden ingegaan op de geavanceerde mogelijkheden van AI in specifieke domeinen zoals de fysiotherapie en geavanceerde leerstrategieën."
-    },
+   
     {
       "type": "section-title",
-      "titel": "Mini-opdracht: Bouw je eigen AI-tool!"
+      "titel": "Hoe nu verder? Jouw beurt om te experimenteren!"
     },
     {
       "type": "content-text",
-      "tekst": "Kies één van onderstaande opties en probeer een kleine tool te bouwen met behulp van een chatbot (zoals ChatGPT, Gemini, Copilot, etc.). Volg de instructies en experimenteer!\n\n**Algemene instructies:**\n1. Open je favoriete chatbot.\n2. Kopieer de prompt die bij jouw gekozen opdracht hoort.\n3. Plak de prompt in de chatbot en druk op Enter.\n4. Lees de instructies van de chatbot en pas eventueel aan.\n5. Soms moet je een specifiek model kiezen of een functie activeren (bijv. \"canvas\" als dit beschikbaar is voor visuele output in jouw chatbot)."
-    },
-    {
-      "type": "content-text",
-      "tekst": "### Optie 1: Afbeelding genereren\n\n**Doel:** Genereer een inspirerende afbeelding gerelateerd aan fysiotherapie of leren.\n\n**Kopieerbare prompt:**\n```\nGenereer een realistische afbeelding van een fysiotherapeut die een oudere patiënt helpt met oefeningen in een moderne, lichte praktijkruimte, met de nadruk op bewegingsvrijheid en positiviteit. De stijl moet uplifting en hoopvol zijn.\n```\n**Korte instructie:** Als de chatbot een beeldgeneratie-functie heeft (bijv. DALL-E 3 integratie in ChatGPT Plus of Gemini's ingebouwde beeldgeneratie), zal deze de afbeelding direct creëren. Zo niet, vraag dan aan de chatbot welk AI-model het beste is voor jouw verzoek en hoe je dat kunt gebruiken."
-    },
-    {
-      "type": "content-text",
-      "tekst": "### Optie 2: Rad-van-Fortuin-app (Vibe-coding)\n\n**Doel:** Creëer een eenvoudige Rad-van-Fortuin-app met code, die je later kunt aanpassen.\n\n**Kopieerbare prompt:**\n```\nGenereer de complete HTML, CSS en JavaScript code voor een eenvoudig 'Rad van Fortuin' webapplicatie. Het rad moet minstens 5 secties hebben (bijv. \"Prijs 1\", \"Prijs 2\", etc.) en er moet een knop zijn om het rad te laten draaien. De secties moeten willekeurig stoppen en de winnende sectie moet duidelijk worden weergegeven. Zorg voor een nette, moderne uitstraling met Tailwind CSS.\n```\n**Korte instructie:** De chatbot zal je de code geven. Kopieer deze code en plak deze in een HTML-bestand (bijv. `index.html`). Open dit bestand in je webbrowser. Experimenteer met de secties door de tekst in de HTML-code aan te passen."
-    },
-    {
-      "type": "content-text",
-      "tekst": "### Optie 3: Flashcard-GPT (GPT)\n\n**Doel:** Genereer flashcards over een specifiek onderwerp.\n\n**Kopieerbare prompt:**\n```\nIk ben een student fysiotherapie en wil graag flashcards maken over de anatomie van de schouder. Genereer 10 flashcards met aan de ene kant een term (bijv. \"Rotator Cuff\") en aan de andere kant een korte, duidelijke uitleg of functie. Gebruik het formaat: \"Term: [Term] | Uitleg: [Uitleg]\".\n```\n**Korte instructie:** De chatbot zal de flashcards voor je genereren. Je kunt deze kopiëren en gebruiken om te studeren, of ze importeren in een flashcard-app als Anki. Varieer de onderwerpen en het aantal flashcards."
-    },
-    {
-      "type": "content-text",
-      "tekst": "### Optie 4: Mini-game (Vibe-coding)\n\n**Doel:** Creëer een zeer eenvoudige webgebaseerde mini-game.\n\n**Kopieerbare prompt:**\n```\nGenereer de complete HTML, CSS en JavaScript code voor een minimalistisch \"klikspel\". Er moet een knop zijn waarop de gebruiker kan klikken. Elke klik verhoogt een teller. Er moet ook een timer zijn van 30 seconden. Als de timer afloopt, stopt het spel en wordt de eindscore weergegeven. De game moet responsief zijn en er modern uitzien met Tailwind CSS.\n```\n**Korte instructie:** De chatbot zal je de code geven. Kopieer de HTML, CSS en JavaScript en plak deze in een HTML-bestand. Open dit bestand in je webbrowser om het spel te spelen. Probeer de timerduur of de klikmechanismen aan te passen in de code."
-    },
-    {
-      "type": "content-text",
-      "tekst": "Veel succes met je opdrachten en het verder ontdekken van de creatieve kracht van AI!"
+      "tekst": "In dit hoofdstuk heb je gezien hoe je met AI zelf creatieve content en zelfs complete applicaties kunt bouwen. Ook wij als opleiding experimenteren volop met tools die door AI geschreven zijn, waarbij we altijd kiezen voor 'Human in the Lead'. Dat betekent dat wij als docenten de eindcontrole houden en zorgen dat de inhoud en functionaliteit aansluiten bij wat jij voor je studie nodig hebt.<br><br>Nu is het aan jou! We nodigen je van harte uit om zelf te gaan experimenteren. Ontdek bijvoorbeeld de tools in de <b>FysioAI LeerToolbox</b> of probeer de prompts uit de tabel hierboven.<br><br><b>Belangrijke opmerking:</b> Het gebruik van externe tools zoals Google Gemini, Bolt of ChatGPT is volledig op eigen initiatief en niet verplicht. De HAN heeft geen overeenkomsten met deze partijen. Wees je altijd bewust van hoe je deze tools gebruikt. Denk aan je privacy en de betrouwbaarheid van de informatie, zoals besproken in het hoofdstuk 'Kansen & risico's'."
     }
   ],
   "interacties": [

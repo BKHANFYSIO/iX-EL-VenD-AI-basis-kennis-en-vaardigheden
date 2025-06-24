@@ -37,6 +37,17 @@
 .video-grid-item {
     display: flex;
     flex-direction: column;
+    background-color: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius-large);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-grid-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .video-grid-item .video-title {
@@ -97,6 +108,95 @@
 @media (max-width: 768px) {
     .video-grid-container-2-col,
     .video-grid-container-3-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Audio Component Stijlen --- */
+
+/* Audio player styling */
+.audio-player {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+}
+
+.audio-player audio {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Algemeen item in het audio grid */
+.audio-grid-item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius-large);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.audio-grid-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.audio-grid-item .audio-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.audio-grid-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.audio-grid-item .audio-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Grid container voor audio in kolommen */
+.audio-grid-container {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.audio-grid-container-1-col {
+    grid-template-columns: 1fr;
+}
+
+.audio-grid-container-2-col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.audio-grid-container-3-col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive aanpassingen voor audio grids */
+@media (max-width: 900px) {
+    .audio-grid-container-2-col,
+    .audio-grid-container-3-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .audio-grid-container-2-col,
+    .audio-grid-container-3-col {
         grid-template-columns: 1fr;
     }
 } 
