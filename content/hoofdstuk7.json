@@ -80,6 +80,48 @@
       ]
     },
     {
+      "type": "content-subtitle",
+      "titel": "De Digitale Receptionist: Triage-bots"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Triage-bots zijn AI-systemen die de eerste lijn van contact vormen. Ze kunnen vragen beantwoorden, informatie verzamelen en je doorverwijzen naar de juiste persoon of afdeling. Dit zorgt voor een snellere service en ontlast de menselijke medewerkers."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>Tijdens je studie:</strong> Een chatbot van je onderwijsinstelling die veelgestelde vragen over roosters, deadlines of studiepunten direct kan beantwoorden.</li></ul>"
+    },
+    {
+      "type": "image-block",
+      "src": "images/triage_bot_student.png",
+      "alt": "Een student die interactie heeft met een chatbot op een website of app."
+    },
+    {
+      "type": "content-text",
+      "tekst": "<ul><li><strong>In de fysiotherapiepraktijk:</strong> Denk aan een bot op de website van de praktijk die nieuwe patiënten basisvragen stelt over hun klachten en hen vervolgens een afspraak laat plannen bij de juiste specialist, of basisadvies geeft over veelvoorkomende klachten. Dit kan de druk op de frontoffice enorm verminderen.</li></ul>"
+    },
+    {
+      "type": "scenario-container-horizontal",
+      "scenarios": [
+        {
+          "titel": "Efficiënte Patiënt Triage",
+          "beschrijving": "Een patiënt heeft 's avonds laat acute nekpijn en twijfelt of een bezoek aan de huisarts nodig is.",
+          "punten": [
+            "Traditioneel: Patiënt zoekt online, belts misschien de huisartsenpost, of wacht tot de volgende dag.",
+            "Met Triage-bot: Patiënt opent de app van de praktijk, beschrijft de klachten aan een AI-triagebot. De bot stelt gerichte vragen, en adviseert op basis van de antwoorden om een afspraak te maken bij de fysiotherapeut voor de volgende ochtend, of in acute gevallen direct contact op te nemen met de huisartsenpost. Dit vermindert onnodige spoedbezoeken en versnelt de toegang tot de juiste zorg."
+          ]
+        },
+        {
+          "titel": "Studiehulp via Chatbot",
+          "beschrijving": "Je bent bezig met een complexe huiswerkopdracht en loopt vast op een specifiek concept. Je docent is nu niet bereikbaar.",
+          "punten": [
+            "Traditioneel: Je zoekt zelf urenlang naar informatie, of wacht tot de volgende les.",
+            "Met Triage-bot (Studiehulp): De bot geeft je direct een heldere uitleg, verwijst naar relevante pagina's in je studiemateriaal of naar extra oefeningen, en kan je zelfs meteen helpen de stof écht goed te leren voor in je lange termijn geheugen, zodat je direct verder kunt met je opdracht."
+          ]
+        }
+      ]
+    },
+    {
       "type": "video-grid",
       "titel": "Verdieping: AI en de Maatschappij",
       "items": [

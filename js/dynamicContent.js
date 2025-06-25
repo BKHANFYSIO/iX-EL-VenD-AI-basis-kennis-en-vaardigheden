@@ -865,7 +865,11 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                      if (theme.dynamische_velden && Array.isArray(theme.dynamische_velden)) {
                          theme.dynamische_velden.forEach(veld => {
                              if (theme[veld.veldnaam]) {
-                                 dynamicFields += `<div class="icon-dynamic-field"><strong>${veld.label}:</strong> <span>${theme[veld.veldnaam]}</span></div>`;
+                                 let labelHtml = '';
+                                 if (veld.label) {
+                                     labelHtml = `<strong>${veld.label}:</strong> `;
+                                 }
+                                 dynamicFields += `<div class="icon-dynamic-field">${labelHtml}<span>${theme[veld.veldnaam]}</span></div>`;
                              }
                          });
                      }

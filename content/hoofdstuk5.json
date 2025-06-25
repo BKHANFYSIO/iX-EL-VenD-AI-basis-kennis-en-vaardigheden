@@ -3,7 +3,7 @@
     {
       "type": "info-card",
       "classes": "chapter-intro-card",
-      "titel": "Welkom bij Hoofdstuk 5: Creatief & bouwen met AI",
+      "titel": "Klaar om te creëren? Jouw idee, AI's kracht.",
       "tekst": "In dit hoofdstuk duiken we dieper in de creatieve en praktische toepassingen van AI, verder dan alleen tekstgeneratie. We verkennen hoe je AI kunt inzetten om visuele content te creëren, te 'vibe-coden' en zelfs kleine tools te bouwen met behulp van Generative Pre-trained Transformers (GPT's). Dit document dient als jouw gids voor het benutten van AI's creatieve kracht."
     },
     {
@@ -148,7 +148,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Stel je voor dat je een idee hebt voor een app of een handige tool, maar je hebt nog nooit een regel code geschreven. Goed nieuws: met AI kan dat! Dit noemen we 'Vibe-coding'. Je beschrijft in gewone taal wat je wilt bouwen – de 'vibe' – en de AI genereert de code voor je.<br><br><b>Deze e-learning die je nu gebruikt, is daar het perfecte voorbeeld van!</b> Hij is volledig gebouwd met Vibe-coding door een docent zonder programmeerervaring. AI schreef de code en hielp met de inhoud, terwijl de docent de leiding hield (Human in the Lead).<br><br>Met Vibe-coding kun je, soms al in enkele minuten, een eenvoudige tool bouwen. Voor een meer geavanceerde app heb je misschien een paar uur of een middag nodig. Het principe is simpel: je start met een goed idee en de juiste prompt. Na de eerste output van de AI stel je het resultaat bij met vervolgprompts, net zo lang tot je tevreden bent en alle functionaliteiten werken. Het mooie is: de apps die je maakt, kun je direct delen met medestudenten. Zij kunnen de door jou gemaakte app dan meteen gebruiken!<br><br>We focussen ons hier op twee krachtige tools die je kunt gebruiken: <b>Google Gemini</b> en <b>Bolt.new</b> (zie het overzicht hieronder). In de tabel daaronder vind je vervolgens kopieerbare prompts om direct aan de slag te gaan!"
+      "tekst": "Stel je voor dat je een idee hebt voor een app of een handige tool, maar je hebt nog nooit een regel code geschreven. Goed nieuws: met AI kan dat! Dit noemen we 'Vibe-coding'. Je beschrijft in gewone taal wat je wilt bouwen – de 'vibe' – en de AI genereert de code voor je.<br><br><b>Deze e-learning die je nu gebruikt, is daar het perfecte voorbeeld van!</b> Hij is volledig gebouwd met Vibe-coding door een docent zonder programmeerervaring. AI schreef de code en hielp met de inhoud, terwijl de docent de leiding hield (Human in the Lead).<br><br>Met Vibe-coding kun je, soms al in enkele minuten, een eenvoudige tool bouwen. Voor een meer geavanceerde app heb je misschien een paar uur of een middag nodig. Het principe is simpel: je start met een goed idee en de juiste prompt. Na de eerste output van de AI stel je het resultaat bij met vervolgprompts, net zo lang tot je tevreden bent en alle functionaliteiten werken. Het mooie is: de apps die je maakt, kun je direct delen met medestudenten. Zij kunnen de door jou gemaakte app dan meteen gebruiken!<br><br>We lichten hieronder een paar krachtige tools uit, maar er zijn er veel meer. Voor het bouwen van complexere applicaties gaan tools als Cursor AI en Windsurf nog een stuk verder. Voor nu focussen we op <b>Google Gemini</b> en <b>Bolt.new</b> als startpunt. In de tabel daaronder vind je kopieerbare prompts om direct aan de slag te gaan!"
     },
     {
       "type": "resource-grid-container",
@@ -160,10 +160,14 @@
         },
         { 
           "titel": "Bolt.new", 
-          "beschrijving": "Een platform dat specifiek is ontworpen om met AI-assistentie snel webapplicaties te bouwen. Ideaal om je vibe-coding prompts direct om te zetten in een werkende tool.<br><br><i>Let op: Functies en gratis mogelijkheden kunnen wijzigen. Ten tijde van dit schrijven krijg je dagelijks een aantal gratis credits om de tool te gebruiken.</i>", 
+          "beschrijving": "Een platform dat specifiek is ontworpen om met AI-assistentie snel webapplicaties te bouwen. Ideaal om je 'vibe-coding' prompts direct om te zetten in een werkende tool. Ten tijde van het schrijven van dit stuk (juni 2025) is Bolt voor dit doel krachtiger dan Gemini.<br><br><i>Let op: Functies en gratis mogelijkheden kunnen wijzigen. Ten tijde van dit schrijven krijg je dagelijks een aantal gratis credits om de tool te gebruiken.</i>", 
           "link": "https://bolt.new" 
         }
       ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "Klik op een van de links hierboven om een tool te openen. Kopieer daarna een prompt uit de onderstaande tabel en plak deze in de tool. Zo kun je zelf ervaren hoe het werkt!"
     },
     {
       "type": "table-container-group",
@@ -193,12 +197,22 @@
       ]
     },
     {
+      "type": "content-text",
+      "tekst": "De ontwikkelingen in AI gaan razendsnel. Wat vandaag nog complex of zelfs onmogelijk lijkt, kan morgen al binnen handbereik zijn. De tools en technieken die je in dit hoofdstuk hebt gezien, worden continu beter en toegankelijker. Dit betekent dat jouw mogelijkheden om te creëren en innoveren met AI alleen maar zullen toenemen. Blijf dus nieuwsgierig en experimenteer, want wat over een jaar kinderlijk eenvoudig is, begint met de kennis die je nu opdoet."
+    },
+    {
       "type": "section-title",
       "titel": "Je Eigen AI-Assistent Bouwen"
     },
     {
       "type": "content-text",
       "tekst": "Ben je het zat om steeds dezelfde, lange prompts te moeten schrijven voor terugkerende taken? Dan is het tijd om je eigen, gepersonaliseerde AI-assistent te bouwen! Diensten zoals ChatGPT (met 'GPTs') en Google Gemini (met de aangekondigde 'Gems') laten je een AI configureren voor een specifieke taak. <br><br>Het grote voordeel: je stelt één keer de perfecte instructie en achtergrondinformatie in. Daarna voert de AI die taak altijd precies zo uit als jij wilt. Je kunt je eigen assistenten zelfs delen met medestudenten."
+    },
+    {
+      "type": "info-card",
+      "classes": "warning-card",
+      "titel": "Belangrijk",
+      "tekst": "Op dit moment (juni 2025) heb je vaak een betaald account nodig om zelf assistenten te bouwen. Het gebruiken van assistenten die door anderen zijn gemaakt, kan meestal wel met een gratis account, maar soms met beperkingen. De verwachting is dat dit in de toekomst steeds toegankelijker wordt."
     },
     {
       "type": "benefits-grid",
@@ -225,7 +239,13 @@
     },
     {
       "type": "content-text",
-      "tekst": "In dit hoofdstuk heb je gezien hoe je met AI zelf creatieve content en zelfs complete applicaties kunt bouwen. Ook wij als opleiding experimenteren volop met tools die door AI geschreven zijn, waarbij we altijd kiezen voor 'Human in the Lead'. Dat betekent dat wij als docenten de eindcontrole houden en zorgen dat de inhoud en functionaliteit aansluiten bij wat jij voor je studie nodig hebt.<br><br>Nu is het aan jou! We nodigen je van harte uit om zelf te gaan experimenteren. Ontdek bijvoorbeeld de tools in de <b>FysioAI LeerToolbox</b> of probeer de prompts uit de tabel hierboven.<br><br><b>Belangrijke opmerking:</b> Het gebruik van externe tools zoals Google Gemini, Bolt of ChatGPT is volledig op eigen initiatief en niet verplicht. De HAN heeft geen overeenkomsten met deze partijen. Wees je altijd bewust van hoe je deze tools gebruikt. Denk aan je privacy en de betrouwbaarheid van de informatie, zoals besproken in het hoofdstuk 'Kansen & risico's'."
+      "tekst": "In dit hoofdstuk heb je gezien hoe je met AI zelf creatieve content en zelfs complete applicaties kunt bouwen. Ook wij als opleiding experimenteren volop met tools die door AI geschreven zijn, waarbij we altijd kiezen voor 'Human in the Lead'. Dat betekent dat wij als docenten de eindcontrole houden en zorgen dat de inhoud en functionaliteit aansluiten bij wat jij voor je studie nodig hebt.<br><br>Nu is het aan jou! We nodigen je van harte uit om zelf te gaan experimenteren. Ontdek bijvoorbeeld de tools in de <b>FysioAI LeerToolbox</b> of probeer de prompts uit de tabel hierboven."
+    },
+    {
+      "type": "info-card",
+      "classes": "warning-card",
+      "titel": "Belangrijke opmerking",
+      "tekst": "Het gebruik van externe tools zoals Google Gemini, Bolt of ChatGPT is volledig op eigen initiatief en niet verplicht. De HAN heeft geen overeenkomsten met deze partijen. Wees je altijd bewust van hoe je deze tools gebruikt. Denk aan je privacy en de betrouwbaarheid van de informatie, zoals besproken in het hoofdstuk 'Kansen & risico's'."
     }
   ],
   "interacties": [

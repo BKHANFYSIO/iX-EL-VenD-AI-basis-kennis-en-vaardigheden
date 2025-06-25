@@ -396,8 +396,14 @@ async function checkMCAnswer(interactionId, selectedAnswerIndex, correctAnswerIn
     // Haal de volledige interactiedata op voor de feedbacktekst
     const fullInteractionData = await getInteractionData(sectionNumber, interactionId);
 
-    if (feedbackEl && fullInteractionData && fullInteractionData.feedback) {
-        const feedbackText = isCorrect ? fullInteractionData.feedback.correct : fullInteractionData.feedback.incorrect;
+    if (feedbackEl && fullInteractionData) {
+        let feedbackText = '';
+        if (fullInteractionData.feedbackCorrect && fullInteractionData.feedbackIncorrect) {
+            feedbackText = isCorrect ? fullInteractionData.feedbackCorrect : fullInteractionData.feedbackIncorrect;
+        } else if (fullInteractionData.feedback) {
+            // Fallback voor de oude structuur
+            feedbackText = isCorrect ? 'Correct!' : (fullInteractionData.feedback || 'Incorrect.');
+        }
         feedbackEl.textContent = feedbackText || (isCorrect ? 'Correct!' : 'Incorrect.');
         feedbackEl.className = 'feedback ' + (isCorrect ? 'correct' : 'incorrect');
     }
@@ -600,7 +606,7 @@ async function checkDragDrop(containerTargetId, sectionNumber, dragDropId) {
         return;
     }
 
-    const correctMap = ddData.correctCombinations; // Verwacht { "itemId": "targetId", ... }
+    const correctCombinations = ddData.correctCombinations;
 
     let allCorrect = true;
     const interactiveExercise = container.querySelector('.interactive-exercise');
@@ -614,9 +620,12 @@ async function checkDragDrop(containerTargetId, sectionNumber, dragDropId) {
         
         draggableElements.forEach(item => {
             const itemId = item.getAttribute('data-id');
-            allPlacedItems.add(itemId); // Registreer dat dit item geplaatst is
+            allPlacedItems.add(itemId);
             
-            if (correctMap[itemId] === targetId) {
+            // Vind de correcte combinatie voor dit item
+            const correctCombination = correctCombinations.find(c => c.itemId === itemId);
+            
+            if (correctCombination && correctCombination.targetId === targetId) {
                 item.classList.add('correct');
                 item.classList.remove('incorrect');
             } else {
@@ -819,7 +828,7 @@ function initializeMCInteraction(containerId, interactionData, sectionNumber) {
 
             const selectedAnswerIndex = parseInt(this.getAttribute('data-id')) - 1; // Corrigeer naar 0-gebaseerd
             // Call checkMCAnswer with the correct 0-based index
-            await checkMCAnswer(interactionData.id, selectedAnswerIndex, interactionData.correct_answer, sectionNumber, mcElement, options);
+            await checkMCAnswer(interactionData.id, selectedAnswerIndex, interactionData.correctAnswer, sectionNumber, mcElement, options);
         });
     });
 }
