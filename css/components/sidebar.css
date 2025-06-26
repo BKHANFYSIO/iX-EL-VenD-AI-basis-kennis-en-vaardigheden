@@ -25,8 +25,8 @@
 }
 
 .sidebar-logo {
-    height: 60px; /* Vaste hoogte voor het logo (was 30px) */
-    width: auto;
+    width: 50px; /* Aangepaste breedte voor het SVG-logo (was 80px) */
+    height: auto; /* Automatische hoogte voor correcte schaling */
     flex-shrink: 0; /* Voorkom dat het logo krimpt */
 }
 
