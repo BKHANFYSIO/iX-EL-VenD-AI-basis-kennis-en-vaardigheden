@@ -18,7 +18,16 @@
 .sidebar-header {
     padding: 0 20px 20px;
     border-bottom: 1px solid var(--medium-gray);
-    text-align: center;
+    display: flex; /* Maak er een flex container van */
+    align-items: center; /* Lijn items verticaal uit */
+    justify-content: center; /* Centreer de items horizontaal */
+    gap: 10px; /* Ruimte tussen logo en titel */
+}
+
+.sidebar-logo {
+    height: 60px; /* Vaste hoogte voor het logo (was 30px) */
+    width: auto;
+    flex-shrink: 0; /* Voorkom dat het logo krimpt */
 }
 
 .sidebar-title {

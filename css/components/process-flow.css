@@ -3,19 +3,19 @@
    ========================================================================== */
 
 .process-flow-container {
-    margin: 40px 0;
+    margin: 30px 0;
 }
 
 .process-flow-title {
     text-align: center;
     font-size: 1.8em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: var(--primary-purple);
 }
 
 .process-flow {
     position: relative;
-    padding: 20px 0;
+    padding: 8px 0;
 }
 
 .process-flow::before {
@@ -33,31 +33,32 @@
 .process-flow-item {
     position: relative;
     width: 50%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    margin: 0;
 }
 
 .process-flow-item:nth-child(odd) {
     left: 0;
-    padding-right: 90px; /* Meer padding voor bredere pil */
+    padding-right: 80px;
     justify-content: flex-end;
     text-align: right;
 }
 
 .process-flow-item:nth-child(even) {
     left: 50%;
-    padding-left: 90px; /* Meer padding voor bredere pil */
+    padding-left: 80px;
 }
 
 .process-flow-year {
     position: absolute;
     top: 50%;
-    width: 140px; /* Vaste, ruimere breedte */
+    width: 120px;
     height: auto;
-    padding: 10px;
+    padding: 8px;
     border-radius: 999px;
     background: var(--primary-purple);
     color: white;
@@ -66,6 +67,7 @@
     box-shadow: 0 0 0 4px var(--primary-purple);
     z-index: 1;
     text-align: center;
+    font-size: 0.9em;
 }
 
 .process-flow-item:nth-child(odd) .process-flow-year {
@@ -79,21 +81,29 @@
 }
 
 .process-flow-content {
-    padding: 20px;
+    padding: 12px;
     background: var(--light-purple-background);
     border-radius: 8px;
-    width: calc(100% - 40px);
+    width: calc(100% - 24px);
+    margin: 0;
 }
 
 .process-flow-content h4 {
     color: var(--primary-purple);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.1em;
+    margin-top: 0;
+}
+
+.process-flow-content p {
+    margin: 0.2rem 0;
+    line-height: 1.4;
 }
 
 /* Responsive aanpassingen voor mobiele schermen */
 @media (max-width: 768px) {
     .process-flow::before {
-        left: 70px; /* Plaats de lijn iets verder van de rand */
+        left: 60px;
         transform: translateX(0);
     }
 
@@ -101,7 +111,7 @@
     .process-flow-item:nth-child(even) {
         width: 100%;
         left: 0;
-        padding-left: 140px; /* Genoeg ruimte voor de pil en marge */
+        padding-left: 120px;
         padding-right: 15px;
     }
 
@@ -113,10 +123,10 @@
     .process-flow-year,
     .process-flow-item:nth-child(odd) .process-flow-year,
     .process-flow-item:nth-child(even) .process-flow-year {
-        left: 70px; /* Centreer op dezelfde positie als de lijn */
+        left: 60px;
         transform: translate(-50%, -50%);
-        width: 100px; /* Vaste, consistente breedte voor mobiel */
-        padding: 10px;
+        width: 90px;
+        padding: 8px;
     }
 
     .process-flow-content {
