@@ -199,4 +199,73 @@
     .audio-grid-container-3-col {
         grid-template-columns: 1fr;
     }
+}
+
+/* New Split Screen Video Component */
+.video-split-screen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius-large);
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.video-split-screen .text-content h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--primary-purple);
+}
+
+@media (max-width: 1200px) {
+    .video-split-screen {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Video Grid Component */
+.video-grid-container {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.video-grid-container-2-col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.video-grid-container-3-col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.video-grid-container .video-title {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.video-grid-item-content p.video-source {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Responsive aanpassingen voor de grids */
+@media (max-width: 900px) {
+    .video-grid-container-2-col,
+    .video-grid-container-3-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .video-grid-container-2-col,
+    .video-grid-container-3-col {
+        grid-template-columns: 1fr;
+    }
 } 

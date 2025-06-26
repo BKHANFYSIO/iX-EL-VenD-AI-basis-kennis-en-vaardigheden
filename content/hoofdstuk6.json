@@ -42,8 +42,8 @@
             { "naam": "Transcriptie", "beschrijving": "Zet opgenomen interviews, (oefen)gesprekken of hoorcolleges automatisch om in tekst." },
             { "naam": "Professionele Content", "beschrijving": "Maak snel professionele afbeeldingen, diagrammen, video's of presentaties voor je opdrachten." }
           ]
-        },
-        {
+    },
+    {
           "type": "accordion",
           "titel": "3. Ontwikkelen van Zelfsturing en Reflectie",
           "content": [
@@ -60,7 +60,7 @@
             { "naam": "Bouwen Zonder Code", "beschrijving": "Ontwikkel zelf simpele apps, tools of websites (bijv. voor een specifieke patiëntengroep) zonder dat je hoeft te kunnen programmeren." },
             { "naam": "Eigen AI-Assistenten", "beschrijving": "Bouw gepersonaliseerde AI-modellen (zoals een Custom GPT) voor terugkerende taken, zoals het samenvatten van een intake of het opstellen van een behandelplan." },
             { "naam": "Data-analyse", "beschrijving": "Leer hoe je (geanonimiseerde) data kunt analyseren en visualiseren, een belangrijke vaardigheid voor toekomstig onderzoek en kwaliteitsverbetering." }
-          ]
+      ]
         }
       ]
     },
@@ -81,8 +81,8 @@
             { "naam": "Intelligente Triage", "beschrijving": "Gebruik slimme chatbots op de website van de praktijk voor een eerste inschatting (triage) van klachten, zodat de patiënt direct bij de juiste zorgverlener terechtkomt." },
             { "naam": "Interprofessioneel Samenwerken", "beschrijving": "Laat AI helpen een bondige, professionele overdracht te formuleren voor een huisarts of andere zorgverlener." }
           ]
-        },
-        {
+    },
+    {
           "type": "accordion",
           "titel": "2. Verrijkte Diagnostiek & Behandeling",
           "content": [
@@ -130,12 +130,12 @@
         { 
           "titel": "Verborgen Vooroordelen (Bias)", 
           "tekst": "Modellen zijn getraind op data die bestaande maatschappelijke en culturele vooroordelen weerspiegelen. Dit kan leiden tot adviezen die minder passend zijn voor bepaalde groepen." 
-        },
-        {
+    },
+    {
           "titel": "Geopolitieke en Commerciële Filters",
           "tekst": "De output van een AI wordt beïnvloed door het bedrijf of land dat het model heeft ontwikkeld. Dit kan de objectiviteit van de informatie kleuren, bijvoorbeeld bij medische onderwerpen."
-        },
-        {
+    },
+    {
           "titel": "Verouderde Kennis",
           "tekst": "De kennis van veel modellen heeft een afkapdatum. Wees ervan bewust dat ze niet altijd op de hoogte zijn van de allernieuwste wetenschappelijke inzichten."
         },
@@ -156,16 +156,16 @@
         { 
           "titel": "Data als Trainingsmateriaal", 
           "tekst": "De meeste publieke AI-tools werken in de cloud. De informatie die je invoert – zeker herleidbare patiëntinformatie – kan worden opgeslagen en gebruikt om het model te trainen. Je geeft je data weg." 
-        },
-        { 
+    },
+    {
           "titel": "AVG/GDPR-wetgeving", 
           "tekst": "Het invoeren van patiëntgegevens in publieke AI-tools is vrijwel altijd in strijd met de privacywetgeving. Gebruik dergelijke tools alleen met volledig geanonimiseerde data." 
         },
         {
           "titel": "Eigen Persoonsgegevens",
           "tekst": "Alle gegevens die je als student over jezelf invoert, kunnen worden opgeslagen en geanalyseerd. Wees je ervan bewust dat hiermee een profiel van je kan worden opgebouwd, met name bij het delen van persoonlijke of gevoelige informatie."
-        },
-        {
+    },
+    {
           "titel": "Schending van Auteursrecht",
           "tekst": "Het uploaden van auteursrechtelijk beschermd materiaal (zoals studieboeken of artikelen) kan een schending van het copyright zijn, omdat je de data deelt met de AI-leverancier."
         }
@@ -186,16 +186,16 @@
         { 
           "titel": "Automatisering Bias", 
           "tekst": "De menselijke neiging om blind te varen op de output van een computer, zonder deze zelf nog kritisch te evalueren. Dit kan leiden tot het overnemen van foute adviezen." 
-        },
-        {
+    },
+    {
           "titel": "Risico op Plagiaat",
           "tekst": "AI kan teksten genereren die (bijna) letterlijk uit de trainingsdata komen, zonder bronvermelding. Dit direct overnemen in eigen werk is plagiaat."
         },
         {
           "titel": "Academische en Professionele Integriteit",
           "tekst": "Werk inleveren dat door AI is gegenereerd, terwijl dit een toetsing is van jouw eigen vaardigheden, wordt gezien als fraude. Het misleiden over de oorsprong van het werk is de kern van de overtreding."
-        },
-        {
+    },
+    {
           "titel": "Aansprakelijkheid",
           "tekst": "Als therapeut blijf jij altijd eindverantwoordelijk voor de zorg die je levert en de keuzes die je maakt, ook als die mede zijn ingegeven door AI."
         }

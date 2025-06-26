@@ -286,6 +286,24 @@ component C (enige component, dus geen divider)
   }
   ```
 
+### 13b. Video Split Screen
+- **Type:** `video-split-screen`
+- **Gebruik:** Voor het tonen van een video naast een tekstblok. Op brede schermen staan ze naast elkaar, op smallere schermen onder elkaar.
+- **JSON Structuur:**
+  ```json
+  {
+    "type": "video-split-screen",
+    "video": {
+      "link": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "titel": "Voorbeeldvideo: Wat is AI?"
+    },
+    "tekst_content": [
+      "Dit is een voorbeeld van een video naast een tekstblok. Op brede schermen staan ze naast elkaar, op smallere schermen onder elkaar.",
+      "Gebruik dit component als je een uitlegvideo wilt combineren met een toelichtende tekst."
+    ]
+  }
+  ```
+
 ### 14. Afbeelding
 - **Type:** `image-block`
 - **Gebruik:** Voor het tonen van een standaard afbeelding.

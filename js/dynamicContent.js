@@ -1098,6 +1098,75 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                     </div>
                 `;
                 break;
+            case 'video-split-screen':
+                let videoEmbedUrl = '';
+                if (block.video && block.video.link && block.video.link.includes('youtu')) {
+                    const match = block.video.link.match(/(?:youtu.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
+                    if (match && match[1]) {
+                        videoEmbedUrl = `https://www.youtube.com/embed/${match[1]}`;
+                    }
+                }
+                html += `
+                    <div class="video-split-screen">
+                        <div class="video-content">
+                            ${videoEmbedUrl ? `<div class='video-wrapper'><iframe src='${videoEmbedUrl}' title='${block.video.titel || 'Embedded YouTube video'}' allowfullscreen></iframe></div>` : '<p>Video kon niet geladen worden.</p>'}
+                        </div>
+                        <div class="text-content">
+                            ${block.tekst_content.titel ? `<h3>${block.tekst_content.titel}</h3>` : ''}
+                            ${block.tekst_content.paragrafen && Array.isArray(block.tekst_content.paragrafen) ? block.tekst_content.paragrafen.map(p => `<p>${p}</p>`).join('') : ''}
+                        </div>
+                    </div>
+                `;
+                break;
+            case 'stats-card-grid':
+                html += `<div class="stats-container">`;
+                block.kaarten.forEach(kaart => {
+                    let bronHtml = '';
+                    if (kaart.bron) {
+                        if (kaart.bron.url) {
+                            bronHtml = `<a href="${kaart.bron.url}" target="_blank" class="stat-source">${kaart.bron.naam}</a>`;
+                        } else {
+                            bronHtml = `<span class="stat-source">${kaart.bron.naam}</span>`;
+                        }
+                    }
+
+                    const isCompact = block.layout === 'compact';
+                    const cardClass = isCompact ? 'stat-card--compact' : '';
+                    
+                    let cardContentHtml = '';
+                    if(isCompact) {
+                        // Compact layout HTML structure
+                        cardContentHtml = `
+                            <div class="stat-card-header-compact">
+                                ${kaart.afbeelding ? `<div class="stat-image"><img src="${kaart.afbeelding}" alt="${kaart.titel || ''}"></div>` : ''}
+                                ${kaart.titel ? `<h3 class="stat-title">${kaart.titel}</h3>` : ''}
+                            </div>
+                            <div class="stat-card-body-compact">
+                                ${kaart.getal ? `<div class="stat-number">${kaart.getal}</div>` : ''}
+                                ${kaart.label ? `<p class="stat-label">${kaart.label}</p>` : ''}
+                            </div>
+                        `;
+                    } else {
+                        // Default layout HTML structure
+                        cardContentHtml = `
+                            ${kaart.titel ? `<h3 class="stat-title">${kaart.titel}</h3>` : ''}
+                            ${kaart.afbeelding ? `<div class="stat-image"><img src="${kaart.afbeelding}" alt="${kaart.titel || ''}"></div>` : ''}
+                            ${kaart.getal ? `<div class="stat-number">${kaart.getal}</div>` : ''}
+                            ${kaart.label ? `<p class="stat-label">${kaart.label}</p>` : ''}
+                        `;
+                    }
+
+                    html += `
+                        <div class="stat-card ${cardClass}">
+                            <div class="stat-card-content">
+                                ${cardContentHtml}
+                            </div>
+                            ${bronHtml ? `<div class="stat-card-footer">${bronHtml}</div>` : ''}
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+                break;
         }
     });
     return html;

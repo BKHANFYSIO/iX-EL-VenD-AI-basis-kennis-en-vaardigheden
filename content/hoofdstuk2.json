@@ -3,7 +3,7 @@
     {
       "type": "info-card",
       "titel": "AI onder de motorkap: Wat is het écht?",
-      "tekst": "In hoofdstuk 1 heb je een eerste indruk gekregen van de AI-tools die relevant zijn voor jouw vak. Maar voordat we dieper duiken in welke tools je het beste kunt kiezen, is het essentieel om een stevige basis te leggen. Want wat is die mysterieuze 'AI' nu eigenlijk precies? Je gebruikt het waarschijnlijk vaker dan je denkt, bijvoorbeeld als Spotify een playlist voor je samenstelt of je telefoon je gezicht herkent."
+      "tekst": "In hoofdstuk 1 heb je gezien wat AI kan betekenen. Maar om als professional echt de regie te houden, is het niet genoeg om AI alleen te kunnen <strong>toepassen</strong>. <strong>Je moet ook snappen <strong>hoe het werkt</strong>, waarom het bepaalde keuzes maakt en waar de grenzen liggen.</strong> Deze kennis is essentieel om een kritische denker te worden in plaats van een passieve gebruiker. In dit hoofdstuk leggen we daarom de basis: wat is die mysterieuze 'AI' nu eigenlijk precies?"
     },
     {
         "type": "section-title",
@@ -14,22 +14,12 @@
       "tekst": "Laten we beginnen met een eenvoudige en praktische definitie die je kunt onthouden.\n\n<strong>Werkdefinitie:</strong> Kunstmatige intelligentie (AI) is technologie waarmee computers menselijk leren, redeneren en beslissen kunnen nabootsen.\n\nSimpel gezegd proberen we met AI machines 'slim' te maken, zodat ze ons kunnen helpen met complexe taken. In plaats van dat een programmeur elke regel of handeling vooraf programmeert, kan een AI-systeem zelf leren van grote hoeveelheden data (gegevens) en op basis daarvan patronen herkennen of beslissingen nemen."
     },
     {
-      "type": "info-card-list",
-      "titel": "Waarom is dit relevant voor jou als fysiotherapeut?",
-      "inhoud": "Als machines slim worden 'net als mensen', wat betekend dat dan voor jou als fysiotherapeut? Zoals je in het vorige hoofdstuk zag, is AI geen verre toekomstmuziek meer; het wordt nu al ingezet om de zorg te verbeteren. Het is belangrijk om te benadrukken dat AI een <strong>hulpmiddel</strong> is dat jou ondersteunt en je capaciteiten vergroot, niet vervangt. Jouw menselijke expertise, empathie en klinische redenering blijven essentieel. Al is dat voor de langere termijn ook discutabel. Onderstaand een overzicht van een aantal toepassingen van AI in de fysiotherapie. Die deels al worden toegepast.",
-      "lijst": [
-        { "titel": "Efficiëntere verslaglegging", "tekst": "AI kan een opgenomen intakegesprek automatisch omzetten in een gestructureerd verslag. Hierdoor houd jij meer tijd over voor de patiënt." },
-        { "titel": "Nauwkeurige bewegingsanalyse", "tekst": "Apps die via de camera van een smartphone of tablet de houding of een beweging analyseren. De AI 'ziet' bijvoorbeeld een afwijking in de kniebuiging tijdens een squat en kan dit objectief meten." },
-        { "titel": "E-health triage", "tekst": "Slimme chatbots die op basis van vragen de urgentie van klachten inschatten en een patiënt adviseren om zelfzorg toe te passen of een afspraak te maken." },
-        { "titel": "Motivatietools & ondersteuning", "tekst": "AI-chatbots herinneren oefeningen, geven realtime feedback & stimuleren therapietrouw." },
-        { "titel": "AI-collega/sparringspartner", "tekst": "\"AI assistants\" analyseren data, helpen bij hypothesevorming, ondersteunen klinische besluitvorming (bv. chatCPG)." },
-        { "titel": "Personalisatie & prognose", "tekst": "Predictive AI geeft uitspraken over herstelkansen en risico op operatie (Sword Health, Flok, NHS)." },
-        { "titel": "Robotica & wearables", "tekst": "Rehab-robots & exoskeletten helpen beweging herhalen, meten progressie (Bionik Labs, Sword Health)." }
-      ]
-    },
-    {
       "type": "section-title",
       "titel": "AI-geschiedenis"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Voor een goed begrip van AI is het nuttig om te weten waar het vandaan komt. Je hoeft dit niet uit je hoofd te leren, maar de belangrijkste mijlpalen geven je context over de snelle ontwikkelingen van nu."
     },
     {
       "type": "process-flow",
@@ -59,6 +49,25 @@
       ]
     },
     {
+      "type": "section-title",
+      "titel": "Van Voorspelling naar Antwoord: Hoe een Taalmodel 'Denkt'"
+    },
+    {
+      "type": "video-split-screen",
+      "video": {
+        "link": "https://youtu.be/iOaJZ3oP2T4",
+        "titel": "Hoe werkt ChatGPT (en waarom is het soms onzin)?"
+      },
+      "tekst_content": {
+        "titel": "",
+        "paragrafen": [
+          "Een taalmodel redeneert niet, maar voorspelt woord voor woord wat het meest logische vervolg is op basis van de patronen die het heeft geleerd uit miljarden teksten. Het is in feite geavanceerde, wiskundige kansberekening.",
+          "Om te voorkomen dat elk antwoord hetzelfde is, wordt er een vleugje willekeur ('temperatuur') toegevoegd. Hierdoor kan het model ook creatieve en unieke zinnen vormen.",
+          "Onthoud dus: elk antwoord is een uniek, statistisch gegenereerd product, geen gekopieerd feit."
+        ]
+      }
+    },
+    {
       "type": "competency-grid",
       "titel": "Belangrijke termen in AI",
       "intro": "Hieronder vind je een overzicht van essentiële AI-termen met uitleg en hun praktische betekenis voor jouw studie en werk.",
@@ -74,8 +83,16 @@
       ]
     },
     {
+      "type": "content-subtitle",
+      "titel": "Verder kijken (optionele bronnen)"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Voor een nog beter begrip, bekijk één of meerdere van deze video's."
+    },
+    {
       "type": "video-grid",
-      "titel": "Verder kijken (optionele bronnen)",
+      "kolommen": 3,
       "items": [
         { "titel": "Het Klokhuis - Wat is artificiële intelligentie?", "beschrijving": "Wat is artificiële intelligentie? Klokhuis legt het uit met herkenbare voorbeelden uit het dagelijks leven. Toegankelijke video voor jong en oud.", "bron": "NTR", "duur": "15 min", "link": "https://youtu.be/xHcv99wuUwA?si=wXamfNMi0tvf7fvV" },
         { "titel": "What is Artificial Intelligence? (Simplilearn)", "beschrijving": "Deze korte video geeft een heldere introductie in de basis van kunstmatige intelligentie en de belangrijkste concepten. In 5 minuten begrijp je de essentie van AI en hoe het ons dagelijks leven beïnvloedt.", "bron": "Simplilearn", "duur": "4:40 min", "link": "https://youtu.be/uMzUB89uSxU?si=AaLFg4OjL-rR35Zt" },
