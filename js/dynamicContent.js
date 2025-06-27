@@ -169,13 +169,19 @@ function renderInteraction(interactionData, chapterNumber, container) {
         }
     } else if (interactionData.type === 'flashcard') {
         initializeFlashcardInteraction(interactionData, chapterNumber);
+    } else if (interactionData.type === 'reflection') {
+        if (typeof initializeReflectionInteraction === 'function') {
+            initializeReflectionInteraction(container.id, interactionData);
+        } else {
+            console.error('initializeReflectionInteraction function not found in js/script.js');
+        }
     }
 }
 
 // Pass chapterNumber to renderReflectionInteraction
 function renderReflectionInteraction(interactionData, chapterNumber) {
     const minLength = interactionData.minLength || 10;
-    const maxLength = interactionData.maxLength || 500;
+    const maxLength = interactionData.maxLength || 1500;
     const placeholder = interactionData.placeholder || `Typ hier je antwoord (minimaal ${minLength}, maximaal ${maxLength} tekens)`;
     const iconSvg = '<svg viewBox="0 0 24 24" class="icon"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"></path></svg>';
     const blockTitle = "Reflectie";
@@ -183,6 +189,9 @@ function renderReflectionInteraction(interactionData, chapterNumber) {
     const storageKey = `reflection_${chapterNumber}_${interactionData.id}_answered`;
     const savedAnswer = localStorage.getItem(storageKey) || '';
     const isSaved = !!savedAnswer;
+
+    // Verwerk newlines in de vraagtekst voor betere opmaak
+    const processedQuestion = interactionData.vraag ? interactionData.vraag.replace(/\n/g, '<br>') : 'Geen vraag gespecificeerd.';
 
     return `
         <div class="interactive-block">
@@ -192,13 +201,16 @@ function renderReflectionInteraction(interactionData, chapterNumber) {
             </div>
             <div class="interactive-block-content">
                 <div class="reflection-container">
-                    <p class="reflection-question">${interactionData.vraag || 'Geen vraag gespecificeerd.'}</p>
+                    <p class="reflection-question">${processedQuestion}</p>
                     <textarea id="${interactionData.id}-input" 
                               class="reflection-input" 
                               minlength="${minLength}" 
                               maxlength="${maxLength}" 
                               placeholder="${placeholder}">${savedAnswer}</textarea>
-                    <button class="btn btn-save-reflection left-align-btn${isSaved ? ' btn-opgeslagen' : ''}" onclick="saveReflection(${chapterNumber}, '${interactionData.id}')" ${isSaved ? 'disabled' : ''}>${isSaved ? 'Opgeslagen' : 'Opslaan'}</button>
+                    <div class="reflection-footer">
+                        <button class="btn btn-save-reflection${isSaved ? ' btn-opgeslagen' : ''}" onclick="saveReflection(${chapterNumber}, '${interactionData.id}')" ${isSaved ? 'disabled' : ''}>${isSaved ? 'Opgeslagen' : 'Opslaan'}</button>
+                        <span id="${interactionData.id}-counter" class="char-counter"></span>
+                    </div>
                     <div id="feedback-${chapterNumber}-${interactionData.id}" class="feedback-message"></div>
                 </div>
             </div>
@@ -209,18 +221,53 @@ function renderReflectionInteraction(interactionData, chapterNumber) {
 // Pass chapterNumber to renderMCInteraction
 function renderMCInteraction(interactionData, chapterNumber) {
     let optionsHtml = '';
-    const storageKey = `mc_${chapterNumber}_${interactionData.id}_answered`;
-    const isSaved = localStorage.getItem(storageKey) === 'true';
+    const storageKeyAnswered = `mc_${chapterNumber}_${interactionData.id}_answered`;
+    const isSaved = localStorage.getItem(storageKeyAnswered) === 'true';
+
+    let savedSelectionIndex = -1;
+    let wasCorrect = false;
+
+    if (isSaved) {
+        const selectedIndexStr = localStorage.getItem(`mc_${chapterNumber}_${interactionData.id}_selected`);
+        if (selectedIndexStr !== null) {
+            savedSelectionIndex = parseInt(selectedIndexStr, 10);
+        }
+        wasCorrect = localStorage.getItem(`mc_${chapterNumber}_${interactionData.id}_correct`) === '1';
+    }
+
     if (interactionData.options && Array.isArray(interactionData.options)) {
         optionsHtml = '<ul class="mc-options">';
         interactionData.options.forEach((option, index) => {
-            optionsHtml += `<li class="mc-option${isSaved ? ' disabled' : ''}" data-id="${index + 1}"${isSaved ? ' style=\"pointer-events:none;opacity:0.6;\"' : ''}>${option}</li>`;
+            let optionClasses = 'mc-option';
+            if (isSaved) {
+                optionClasses += ' disabled';
+                if (index === savedSelectionIndex) {
+                    optionClasses += ' selected';
+                    optionClasses += wasCorrect ? ' correct' : ' incorrect';
+                }
+            }
+            optionsHtml += `<li class="${optionClasses}" data-id="${index}">${option}</li>`;
         });
         optionsHtml += '</ul>';
     }
+
     const iconSvg = '<svg viewBox="0 0 24 24" class="icon"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>';
     const blockTitle = "Meerkeuze Vraag";
     const specificQuestionTitle = interactionData.titel ? `<h5 class="interaction-title">${interactionData.titel}</h5>` : '';
+    
+    let feedbackHtml = '';
+    if(isSaved) {
+        let feedbackText = '';
+        if (interactionData.feedbackCorrect && interactionData.feedbackIncorrect) {
+            feedbackText = wasCorrect ? interactionData.feedbackCorrect : interactionData.feedbackIncorrect;
+        } else if (interactionData.feedback) {
+            feedbackText = interactionData.feedback;
+        }
+        feedbackHtml = `<div id="feedback-${interactionData.id}" class="feedback ${wasCorrect ? 'correct' : 'incorrect'}">${feedbackText || ''}</div>`;
+    } else {
+        feedbackHtml = `<div id="feedback-${interactionData.id}" class="feedback"></div>`;
+    }
+
     return `
         <div class="interactive-block">
             <div class="interactive-block-header">
@@ -232,7 +279,7 @@ function renderMCInteraction(interactionData, chapterNumber) {
                     ${specificQuestionTitle}
                     <p class="interaction-question">${interactionData.vraag || 'Geen vraag gespecificeerd.'}</p>
                     ${optionsHtml}
-                    <div id="feedback-${interactionData.id}" class="feedback"></div>
+                    ${feedbackHtml}
                 </div>
             </div>
         </div>
@@ -408,7 +455,16 @@ function renderCriticalAnalysisInteraction(interactionData, chapterNumber) {
     }).join('');
     const iconSvg = '<svg viewBox="0 0 24 24" class="icon"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>';
     const blockTitle = "Kritische Analyse";
-    const specificQuestionPrompt = interactionData.vraag ? `<p class="interaction-question">${interactionData.vraag}</p>` : '';
+    
+    // Verwerk markdown in de vraagtekst
+    let processedQuestion = '';
+    if (interactionData.vraag) {
+        processedQuestion = interactionData.vraag
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Zet **text** om naar <strong>text</strong>
+            .replace(/\n/g, '<br>'); // Zet newline karakters om naar <br>
+    }
+    const specificQuestionPrompt = processedQuestion ? `<p class="interaction-question">${processedQuestion}</p>` : '';
+
     return `
         <div class="interactive-block">
             <div class="interactive-block-header">
@@ -419,7 +475,7 @@ function renderCriticalAnalysisInteraction(interactionData, chapterNumber) {
                 <div class="critical-analysis-container">
                     ${specificQuestionPrompt}
                     <div class="form-group">
-                        <label for="critical-analysis-select">Selecteer een technologie: (bekijk evt. Hoofdstuk 2 nog een keer)</label>
+                        <label for="critical-analysis-select">Selecteer een prompt:</label>
                         <select id="critical-analysis-select" class="form-control"${isSaved ? ' disabled' : ''}>
                           <option value="">-- Maak een keuze --</option>
                           ${dropdownOptions}
@@ -1275,18 +1331,18 @@ function renderAfsluitingContent(content) {
         `;
     }
 
-    // "Kijk verder dan het certificaat" sectie
-    if (content.verderKijkenDanCertificaten) {
+    // "Voorbeelden voor meer authenticiteit" sectie
+    if (content.authenticiteitsvoorbeelden) {
         html += `
             <div class="info-card">
-                <h3 class="info-card-title">${content.verderKijkenDanCertificaten.titel}</h3>
+                <h3 class="info-card-title">${content.authenticiteitsvoorbeelden.titel}</h3>
                 <div class="info-card-content">
-                    <p>${content.verderKijkenDanCertificaten.tekst}</p>
+                    <p>${content.authenticiteitsvoorbeelden.tekst}</p>
                     <div class="suggesties-grid">
-                        ${content.verderKijkenDanCertificaten.suggesties.map(s => `
+                        ${content.authenticiteitsvoorbeelden.voorbeelden.map(v => `
                             <div class="suggestie-tegel card">
-                                <h4>${s.titel}</h4>
-                                <p>${s.tekst}</p>
+                                <h4>${v.titel}</h4>
+                                <p>${v.tekst}</p>
                             </div>
                         `).join('')}
                     </div>
@@ -1301,13 +1357,21 @@ function renderAfsluitingContent(content) {
     html += `
         <div class="certificate-section">
             <div class="certificate-title-bar">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6"/><circle cx="17" cy="17" r="2"/><path d="M19 19l-2-2"/></svg>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 12l2 2 4-4"></path>
+                    <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                    <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                    <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"></path>
+                    <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"></path>
+                </svg>
                 Certificaat Genereren
             </div>
-            <p>Vul hieronder je naam in om een certificaat te genereren met je antwoorden en reflecties.</p>
-            <input type="text" id="student-name" placeholder="Vul hier je volledige naam in" class="input-field">
-            <button class="btn" id="generatePdfBtn" onclick="generatePDF()">Download Certificaat (PDF)</button>
-            ${content.portfolioIntegratie?.tip ? `<p id="afsluiting-portfolio-tip" class="small-text"><strong>Tip:</strong> ${content.portfolioIntegratie.tip}</p>`: ''}
+            <div class="certificate-content">
+                <p>Vul hieronder je naam in om een certificaat te genereren met je antwoorden en reflecties.</p>
+                <input type="text" id="student-name" placeholder="Vul hier je volledige naam in" class="input-field">
+                <button class="btn" id="generatePdfBtn" onclick="generatePDF()">Download Certificaat (PDF)</button>
+                ${content.portfolioIntegratie?.tip ? `<p id="afsluiting-portfolio-tip" class="small-text"><strong>Tip:</strong> ${content.portfolioIntegratie.tip}</p>`: ''}
+            </div>
         </div>
     `;
 

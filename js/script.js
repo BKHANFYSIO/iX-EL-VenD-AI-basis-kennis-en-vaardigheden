@@ -384,7 +384,7 @@ async function checkMCAnswer(interactionId, selectedAnswerIndex, correctAnswerIn
     
     // Visuele feedback op de gekozen optie
     allOptions.forEach(opt => {
-        const optIndex = parseInt(opt.getAttribute('data-id')) - 1;
+        const optIndex = parseInt(opt.getAttribute('data-id'));
         if (optIndex === selectedAnswerIndex) {
             opt.classList.add('selected', isCorrect ? 'correct' : 'incorrect');
         }
@@ -826,7 +826,7 @@ function initializeMCInteraction(containerId, interactionData, sectionNumber) {
         option.addEventListener('click', async function () {
             if (mcElement && mcElement.classList.contains('answered')) return;
 
-            const selectedAnswerIndex = parseInt(this.getAttribute('data-id')) - 1; // Corrigeer naar 0-gebaseerd
+            const selectedAnswerIndex = parseInt(this.getAttribute('data-id')); // Is nu 0-gebaseerd
             // Call checkMCAnswer with the correct 0-based index
             await checkMCAnswer(interactionData.id, selectedAnswerIndex, interactionData.correctAnswer, sectionNumber, mcElement, options);
         });
@@ -1047,6 +1047,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function initializeReflectionInteraction(containerId, interactionData) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const textarea = container.querySelector('.reflection-input');
+    const counter = container.querySelector('.char-counter');
+    
+    if (!textarea || !counter) return;
+
+    const minLength = parseInt(textarea.getAttribute('minlength'), 10) || 10;
+    const maxLength = parseInt(textarea.getAttribute('maxlength'), 10) || 1500;
+
+    const updateCounter = () => {
+        const currentLength = textarea.value.length;
+        const remaining = maxLength - currentLength;
+
+        if (currentLength < minLength) {
+            counter.textContent = `Nog ${minLength - currentLength} tekens nodig`;
+            counter.className = 'char-counter low';
+        } else {
+            counter.textContent = `${remaining} tekens over`;
+            if (remaining < 0) {
+                counter.className = 'char-counter error';
+            } else if (remaining <= 50) {
+                counter.className = 'char-counter warning';
+            } else {
+                counter.className = 'char-counter';
+            }
+        }
+    };
+
+    textarea.addEventListener('input', updateCounter);
+    // Roep de functie direct aan om de initiële staat te tonen (voor opgeslagen antwoorden)
+    updateCounter();
+}
 
 
 

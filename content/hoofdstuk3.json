@@ -137,7 +137,7 @@
         "Claude (van Anthropic)",
         "Mistral (van Mistral AI)"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "feedbackCorrect": "Goed! NotebookLM is speciaal ontwikkeld om te werken met jouw eigen bronnen. Je kunt documenten, webpagina's of zelfs YouTube-video's uploaden en de AI gebruikt alleen deze informatie om jouw vragen te beantwoorden. Uniek aan NotebookLM is dat je niet alleen kunt chatten over je eigen bronnen, maar ook automatisch samenvattingen, mindmaps, toetsvragen of zelfs een podcastscript kunt laten maken op basis van alleen jouw geüploade materiaal. Andere chatbots, zoals ChatGPT, Gemini, Claude en Mistral, kunnen soms wel met eigen documenten werken, maar combineren deze informatie vaak met hun algemene kennis of internetdata. Alleen bij NotebookLM weet je zeker dat de antwoorden uitsluitend gebaseerd zijn op jouw geselecteerde bronnen.",
       "feedbackIncorrect": "Niet helemaal. NotebookLM is de enige chatbot in dit rijtje die gegarandeerd alleen jouw eigen bronnen gebruikt. Je kunt documenten, webpagina's of video's uploaden en de AI gebruikt uitsluitend deze informatie om jouw vragen te beantwoorden. Bovendien kun je met NotebookLM automatisch samenvattingen, mindmaps, toetsvragen of zelfs een podcast laten maken op basis van alleen jouw bronnen. Andere chatbots, zoals ChatGPT, Gemini, Claude en Mistral, kunnen soms wel met eigen documenten werken, maar combineren deze informatie vaak met hun algemene kennis of internetdata. Daardoor heb je bij die chatbots minder controle over de gebruikte broninformatie."
     },

@@ -163,41 +163,40 @@
     {
       "id": "h4_critical_analysis_1",
       "type": "critical_analysis",
-      "vraag": "Kies één van de technologieën die je hebt gezien in deze e-learning (bijvoorbeeld Fysio.ai, Blazepods, Corpus VR of Physitrack) en analyseer deze kritisch op basis van de thema's die we hebben besproken: Toekomst & Personeel, Kosten & Toegankelijkheid, Patiëntperspectief, en Veiligheid & Privacy. Beantwoord de volgende vragen:",
+      "vraag": "Hieronder zie je twee prompts. Kies er één uit het dropdown-menu en analyseer deze kritisch op zijn kracht, zwaktes en verbetermogelijkheden.\n\n**Prompt 1 (Leren):**\n\"Ik ben een eerstejaars student fysiotherapie. Leg de vijf belangrijkste trainingsleerprincipes (zoals overload en specificiteit) uit. Gedraag je als een docent en geef bij elk principe een praktisch voorbeeld uit de fysiotherapie.\"\n\n**Prompt 2 (Praktijk):**\n\"Ik ben een fysiotherapeut. Mijn patiënt is een 45-jarige man met aanhoudende, niet-specifieke lage rugpijn zonder succes na standaard oefentherapie. Genereer 3 alternatieve behandelstrategieën, inclusief onderbouwing.\"",
       "dropdown": [
-        "Fysio.ai",
-        "Blazepods",
-        "Corpus VR",
-        "Physitrack"
+        "Prompt 1 (Leren)",
+        "Prompt 2 (Praktijk)"
       ],
       "vragen": [
         {
           "id": "sterke_punten",
-          "vraag": "Wat zijn volgens jou de belangrijkste sterke punten van deze technologie?"
+          "vraag": "Wat zijn de sterke punten van de geselecteerde prompt? (Denk aan Rol, Context, Specificiteit)"
         },
         {
-          "id": "uitdagingen",
-          "vraag": "Welke uitdagingen zie je bij het implementeren van deze technologie?"
+          "id": "risicos",
+          "vraag": "Wat zijn de zwakke punten of risico's bij het gebruik van deze prompt? (Denk aan bias, hallucinaties, of onduidelijkheden)"
         },
         {
-          "id": "implementatie_toekomst",
-          "vraag": "Hoe zou je deze technologie willen implementeren in je toekomstige praktijk?"
+          "id": "verbetering",
+          "vraag": "Hoe zou je deze prompt kunnen verbeteren of welke vervolgvraag (iteratie) zou je stellen voor een nog beter resultaat?"
         }
       ],
-      "opslaanLabel": "Opslaan"
+      "opslaanLabel": "Analyse opslaan"
     },
     {
       "id": "h4_mc_1",
       "type": "mc",
-      "vraag": "Waarom is kritisch kijken naar zorgtechnologie belangrijk?",
+      "vraag": "Het principe 'Garbage in, Garbage out' is cruciaal bij het prompten van AI. Wat wordt hiermee bedoeld in de context van deze e-learning?",
       "options": [
-        "Omdat technologie altijd betrouwbaar is",
-        "Omdat niet elke technologie past bij elke praktijk of patiënt",
-        "Omdat technologie altijd goedkoper is",
-        "Omdat technologie geen risico's kent"
+        "Dat je geen persoonlijke of gevoelige 'garbage' data in de AI moet stoppen vanwege privacy.",
+        "Dat de kwaliteit van het AI-antwoord direct afhankelijk is van de duidelijkheid en specificiteit van je prompt.",
+        "Dat de AI soms 'garbage' (onzin) kan produceren, zelfs met een perfecte prompt, wat we hallucinaties noemen.",
+        "Dat je eerst alle 'garbage' (overbodige informatie) uit je eigen documenten moet verwijderen voordat je ze uploadt naar een AI."
       ],
-      "correctAnswer": 2,
-      "feedback": "Niet elke technologie past bij elke praktijk of patiënt. Kritisch kijken helpt je om de juiste keuze te maken."
+      "correctAnswer": 1,
+      "feedbackCorrect": "Correct! 'Garbage in, Garbage out' betekent dat een vage, onduidelijke of irrelevante prompt (input) onvermijdelijk leidt tot een onbruikbaar of irrelevant antwoord (output).",
+      "feedbackIncorrect": "Niet helemaal. Hoewel de andere punten ook belangrijk zijn (zoals privacy en hallucinaties), verwijst 'Garbage in, Garbage out' specifiek naar de relatie tussen de kwaliteit van je input (prompt) en de kwaliteit van de output (het antwoord)."
     },
     {
       "id": "h4_reflection_1",

@@ -311,51 +311,16 @@
   ],
   "interacties": [
     {
-      "id": "h7_dragdrop_1",
-      "type": "dragdrop",
-      "vraag": "Sleep elke V-competentie naar de juiste beschrijving:",
-      "items": [
-        { "id": "1", "label": "Veranderen" },
-        { "id": "2", "label": "Vinden" },
-        { "id": "3", "label": "Vertrouwen" },
-        { "id": "4", "label": "Vaardig gebruiken" },
-        { "id": "5", "label": "Vertellen" }
-      ],
-      "targets": [
-        {
-          "id": "a",
-          "label": "Je staat open voor technologische veranderingen en ziet kansen om het zorgproces te verbeteren."
-        },
-        {
-          "id": "b",
-          "label": "Je kunt geschikte zorgtechnologie vinden en selecteren voor specifieke zorgvragen."
-        },
-        { "id": "c", "label": "Je begrijpt het nut en de veiligheid van technologie en kunt dit uitstralen naar patiënten." },
-        { "id": "d", "label": "Je kunt zorgtechnologie veilig en adequaat inzetten om het zorgproces te ondersteunen." },
-        {
-          "id": "e",
-          "label": "Je kunt patiënten en hun omgeving duidelijk informeren over het gebruik en nut van technologie."
-        }
-      ],
-      "correctCombinations": [
-        { "targetId": "a", "itemId": "1" },
-        { "targetId": "b", "itemId": "2" },
-        { "targetId": "c", "itemId": "3" },
-        { "targetId": "d", "itemId": "4" },
-        { "targetId": "e", "itemId": "5" }
-      ],
-      "feedbackCorrect": "Perfect! Je hebt alle V-competenties correct gekoppeld aan hun beschrijvingen.",
-      "feedbackIncorrect": "Niet alle koppelingen zijn correct. Probeer het nog eens!"
-    },
-    {
-      "id": "h7_selfassessment_1",
-      "type": "selfassessment",
-      "vraag": "Beoordeel jezelf op de vijf basis V-competenties. Kies één specifieke technologie die je al kent of jou interesseert. Misschien heb je al ervaring met VR-gaming, gebruik je een smartwatch voor je eigen training, of heb je wel eens apps gebruikt om je sportprestaties te verbeteren. Heb je nog helemaal geen ervaring met zorgtechnologie? Geen probleem! Die ga je de komende jaren opdoen. Door je te focussen op een technologie die je kent of wilt leren kennen, krijg je beter inzicht in waar je nu staat en waar je je nog kunt ontwikkelen."
-    },
-    {
-      "id": "h7_reflection_1",
+      "id": "h7_reflection_future",
       "type": "reflection",
-      "vraag": "Welke V-competentie is voor jou op dit moment het belangrijkst om je in te ontwikkelen? Waarom is dat nu belangrijk voor jou?"
+      "vraag": "We hebben gekeken naar de toekomst van AI, van slimme 'AI Agents' tot de komst van AGI en de impact op banen. Wat uit dit toekomstbeeld spreekt jou het meest aan, of baart je juist de meeste zorgen? Leg kort uit waarom.",
+      "placeholder": "Beschrijf welk toekomstscenario je het meest bezighoudt en waarom..."
+    },
+    {
+      "id": "h7_reflection_final",
+      "type": "reflection",
+      "vraag": "Kijk terug naar je antwoord op de allereerste reflectievraag in Hoofdstuk 1. Wat is het belangrijkste inzicht dat je in deze e-learning hebt opgedaan? En op welk gebied wil jij je na deze module verder ontwikkelen? Denk bijvoorbeeld aan beter leren prompten, AI inzetten om slimmer te studeren, bewuster omgaan met de risico's, of misschien zelfs experimenteren met 'vibe-coding'. Licht je keuze kort toe.",
+      "placeholder": "Beschrijf hier je belangrijkste inzicht en je volgende ontwikkelstap..."
     }
   ]
 }

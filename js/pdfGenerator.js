@@ -192,7 +192,7 @@ async function generatePDF() {
         // Antwoord
         let ans = quizAns.find(a => a.id === q.id);
         let correct = ans && ans.correct;
-        let antwoordText = ans ? (q.options[ans.selected-1] || '') : '[Geen antwoord ingevuld]';
+        let antwoordText = ans && typeof ans.selectedOriginalIndex !== 'undefined' && q.options ? (q.options[ans.selectedOriginalIndex] || 'Ongeldige optie') : '[Geen antwoord ingevuld]';
         
         // Combineer label en antwoord voor afbreking
         const volledigeAntwoordTekst = `Jouw antwoord: ${antwoordText} (${correct ? 'Goed' : 'Fout'})`;
@@ -312,9 +312,12 @@ async function generatePDF() {
                     let ansIdx = null;
                     if(ansSaved) {
                         // Gebruik de opgeslagen geselecteerde optie index
-                        ansIdx = parseInt(localStorage.getItem(`mc_${h}_${interactie.id}_selected`));
+                        const storedIndex = localStorage.getItem(`mc_${h}_${interactie.id}_selected`);
+                        if (storedIndex !== null) {
+                           ansIdx = parseInt(storedIndex, 10); // Dit is al 0-gebaseerd
+                        }
                     }
-                    let optie = (ansIdx && interactie.options && interactie.options[ansIdx-1]) ? interactie.options[ansIdx-1] : '[Geen antwoord ingevuld]';
+                    let optie = (ansIdx !== null && interactie.options && interactie.options[ansIdx]) ? interactie.options[ansIdx] : '[Geen antwoord ingevuld]';
                     
                     const jouwAntwoordLabel = 'Jouw antwoord: ';
                     const jouwAntwoordStatus = ` (${correct ? 'Goed' : 'Fout'})`;

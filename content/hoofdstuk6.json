@@ -371,8 +371,6 @@
       "id": "h6_reflection_1",
       "type": "reflection",
       "vraag": "Kies een van de scenario's uit de sectie 'Aan de Slag: Jouw Professionele Oordeel in de Praktijk'. Beschrijf welk scenario je hebt gekozen, analyseer de situatie en leg uit hoe jij als professional zou handelen. Pas hierbij de principes van 'Human in the Loop' en 'Human in the Lead' toe in je argumentatie.",
-      "minLength": 100,
-      "maxLength": 1000,
       "placeholder": "Beschrijf hier je gekozen scenario en je analyse..."
     }
   ]

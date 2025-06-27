@@ -151,12 +151,24 @@
   ],
   "interacties": [
     {
+      "id": "h1_mc_1",
+      "type": "mc",
+      "vraag": "In de tekst wordt de 'E-bike Illusie' beschreven. Wat is het belangrijkste risico van deze 'illusie' bij het gebruik van AI om te leren?",
+      "options": [
+        "Dat je te afhankelijk wordt van de snelheid van AI, net als bij een e-bike.",
+        "Dat je denkt de studiestof te beheersen omdat AI het werk doet, terwijl je zelf de diepgaande kennis en vaardigheden niet ontwikkelt.",
+        "Dat AI-tools te veel energie kosten om te gebruiken.",
+        "Dat je geen AI mag gebruiken voor school, net zoals je soms geen e-bike mag gebruiken bij een wielerwedstrijd."
+      ],
+      "correctAnswer": 1,
+      "feedbackCorrect": "Helemaal goed! Het risico van de 'E-bike Illusie' is dat je wel de bestemming bereikt (bijvoorbeeld een samenvatting), maar geen 'mentale conditie' opbouwt. Je mist de diepgang en de echte kennisontwikkeling.",
+      "feedbackIncorrect": "Niet helemaal. Het juiste antwoord is dat je het risico loopt de stof niet echt te beheersen. De 'E-bike Illusie' beschrijft het gevaar dat je denkt de materie te kennen omdat de AI het werk voor je doet, terwijl je zelf niet de diepgaande kennis en vaardigheden ontwikkelt. Het is alsof je een heuvel op fietst met een e-bike: je komt boven, maar je bouwt zelf geen conditie op."
+    },
+    {
       "id": "h1_reflection_1",
       "type": "reflection",
       "titel": "Mini-opdracht 1.1: Jouw AI Startpunt",
       "vraag": "Om straks goed te kunnen zien wat je allemaal hebt opgestoken, beginnen we met een korte reflectie.\n\nOpdracht: Schrijf in ongeveer 100-150 woorden antwoord op de volgende vragen:\n1. Wat weet je al een beetje over AI en hoe het misschien in de zorg gebruikt wordt?\n2. Heb je zelf al eens AI-tools gebruikt (zoals ChatGPT, een vertaalapp, of iets anders)? Zo ja, welke en waarvoor?\n3. Wat hoop of verwacht je vooral te leren in deze eerste module over AI?",
-      "minLength": 50,
-      "maxLength": 200,
       "placeholder": "Bewaar je antwoorden goed! Aan het einde van deze module komen we hierop terug om te zien hoe jouw kennis en kijk op AI zijn gegroeid."
     }
   ]

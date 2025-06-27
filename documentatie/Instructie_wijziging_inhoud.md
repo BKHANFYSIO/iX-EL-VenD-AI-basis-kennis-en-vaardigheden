@@ -151,21 +151,16 @@ Deze aanpak zorgt ervoor dat de e-learning makkelijk te onderhouden en uit te br
 
 ### Indexering van Meerkeuzevragen
 
-Bij het werken met meerkeuzevragen (MC) wordt 1-based indexering gebruikt. Dit betekent:
-- Optie 1 is het eerste antwoord (index 0 in de array)
-- Optie 2 is het tweede antwoord (index 1 in de array)
+Bij het werken met meerkeuzevragen (MC) wordt 0-based indexering gebruikt. Dit is de standaard in programmeertalen zoals JavaScript, waarbij het eerste element in een lijst (of array) index 0 heeft.
+
+- Optie 1 is het eerste antwoord (index 0)
+- Optie 2 is het tweede antwoord (index 1)
 - Enzovoort
 
-Dit is bewust gekozen omdat:
-- Het natuurlijker is voor mensen om te denken in termen van "antwoord 1, 2, 3, 4" dan "antwoord 0, 1, 2, 3"
-- Het voorkomt verwarring bij gebruikers
-- Het past beter bij hoe mensen denken over keuzes
+Dit is een belangrijke standaard om aan te houden voor consistentie en het voorkomen van fouten in de code.
 
 **Belangrijk bij AI-generatie:**
-Als je later vragen door AI laat genereren, houd dan rekening met het volgende:
-1. De AI zal waarschijnlijk 0-based indexering gebruiken (standaard in programmeertalen)
-2. Je moet de `correctAnswer` waarde met 1 verhogen voordat je het opslaat
-3. Bijvoorbeeld: als de AI `correctAnswer: 1` geeft (tweede optie in 0-based), moet je dit opslaan als `correctAnswer: 2`
+Als je vragen door een AI laat genereren, zal deze standaard ook 0-gebaseerde indexering gebruiken. Je kunt de `correctAnswer` waarde dus direct overnemen zonder deze aan te hoeven passen.
 
 **Voorbeeld van correcte indexering in JSON:**
 ```json
@@ -178,7 +173,7 @@ Als je later vragen door AI laat genereren, houd dan rekening met het volgende:
     "Den Haag",
     "Utrecht"
   ],
-  "correctAnswer": 2,  // Verwijst naar "Amsterdam" (tweede optie)
+  "correctAnswer": 1,  // Verwijst naar "Amsterdam" (tweede optie, index 1)
   "feedback": "Amsterdam is de hoofdstad van Nederland.",
   "title": "Afsluitquiz: Vraag 1"
 }
@@ -212,7 +207,7 @@ Als je later vragen door AI laat genereren, houd dan rekening met het volgende:
   "titel": "Optionele titel",
   "vraag": "De vraag",
   "options": ["Optie 1", "Optie 2", "Optie 3", "Optie 4"],
-  "correctAnswer": 2,  // 1-based index
+  "correctAnswer": 1,  // 0-based index (verwijst naar "Optie 2")
   "feedback": "Feedback na beantwoording"
 }
 ```
@@ -1081,3 +1076,16 @@ Gebruik `<section class="section">` **alleen** als je bewust een smallere, gecen
     </div>
 </div>
 <p>Gebruik <code>.icon-card-grid &gt; .icon-card</code>.</p>
+
+- **Reflectievragen:** Elk hoofdstuk (behalve de afsluiting) moet eindigen met een reflectie-interactie. Dit is een vast onderdeel van de didactische opbouw.
+
+### Belangrijke Technische Aandachtspunten
+
+- **ID's:** Gebruik het format `{hoofdstuknummer}_{type}_{volgnummer}` voor alle contentblokken en interacties. Voorbeeld: `h1_mc_1`, `h3_reflection_1`.
+- **Afbeeldingen:** Plaats alle afbeeldingen in de `/images` map. Optimaliseer de bestandsgrootte voor snelle laadtijden.
+- **Styling:** Maak uitsluitend gebruik van de bestaande CSS-classes die gedefinieerd zijn in `stijlgids.html` en de bestanden in `/css/components`. Voeg geen inline styles toe.
+- **Reflectievragen (Lengte):** Bij het toevoegen van een nieuwe reflectievraag, voeg **geen** `minLength` of `maxLength` toe in de JSON. Het systeem past automatisch de standaardwaarden toe (minimaal 10, maximaal 1500 tekens). Voeg deze eigenschappen alleen toe als er een specifieke, expliciet gewenste afwijking van de standaard nodig is.
+
+## 3. Testen en Valideren
+
+Nadat je wijzigingen hebt doorgevoerd, is het cruciaal om de e-learning lokaal te testen.

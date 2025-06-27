@@ -252,15 +252,16 @@
     {
       "id": "h5_mc_1",
       "type": "mc",
-      "vraag": "Welke van de volgende is GEEN voorbeeld van een beeld-AI model?",
+      "vraag": "Je wilt voor een presentatie meerdere afbeeldingen in een vergelijkbare, consistente stijl genereren. Welke tip wordt hiervoor in het hoofdstuk gegeven?",
       "options": [
-        "Midjourney",
-        "DALL-E",
-        "ChatGPT",
-        "Stable Diffusion"
+        "De prompt heel lang maken.",
+        "Een voorbeeldafbeelding uploaden of ernaar verwijzen als basis voor de stijl.",
+        "De AI vragen om de afbeelding in zwart-wit te maken.",
+        "Een negatieve prompt gebruiken."
       ],
-      "correctAnswer": 3,
-      "feedback": "ChatGPT is een tekstgebaseerd large language model, geen beeld-AI. De andere opties zijn wel beeld-AI modellen."
+      "correctAnswer": 1,
+      "feedbackCorrect": "Inderdaad. Door een voorbeeldafbeelding te gebruiken, kun je de AI sturen om een consistente visuele stijl aan te houden voor al je afbeeldingen.",
+      "feedbackIncorrect": "Niet helemaal. De meest effectieve tip uit het hoofdstuk is om een voorbeeldafbeelding te gebruiken als referentie voor de gewenste stijl."
     },
     {
       "id": "h5_mc_2",
@@ -272,28 +273,27 @@
         "Een nieuwe programmeertaal",
         "Het programmeren in groepsverband"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "feedback": "Vibe-coding verwijst naar het gebruik van AI om te helpen bij het schrijven en begrijpen van code, vaak gebaseerd op een 'vibe' of hoge-level beschrijving."
     },
     {
       "id": "h5_mc_3",
       "type": "mc",
-      "vraag": "Wat is volgens het hoofdstuk de sleutel tot het benutten van de volledige potentie van GPT's?",
+      "vraag": "Wat is volgens het hoofdstuk het belangrijkste voordeel van het bouwen van een eigen, gepersonaliseerde AI-assistent (zoals een 'GPT') voor een specifieke taak?",
       "options": [
-        "Het gebruik van de nieuwste hardware",
-        "Prompt engineering",
-        "Het leren van programmeertalen",
-        "Het kopen van dure software"
+        "Dat het goedkoper is dan een normale chatbot.",
+        "Dat je niet voor elke terugkerende taak opnieuw een lange, gedetailleerde prompt hoeft te schrijven.",
+        "Dat de assistent toegang heeft tot meer informatie dan een normale chatbot.",
+        "Dat je er spellen mee kunt bouwen."
       ],
-      "correctAnswer": 2,
-      "feedback": "Prompt engineering - de kunst van het formuleren van juiste instructies - is volgens het hoofdstuk de sleutel tot het benutten van GPT's volledige potentie."
+      "correctAnswer": 1,
+      "feedbackCorrect": "Precies! Het grote voordeel is efficiëntie: je stelt de perfecte instructie één keer in, en daarna voert de assistent de taak altijd precies zo uit.",
+      "feedbackIncorrect": "Niet helemaal. Het belangrijkste voordeel dat in het hoofdstuk wordt genoemd, is dat je niet steeds dezelfde complexe prompt hoeft te herhalen voor taken die je vaker uitvoert."
     },
     {
       "id": "h5_reflection_1",
       "type": "reflection",
       "vraag": "Na het lezen van dit hoofdstuk: welke creatieve AI-toepassing (beeld-AI, vibe-coding, of geavanceerd GPT-gebruik) spreekt jou het meest aan voor jouw studie of toekomstige werk als fysiotherapeut? Leg uit waarom en geef een concreet voorbeeld van hoe je deze toepassing zou willen gebruiken.",
-      "minLength": 75,
-      "maxLength": 300,
       "placeholder": "Beschrijf welke AI-toepassing je het meest aanspreekt en hoe je deze praktisch zou willen inzetten..."
     }
   ]

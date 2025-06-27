@@ -80,69 +80,84 @@ function renderCurrentQuizQuestion() {
     const existingAnswer = quizAnswers.find(a => a.id === q.id);
     const isAnswered = !!existingAnswer;
 
-    // Shuffle opties per vraag, maar alleen als nog niet beantwoord
-    let shuffledOptions, correctIndex;
     if (!isAnswered) {
-        shuffledOptions = q.options.map((opt, idx) => ({ opt, idx: idx + 1 }));
-        for (let i = shuffledOptions.length - 1; i > 0; i--) {
+        // Shuffle opties per vraag, maar alleen als nog niet beantwoord
+        // Maak een kopie om de originele data niet te wijzigen
+        const optionsWithIndices = q.options.map((opt, originalIndex) => ({
+            text: opt,
+            originalIndex: originalIndex // 0-based
+        }));
+
+        // Shuffle de array
+        for (let i = optionsWithIndices.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+            [optionsWithIndices[i], optionsWithIndices[j]] = [optionsWithIndices[j], optionsWithIndices[i]];
         }
-        q._shuffledOptions = shuffledOptions;
-        correctIndex = shuffledOptions.findIndex(o => o.idx === q.correctAnswer) + 1;
-        q._shuffledCorrectIndex = correctIndex;
-    } else {
-        shuffledOptions = q._shuffledOptions || q.options.map((opt, idx) => ({ opt, idx: idx + 1 }));
-        correctIndex = q._shuffledCorrectIndex || q.correctAnswer;
+        
+        // Sla de geschudde volgorde op voor deze sessie
+        q._shuffledOptions = optionsWithIndices;
     }
+    
+    // Gebruik de geschudde (of originele, indien al beantwoord) volgorde
+    const optionsToRender = q._shuffledOptions || q.options.map((opt, idx) => ({ text: opt, originalIndex: idx }));
 
     const questionCounter = `<div class="question-counter">Vraag ${currentQuizQuestionIndex + 1} van ${quizQuestionsData.length}</div>`;
     const showOptionsBlockClass = !isAnswered ? 'initial-height' : '';
 
     let output = `
+        <div class="quiz-header">
+            <button class="btn btn-prev-quiz" ${currentQuizQuestionIndex === 0 ? 'disabled' : ''} onclick="prevQuizQuestion()">
+                &larr; Vorige
+            </button>
+            <div class="question-counter-center">Vraag ${currentQuizQuestionIndex + 1} van ${quizQuestionsData.length}</div>
+            <button class="btn btn-next-quiz" 
+                ${(!isAnswered && currentQuizQuestionIndex < quizQuestionsData.length) ? 'disabled' : ''} 
+                onclick="nextQuizQuestion()">
+                ${(currentQuizQuestionIndex === quizQuestionsData.length - 1) ? 'Quiz voltooien' : 'Volgende'} &rarr;
+            </button>
+        </div>
         <div class="mc-question afsluitquiz-vraag ${isAnswered ? 'answered' : ''}" id="quizq-${q.id}" data-question-index="${currentQuizQuestionIndex}">
-            ${questionCounter}
+            
             <h4>${q.title || `Vraag ${currentQuizQuestionIndex + 1}`}</h4>
             <p>${q.text}</p>
             <div id="show-options-block" class="${showOptionsBlockClass}">
                 ${!isAnswered ? `<button class="btn btn-show-options" id="show-options-btn">Toon antwoordopties</button>
-                <div class="show-options-explainer">Probeer eerst het antwoord uit je hoofd te bedenken. Lukt dat niet? Klik dan op de knop om de antwoordopties te zien. Dit helpt je beter te leren!</div>` : ''}
+                <div class="retrieval-tip-box">
+                    <img src="images/icons/lightbulb-on.svg" alt="Tip icoon" class="tip-icon">
+                    <div class="show-options-explainer">
+                        <strong>Leer-tip:</strong> Het actief ophalen van het antwoord uit je geheugen (retrieval practice) zorgt voor sterkere verbindingen in je brein en een veel beter leerresultaat dan wanneer je het antwoord alleen herkent. Probeer het dus eerst zelf!
+                    </div>
+                </div>` : ''}
                 <ul class="mc-options" id="mc-options-list" style="${!isAnswered ? 'display:none;' : ''}">
-                    ${shuffledOptions.map((o, i) => {
+                    ${optionsToRender.map((o, renderedIndex) => {
                         let optionClasses = "mc-option";
                         if (isAnswered) {
                             optionClasses += " disabled"; 
-                            if (existingAnswer.selected === (i + 1)) {
+                            // Vergelijk de originele index van de geselecteerde optie
+                            if (existingAnswer.selectedOriginalIndex === o.originalIndex) {
                                 optionClasses += " selected";
                                 optionClasses += existingAnswer.correct ? " correct" : " incorrect";
                             }
                         }
-                        return `<li class="${optionClasses}" data-question-id="${q.id}" data-option-id="${i + 1}">${o.opt}</li>`;
+                        // Sla de originele index op in het data-attribuut
+                        return `<li class="${optionClasses}" data-question-id="${q.id}" data-original-index="${o.originalIndex}">${o.text}</li>`;
                     }).join('')}
                 </ul>
             </div>
             <div class="feedback" id="feedback-quizq-${q.id}">${isAnswered && existingAnswer.feedback ? existingAnswer.feedback : ''}</div>
-        </div>
-        <div class="quiz-navigation-buttons">
-            <button class="btn btn-prev-quiz" ${currentQuizQuestionIndex === 0 ? 'disabled' : ''} onclick="prevQuizQuestion()">Vorige Vraag</button>
-            <button class="btn btn-next-quiz" 
-                ${(!isAnswered && currentQuizQuestionIndex < quizQuestionsData.length) ? 'disabled' : ''} 
-                onclick="nextQuizQuestion()">
-                ${(currentQuizQuestionIndex === quizQuestionsData.length - 1) ? 'Quiz voltooien' : 'Volgende Vraag'}
-            </button>
         </div>
     `;
     quizContainer.innerHTML = output;
 
     if (!isAnswered) {
         const showOptionsBtn = quizContainer.querySelector('#show-options-btn');
-        const explainerText = quizContainer.querySelector('.show-options-explainer');
-        if (showOptionsBtn) {
+        const tipBox = quizContainer.querySelector('.retrieval-tip-box');
+        if (showOptionsBtn && tipBox) {
             showOptionsBtn.addEventListener('click', function() {
                 const optionsList = quizContainer.querySelector('#mc-options-list');
                 if (optionsList) optionsList.style.display = '';
                 showOptionsBtn.style.display = 'none';
-                if (explainerText) explainerText.style.display = 'none';
+                tipBox.style.display = 'none';
                 const showOptionsBlock = quizContainer.querySelector('#show-options-block');
                 if (showOptionsBlock) showOptionsBlock.classList.remove('initial-height');
             });
@@ -168,7 +183,7 @@ function renderCurrentQuizQuestion() {
  */
 function handleQuizOptionClick() {
     const questionId = this.getAttribute('data-question-id');
-    const optionId = parseInt(this.getAttribute('data-option-id'));
+    const originalOptionIndex = parseInt(this.getAttribute('data-original-index')); // 0-based
     const questionDiv = this.closest('.mc-question');
     const questionData = quizQuestionsData.find(q => q.id === questionId);
 
@@ -179,8 +194,7 @@ function handleQuizOptionClick() {
         opt.classList.add('disabled');
     });
 
-    const correctIndex = questionData._shuffledCorrectIndex || questionData.correctAnswer;
-    const isCorrect = optionId === correctIndex;
+    const isCorrect = originalOptionIndex === questionData.correctAnswer;
     this.classList.add('selected');
     this.classList.add(isCorrect ? 'correct' : 'incorrect');
 
@@ -193,11 +207,11 @@ function handleQuizOptionClick() {
     let answerIndex = quizAnswers.findIndex(a => a.id === questionId);
     const answerObj = { 
         id: questionId, 
-        selected: optionId, 
+        selectedOriginalIndex: originalOptionIndex, // Sla de originele index op
         correct: isCorrect, 
         feedback: questionData.feedback, 
         questionText: questionData.text, 
-        options: (questionData._shuffledOptions || questionData.options.map(o => ({opt:o}))).map(o => o.opt),
+        options: (questionData._shuffledOptions || questionData.options.map((o, i) => ({ text: o, originalIndex: i }))).map(o => o.text),
         title: questionData.title 
     };
     if (answerIndex > -1) {
@@ -219,7 +233,7 @@ function handleQuizOptionClick() {
  * Navigeert naar de volgende quizvraag.
  */
 function nextQuizQuestion() {
-    const allQuestionsAnswered = quizQuestionsData.every(q => quizAnswers.some(a => a.id === q.id && typeof a.selected !== 'undefined'));
+    const allQuestionsAnswered = quizQuestionsData.every(q => quizAnswers.some(a => a.id === q.id && typeof a.selectedOriginalIndex !== 'undefined'));
     if (currentQuizQuestionIndex < quizQuestionsData.length - 1) {
         currentQuizQuestionIndex++;
         renderCurrentQuizQuestion();
@@ -262,24 +276,16 @@ function displayQuizResults() {
     let feedbackClass = '';
     
     if (percentage >= 80) {
-        feedbackMessage = 'Fantastisch gedaan! Je hebt de stof uitstekend verwerkt.';
-        feedbackColor = '#28a745';
+        feedbackMessage = "Uitstekend, je beheerst de stof zeer goed! <strong>Tip voor je lange termijngeheugen:</strong> kom over een week of twee nog eens terug om te kijken wat er is blijven hangen. Gespreid herhalen is de sleutel tot duurzame kennis.";
+        feedbackColor = '#28a745'; // Green
         feedbackClass = 'results-excellent';
-    } else if (percentage >= 65) {
-        feedbackMessage = 'Goed gedaan! Je hebt een goed begrip van de stof.';
-        feedbackColor = '#28a745';
+    } else if (percentage >= 60) {
+        feedbackMessage = "Goed gedaan! Je hebt een solide begrip van de basis. Voor een nog dieper inzicht is het aan te raden om de hoofdstukken die je lastig vond nog eens door te nemen.";
+        feedbackColor = '#28a745'; // Green
         feedbackClass = 'results-passed';
-    } else if (percentage >= 55) {
-        feedbackMessage = 'Goed bezig! Je hebt de basis onder de knie, maar er is nog ruimte voor verbetering. Herhaal de quiz om je score nog verder te verhogen.';
-        feedbackColor = '#28a745';
-        feedbackClass = 'results-passed';
-    } else if (percentage >= 40) {
-        feedbackMessage = 'Bijna! Het is verstandig om de quiz te herhalen en de stof nog eens door te nemen.';
-        feedbackColor = '#ffc107';
-        feedbackClass = 'results-warning';
     } else {
-        feedbackMessage = 'Het is aan te raden om de e-learning nog eens door te nemen en daarna de quiz te herhalen.';
-        feedbackColor = '#dc3545';
+        feedbackMessage = "Je hebt een begin gemaakt, maar om de stof echt te beheersen, is het zeer verstandig om de e-learning nog een keer grondig te doorlopen. Focus op de onderdelen waar je moeite mee had.";
+        feedbackColor = '#dc3545'; // Red
         feedbackClass = 'results-failed';
     }
 
@@ -292,7 +298,7 @@ function displayQuizResults() {
                 <div class="score-text">
                     <p>Je hebt <strong>${score} van de ${totalQuizQuestions}</strong> vragen correct beantwoord.</p>
                     <p class="score-percentage" style="color: ${feedbackColor};">${percentage.toFixed(0)}%</p>
-                    <p class="feedback-message" style="color: ${feedbackColor};">${feedbackMessage}</p>
+                    <p class="quiz-results-feedback" style="color: ${feedbackColor};">${feedbackMessage}</p>
                 </div>
             </div>
             <div class="quiz-actions">
@@ -349,20 +355,24 @@ function reviewQuizQuestion(questionIndex) {
     const isCorrect = userAnswer ? userAnswer.correct : false;
 
     let output = `
+        <div class="quiz-header">
+            <button class="btn" onclick="reviewQuizQuestion(${questionIndex - 1})" ${questionIndex === 0 ? 'disabled' : ''}>&larr; Vorige</button>
+            <div class="question-counter-center">Terugkijken: Vraag ${questionIndex + 1} van ${quizQuestionsData.length}</div>
+            <button class="btn" onclick="reviewQuizQuestion(${questionIndex + 1})" ${questionIndex === quizQuestionsData.length - 1 ? 'disabled' : ''}>Volgende &rarr;</button>
+        </div>
         <div class="mc-question afsluitquiz-vraag answered review-mode" id="review-quizq-${q.id}">
-            <h4>Terugkijken: ${q.title || `Vraag ${questionIndex + 1}`} (van ${quizQuestionsData.length})</h4>
+            <h4>Hoofdstuk: ${q.title}</h4>
             <p><strong>Vraag:</strong> ${q.text}</p>
             <ul class="mc-options review-options">
-                ${q.options.map((opt, i) => {
+                ${q.options.map((opt, i) => { // i is hier de originele index (0-based)
                     let classes = 'mc-option disabled'; 
-                    const optionNum = i + 1;
                     let icon = '';
 
-                    if (userAnswer && userAnswer.selected === optionNum) {
+                    if (userAnswer && userAnswer.selectedOriginalIndex === i) {
                         classes += ' selected';
                         classes += userAnswer.correct ? ' correct' : ' incorrect';
                         icon = userAnswer.correct ? '<img src="images/icons/check-circle.svg" class="option-icon correct-icon" alt="Correct">' : '<img src="images/icons/x-circle.svg" class="option-icon incorrect-icon" alt="Incorrect">' ;
-                    } else if (q.correctAnswer === optionNum) {
+                    } else if (q.correctAnswer === i) {
                         classes += ' correct-unselected'; 
                         icon = '<img src="images/icons/check-circle-outline.svg" class="option-icon correct-icon-outline" alt="Correct Answer">';
                     }
@@ -372,10 +382,6 @@ function reviewQuizQuestion(questionIndex) {
             <div class="feedback ${isCorrect ? 'correct' : 'incorrect'}">
                 <strong>Feedback:</strong> ${q.feedback || (userAnswer && userAnswer.feedback) || "Geen feedback beschikbaar."}
             </div>
-        </div>
-        <div class="quiz-navigation-buttons review-nav-buttons">
-            <button class="btn" onclick="reviewQuizQuestion(${questionIndex - 1})" ${questionIndex === 0 ? 'disabled' : ''}>Vorige</button>
-            <button class="btn" onclick="reviewQuizQuestion(${questionIndex + 1})" ${questionIndex === quizQuestionsData.length - 1 ? 'disabled' : ''}>Volgende</button>
         </div>
     `;
     reviewDetailContainer.innerHTML = output; 

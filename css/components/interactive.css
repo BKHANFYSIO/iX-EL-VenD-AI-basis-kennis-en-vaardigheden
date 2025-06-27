@@ -242,55 +242,73 @@
 
 /* Reflection Blocks */
 .reflection-container {
-    background-color: var(--white);
-    border: 1px solid var(--medium-gray);
-    border-radius: 10px;
-    padding: 25px;
-    margin: 30px 0;
-    box-shadow: var(--shadow);
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
 }
 
 .reflection-question {
-    color: var(--primary-purple);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: var(--dark-purple);
 }
 
 .reflection-input {
     width: 100%;
-    min-height: 150px;
-    padding: 15px;
-    border: 2px solid var(--medium-gray);
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
+    min-height: 120px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
     font-size: 1rem;
-    line-height: 1.6;
-    color: var(--dark-gray);
-    background-color: var(--light-gray);
     resize: vertical;
-    transition: all 0.3s ease;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.3s;
 }
 
 .reflection-input:focus {
     outline: none;
     border-color: var(--primary-purple);
-    box-shadow: 0 0 5px var(--accent-purple);
 }
 
-.reflection-input::placeholder {
-    color: var(--text-light);
-    font-style: italic;
+.reflection-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
 }
 
-.reflection-container .btn {
-    margin-top: 15px;
+.char-counter {
+    font-size: 0.8rem;
+    color: #6c757d; /* Standaard subtiele kleur */
+    text-align: right;
+    flex-grow: 1;
 }
 
-.reflection-container::after {
-    content: "";
-    display: table;
-    clear: both;
+.char-counter.low {
+    color: #dc3545; /* Zelfde kleur als 'incorrect' */
+}
+
+.char-counter.warning {
+    color: #fd7e14; /* Oranje waarschuwing */
+}
+
+.char-counter.error {
+    color: #dc3545; /* Rood voor fout (over limiet) */
+    font-weight: bold;
+}
+
+.btn-save-reflection {
+    /* De knop hoeft geen speciale flex-eigenschappen te hebben */
+}
+
+.feedback-message {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: none; /* Initially hidden */
 }
 
 /* General Form Styling (used in Critical Analysis etc.) */

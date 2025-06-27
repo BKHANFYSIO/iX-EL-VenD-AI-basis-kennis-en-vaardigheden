@@ -28,7 +28,7 @@
   "portfolioIntegratie": {
     "titel": "Certificaat gebruiken in je eJournal/Portfolio",
     "tip": "Bewaar je certificaten goed! Een goede tip: voeg ze direct toe aan een relevant datapunt in je eJournal. Je kunt later altijd meer bewijsstukken, zoals nieuwe certificaten van deze of andere e-learnings, aan hetzelfde datapunt toevoegen om je groei zichtbaar te maken.",
-    "vraakUitleg": "Denk bij het toevoegen aan je eJournal na over hoe dit certificaat bijdraagt aan jouw leerdoelen en welke ontwikkeling je laat zien. Het certificaat is een waardevol onderdeel van je portfolio, maar wordt nog krachtiger in combinatie met andere bewijsstukken. Houd hierbij de VRAAK-criteria in gedachten. Certificaten zoals dit kan je vooral goed gebruiken voor 'Relevantie' en 'Kwantiteit', maar juist niet zo goed in Authenticiteit. Bij een certificaat als dit is het lastig om die authenticiteit aan te tonen, omdat het – net als veel schriftelijke producten – zonder toezicht is gemaakt. Zorg daarom ook voor aanvullend bewijsmateriaal waarbij de authenticiteit beter gewaarborgd is. Zie de VRAAK Criteria hieronder:"
+    "vraakUitleg": "Denk bij het toevoegen aan je eJournal na over hoe dit certificaat bijdraagt aan jouw leerdoelen en welke ontwikkeling je laat zien. Het certificaat is een waardevol onderdeel van je portfolio, maar wordt nog krachtiger in combinatie met andere bewijsstukken. Houd hierbij de VRAAK-criteria in gedachten. Certificaten zoals dit kan je vooral goed gebruiken voor 'Relevantie' en 'Kwantiteit', maar juist niet zo goed voor 'Authenticiteit'. Bij een certificaat als dit is het lastig om die authenticiteit aan te tonen, omdat het – net als veel schriftelijke producten – zonder toezicht is gemaakt. Zorg daarom ook voor aanvullend bewijsmateriaal waarbij de authenticiteit beter gewaarborgd is. Zie de VRAAK Criteria hieronder:"
   },
   "content": [
     {
@@ -72,14 +72,22 @@
       ]
     }
   ],
-  "verderKijkenDanCertificaten": {
-    "titel": "Kijk verder dan het certificaat",
-    "tekst": "Certificaten zijn een goede manier om je kennis en inzet te documenteren. Echter, echte ontwikkeling en expertise toon je door de opgedane kennis toe te passen in de praktijk en te integreren met andere vaardigheden. Gebruik deze e-learning als een fundament en zoek actief naar mogelijkheden om je verder te verdiepen en te verbreden. Denk hierbij aan:",
-    "suggesties": [
-      { "titel": "Praktijktoepassing", "tekst": "Neem zorgtechnologie op in een Performance Assessment. Laat zien hoe je een specifieke zorgtechnologie kunt inzetten in de praktijk en hoe je hierover communiceert met patiënten en collega's." },
-      { "titel": "Kennisdeling", "tekst": "Maak een podcast, presentatie of workshop met medestudenten waarin je laat zien wat je weet over specifieke zorgtechnologie. Bespreek de voor- en nadelen en deel praktijkervaringen." },
-      { "titel": "Kritische analyse en reflectie", "tekst": "Geef een demonstratie van een zorgtechnologie en vraag gerichte feedback. Gebruik modellen zoals het V-model of TAM-model om je analyse en presentatie te structureren en kritisch te reflecteren op de implementatie." },
-      { "titel": "Blijf leren", "tekst": "De wereld van zorgtechnologie ontwikkelt zich snel. Blijf op de hoogte van nieuwe ontwikkelingen via vakliteratuur, webinars, en door in gesprek te gaan met professionals uit het veld." }
+  "authenticiteitsvoorbeelden": {
+    "titel": "Voorbeelden voor meer authenticiteit",
+    "tekst": "Om de authenticiteit van je kennis beter aan te tonen, kun je certificaten zoals dit aanvullen met bewijsmateriaal waarbij de echtheid beter gewaarborgd is. Denk hierbij aan:",
+    "voorbeelden": [
+      { 
+        "titel": "Praktijktoepassing", 
+        "tekst": "Neem het onderwerp op in een Performance Assessment of praktijkopdracht. Laat zien hoe je de opgedane kennis kunt toepassen in een realistische situatie en hoe je hierover communiceert met betrokkenen." 
+      },
+      { 
+        "titel": "Kennisdeling", 
+        "tekst": "Maak een presentatie, workshop of kennissessie met medestudenten waarin je laat zien wat je weet over het onderwerp. Bespreek de voor- en nadelen en deel praktijkervaringen of inzichten." 
+      },
+      { 
+        "titel": "Kritische analyse en reflectie", 
+        "tekst": "Geef een demonstratie of presentatie en vraag gerichte feedback van docenten of professionals. Gebruik dit om kritisch te reflecteren op je kennis en vaardigheden." 
+      }
     ]
   }
 } 

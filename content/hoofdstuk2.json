@@ -79,7 +79,7 @@
         { "term": "LLM (Large Language Model)", "uitleg": "Een LLM is een AI-model dat getraind is op enorme tekstverzamelingen om patronen te herkennen en tekst te genereren op basis van waarschijnlijkheid.", "praktisch": "Een LLM 'begrijpt' tekst niet zoals mensen dat doen. Het baseert zijn antwoorden op statistiek, niet op waarheid. Blijf dus kritisch en controleer altijd belangrijke inhoud." },
         { "term": "Agent", "uitleg": "Een agent is een AI-systeem dat zelfstandig stappen kan plannen en uitvoeren richting een doel, vaak met meerdere beslismomenten.", "praktisch": "Een AI-agent kan zelfstandig taken uitvoeren, zoals het opstellen van behandelvoorstellen of het genereren van patiëntverslagen. Nuttig, maar altijd onder supervisie van een professional." },
         { "term": "Reasoning layers", "uitleg": "Dit zijn lagen binnen een AI-agent die zorgen voor redeneren, beslissen en plannen, op basis van informatieverwerking.", "praktisch": "Deze lagen bootsen cognitieve processen na, maar werken op kansberekening. Ze maken complexe interactie mogelijk, maar kunnen nog steeds fouten maken. Gebruik AI daarom altijd als ondersteunend hulpmiddel." },
-        { "term": "AGI (Artificial General Intelligence)", "uitleg": "AGI is een hypothetisch AI-systeem dat elk cognitief vermogen van mensen kan evenaren – inclusief redeneren, leren en creativiteit.", "praktisch": "AGI bestaat (nog) niet. Huidige AI is 'narrow' en beperkt tot specifieke taken. Verwacht dus geen mensachtige denkkracht of brede intelligentie van huidige systemen." }
+        { "term": "AGI (Artificial General Intelligence)", "uitleg": "Hypothetisch AI-systeem dat elk cognitief vermogen van mensen kan evenaren." }
       ]
     },
     {
@@ -123,10 +123,8 @@
     {
       "id": "h2_reflection_1",
       "type": "reflection",
-      "vraag": "Welke toepassing van AI in de fysiotherapie spreekt jou het meest aan na het lezen van dit hoofdstuk, en waarom? Geef een concreet voorbeeld van hoe je deze toepassing zou willen inzetten in jouw toekomstige werk.",
-      "minLength": 50,
-      "maxLength": 1500,
-      "placeholder": "Beschrijf hier jouw keuze en licht toe waarom deze AI-toepassing relevant is voor jouw praktijk als (toekomstig) fysiotherapeut."
+      "vraag": "Je hebt gelezen dat een taalmodel (zoals ChatGPT) antwoorden baseert op statistische waarschijnlijkheid en niet op 'begrip' of 'waarheid'. Wat betekent dit besef voor de manier waarop jij de output van zo'n tool gaat gebruiken en controleren in je studie of toekomstige werk? Beschrijf een concreet voorbeeld waarin dit inzicht cruciaal is.",
+      "placeholder": "Beschrijf hoe dit inzicht je gebruik van AI-tools zal beïnvloeden en geef een praktijkvoorbeeld..."
     }
   ]
 } 

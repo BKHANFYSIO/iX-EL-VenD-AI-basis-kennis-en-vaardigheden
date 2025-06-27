@@ -1,223 +1,249 @@
 [
   {
     "id": "quiz_mc_1",
-    "title": "Hoofdstuk 1: Urgentie van Zorgtechnologie",
-    "text": "Welke ontwikkeling draagt het meest bij aan de urgentie voor zorgtechnologie in de fysiotherapie?",
+    "title": "Hoofdstuk 2: Wat is AI?",
+    "text": "Je hebt geleerd dat een Large Language Model (LLM) zoals ChatGPT niet echt 'redeneert'. Hoe komt het dan tot een antwoord?",
     "options": [
-      "Toename van sportblessures",
-      "Vergrijzing van de bevolking",
-      "Meer fysiotherapeuten beschikbaar",
-      "Daling van de algemene zorgkosten"
+      "Het zoekt het antwoord op in een grote, feitelijke database.",
+      "Het voorspelt statistisch het meest waarschijnlijke volgende woord in een zin, gebaseerd op patronen in de trainingsdata.",
+      "Het kopieert en plakt een stuk tekst van een website zoals Wikipedia.",
+      "Het stelt zelf een logische redenering op, net als een mens."
     ],
-    "correctAnswer": 2,
-    "feedback": "De vergrijzing zorgt voor een toenemende zorgvraag, onder andere door meer chronische aandoeningen, wat de inzet van zorgtechnologie urgenter maakt."
+    "correctAnswer": 1,
+    "feedback": "Correct! Een LLM is een geavanceerde 'papegaai' die op basis van wiskundige kansberekening het meest logische vervolg van een zin voorspelt. Het begrijpt de inhoud niet, maar bootst taal na."
   },
   {
     "id": "quiz_mc_2",
-    "title": "Hoofdstuk 1: Passende Zorg",
-    "text": "Wat wordt bedoeld met 'passende zorg' volgens het Integraal Zorgakkoord?",
+    "title": "Hoofdstuk 2: Wat is AI?",
+    "text": "Je bent in een lang gesprek met een AI-chatbot en merkt dat de AI de instructies die je in het begin gaf, 'vergeten' is. Welke technische beperking is hier de oorzaak van?",
     "options": [
-      "Alle zorg dient primair fysiek plaats te vinden",
-      "Zorg wordt uitsluitend digitaal aangeboden om kosten te besparen",
-      "Digitaal als het kan, fysiek als het moet, gericht op de juiste zorg op de juiste plek",
-      "Zorg wordt alleen door medisch specialisten geleverd"
+      "De 'temperatuur' van het model staat te hoog.",
+      "De AI heeft een 'hallucinatie'.",
+      "Het 'context window' van het model is overschreden.",
+      "De prompt was niet specifiek genoeg."
     ],
-    "correctAnswer": 3,
-    "feedback": "Passende zorg betekent: digitaal als het kan, fysiek als het moet, met als doel de zorg effectief, efficiënt en patiëntgericht te organiseren."
+    "correctAnswer": 2,
+    "feedback": "Juist! Het 'context window' is het 'kortetermijngeheugen' van de AI. Als een gesprek te lang wordt, valt de oudste informatie buiten dit geheugen en wordt het vergeten."
   },
   {
     "id": "quiz_mc_3",
-    "title": "Hoofdstuk 2: Voorbeeld van Zorgtechnologie",
-    "text": "Welke van de volgende is een specifiek voorbeeld van Artificial Intelligence (AI) zoals besproken in de context van fysiotherapie in de cursus?",
+    "title": "Hoofdstuk 4: Leren Prompten",
+    "text": "Wat is de kernboodschap van het 'Garbage in, Garbage out' principe bij het schrijven van prompts?",
     "options": [
-      "Blazepods voor reactietraining",
-      "Fysio.ai voor geautomatiseerde verslaglegging",
-      "Corpus VR voor virtual reality revalidatie",
-      "Physitrack als eHealth platform voor oefenprogramma's"
+      "Dat je de AI niet moet voeden met onware informatie (garbage).",
+      "Dat een vage of onduidelijke prompt (input) leidt tot een onbruikbaar of slecht antwoord (output).",
+      "Dat je geen persoonlijke 'garbage' data in de AI moet stoppen.",
+      "Dat je de output van AI altijd moet zien als potentiële 'garbage'."
     ],
-    "correctAnswer": 2,
-    "feedback": "Fysio.ai wordt in de cursus genoemd als een AI-toepassing die helpt bij verslaglegging en analyse in de fysiotherapie."
+    "correctAnswer": 1,
+    "feedback": "Precies! De kwaliteit van je output is direct afhankelijk van de kwaliteit van je input. Een heldere, specifieke prompt is de sleutel tot een goed resultaat."
   },
   {
     "id": "quiz_mc_4",
-    "title": "Hoofdstuk 2: Categorieën Zorgtechnologie",
-    "text": "Tot welke hoofdcategorie van zorgtechnologie, zoals onderscheiden in de cursus, behoort Blazepods?",
+    "title": "Hoofdstuk 4: Leren Prompten",
+    "text": "Waarom is het effectief om een AI een specifieke rol te geven in je prompt (bijv. 'Gedraag je als een expert-docent fysiotherapie')?",
     "options": [
-      "Wearables & Sensoren",
-      "Artificial Intelligence (AI)",
-      "Interactieve Trainingshulpmiddelen",
-      "eHealth Platforms"
+      "Het maakt de AI sneller in het geven van een antwoord.",
+      "Het dwingt de AI om alleen wetenschappelijke bronnen te gebruiken.",
+      "Het helpt de AI om de toon, stijl en het detailniveau van het antwoord aan te passen aan de gewenste context.",
+      "Het is de enige manier om te voorkomen dat de AI gaat hallucineren."
     ],
-    "correctAnswer": 3,
-    "feedback": "Blazepods zijn een voorbeeld van 'Interactieve Trainingshulpmiddelen', die worden ingezet voor o.a. reactie- en bewegingstraining."
+    "correctAnswer": 2,
+    "feedback": "Correct! Door een rol te specificeren, stuur je de AI om te antwoorden vanuit een bepaald perspectief, wat de relevantie en bruikbaarheid van de output enorm verhoogt."
   },
   {
     "id": "quiz_mc_5",
-    "title": "Hoofdstuk 2: Toepassing van eHealth",
-    "text": "Wat is een belangrijk voordeel van eHealth platforms zoals Physitrack voor de fysiotherapeutische praktijk?",
+    "title": "Hoofdstuk 4: Leren Prompten",
+    "text": "Je eerste prompt levert niet het gewenste resultaat op. Wat is volgens de principes van effectief prompten de beste vervolgstap?",
     "options": [
-      "Ze vervangen de noodzaak voor een fysiotherapeut volledig",
-      "Ze kunnen therapietrouw bevorderen en maken monitoring op afstand mogelijk",
-      "Ze zijn uitsluitend ontwikkeld voor de revalidatie van topsporters",
-      "Ze dienen primair als administratieve tool zonder patiëntinteractie"
+      "De vraag volledig opnieuw formuleren in een nieuw gesprek.",
+      "Een andere AI-chatbot proberen met exact dezelfde vraag.",
+      "De output als mislukt beschouwen en het zelf doen.",
+      "Een vervolg-prompt (iteratie) geven om de output aan te passen, te verfijnen of een andere invalshoek te vragen."
     ],
-    "correctAnswer": 2,
-    "feedback": "eHealth platforms, zoals Physitrack, kunnen therapietrouw verhogen door o.a. gepersonaliseerde oefenprogramma's en maken monitoring op afstand mogelijk, wat bijdraagt aan efficiëntere zorg."
+    "correctAnswer": 3,
+    "feedback": "Inderdaad! Itereren is een kernvaardigheid. Je werkt samen met de AI door de output te evalueren en bij te sturen met vervolgprompts om stapsgewijs tot het beste resultaat te komen."
   },
   {
     "id": "quiz_mc_6",
-    "title": "Hoofdstuk 3: Voordelen van Zorgtechnologie",
-    "text": "Welk specifiek voordeel biedt technologie ter ondersteuning van motorisch leren in de fysiotherapie?",
+    "title": "Hoofdstuk 5: Creëren met AI",
+    "text": "Het concept 'vibe-coding' werd geïntroduceerd in de e-learning. Wat stelt deze techniek je in staat om te doen?",
     "options": [
-      "Het maakt oefeningen per definitie altijd fysiek zwaarder",
-      "Het kan directe, objectieve feedback en visualisatie van bewegingen bieden",
-      "Het vervangt de noodzaak voor alle vormen van fysieke training en contactmomenten",
-      "Het leidt standaard tot een lagere motivatie bij de meeste patiënten"
+      "Muziek en 'vibes' te componeren met AI.",
+      "De 'vibe' of sfeer van een gegenereerde afbeelding aan te passen.",
+      "In gewone taal te beschrijven welke app of tool je wilt bouwen, waarna de AI de code schrijft.",
+      "Een AI-assistent te bouwen die je helpt met het schrijven van social media posts."
     ],
     "correctAnswer": 2,
-    "feedback": "Technologie kan directe feedback en visualisatie van bewegingen bieden, wat het motorisch leerproces kan versnellen en verduidelijken."
+    "feedback": "Klopt! Vibe-coding is het proces waarbij je een idee of 'vibe' beschrijft, en de AI dit vertaalt naar werkende code voor een applicatie of website."
   },
   {
     "id": "quiz_mc_7",
-    "title": "Hoofdstuk 3: Therapietrouw Bevorderen",
-    "text": "Welke factor is, naast de functionaliteiten van de technologie zelf, cruciaal voor het succesvol inzetten van zorgtechnologie ter bevordering van therapietrouw?",
+    "title": "Hoofdstuk 6: Kansen & Risico's",
+    "text": "Je vraagt een AI-chatbot om 5 wetenschappelijke artikelen over een onderwerp. De AI geeft je 5 perfect opgemaakte bronvermeldingen, maar later blijken de artikelen en de genoemde auteurs helemaal niet te bestaan. Hoe noem je dit fenomeen?",
     "options": [
-      "De hoeveelheid geavanceerde features die de technologie biedt.",
-      "De mate waarin de technologie geïntegreerd is in het persoonlijke behandelplan en de begeleiding door de therapeut.",
-      "De mogelijkheid voor de patiënt om de technologie volledig autonoom te gebruiken, zonder enige therapeutische interactie.",
-      "De bekendheid en populariteit van het specifieke technologische merk of platform."
+      "Een 'bias' in het model.",
+      "Een 'context window' fout.",
+      "Een 'hallucinatie'.",
+      "Een 'prompt injection'."
     ],
     "correctAnswer": 2,
-    "feedback": "Voor een effectieve verbetering van therapietrouw is het essentieel dat technologie goed aansluit bij de patiënt en geïntegreerd wordt in het totale behandelplan, waarbij de therapeut begeleiding en motivatie biedt. Technologie is een hulpmiddel binnen een breder zorgproces."
+    "feedback": "Correct. Een 'hallucinatie' is wanneer een AI overtuigend onjuiste of compleet verzonnen informatie presenteert alsof het een feit is."
   },
   {
     "id": "quiz_mc_8",
-    "title": "Hoofdstuk 3: Objectief Meten",
-    "text": "Wat is een primair voordeel van het gebruik van sensortechnologie in de fysiotherapeutische diagnostiek en evaluatie?",
+    "title": "Hoofdstuk 6: Kansen & Risico's",
+    "text": "Waarom mag je NOOIT herleidbare patiëntgegevens invoeren in een publieke, cloud-gebaseerde AI-tool zoals ChatGPT?",
     "options": [
-      "Ze dienen voornamelijk als een esthetische toevoeging aan de behandeling",
-      "Ze maken een meer verfijnde subjectieve beoordeling door de therapeut mogelijk",
-      "Ze leveren objectieve, kwantificeerbare data over bewegingen en vooruitgang",
-      "Ze kunnen het volledige behandelplan van de fysiotherapeut vervangen"
+      "Omdat de AI de medische termen misschien niet begrijpt.",
+      "Omdat de ingevoerde data gebruikt kan worden om het model te trainen en je de controle over de gegevens verliest, wat een schending is van de privacywetgeving (AVG).",
+      "Omdat de AI dan een verkeerde diagnose kan stellen.",
+      "Omdat dit de AI-tool trager maakt voor andere gebruikers."
     ],
-    "correctAnswer": 3,
-    "feedback": "Sensoren maken het mogelijk om bewegingen en functionele vooruitgang objectief en kwantitatief te meten, wat de evaluatie ondersteunt."
+    "correctAnswer": 1,
+    "feedback": "Helemaal juist. Het delen van patiëntgegevens met externe partijen zonder expliciete toestemming is een serieuze schending van de privacywetgeving (AVG). Werk altijd met volledig geanonimiseerde of fictieve data."
   },
   {
     "id": "quiz_mc_9",
-    "title": "Hoofdstuk 4: Kritisch Kijken",
-    "text": "Waarom is een kritische benadering bij de selectie en implementatie van zorgtechnologie essentieel?",
+    "title": "Hoofdstuk 6: Kansen & Risico's",
+    "text": "Wat is het belangrijkste verschil tussen 'Human in the Loop' en 'Human in the Lead'?",
     "options": [
-      "Omdat alle nieuwe technologie per definitie betrouwbaar en effectief is",
-      "Omdat niet elke technologie geschikt is voor elke patiënt, context of praktijkvoering",
-      "Omdat technologische oplossingen in de zorg altijd de goedkoopste optie zijn",
-      "Omdat het gebruik van zorgtechnologie geen ethische of privacygerelateerde risico's kent"
+      "'Human in the Loop' is voor beginners, 'Human in the Lead' is voor experts.",
+      "'Human in the Loop' is de AI controleren, terwijl 'Human in the Lead' betekent dat je de eindverantwoordelijkheid neemt en de AI strategisch inzet als hulpmiddel.",
+      "'Human in the Loop' is verplicht volgens de wet, 'Human in the Lead' is een aanbeveling.",
+      "'Human in the Loop' gebruik je voor tekst, 'Human in the Lead' voor het bouwen van apps."
     ],
-    "correctAnswer": 2,
-    "feedback": "Een kritische blik is nodig omdat de effectiviteit, toepasbaarheid en veiligheid van technologie kan variëren. Niet elke technologie past bij elke praktijk, patiënt of zorgdoel."
+    "correctAnswer": 1,
+    "feedback": "Precies! 'Human in the Loop' is de basis: je controleert de output. 'Human in the Lead' is de professionele standaard: jij houdt de regie, neemt de eindbeslissing en bent verantwoordelijk."
   },
   {
     "id": "quiz_mc_10",
-    "title": "Hoofdstuk 4: Privacy & Veiligheid",
-    "text": "Welke vraag is cruciaal om te stellen met betrekking tot privacy en gegevensbeveiliging bij de overweging van een nieuwe zorg-app?",
+    "title": "Hoofdstuk 6: Kansen & Risico's",
+    "text": "Het risico van 'deskilling' of 'cognitive offloading' wordt besproken. Wat houdt dit risico in voor een fysiotherapeut?",
     "options": [
-      "Is de applicatie volledig gratis te downloaden en te gebruiken?",
-      "Hoe en waar worden patiëntgegevens opgeslagen, en worden deze gedeeld met externe partijen?",
-      "Kan de applicatie op alle merken smartphones en tablets geïnstalleerd worden?",
-      "Heeft de interface van de applicatie een modern en aantrekkelijk design?"
+      "Dat AI-tools te duur worden om te gebruiken.",
+      "Dat je door te veel te leunen op AI, je eigen fundamentele vaardigheden, zoals klinisch redeneren, kunt verliezen.",
+      "Dat je geen nieuwe vaardigheden meer hoeft te leren omdat de AI alles doet.",
+      "Dat de AI niet vaardig genoeg is om complexe taken uit te voeren."
     ],
-    "correctAnswer": 2,
-    "feedback": "Met het oog op de AVG en patiëntvertrouwen is het essentieel te weten hoe een app omgaat met dataopslag, -beveiliging en het eventueel delen van gegevens met derden."
+    "correctAnswer": 1,
+    "feedback": "Inderdaad. Wanneer je denkwerk (cognitie) stelselmatig uitbesteedt (offloading), loop je het risico dat je eigen professionele vaardigheden en kritische denkvermogen afnemen."
   },
   {
     "id": "quiz_mc_11",
-    "title": "Hoofdstuk 4: Kwaliteit van Zorg",
-    "text": "Wat is een potentieel nadeel als zorgtechnologie niet zorgvuldig wordt geïntegreerd in het zorgproces?",
+    "title": "Hoofdstuk 1: De Basis",
+    "text": "Wat is, volgens de introductie, een van de belangrijkste redenen waarom AI-geletterdheid essentieel is voor jou als toekomstig fysiotherapeut?",
     "options": [
-      "Vermindering van de persoonlijke interactie en aandacht voor de patiënt",
-      "Gegarandeerd betere en snellere behandelresultaten ongeacht de implementatie",
-      "Volledige eliminatie van alle privacyrisico's door digitalisering",
-      "Een onvermijdelijke toename van de administratieve last voor de therapeut"
+      "Om zelf complexe AI-modellen te kunnen programmeren.",
+      "Om voorbereid te zijn op een toekomst waarin AI-tools je in staat stellen om efficiënter te werken en je meer te richten op de patiënt.",
+      "Omdat de opleiding het verplicht stelt voor alle studenten.",
+      "Om alle administratieve taken volledig te kunnen automatiseren zonder eigen controle."
     ],
     "correctAnswer": 1,
-    "feedback": "Indien niet goed geïntegreerd, of als het menselijke aspect wordt verwaarloosd, kan technologie leiden tot minder persoonlijke aandacht, terwijl het doel juist is de zorg te ondersteunen en te verbeteren."
+    "feedback": "Juist! Het doel is niet om de technologie blindelings te gebruiken, maar om het in te zetten als een hefboom voor efficiëntie en kwaliteitsverbetering, zodat er meer tijd overblijft voor complex redeneren en menselijk contact."
   },
   {
     "id": "quiz_mc_12",
-    "title": "Hoofdstuk 5: Technology Acceptance Model (TAM)",
-    "text": "Welke factor wordt binnen het Technology Acceptance Model (TAM) beschouwd als een fundamentele determinant voor de intentie om een technologie te gebruiken?",
+    "title": "Hoofdstuk 2: Wat is AI?",
+    "text": "De AI-systemen die we vandaag de dag gebruiken, zoals ChatGPT of een app voor beeldanalyse, vallen onder een specifieke categorie. Welke?",
     "options": [
-      "De esthetische kwaliteit van de technologie",
-      "De waargenomen nuttigheid (Perceived Usefulness)",
-      "De absolute kosten van de aanschaf",
-      "De populariteit van de technologie onder collega's"
+      "Artificial General Intelligence (AGI), omdat ze breed inzetbaar zijn.",
+      "Artificial Super Intelligence (ASI), omdat ze beter zijn dan mensen in hun taak.",
+      "Narrow AI, omdat ze gespecialiseerd zijn in één of enkele specifieke taken.",
+      "Humanoid AI, omdat ze menselijke interactie nabootsen."
     ],
     "correctAnswer": 2,
-    "feedback": "Volgens het TAM-model is de waargenomen nuttigheid (perceived usefulness) – de mate waarin men gelooft dat de technologie de prestaties verbetert – een cruciale determinant voor de intentie om technologie te gebruiken."
+    "feedback": "Correct! Huidige AI is 'Narrow AI' (smalle AI), wat betekent dat het heel goed is in een specifieke, afgebakende taak, maar niet het brede, menselijke denkvermogen (AGI) bezit."
   },
   {
     "id": "quiz_mc_13",
-    "title": "Hoofdstuk 5: Adoptieproces",
-    "text": "Welk element is GEEN kerncomponent van het Technology Acceptance Model (TAM) zelf, maar eerder een externe factor die invloed kan uitoefenen?",
+    "title": "Hoofdstuk 4: Leren Prompten",
+    "text": "Je vraagt een AI een complex klinisch vraagstuk op te lossen. Je voegt de instructie \"Denk stap-voor-stap na\" toe aan je prompt. Waarom is deze 'Chain-of-Thought' techniek effectief?",
     "options": [
-      "Attitude ten opzichte van het gebruik (Attitude Toward Using)",
-      "Gedragsmatige intentie tot gebruik (Behavioral Intention to Use)",
-      "Feitelijk systeemgebruik (Actual System Use)",
-      "De aanschafprijs van de technologie"
+      "Het dwingt de AI om een langzamer, menselijker tempo aan te nemen.",
+      "Het leidt tot een gedetailleerder en logischer gestructureerd antwoord, omdat de AI zijn 'redenering' uitschrijft, wat de kans op fouten verkleint.",
+      "Het zorgt ervoor dat de AI alleen informatie uit de meest recente bronnen gebruikt.",
+      "Het is een geheime code die de AI in een speciale, creatieve modus zet."
     ],
-    "correctAnswer": 4,
-    "feedback": "De prijs van technologie, hoewel invloedrijk, is een externe variabele en geen expliciete kerncomponent binnen de causale keten (Perceived Usefulness, Perceived Ease of Use, Attitude, Behavioral Intention, Actual System Use) van het TAM-model zelf."
+    "correctAnswer": 1,
+    "feedback": "Precies! Door de AI te vragen zijn denkproces stap voor stap te tonen, verhoog je de kwaliteit en transparantie van het antwoord, en kun je de redenering beter volgen en controleren."
   },
   {
     "id": "quiz_mc_14",
-    "title": "Hoofdstuk 6: Betrouwbare Bronnen",
-    "text": "Welke van de genoemde bronnen in de cursus is specifiek gericht op het bieden van een onafhankelijke beoordeling van de betrouwbaarheid en veiligheid van gezondheidsapps?",
+    "title": "Hoofdstuk 5: Creëren met AI",
+    "text": "Je wilt een AI-tool gebruiken om een serie afbeeldingen te genereren voor een voorlichtingsfolder over knierevalidatie. Na de eerste poging is de stijl van de afbeeldingen niet wat je zoekt. Wat is de meest efficiënte vervolgstap?",
     "options": [
-      "BeweegTech.nl",
-      "GGD AppStore",
-      "Zorginnovatie.nl",
-      "iXperium Health Catalogus"
+      "De afbeeldingen accepteren en handmatig proberen aan te passen in een fotobewerkingsprogramma.",
+      "Een volledig andere AI-tool proberen in de hoop op een beter resultaat.",
+      "De prompt verfijnen (itereren) met specifiekere instructies over de gewenste stijl (bijv. 'realistisch', 'schematisch', 'in de stijl van een medische illustratie').",
+      "De opdracht opgeven en op zoek gaan naar bestaande stockfoto's."
     ],
     "correctAnswer": 2,
-    "feedback": "De GGD AppStore wordt in de cursus specifiek genoemd als een platform dat gezondheidsapps beoordeelt op criteria zoals betrouwbaarheid, veiligheid en gebruiksvriendelijkheid."
+    "feedback": "Correct! Net als bij tekst is het genereren van media een iteratief proces. Het verfijnen van je prompt is de sleutel tot het krijgen van het gewenste resultaat."
   },
   {
     "id": "quiz_mc_15",
-    "title": "Hoofdstuk 6: Vinden van Zorgtechnologie",
-    "text": "Wat is een kenmerkend aanbod van de iXperium Health Catalogus, zoals beschreven in de cursus?",
+    "title": "Hoofdstuk 6: Kansen & Risico's",
+    "text": "Een ziekenhuis ontwikkelt een AI-diagnosetool die getraind is op medische data van voornamelijk mannelijke patiënten van middelbare leeftijd. De tool blijkt minder accuraat voor jonge vrouwen. Welk fundamenteel AI-risico wordt hier geïllustreerd?",
     "options": [
-      "Een database met uitsluitend apps voor medisch specialisten",
-      "Een uitleenservice voor zorgtechnologieën die studenten en docenten kunnen uitproberen",
-      "Een webshop voor het direct aankopen van medische hulpmiddelen",
-      "Een overzicht van internationale privacywetgeving voor zorgdata"
+      "Data privacy.",
+      "Hallucinatie.",
+      "Deskilling.",
+      "Bias (vooroordelen) in de trainingsdata."
     ],
-    "correctAnswer": 2,
-    "feedback": "De iXperium Health Catalogus biedt de mogelijkheid om diverse zorgtechnologieën te lenen en uit te proberen, primair gericht op onderwijs en onderzoek binnen de HAN."
+    "correctAnswer": 3,
+    "feedback": "Juist. Dit is een klassiek voorbeeld van bias. Als de trainingsdata geen goede afspiegeling is van de populatie waarop de AI wordt toegepast, kan de AI systematisch fouten maken voor ondervertegenwoordigde groepen."
   },
   {
     "id": "quiz_mc_16",
-    "title": "Hoofdstuk 7: V-Competenties",
-    "text": "Welke van de volgende opties is GEEN van de vijf basis V-competenties die in de cursus worden genoemd voor zorgprofessionals die met technologie werken?",
+    "title": "Hoofdstuk 6: Kansen & Risico's",
+    "text": "Stel, je gebruikt als fysiotherapeut een AI-assistent om een behandelplan op te stellen. Door een fout in het AI-advies loopt een patiënt letsel op. Wie is er wettelijk en ethisch eindverantwoordelijk?",
     "options": [
-      "Veranderen (Change)",
-      "Vinden (Find)",
-      "Vertrouwen (Trust)",
-      "Verdiepen (Deepen)"
+      "De ontwikkelaar van de AI-software.",
+      "De fysiotherapeut die het advies heeft toegepast in de zorg.",
+      "Het ziekenhuis of de praktijk waar de therapeut werkt.",
+      "Niemand, omdat het een onvoorziene technologische fout was."
     ],
-    "correctAnswer": 4,
-    "feedback": "De vijf basis V-competenties zijn Vinden, Vertrouwen, Verbinden, Veranderen en Verantwoorden. 'Verdiepen' is geen onderdeel van deze specifieke set competenties."
+    "correctAnswer": 1,
+    "feedback": "Absoluut. Jij als professional bent altijd eindverantwoordelijk voor de zorg die je levert. AI is een hulpmiddel; de uiteindelijke beslissing en verantwoordelijkheid liggen bij de mens (Human in the Lead)."
   },
   {
     "id": "quiz_mc_17",
-    "title": "Hoofdstuk 7: Ethische Reflectie",
-    "text": "Wat houdt ethische reflectie in bij de inzet van zorgtechnologie, volgens de cursus?",
+    "title": "Hoofdstuk 6: Kansen & Risico's",
+    "text": "Welke wetgeving legt in Europa de basisregels vast voor AI op basis van risiconiveaus, en stelt bijvoorbeeld strenge eisen aan AI-systemen in de zorg?",
     "options": [
-      "Primair focussen op de kosteneffectiviteit van de technologische oplossing",
-      "Het afwegen van verschillende perspectieven en waarden, en handelen conform wet- en regelgeving en professionele codes",
-      "Het per definitie afwijzen van elke nieuwe technologische ontwikkeling in de zorg",
-      "Het uitsluitend selecteren van de technologisch meest geavanceerde en nieuwste opties"
+      "De AVG / GDPR.",
+      "De EU AI Act.",
+      "De Auteurswet.",
+      "De Wet op de geneeskundige behandelingsovereenkomst (WGBO)."
     ],
-    "correctAnswer": 2,
-    "feedback": "Ethische reflectie omvat het zorgvuldig afwegen van diverse belangen en perspectieven (patiënt, therapeut, maatschappij), en het handelen conform professionele standaarden en relevante wet- en regelgeving."
+    "correctAnswer": 1,
+    "feedback": "Goed zo! De EU AI Act is de specifieke wetgeving die AI-systemen indeelt naar risico en strenge regels oplegt aan hoog-risico toepassingen, zoals die in de medische sector."
+  },
+  {
+    "id": "quiz_mc_18",
+    "title": "Hoofdstuk 6: Kansen & Risico's",
+    "text": "Hoe kan een fysiotherapeut AI op een praktische manier inzetten om meer patiëntgerichte zorg te leveren?",
+    "options": [
+      "Door de patiënt zelf met de AI te laten praten om de diagnose te bepalen.",
+      "Door routinematige administratieve taken (zoals het samenvatten van een intake) te automatiseren, waardoor er meer tijd vrijkomt voor direct patiëntcontact.",
+      "Door de AI de volledige communicatie met de patiënt te laten overnemen.",
+      "Door altijd het eerste behandelvoorstel van de AI te volgen."
+    ],
+    "correctAnswer": 1,
+    "feedback": "Inderdaad. Een van de grootste kansen van AI is het verhogen van de efficiëntie, zodat jij als professional meer tijd en aandacht kunt besteden aan de unieke, menselijke aspecten van zorg."
+  },
+  {
+    "id": "quiz_mc_19",
+    "title": "Hoofdstuk 7: De Toekomst",
+    "text": "Wat wordt in de e-learning beschreven als een cruciaal verschil tussen de huidige 'Narrow AI' en de hypothetische 'Artificial General Intelligence' (AGI)?",
+    "options": [
+      "Narrow AI is tekst-gebaseerd, terwijl AGI met beelden werkt.",
+      "Narrow AI is gespecialiseerd in specifieke taken, terwijl AGI een breed, mensachtig leer- en redeneervermogen zou hebben.",
+      "Narrow AI wordt gebruikt in de zorg, AGI zal alleen in de tech-industrie worden gebruikt.",
+      "Narrow AI maakt fouten, terwijl AGI altijd perfecte antwoorden zou geven."
+    ],
+    "correctAnswer": 1,
+    "feedback": "Correct. Het kernverschil is de breedte van de intelligentie. Narrow AI is een specialist, AGI zou een generalist zijn met een denkvermogen dat vergelijkbaar is met dat van een mens."
   }
 ]

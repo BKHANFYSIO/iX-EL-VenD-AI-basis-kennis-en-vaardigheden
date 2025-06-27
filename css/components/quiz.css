@@ -2,6 +2,43 @@
    End-of-Course Quiz (Modern Styling)
    ========================================================================== */
 
+/* Nieuwe Quiz Header */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color-extralight);
+  margin-bottom: 20px;
+}
+
+.quiz-header .btn {
+  background-color: transparent;
+  border: 1px solid var(--primary-purple);
+  color: var(--primary-purple);
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.quiz-header .btn:hover:not(:disabled) {
+  background-color: var(--primary-purple);
+  color: white;
+}
+
+.quiz-header .btn:disabled {
+  border-color: var(--medium-gray);
+  color: var(--medium-gray);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.question-counter-center {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
 .mc-quiz-container {
   max-width: 900px;
   width: 100%;
@@ -144,20 +181,6 @@
 }
 
 /* Styling for the new Quiz Navigation and Review States from styles.css */
-.quiz-navigation-buttons {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid var(--border-color-extralight);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.quiz-navigation-buttons .btn {
-    padding: 10px 15px;
-    font-size: 0.95em;
-}
-
 .mc-question.answered .mc-option:not(.selected) {
     opacity: 0.7;
 }
@@ -343,14 +366,11 @@
     margin-bottom: 8px;
 }
 
-.score-text .pass-message {
-    color: var(--success-border);
-    font-weight: bold;
-}
-
-.score-text .fail-message {
-    color: var(--error-border);
-    font-weight: bold;
+.quiz-results-feedback {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-top: 15px;
+    line-height: 1.4;
 }
 
 .quiz-actions {
@@ -400,13 +420,80 @@
     /* As above */
 }
 
-.review-nav-buttons {
-    margin-top: 15px;
-}
-
 #quiz-review-details-container .mc-question {
     background-color: var(--background-light-gray); /* Slightly different bg for reviewed question */
     border: 1px solid var(--medium-gray);
     padding: 20px;
     border-radius: 8px;
+}
+
+/* Responsive Quiz Header */
+@media (max-width: 500px) {
+  .quiz-header {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .question-counter-center {
+    order: -1; /* Zet de teller bovenaan */
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1em;
+  }
+
+  .quiz-header .btn {
+    flex-grow: 1; /* Knoppen nemen gelijke breedte in */
+    padding: 10px 5px;
+  }
+}
+
+.show-options-explainer {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #555; /* Een iets zachtere kleur */
+    text-align: center;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.initial-height {
+    min-height: 200px; /* Zorgt voor consistente hoogte, zelfs met de explainer */
+}
+
+.retrieval-tip-box {
+    background-color: var(--accent-purple);
+    border-left: 4px solid var(--primary-purple);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.retrieval-tip-box .tip-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0; /* Voorkomt dat het icoon krimpt */
+}
+
+.retrieval-tip-box .show-options-explainer {
+    margin: 0;
+    font-style: normal;
+    color: var(--dark-gray);
+    text-align: left;
+    max-width: 100%;
+}
+
+.retrieval-tip-box .show-options-explainer strong {
+    color: var(--primary-purple);
+    display: block;
+    margin-bottom: 0.25rem;
 } 
