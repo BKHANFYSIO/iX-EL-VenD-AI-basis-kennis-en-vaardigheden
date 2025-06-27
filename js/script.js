@@ -65,16 +65,6 @@ function showSection(sectionNumber) {
             loadContentForSection(currentSection); // This loads hoofdstukN.json or hoofdstuk_afsluiting.json
         }
 
-        // If the section being shown is the last section (afsluiting), also load the Afsluitquiz
-        if (parseInt(sectionNumber) === totalSections) {
-            if (typeof loadMCQuiz === 'function') {
-                console.log("Afsluiting section activated, attempting to load Afsluitquiz.");
-                loadMCQuiz(); // This loads afsluitquiz.json
-            } else {
-                console.error("loadMCQuiz function is not defined.");
-            }
-        }
-
         setTimeout(() => {
             window.scrollTo({ top: 0, behavior: 'instant' });
             // initializeDragAndDrop() was here, but drag-drop init is now handled by dynamicContent.js

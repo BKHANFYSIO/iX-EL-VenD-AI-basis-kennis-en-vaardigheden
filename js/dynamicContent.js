@@ -1377,6 +1377,16 @@ function renderAfsluitingContent(content) {
 
     // De container wordt gevuld, en DAARNA voegen we de event listener voor de accordeon toe.
     // Dit kan niet hier, maar moet in de 'renderChapter' functie gebeuren NADAT de HTML in de DOM is gezet.
+    
+    // Roep loadMCQuiz aan NADAT de quiz-container gegarandeerd in de DOM staat.
+    setTimeout(() => {
+        if (typeof loadMCQuiz === 'function') {
+            loadMCQuiz();
+        } else {
+            console.error("loadMCQuiz function not found. Quiz cannot be loaded.");
+        }
+    }, 0); // setTimeout met 0ms zorgt ervoor dat dit na de huidige render-cyclus wordt uitgevoerd.
+
     return html;
 }
 
