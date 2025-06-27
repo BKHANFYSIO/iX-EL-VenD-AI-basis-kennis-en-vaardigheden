@@ -542,6 +542,9 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                         });
                         cardContentHtml += `</ul>`;
                     }
+                    if (block.andere_valkuilen.afsluitende_tekst) {
+                        cardContentHtml += `<p class="info-card-footer-text">${block.andere_valkuilen.afsluitende_tekst}</p>`;
+                    }
                 }
 
                 // Recursief renderen van geneste content

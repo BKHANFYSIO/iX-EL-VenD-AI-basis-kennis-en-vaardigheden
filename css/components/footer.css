@@ -1,0 +1,105 @@
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--white);
+    color: var(--dark-gray);
+    padding: 20px 40px;
+    margin: 50px auto 0 auto;
+    border: 2px solid var(--primary-purple);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow);
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-column-left {
+    align-items: flex-start;
+}
+
+.footer-column-center {
+    gap: 8px;
+}
+
+.footer-column-right {
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.footer-divider {
+    width: 1px;
+    background-color: var(--light-gray);
+    align-self: stretch;
+    height: auto;
+}
+
+.footer-logo {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.footer-logo.han-logo {
+    height: 100px; /* Was 90px */
+}
+
+.footer-logo.ixperium-logo {
+    height: 35px; /* Iets groter voor balans */
+    opacity: 0.8;
+}
+
+.footer-links a {
+    color: var(--primary-purple);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --- Responsive Footer --- */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-divider {
+        display: none; /* Verberg de dividers op mobiel */
+    }
+
+    .footer-column {
+        align-items: center; /* Alles centreren */
+    }
+
+    .footer-column-left,
+    .footer-column-center,
+    .footer-column-right {
+        align-items: center;
+        text-align: center;
+    }
+} 

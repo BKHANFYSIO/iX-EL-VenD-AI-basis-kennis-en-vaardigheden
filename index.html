@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/modal.css">
     <link rel="stylesheet" href="css/components/images.css">
     <link rel="icon" href="images/Blijvende_afb/favicon-HAN.ico" type="image/x-icon">
 </head>
@@ -69,9 +71,60 @@
                 <main class="container">
                     <!-- Secties worden hier dynamisch geladen door js/main.js -->
                 </main>
+                <footer class="site-footer">
+                    <div class="footer-content">
+                        <div class="footer-column footer-column-left">
+                            <a href="https://www.han.nl/" target="_blank" rel="noopener noreferrer" class="footer-han-logo-link">
+                                <img src="images/Blijvende_afb/HAN_logo1a.png" alt="HAN Logo" class="footer-logo han-logo">
+                            </a>
+                        </div>
+                        <div class="footer-divider"></div>
+                        <div class="footer-column footer-column-center">
+                            <span>In samenwerking met:</span>
+                            <a href="https://www.ixperium.nl/ixperiums/ixperium-health/" target="_blank" rel="noopener noreferrer">
+                                <img src="images/Blijvende_afb/logo-health-transparant1.png" alt="iXperium Health Logo" class="footer-logo ixperium-logo">
+                            </a>
+                        </div>
+                        <div class="footer-divider"></div>
+                        <div class="footer-column footer-column-right">
+                            <div class="footer-links">
+                                <a href="#" id="elearningInfoLink">Wat je moet weten over deze e-learning</a>
+                            </div>
+                            <div class="footer-copyright">
+                                <p>&copy; 2025 HAN Opleiding Fysiotherapie. Alle rechten voorbehouden.</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
+
+    <!-- Modal "Hoe werkt deze site?" -->
+    <div id="howItWorksModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-button">&times;</span>
+            <h2>Wat je moet weten over deze e-learning</h2>
+            <p>Fijn dat je gebruikmaakt van deze e-learning module! Hieronder vind je een paar belangrijke punten over de werking van deze site.</p>
+            
+            <h3>Voortgangsmeting</h3>
+            <ul>
+                <li><strong>Jouw voortgang wordt lokaal opgeslagen:</strong> De module houdt bij welke hoofdstukken je hebt voltooid. Dit gebeurt volledig op jouw eigen computer, in de opslag van je browser.</li>
+                <li><strong>Privacy gewaarborgd:</strong> De HAN of andere partijen hebben géén inzicht in jouw persoonlijke voortgang.</li>
+                <li><strong>Niet overdraagbaar:</strong> Omdat de voortgang lokaal wordt opgeslagen, is deze niet zichtbaar als je overstapt naar een ander apparaat (bijv. van laptop naar tablet).</li>
+                <li><strong>Voortgang wissen:</strong> Met de knop "Wis Alle Voortgang" in de zijbalk kun je alle opgeslagen voortgangsdata permanent verwijderen.</li>
+                <li><strong>Let op:</strong> Je voortgang kan verloren gaan als je de cache van je browser leegt of bepaalde browser-extensies gebruikt die websitegegevens opschonen.</li>
+            </ul>
+
+            <h3>Gebruik en Certificaat</h3>
+            <ul>
+                <li><strong>Flexibel leren:</strong> Je hoeft de e-learning niet in één keer af te ronden. Het is juist goed om de stof te laten bezinken en op een later moment terug te keren om verder te gaan.</li>
+                <li><strong>Interacties:</strong> De interactieve opdrachten zijn niet verplicht, maar worden sterk aangeraden. Ze helpen je de stof diepgaander te verwerken en de opgedane kennis toe te passen. Dit is ook waardevol voor je portfolio.</li>
+                <li><strong>Certificaat van voltooiing:</strong> Na het succesvol afronden van de afsluitende quiz in het laatste hoofdstuk, kun je een persoonlijk certificaat genereren als bewijs van deelname. Meer informatie hierover vind je in het hoofdstuk "Afsluiting".</li>
+            </ul>
+        </div>
+    </div>
+
     <!-- Externe libraries eerst -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>

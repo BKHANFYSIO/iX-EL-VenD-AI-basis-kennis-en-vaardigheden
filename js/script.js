@@ -945,5 +945,63 @@ function clearDevProgress() {
     }
 }
 
+// Functie om de voortgangsbalk bij te werken
+function updateProgressBar() {
+    const chapters = document.querySelectorAll('.chapter-link');
+    if (chapters.length === 0) return;
+
+    const completedChapters = document.querySelectorAll('.chapter-link.completed').length;
+    const totalChapters = chapters.length;
+    const progress = totalChapters > 0 ? (completedChapters / totalChapters) * 100 : 0;
+
+    const progressRing = document.getElementById('progressRing');
+    const sidebarProgressVisual = document.getElementById('sidebarProgressVisual');
+    const sidebarProgressText = document.getElementById('sidebarProgressText');
+
+    if (progressRing) {
+        const circumference = 2 * Math.PI * progressRing.r.baseVal.value;
+        const offset = circumference - (progress / 100) * circumference;
+        progressRing.style.strokeDashoffset = offset;
+    }
+    if (sidebarProgressVisual) {
+        sidebarProgressVisual.style.width = `${progress}%`;
+    }
+    if (sidebarProgressText) {
+        sidebarProgressText.textContent = `${Math.round(progress)}% voltooid`;
+    }
+}
+
+// Event listener voor de "Wis Alle Voortgang" knop
+document.getElementById('clearProgressBtn').addEventListener('click', () => {
+    if (confirm('Weet je zeker dat je alle voortgang wilt wissen? Dit kan niet ongedaan worden gemaakt.')) {
+        localStorage.clear();
+        location.reload();
+    }
+});
+
+// Modal "Hoe werkt deze site?"
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('howItWorksModal');
+    const link = document.getElementById('elearningInfoLink');
+    const closeButton = document.querySelector('.modal-close-button');
+
+    if (modal && link && closeButton) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+});
+
 
 

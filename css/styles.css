@@ -952,3 +952,15 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
 .interactive-block {
     background-color: #ffffff;
 }
+
+.info-card-footer-text {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.9em;
+    border-top: 1px solid var(--light-gray);
+    padding-top: 0.8rem;
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */

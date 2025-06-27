@@ -154,7 +154,8 @@
         "items": [
           { "titel": "Verificatie", "tekst": "AI kan fouten maken of informatie verzinnen (\"hallucineren\"). Controleer cruciale feiten altijd met betrouwbare bronnen zoals je studieboeken of wetenschappelijke databases." },
           { "titel": "Kritische blik", "tekst": "Vertrouw niet blindelings op de output. Gebruik de informatie als startpunt en pas altijd je eigen klinische redeneervaardigheden toe." }
-        ]
+        ],
+        "afsluitende_tekst": "<br><strong>Belangrijk:</strong> In hoofdstuk 6 gaan we dieper in op de risico's en professionele verantwoordelijkheden, zoals het omgaan met privacy en het herkennen van 'hallucinaties'."
       }
     }
   ],

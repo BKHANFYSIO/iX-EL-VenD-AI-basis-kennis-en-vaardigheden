@@ -69,15 +69,67 @@ component C (enige component, dus geen divider)
 - **Type:** `info-card`
 - **Gebruik:** Voor uitgelichte informatie. Verplicht als eerste element. Ook voor samenvattingen of waarschuwingen.
 - **Variaties:** Gebruik de `classes` property: `welcome-card`, `warning-card`, `purple-kader`.
-- **JSON Structuur:**
-  ```json
-  {
-    "type": "info-card",
-    "classes": "welcome-card",
-    "titel": "Titel van de kaart",
-    "tekst": "De hoofdtekst van de kaart."
+
+#### Info Card Varianten - Wanneer Gebruik Je Wat?
+
+**Basis Info Card:** Voor eenvoudige uitgelichte informatie
+- **Gebruik voor:** Welkomsteksten, korte samenvattingen, eenvoudige waarschuwingen
+- **Structuur:** Alleen `titel` en `tekst`
+```json
+{
+  "type": "info-card",
+  "classes": "welcome-card",
+  "titel": "Titel van de kaart",
+  "tekst": "De hoofdtekst van de kaart."
+}
+```
+
+**Info Card met Items:** Voor gestructureerde lijsten
+- **Gebruik voor:** Stappenplannen, criteria, lijsten van voordelen/nadelen, gestructureerde waarschuwingen
+- **Structuur:** `titel` + `items` array
+```json
+{
+  "type": "info-card",
+  "classes": "warning-card",
+  "titel": "De belangrijkste valkuil: Privacy en Patiëntgegevens",
+  "items": [
+    { "titel": "ABSOLUTE NO-GO", "tekst": "Gebruik NOOIT persoonlijk identificeerbare patiëntinformatie in een publieke AI-tool zoals ChatGPT." },
+    { "titel": "Waarom?", "tekst": "Het is een ernstige schending van de privacywetgeving (AVG) en je beroepsethiek." },
+    { "titel": "Wat dan wel?", "tekst": "Gebruik altijd geanonimiseerde of volledig fictieve casussen voor je prompts." },
+    { "titel": "Onthoud", "tekst": "De AI is een hulpmiddel, geen collega. Behandel het als een openbaar forum." }
+  ]
+}
+```
+
+**Info Card met Andere Valkuilen:** Voor uitgebreide waarschuwingen met subcategorieën
+- **Gebruik voor:** Complexe risico's met subcategorieën, wanneer je wilt verwijzen naar andere hoofdstukken
+- **Structuur:** `titel` + `items` + `andere_valkuilen` + optioneel `afsluitende_tekst`
+```json
+{
+  "type": "info-card",
+  "classes": "warning-card",
+  "titel": "De belangrijkste valkuil: Privacy en Patiëntgegevens",
+  "items": [
+    { "titel": "ABSOLUTE NO-GO", "tekst": "Gebruik NOOIT persoonlijk identificeerbare patiëntinformatie in een publieke AI-tool zoals ChatGPT." },
+    { "titel": "Waarom?", "tekst": "Het is een ernstige schending van de privacywetgeving (AVG) en je beroepsethiek." },
+    { "titel": "Wat dan wel?", "tekst": "Gebruik altijd geanonimiseerde of volledig fictieve casussen voor je prompts." },
+    { "titel": "Onthoud", "tekst": "De AI is een hulpmiddel, geen collega. Behandel het als een openbaar forum." }
+  ],
+  "andere_valkuilen": {
+    "titel": "Andere belangrijke valkuilen zijn:",
+    "items": [
+      { "titel": "Verificatie", "tekst": "AI kan fouten maken of informatie verzinnen (\"hallucineren\"). Controleer cruciale feiten altijd met betrouwbare bronnen." },
+      { "titel": "Kritische blik", "tekst": "Vertrouw niet blindelings op de output. Gebruik de informatie als startpunt en pas altijd je eigen klinische redeneervaardigheden toe." }
+    ],
+    "afsluitende_tekst": "<br><strong>Belangrijk:</strong> In hoofdstuk 6 gaan we dieper in op de risico's en professionele verantwoordelijkheden, zoals het omgaan met privacy en het herkennen van 'hallucinaties'."
   }
-  ```
+}
+```
+
+**Wanneer afsluitende tekst toevoegen:**
+- Als je wilt doorverwijzen naar een ander hoofdstuk
+- Als je een samenvattende conclusie wilt geven
+- Als je extra context wilt toevoegen die niet in de bullet points past
 
 ### 2. Sectietitel
 - **Type:** `section-title`
