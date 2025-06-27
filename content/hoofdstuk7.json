@@ -3,8 +3,8 @@
     {
       "type": "info-card",
       "classes": "welcome-card",
-      "titel": "Jouw toekomst met AI: Bereid je voor!",
-      "tekst": "In dit hoofdstuk duiken we in de razendsnelle ontwikkelingen van kunstmatige intelligentie en onderzoeken we de diepgaande impact hiervan op onze maatschappij, de arbeidsmarkt (met een speciale blik op de fysiotherapie) en jouw persoonlijke leven. Bereid je voor op een toekomst die sneller verandert dan ooit tevoren!"
+      "titel": "De Toekomst van AI: Jouw Rol in een Veranderende Wereld",
+      "tekst": "Nu je de basis van AI begrijpt, is het tijd voor de grote vraag: wat betekent dit allemaal voor jouw toekomst? De AI-revolutie is geen verre droom meer - het gebeurt NU. Terwijl jij studeert, verandert de wereld om je heen razendsnel. Banen verdwijnen, nieuwe ontstaan, en de manier waarop we werken wordt compleet anders. Als aanstaande fysiotherapeut sta je aan de vooravond van een carrière die er totaal anders uit zal zien dan die van je voorgangers. Ben je er klaar voor?"
     },
     {
       "type": "section-title",
@@ -51,32 +51,54 @@
     },
     {
       "type": "section-title",
-      "titel": "AI en de Samenleving van Morgen"
+      "titel": "Technologische Sprongen: Van Smal naar Superintelligent"
     },
     {
       "type": "content-text",
-      "tekst": "De invloed van AI reikt veel verder dan alleen technologische vooruitgang; het raakt de kern van onze samenleving. Van hoe we beslissingen nemen tot hoe we met elkaar omgaan, AI brengt zowel ongekende mogelijkheden als complexe uitdagingen met zich mee. Denk hierbij aan ethische dilemma's, privacykwesties, de verspreiding van desinformatie en de impact op gelijkheid en rechtvaardigheid. Het is essentieel om kritisch na te denken over deze maatschappelijke gevolgen en hoe we AI op een verantwoorde manier kunnen inzetten."
+      "tekst": "De snelle ontwikkeling van AI brengt ons steeds dichter bij concepten die tot voor kort sciencefiction leken. Het is belangrijk om de verschillende niveaus van AI te begrijpen om een beeld te krijgen van de mogelijke toekomst."
     },
     {
-      "type": "ethical-reflection-grid",
-      "kaarten": [
+      "type": "concept-cards",
+      "items": [
         {
-          "titel": "Privacy en Gegevensbeveiliging",
-          "beschrijving": "AI-systemen vereisen vaak enorme hoeveelheden data. Hoe waarborgen we de privacy van individuen en de veiligheid van gevoelige gegevens, terwijl we toch de voordelen van AI benutten?"
+          "titel": "Narrow AI (Smal)",
+          "nederlands": "Huidige AI: gespecialiseerd in één taak",
+          "uitleg": "Dit is de AI die we vandaag de dag veel zien: systemen die uitblinken in specifieke taken, zoals gezichtsherkenning, schaken, of het genereren van tekst en afbeeldingen. Ze kunnen echter niet buiten hun specifieke domein denken of handelen.",
+          "voorbeeld": "ChatGPT, AlphaGo, of een AI die bewegingsanalyses uitvoert in de fysiotherapie."
         },
         {
-          "titel": "Bias en Discriminatie",
-          "beschrijving": "AI-modellen leren van de data waarmee ze getraind worden. Als deze data vooroordelen bevat, kan AI bestaande ongelijkheden versterken. Hoe zorgen we voor eerlijke en onbevooroordeelde AI-systemen?"
+          "titel": "AI Agents",
+          "nederlands": "Autonome AI-assistenten",
+          "uitleg": "Een AI Agent is een Narrow AI die zelfstandig doelen kan formuleren en acties kan ondernemen om deze te bereiken, vaak over een langere periode. Ze kunnen meerdere tools gebruiken en beslissingen nemen zonder continue menselijke input.",
+          "voorbeeld": "Een AI die zelfstandig onderzoek doet naar de nieuwste fysiotherapie technieken en een rapportage opstelt, of een die afspraken voor de praktijk plant en patiënten informeert.",
+          "denkvraag": "Zou een AI-agent de administratie van mijn praktijk volledig kunnen overnemen, inclusief de communicatie met verzekeraars, en hoe controleer ik dat?"
         },
         {
-          "titel": "Verantwoordelijkheid en Aansprakelijkheid",
-          "beschrijving": "Wie is verantwoordelijk wanneer een AI-systeem een fout maakt of schade veroorzaakt? De ontwikkelaar, de gebruiker, of het systeem zelf? Hoe definiëren we aansprakelijkheid in een AI-gedreven wereld?"
+          "titel": "Artificial General Intelligence (AGI)",
+          "nederlands": "Menselijke intelligentie en meer",
+          "uitleg": "AGI is een hypothetische AI die de intellectuele capaciteiten van een mens evenaart of overtreft, en net zo breed en flexibel kan denken over vrijwel alle taken. Het kan leren, problemen oplossen, redeneren en zich aanpassen aan nieuwe situaties, net als een mens.",
+          "voorbeeld": "Een AGI die een complex fysiotherapeutisch probleem holistisch benadert, diagnoses stelt en behandelplannen opstelt met menselijke precisie en creativiteit.",
+          "denkvraag": "Als AGI een diagnose kan stellen die net zo goed of beter is dan de mijne, wat is dan nog mijn unieke waarde als fysiotherapeut?"
         },
         {
-          "titel": "Autonomie en Menselijke Controle",
-          "beschrijving": "Naarmate AI autonomer wordt, rijst de vraag hoeveel controle de mens moet behouden. Hoe vinden we de balans tussen efficiëntie door AI en het behoud van menselijke autonomie en beslissingsbevoegdheid?"
+          "titel": "Artificial Super Intelligence (ASI)",
+          "nederlands": "Intelligentie die de mens ver overstijgt",
+          "uitleg": "ASI is de volgende, nog meer hypothetische stap: een AI die mensen in vrijwel elk denkbaar domein ver overtreft in intelligentie, kennis en snelheid. Dit zou de meest ingrijpende technologische ontwikkeling ooit zijn, met een potentieel voor ongekende welvaart en het oplossen van wereldproblemen, maar ook met existentiële risico's (het 'alignment problem').",
+          "voorbeeld": "Een ASI die in seconden een genezing voor chronische pijn vindt, of die alle complexe gezondheidsvraagstukken wereldwijd kan optimaliseren.",
+          "denkvraag": "Als ASI bestaat, en de mensheid 'overbodig' wordt voor productie, wat is dan de zingeving van ons bestaan? Hoe redefinieert de fysiotherapie dan 'gezondheid'?"
         }
       ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "AI in de Fysiotherapie: Toekomstige Praktijk"
+    },
+    {
+      "type": "content-text",
+      "tekst": "Hoe zal AI de fysiotherapiepraktijk transformeren? Van de eerste patiëntcontacten tot gepersonaliseerde behandelplannen, AI biedt tools die jouw werk efficiënter, nauwkeuriger en effectiever kunnen maken. Bereid je voor op een werkomgeving waarin mens en machine steeds nauwer samenwerken."
     },
     {
       "type": "content-subtitle",
@@ -84,73 +106,133 @@
     },
     {
       "type": "content-text",
-      "tekst": "Triage-bots zijn AI-systemen die de eerste lijn van contact vormen. Ze kunnen vragen beantwoorden, informatie verzamelen en je doorverwijzen naar de juiste persoon of afdeling. Dit zorgt voor een snellere service en ontlast de menselijke medewerkers."
-    },
-    {
-      "type": "content-text",
-      "tekst": "<ul><li><strong>Tijdens je studie:</strong> Een chatbot van je onderwijsinstelling die veelgestelde vragen over roosters, deadlines of studiepunten direct kan beantwoorden.</li></ul>"
-    },
-    {
-      "type": "image-block",
-      "src": "images/triage_bot_student.png",
-      "alt": "Een student die interactie heeft met een chatbot op een website of app."
-    },
-    {
-      "type": "content-text",
-      "tekst": "<ul><li><strong>In de fysiotherapiepraktijk:</strong> Denk aan een bot op de website van de praktijk die nieuwe patiënten basisvragen stelt over hun klachten en hen vervolgens een afspraak laat plannen bij de juiste specialist, of basisadvies geeft over veelvoorkomende klachten. Dit kan de druk op de frontoffice enorm verminderen.</li></ul>"
+      "tekst": "Stel je voor: patiënten met eenvoudige vragen of routinematige klachten worden als eerste opgevangen door een slimme AI-triagebot. Deze bot stelt gerichte vragen, verzamelt cruciale informatie en geeft, indien nodig, direct basisadvies of plant een afspraak in bij de juiste specialist. Dit bespaart kostbare tijd en zorgt ervoor dat patiënten met complexe problemen sneller bij jou terechtkomen. Een goed voorbeeld hiervan is Flok Health in Engeland, die AI al inzet voor de triage van rugklachten, waardoor de therapeutische focus kan verschuiven."
     },
     {
       "type": "scenario-container-horizontal",
       "scenarios": [
         {
           "titel": "Efficiënte Patiënt Triage",
-          "beschrijving": "Een patiënt heeft 's avonds laat acute nekpijn en twijfelt of een bezoek aan de huisarts nodig is.",
+          "beschrijving": "Een patiënt heeft 's avonds laat acute nekpijn en twijfelt over een huisartsbezoek.",
           "punten": [
-            "Traditioneel: Patiënt zoekt online, belts misschien de huisartsenpost, of wacht tot de volgende dag.",
-            "Met Triage-bot: Patiënt opent de app van de praktijk, beschrijft de klachten aan een AI-triagebot. De bot stelt gerichte vragen, en adviseert op basis van de antwoorden om een afspraak te maken bij de fysiotherapeut voor de volgende ochtend, of in acute gevallen direct contact op te nemen met de huisartsenpost. Dit vermindert onnodige spoedbezoeken en versnelt de toegang tot de juiste zorg."
-          ]
-        },
-        {
-          "titel": "Studiehulp via Chatbot",
-          "beschrijving": "Je bent bezig met een complexe huiswerkopdracht en loopt vast op een specifiek concept. Je docent is nu niet bereikbaar.",
-          "punten": [
-            "Traditioneel: Je zoekt zelf urenlang naar informatie, of wacht tot de volgende les.",
-            "Met Triage-bot (Studiehulp): De bot geeft je direct een heldere uitleg, verwijst naar relevante pagina's in je studiemateriaal of naar extra oefeningen, en kan je zelfs meteen helpen de stof écht goed te leren voor in je lange termijn geheugen, zodat je direct verder kunt met je opdracht."
+            "Traditioneel: Patiënt zoekt online, belt misschien de huisartsenpost, of wacht tot de volgende dag.",
+            "Met Triage-bot: Patiënt opent de praktijkapp, beschrijft klachten aan de AI-bot. De bot stelt gerichte vragen, adviseert op basis van antwoorden een afspraak bij de fysiotherapeut de volgende ochtend, of in acute gevallen direct contact met de huisartsenpost. Dit vermindert onnodige spoedbezoeken en versnelt toegang tot de juiste zorg."
           ]
         }
       ]
     },
     {
-      "type": "video-grid",
-      "titel": "Verdieping: AI en de Maatschappij",
-      "items": [
-        {
-          "titel": "Of het ons gaat helpen of schaden, hangt af van de keuzes die we nu maken",
-          "beschrijving": "Eva de Valk van de Universiteit Utrecht bespreekt de ethische dilemma's en maatschappelijke impact van AI en benadrukt het belang van bewuste keuzes.",
-          "bron": "YouTube",
-          "duur": "10 min",
-          "link": "https://www.youtube.com/watch?v=ZSaXi13rRo4"
-        },
-        {
-          "titel": "Hoe AI de arbeidsmarkt zal veranderen | VPRO Tegenlicht",
-          "beschrijving": "Een diepgaande analyse van de impact van kunstmatige intelligentie op de arbeidsmarkt en de veranderingen die dit teweegbrengt in verschillende sectoren.",
-          "bron": "YouTube",
-          "duur": "45 min",
-          "link": "https://www.youtube.com/watch?v=s_t14_j_1_0"
-        }
-      ]
+      "type": "divider"
+    },
+    
+    {
+      "type": "section-title",
+      "titel": "Duurzaamheid en Energieverbruik van AI"
     },
     {
       "type": "content-text",
-      "tekst": "De discussies over de maatschappelijke impact van AI zijn complex en veelzijdig. De video's hierboven bieden waardevolle perspectieven op de ethische overwegingen en de veranderingen op de arbeidsmarkt. Het is duidelijk dat de ontwikkeling van AI hand in hand moet gaan met een zorgvuldige afweging van de sociale, ethische en economische gevolgen om een toekomst te creëren die voor iedereen gunstig is."
+      "tekst": "AI, met zijn enorme rekenkracht, heeft een aanzienlijke energievraag. Vooral het trainen van complexe AI-modellen vergt veel elektriciteit en heeft daarmee een ecologische voetafdruk. Echter, de snelle ontwikkelingen zorgen er ook voor dat het gebruik van reeds getrainde modellen vaak veel efficiënter is. Bovendien kan AI zelf een cruciale rol spelen in het versnellen van de energietransitie."
+    },
+    {
+      "type": "content-text",
+      "tekst": "Dit maakt het een complexe discussie zonder eenvoudige antwoorden. Enerzijds zorgt de explosieve groei van AI voor een dramatische toename van het energieverbruik in datacenters. Anderzijds kan diezelfde AI technologie helpen om energienetwerken te optimaliseren, slimmere gebouwen te creëren en de ontwikkeling van duurzame technologieën te versnellen. Het is niet zwart-wit: AI kan tegelijkertijd zowel deel van het probleem als deel van de oplossing zijn. De uitdaging ligt in het vinden van de juiste balans en het sturen van AI-ontwikkeling richting netto positieve impact op onze planeet."
+    },
+    {
+      "type": "accent-blok",
+      "variant": "statistiek",
+      "titel": "De Energiehonger van AI",
+      "tekst": "1.2 - 1.5 Terawattuur per jaar aan energie, het equivalent van kleine landen, wordt mogelijk verbruikt door AI datacenters tegen 2027.",
+      "bron": {
+        "naam": "IEA, 2024",
+        "url": "https://www.iea.org/news/ai-and-data-centres-are-driving-a-surge-in-electricity-demand"
+      }
+    },
+    {
+      "type": "accent-blok",
+      "variant": "weetje",
+      "titel": "AI als Groene Kracht",
+      "tekst": "AI kan energienetwerken optimaliseren, de ontwikkeling van duurzame materialen versnellen, en efficiënter energieverbruik in gebouwen mogelijk maken, wat de transitie naar schone energie versnelt."
+    },
+    {
+      "type": "accent-blok",
+      "variant": "default",
+      "titel": "Denkvraag:",
+      "tekst": "Hoe verhoudt de potentiële gezondheidswinst door AI zich tot de ecologische impact van de benodigde energie? Is dit een acceptabele trade-off en welke rol kun jij hierin spelen als fysiotherapeut?"
+    },
+    {
+      "type": "divider"
     },
     {
       "type": "section-title",
-      "titel": "De Toekomst van Werk: AI en Fysiotherapie"
+      "titel": "De Impact op Werk en Maatschappij"
     },
     {
       "type": "content-text",
-      "tekst": "De opkomst van AI transformeert de arbeidsmarkt in een ongekend tempo. Banen veranderen, nieuwe rollen ontstaan en de vraag naar specifieke vaardigheden verschuift. Ook voor de fysiotherapie, een beroep dat sterk leunt op menselijk contact en expertise, zal AI een steeds grotere rol spelen. Het is essentieel om te begrijpen hoe AI de praktijk kan beïnvloeden en welke competenties nodig zijn om succesvol te zijn in dit veranderende landschap."
+      "tekst": "De opkomst van AI heeft een diepgaande impact op de maatschappij als geheel. Van mondiale machtsverhoudingen tot de invulling van ons dagelijks leven: AI brengt complexe vraagstukken met zich mee. Hoe zorgen we dat deze technologie de mensheid dient en niet leidt tot ongewenste verschuivingen?"
+    },
+    {
+      "type": "ethical-reflection-grid",
+      "kaarten": [
+        {
+          "titel": "Machtsverschuivingen",
+          "beschrijving": "AI-ontwikkeling is sterk geconcentreerd bij grote techbedrijven en landen. Dit kan leiden tot nieuwe geopolitieke machtsverhoudingen en een ongelijke verdeling van de voordelen. Hoe borgen we een eerlijke toegang tot en controle over AI?"
+        },
+        {
+          "titel": "De Uitdaging van Nepnieuws en Deepfakes",
+          "beschrijving": "AI maakt het steeds makkelijker om overtuigende, maar valse, teksten, audio en video te genereren (deepfakes). Hoe beschermen we de waarheid en het vertrouwen in informatie in een wereld waar feit en fictie steeds meer vervagen?"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "content-subtitle",
+      "titel": "De Toekomst van Werk: Meer dan alleen Productiviteit"
+    },
+    {
+      "type": "content-text",
+      "tekst": "De meest fundamentele vraag is misschien wel: wat betekent AI voor de toekomst van werk en onze zingeving? Er zijn verschillende denkbeelden over hoe dit zich kan ontwikkelen."
+    },
+    {
+      "type": "scenario-container-horizontal",
+      "scenarios": [
+        {
+          "titel": "Scenario 1: Werk verandert, productiviteit stijgt",
+          "beschrijving": "AI neemt routinetaken over, waardoor we veel productiever worden. Werk verandert van aard: focus verschuift naar creativiteit, sociale intelligentie, complexe probleemoplossing en menselijk contact. We gaan niet noodzakelijk minder werken, maar anders, met hogere output.",
+          "punten": [
+            "AI automatiseert repetitief werk.",
+            "Nieuwe, meer mensgerichte taken ontstaan.",
+            "Vereist continue ontwikkeling van nieuwe kennis en vaardigheden."
+          ]
+        },
+        {
+          "titel": "Scenario 2: Minder werken, basisinkomen en nieuwe zingeving",
+          "beschrijving": "De productiviteitswinst door AI is zo groot dat betaald werk voor velen minder noodzakelijk wordt. Een universeel basisinkomen wordt ingevoerd. Mensen richten zich meer op persoonlijke ontwikkeling, kunst, zorg, gemeenschap en andere vormen van zingeving buiten traditioneel werk.",
+          "punten": [
+            "Mogelijkheid tot kortere werkweken of vrijwillig werken.",
+            "Zingeving buiten economische productie.",
+            "Vraagt om een herdefiniëring van succes en maatschappelijke waarde."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "accent-blok",
+      "variant": "default",
+      "titel": "Denkvraag:",
+      "tekst": "Als AI een groot deel van het routinewerk overneemt, hoe vind je dan jouw 'zingeving' in je beroep en daarbuiten? Moet je als fysiotherapeut meer investeren in unieke menselijke vaardigheden dan in technische kennis?"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Jouw Rol als Fysiotherapeut in een AI-Toekomst"
+    },
+    {
+      "type": "content-text",
+      "tekst": "De snelle opkomst van AI vraagt niet alleen om aanpassingen op maatschappelijk en professioneel niveau, maar ook van jou als individu. Het is essentieel om te begrijpen hoe AI jouw dagelijks leven, leerproces en carrière kan beïnvloeden. Door proactief te zijn en de juiste vaardigheden te ontwikkelen, kun je de kansen die AI biedt optimaal benutten en je voorbereiden op een toekomst waarin mens en machine steeds nauwer samenwerken."
     },
     {
       "type": "competency-grid",
@@ -164,7 +246,7 @@
         },
         {
           "term": "Data-interpretatie",
-          "uitleg": "Het vermogen om grote hoeveelheden data, gegenereerd door AI-tools (bijv. wearables, sensoren ), te analyseren en te vertalen naar bruikbare inzichten voor diagnose en behandelplan.",
+          "uitleg": "Het vermogen om grote hoeveelheden data, gegenereerd door AI-tools (bijv. wearables, sensoren), te analyseren en te vertalen naar bruikbare inzichten voor diagnose en behandelplan.",
           "praktisch": "Je gebruikt data van een slimme brace om de voortgang van een patiënt objectief te monitoren en het oefenprogramma aan te passen."
         },
         {
@@ -185,73 +267,46 @@
       ]
     },
     {
-      "type": "accordion",
-      "titel": "AI-toepassingen in de Fysiotherapie: Voorbeelden uit de Praktijk",
-      "introductie": "AI biedt diverse mogelijkheden om de fysiotherapeutische zorg te verbeteren en efficiënter te maken. Hier zijn enkele voorbeelden van hoe AI nu al wordt ingezet of in de nabije toekomst kan worden toegepast:",
-      "content": [
-        {
-          "titel": "Diagnostiek en Analyse",
-          "beschrijving": "AI kan helpen bij het analyseren van complexe medische beelden (MRI, röntgen) of bewegingspatronen om sneller en nauwkeuriger diagnoses te stellen. Denk aan AI die afwijkingen in houding of loopanalyse detecteert die voor het menselijk oog moeilijk zichtbaar zijn.",
-          "subpunten": ["Geautomatiseerde bewegingsanalyse", "Beeldherkenning voor blessure-detectie", "Voorspelling van hersteltijden"]
-        },
-        {
-          "titel": "Gepersonaliseerde Behandelplannen",
-          "beschrijving": "Op basis van patiëntdata kan AI gepersonaliseerde oefenprogramma's en revalidatietrajecten voorstellen, die dynamisch worden aangepast aan de voortgang van de patiënt. Dit kan leiden tot effectievere en efficiëntere behandelingen.",
-          "subpunten": ["Adaptieve oefenprogramma's", "Virtuele revalidatiebegeleiders", "Feedbacksystemen via sensoren"]
-        },
-        {
-          "titel": "Preventie en Monitoring",
-          "beschrijving": "Wearables en sensoren, gekoppeld aan AI, kunnen continu data verzamelen over de activiteit en gezondheid van patiënten. AI kan afwijkingen signaleren en risico's op blessures voorspellen, waardoor preventieve interventies mogelijk worden.",
-          "subpunten": ["Vroegtijdige risicodetectie", "Langetermijnmonitoring van herstel", "Gezondheidsadvies op maat"]
-        },
-        {
-          "titel": "Administratieve Ondersteuning",
-          "beschrijving": "AI kan routinetaken zoals het bijhouden van patiëntdossiers, het plannen van afspraken en het genereren van rapporten automatiseren, waardoor fysiotherapeuten meer tijd overhouden voor directe patiëntenzorg.",
-          "subpunten": ["Geautomatiseerde dossiervorming", "Slimme agendaplanning", "Rapportagegeneratie"]
-        }
-      ]
-    },
-    {
-      "type": "section-title",
-      "titel": "Jouw Rol in een AI-Toekomst"
-    },
-    {
-      "type": "content-text",
-      "tekst": "De snelle opkomst van AI vraagt niet alleen om aanpassingen op maatschappelijk en professioneel niveau, maar ook van jou als individu. Het is essentieel om te begrijpen hoe AI jouw dagelijks leven, leerproces en carrière kan beïnvloeden. Door proactief te zijn en de juiste vaardigheden te ontwikkelen, kun je de kansen die AI biedt optimaal benutten en je voorbereiden op een toekomst waarin mens en machine steeds nauwer samenwerken."
-    },
-    {
-      "type": "icon-card-grid",
-      "themes": [
-        {
-          "icoon": "images/icons/lightbulb-on.svg",
-          "titel": "Levenslang Leren",
-          "inhoud": "De wereld verandert snel; blijf nieuwsgierig en investeer continu in nieuwe kennis en vaardigheden, vooral op het gebied van technologie en AI."
-        },
-        {
-          "icoon": "images/icons/brain.svg",
-          "titel": "Kritisch Denken",
-          "inhoud": "Ontwikkel het vermogen om informatie van AI-systemen te evalueren, te valideren en te onderscheiden van feiten. Vertrouw niet blindelings op algoritmes."
-        },
-        {
-          "icoon": "images/icons/eye.svg",
-          "titel": "Creativiteit & Innovatie",
-          "inhoud": "AI kan routinetaken overnemen, waardoor er meer ruimte ontstaat voor menselijke creativiteit, probleemoplossing en innovatie. Focus op wat AI (nog) niet kan."
-        },
-        {
-          "icoon": "images/icons/move.svg",
-          "titel": "Samenwerken met AI",
-          "inhoud": "Leer hoe je AI-tools effectief kunt inzetten als assistent en partner. Zie AI als een hulpmiddel dat jouw capaciteiten kan versterken, niet als een vervanging."
-        },
-        {
-          "icoon": "images/icons/check-circle.svg",
-          "titel": "Ethisch Bewustzijn",
-          "inhoud": "Begrijp de ethische implicaties van AI en draag bij aan een verantwoorde ontwikkeling en toepassing. Jouw morele kompas blijft essentieel."
-        }
-      ]
+      "type": "divider"
     },
     {
       "type": "content-text",
       "tekst": "De toekomst met AI is geen vaststaand gegeven, maar een dynamisch landschap dat we samen vormgeven. Door je bewust te zijn van de ontwikkelingen, kritisch te blijven denken en je aan te passen, kun je een actieve en waardevolle rol spelen in deze transformatie. Omarm de mogelijkheden, wees voorbereid op de uitdagingen en draag bij aan een AI-toekomst die de mensheid dient."
+    },
+          {
+        "type": "video-split-screen",
+        "video": {
+          "link": "https://www.youtube.com/embed/ZSaXi13rRo4",
+          "titel": "Of het ons gaat helpen of schaden, hangt af van de keuzes die we nu maken"
+        },
+        "tekst_content": {
+          "titel": "De keuzes die we nu maken bepalen onze AI-toekomst",
+          "paragrafen": [
+            "In dit gesprek bij Eva Jinek wordt de cruciale vraag gesteld: zal AI ons helpen of schaden? Het antwoord hangt af van de keuzes die we vandaag maken. De video belicht hoe de ontwikkeling en implementatie van kunstmatige intelligentie onze maatschappij fundamenteel kan veranderen.",
+            "Voor jou als aanstaande fysiotherapeut is dit extra relevant. De keuzes die nu gemaakt worden over AI-regulatie, privacy en ethiek bepalen hoe AI-tools in de gezondheidszorg zullen worden ingezet. Begrijp je rol in deze discussie en denk mee over hoe we AI verantwoord kunnen inzetten in jouw toekomstige beroep."
+          ]
+        }
+      },
+    {
+      "type": "divider"
+    },
+          {
+        "type": "video-split-screen",
+        "video": {
+          "link": "https://www.youtube.com/embed/12apsMr4K3Y",
+          "titel": "Hoe AI de arbeidsmarkt zal veranderen | VPRO Tegenlicht"
+        },
+        "tekst_content": {
+          "titel": "Jouw toekomst als fysiotherapeut",
+          "paragrafen": [
+            "Deze diepgaande VPRO Tegenlicht documentaire van 45 minuten analyseert de impact van kunstmatige intelligentie op de arbeidsmarkt en de veranderingen die dit teweegbrengt in verschillende sectoren, waaronder de gezondheidszorg.",
+            "Voor jou als aanstaande fysiotherapeut is het belangrijk om te begrijpen hoe AI jouw werkveld zal transformeren. Welke taken zul je kunnen delegeren aan AI? Welke uniek menselijke vaardigheden worden juist belangrijker? Deze video helpt je voorbereiden op de veranderingen die eraan komen."
+          ]
+        }
+      },
+    {
+      "type": "content-text",
+      "tekst": "De discussies over de maatschappelijke impact van AI zijn complex en veelzijdig. De video's hierboven bieden waardevolle perspectieven op de ethische overwegingen en de veranderingen op de arbeidsmarkt. Het is duidelijk dat de ontwikkeling van AI hand in hand moet gaan met een zorgvuldige afweging van de sociale, ethische en economische gevolgen om een toekomst te creëren die voor iedereen gunstig is."
     }
   ],
   "interacties": [

@@ -985,19 +985,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const link = document.getElementById('elearningInfoLink');
     const closeButton = document.querySelector('.modal-close-button');
 
+    // Zorg ervoor dat de modal altijd verborgen start
+    if (modal) {
+        modal.style.display = 'none';
+    }
+
+    // Functie om de modal te openen
+    function openModal() {
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Voorkom scrollen van de achtergrond
+        }
+    }
+
+    // Functie om de modal te sluiten
+    function closeModal() {
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // Herstel scrollen
+            // Markeer dat de modal is gezien
+            localStorage.setItem('modalInfoSeen', 'true');
+        }
+    }
+
+    // Controleer of dit het eerste bezoek is
+    const hasSeenModal = localStorage.getItem('modalInfoSeen');
+    if (!hasSeenModal) {
+        // Wacht even voordat de modal wordt getoond (voor betere UX)
+        setTimeout(() => {
+            openModal();
+        }, 1000); // 1 seconde vertraging
+    }
+
     if (modal && link && closeButton) {
+        // Event listener voor het handmatig openen van de modal
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            modal.style.display = 'block';
+            e.stopPropagation();
+            openModal();
         });
 
-        closeButton.addEventListener('click', () => {
-            modal.style.display = 'none';
+        // Event listener voor het sluiten via de X knop
+        closeButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeModal();
         });
 
+        // Event listener voor het sluiten door buiten de modal te klikken
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
-                modal.style.display = 'none';
+                closeModal();
+            }
+        });
+
+        // Event listener voor ESC toets
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
             }
         });
     }
