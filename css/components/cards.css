@@ -51,7 +51,7 @@
 }
 
 .info-card-content ul {
-    margin-left: 20px;
+    padding-left: 20px;
     margin-bottom: 15px;
     margin-top: 0.5rem;
 }
@@ -500,13 +500,6 @@
     margin: 0;
     font-style: italic;
     color: var(--text-dark-blue-2);
-}
-
-@media (max-width: 768px) {
-    .icon-card .icon-image {
-        width: 50px;
-        height: 50px;
-    }
 }
 
 /* Competency Section */

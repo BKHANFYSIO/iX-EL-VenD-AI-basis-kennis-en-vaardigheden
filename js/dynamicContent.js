@@ -1593,6 +1593,81 @@ function initializeFlashcardInteraction(interactie, chapterNumber) {
             uitlegBlok.style.display = uitlegBlok.style.display === 'none' ? 'block' : 'none';
         });
     }
+
+    // Functie om alle flashcards op dezelfde hoogte in te stellen
+    function normalizeFlashcardHeights() {
+        // Wacht even tot alle content geladen is
+        setTimeout(() => {
+            const tempContainer = document.createElement('div');
+            tempContainer.style.visibility = 'hidden';
+            tempContainer.style.position = 'absolute';
+            tempContainer.style.top = '-9999px';
+            document.body.appendChild(tempContainer);
+
+            let maxHeight = 0;
+            const heights = [];
+
+            // Meet de natuurlijke hoogte van elke kaart
+            interactie.cards.forEach((card, index) => {
+                const voorkant = card.voorzijde || card.term;
+                const achterkant = card.achterzijde || card.uitleg;
+                const herhalingTekst = herhalingen[index] ? `${herhalingen[index]-1}e herhaling` : '';
+                
+                tempContainer.innerHTML = `
+                    <div class="flashcard" style="width: ${stack.offsetWidth}px;">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <p>${voorkant}</p>
+                            </div>
+                            <div class="flashcard-back">
+                                ${herhalingTekst ? `<div class="flashcard-repeat-label">${herhalingTekst}</div>` : ''}
+                                <p class="flashcard-answer-text">${achterkant}</p>
+                                <div class="flashcard-answer-buttons">
+                                    <button class="btn btn-success">Ik wist het</button>
+                                    <button class="btn btn-danger">Ik wist het niet</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                const tempCard = tempContainer.querySelector('.flashcard');
+                const frontHeight = tempCard.querySelector('.flashcard-front').scrollHeight + 80; // padding
+                const backHeight = tempCard.querySelector('.flashcard-back').scrollHeight + 80; // padding
+                const cardHeight = Math.max(frontHeight, backHeight);
+                heights.push(cardHeight);
+                maxHeight = Math.max(maxHeight, cardHeight);
+            });
+
+            document.body.removeChild(tempContainer);
+
+            // Stel de uniforme hoogte in via CSS custom property
+            const flashcardContainer = document.getElementById(baseId);
+            if (flashcardContainer && maxHeight > 0) {
+                flashcardContainer.style.setProperty('--uniform-flashcard-height', `${maxHeight}px`);
+                
+                // Voeg CSS toe om de uniforme hoogte te gebruiken
+                const style = document.createElement('style');
+                style.textContent = `
+                    #${baseId} .flashcard {
+                        height: var(--uniform-flashcard-height) !important;
+                        min-height: unset !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }, 100);
+    }
+
+    // Roep de functie aan bij initialisatie
+    normalizeFlashcardHeights();
+
+    // Herroep bij window resize voor responsive gedrag
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(normalizeFlashcardHeights, 250);
+    });
 }
 
 /**
