@@ -455,9 +455,8 @@
         {
           "titel": "Voorbeeld Podcast",
           "beschrijving": "Een korte podcast over AI-toepassingen, volledig gegenereerd met AI.",
-          "bron": "ElevenLabs",
-          "duur": "2:30",
-          "src": "audio/voorbeeld_podcast.mp3"
+          "meta": "Duur: 2:30 | Bron: ElevenLabs",
+          "bron": "audio/Podcast-NotebookLM-voorbeeld.wav"
         }
       ]
     },

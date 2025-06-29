@@ -2,8 +2,31 @@
   "content": [
     {
       "type": "info-card",
-      "titel": "Een wegwijzer in het snel veranderende AI-landschap",
-      "tekst": "In de vorige hoofdstukken heb je kennisgemaakt met de basisprincipes van kunstmatige intelligentie en hoe je effectief kunt communiceren met AI-modellen. Nu duiken we in de praktische kant: welke tools kun je daadwerkelijk gebruiken? De wereld van AI is constant in beweging. Bijna wekelijks verschijnen er nieuwe, krachtigere taalmodellen, worden bestaande tools uitgebreid met nieuwe functies en verbetert de capaciteit om informatie te verwerken (het 'context window').\n\nDit snelle tempo maakt het lastig om bij te houden welke tool op welk moment 'de beste' is. De ene week loopt een bepaalde chatbot voorop, de volgende week wordt hij ingehaald door een concurrent met een baanbrekende update. Dit 'stuivertje wisselen' betekent dat dé beste tool niet bestaat; de beste tool is de tool die op dat moment het beste past bij jouw specifieke taak of vraag. Dit hoofdstuk geeft je een overzicht van de meest relevante en bruikbare tools van dit moment."
+      "titel": "Jouw AI-gereedschapskist: welke tool voor welke klus?",
+      "tekst": "Oké, je weet nu wat AI is en hoe je ermee praat. Tijd voor de praktijk: welke tools ga je gebruiken? De AI-wereld is net een race waarin de koppositie wekelijks wisselt. De ene chatbot is de ene dag de slimste, de volgende dag is een concurrent alweer sneller en beter. Dé 'beste' tool bestaat dus niet. De vraag is: welke tool is het best voor *jouw* taak op *dit* moment? Of je nu een samenvatting nodig hebt, een trainingsschema wilt opstellen of een anatomische afbeelding zoekt, dit hoofdstuk is je gids. We zetten de belangrijkste tools voor je op een rij en helpen je de juiste te kiezen uit je steeds groter wordende digitale gereedschapskist."
+    },
+    {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h3_audio_1",
+              "titel": "Podcast: AI Tools, wat kies ik?",
+              "beschrijving": "Een audio-versie van de introductie op dit hoofdstuk. Krijg een overzicht van de belangrijkste AI-tools en leer welke je wanneer kunt inzetten.",
+              "bron": "audio/H3-AI-Tools-wat-kies-ik.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
     },
     {
       "type": "info-card",

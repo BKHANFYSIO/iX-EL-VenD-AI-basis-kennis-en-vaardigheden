@@ -6,6 +6,29 @@
       "tekst": "Nu we weten wat AI is en welke chatbots en tools er beschikbaar zijn, komen we aan bij misschien wel het meest essentiële onderdeel van AI: goed kunnen prompten. Het gaat hierbij niet alleen om de structuur van de prompt, maar ook om je eigen helderheid over wat je wilt bereiken. Als je zelf (nog) niet precies weet wat je wilt bereiken, wordt het lastig om een goede prompt te maken. Maar ook daar kan AI je bij helpen. Het helpt enorm als je zelf al enige kennis hebt over het onderwerp om tot een goede prompt te komen die leidt tot een waardevolle output."
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h4_audio_1",
+              "titel": "Podcast: Prompten kun je leren",
+              "beschrijving": "Een audio-versie van de introductie op dit hoofdstuk. Leer de basisprincipes van effectief prompten om betere resultaten uit AI-tools te halen.",
+              "bron": "audio/H4-prompten-kan-je-leren-podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "Kernprincipes van Effectief Prompten"
     },

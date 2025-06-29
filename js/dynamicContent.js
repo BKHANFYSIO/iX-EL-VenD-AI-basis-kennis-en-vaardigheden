@@ -757,7 +757,7 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                                     <p>${item.beschrijving}</p>
                                     <div class="audio-player">
                                         <audio controls>
-                                            <source src="${item.src}" type="audio/mpeg">
+                                            <source src="${item.bron}" type="audio/wav">
                                             Je browser ondersteunt geen audio element.
                                         </audio>
                                     </div>
@@ -1132,27 +1132,40 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                 const toggleId = `accordion-toggle-${chapterNumber}-${currentBlockId}`;
                 const contentId = `accordion-content-${chapterNumber}-${currentBlockId}`;
                 
+                let accordionContentHtml = '';
+                if (block.introductie) {
+                    accordionContentHtml += `<p>${block.introductie}</p>`;
+                }
+
+                if (block.content && Array.isArray(block.content)) {
+                    // Controleer of de content generieke componenten zijn (hebben een 'type' property)
+                    if (block.content[0] && block.content[0].type) {
+                        accordionContentHtml += renderGenericChapterContent(block.content, chapterNumber, `${currentBlockId}-`);
+                    } else { // Fallback naar de originele lijst-weergave
+                        accordionContentHtml += `
+                            <ol class="accordion-list" style="margin-bottom: 0;">
+                                ${block.content.map(item => `
+                                    <li style="margin-bottom: 1.2em;">
+                                        <strong>${item.titel || item.naam}:</strong> ${item.beschrijving}
+                                        ${item.subpunten && item.subpunten.length > 0 ? `
+                                            <ul class="accordion-subpunten" style="margin-top: 0.5em; margin-bottom: 0.5em; margin-left: 1.5em;">
+                                                ${item.subpunten.map(sub => `<li style="list-style-type: disc; margin-bottom: 0.2em;">${sub}</li>`).join('')}
+                                            </ul>
+                                        ` : ''}
+                                    </li>
+                                `).join('')}
+                            </ol>
+                        `;
+                    }
+                }
+                
                 html += `
                     <div class="accordion">
                         <button class="accordion-toggle" id="${toggleId}" aria-expanded="false" data-accordion-target="${contentId}">
                             <span class="triangle">&#9654;</span> ${block.titel}
                         </button>
                         <div class="accordion-content" id="${contentId}">
-                            ${block.introductie ? `<p>${block.introductie}</p>` : ''}
-                            ${block.content && Array.isArray(block.content) ? `
-                                <ol class="accordion-list" style="margin-bottom: 0;">
-                                    ${block.content.map(item => `
-                                        <li style="margin-bottom: 1.2em;">
-                                            <strong>${item.titel || item.naam}:</strong> ${item.beschrijving}
-                                            ${item.subpunten && item.subpunten.length > 0 ? `
-                                                <ul class="accordion-subpunten" style="margin-top: 0.5em; margin-bottom: 0.5em; margin-left: 1.5em;">
-                                                    ${item.subpunten.map(sub => `<li style="list-style-type: disc; margin-bottom: 0.2em;">${sub}</li>`).join('')}
-                                                </ul>
-                                            ` : ''}
-                                        </li>
-                                    `).join('')}
-                                </ol>
-                            ` : ''}
+                            ${accordionContentHtml}
                         </div>
                     </div>
                 `;

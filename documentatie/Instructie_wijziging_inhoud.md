@@ -1061,6 +1061,39 @@ Gebruik `<section class="section">` **alleen** als je bewust een smallere, gecen
 - Gebruik de standaard layout voor alle hoofdcontent van een hoofdstuk.
 - Gebruik `<section class="section">` alleen voor onderdelen die extra focus of een smallere opmaak nodig hebben.
 
+### Accordion Component (Uitklapbaar paneel)
+
+Het `accordion` component is een flexibel uitklapbaar paneel dat gebruikt kan worden om content te verbergen tot de gebruiker erop klikt. Dit is ideaal voor optionele informatie, achtergrondmateriaal, of, zoals in Hoofdstuk 1, een podcast.
+
+**Belangrijkste feature:** De `content` array van een accordeon kan elke ander standaard content-component bevatten. Je kunt er dus tekstblokken, afbeeldingen, video's en zelfs audio-spelers in nesten.
+
+**JSON Voorbeeld (tekstblok met audiospeler in een accordeon):**
+```json
+{
+  "type": "accordion",
+  "titel": "Podcast: Beluister de introductie van dit hoofdstuk",
+  "content": [
+    {
+      "type": "content-text",
+      "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister dan de introductie als podcast."
+    },
+    {
+      "type": "audio-grid",
+      "kolommen": 1,
+      "items": [
+        {
+          "id": "h1_audio_1",
+          "titel": "Podcast: Introductie op AI in de Fysiotherapie",
+          "beschrijving": "Een audio-versie van de introductie op deze e-learning.",
+          "bron": "audio/H1-introductie-podcast.wav",
+          "meta": ""
+        }
+      ]
+    }
+  ]
+}
+```
+
 <div class="icon-card">
     <div class="icon-subtitle">Hier de titel (optioneel)</div>
     <div class="icon-image">

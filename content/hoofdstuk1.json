@@ -7,6 +7,29 @@
       "tekst": "Welkom bij de e-learning \"AI basiskennis en vaardigheden\"! De eerste van drie elearnings over AI in de context van jouw studie. Je staat aan het begin van een superinteressante ontdekkingsreis. Een reis die je klaarstoomt voor een toekomst waarin Kunstmatige Intelligentie (AI) een mega-belangrijke rol speelt in de zorg, en dus ook in jouw vakgebied: fysiotherapie. Misschien denk je nu aan sciencefictionfilms, maar AI is dichterbij dan je denkt en verandert nu al hoe we werken, leren en zorg verlenen."
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h1_audio_1",
+              "titel": "Podcast: Introductie op AI in de Fysiotherapie",
+              "beschrijving": "Een audio-versie van de introductie op deze e-learning. Ontdek waarom AI nu al onmisbaar is voor de fysiotherapeut van de toekomst.",
+              "bron": "audio/H1-introductie-podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "Stel je eens voor…"
     },

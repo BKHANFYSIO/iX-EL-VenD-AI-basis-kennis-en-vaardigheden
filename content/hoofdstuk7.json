@@ -7,6 +7,29 @@
       "tekst": "Nu je de basis van AI begrijpt, is het tijd voor de grote vraag: wat betekent dit allemaal voor jouw toekomst? De AI-revolutie is geen verre droom meer - het gebeurt NU. Terwijl jij studeert, verandert de wereld om je heen razendsnel. Banen verdwijnen, nieuwe ontstaan, en de manier waarop we werken wordt compleet anders. Als aanstaande fysiotherapeut sta je aan de vooravond van een carrière die er totaal anders uit zal zien dan die van je voorgangers. Ben je er klaar voor?"
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h7_audio_1",
+              "titel": "Podcast: AI in de toekomst",
+              "beschrijving": "Een audio-versie van de inhoud van dit hoofdstuk. Ontdek hoe AI de toekomst van de fysiotherapie en de maatschappij zal vormgeven.",
+              "bron": "audio/H7-AI-in-de-toekomst-podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "De Exponentiële Groei van AI"
     },

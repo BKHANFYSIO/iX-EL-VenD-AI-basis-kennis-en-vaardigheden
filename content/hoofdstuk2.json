@@ -2,6 +2,34 @@
   "content": [
     {
       "type": "info-card",
+      "titel": "Wat is AI nu eigenlijk?",
+      "tekst": "In het vorige hoofdstuk heb je gezien waarom AI belangrijk is. Maar wat is het nu precies? Als je tien experts vraagt wat AI is, krijg je waarschijnlijk tien verschillende antwoorden. De definitie is breed en verandert continu. In deze module gebruiken we een praktische en eenvoudige definitie."
+    },
+    {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h2_audio_1",
+              "titel": "Podcast: Wat is AI nu eigenlijk?",
+              "beschrijving": "Een audio-versie van de introductie op dit hoofdstuk. Ontdek de verschillende definities en vormen van AI.",
+              "bron": "audio/H2-Wat-is-AI-eigenlijk-podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "info-card",
       "titel": "AI onder de motorkap: Wat is het écht?",
       "tekst": "In hoofdstuk 1 heb je gezien wat AI kan betekenen. Maar om als professional echt de regie te houden, is het niet genoeg om AI alleen te kunnen <strong>toepassen</strong>. <strong>Je moet ook snappen <strong>hoe het werkt</strong>, waarom het bepaalde keuzes maakt en waar de grenzen liggen.</strong> Deze kennis is essentieel om een kritische denker te worden in plaats van een passieve gebruiker. In dit hoofdstuk leggen we daarom de basis: wat is die mysterieuze 'AI' nu eigenlijk precies?"
     },

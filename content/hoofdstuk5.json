@@ -7,6 +7,29 @@
       "tekst": "In dit hoofdstuk duiken we dieper in de creatieve en praktische toepassingen van AI, verder dan alleen tekstgeneratie. We verkennen hoe je AI kunt inzetten om visuele content te creëren, te 'vibe-coden' en zelfs kleine tools te bouwen met behulp van Generative Pre-trained Transformers (GPT's). Dit document dient als jouw gids voor het benutten van AI's creatieve kracht."
     },
     {
+      "type": "accordion",
+      "titel": "Podcast: Beluister de inhoud van dit hoofdstuk",
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Liever luisteren dan lezen, of de stof van dit hoofdstuk nog eens rustig herhalen? Beluister de inhoud van dit hoofdstuk als podcast. Let op: de interactieve opdrachten onderaan de pagina blijven een essentieel onderdeel voor het afronden van het hoofdstuk en het verdienen van je certificaat."
+        },
+        {
+          "type": "audio-grid",
+          "kolommen": 1,
+          "items": [
+            {
+              "id": "h5_audio_1",
+              "titel": "Podcast: Creatief zijn en bouwen met AI",
+              "beschrijving": "Een audio-versie van de introductie op dit hoofdstuk. Ontdek hoe je AI kunt gebruiken als creatieve partner en bouwer.",
+              "bron": "audio/H5-Creatief-en-bouwen-met-AI-Podcast.wav",
+              "meta": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "section-title",
       "titel": "Media-AI (afbeeldingen/video/audio)"
     },
@@ -81,7 +104,7 @@
           "alt": "Een realistische afbeelding van een fysiotherapie oefenzaal.", 
           "onderschrift": "Voorbeeld van een realistische afbeelding voor een praktijkfolder",
           "bron": {
-            "naam": "ChatGPT DALL-E"
+            "naam": "Google Imagen 4"
           }
         }
       ]
