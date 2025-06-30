@@ -68,7 +68,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Je ziet het, AI is geen ver-van-je-bed-show, maar een ontwikkeling die de fysiotherapie en jouw manier van studeren razendsnel verandert. Het is niet de vraag <strong>of</strong> je AI gaat gebruiken, maar <strong>hoe</strong> je dat effectief en slim gaat doen."
+      "tekst": "Je ziet het, AI is geen ver-van-je-bed-show, maar een ontwikkeling die de fysiotherapie en jouw manier van studeren razendsnel verandert. Het is niet de vraag <strong>of</strong> je AI gebruikt, maar <strong>hoe</strong> je dat effectief en slim gaat doen."
     },
     {
       "type": "accent-blok",
@@ -81,12 +81,12 @@
         },
         {
       "type": "accent-blok",
-      "variant": "weetje",
-      "titel": "Fun fact (herkenbaar?):",
-      "tekst": "Wist je dat negen op de tien Avansstudenten ooit AI heeft gebruikt? Onder hbo/wo-studenten gebruikt zo'n 60% al tools zoals ChatGPT. AI is dus al overal om ons heen.",
+      "variant": "statistiek",
+      "titel": "Explosieve Groei: AI in het Onderwijs",
+      "tekst": "Uit een onderzoek van februari 2025 blijkt dat maar liefst 92% van de studenten AI gebruikt voor hun studie. Dit toont een enorme adaptatiesnelheid; binnen twee jaar na de lancering van ChatGPT is AI-gebruik de norm geworden in het onderwijs.",
       "bron": {
-        "naam": "Intern onderzoek Avans Hogeschool",
-        "url": "https://www.avans.nl/over-avans/nieuws/details%3Fid%3Durn:han:bin:prg:pub:22261"
+        "naam": "The Guardian (Feb 2025)",
+        "url": "https://www.theguardian.com/education/2025/feb/26/uk-universities-warned-to-stress-test-assessments-as-92-of-students-use-ai?utm_source=chatgpt.com"
         }
     },
     {
@@ -108,11 +108,11 @@
       "kaarten": [
         {
           "titel": "Weerstand = Groei",
-          "beschrijving": "Net zoals je spieren weerstand nodig hebben om sterker te worden (denk aan *progressive overload*), heeft je brein uitdagingen nodig om te groeien. Dit noemen we 'desirable difficulties': een beetje moeite doen is juist supergoed voor je leerproces!"
+          "beschrijving": "Net zoals je spieren weerstand nodig hebben om sterker te worden (denk aan <strong>progressive overload</strong>), heeft je brein uitdagingen nodig om te groeien. Dit noemen we 'desirable difficulties': een beetje moeite doen is juist supergoed voor je leerproces!"
         },
         {
           "titel": "Pas op voor de 'E-bike Illusie'",
-          "beschrijving": "AI-tools kunnen voelen als een e-bike. Ze brengen je supersnel van A naar B, bijvoorbeeld door een tekst voor je samen te vatten. Klinkt handig, en dat is het vaak ook! Maar… als je *alleen* maar op die e-bike zit en nooit zelf trapt, bouw je geen conditie op. Dit noemen we de 'illusion of fluency': het lijkt alsof je de stof beheerst, maar je mist de diepgang en de echte 'spierkracht' in je brein."
+          "beschrijving": "AI-tools kunnen voelen als een e-bike. Ze brengen je supersnel van A naar B, bijvoorbeeld door een tekst voor je samen te vatten. Klinkt handig, en dat is het vaak ook! Maar… als je <strong>alleen</strong> maar op die e-bike zit en nooit zelf trapt, bouw je geen conditie op. Dit noemen we de 'illusion of fluency': het lijkt alsof je de stof beheerst, maar je mist de diepgang en de echte 'spierkracht' in je brein."
         },
         {
           "titel": "Jij blijft aan het stuur",
@@ -156,7 +156,7 @@
         },
         {
           "type": "content-text",
-          "tekst": "Onthoud: zowel leren werken met AI als effectief leren leren kost tijd — vooral dat laatste. Begin klein, blijf herhalen en bouw stap voor stap aan je kennis en vaardigheden. Deze modules begeleiden je daarbij."
+          "tekst": "Onthoud: zowel leren werken met AI als leren effectief te leren kost tijd — vooral dat laatste. Begin klein, blijf herhalen en bouw stap voor stap aan je kennis en vaardigheden. Deze modules begeleiden je daarbij."
         }
       ]
     },

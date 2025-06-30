@@ -21,7 +21,7 @@
             {
               "id": "h5_audio_1",
               "titel": "Podcast: Creatief zijn en bouwen met AI",
-              "beschrijving": "Een audio-versie van de introductie op dit hoofdstuk. Ontdek hoe je AI kunt gebruiken als creatieve partner en bouwer.",
+              "beschrijving": "Ontdek hoe je AI kunt gebruiken als creatieve partner en bouwer.",
               "bron": "audio/H5-Creatief-en-bouwen-met-AI-Podcast.wav",
               "meta": ""
             }
@@ -31,7 +31,7 @@
     },
     {
       "type": "section-title",
-      "titel": "Media-AI (afbeeldingen/video/audio)"
+      "titel": "Media-AI (afbeeldingen/&shy;video/&shy;audio)"
     },
     {
       "type": "content-text",

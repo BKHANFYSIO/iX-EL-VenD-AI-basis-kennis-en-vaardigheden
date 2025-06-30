@@ -18,7 +18,7 @@
 
 .content-area {
     flex: 1;
-    margin-left: 270px; /* Should match sidebar width */
+    /* margin-left wordt nu via media query ingesteld */
     min-height: 100vh;
     background-color: var(--light-gray);
     position: relative;
@@ -26,6 +26,8 @@
     flex-direction: column;
     padding: 0;
     box-sizing: border-box;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .content-wrapper {
@@ -85,6 +87,7 @@ header {
   margin-top: 40px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--medium-gray);
+  overflow-wrap: break-word;
 }
 
 .section-content {
@@ -112,6 +115,12 @@ header {
 }
 
 /* Responsive Layout Adjustments */
+@media (min-width: 901px) {
+    .content-area {
+        margin-left: 270px; /* Alleen marge op desktop */
+    }
+}
+
 @media (max-width: 900px) {
     .content-area {
         margin-left: 0 !important;

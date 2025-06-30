@@ -118,6 +118,11 @@
         top: 0.5rem;
         right: 0.5rem;
     }
+
+    .accordion-content ul,
+    .accordion-content ol {
+        padding-left: 10px; /* Nog minder inspringing voor bullets en nummers op mobiel */
+    }
 }
 
 /* ==========================================================================

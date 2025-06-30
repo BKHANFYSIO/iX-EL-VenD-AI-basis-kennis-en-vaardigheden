@@ -917,6 +917,11 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
     .content-section {
         padding: 1rem;
     }
+
+    .results-summary {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
 
 #show-options-block.initial-height {
