@@ -4,13 +4,14 @@
     "title": "Hoofdstuk 2: Wat is AI?",
     "text": "Je hebt geleerd dat een Large Language Model (LLM) zoals ChatGPT niet echt 'redeneert'. Hoe komt het dan tot een antwoord?",
     "options": [
-      "Het zoekt het antwoord op in een grote, feitelijke database.",
+      "Het zoekt het antwoord op in een grote, ingebouwde database met feiten.",
       "Het voorspelt statistisch het meest waarschijnlijke volgende woord in een zin, gebaseerd op patronen in de trainingsdata.",
-      "Het kopieert en plakt een stuk tekst van een website zoals Wikipedia.",
-      "Het stelt zelf een logische redenering op, net als een mens."
+      "Het analyseert de betekenis van woorden en redeneert logisch naar een conclusie.",
+      "Het combineert informatie uit meerdere bronnen om een zo compleet mogelijk antwoord te geven."
     ],
     "correctAnswer": 1,
-    "feedback": "Correct! Een LLM is een geavanceerde 'papegaai' die op basis van wiskundige kansberekening het meest logische vervolg van een zin voorspelt. Het begrijpt de inhoud niet, maar bootst taal na."
+    "feedbackCorrect": "Correct! Een LLM is een geavanceerde 'papegaai' die op basis van wiskundige kansberekening het meest logische vervolg van een zin voorspelt. Het begrijpt de inhoud niet, maar bootst taal na.",
+    "feedbackIncorrect": "Niet helemaal. Een LLM is een geavanceerde 'papegaai' die op basis van wiskundige kansberekening het meest logische vervolg van een zin voorspelt. Het begrijpt de inhoud niet, maar bootst taal na."
   },
   {
     "id": "quiz_mc_2",
@@ -23,227 +24,245 @@
       "De prompt was niet specifiek genoeg."
     ],
     "correctAnswer": 2,
-    "feedback": "Juist! Het 'context window' is het 'kortetermijngeheugen' van de AI. Als een gesprek te lang wordt, valt de oudste informatie buiten dit geheugen en wordt het vergeten."
+    "feedbackCorrect": "Juist! Het 'context window' is het 'kortetermijngeheugen' van de AI. Als een gesprek te lang wordt, valt de oudste informatie buiten dit geheugen en wordt het vergeten.",
+    "feedbackIncorrect": "Niet correct. Het 'context window' is het 'kortetermijngeheugen' van de AI. Als een gesprek te lang wordt, valt de oudste informatie buiten dit geheugen en wordt het vergeten."
   },
   {
     "id": "quiz_mc_3",
     "title": "Hoofdstuk 4: Leren Prompten",
     "text": "Wat is de kernboodschap van het 'Garbage in, Garbage out' principe bij het schrijven van prompts?",
     "options": [
-      "Dat je de AI niet moet voeden met onware informatie (garbage).",
-      "Dat een vage of onduidelijke prompt (input) leidt tot een onbruikbaar of slecht antwoord (output).",
-      "Dat je geen persoonlijke 'garbage' data in de AI moet stoppen.",
-      "Dat je de output van AI altijd moet zien als potentiële 'garbage'."
+      "AI-systemen kunnen geen onderscheid maken tussen betrouwbare en onbetrouwbare informatie.",
+      "Een vage of onduidelijke prompt (input) leidt tot een onbruikbaar of slecht antwoord (output).",
+      "Persoonlijke gegevens in AI-prompts kunnen leiden tot privacy-schendingen.",
+      "De output van AI moet altijd kritisch gecontroleerd worden op juistheid."
     ],
     "correctAnswer": 1,
-    "feedback": "Precies! De kwaliteit van je output is direct afhankelijk van de kwaliteit van je input. Een heldere, specifieke prompt is de sleutel tot een goed resultaat."
+    "feedbackCorrect": "Precies! De kwaliteit van je output is direct afhankelijk van de kwaliteit van je input. Een heldere, specifieke prompt is de sleutel tot een goed resultaat.",
+    "feedbackIncorrect": "Niet juist. De kwaliteit van je output is direct afhankelijk van de kwaliteit van je input. Een heldere, specifieke prompt is de sleutel tot een goed resultaat."
   },
   {
     "id": "quiz_mc_4",
     "title": "Hoofdstuk 4: Leren Prompten",
     "text": "Waarom is het effectief om een AI een specifieke rol te geven in je prompt (bijv. 'Gedraag je als een expert-docent fysiotherapie')?",
     "options": [
-      "Het maakt de AI sneller in het geven van een antwoord.",
-      "Het dwingt de AI om alleen wetenschappelijke bronnen te gebruiken.",
+      "Het maakt de AI sneller en efficiënter.",
+      "Het activeert specifieke kennisdomeinen in het AI-model voor meer gerichte antwoorden.",
       "Het helpt de AI om de toon, stijl en het detailniveau van het antwoord aan te passen aan de gewenste context.",
-      "Het is de enige manier om te voorkomen dat de AI gaat hallucineren."
+      "Het is nodig om hallucinaties en onjuiste informatie te voorkomen."
     ],
     "correctAnswer": 2,
-    "feedback": "Correct! Door een rol te specificeren, stuur je de AI om te antwoorden vanuit een bepaald perspectief, wat de relevantie en bruikbaarheid van de output enorm verhoogt."
+    "feedbackCorrect": "Correct! Door een rol te specificeren, stuur je de AI om te antwoorden vanuit een bepaald perspectief, wat de relevantie en bruikbaarheid van de output enorm verhoogt.",
+    "feedbackIncorrect": "Niet helemaal. Door een rol te specificeren, stuur je de AI om te antwoorden vanuit een bepaald perspectief, wat de relevantie en bruikbaarheid van de output enorm verhoogt."
   },
   {
     "id": "quiz_mc_5",
     "title": "Hoofdstuk 4: Leren Prompten",
     "text": "Je eerste prompt levert niet het gewenste resultaat op. Wat is volgens de principes van effectief prompten de beste vervolgstap?",
     "options": [
+      "Een andere AI-chatbot proberen met dezelfde vraag.",
       "De vraag volledig opnieuw formuleren in een nieuw gesprek.",
-      "Een andere AI-chatbot proberen met exact dezelfde vraag.",
-      "De output als mislukt beschouwen en het zelf doen.",
-      "Een vervolg-prompt (iteratie) geven om de output aan te passen, te verfijnen of een andere invalshoek te vragen."
+      "Het resultaat accepteren en zelf de ontbrekende informatie aanvullen.",
+      "Een vervolg-prompt geven om de output te verfijnen of een andere invalshoek te vragen."
     ],
     "correctAnswer": 3,
-    "feedback": "Inderdaad! Itereren is een kernvaardigheid. Je werkt samen met de AI door de output te evalueren en bij te sturen met vervolgprompts om stapsgewijs tot het beste resultaat te komen."
+    "feedbackCorrect": "Inderdaad! Itereren is een kernvaardigheid. Je werkt samen met de AI door de output te evalueren en bij te sturen met vervolgprompts om stapsgewijs tot het beste resultaat te komen.",
+    "feedbackIncorrect": "Dat is niet de beste aanpak. Itereren is een kernvaardigheid. Je werkt samen met de AI door de output te evalueren en bij te sturen met vervolgprompts om stapsgewijs tot het beste resultaat te komen."
   },
   {
     "id": "quiz_mc_6",
     "title": "Hoofdstuk 5: Creëren met AI",
     "text": "Het concept 'vibe-coding' werd geïntroduceerd in de e-learning. Wat stelt deze techniek je in staat om te doen?",
     "options": [
-      "Muziek en 'vibes' te componeren met AI.",
-      "De 'vibe' of sfeer van een gegenereerde afbeelding aan te passen.",
+      "Automatisch muziek en audio-content genereren op basis van stemming en sfeer.",
+      "De visuele stijl en kleurenschema van AI-gegenereerde afbeeldingen aanpassen.",
       "In gewone taal te beschrijven welke app of tool je wilt bouwen, waarna de AI de code schrijft.",
-      "Een AI-assistent te bouwen die je helpt met het schrijven van social media posts."
+      "Conversatie-interfaces bouwen die de juiste 'vibe' en toon aannemen voor gebruikers."
     ],
     "correctAnswer": 2,
-    "feedback": "Klopt! Vibe-coding is het proces waarbij je een idee of 'vibe' beschrijft, en de AI dit vertaalt naar werkende code voor een applicatie of website."
+    "feedbackCorrect": "Klopt! Vibe-coding is het proces waarbij je een idee of 'vibe' beschrijft, en de AI dit vertaalt naar werkende code voor een applicatie of website.",
+    "feedbackIncorrect": "Niet correct. Vibe-coding is het proces waarbij je een idee of 'vibe' beschrijft, en de AI dit vertaalt naar werkende code voor een applicatie of website."
   },
   {
     "id": "quiz_mc_7",
     "title": "Hoofdstuk 6: Kansen & Risico's",
     "text": "Je vraagt een AI-chatbot om 5 wetenschappelijke artikelen over een onderwerp. De AI geeft je 5 perfect opgemaakte bronvermeldingen, maar later blijken de artikelen en de genoemde auteurs helemaal niet te bestaan. Hoe noem je dit fenomeen?",
     "options": [
-      "Een 'bias' in het model.",
-      "Een 'context window' fout.",
+      "Een systematische 'bias' in het trainingsmateriaal.",
+      "Een 'context window' overschrijding tijdens het proces.",
       "Een 'hallucinatie'.",
-      "Een 'prompt injection'."
+      "Een 'prompt injection' aanval op het systeem."
     ],
     "correctAnswer": 2,
-    "feedback": "Correct. Een 'hallucinatie' is wanneer een AI overtuigend onjuiste of compleet verzonnen informatie presenteert alsof het een feit is."
+    "feedbackCorrect": "Correct. Een 'hallucinatie' is wanneer een AI overtuigend onjuiste of compleet verzonnen informatie presenteert alsof het een feit is.",
+    "feedbackIncorrect": "Niet juist. Een 'hallucinatie' is wanneer een AI overtuigend onjuiste of compleet verzonnen informatie presenteert alsof het een feit is."
   },
   {
     "id": "quiz_mc_8",
     "title": "Hoofdstuk 6: Kansen & Risico's",
     "text": "Waarom mag je NOOIT herleidbare patiëntgegevens invoeren in een publieke, cloud-gebaseerde AI-tool zoals ChatGPT?",
     "options": [
-      "Omdat de AI de medische termen misschien niet begrijpt.",
-      "Omdat de ingevoerde data gebruikt kan worden om het model te trainen en je de controle over de gegevens verliest, wat een schending is van de privacywetgeving (AVG).",
-      "Omdat de AI dan een verkeerde diagnose kan stellen.",
-      "Omdat dit de AI-tool trager maakt voor andere gebruikers."
+      "Omdat AI-modellen niet getraind zijn op medische terminologie en daarom foute interpretaties maken.",
+      "Omdat je de controle over de gegevens verliest en dit de AVG schendt.",
+      "Omdat de AI dan onbetrouwbare diagnoses kan stellen die patiëntveiligheid bedreigen.",
+      "Omdat grote datavolumes de verwerkingssnelheid van AI-systemen significant vertraagt."
     ],
     "correctAnswer": 1,
-    "feedback": "Helemaal juist. Het delen van patiëntgegevens met externe partijen zonder expliciete toestemming is een serieuze schending van de privacywetgeving (AVG). Werk altijd met volledig geanonimiseerde of fictieve data."
+    "feedbackCorrect": "Helemaal juist. Het delen van patiëntgegevens met externe partijen zonder expliciete toestemming is een serieuze schending van de privacywetgeving (AVG). Werk altijd met volledig geanonimiseerde of fictieve data.",
+    "feedbackIncorrect": "Niet correct. Het delen van patiëntgegevens met externe partijen zonder expliciete toestemming is een serieuze schending van de privacywetgeving (AVG). Werk altijd met volledig geanonimiseerde of fictieve data."
   },
   {
     "id": "quiz_mc_9",
     "title": "Hoofdstuk 6: Kansen & Risico's",
     "text": "Wat is het belangrijkste verschil tussen 'Human in the Loop' en 'Human in the Lead'?",
     "options": [
-      "'Human in the Loop' is voor beginners, 'Human in the Lead' is voor experts.",
-      "'Human in the Loop' is de AI controleren, terwijl 'Human in the Lead' betekent dat je de eindverantwoordelijkheid neemt en de AI strategisch inzet als hulpmiddel.",
-      "'Human in the Loop' is verplicht volgens de wet, 'Human in the Lead' is een aanbeveling.",
-      "'Human in the Loop' gebruik je voor tekst, 'Human in the Lead' voor het bouwen van apps."
+      "'Human in the Loop' is geschikt voor beginners, 'Human in the Lead' vereist meer expertise.",
+      "'Human in the Loop' betekent controleren, 'Human in the Lead' betekent strategisch leiden en eindverantwoordelijkheid nemen.",
+      "'Human in the Loop' is wettelijk verplicht, 'Human in the Lead' is een vrijblijvende best practice.",
+      "'Human in the Loop' gaat over tekstverwerking, 'Human in the Lead' over applicatieontwikkeling."
     ],
     "correctAnswer": 1,
-    "feedback": "Precies! 'Human in the Loop' is de basis: je controleert de output. 'Human in the Lead' is de professionele standaard: jij houdt de regie, neemt de eindbeslissing en bent verantwoordelijk."
+    "feedbackCorrect": "Precies! 'Human in the Loop' is de basis: je controleert de output. 'Human in the Lead' is de professionele standaard: jij houdt de regie, neemt de eindbeslissing en bent verantwoordelijk.",
+    "feedbackIncorrect": "Niet helemaal. 'Human in the Loop' is de basis: je controleert de output. 'Human in the Lead' is de professionele standaard: jij houdt de regie, neemt de eindbeslissing en bent verantwoordelijk."
   },
   {
     "id": "quiz_mc_10",
     "title": "Hoofdstuk 6: Kansen & Risico's",
     "text": "Het risico van 'deskilling' of 'cognitive offloading' wordt besproken. Wat houdt dit risico in voor een fysiotherapeut?",
     "options": [
-      "Dat AI-tools te duur worden om te gebruiken.",
-      "Dat je door te veel te leunen op AI, je eigen fundamentele vaardigheden, zoals klinisch redeneren, kunt verliezen.",
-      "Dat je geen nieuwe vaardigheden meer hoeft te leren omdat de AI alles doet.",
-      "Dat de AI niet vaardig genoeg is om complexe taken uit te voeren."
+      "Dat AI-implementatie te kostbaar wordt voor kleinere fysiotherapiepraktijken.",
+      "Dat je eigen klinische redeneervaardigheden kunnen afnemen door overmatige AI-afhankelijkheid.",
+      "Dat professionele ontwikkeling overbodig wordt omdat AI alle expertise levert.",
+      "Dat AI-systemen onvoldoende accuraat zijn voor complexe klinische besluitvorming."
     ],
     "correctAnswer": 1,
-    "feedback": "Inderdaad. Wanneer je denkwerk (cognitie) stelselmatig uitbesteedt (offloading), loop je het risico dat je eigen professionele vaardigheden en kritische denkvermogen afnemen."
+    "feedbackCorrect": "Inderdaad. Wanneer je denkwerk (cognitie) stelselmatig uitbesteedt (offloading), loop je het risico dat je eigen professionele vaardigheden en kritische denkvermogen afnemen.",
+    "feedbackIncorrect": "Dat is niet juist. Wanneer je denkwerk (cognitie) stelselmatig uitbesteedt (offloading), loop je het risico dat je eigen professionele vaardigheden en kritische denkvermogen afnemen."
   },
   {
     "id": "quiz_mc_11",
     "title": "Hoofdstuk 1: De Basis",
     "text": "Wat is, volgens de introductie, een van de belangrijkste redenen waarom AI-geletterdheid essentieel is voor jou als toekomstig fysiotherapeut?",
     "options": [
-      "Om zelf complexe AI-modellen te kunnen programmeren.",
-      "Om voorbereid te zijn op een toekomst waarin AI-tools je in staat stellen om efficiënter te werken en je meer te richten op de patiënt.",
-      "Omdat de opleiding het verplicht stelt voor alle studenten.",
-      "Om alle administratieve taken volledig te kunnen automatiseren zonder eigen controle."
+      "Om zelf complexe AI-algoritmes en machine learning modellen te kunnen ontwikkelen.",
+      "Om efficiënter te werken en meer tijd te hebben voor patiëntcontact.",
+      "Omdat deze vaardigheden verplicht zijn gesteld door de beroepsvereniging voor fysiotherapeuten.",
+      "Om alle administratieve en diagnostische processen volledig te automatiseren."
     ],
     "correctAnswer": 1,
-    "feedback": "Juist! Het doel is niet om de technologie blindelings te gebruiken, maar om het in te zetten als een hefboom voor efficiëntie en kwaliteitsverbetering, zodat er meer tijd overblijft voor complex redeneren en menselijk contact."
+    "feedbackCorrect": "Juist! Het doel is niet om de technologie blindelings te gebruiken, maar om het in te zetten als een hefboom voor efficiëntie en kwaliteitsverbetering, zodat er meer tijd overblijft voor complex redeneren en menselijk contact.",
+    "feedbackIncorrect": "Niet correct. Het doel is niet om de technologie blindelings te gebruiken, maar om het in te zetten als een hefboom voor efficiëntie en kwaliteitsverbetering, zodat er meer tijd overblijft voor complex redeneren en menselijk contact."
   },
   {
     "id": "quiz_mc_12",
     "title": "Hoofdstuk 2: Wat is AI?",
     "text": "De AI-systemen die we vandaag de dag gebruiken, zoals ChatGPT of een app voor beeldanalyse, vallen onder een specifieke categorie. Welke?",
     "options": [
-      "Artificial General Intelligence (AGI), omdat ze breed inzetbaar zijn.",
-      "Artificial Super Intelligence (ASI), omdat ze beter zijn dan mensen in hun taak.",
+      "Artificial General Intelligence (AGI), vanwege hun brede toepassingsmogelijkheden.",
+      "Artificial Super Intelligence (ASI), omdat ze menselijke prestaties overtreffen.",
       "Narrow AI, omdat ze gespecialiseerd zijn in één of enkele specifieke taken.",
-      "Humanoid AI, omdat ze menselijke interactie nabootsen."
+      "Humanoid AI, vanwege hun natuurlijke conversatie-interface."
     ],
     "correctAnswer": 2,
-    "feedback": "Correct! Huidige AI is 'Narrow AI' (smalle AI), wat betekent dat het heel goed is in een specifieke, afgebakende taak, maar niet het brede, menselijke denkvermogen (AGI) bezit."
+    "feedbackCorrect": "Correct! Huidige AI is 'Narrow AI' (smalle AI), wat betekent dat het heel goed is in een specifieke, afgebakende taak, maar niet het brede, menselijke denkvermogen (AGI) bezit.",
+    "feedbackIncorrect": "Niet juist. Huidige AI is 'Narrow AI' (smalle AI), wat betekent dat het heel goed is in een specifieke, afgebakende taak, maar niet het brede, menselijke denkvermogen (AGI) bezit."
   },
   {
     "id": "quiz_mc_13",
     "title": "Hoofdstuk 4: Leren Prompten",
     "text": "Je vraagt een AI een complex klinisch vraagstuk op te lossen. Je voegt de instructie \"Denk stap-voor-stap na\" toe aan je prompt. Waarom is deze 'Chain-of-Thought' techniek effectief?",
     "options": [
-      "Het dwingt de AI om een langzamer, menselijker tempo aan te nemen.",
-      "Het leidt tot een gedetailleerder en logischer gestructureerd antwoord, omdat de AI zijn 'redenering' uitschrijft, wat de kans op fouten verkleint.",
-      "Het zorgt ervoor dat de AI alleen informatie uit de meest recente bronnen gebruikt.",
-      "Het is een geheime code die de AI in een speciale, creatieve modus zet."
+      "Het stimuleert de AI om langzamer en menselijker te redeneren.",
+      "Het zorgt voor gestructureerde antwoorden met uitgeschreven redenering en minder fouten.",
+      "Het activeert een speciale modus die alleen recente wetenschappelijke informatie gebruikt.",
+      "Het is een trigger-commando dat de AI in een geavanceerde probleemoplossingsmodus zet."
     ],
     "correctAnswer": 1,
-    "feedback": "Precies! Door de AI te vragen zijn denkproces stap voor stap te tonen, verhoog je de kwaliteit en transparantie van het antwoord, en kun je de redenering beter volgen en controleren."
+    "feedbackCorrect": "Precies! Door de AI te vragen zijn denkproces stap voor stap te tonen, verhoog je de kwaliteit en transparantie van het antwoord, en kun je de redenering beter volgen en controleren.",
+    "feedbackIncorrect": "Dat is niet helemaal correct. Door de AI te vragen zijn denkproces stap voor stap te tonen, verhoog je de kwaliteit en transparantie van het antwoord, en kun je de redenering beter volgen en controleren."
   },
   {
     "id": "quiz_mc_14",
     "title": "Hoofdstuk 5: Creëren met AI",
     "text": "Je wilt een AI-tool gebruiken om een serie afbeeldingen te genereren voor een voorlichtingsfolder over knierevalidatie. Na de eerste poging is de stijl van de afbeeldingen niet wat je zoekt. Wat is de meest efficiënte vervolgstap?",
     "options": [
-      "De afbeeldingen accepteren en handmatig proberen aan te passen in een fotobewerkingsprogramma.",
-      "Een volledig andere AI-tool proberen in de hoop op een beter resultaat.",
-      "De prompt verfijnen (itereren) met specifiekere instructies over de gewenste stijl (bijv. 'realistisch', 'schematisch', 'in de stijl van een medische illustratie').",
+      "De afbeeldingen accepteren en handmatig aanpassen in een fotobewerkingsprogramma.",
+      "Een volledig andere AI-tool proberen voor mogelijk betere resultaten.",
+      "De prompt verfijnen met specifiekere stijlinstructies zoals 'realistisch' of 'medische illustratie'.",
       "De opdracht opgeven en op zoek gaan naar bestaande stockfoto's."
     ],
     "correctAnswer": 2,
-    "feedback": "Correct! Net als bij tekst is het genereren van media een iteratief proces. Het verfijnen van je prompt is de sleutel tot het krijgen van het gewenste resultaat."
+    "feedbackCorrect": "Correct! Net als bij tekst is het genereren van media een iteratief proces. Het verfijnen van je prompt is de sleutel tot het krijgen van het gewenste resultaat.",
+    "feedbackIncorrect": "Niet de beste aanpak. Net als bij tekst is het genereren van media een iteratief proces. Het verfijnen van je prompt is de sleutel tot het krijgen van het gewenste resultaat."
   },
   {
     "id": "quiz_mc_15",
     "title": "Hoofdstuk 6: Kansen & Risico's",
     "text": "Een ziekenhuis ontwikkelt een AI-diagnosetool die getraind is op medische data van voornamelijk mannelijke patiënten van middelbare leeftijd. De tool blijkt minder accuraat voor jonge vrouwen. Welk fundamenteel AI-risico wordt hier geïllustreerd?",
     "options": [
-      "Data privacy.",
-      "Hallucinatie.",
-      "Deskilling.",
+      "Schending van patiënt-privacywetgeving.",
+      "AI-hallucinatie met onjuiste diagnoses.",
+      "Verlies van medische expertise door AI-afhankelijkheid.",
       "Bias (vooroordelen) in de trainingsdata."
     ],
     "correctAnswer": 3,
-    "feedback": "Juist. Dit is een klassiek voorbeeld van bias. Als de trainingsdata geen goede afspiegeling is van de populatie waarop de AI wordt toegepast, kan de AI systematisch fouten maken voor ondervertegenwoordigde groepen."
+    "feedbackCorrect": "Juist. Dit is een klassiek voorbeeld van bias. Als de trainingsdata geen goede afspiegeling is van de populatie waarop de AI wordt toegepast, kan de AI systematisch fouten maken voor ondervertegenwoordigde groepen.",
+    "feedbackIncorrect": "Niet correct. Dit is een klassiek voorbeeld van bias. Als de trainingsdata geen goede afspiegeling is van de populatie waarop de AI wordt toegepast, kan de AI systematisch fouten maken voor ondervertegenwoordigde groepen."
   },
   {
     "id": "quiz_mc_16",
     "title": "Hoofdstuk 6: Kansen & Risico's",
     "text": "Stel, je gebruikt als fysiotherapeut een AI-assistent om een behandelplan op te stellen. Door een fout in het AI-advies loopt een patiënt letsel op. Wie is er wettelijk en ethisch eindverantwoordelijk?",
     "options": [
-      "De ontwikkelaar van de AI-software.",
+      "De softwareontwikkelaar die het AI-algoritme heeft geprogrammeerd.",
       "De fysiotherapeut die het advies heeft toegepast in de zorg.",
-      "Het ziekenhuis of de praktijk waar de therapeut werkt.",
-      "Niemand, omdat het een onvoorziene technologische fout was."
+      "De zorginstelling waar de therapeut werkzaam is en het systeem heeft geïmplementeerd.",
+      "Niemand, omdat het een onvoorziene fout in de AI-technologie betrof."
     ],
     "correctAnswer": 1,
-    "feedback": "Absoluut. Jij als professional bent altijd eindverantwoordelijk voor de zorg die je levert. AI is een hulpmiddel; de uiteindelijke beslissing en verantwoordelijkheid liggen bij de mens (Human in the Lead)."
+    "feedbackCorrect": "Absoluut. Jij als professional bent altijd eindverantwoordelijk voor de zorg die je levert. AI is een hulpmiddel; de uiteindelijke beslissing en verantwoordelijkheid liggen bij de mens (Human in the Lead).",
+    "feedbackIncorrect": "Dat is niet juist. Jij als professional bent altijd eindverantwoordelijk voor de zorg die je levert. AI is een hulpmiddel; de uiteindelijke beslissing en verantwoordelijkheid liggen bij de mens (Human in the Lead)."
   },
   {
     "id": "quiz_mc_17",
     "title": "Hoofdstuk 6: Kansen & Risico's",
     "text": "Welke wetgeving legt in Europa de basisregels vast voor AI op basis van risiconiveaus, en stelt bijvoorbeeld strenge eisen aan AI-systemen in de zorg?",
     "options": [
-      "De AVG / GDPR.",
+      "De Algemene Verordening Gegevensbescherming (AVG/GDPR).",
       "De EU AI Act.",
-      "De Auteurswet.",
+      "De Europese Auteurswet voor digitale content.",
       "De Wet op de geneeskundige behandelingsovereenkomst (WGBO)."
     ],
     "correctAnswer": 1,
-    "feedback": "Goed zo! De EU AI Act is de specifieke wetgeving die AI-systemen indeelt naar risico en strenge regels oplegt aan hoog-risico toepassingen, zoals die in de medische sector."
+    "feedbackCorrect": "Goed zo! De EU AI Act is de specifieke wetgeving die AI-systemen indeelt naar risico en strenge regels oplegt aan hoog-risico toepassingen, zoals die in de medische sector.",
+    "feedbackIncorrect": "Niet juist. De EU AI Act is de specifieke wetgeving die AI-systemen indeelt naar risico en strenge regels oplegt aan hoog-risico toepassingen, zoals die in de medische sector."
   },
   {
     "id": "quiz_mc_18",
     "title": "Hoofdstuk 6: Kansen & Risico's",
     "text": "Hoe kan een fysiotherapeut AI op een praktische manier inzetten om meer patiëntgerichte zorg te leveren?",
     "options": [
-      "Door de patiënt zelf met de AI te laten praten om de diagnose te bepalen.",
-      "Door routinematige administratieve taken (zoals het samenvatten van een intake) te automatiseren, waardoor er meer tijd vrijkomt voor direct patiëntcontact.",
-      "Door de AI de volledige communicatie met de patiënt te laten overnemen.",
-      "Door altijd het eerste behandelvoorstel van de AI te volgen."
+      "Door patiënten zelfstandig te laten diagnosticeren via AI-chatbots.",
+      "Door administratieve taken te automatiseren, waardoor meer tijd vrijkomt voor patiëntcontact.",
+      "Door alle patiëntcommunicatie via AI-assistenten te laten verlopen.",
+      "Door altijd het eerste AI-behandelvoorstel direct te implementeren."
     ],
     "correctAnswer": 1,
-    "feedback": "Inderdaad. Een van de grootste kansen van AI is het verhogen van de efficiëntie, zodat jij als professional meer tijd en aandacht kunt besteden aan de unieke, menselijke aspecten van zorg."
+    "feedbackCorrect": "Inderdaad. Een van de grootste kansen van AI is het verhogen van de efficiëntie, zodat jij als professional meer tijd en aandacht kunt besteden aan de unieke, menselijke aspecten van zorg.",
+    "feedbackIncorrect": "Dat is niet de juiste benadering. Een van de grootste kansen van AI is het verhogen van de efficiëntie, zodat jij als professional meer tijd en aandacht kunt besteden aan de unieke, menselijke aspecten van zorg."
   },
   {
     "id": "quiz_mc_19",
     "title": "Hoofdstuk 7: De Toekomst",
     "text": "Wat wordt in de e-learning beschreven als een cruciaal verschil tussen de huidige 'Narrow AI' en de hypothetische 'Artificial General Intelligence' (AGI)?",
     "options": [
-      "Narrow AI is tekst-gebaseerd, terwijl AGI met beelden werkt.",
-      "Narrow AI is gespecialiseerd in specifieke taken, terwijl AGI een breed, mensachtig leer- en redeneervermogen zou hebben.",
-      "Narrow AI wordt gebruikt in de zorg, AGI zal alleen in de tech-industrie worden gebruikt.",
-      "Narrow AI maakt fouten, terwijl AGI altijd perfecte antwoorden zou geven."
+      "Narrow AI verwerkt alleen tekst, AGI kan ook met beelden en audio werken.",
+      "Narrow AI is gespecialiseerd, AGI zou breed mensachtig leer- en redeneervermogen hebben.",
+      "Narrow AI is voor de zorg ontwikkeld, AGI zal exclusief tech-industrieel worden toegepast.",
+      "Narrow AI produceert fouten, AGI zou altijd foutloze en perfecte resultaten leveren."
     ],
     "correctAnswer": 1,
-    "feedback": "Correct. Het kernverschil is de breedte van de intelligentie. Narrow AI is een specialist, AGI zou een generalist zijn met een denkvermogen dat vergelijkbaar is met dat van een mens."
+    "feedbackCorrect": "Correct. Het kernverschil is de breedte van de intelligentie. Narrow AI is een specialist, AGI zou een generalist zijn met een denkvermogen dat vergelijkbaar is met dat van een mens.",
+    "feedbackIncorrect": "Niet juist. Het kernverschil is de breedte van de intelligentie. Narrow AI is een specialist, AGI zou een generalist zijn met een denkvermogen dat vergelijkbaar is met dat van een mens."
   }
 ]

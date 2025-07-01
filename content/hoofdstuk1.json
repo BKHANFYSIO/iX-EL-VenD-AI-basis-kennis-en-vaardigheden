@@ -100,6 +100,16 @@
         }
     },
     {
+      "type": "accent-blok",
+      "variant": "weetje",
+      "titel": "Nederlandse studenten missen kansen:",
+      "tekst": "Uit onderzoek blijkt dat Nederlandse studenten GenAI vooral gebruiken als een geavanceerde zoekmachine of herschrijftool, vergelijkbaar met Google. Hierdoor halen ze maar weinig van het echte voordeel uit AI. De potentie voor diepgaand leren, kritisch denken en creativiteit blijft grotendeels onbenut.",
+      "bron": {
+        "naam": "Education AI Review (juni 2025)",
+        "url": "https://educationai-review.org/revista/article/view/40/42"
+        }
+    },
+    {
         "type": "section-title",
         "titel": "Leren werken met AI: Net als spiertraining! 🏋️‍♀️🧠"
     },

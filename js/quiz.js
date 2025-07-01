@@ -199,7 +199,8 @@ function handleQuizOptionClick() {
     this.classList.add(isCorrect ? 'correct' : 'incorrect');
 
     const feedbackEl = questionDiv.querySelector('.feedback');
-    feedbackEl.textContent = questionData.feedback;
+    const feedbackText = isCorrect ? questionData.feedbackCorrect : questionData.feedbackIncorrect;
+    feedbackEl.textContent = feedbackText;
     feedbackEl.className = 'feedback ' + (isCorrect ? 'correct' : 'incorrect');
     
     questionDiv.classList.add('answered');
@@ -209,7 +210,7 @@ function handleQuizOptionClick() {
         id: questionId, 
         selectedOriginalIndex: originalOptionIndex, // Sla de originele index op
         correct: isCorrect, 
-        feedback: questionData.feedback, 
+        feedback: feedbackText, 
         questionText: questionData.text, 
         options: (questionData._shuffledOptions || questionData.options.map((o, i) => ({ text: o, originalIndex: i }))).map(o => o.text),
         title: questionData.title 
@@ -380,7 +381,7 @@ function reviewQuizQuestion(questionIndex) {
                 }).join('')}
             </ul>
             <div class="feedback ${isCorrect ? 'correct' : 'incorrect'}">
-                <strong>Feedback:</strong> ${q.feedback || (userAnswer && userAnswer.feedback) || "Geen feedback beschikbaar."}
+                <strong>Feedback:</strong> ${(userAnswer && userAnswer.feedback) || (isCorrect ? q.feedbackCorrect : q.feedbackIncorrect) || "Geen feedback beschikbaar."}
             </div>
         </div>
     `;

@@ -1179,13 +1179,13 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                         accordionContentHtml += renderGenericChapterContent(block.content, chapterNumber, `${currentBlockId}-`);
                     } else { // Fallback naar de originele lijst-weergave
                         accordionContentHtml += `
-                            <ol class="accordion-list" style="margin-bottom: 0;">
+                            <ol class="accordion-list">
                                 ${block.content.map(item => `
-                                    <li style="margin-bottom: 1.2em;">
+                                    <li>
                                         <strong>${item.titel || item.naam}:</strong> ${item.beschrijving}
                                         ${item.subpunten && item.subpunten.length > 0 ? `
-                                            <ul class="accordion-subpunten" style="margin-top: 0.5em; margin-bottom: 0.5em; margin-left: 1.5em;">
-                                                ${item.subpunten.map(sub => `<li style="list-style-type: disc; margin-bottom: 0.2em;">${sub}</li>`).join('')}
+                                            <ul class="accordion-subpunten">
+                                                ${item.subpunten.map(sub => `<li>${sub}</li>`).join('')}
                                             </ul>
                                         ` : ''}
                                     </li>

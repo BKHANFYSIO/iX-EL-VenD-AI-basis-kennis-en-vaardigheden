@@ -119,10 +119,25 @@
         right: 0.5rem;
     }
 
-    .accordion-content ul,
-    .accordion-content ol {
-        padding-left: 10px; /* Nog minder inspringing voor bullets en nummers op mobiel */
+    /* Specifieke mobiele styling voor VRAAK criteria hoofdnummers */
+    .accordion-list {
+        padding-left: 15px;
     }
+    
+    .accordion-list li {
+        margin-bottom: 1rem; /* Iets compacter op mobiel */
+    }
+    
+    /* Specifieke mobiele styling voor VRAAK criteria subpunten */
+    .accordion-subpunten {
+        padding-left: 15px; /* Zeer compacte inspringing voor VRAAK bullets op mobiel */
+    }
+    
+    .accordion-subpunten li {
+        margin-bottom: 0.3rem; /* Compactere spacing op mobiel */
+    }
+    
+
 }
 
 /* ==========================================================================
@@ -133,6 +148,35 @@
 .accordion {
     margin-bottom: 1rem;
 }
+
+/* Specifieke styling voor VRAAK criteria hoofdnummers */
+.accordion-list {
+    padding-left: 20px;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    list-style-type: decimal;
+}
+
+.accordion-list li {
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Specifieke styling voor VRAAK criteria subpunten */
+.accordion-subpunten {
+    padding-left: 20px; /* Minder inspringing voor bullets */
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+}
+
+.accordion-subpunten li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    list-style-type: disc;
+}
+
+
 
 .accordion-toggle {
     background-color: var(--light-gray);
