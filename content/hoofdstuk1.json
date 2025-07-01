@@ -4,7 +4,7 @@
       "type": "info-card",
       "classes": "welcome-card",
       "titel": "Hé toekomstige fysiotherapeut!",
-      "tekst": "Welkom bij de e-learning \"AI basiskennis en vaardigheden\"! De eerste van drie elearnings over AI in de context van jouw studie. Je staat aan het begin van een superinteressante ontdekkingsreis. Een reis die je klaarstoomt voor een toekomst waarin Kunstmatige Intelligentie (AI) een mega-belangrijke rol speelt in de zorg, en dus ook in jouw vakgebied: fysiotherapie. Misschien denk je nu aan sciencefictionfilms, maar AI is dichterbij dan je denkt en verandert nu al hoe we werken, leren en zorg verlenen."
+      "tekst": "Welkom bij de e-learning \"AI basiskennis en vaardigheden\"! De eerste van drie elearnings over AI in de context van jouw studie. Je staat aan het begin van een superinteressante ontdekkingsreis. Een reis die je klaarstoomt voor een toekomst waarin Kunstmatige Intelligentie (AI) een mega-belangrijke rol speelt in de zorg, en dus ook in jouw vakgebied: fysiotherapie."
     },
     {
       "type": "accordion",
@@ -122,11 +122,44 @@
     },
     {
         "type": "section-title",
-        "titel": "Mag ik AI gebruiken? Ja, graag!"
+        "titel": "Mag ik AI gebruiken? Ja, graag! 🎯"
     },
     {
-        "type": "content-text",
-        "tekst": "Binnen onze opleiding moedigen we je aan om AI-tools te gebruiken als ondersteuning bij je leerproces. AI kan je helpen om efficiënter te leren, bijvoorbeeld door het genereren van ideeën, structureren van teksten of het verkrijgen van feedback. Maar om hier echt voordeel uit te halen, is het belangrijk dat je niet alleen AI-geletterd bent, maar ook leert hoe je effectief leert. Denk hierbij aan strategieën zoals actief ophalen van kennis (retrieval practice), gespreid leren (spaced repetition), jezelf toetsen, samenwerken met anderen en actief om feedback vragen. Pas als je deze strategieën bewust combineert met AI, ga je echt beter leren.\n\nAI speelt ook een steeds grotere rol in de fysiotherapiepraktijk. Door nu al ervaring op te doen met AI-tools, ben je beter voorbereid op de toekomst en vergroot je je kansen op de arbeidsmarkt.\n\nOnze toetsmethoden veranderen mee met de invloed die AI heeft op het onderwijs én het toekomstige beroep van fysiotherapeut: schriftelijke producten krijgen minder nadruk, omdat het moeilijker wordt om te bepalen of het werk authentiek is. Daarom zal je portfolio voldoende bewijs moeten bevatten van je eigen leerproces en ontwikkeling. We verwachten ook dat je in je portfolio en in gesprekken met docenten laat zien dat je AI-geletterd bent en dat je AI op een doordachte manier kunt inzetten in beroepssituaties.\n\nWe vragen je om altijd transparant te zijn over het gebruik van AI. Geef aan wanneer en hoe je AI hebt ingezet bij opdrachten. Dit bevordert eerlijkheid en helpt ons om je leerproces goed te begeleiden. In hoofdstuk 6 vind je concrete voorbeelden en richtlijnen over hoe je AI-gebruik correct kunt vermelden bij je opdrachten.\n\nAI is volop in ontwikkeling en beïnvloedt het onderwijs en het beroep van fysiotherapeut razendsnel. We weten nog niet precies hoe dit zich de komende jaren zal ontwikkelen. Daarom blijven we hierover met jou als student in gesprek, zodat we samen kunnen leren en waar nodig ons beleid kunnen bijstellen."
+      "type": "info-card",
+      "classes": "ai-gebruik-card",
+      "titel": "AI gebruiken? Absoluut!",
+      "tekst": "We moedigen je aan om AI-tools te gebruiken als ondersteuning bij je leerproces. Maar: combineer dit slim met effectieve leerstrategieën zoals actief ophalen van kennis, gespreid leren en samenwerken. Zo wordt AI jouw <strong>hefboom</strong> voor beter leren, niet je vervanging.<br><br><strong>💡 Tip:</strong> We nemen je hierin mee! In module 2 'AI als Jouw Slimme Studiebuddy' leer je precies hoe je dit effectief doet."
+    },
+    {
+      "type": "practical-tips-grid",
+      "titel": "Waarom AI nu al belangrijk is voor jou:",
+      "kaarten": [
+        {
+          "icon": "🎯",
+          "titel": "Voor je studie",
+          "beschrijving": "AI helpt je efficiënter leren: ideeën genereren, teksten structureren, feedback krijgen"
+        },
+        {
+          "icon": "💼",
+          "titel": "Voor je toekomst",
+          "beschrijving": "AI speelt een steeds grotere rol in de fysiotherapiepraktijk - ervaring nu = betere kansen later"
+        },
+        {
+          "icon": "📋",
+          "titel": "Voor je portfolio",
+          "beschrijving": "Laat zien dat je AI-geletterd bent en het doordacht kunt inzetten in beroepssituaties"
+        }
+      ]
+    },
+    {
+      "type": "accent-blok",
+      "variant": "belangrijk",
+      "titel": "Transparantie is key! 🔑",
+      "tekst": "Geef <strong>altijd</strong> aan wanneer en hoe je AI hebt gebruikt bij opdrachten. Dit bevordert eerlijkheid en helpt ons je leerproces goed te begeleiden. Concrete richtlijnen vind je in hoofdstuk 6."
+    },
+    {
+      "type": "content-text",
+      "tekst": "AI ontwikkelt razendsnel en beïnvloedt zowel onderwijs als het fysiotherapieberoep. We blijven hierover met jou in gesprek om samen te leren en ons beleid waar nodig bij te stellen. 🤝"
     },
     {
       "type": "section-title",
@@ -161,15 +194,24 @@
       ]
     },
     {
-      "type": "info-card",
-      "classes": "white-bg portfolio-booster-card",
-      "titel": "Wat levert dit jou op? Jouw Portfolio Booster! 🚀",
-      "tekst": "Deze module is meer dan alleen informatie opdoen. Wat je hier leert en de opdrachten die je maakt (jouw 'artefacten') tellen direct mee voor EVL 4 (Erkend Verworven Leerresultaat) in je portfolio. Een mooie kans dus om te laten zien wat je in huis hebt! Zorg ervoor dat je certificaten en de resultaten van je opdrachten goed bewaart."
+      "type": "section-title",
+      "titel": "Klaar voor de start? 🚀"
     },
     {
       "type": "info-card",
-      "classes": "white-bg encouragement-card",
-      "tekst": "Je hebt nu een eerste indruk van wat AI voor jou kan betekenen, zowel tijdens je studie als in je toekomstige werk als fysiotherapeut. Laten we dieper duiken in de fascinerende wereld van Kunstmatige Intelligentie!"
+      "classes": "white-bg portfolio-booster-card",
+      "titel": "Wat levert dit jou op? Jouw Portfolio Booster!",
+      "tekst": "Deze module is meer dan alleen informatie opdoen. Wat je hier leert en de opdrachten die je maakt (jouw 'artefacten') tellen direct mee voor <strong>EVL 4</strong> (Erkend Verworven Leerresultaat) in je portfolio. Een mooie kans dus om te laten zien wat je in huis hebt! Zorg ervoor dat je certificaten en de resultaten van je opdrachten goed bewaart."
+    },
+    {
+      "type": "content-text",
+      "tekst": "Je hebt nu een eerste indruk van wat AI voor jou kan betekenen, zowel tijdens je studie als in je toekomstige werk als fysiotherapeut. Laten we in de volgende hoofdstukken dieper duiken in de fascinerende wereld van Kunstmatige Intelligentie!"
+    },
+    {
+      "type": "accent-blok",
+      "variant": "tip",
+      "titel": "Handig om te weten 💡",
+      "tekst": "Elk hoofdstuk eindigt met een aantal interacties zoals flashcards, meerkeuzevragen en reflectievragen. Deze helpen je de stof beter te onthouden en actief te verwerken."
     }
   ],
   "interacties": [

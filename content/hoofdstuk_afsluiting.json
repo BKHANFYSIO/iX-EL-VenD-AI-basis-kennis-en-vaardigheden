@@ -1,7 +1,7 @@
 {
   "introductieBlok": {
     "titel": "Wat ga je hier doen?",
-    "tekst": "Je bent bijna aan het einde van deze e-learning! In deze laatste stap maak je een afsluitende quiz en kun je een certificaat genereren. Dit certificaat is niet alleen een bewijs van afronding, maar helpt je ook om terug te kijken op wat je hebt geleerd en vormt een startpunt voor verdere ontwikkeling.\n\n<strong>Doe nu de afsluitende quiz, lees daarna de tekst bij 'Certificaat en Portfolio' goed door en denk na over of en hoe je het certificaat wilt inzetten in je portfolio van eJournal.</strong>"
+    "tekst": "Je bent bijna klaar! In deze laatste stap maak je een afsluitende quiz en kun je een certificaat genereren. Dit certificaat toont wat je hebt geleerd en helpt je bij verdere ontwikkeling.\n\n<strong>Start met de quiz en bekijk daarna hoe je het certificaat kunt gebruiken in je eJournal.</strong>"
   },
   "afsluitQuizIntro": {
     "titel": "Afsluitende quiz",
@@ -17,7 +17,7 @@
       },
       {
         "kop": "Je leerproces te sturen",
-        "tekst": "Gebruik dit certificaat om je leerproces verder vorm te geven. Je kunt het inzetten om een nieuw leerplan te maken of een bestaand plan bij te stellen. Denk bijvoorbeeld aan het toevoegen van leeractiviteiten om deze stof beter onder de knie te krijgen, je meer te verdiepen, manieren te vinden om het geleerde toe te passen in de praktijk, of juist te focussen op andere leerdoelen die nu belangrijker voor je zijn."
+        "tekst": "Gebruik dit certificaat om je leerproces vorm te geven. Maak een nieuw leerplan of stel je huidige plan bij. Focus op verdieping, praktijktoepassing of andere belangrijke leerdoelen."
       },
       {
         "kop": "Je kennisniveau aan te tonen",
@@ -28,7 +28,7 @@
   "portfolioIntegratie": {
     "titel": "Certificaat gebruiken in je eJournal/Portfolio",
     "tip": "Bewaar je certificaten goed! Een goede tip: voeg ze direct toe aan een relevant datapunt in je eJournal. Je kunt later altijd meer bewijsstukken, zoals nieuwe certificaten van deze of andere e-learnings, aan hetzelfde datapunt toevoegen om je groei zichtbaar te maken.",
-    "vraakUitleg": "Denk bij het toevoegen aan je eJournal na over hoe dit certificaat bijdraagt aan jouw leerdoelen en welke ontwikkeling je laat zien. Het certificaat is een waardevol onderdeel van je portfolio, maar wordt nog krachtiger in combinatie met andere bewijsstukken. Houd hierbij de VRAAK-criteria in gedachten. Certificaten zoals dit kan je vooral goed gebruiken voor 'Relevantie' en 'Kwantiteit', maar juist niet zo goed voor 'Authenticiteit'. Bij een certificaat als dit is het lastig om die authenticiteit aan te tonen, omdat het – net als veel schriftelijke producten – zonder toezicht is gemaakt. Zorg daarom ook voor aanvullend bewijsmateriaal waarbij de authenticiteit beter gewaarborgd is. Zie de VRAAK Criteria hieronder:"
+    "vraakUitleg": "Denk na over hoe dit certificaat bijdraagt aan je leerdoelen. Certificaten zijn goed voor 'Relevantie' en 'Kwantiteit', maar minder voor 'Authenticiteit' (omdat het zonder toezicht is gemaakt). Combineer het daarom met ander bewijsmateriaal. Zie de VRAAK Criteria hieronder:"
   },
   "content": [
     {

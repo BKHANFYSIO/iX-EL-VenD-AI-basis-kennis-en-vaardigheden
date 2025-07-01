@@ -3,7 +3,7 @@
     {
       "type": "info-card",
       "titel": "Jouw AI-gereedschapskist: welke tool voor welke klus?",
-      "tekst": "Oké, je weet nu wat AI is en hoe je ermee praat. Tijd voor de praktijk: welke tools ga je gebruiken? De AI-wereld is net een race waarin de koppositie wekelijks wisselt. De ene chatbot is de ene dag de slimste, de volgende dag is een concurrent alweer sneller en beter. Dé 'beste' tool bestaat dus niet. De vraag is: welke tool is het best voor *jouw* taak op *dit* moment? Of je nu een samenvatting nodig hebt, een trainingsschema wilt opstellen of een anatomische afbeelding zoekt, dit hoofdstuk is je gids. We zetten de belangrijkste tools voor je op een rij en helpen je de juiste te kiezen uit je steeds groter wordende digitale gereedschapskist."
+      "tekst": "Je weet nu wat AI is en hoe je ermee praat. Tijd voor de praktijk: welke tools ga je gebruiken? Er is geen 'beste' tool - het gaat om de juiste tool voor <strong>jouw</strong> taak op <strong>dit</strong> moment. Samenvatting nodig? Trainingsschema opstellen? Anatomische afbeelding zoeken? Dit hoofdstuk helpt je de juiste keuze maken uit je digitale gereedschapskist."
     },
     {
       "type": "accordion",
@@ -40,16 +40,16 @@
     },
     {
       "type": "content-text",
-      "tekst": "Chatbots, ook wel conversationele AI of taalmodellen genoemd, zijn ontworpen om menselijke conversatie na te bootsen. Je kunt ze vragen stellen, opdrachten geven, teksten laten schrijven, ideeën laten genereren en nog veel meer. Ze zijn getraind op een enorme hoeveelheid tekst en data, waardoor ze over een brede algemene kennis beschikken.\n\nSommige chatbots, zoals NotebookLM, zijn speciaal ontwikkeld om je te ondersteunen bij het leren en studeren met je eigen documenten, webpagina's of video's. Je kunt ze vragen stellen over je eigen materiaal en zo complexe leerstof sneller eigen maken.\n\nHieronder vind je een aantal van de meest populaire chatbots."
+      "tekst": "Chatbots zijn ontworpen om menselijke conversatie na te bootsen. Je kunt ze vragen stellen, opdrachten geven, teksten laten schrijven, ideeën genereren en nog veel meer. Ze beschikken over brede algemene kennis.\n\nSommige chatbots zijn speciaal ontwikkeld om te werken met jouw eigen materiaal - zoals NotebookLM, waarmee je vragen kunt stellen over je eigen documenten of video's. Hieronder vind je de meest populaire chatbots."
     },
     {
       "type": "resource-grid-container",
       "items": [
-        { "titel": "ChatGPT (van OpenAI)", "beschrijving": "De meest bekende en wijdverspreide chatbot die de AI-revolutie in een stroomversnelling bracht. Het is een zeer veelzijdige tool die uitblinkt in creatieve taken, tekstgeneratie, samenvatten en programmeren.", "link": "https://chatgpt.com" },
-        { "titel": "Gemini (van Google)", "beschrijving": "Google's antwoord op ChatGPT. Gemini is sterk geïntegreerd met de kennis van het internet en kan daardoor zeer actuele antwoorden geven. Het is ook sterk in logisch redeneren en het verwerken van informatie in verschillende formats.", "link": "https://gemini.google.com" },
-        { "titel": "NotebookLM (van Google)", "beschrijving": "NotebookLM is een chatbot van Google waarmee je vragen kunt stellen over je eigen documenten, webpagina's of video's. Ideaal om snel inzicht te krijgen in complexe leerstof.", "link": "https://notebooklm.google.com" },
-        { "titel": "Claude (van Anthropic)", "beschrijving": "Claude staat bekend om zijn grote 'context window', wat betekent dat het zeer grote hoeveelheden tekst (zoals complete boeken of onderzoeksrapporten) in één keer kan analyseren. Het wordt vaak geprezen om zijn vermogen tot genuanceerd en diepgaand redeneren.", "link": "https://claude.ai" },
-        { "titel": "Mistral (van Mistral AI)", "beschrijving": "Een opkomende Europese speler die krachtige open-source modellen ontwikkelt. Mistral wordt geroemd om zijn efficiëntie en prestaties, en wordt vaak gezien als een sterk, privacy-vriendelijker alternatief.", "link": "https://chat.mistral.ai" }
+        { "titel": "ChatGPT (van OpenAI)", "beschrijving": "De bekendste chatbot. Veelzijdig en uitstekend voor creatieve taken, teksten schrijven, samenvatten en leren programmeren.", "link": "https://chatgpt.com" },
+        { "titel": "Gemini (van Google)", "beschrijving": "Sterk geïntegreerd met internet, dus actuele antwoorden. Goed in logisch redeneren en verschillende bestandsformaten verwerken.", "link": "https://gemini.google.com" },
+        { "titel": "NotebookLM (van Google)", "beschrijving": "Stel vragen over je eigen documenten, webpagina's of video's. Perfect om complexe leerstof snel te doorgronden.", "link": "https://notebooklm.google.com" },
+        { "titel": "Claude (van Anthropic)", "beschrijving": "Kan grote hoeveelheden tekst (hele boeken, onderzoeksrapporten) in één keer analyseren. Sterk in genuanceerd redeneren.", "link": "https://claude.ai" },
+        { "titel": "Mistral (van Mistral AI)", "beschrijving": "Europese chatbot met focus op efficiëntie en privacy. Sterk alternatief voor de Amerikaanse opties.", "link": "https://chat.mistral.ai" }
       ]
     },
     {
@@ -58,7 +58,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Onderstaande tabellen helpen je om inzicht te krijgen in de belangrijkste functies van AI-chatbots. Houd er wel rekening mee dat functies per chatbot kunnen verschillen, soms andere benamingen hebben en dat er door de snelle ontwikkelingen geregeld nieuwe mogelijkheden worden toegevoegd."
+      "tekst": "Onderstaande overzicht toont wat chatbots kunnen. Let op: functies verschillen per tool en komen er regelmatig nieuwe bij."
     },
     {
         "type": "content-subtitle",
@@ -67,7 +67,7 @@
     {
       "type": "table-container-group",
       "tables": [
-        { "headers": ["Functie", "Wat doet het?"], "rows": [["Tekst genereren / samenvatten", "De AI kan teksten schrijven, samenvatten, vertalen en herschrijven. Dit gebeurt op basis van het AI-taalmodel. Je kunt ook zelf bronnen toevoegen of vragen om informatie van internet (indien beschikbaar)."], ["Web search", "De AI haalt actuele informatie van internet (alleen als de functie actief is) om vragen te beantwoorden of extra context te geven."], ["Deep research", "De AI kan grote hoeveelheden tekst (zoals artikelen, richtlijnen of handleidingen) analyseren en structureren om complexe vragen te beantwoorden. Je kunt hiermee bijvoorbeeld automatisch een compleet rapport laten schrijven op basis van meerdere bronnen."], ["Canvas / Artefact", "Een interactieve werkruimte waarin je samen met de AI werkt, vergelijkbaar met samenwerken in een Word-document. Je kunt bijvoorbeeld teksten invoeren, aanpassen, herschrijven of bepaalde stukken selecteren en de AI vragen om alleen dat deel te verbeteren. Zo bouw je samen aan documenten, opdrachten of verslagen."], ["Multimodale input", "Je kunt naast tekst ook afbeeldingen, video's of spraakfragmenten toevoegen als input. De AI kan deze interpreteren en gebruiken om je verder te helpen."], ["Spraakoutput / Gesprekken voeren", "De AI kan antwoorden geven in gesproken vorm. Dit maakt het mogelijk om echte gesprekken te voeren met de AI, wat handig is bij bijvoorbeeld oefenen van anamnese of uitleg."]] }
+        { "headers": ["Functie", "Wat doet het?"], "rows": [["Tekst genereren / samenvatten", "Teksten schrijven, samenvatten, vertalen en herschrijven. Perfect voor verslagen, samenvattingen van studiemateriaal of vertaling van onderzoeken."], ["Web search", "Actuele informatie ophalen van internet (als de functie actief is) voor recente ontwikkelingen of nieuwste onderzoeken."], ["Deep research", "Grote hoeveelheden tekst analyseren en structureren. Handig voor literatuuronderzoek of het doorlezen van behandelrichtlijnen."], ["Canvas / Artefact", "Samen met AI werken in een interactieve werkruimte. Ideaal voor het stap-voor-stap bouwen van opdrachten of verslagen."], ["Multimodale input", "Ook afbeeldingen, video's of spraak als input gebruiken. Upload bijvoorbeeld een foto van een houding voor analyse."], ["Spraakoutput / Gesprekken voeren", "Gesproken antwoorden krijgen. Handig voor het oefenen van anamnese-gesprekken of mondeling iets uitleggen."]] }
       ]
     },
     {
@@ -80,7 +80,7 @@
     {
       "type": "table-container-group",
         "tables": [
-        { "headers": ["Functie", "Wat doet het?"], "rows": [["Afbeeldingen genereren", "De AI maakt afbeeldingen op basis van jouw tekstuele beschrijving (prompt). Dit gebeurt niet meer via het taalmodel (LLM) zelf, maar via een koppeling met een ander AI-model dat gespecialiseerd is in beeldgeneratie. Je kunt bijvoorbeeld vragen om een anatomisch schema, een illustratie voor een poster of zelfs een grafiek of tabel op basis van toegevoegde gegevens. Dit laatste valt soms ook onder 'code genereren' als er berekeningen of visualisaties nodig zijn."], ["Video's genereren", "De AI kan video's maken op basis van tekst of afbeeldingen. Dit gebeurt via een koppeling met een extern model voor videogeneratie. Je kunt bijvoorbeeld een korte animatie laten maken die een anatomisch proces uitlegt, of een visuele samenvatting van een behandeltraject."]] }
+        { "headers": ["Functie", "Wat doet het?"], "rows": [["Afbeeldingen genereren", "Afbeeldingen maken op basis van jouw beschrijving. Handig voor anatomische schema's, illustraties voor presentaties of grafieken voor rapporten."], ["Video's genereren", "Video's maken op basis van tekst of afbeeldingen. Bijvoorbeeld een animatie die een bewegingspatroon of anatomisch proces uitlegt."]] }
       ]
     },
     {
@@ -93,7 +93,7 @@
     {
       "type": "table-container-group",
       "tables": [
-        { "headers": ["Functie", "Wat doet het?"], "rows": [["Code genereren", "De AI schrijft code, helpt fouten oplossen of legt programmeercode uit. Hiermee kun je zelfs zonder programmeerkennis je eigen apps maken, bijvoorbeeld voor eenvoudige tools of e-healthtoepassingen. De AI begeleidt je stap voor stap. Hierover lees je meer in een volgend hoofdstuk."]] }
+        { "headers": ["Functie", "Wat doet het?"], "rows": [["Code genereren", "Code schrijven, fouten oplossen of programmeercode uitleggen. Hiermee kun je zelfs zonder ervaring eenvoudige apps of tools maken. Meer hierover in een volgend hoofdstuk."]] }
       ]
     },
     {
@@ -102,7 +102,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Naast de brede, conversationele chatbots is er een rijk en groeiend ecosysteem van gespecialiseerde AI-tools. Deze tools zijn ontworpen om uit te blinken in één specifieke taak, zoals het omzetten van spraak naar tekst, het bouwen van presentaties, of het genereren van afbeeldingen. Door de juiste tool voor de juiste taak te kiezen, kun je je productiviteit en creativiteit aanzienlijk verhogen. Onderstaand wat meer informatie over enkele van deze (soorten) tools."
+      "tekst": "Naast chatbots bestaan er gespecialiseerde AI-tools voor specifieke taken: spraak naar tekst, presentaties maken, afbeeldingen genereren. Hieronder enkele handige voorbeelden."
     },
     {
       "type": "info-card",
@@ -110,17 +110,17 @@
         { 
           "type": "benefit-card",
           "titel": "Transcribeertool: TurboScribe",
-          "beschrijving": "Met TurboScribe kun je audio- en videobestanden razendsnel omzetten naar tekst (transcriberen). Met een gratis account kun je dagelijks tot 30 minuten aan materiaal uploaden. Dit is ontzettend handig voor je studie. Neem bijvoorbeeld een oefengesprek, een anamnese of een overleg op, transcribeer het bestand en plak de tekst in een chatbot. Vervolgens kun je de chatbot vragen om feedback op je gesprekstechnieken, een samenvatting te maken of de belangrijkste actiepunten te identificeren.\n\nLet op! Wees altijd uiterst voorzichtig met gevoelige (persoons)gegevens. Gebruik geen echte patiëntgegevens en vraag altijd expliciet toestemming aan alle aanwezigen voordat je een opname maakt en deze uploadt naar een online service."
+          "beschrijving": "Zet audio en video razendsnel om naar tekst. Gratis account: 30 min per dag. Super handig voor oefengesprekken of colleges. Transcribeer het bestand, plak de tekst in een chatbot en vraag om feedback of een samenvatting.\n\n<strong>Let op:</strong> Geen echte patiëntgegevens gebruiken en altijd toestemming vragen voor opnames!"
         },
         { 
           "type": "benefit-card",
-          "titel": "GPT's en Gepersonaliseerde AI-assistenten",
-          "beschrijving": "Binnen het ecosysteem van ChatGPT kun je zogenaamde GPT's gebruiken. Dit zijn versies van ChatGPT die door gebruikers zijn aangepast voor een heel specifieke taak, bijvoorbeeld 'Academische Schrijfassistent' of 'Presentatie Bouwer'. Je kunt zelf GPT's maken voor eigen gebruik of ze delen met anderen. Ook andere platformen ontwikkelen vergelijkbare functies voor gepersonaliseerde AI-assistenten, al varieert de naamgeving."
+          "titel": "Aangepaste AI-assistenten (GPT's)",
+          "beschrijving": "In ChatGPT kun je speciale versies gebruiken die gemaakt zijn voor specifieke taken, zoals 'Academische Schrijfassistent' of 'Presentatie Maker'. Je kunt ze zelf maken of gebruiken wat anderen hebben gedeeld. Andere platforms hebben soortgelijke functies."
         },
         { 
           "type": "benefit-card",
-          "titel": "Allerlei gespecialiseerde tools",
-          "beschrijving": "Er bestaan duizenden andere AI-tools, elk met een eigen specialisme. Denk aan tools die je helpen bij het maken van invuloefeningen, het ontwerpen van presentaties, het genereren van afbeeldingen, het creëren van interactieve websites en zelfs het componeren van muziek."
+          "titel": "Nog veel meer tools",
+          "beschrijving": "Er bestaan duizenden andere AI-tools voor allerlei taken: invuloefeningen maken, presentaties ontwerpen, websites bouwen, muziek componeren en nog veel meer."
         }
       ]
     },
@@ -145,7 +145,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Moet je nu betalen voor AI of niet? Voor de meeste studietaken zijn de gratis accounts van de grote aanbieders al meer dan krachtig genoeg. Ze geven je toegang tot zeer capabele modellen waarmee je het merendeel van je werk kunt doen.\n\nMet een betaald account haal je echter het maximale uit de technologie. Je krijgt doorgaans toegang tot de allernieuwste en krachtigste modellen, meer geavanceerde functies (zoals het genereren van afbeeldingen of data-analyse), hogere gebruikslimieten en snellere reactietijden.\n\nEen interessante trend is dat veel functies die eerst exclusief voor betaalde gebruikers waren, na verloop van tijd beschikbaar komen in de gratis versie, soms met bepaalde limieten. Het heeft weinig zin om hier een exacte lijst te geven van wat wel en niet kan met een gratis of betaald account. De ontwikkelingen gaan zo snel dat die informatie morgen alweer verouderd kan zijn. Het beste advies is om te starten met de gratis versies en pas te overwegen om te betalen als je merkt dat je tegen de limieten aanloopt of een specifieke, geavanceerde functie nodig hebt."
+      "tekst": "Voor studie zijn gratis accounts meestal genoeg. De gratis versies van grote aanbieders geven je toegang tot krachtige modellen waarmee je het meeste werk kunt doen.\n\nMet een betaald account krijg je wel de nieuwste modellen, meer functies (afbeeldingen genereren, data-analyse), hogere limieten en snellere reacties. Maar: functies die eerst alleen betaald waren, komen vaak later gratis beschikbaar. Ons advies: start gratis en overweeg pas betalen als je tegen limieten aanloopt of een specifieke functie nodig hebt."
     }
   ],
   "interacties": [

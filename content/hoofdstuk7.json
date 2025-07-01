@@ -4,7 +4,7 @@
       "type": "info-card",
       "classes": "welcome-card",
       "titel": "De Toekomst van AI: Jouw Rol in een Veranderende Wereld",
-      "tekst": "Nu je de basis van AI begrijpt, is het tijd voor de grote vraag: wat betekent dit allemaal voor jouw toekomst? De AI-revolutie is geen verre droom meer - het gebeurt NU. Terwijl jij studeert, verandert de wereld om je heen razendsnel. Banen verdwijnen, nieuwe ontstaan, en de manier waarop we werken wordt compleet anders. Als aanstaande fysiotherapeut sta je aan de vooravond van een carrière die er totaal anders uit zal zien dan die van je voorgangers. Ben je er klaar voor?"
+      "tekst": "Nu je de basis van AI begrijpt, is het tijd voor de grote vraag: wat betekent dit voor jouw toekomst? AI ontwikkelt zich snel en verandert hoe we werken. Banen veranderen, nieuwe ontstaan, en je carrière als fysiotherapeut zal anders zijn dan die van je voorgangers. In dit hoofdstuk bereid je je voor op die toekomst."
     },
     {
       "type": "accordion",
@@ -35,7 +35,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Kunstmatige intelligentie is geen nieuw concept, maar de snelheid waarmee het zich de afgelopen jaren heeft ontwikkeld, is ongekend. Wat ooit sciencefiction leek, is nu werkelijkheid en de impact ervan groeit exponentieel. Het is cruciaal om deze snelle evolutie te begrijpen, want AI transformeert niet alleen technologie, maar ook onze samenleving, economie en persoonlijke levens in een tempo dat we zelden eerder hebben gezien."
+      "tekst": "AI ontwikkelt zich razendsnel. Wat vroeger sciencefiction was, is nu werkelijkheid. Deze snelle evolutie is belangrijk om te begrijpen, want AI verandert niet alleen technologie, maar ook onze samenleving, economie en dagelijks leven."
     },
     {
       "type": "stats-card-grid",
@@ -99,16 +99,16 @@
         {
           "titel": "Artificial General Intelligence (AGI)",
           "nederlands": "Menselijke intelligentie en meer",
-          "uitleg": "AGI is een hypothetische AI die de intellectuele capaciteiten van een mens evenaart of overtreft, en net zo breed en flexibel kan denken over vrijwel alle taken. Het kan leren, problemen oplossen, redeneren en zich aanpassen aan nieuwe situaties, net als een mens.",
+          "uitleg": "AGI is een hypothetische AI die net zo breed kan denken als een mens over alle mogelijke taken. Het kan leren, redeneren en zich aanpassen aan nieuwe situaties.",
           "voorbeeld": "Een AGI die een complex fysiotherapeutisch probleem holistisch benadert, diagnoses stelt en behandelplannen opstelt met menselijke precisie en creativiteit.",
-          "denkvraag": "Als AGI een diagnose kan stellen die net zo goed of beter is dan de mijne, wat is dan nog mijn unieke waarde als fysiotherapeut?"
+          "denkvraag": "Als AGI even goed diagnoses kan stellen als ik, wat maakt mij dan nog uniek als fysiotherapeut?"
         },
         {
           "titel": "Artificial Super Intelligence (ASI)",
           "nederlands": "Intelligentie die de mens ver overstijgt",
-          "uitleg": "ASI is de volgende, nog meer hypothetische stap: een AI die mensen in vrijwel elk denkbaar domein ver overtreft in intelligentie, kennis en snelheid. Dit zou de meest ingrijpende technologische ontwikkeling ooit zijn, met een potentieel voor ongekende welvaart en het oplossen van wereldproblemen, maar ook met existentiële risico's (het 'alignment problem').",
+          "uitleg": "ASI is een hypothetische AI die mensen in alle denkbare gebieden ver overtreft. Dit zou een enorme technologische sprong zijn met potentieel voor grote vooruitgang, maar ook voor nieuwe risico's.",
           "voorbeeld": "Een ASI die in seconden een genezing voor chronische pijn vindt, of die alle complexe gezondheidsvraagstukken wereldwijd kan optimaliseren.",
-          "denkvraag": "Als ASI bestaat, en de mensheid 'overbodig' wordt voor productie, wat is dan de zingeving van ons bestaan? Hoe redefinieert de fysiotherapie dan 'gezondheid'?"
+          "denkvraag": "Hoe zou de fysiotherapie veranderen als ASI complexe medische problemen kan oplossen?"
         }
       ]
     },
@@ -158,7 +158,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Dit maakt het een complexe discussie zonder eenvoudige antwoorden. Enerzijds zorgt de explosieve groei van AI voor een dramatische toename van het energieverbruik in datacenters. Anderzijds kan diezelfde AI technologie helpen om energienetwerken te optimaliseren, slimmere gebouwen te creëren en de ontwikkeling van duurzame technologieën te versnellen. Het is niet zwart-wit: AI kan tegelijkertijd zowel deel van het probleem als deel van de oplossing zijn. De uitdaging ligt in het vinden van de juiste balans en het sturen van AI-ontwikkeling richting netto positieve impact op onze planeet."
+      "tekst": "Dit is een complexe discussie. AI zorgt voor meer energieverbruik in datacenters, maar kan ook helpen energienetwerken te optimaliseren en duurzame technologieën te ontwikkelen. AI kan zowel deel van het probleem als van de oplossing zijn. De uitdaging is het vinden van de juiste balans voor een positieve impact."
     },
     {
       "type": "accent-blok",
@@ -264,27 +264,27 @@
       "termen": [
         {
           "term": "AI-geletterdheid",
-          "uitleg": "Het basisbegrip van hoe AI-systemen werken, wat hun mogelijkheden en beperkingen zijn, en hoe ze veilig en effectief kunnen worden toegepast in de fysiotherapeutische praktijk.",
+          "uitleg": "Begrijpen hoe AI-systemen werken, wat hun mogelijkheden en beperkingen zijn, en hoe ze veilig kunnen worden toegepast in de fysiotherapie.",
           "praktisch": "Je kunt de resultaten van een AI-gestuurde bewegingsanalyse interpreteren en de betrouwbaarheid ervan inschatten."
         },
         {
-          "term": "Data-interpretatie",
-          "uitleg": "Het vermogen om grote hoeveelheden data, gegenereerd door AI-tools (bijv. wearables, sensoren), te analyseren en te vertalen naar bruikbare inzichten voor diagnose en behandelplan.",
-          "praktisch": "Je gebruikt data van een slimme brace om de voortgang van een patiënt objectief te monitoren en het oefenprogramma aan te passen."
+          "term": "AI-output Interpretatie",
+          "uitleg": "AI-analyses van data (wearables, sensoren) kritisch beoordelen en vertalen naar de specifieke context en behoeften van je patiënt.",
+          "praktisch": "Je beoordeelt de betrouwbaarheid van een AI-analyse van bewegingspatronen en past de aanbevelingen aan op basis van je klinische kennis van de patiënt."
         },
         {
           "term": "Ethisch Redeneren",
-          "uitleg": "Het kritisch kunnen reflecteren op de ethische implicaties van AI-gebruik, zoals privacy, bias in algoritmes en de balans tussen technologie en menselijke zorg.",
+          "uitleg": "Kritisch reflecteren op ethische implicaties van AI-gebruik, zoals privacy, bias en de balans tussen technologie en menselijke zorg.",
           "praktisch": "Je weegt de voordelen van een AI-diagnose af tegen mogelijke privacyrisico's en bespreekt dit transparant met de patiënt."
         },
         {
           "term": "Mens-AI Samenwerking",
-          "uitleg": "De vaardigheid om effectief samen te werken met AI-tools, waarbij de unieke menselijke kwaliteiten (empathie, klinisch redeneren) worden gecombineerd met de efficiëntie van AI.",
+          "uitleg": "Effectief samenwerken met AI-tools door menselijke kwaliteiten (empathie, klinisch redeneren) te combineren met AI-efficiëntie.",
           "praktisch": "Je gebruikt een AI-assistent voor het opstellen van een behandelplan, maar past dit aan op basis van de persoonlijke behoeften en emoties van de patiënt."
         },
         {
           "term": "Aanpassingsvermogen & Levenslang Leren",
-          "uitleg": "De bereidheid en het vermogen om continu nieuwe AI-technologieën en -toepassingen te leren en te integreren in de beroepspraktijk, gezien de snelle ontwikkelingen.",
+          "uitleg": "Bereidheid om continu nieuwe AI-technologieën te leren en te integreren in de beroepspraktijk, gezien de snelle ontwikkelingen.",
           "praktisch": "Je volgt proactief webinars over nieuwe AI-gedreven revalidatietechnieken en experimenteert met nieuwe tools in je praktijk."
         }
       ]
@@ -293,8 +293,12 @@
       "type": "divider"
     },
     {
+      "type": "section-title",
+      "titel": "Aanraders voor Verdieping"
+    },
+    {
       "type": "content-text",
-      "tekst": "De toekomst met AI is geen vaststaand gegeven, maar een dynamisch landschap dat we samen vormgeven. Door je bewust te zijn van de ontwikkelingen, kritisch te blijven denken en je aan te passen, kun je een actieve en waardevolle rol spelen in deze transformatie. Omarm de mogelijkheden, wees voorbereid op de uitdagingen en draag bij aan een AI-toekomst die de mensheid dient."
+      "tekst": "Nieuwsgierig naar meer perspectieven? De onderstaande video's geven waardevolle inzichten over AI's impact op de maatschappij en de arbeidsmarkt - perfect om je begrip te verdiepen."
     },
           {
         "type": "video-split-screen",
@@ -328,8 +332,15 @@
         }
       },
     {
+      "type": "divider"
+    },
+    {
+      "type": "section-title",
+      "titel": "Jij bent klaar voor de AI-toekomst!"
+    },
+    {
       "type": "content-text",
-      "tekst": "De discussies over de maatschappelijke impact van AI zijn complex en veelzijdig. De video's hierboven bieden waardevolle perspectieven op de ethische overwegingen en de veranderingen op de arbeidsmarkt. Het is duidelijk dat de ontwikkeling van AI hand in hand moet gaan met een zorgvuldige afweging van de sociale, ethische en economische gevolgen om een toekomst te creëren die voor iedereen gunstig is."
+      "tekst": "Gefeliciteerd! Je hebt een hele reis gemaakt: van de vraag 'Wat is AI eigenlijk?' tot het begrijpen van kansen, risico's en je toekomst als fysiotherapeut. Je weet nu hoe je AI slim kunt inzetten voor je studie en later je beroep, en - nog belangrijker - hoe je dit veilig en bewust doet.\n\nJe generatie groeit op met AI als natuurlijk onderdeel van het leven. Dat maakt jullie uniek: je kunt de voordelen benutten zonder de valkuilen te negeren. Als toekomstige fysiotherapeut sta je aan de start van een spannende carrière waarin technologie en menselijkheid hand in hand gaan.\n\nKlaar voor de eindspurt? Ga naar het afsluitende hoofdstuk om je kennis te toetsen en je certificaat te behalen!"
     }
   ],
   "interacties": [

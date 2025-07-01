@@ -4,7 +4,7 @@
       "type": "info-card",
       "classes": "chapter-intro-card",
       "titel": "Klaar om te creëren? Jouw idee, AI's kracht.",
-      "tekst": "In dit hoofdstuk duiken we dieper in de creatieve en praktische toepassingen van AI, verder dan alleen tekstgeneratie. We verkennen hoe je AI kunt inzetten om visuele content te creëren, te 'vibe-coden' en zelfs kleine tools te bouwen met behulp van Generative Pre-trained Transformers (GPT's). Dit document dient als jouw gids voor het benutten van AI's creatieve kracht."
+      "tekst": "Tijd voor de praktijk! In dit hoofdstuk leer je hoe je AI inzet om visuele content te maken, kleine apps en tools te bouwen met 'vibe-coding', en gepersonaliseerde chatbots te creëren die uitblinken in specifieke taken. Van afbeelding tot werkende app - ontdek AI's creatieve kracht!"
     },
     {
       "type": "accordion",
@@ -35,7 +35,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "AI maakt het mogelijk om in een paar seconden zelf afbeeldingen, video's en audio te genereren. Of je nu een poster voor je studieproject wilt maken, een uitlegvideo voor een patiënt, of een eigen podcast wilt opnemen: met Media-AI kun je creatief aan de slag, zonder dat je een expert hoeft te zijn. Ontdek hieronder hoe je deze tools slim inzet voor je studie en toekomstige werk!"
+      "tekst": "AI maakt het mogelijk om in seconden afbeeldingen, video's en audio te genereren. Een anatomisch schema voor je presentatie, een oefenvideo voor een patiënt, of een podcast over behandelmethoden: met Media-AI kun je creatief aan de slag zonder expert te zijn. Ontdek hieronder hoe je deze tools inzet!"
     },
     {
       "type": "content-subtitle",
@@ -43,7 +43,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Met AI kun je supersnel zelf afbeeldingen maken voor je studie, presentaties of uitleg aan een patiënt. Je hoeft alleen maar te beschrijven wat je wilt zien en de AI doet de rest. Bekijk hieronder in de image-grid een paar voorbeelden, zoals de 'Human-in-the-Loop'-afbeelding die in deze e-learning is gebruikt.\n\nWil je meerdere afbeeldingen in dezelfde stijl? Upload of verwijs naar een voorbeeld en vraag de AI om iets vergelijkbaars te maken. Zoals ook in deze elearning gedaan is bij veel afbeeldingen.\n\nJe kunt AI-afbeeldingen ook makkelijk bewerken: selecteer een deel van de afbeelding en geef aan wat je wilt veranderen (bijvoorbeeld iets verwijderen of vervangen). Zo hoef je niet steeds helemaal opnieuw te beginnen.\n\nHieronder vind je nog meer tips om je op weg te helpen. Let op: de beschikbaarheid van functies kan per AI-tool verschillen."
+      "tekst": "Met AI kun je afbeeldingen maken voor je studie, presentaties of patiëntuitleg. Beschrijf wat je wilt zien en de AI doet de rest. Bekijk hieronder voorbeelden in de afbeeldingen."
     },
     {
       "type": "accordion",
@@ -76,6 +76,14 @@
         {
           "naam": "Voeg Tekst Toe",
           "beschrijving": "Om tekst in je afbeelding te krijgen, plaats je de gewenste tekst tussen aanhalingstekens in je prompt."
+        },
+        {
+          "naam": "Bewerk en Verfijn",
+          "beschrijving": "Steeds meer AI-afbeeldingtools hebben bewerkopties. Je kunt chattend delen van afbeeldingen selecteren en aangeven wat je wilt veranderen of verbeteren."
+        },
+        {
+          "naam": "Consistente Stijl",
+          "beschrijving": "Voor meerdere afbeeldingen in dezelfde stijl: upload een voorbeeldafbeelding en vraag de AI om iets vergelijkbaars te maken."
         }
       ]
     },
@@ -115,7 +123,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Met AI kun je tegenwoordig ook eenvoudig video's maken of bewerken. Handig voor bijvoorbeeld een uitlegvideo bij een opdracht, een animatie voor een presentatie, of een korte instructievideo voor een patiënt. Je hoeft vaak alleen te beschrijven wat je wilt zien, of je uploadt een paar beelden en laat de AI de rest doen. Sinds VEO 3 (2025) kunnen video's zelfs met bijpassend geluid worden gemaakt, zoals achtergrondgeluiden maar ook uitgesproken tekst."
+      "tekst": "Met AI kun je eenvoudig video's maken: uitlegvideo's voor opdrachten, animaties voor presentaties, of instructievideo's voor patiënten. Beschrijf wat je wilt of upload beelden en laat AI de rest doen. Sinds VEO 3 (2025) kunnen video's zelfs met bijpassend geluid worden gemaakt, zoals achtergrondgeluiden en uitgesproken tekst."
     },
     {
       "type": "content-subtitle",
@@ -147,7 +155,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "AI maakt het mogelijk om professionele audio te genereren zonder dure apparatuur of studio-opnames. Perfect voor je studieprojecten! Maak bijvoorbeeld een podcast over bepaalde bronnen van een onderwerp, of creëer een leuke intro-muziek voor een presentatie. Tools zoals ElevenLabs, Suno en Udio zijn momenteel toonaangevend in AI-audio generatie.\n\nHet meest bijzondere? Je kunt zelfs je eigen stem klonen en die alles laten uitspreken wat je maar wilt. Handig voor het maken van consistente audio-content of het vertalen van teksten naar verschillende talen met je eigen stem."
+      "tekst": "AI maakt het mogelijk om professionele audio te genereren zonder dure apparatuur. Perfect voor studieprojecten! Maak een podcast over een onderwerp, creëer intro-muziek voor presentaties, of kloon zelfs je eigen stem voor consistente audio-content. Tools zoals ElevenLabs, Suno en Udio zijn toonaangevend in AI-audio generatie."
     },
     {
       "type": "content-subtitle",
@@ -172,19 +180,19 @@
     },
     {
       "type": "content-text",
-      "tekst": "Stel je voor dat je een idee hebt voor een app of een handige tool, maar je hebt nog nooit een regel code geschreven. Goed nieuws: met AI kan dat! Dit noemen we 'Vibe-coding'. Je beschrijft in gewone taal wat je wilt bouwen – de 'vibe' – en de AI genereert de code voor je.<br><br><b>Deze e-learning die je nu gebruikt, is daar het perfecte voorbeeld van!</b> Hij is volledig gebouwd met Vibe-coding door een docent zonder programmeerervaring. AI schreef de code en hielp met de inhoud, terwijl de docent de leiding hield (Human in the Lead).<br><br>Met Vibe-coding kun je, soms al in enkele minuten, een eenvoudige tool bouwen. Voor een meer geavanceerde app heb je misschien een paar uur of een middag nodig. Het principe is simpel: je start met een goed idee en de juiste prompt. Na de eerste output van de AI stel je het resultaat bij met vervolgprompts, net zo lang tot je tevreden bent en alle functionaliteiten werken. Het mooie is: de apps die je maakt, kun je direct delen met medestudenten. Zij kunnen de door jou gemaakte app dan meteen gebruiken!<br><br>We lichten hieronder een paar krachtige tools uit, maar er zijn er veel meer. Voor het bouwen van complexere applicaties gaan tools als Cursor AI en Windsurf nog een stuk verder. Voor nu focussen we op <b>Google Gemini</b> en <b>Bolt.new</b> als startpunt. In de tabel daaronder vind je kopieerbare prompts om direct aan de slag te gaan!"
+      "tekst": "Heb je een idee voor een app of handige tool, maar weet je niks van programmeren? Met AI kan dat gewoon! Dit heet 'Vibe-coding': je beschrijft in gewone taal wat je wilt – de 'vibe' – en AI bouwt het voor je.<br><br>Deze e-learning is ook zo gemaakt! Een docent zonder programmeerkennis liet AI de tool bouwen en hield zelf de regie.<br><br>Vibe-coding werkt simpel: start met een goed idee en de juiste vraag aan AI. Stel het resultaat bij tot alles werkt zoals je wilt. Je kunt je apps direct delen met medestudenten!<br><br>We focussen op <b>Google Gemini</b> en <b>Bolt.new</b> als startpunt. In de tabel vind je kant-en-klare vragen om direct te proberen!"
     },
     {
       "type": "resource-grid-container",
       "items": [
         { 
           "titel": "Google Gemini", 
-          "beschrijving": "Een krachtige, all-round chatbot van Google. Uitstekend voor het genereren van code, het debuggen en het beantwoorden van technische vragen. Vergeet niet te vragen om de output op een 'canvas' te tonen voor visuele resultaten.<br><br><i>Let op: Functies en gratis mogelijkheden kunnen wijzigen. Ten tijde van dit schrijven is de tool beperkt gratis te gebruiken.</i>", 
+          "beschrijving": "Krachtige chatbot van Google die apps kan bouwen. Vraag om je resultaat op een 'canvas' te tonen voor een werkende tool.<br><br><i>Let op: Gratis mogelijkheden kunnen wijzigen.</i>", 
           "link": "https://gemini.google.com" 
         },
         { 
           "titel": "Bolt.new", 
-          "beschrijving": "Een platform dat specifiek is ontworpen om met AI-assistentie snel webapplicaties te bouwen. Ideaal om je 'vibe-coding' prompts direct om te zetten in een werkende tool. Ten tijde van het schrijven van dit stuk (juni 2025) is Bolt voor dit doel krachtiger dan Gemini.<br><br><i>Let op: Functies en gratis mogelijkheden kunnen wijzigen. Ten tijde van dit schrijven krijg je dagelijks een aantal gratis credits om de tool te gebruiken.</i>", 
+          "beschrijving": "Platform speciaal voor het bouwen van apps met AI. Perfect om je ideeën direct om te zetten in werkende tools. Momenteel krachtiger dan Gemini voor app-building.<br><br><i>Let op: Je krijgt dagelijks gratis credits, maar dit kan wijzigen.</i>", 
           "link": "https://bolt.new" 
         }
       ]
@@ -202,19 +210,19 @@
           "rows": [
             [
               "<b>Rad van Fortuin App</b>",
-              "Een webapp met een draaiend rad. Handig om beurten aan te wijzen in de klas. Je kunt zelf de namen aanpassen.<br><br><b>Tip:</b> Vraag in Gemini of ChatGPT om de output op een 'canvas' te tonen voor een visueel resultaat.<br><br><b>Prompt:</b><em>Genereer de complete HTML, CSS en JavaScript code voor een 'Rad van Fortuin' webapplicatie. Het rad moet minimaal 5 aanpasbare secties hebben. Er moet een invoerveld zijn waar gebruikers namen kunnen toevoegen, en een knop om het rad te laten draaien. De winnende sectie moet duidelijk worden getoond. Gebruik Tailwind CSS voor een moderne, strakke uitstraling.</em>"
+              "Een draaiend rad om beurten aan te wijzen in de klas. Je kunt zelf namen aanpassen.<br><br><b>Tip:</b> Vraag in Gemini om de output op een 'canvas' te tonen.<br><br><b>Prompt:</b><em>Maak een 'Rad van Fortuin' app. Het rad moet minimaal 5 aanpasbare secties hebben waar ik namen kan toevoegen, en een knop om het rad te laten draaien. De winnaar moet duidelijk worden getoond. Zorg voor een moderne, strakke uitstraling.</em>"
             ],
             [
               "<b>Flashcard Tool voor Studie</b>",
-              "Een simpele tool om flashcards te oefenen over een specifiek onderwerp. Ideaal om begrippen of principes te leren.<br><br><b>Tip:</b> Voor een nog betere tool kun je de AI eerst 'voeden'. Upload een document of de transcriptie van een video met goede uitleg, en vraag de AI om op basis daarvan de flashcards te genereren.<br><br><b>Waarschuwing:</b> Controleer de gegenereerde flashcards altijd goed. AI kan 'hallucineren' (feitelijke onzin verzinnen) of verouderde informatie gebruiken.<br><br><b>Prompt:</b><em>Creëer de HTML, CSS, en JavaScript voor een flashcard-app. De app moet de volgende trainingsleerprincipes voor fysiotherapie bevatten: 'Overload', 'Specificiteit', 'Reversibiliteit', 'Individualiteit', en 'Periodisering'. De voorkant toont de term, de achterkant de uitleg. Gebruikers moeten door de kaarten kunnen klikken.</em>"
+              "Tool om flashcards te oefenen. Ideaal voor begrippen en principes.<br><br><b>Tip:</b> Upload eerst een document en vraag AI om daarop gebaseerde flashcards te maken.<br><br><b>Let op:</b> Controleer de flashcards altijd - AI kan fouten maken.<br><br><b>Prompt:</b><em>Maak een flashcard-app over trainingsleerprincipes voor fysiotherapie: 'Overload', 'Specificiteit', 'Reversibiliteit', 'Individualiteit', en 'Periodisering'. De voorkant toont de term, de achterkant de uitleg. Ik moet door de kaarten kunnen klikken.</em>"
             ],
             [
               "<b>Patiënten-info App: Enkelletsel</b>",
-              "Een eenvoudige webapp die je aan een patiënt met enkelletsel kunt meegeven. De app geeft per fase van herstel duidelijke uitleg en advies.<br><br><b>Prompt:</b><em>Bouw een eenvoudige, mobielvriendelijke webapp met HTML, CSS en JavaScript over de herstelfasen van enkelletsel. Maak een hoofdmenu met drie fasen: 'Fase 1: Acuut (0-3 dagen)', 'Fase 2: Herstel (3 dagen - 6 weken)', 'Fase 3: Functioneel (na 6 weken)'. Elke fase moet een eigen pagina hebben met uitleg over wat de patiënt kan verwachten en wat goede oefeningen zijn. Zorg voor een rustige, professionele uitstraling. Gebruik voor de inhoud alleen recente, evidence-based informatie, zoals KNGF-richtlijnen. Maak GEEN gebruik van de RICE- of POLICE-principes.</em><br><br><b>Waarschuwing:</b> Controleer de output van de AI altijd zorgvuldig. Verifieer of de informatie echt up-to-date en correct is. Is dat niet zo? Geef de AI dan feedback en vraag om aanpassingen totdat de inhoud volledig klopt."
+              "App voor patiënten met enkelletsel. Geeft per herstelfase uitleg en advies.<br><br><b>Prompt:</b><em>Maak een mobiele app over herstelfasen van enkelletsel. Maak een hoofdmenu met drie fasen: 'Fase 1: Acuut (0-3 dagen)', 'Fase 2: Herstel (3 dagen - 6 weken)', 'Fase 3: Functioneel (na 6 weken)'. Elke fase krijgt een eigen pagina met uitleg en goede oefeningen. Zorg voor een rustige, professionele uitstraling. Gebruik alleen recente informatie zoals KNGF-richtlijnen. Gebruik GEEN RICE- of POLICE-principes.</em><br><br><b>Let op:</b> Controleer de informatie altijd - zorg dat alles klopt voordat je het gebruikt."
             ],
             [
                 "<b>Klassieke 'Breakout' Game</b>",
-                "Een webapplicatie voor een klassieke Breakout-game. Het doel is om een visueel aantrekkelijke en speelbare versie te ontwikkelen.<br><br><b>Prompt:</b><em>Creëer een webapplicatie voor een klassieke Breakout-game met HTML, CSS, en JavaScript. Zorg voor duidelijke graphics (blokken, bal, peddel), vloeiende animaties, en basis geluidseffecten. De game moet een startscherm, scoreweergave en een responsief ontwerp hebben.</em><br><br><b>Tip:</b> Werkt de gegenereerde game niet direct? Maak een screenshot van de foutmelding of het probleem, en plak die samen met een beschrijving van wat er misgaat terug in de chat. De AI kan je dan vaak helpen de fout op te lossen."
+                "Een speelbare Breakout-game. Leuk om te maken en te delen met medestudenten.<br><br><b>Prompt:</b><em>Maak een klassieke Breakout-game. Zorg voor duidelijke graphics (blokken, bal, peddel), vloeiende bewegingen, en geluidseffecten. De game moet een startscherm, score-teller en goede besturing hebben.</em><br><br><b>Tip:</b> Werkt de game niet? Screenshot het probleem en beschrijf wat er misgaat. AI kan je dan helpen het op te lossen."
             ]
           ]
         }
@@ -222,7 +230,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "De ontwikkelingen in AI gaan razendsnel. Wat vandaag nog complex of zelfs onmogelijk lijkt, kan morgen al binnen handbereik zijn. De tools en technieken die je in dit hoofdstuk hebt gezien, worden continu beter en toegankelijker. Dit betekent dat jouw mogelijkheden om te creëren en innoveren met AI alleen maar zullen toenemen. Blijf dus nieuwsgierig en experimenteer, want wat over een jaar kinderlijk eenvoudig is, begint met de kennis die je nu opdoet."
+      "tekst": "AI-ontwikkelingen gaan razendsnel. Wat vandaag complex lijkt, kan morgen al simpel zijn. De tools worden steeds beter en toegankelijker, dus jouw mogelijkheden groeien alleen maar. Blijf experimenteren – wat je nu leert, wordt de basis voor wat over een jaar heel gewoon is!"
     },
     {
       "type": "section-title",
@@ -252,7 +260,7 @@
           },
           {
             "titel": "Ontdek Meer in de Toolbox",
-            "beschrijving": "In de <b>FysioAI LeerToolbox</b> vind je mogelijk ook door docenten gemaakte, specifieke AI-assistenten die je kunt gebruiken voor je studie. Neem een kijkje om te zien wat er beschikbaar is en doe inspiratie op voor je eigen creaties!"
+            "beschrijving": "In de <b>FysioAI LeerToolbox</b> vind je al veel door docenten gemaakte AI-assistenten (GPT's) die je kunt gebruiken voor je studie. <b>Tip:</b> Filter op 'GPT's' om ze te vinden en doe inspiratie op voor je eigen creaties!"
         }
       ]
     },
@@ -269,19 +277,7 @@
       "type": "info-card",
       "classes": "warning-card",
       "titel": "Belangrijke opmerking",
-      "tekst": "Het gebruik van externe tools zoals Google Gemini, Bolt of ChatGPT is volledig op eigen initiatief en niet verplicht. De HAN heeft geen overeenkomsten met deze partijen. Wees je altijd bewust van hoe je deze tools gebruikt. Denk aan je privacy en de betrouwbaarheid van de informatie, zoals besproken in het hoofdstuk 'Kansen & risico's'."
-    },
-    {
-      "type": "section-title",
-      "titel": "Bronnenlijst AI-gegenereerde content"
-    },
-    {
-      "type": "content-text",
-      "tekst": "De volgende AI-gegenereerde afbeeldingen en tools zijn gebruikt in dit hoofdstuk:"
-    },
-    {
-      "type": "content-text",
-      "tekst": "<strong>AI-gegenereerde afbeeldingen:</strong><br>Koekoek, B. (2025). <em>Human-in-the-Loop illustratie</em> [Afbeelding]. Gegenereerd via ChatGPT.<br><br>Koekoek, B. (2025). <em>SQUAT instructie-afbeelding</em> [Afbeelding]. Gegenereerd via ChatGPT.<br><br>Koekoek, B. (2025). <em>Fysiotherapie oefenzaal</em> [Afbeelding]. Gegenereerd via Gemini.<br><br><strong>AI-gegenereerde video's:</strong><br>Koekoek, B. (2025). <em>Fysiotherapie onderwijsvideo</em> [Video]. YouTube. https://youtu.be/nyMsubctoLc<br><br><strong>Demonstratie video's:</strong><br>Google. (2025). <em>VEO 3 Demo</em> [Video]. YouTube. https://youtu.be/mCFMn0UkRt0?si=Dp2wRH6AVAopYrWi<br><br><strong>AI-gegenereerde audio:</strong><br>Koekoek, B. (2025). <em>Podcast over AI-ontwikkelingen in onderwijs</em> [Audio]. Gegenereerd via NotebookLM.<br><br><strong>AI-tools gebruikt:</strong><br>Google. (2025). <em>Gemini</em> [Generatieve AI]. https://gemini.google.com<br><br>Google. (2025). <em>NotebookLM</em> [Generatieve AI]. https://notebooklm.google.com<br><br>Google. (2025). <em>VEO 2</em> [Generatieve AI]. https://aistudio.google.com<br><br>OpenAI. (2025). <em>ChatGPT</em> [Generatieve AI]. https://chatgpt.com"
+            "tekst": "Het gebruik van externe tools zoals Google Gemini, Bolt of ChatGPT is volledig op eigen initiatief en niet verplicht. De HAN heeft geen overeenkomsten met deze partijen. Wees je altijd bewust van hoe je deze tools gebruikt. Denk aan je privacy en de betrouwbaarheid van de informatie, zoals besproken in het hoofdstuk 'Kansen & risico's'."
     }
   ],
   "interacties": [

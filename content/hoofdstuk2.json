@@ -2,8 +2,8 @@
   "content": [
     {
       "type": "info-card",
-      "titel": "Wat is AI nu eigenlijk?",
-      "tekst": "In het vorige hoofdstuk heb je gezien waarom AI belangrijk is. Maar wat is het nu precies? Als je tien experts vraagt wat AI is, krijg je waarschijnlijk tien verschillende antwoorden. De definitie is breed en verandert continu. In deze module gebruiken we een praktische en eenvoudige definitie."
+      "titel": "AI onder de motorkap: Wat is het écht?",
+      "tekst": "In hoofdstuk 1 heb je gezien wat AI kan betekenen. Maar om als professional echt de regie te houden, is het niet genoeg om AI alleen te kunnen <strong>toepassen</strong>. <strong>Je moet ook snappen <strong>hoe het werkt</strong>, waarom het bepaalde keuzes maakt en waar de grenzen liggen.</strong> Deze kennis is essentieel om een kritische denker te worden in plaats van een passieve gebruiker. In dit hoofdstuk leggen we daarom de basis: wat is die mysterieuze 'AI' nu eigenlijk precies?"
     },
     {
       "type": "accordion",
@@ -29,13 +29,8 @@
       ]
     },
     {
-      "type": "info-card",
-      "titel": "AI onder de motorkap: Wat is het écht?",
-      "tekst": "In hoofdstuk 1 heb je gezien wat AI kan betekenen. Maar om als professional echt de regie te houden, is het niet genoeg om AI alleen te kunnen <strong>toepassen</strong>. <strong>Je moet ook snappen <strong>hoe het werkt</strong>, waarom het bepaalde keuzes maakt en waar de grenzen liggen.</strong> Deze kennis is essentieel om een kritische denker te worden in plaats van een passieve gebruiker. In dit hoofdstuk leggen we daarom de basis: wat is die mysterieuze 'AI' nu eigenlijk precies?"
-    },
-    {
         "type": "section-title",
-        "titel": "Wat is AI? (Definitie en Relevantie)"
+        "titel": "Wat is AI? (Definitie)"
     },
     {
       "type": "content-text",
@@ -53,12 +48,12 @@
       "type": "process-flow",
       "titel": "Een sneltrein door de AI-geschiedenis",
       "items": [
-        { "stap": "1950", "titel": "De Turingtest", "beschrijving": "De Britse wiskundige Alan Turing stelde de eerste formele test voor om te meten of een machine intelligent gedrag kon vertonen dat niet van een mens te onderscheiden is." },
-        { "stap": "1956", "titel": "De Dartmouth Conferentie", "beschrijving": "Tijdens deze conferentie werd de term \"Artificial Intelligence\" officieel geboren. Dit markeerde het begin van AI als academisch vakgebied." },
-        { "stap": "1980-1990", "titel": "De AI-winter", "beschrijving": "Na hooggespannen verwachtingen volgde een periode van teleurstelling. De technologie was nog niet krachtig genoeg, waardoor de financiering en het vertrouwen afnamen." },
-        { "stap": "2012", "titel": "Doorbraak van Deep Learning", "beschrijving": "Dankzij krachtigere computers en enorme datasets konden AI-systemen ineens beelden (zoals op de ImageNet-database) beter herkennen dan mensen. Dit was het begin van de huidige AI-revolutie." },
-        { "stap": "2022", "titel": "Doorbraak van Grote Taalmodellen (LLM's)", "beschrijving": "Met de lancering van ChatGPT werd AI die mensachtige tekst kan genereren toegankelijk voor het grote publiek." },
-        { "stap": "2024", "titel": "Opkomst van Multimodale AI & Agents", "beschrijving": "De nieuwste AI-systemen kunnen meerdere soorten input (tekst, beeld, geluid) combineren en autonoom handelen om een doel te bereiken." }
+        { "stap": "1950", "titel": "De Turingtest", "beschrijving": "Alan Turing ontwikkelde de eerste test om te meten of een machine intelligent gedrag kan vertonen dat niet van een mens te onderscheiden is." },
+        { "stap": "1956", "titel": "De Dartmouth Conferentie", "beschrijving": "De term \"Artificial Intelligence\" werd officieel geboren en AI werd een academisch vakgebied." },
+        { "stap": "1980-1990", "titel": "De AI-winter", "beschrijving": "Periode van teleurstelling na hooggespannen verwachtingen. Financiering en vertrouwen namen af omdat de technologie nog niet krachtig genoeg was." },
+        { "stap": "2012", "titel": "Doorbraak van Deep Learning", "beschrijving": "AI-systemen konden dankzij krachtigere computers en grote datasets ineens beelden beter herkennen dan mensen. Begin van de huidige AI-revolutie." },
+        { "stap": "2022", "titel": "Doorbraak van Grote Taalmodellen (LLM's)", "beschrijving": "ChatGPT maakte AI die mensachtige tekst genereert toegankelijk voor iedereen." },
+        { "stap": "2024", "titel": "Opkomst van Multimodale AI & Agents", "beschrijving": "AI-systemen combineren meerdere inputs (tekst, beeld, geluid) en handelen autonoom om doelen te bereiken." }
       ]
     },
     {
@@ -67,13 +62,13 @@
     },
     {
       "type": "content-text",
-      "tekst": "Een van de meest fascinerende aspecten van AI is het vermogen om te leren. In dit stuk richten we ons op <strong>Machine Learning</strong> en de meer geavanceerde vorm <strong>Deep Learning</strong> – in de volgende twee kaders (Kader 1 voor ML, Kader 2 voor DL) lees je met een fysiotherapie‑analogie hoe deze methodes werken. Deze uitleg is voldoende om de kernbegrippen te begrijpen. Daarbij is het goed om te weten dat er daarnaast tal van andere krachtige leermethoden bestaan – zoals reinforcement learning, meta‑learning, neuro‑symbolische AI en neuro‑evolution – die continu verder worden ontwikkeld."
+      "tekst": "AI's vermogen om te leren is fascinerend. We richten ons op <strong>Machine Learning</strong> en <strong>Deep Learning</strong> – onderstaande fysiotherapie-analogieën helpen je de kernbegrippen te begrijpen. Daarnaast bestaan er andere krachtige leermethoden zoals reinforcement learning, meta-learning en neuro-symbolische AI."
     },
     {
       "type": "card-grid",
       "items": [
-        { "titel": "Machine Learning (ML)", "beschrijving": "Dit is een techniek waarbij algoritmes zichzelf verbeteren door te leren van voorbeelden uit data, zonder dat elke stap expliciet is geprogrammeerd.", "voorbeeld": { "titel": "Analogie uit de fysiotherapie: Spierversterking", "tekst": "Vergelijk Machine Learning met spiertraining. Net zoals je spieren sterker worden door herhaalde training, wordt een ML-model 'slimmer' en nauwkeuriger door het te trainen met heel veel data." }},
-        { "titel": "Deep Learning (DL)", "beschrijving": "Dit is een specifieke, geavanceerde vorm van ML die gebruikmaakt van gelaagde <em>neurale netwerken</em>, losjes geïnspireerd op de werking van het menselijk brein. Door de vele lagen kan het systeem zeer complexe patronen herkennen, bijvoorbeeld in beeld of geluid.", "voorbeeld": { "titel": "Analogie uit de fysiotherapie: Het zenuwstelsel", "tekst": "Denk aan ons zenuwstelsel. Simpele reflexen worden op een lager niveau verwerkt (ruggenmerg), terwijl complexe beslissingen in de hersenschors plaatsvinden. Een 'diep' neuraal netwerk werkt ook met lagen die informatie verwerken, van simpel naar steeds complexer." }}
+        { "titel": "Machine Learning (ML)", "beschrijving": "Algoritmes verbeteren zichzelf door te leren van voorbeelden uit data, zonder vooraf geprogrammeerde stappen.", "voorbeeld": { "titel": "Analogie: Spierversterking", "tekst": "Net zoals spieren sterker worden door herhaalde training, wordt een ML-model nauwkeuriger door training met veel data." }},
+        { "titel": "Deep Learning (DL)", "beschrijving": "Geavanceerde vorm van ML met gelaagde <em>neurale netwerken</em>, geïnspireerd op het menselijk brein. Kan zeer complexe patronen herkennen in beeld of geluid.", "voorbeeld": { "titel": "Analogie: Het zenuwstelsel", "tekst": "Simpele reflexen worden laag verwerkt (ruggenmerg), complexe beslissingen hoger (hersenschors). Een neuraal netwerk verwerkt ook in lagen: van simpel naar complex." }}
       ]
     },
     {
