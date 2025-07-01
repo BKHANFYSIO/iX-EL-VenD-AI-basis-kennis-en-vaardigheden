@@ -317,6 +317,12 @@
       "tekst": "Als opleiding bieden wij ook gecontroleerde AI-tools aan waarbij docenten de Human in the Loop rol vervullen. Statische content zoals deze e-learning is bijvoorbeeld zorgvuldig gecontroleerd, terwijl interactieve tools zoals simulaties minder voorspelbare output kunnen geven. Het gaat er dus om dat je leert inschatten welke mate van controle en expertise nodig is in verschillende situaties.\n\nDe beslisboom helpt je bij deze afweging: heb je voldoende kennis om fouten te herkennen? Past het gebruik bij je leerdoel? En vooral: wat zijn de consequenties als de AI-output onjuist zou zijn? Deze vragen stellen je in staat om bewuste keuzes te maken over wanneer en hoe je AI inzet."
     },
     {
+      "type": "info-card",
+      "classes": "warning-card",
+      "titel": "Bronvermelding bij AI-gebruik",
+      "tekst": "Wanneer je AI gebruikt bij het maken van opdrachten, is het belangrijk dit transparant te vermelden. We verwachten dat je bij producten die je indient in het portfolio voor feedback of als bewijs er altijd bij vermeldt (als AI gebruikt is) op welke manier dat gedaan is. Bij echte publicabele stukken (zoals een Scriptie/HBO thesis) zijn de eisen nog wat strenger.\n\n<strong>Voorbeeld bronvermelding:</strong><br>\"Voor dit product (bijvoorbeeld een behandelplan, fysiotherapeutische diagnose, innovatieverslag) heb ik [tool naam, bijv. ChatGPT] gebruikt voor [specifiek doel, bijv. het genereren van ideeën/controleren van grammatica]. De inhoud is vervolgens door mij kritisch beoordeeld, aangepast en aangevuld met eigen inzichten.\"\n\n<strong>Voor uitgebreide APA-richtlijnen:</strong><br>Voor gedetailleerde richtlijnen over het correct citeren van AI-gebruik volgens APA-standaarden, zie: <a href=\"https://auteursrechten.nl/wp-content/uploads/2024/05/De-APA-richtlijnen-uitgelegd-Generatieve-AI-Versie-1.0.pdf\" target=\"_blank\">De APA-richtlijnen uitgelegd: Generatieve AI (Versie 1.0)</a>."
+    },
+    {
       "type": "divider"
     },
     {

@@ -88,7 +88,7 @@
           "alt": "Een illustratie van mens-AI samenwerking in een loop.", 
           "onderschrift": "Voorbeeld van een AI-gegenereerde afbeelding voor deze e-learning",
           "bron": {
-            "naam": "ChatGPT DALL-E"
+            "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"Maak een afbeelding de het concept 'Human in the loop' uitdrukt met de tekst 'Human-in-th-Loop' en maak deze in dezelfde stijl als de afbeelding die ik als bijlage heb toegevoegd\" via OpenAI, ChatGPT (https://chatgpt.com)."
           }
         },
         { 
@@ -96,7 +96,7 @@
           "alt": "Een instructie-afbeelding voor een squat-oefening.", 
           "onderschrift": "Voorbeeld van een afbeelding voor patiëntfolders of apps",
           "bron": {
-            "naam": "ChatGPT DALL-E"
+            "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"Maak een illustratieve afbeelding die geschikt is voor voorlichtingsmateriaal waar uitgelegd wordt hoe een SQUAT moet worden uitgevoerd. Voeg korte ondersteunende instructie tekst toe\" via OpenAI, ChatGPT (https://chatgpt.com)."
           }
         },
         { 
@@ -104,7 +104,7 @@
           "alt": "Een realistische afbeelding van een fysiotherapie oefenzaal.", 
           "onderschrift": "Voorbeeld van een realistische afbeelding voor een praktijkfolder",
           "bron": {
-            "naam": "Google Imagen 4"
+            "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"maak een realistische afbeelding van een fysiotherapeut die in een praktijk ruimte een patient een squat oefening aanleert\" via Google, Gemini (https://gemini.google.com)."
           }
         }
       ]
@@ -126,16 +126,16 @@
       "kolommen": 2,
       "items": [
         {
-          "titel": "Voorbeeldvideo gemaakt met VEO 3 (Google)",
-          "beschrijving": "Demo van Google zelf: AI-video met automatisch gegenereerd geluid, gemaakt met VEO 3 van Google.",
-          "bron": "VEO 3 van Google",
+          "titel": "VEO 3 Demo: AI-video met geluid (Google, 2025)",
+          "beschrijving": "Officiële demonstratievideo van Google's VEO 3 technologie, waarin AI automatisch zowel video als bijpassend geluid genereert.",
+          "bron": "Google (2025)",
           "duur": "-",
           "link": "https://youtu.be/mCFMn0UkRt0?si=Dp2wRH6AVAopYrWi"
         },
         {
-          "titel": "Voorbeeldvideo gemaakt met VEO 2 (Google)",
-          "beschrijving": "AI-video zonder geluid, gegenereerd met VEO 2 van Google. Toont een COP lokaal met docent die toespreekt en studenten die op de achtergrond aan het oefenen zijn.",
-          "bron": "VEO 2 van Google",
+          "titel": "Fysiotherapie onderwijsvideo (Koekoek, 2025)",
+          "beschrijving": "AI-gegenereerde video door Koekoek, B. (2025) met de prompt \"Maak een video waarin een docent fysiotherapie op de bank zittend uitleg geeft in de richting van de camera. Op de achtergrond zie je enkele studenten aan het oefenen. Het vind plaats in een praktijklokaal voor fysiotherapie onderwijs waar meerdere behandeltafels staan\" via Google, VEO 2 (https://aistudio.google.com).",
+          "bron": "Koekoek, B. (2025)",
           "duur": "-",
           "link": "https://youtu.be/nyMsubctoLc"
         }
@@ -158,10 +158,11 @@
       "kolommen": 1,
       "items": [
         {
+          "id": "h5_audio_notebooklm",
           "titel": "Voorbeeld podcast over recente AI-ontwikkelingen in onderwijs",
           "beschrijving": "Een korte podcast over recente (juni 2025) ontwikkelingen in leren en onderwijs met AI, gemaakt met NotebookLM.",
-          "bron": "NotebookLM",
-          "src": "audio/Podcast-NotebookLM-voorbeeld.wav"
+          "bron": "audio/Podcast-NotebookLM-voorbeeld.wav",
+          "meta": "Gegenereerd door Koekoek, B. (2025) via NotebookLM"
         }
       ]
     },
@@ -269,6 +270,18 @@
       "classes": "warning-card",
       "titel": "Belangrijke opmerking",
       "tekst": "Het gebruik van externe tools zoals Google Gemini, Bolt of ChatGPT is volledig op eigen initiatief en niet verplicht. De HAN heeft geen overeenkomsten met deze partijen. Wees je altijd bewust van hoe je deze tools gebruikt. Denk aan je privacy en de betrouwbaarheid van de informatie, zoals besproken in het hoofdstuk 'Kansen & risico's'."
+    },
+    {
+      "type": "section-title",
+      "titel": "Bronnenlijst AI-gegenereerde content"
+    },
+    {
+      "type": "content-text",
+      "tekst": "De volgende AI-gegenereerde afbeeldingen en tools zijn gebruikt in dit hoofdstuk:"
+    },
+    {
+      "type": "content-text",
+      "tekst": "<strong>AI-gegenereerde afbeeldingen:</strong><br>Koekoek, B. (2025). <em>Human-in-the-Loop illustratie</em> [Afbeelding]. Gegenereerd via ChatGPT.<br><br>Koekoek, B. (2025). <em>SQUAT instructie-afbeelding</em> [Afbeelding]. Gegenereerd via ChatGPT.<br><br>Koekoek, B. (2025). <em>Fysiotherapie oefenzaal</em> [Afbeelding]. Gegenereerd via Gemini.<br><br><strong>AI-gegenereerde video's:</strong><br>Koekoek, B. (2025). <em>Fysiotherapie onderwijsvideo</em> [Video]. YouTube. https://youtu.be/nyMsubctoLc<br><br><strong>Demonstratie video's:</strong><br>Google. (2025). <em>VEO 3 Demo</em> [Video]. YouTube. https://youtu.be/mCFMn0UkRt0?si=Dp2wRH6AVAopYrWi<br><br><strong>AI-gegenereerde audio:</strong><br>Koekoek, B. (2025). <em>Podcast over AI-ontwikkelingen in onderwijs</em> [Audio]. Gegenereerd via NotebookLM.<br><br><strong>AI-tools gebruikt:</strong><br>Google. (2025). <em>Gemini</em> [Generatieve AI]. https://gemini.google.com<br><br>Google. (2025). <em>NotebookLM</em> [Generatieve AI]. https://notebooklm.google.com<br><br>Google. (2025). <em>VEO 2</em> [Generatieve AI]. https://aistudio.google.com<br><br>OpenAI. (2025). <em>ChatGPT</em> [Generatieve AI]. https://chatgpt.com"
     }
   ],
   "interacties": [
