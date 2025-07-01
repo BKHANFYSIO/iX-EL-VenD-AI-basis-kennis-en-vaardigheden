@@ -975,32 +975,68 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                 html += '</div>';
                 break;
             case 'split-screen-image-text':
+                // Support both `image` and `afbeelding` keys for backwards compatibility
+                const imageData = block.image || block.afbeelding;
+                const textContent = block.content || block.tekst_content;
+                
                 let splitCaptionHtml = '';
-                if (block.afbeelding.onderschrift || block.afbeelding.bron) {
+                if (imageData.caption || imageData.onderschrift || imageData.bron) {
                     splitCaptionHtml += '<figcaption>';
-                    if (block.afbeelding.onderschrift) {
-                        splitCaptionHtml += `<span class="caption-text">${block.afbeelding.onderschrift}</span>`;
-                    }
-                    if (block.afbeelding.bron) {
-                        if (block.afbeelding.bron.url) {
-                            splitCaptionHtml += `<a href="${block.afbeelding.bron.url}" target="_blank" class="caption-source">${block.afbeelding.bron.naam}</a>`;
-                        } else {
-                            splitCaptionHtml += `<span class="caption-source">${block.afbeelding.bron.naam}</span>`;
+                    
+                    // Handle caption field
+                    if (imageData.caption) {
+                        splitCaptionHtml += imageData.caption;
+                    } else {
+                        // Legacy support
+                        if (imageData.onderschrift) {
+                            splitCaptionHtml += `<span class="caption-text">${imageData.onderschrift}</span>`;
+                        }
+                        if (imageData.bron) {
+                            if (imageData.bron.url) {
+                                splitCaptionHtml += `<a href="${imageData.bron.url}" target="_blank" class="caption-source">${imageData.bron.naam}</a>`;
+                            } else {
+                                splitCaptionHtml += `<span class="caption-source">${imageData.bron.naam}</span>`;
+                            }
                         }
                     }
                     splitCaptionHtml += '</figcaption>';
                 }
 
+                // Generate clickable class and data attributes
+                const clickableClass = imageData.clickable ? 'clickable' : '';
+                const clickableAttributes = imageData.clickable ? 
+                    `data-popup-src="${imageData.src}" data-popup-alt="${imageData.alt || ''}" data-popup-caption="${splitCaptionHtml.replace(/"/g, '&quot;')}"` : '';
+
+                // Process text content
+                let textContentHtml = '';
+                if (Array.isArray(textContent)) {
+                    textContent.forEach(item => {
+                        if (typeof item === 'string') {
+                            textContentHtml += `<p>${item}</p>`;
+                        } else if (item.type === 'content-text') {
+                            textContentHtml += `<p>${item.tekst.replace(/\n/g, '<br>')}</p>`;
+                        } else {
+                            // Render other content types recursively
+                            textContentHtml += renderGenericChapterContent([item], chapterNumber, `${currentBlockId}-text-`);
+                        }
+                    });
+                } else if (typeof textContent === 'string') {
+                    textContentHtml = `<p>${textContent}</p>`;
+                }
+
                 html += `
-                    <div class="img-split-screen">
+                    <div class="img-split-screen ${block.classes || ''}">
                         <div class="image-content">
                             <figure class="image-container">
-                                <img src="${block.afbeelding.src}" alt="${block.afbeelding.alt || ''}">
+                                <img src="${imageData.src}" 
+                                     alt="${imageData.alt || ''}" 
+                                     class="${clickableClass}"
+                                     ${clickableAttributes}>
                                 ${splitCaptionHtml}
                             </figure>
                         </div>
                         <div class="text-content">
-                            ${block.tekst_content.map(p => `<p>${p}</p>`).join('')}
+                            ${textContentHtml}
                         </div>
                     </div>
                 `;

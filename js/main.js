@@ -197,4 +197,88 @@ async function initializeDevMode() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeElearning();
     initializeDevMode();
-}); 
+    initializeImagePopups();
+});
+
+// Image popup functionality
+function initializeImagePopups() {
+    // Create popup overlay if it doesn't exist
+    let popupOverlay = document.getElementById('image-popup-overlay');
+    if (!popupOverlay) {
+        popupOverlay = document.createElement('div');
+        popupOverlay.id = 'image-popup-overlay';
+        popupOverlay.className = 'image-popup-overlay';
+        popupOverlay.innerHTML = `
+            <div class="image-popup-content">
+                <button class="image-popup-close" onclick="closeImagePopup()">&times;</button>
+                <img id="popup-image" src="" alt="">
+                <div id="popup-caption" class="image-popup-caption"></div>
+            </div>
+        `;
+        document.body.appendChild(popupOverlay);
+    }
+
+    // Add click event listeners to clickable images
+    document.addEventListener('click', function(e) {
+        if (e.target.tagName === 'IMG' && e.target.classList.contains('clickable')) {
+            e.preventDefault();
+            openImagePopup(
+                e.target.dataset.popupSrc || e.target.src,
+                e.target.dataset.popupAlt || e.target.alt,
+                e.target.dataset.popupCaption || ''
+            );
+        }
+    });
+
+    // Close popup when clicking outside the image
+    popupOverlay.addEventListener('click', function(e) {
+        if (e.target === popupOverlay) {
+            closeImagePopup();
+        }
+    });
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+            closeImagePopup();
+        }
+    });
+}
+
+function openImagePopup(src, alt, caption) {
+    const popupOverlay = document.getElementById('image-popup-overlay');
+    const popupImage = document.getElementById('popup-image');
+    const popupCaption = document.getElementById('popup-caption');
+
+    if (popupOverlay && popupImage && popupCaption) {
+        popupImage.src = src;
+        popupImage.alt = alt;
+        popupCaption.innerHTML = caption;
+        
+        // Prevent body scrolling when popup is open
+        document.body.style.overflow = 'hidden';
+        
+        // Show popup with animation
+        popupOverlay.classList.add('active');
+    }
+}
+
+function closeImagePopup() {
+    const popupOverlay = document.getElementById('image-popup-overlay');
+    
+    if (popupOverlay && popupOverlay.classList.contains('active')) {
+        // Restore body scrolling
+        document.body.style.overflow = '';
+        
+        // Hide popup with animation
+        popupOverlay.classList.remove('active');
+        
+        // Clear image src after animation to save memory
+        setTimeout(() => {
+            const popupImage = document.getElementById('popup-image');
+            if (popupImage) {
+                popupImage.src = '';
+            }
+        }, 300);
+    }
+}

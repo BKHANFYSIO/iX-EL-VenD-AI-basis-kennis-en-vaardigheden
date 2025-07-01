@@ -293,6 +293,30 @@
       "tekst": "Binnen de opleiding Fysiotherapie moedigen we je aan om AI te gebruiken als een krachtig hulpmiddel. Maar we stellen ook duidelijke eisen. De absolute ondergrens is dat je altijd 'Human in the Loop' toepast: je kent de risico's en gaat er integer en verantwoord mee om. We verwachten van je dat je altijd transparant bent over je AI-gebruik en onthoudt dat jij, als toekomstig fysiotherapeut, de eindverantwoordelijkheid draagt voor je werk en de keuzes die je maakt – niet de AI."
     },
     {
+      "type": "split-screen-image-text",
+      "classes": "img-split-screen",
+      "image": {
+        "src": "images/Beslisboom-chattenmetnapoleon.jpeg",
+        "alt": "Beslisboom voor het chatten met AI: toont de stappen om te bepalen of je voldoende eigen kennis hebt voordat je AI gebruikt",
+        "caption": "Last, B., & Sprakel, T. (2024). <em>Chatten met Napoleon: Werken met generatieve AI in het onderwijs</em> (2e editie). Boom.",
+        "clickable": true
+      },
+      "content": [
+        {
+          "type": "content-text",
+          "tekst": "Deze beslisboom toont hoe belangrijk eigen kennis is voor verantwoord AI-gebruik. Een cruciale vraag daarbij is: <strong>maakt het uit of de output waar is?</strong> Dit is sterk afhankelijk van de context waarin je AI gebruikt."
+        },
+        {
+          "type": "content-text",
+          "tekst": "Voor <strong>persoonlijke studie</strong> mag je AI gebruiken als leerhulpmiddel, ook als je nog kennis opbouwt - fouten zijn dan onderdeel van het leerproces. Bij <strong>producten die je inlevert voor je portfolio of waar je feedback op vraagt</strong> is transparantie cruciaal: vermeld je AI-gebruik en zorg dat het werk je eigen begrip toont. In de <strong>patiëntenzorg</strong> is de hoogste voorzichtigheid vereist."
+        }
+      ]
+    },
+    {
+      "type": "content-text",
+      "tekst": "Als opleiding bieden wij ook gecontroleerde AI-tools aan waarbij docenten de Human in the Loop rol vervullen. Statische content zoals deze e-learning is bijvoorbeeld zorgvuldig gecontroleerd, terwijl interactieve tools zoals simulaties minder voorspelbare output kunnen geven. Het gaat er dus om dat je leert inschatten welke mate van controle en expertise nodig is in verschillende situaties.\n\nDe beslisboom helpt je bij deze afweging: heb je voldoende kennis om fouten te herkennen? Past het gebruik bij je leerdoel? En vooral: wat zijn de consequenties als de AI-output onjuist zou zijn? Deze vragen stellen je in staat om bewuste keuzes te maken over wanneer en hoe je AI inzet."
+    },
+    {
       "type": "divider"
     },
     {

@@ -51,20 +51,70 @@
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--background-light-gray);
+    border-radius: var(--border-radius-large);
+    border-left: 4px solid var(--primary-purple);
 }
 
 .img-split-screen .image-content {
-    /* De afbeelding zelf zit hier niet direct in, maar de container ervan */
+    position: relative;
+}
+
+.img-split-screen .image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-split-screen .image-content img.clickable {
+    cursor: pointer;
+}
+
+.img-split-screen .image-content img.clickable:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.img-split-screen .image-content figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
 }
 
 .img-split-screen .text-content {
-    /* Stijlen voor de tekstinhoud */
+    padding-left: 1rem;
+}
+
+.img-split-screen .text-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.img-split-screen .text-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* Responsive voor split screen */
 @media (max-width: 768px) {
     .img-split-screen {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .img-split-screen .text-content {
+        padding-left: 0;
+        order: 2;
+    }
+    
+    .img-split-screen .image-content {
+        order: 1;
     }
 }
 
@@ -221,4 +271,111 @@
     text-align: center;
     font-family: 'Permanent Marker', cursive; /* Zorg ervoor dat dit lettertype is geladen */
     color: #333;
+}
+
+/* 
+==============================================
+  IMAGE POPUP/MODAL STYLES
+==============================================
+*/
+
+.image-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.image-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-popup-content {
+    position: relative;
+    max-width: 98vw;
+    max-height: 98vh;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    padding: 0.75rem;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.image-popup-overlay.active .image-popup-content {
+    transform: scale(1);
+}
+
+.image-popup-content img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(98vh - 100px); /* Account for padding and caption - more space for image */
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.image-popup-caption {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.image-popup-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-purple);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 1001;
+}
+
+.image-popup-close:hover {
+    background-color: var(--secondary-purple);
+    transform: scale(1.1);
+}
+
+/* Responsive aanpassingen voor popup */
+@media (max-width: 768px) {
+    .image-popup-content {
+        max-width: 96vw;
+        max-height: 96vh;
+        padding: 0.5rem;
+    }
+    
+    .image-popup-content img {
+        max-height: calc(96vh - 80px);
+    }
+    
+    .image-popup-close {
+        top: -10px;
+        right: -10px;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
 } 
