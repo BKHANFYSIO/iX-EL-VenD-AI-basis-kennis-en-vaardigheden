@@ -165,14 +165,7 @@
     }
 }
 
-/* Speciale styling voor de eerste en laatste leerdoel (optioneel) */
-.leerdoel-item:first-child {
-    background: linear-gradient(135deg, var(--background-light-gray) 0%, var(--accent-purple-light) 100%);
-}
-
-.leerdoel-item:last-child {
-    background: linear-gradient(135deg, var(--accent-purple-light) 0%, var(--background-light-gray) 100%);
-}
+/* Alle leerdoelen hebben dezelfde consistente styling voor overzichtelijkheid */
 
 /* Animation voor wanneer component in beeld komt (optioneel) */
 @keyframes fadeInUp {
