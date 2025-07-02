@@ -172,21 +172,25 @@ De styling is georganiseerd in een modulaire structuur voor optimale onderhoudba
 /css/
 ├── styles.css                    # Hoofdbestand met CSS-variabelen en globale stijlen
 └── components/                   # Component-specifieke styling
-    ├── accent-blok.css          # Accent-blokken (statistieken, weetjes, citaten)
-    ├── cards.css                # Info-cards, benefit-cards, portfolio-booster-cards
-    ├── interactive.css          # Quiz, reflection, dragdrop, selfassessment
-    ├── layout.css               # Algemene layout componenten en containers
+    ├── afsluiting.css           # Afsluitende hoofdstuk styling
+    ├── audio.css                # Audio spelers en gerelateerde componenten
     ├── buttons.css              # Knoppen, controls en interactieve elementen
-    ├── navigation.css           # Sidebar, navigatie en voortgangsindicatoren
-    ├── sidebar.css              # Sidebar-specifieke styling
+    ├── cards.css                # Info-cards, benefit-cards, portfolio-booster-cards
+    ├── content-blocks.css       # Accent-blokken (statistieken, weetjes, citaten) en accordions
+    ├── footer.css               # Footer styling
     ├── header.css               # Header en titel styling
     ├── images.css               # Afbeeldingen, iconen en media
-    ├── video.css                # Video containers en embeds
+    ├── interactive.css          # Quiz, reflection, dragdrop, selfassessment
+    ├── layout.css               # Algemene layout componenten en containers
+    ├── leerdoelen.css           # Dynamische leerdoelen component
+    ├── modal.css                # Modal dialogs en popups
+    ├── navigation.css           # Sidebar, navigatie en voortgangsindicatoren
     ├── process-flow.css         # Stappenplannen en tijdlijnen
     ├── quiz.css                 # Quiz-specifieke styling
     ├── search.css               # Zoekfunctionaliteit
-    ├── afsluiting.css           # Afsluitende hoofdstuk styling
-    └── stijlgids.css            # ONTWIKKELINGSHULPMIDDEL - alleen voor stijlgids.html
+    ├── sidebar.css              # Sidebar-specifieke styling
+    ├── stijlgids.css            # ONTWIKKELINGSHULPMIDDEL - alleen voor stijlgids.html
+    └── video.css                # Video containers en embeds
 ```
 
 ### Dynamische Content Componenten
@@ -198,14 +202,26 @@ Een volledig dynamisch component dat automatisch de leerdoelen uit `config.json`
 - **JavaScript**: `window.elearningConfig` globaal beschikbaar via `main.js`
 - **Content Type**: `leerdoelen-dynamic` in `dynamicContent.js`
 - **Styling**: `css/components/leerdoelen.css` 
-- **Usage**: Voeg `{"type": "leerdoelen-dynamic"}` toe aan hoofdstuk content
+- **Usage**: Voeg block toe aan hoofdstuk content
+
+**JSON Structuur:**
+```json
+{
+  "type": "leerdoelen-dynamic",
+  "portfolio_tip": "Optionele portfolio tekst hier..."
+}
+```
+
+**Parameters:**
+- `portfolio_tip` (optioneel): Configureerbare portfolio/certificaat tekst
+- Indien weggelaten: geen footer getoond (volledig flexibel voor andere organisaties)
 
 **Voordelen:**
 - ✅ **Herbruikbaar**: Automatische synchronisatie met config.json
-- ✅ **Modulair**: Eigen CSS component bestand
+- ✅ **Flexibel**: Portfolio tip configureerbaar per organisatie/onderwerp
+- ✅ **Modulair**: Eigen CSS component bestand  
 - ✅ **Responsive**: 2-kolom grid op desktop, 1-kolom op mobiel
 - ✅ **Toegankelijk**: Focus states en checkmark animaties
-- ✅ **Portfolio integratie**: Automatische verwijzing naar EVL 4
 
 ### Belangrijke Conventies
 
@@ -312,41 +328,14 @@ Beide bestanden bevatten duidelijke waarschuwingen om toekomstige dubbele refere
 
 ---
 
-## Developer Mode & Planning Workspace
+## Developer Mode
 
-Om het testen van interactieve componenten en content planning te vergemakkelijken, zijn er developer tools ingebouwd die alleen beschikbaar zijn wanneer de applicatie lokaal wordt gedraaid (`localhost` of `127.0.0.1`).
+Om het testen van interactieve componenten te vergemakkelijken, is er een "Developer Mode" ingebouwd die alleen beschikbaar is wanneer de applicatie lokaal wordt gedraaid (`localhost` of `127.0.0.1`).
 
-### Developer Knoppen
 -   **Activatie**: De modus wordt automatisch ingeschakeld op basis van de `hostname`.
--   **"Interacties Testen" knop**: Laadt `content/voorbeeld_interacties.json` voor testing.
--   **"Planning Dashboard" knop**: Opent `planning.html` in nieuw tabblad.
-
-### Planning Workspace
-Een complete workspace voor content planning en kloning:
-
-#### 📁 Mapstructuur (`/planning/`):
-- **README.md**: Uitleg van het systeem
-- **algemene_ideeen.md**: Overkoepelende projectvisie
-- **content_strategie.md**: Target audience, tone, didactiek
-- **`/hoofdstuk_templates/`**: Herbruikbare templates voor verschillende hoofdstuk types
-- **`/ai_prompts/`**: Collectie van beproefde AI prompts
-- **`/per_hoofdstuk/`**: Specifieke planning per hoofdstuk
-
-#### 🖥️ Planning Dashboard (`planning.html`):
-- **Markdown renderer**: Live weergave van alle planning bestanden
-- **Navigatie**: Sidebar met alle bestanden georganiseerd per categorie
-- **Status indicators**: Visuele status (live/dev/concept) per bestand
-- **Responsive design**: Werkt op desktop en mobile
-- **Live editing workflow**: Direct aanpassen van .md bestanden
-
-#### 🎯 Voor Klonen:
-- **Copy entire `/planning/` folder** naar nieuw project
-- **Pas markdown bestanden aan** voor nieuwe doelgroep/onderwerp
-- **Gebruik templates** voor snelle hoofdstuk setup
-- **AI prompts hergebruiken** voor consistente kwaliteit
-
-### Implementatie:
--   `js/main.js` (`initializeDevMode`): Developer knoppen en functionality
--   `js/dynamicContent.js` (`renderStandaloneChapter`): Testing framework
--   `planning.html`: Standalone planning dashboard met markdown rendering
--   Een "Terug"-knop wordt toegevoegd aan de header om de pagina te herladen en terug te keren naar de normale e-learningweergave. 
+-   **Knop**: In de header verschijnt een knop "Interacties Testen".
+-   **Content**: Als op de knop wordt geklikt, wordt de content van `content/voorbeeld_interacties.json` geladen. Dit bestand bevat voorbeelden van alle beschikbare interactietypes (`mc`, `reflection`, `dragdrop`, etc.).
+-   **Implementatie**:
+    -   `js/main.js` (`initializeDevMode`): Detecteert de lokale omgeving, maakt de knop zichtbaar en voegt een event listener toe.
+    -   `js/dynamicContent.js` (`renderStandaloneChapter`): Een speciale functie om een hoofdstuk te renderen buiten de standaard paginastructuur, specifiek voor deze modus.
+    -   Een "Terug"-knop wordt toegevoegd aan de header om de pagina te herladen en terug te keren naar de normale e-learningweergave. 

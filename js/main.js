@@ -147,19 +147,6 @@ function populateUI(config) {
 async function initializeDevMode() {
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         const devButton = document.getElementById('dev-mode-button');
-        const header = document.querySelector('header .header-content');
-        
-        // Add Planning Dashboard button
-        if (header && !document.getElementById('planning-button')) {
-            const planningButton = document.createElement('button');
-            planningButton.id = 'planning-button';
-            planningButton.textContent = 'Planning Dashboard';
-            planningButton.className = 'button button-secondary';
-            planningButton.style.marginLeft = '10px';
-            planningButton.onclick = () => window.open('planning.html', '_blank');
-            header.appendChild(planningButton);
-        }
-        
         if (devButton) {
             devButton.style.display = 'inline-block';
             devButton.addEventListener('click', async () => {

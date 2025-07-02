@@ -1143,6 +1143,16 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                     ? window.elearningConfig.leerdoelen 
                     : [];
                 
+                // Portfolio tip is optioneel en configureerbaar
+                const portfolioTip = block.portfolio_tip || '';
+                const footerHtml = portfolioTip ? `
+                    <div class="leerdoelen-footer">
+                        <p class="leerdoelen-note">
+                            💡 <strong>Portfolio tip:</strong> ${portfolioTip}
+                        </p>
+                    </div>
+                ` : '';
+                
                 html += `
                     <div class="leerdoelen-container">
                         <div class="leerdoelen-header">
@@ -1158,12 +1168,7 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                                 </div>
                             `).join('')}
                         </div>
-                        <div class="leerdoelen-footer">
-                            <p class="leerdoelen-note">
-                                💡 <strong>Portfolio tip:</strong> De opdrachten in deze module tellen direct mee voor <strong>EVL 4</strong> 
-                                (Erkend Verworven Leerresultaat). Na voltooiing ontvang je een certificaat dat je kunt toevoegen aan je portfolio.
-                            </p>
-                        </div>
+                        ${footerHtml}
                     </div>
                 `;
                 break;
