@@ -20,6 +20,9 @@ async function initializeElearning() {
         }
         const config = await response.json();
 
+        // Maak config globaal beschikbaar voor andere modules
+        window.elearningConfig = config;
+
         // Initialiseer globale variabelen voor andere scripts
         if (typeof initializeGlobals === 'function') {
             initializeGlobals(config);

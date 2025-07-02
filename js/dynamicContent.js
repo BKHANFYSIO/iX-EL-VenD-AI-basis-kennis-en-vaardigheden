@@ -974,6 +974,30 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                 });
                 html += '</div>';
                 break;
+            case 'leerdoelen-dynamic':
+                // Dynamisch ophalen van leerdoelen uit config.json
+                let leerdoelenHtml = '';
+                if (window.elearningConfig && window.elearningConfig.leerdoelen) {
+                    leerdoelenHtml = '<div class="leerdoelen-lijst">';
+                    window.elearningConfig.leerdoelen.forEach(leerdoel => {
+                        leerdoelenHtml += `<div class="leerdoel-item"><strong>✓</strong> ${leerdoel}</div>`;
+                    });
+                    leerdoelenHtml += '</div>';
+                } else {
+                    leerdoelenHtml = '<p>Leerdoelen konden niet worden geladen.</p>';
+                }
+                
+                html += `
+                    <div class="info-card leerdoelen-card">
+                        <h4 class="info-card-title">${block.titel || 'Leerdoelen'}</h4>
+                        <div class="info-card-content">
+                            ${block.intro ? `<p>${block.intro}</p>` : ''}
+                            ${leerdoelenHtml}
+                            ${block.footer ? `<p class="leerdoelen-footer">${block.footer}</p>` : ''}
+                        </div>
+                    </div>
+                `;
+                break;
             case 'split-screen-image-text':
                 // Support both `image` and `afbeelding` keys for backwards compatibility
                 const imageData = block.image || block.afbeelding;

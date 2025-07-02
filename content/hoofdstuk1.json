@@ -205,10 +205,10 @@
       ]
     },
     {
-      "type": "info-card",
-      "classes": "leerdoelen-card",
+      "type": "leerdoelen-dynamic",
       "titel": "Wat ga je leren? Jouw leerdoelen voor deze module 🎯",
-      "tekst": "Na het voltooien van deze module kun je:<br><br><strong>✓</strong> Verklaar in eigen woorden wat AI is en hoe het leert uit data.<br><strong>✓</strong> Benoem en pas kernbegrippen toe: LLM, context window, token, prompt, AGI, agent, custom instruction, GPT/project/Gem, inferentie, hallucineren, bias.<br><strong>✓</strong> Schrijf en verfijn eenvoudige prompts voor tekst- en beeld-AI.<br><strong>✓</strong> Herken kansen én risico's van AI in (fysio)zorg en maatschappij.<br><strong>✓</strong> Reflecteer op de invloed van AI op jouw studie, beroep en de samenleving.<br><strong>✓</strong> Pas basisprincipes van vibe-coding toe om een kleine AI-tool te maken.<br><br>Deze leerdoelen zijn niet alleen handig om je vooruitgang bij te houden, maar ze komen ook terug in je certificaat en kunnen worden gebruikt voor je portfolio (EVL 4)."
+      "intro": "Na het voltooien van deze module kun je:",
+      "footer": "Deze leerdoelen zijn niet alleen handig om je vooruitgang bij te houden, maar ze komen ook terug in je certificaat en kunnen worden gebruikt voor je portfolio (EVL 4)."
     },
     {
       "type": "section-title",
