@@ -265,6 +265,35 @@ De content van de e-learning wordt dynamisch geladen uit JSON-bestanden in de `/
 -   `js/dynamicContent.js`: Bevat de logica om de content van een specifiek hoofdstuk op te halen en te renderen in de juiste sectie.
 -   `js/script.js`: Bevat de hoofd-applicatielogica, zoals navigatie tussen secties.
 
+## CSS Loading Strategie
+
+### Performance-geoptimaliseerde CSS Loading
+Alle CSS component bestanden worden geladen via `<link>` tags in `index.html` voor optimale performance:
+
+**Voordelen van deze aanpak:**
+- **Parallelle downloads**: Browser kan alle CSS bestanden tegelijkertijd downloaden
+- **Snellere rendering**: Browser kan eerder beginnen met het renderen van de pagina
+- **Eenvoudiger debugging**: Alle CSS referenties zijn direct zichtbaar in de HTML
+- **Minder cascading complexiteit**: Geen nested @import statements
+
+### ⚠️ Belangrijke Regel: CSS Referenties
+**ALLE CSS component bestanden worden ALLEEN geladen via `<link>` tags in index.html**
+
+- ❌ **Voeg GEEN @import statements toe aan styles.css**
+- ✅ **Voeg nieuwe CSS bestanden toe aan de component lijst in index.html**
+- ✅ **Houd de alfabetische volgorde aan voor overzicht**
+
+### Bestandsrollen:
+- **`styles.css`**: Bevat alleen CSS variabelen (:root) en algemene body/html styling
+- **`components/*.css`**: Specifieke component styling die via index.html wordt geladen
+
+### Code Opmerkingen:
+Beide bestanden bevatten duidelijke waarschuwingen om toekomstige dubbele referenties te voorkomen:
+- `styles.css`: Waarschuwing tegen het toevoegen van @import statements
+- `index.html`: Uitleg van de CSS loading strategie
+
+---
+
 ## Developer Mode
 
 Om het testen van interactieve componenten te vergemakkelijken, is er een "Developer Mode" ingebouwd die alleen beschikbaar is wanneer de applicatie lokaal wordt gedraaid (`localhost` of `127.0.0.1`).
