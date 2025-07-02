@@ -206,17 +206,11 @@
     },
     {
       "type": "leerdoelen-dynamic",
-      "portfolio_tip": "De opdrachten in deze module tellen direct mee voor EVL 4 (Erkend Verworven Leerresultaat). Na voltooiing ontvang je een certificaat dat je kunt toevoegen aan je portfolio."
+      "portfolio_tip": "De opdrachten in deze module tellen direct mee voor EVL 4. Na voltooiing ontvang je een certificaat dat je kunt toevoegen aan je portfolio."
     },
     {
       "type": "section-title",
       "titel": "Klaar voor de start? 🚀"
-    },
-    {
-      "type": "info-card",
-      "classes": "white-bg portfolio-booster-card",
-      "titel": "Wat levert dit jou op? Jouw Portfolio Booster!",
-      "tekst": "Deze module is meer dan alleen informatie opdoen. Wat je hier leert en de opdrachten die je maakt (jouw 'artefacten') tellen direct mee voor <strong>EVL 4</strong> (Erkend Verworven Leerresultaat) in je portfolio. Een mooie kans dus om te laten zien wat je in huis hebt! Zorg ervoor dat je certificaten en de resultaten van je opdrachten goed bewaart."
     },
     {
       "type": "content-text",
