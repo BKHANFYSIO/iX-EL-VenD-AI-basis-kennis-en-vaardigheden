@@ -20,7 +20,7 @@ async function initializeElearning() {
         }
         const config = await response.json();
 
-        // Maak config globaal beschikbaar voor andere modules
+        // Maak config globaal beschikbaar voor dynamische content
         window.elearningConfig = config;
 
         // Initialiseer globale variabelen voor andere scripts

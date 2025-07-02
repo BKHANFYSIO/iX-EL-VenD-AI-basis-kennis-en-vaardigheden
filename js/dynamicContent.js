@@ -974,30 +974,6 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                 });
                 html += '</div>';
                 break;
-            case 'leerdoelen-dynamic':
-                // Dynamisch ophalen van leerdoelen uit config.json
-                let leerdoelenHtml = '';
-                if (window.elearningConfig && window.elearningConfig.leerdoelen) {
-                    leerdoelenHtml = '<div class="leerdoelen-lijst">';
-                    window.elearningConfig.leerdoelen.forEach(leerdoel => {
-                        leerdoelenHtml += `<div class="leerdoel-item"><strong>✓</strong> ${leerdoel}</div>`;
-                    });
-                    leerdoelenHtml += '</div>';
-                } else {
-                    leerdoelenHtml = '<p>Leerdoelen konden niet worden geladen.</p>';
-                }
-                
-                html += `
-                    <div class="info-card leerdoelen-card">
-                        <h4 class="info-card-title">${block.titel || 'Leerdoelen'}</h4>
-                        <div class="info-card-content">
-                            ${block.intro ? `<p>${block.intro}</p>` : ''}
-                            ${leerdoelenHtml}
-                            ${block.footer ? `<p class="leerdoelen-footer">${block.footer}</p>` : ''}
-                        </div>
-                    </div>
-                `;
-                break;
             case 'split-screen-image-text':
                 // Support both `image` and `afbeelding` keys for backwards compatibility
                 const imageData = block.image || block.afbeelding;
@@ -1158,6 +1134,36 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                     <div class="benefit-card">
                         <h3>${block.titel}</h3>
                         <div class="benefit-content">${block.beschrijving.replace(/\n/g, '<br>')}</div>
+                    </div>
+                `;
+                break;
+            case 'leerdoelen-dynamic':
+                // Haal leerdoelen op uit de globale config
+                const leerdoelen = window.elearningConfig && Array.isArray(window.elearningConfig.leerdoelen) 
+                    ? window.elearningConfig.leerdoelen 
+                    : [];
+                
+                html += `
+                    <div class="leerdoelen-container">
+                        <div class="leerdoelen-header">
+                            <h3 class="leerdoelen-title">Na deze module kun je:</h3>
+                        </div>
+                        <div class="leerdoelen-grid">
+                            ${leerdoelen.map((leerdoel, index) => `
+                                <div class="leerdoel-item">
+                                    <div class="leerdoel-checkmark">✓</div>
+                                    <div class="leerdoel-content">
+                                        <p>${leerdoel}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="leerdoelen-footer">
+                            <p class="leerdoelen-note">
+                                💡 <strong>Portfolio tip:</strong> De opdrachten in deze module tellen direct mee voor <strong>EVL 4</strong> 
+                                (Erkend Verworven Leerresultaat). Na voltooiing ontvang je een certificaat dat je kunt toevoegen aan je portfolio.
+                            </p>
+                        </div>
                     </div>
                 `;
                 break;

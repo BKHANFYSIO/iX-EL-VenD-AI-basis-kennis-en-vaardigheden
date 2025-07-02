@@ -189,6 +189,24 @@ De styling is georganiseerd in een modulaire structuur voor optimale onderhoudba
     └── stijlgids.css            # ONTWIKKELINGSHULPMIDDEL - alleen voor stijlgids.html
 ```
 
+### Dynamische Content Componenten
+
+#### Leerdoelen Component (`leerdoelen-dynamic`)
+Een volledig dynamisch component dat automatisch de leerdoelen uit `config.json` ophaalt en weergeeft:
+
+**Implementatie:**
+- **JavaScript**: `window.elearningConfig` globaal beschikbaar via `main.js`
+- **Content Type**: `leerdoelen-dynamic` in `dynamicContent.js`
+- **Styling**: `css/components/leerdoelen.css` 
+- **Usage**: Voeg `{"type": "leerdoelen-dynamic"}` toe aan hoofdstuk content
+
+**Voordelen:**
+- ✅ **Herbruikbaar**: Automatische synchronisatie met config.json
+- ✅ **Modulair**: Eigen CSS component bestand
+- ✅ **Responsive**: 2-kolom grid op desktop, 1-kolom op mobiel
+- ✅ **Toegankelijk**: Focus states en checkmark animaties
+- ✅ **Portfolio integratie**: Automatische verwijzing naar EVL 4
+
 ### Belangrijke Conventies
 
 #### ✅ Waar styling thuishoort:

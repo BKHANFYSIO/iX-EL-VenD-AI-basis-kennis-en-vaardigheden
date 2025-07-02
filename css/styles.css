@@ -951,48 +951,6 @@ body.sidebar-open .floating-hamburger .hamburger-lines span:nth-child(3) {
     color: var(--primary-purple);
 }
 
-/* Leerdoelen Dynamic Component */
-.leerdoelen-card {
-    border-left: 4px solid var(--primary-purple);
-    background: linear-gradient(135deg, var(--accent-purple-light) 0%, var(--white) 100%);
-}
-
-.leerdoelen-lijst {
-    margin: 1.5rem 0;
-}
-
-.leerdoel-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    background: var(--white);
-    border-radius: var(--border-radius-standard);
-    box-shadow: 0 2px 4px rgba(102, 36, 131, 0.1);
-    transition: transform 0.2s ease;
-}
-
-.leerdoel-item:hover {
-    transform: translateX(5px);
-}
-
-.leerdoel-item strong {
-    color: var(--primary-purple);
-    font-size: 1.2em;
-    margin-right: 0.75rem;
-    flex-shrink: 0;
-    line-height: 1;
-}
-
-.leerdoelen-footer {
-    margin-top: 1.5rem;
-    font-style: italic;
-    font-size: 0.9em;
-    color: var(--text-medium);
-    border-top: 1px solid var(--border-color-light);
-    padding-top: 1rem;
-}
-
 /* Base styles for interactive blocks */
 .interactive-block {
     background-color: #ffffff;

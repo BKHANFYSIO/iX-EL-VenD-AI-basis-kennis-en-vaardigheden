@@ -205,10 +205,7 @@
       ]
     },
     {
-      "type": "leerdoelen-dynamic",
-      "titel": "Wat ga je leren? Jouw leerdoelen voor deze module 🎯",
-      "intro": "Na het voltooien van deze module kun je:",
-      "footer": "Deze leerdoelen zijn niet alleen handig om je vooruitgang bij te houden, maar ze komen ook terug in je certificaat en kunnen worden gebruikt voor je portfolio (EVL 4)."
+      "type": "leerdoelen-dynamic"
     },
     {
       "type": "section-title",
