@@ -67,7 +67,7 @@
     {
       "type": "table-container-group",
       "tables": [
-        { "headers": ["Functie", "Wat doet het?"], "rows": [["Tekst genereren / samenvatten", "Teksten schrijven, samenvatten, vertalen en herschrijven. Perfect voor verslagen, samenvattingen van studiemateriaal of vertaling van onderzoeken."], ["Web search", "Actuele informatie ophalen van internet (als de functie actief is) voor recente ontwikkelingen of nieuwste onderzoeken."], ["Deep research", "Grote hoeveelheden tekst analyseren en structureren. Handig voor literatuuronderzoek of het doorlezen van behandelrichtlijnen."], ["Canvas / Artefact", "Samen met AI werken in een interactieve werkruimte. Ideaal voor het stap-voor-stap bouwen van opdrachten of verslagen."], ["Multimodale input", "Ook afbeeldingen, video's of spraak als input gebruiken. Upload bijvoorbeeld een foto van een houding voor analyse."], ["Spraakoutput / Gesprekken voeren", "Gesproken antwoorden krijgen. Handig voor het oefenen van anamnese-gesprekken of mondeling iets uitleggen."]] }
+        { "headers": ["Functie", "Wat doet het?"], "rows": [["Tekst genereren / samenvatten", "Teksten schrijven, samenvatten, vertalen en herschrijven. Perfect voor verslagen, samenvattingen van studiemateriaal of vertaling van onderzoeken."], ["Web search", "Actuele informatie ophalen van internet (als de functie actief is) voor recente ontwikkelingen of nieuwste onderzoeken."], ["Deep research", "Grote hoeveelheden tekst analyseren en structureren. Handig voor literatuuronderzoek of het doorlezen van voedingsrichtlijnen."], ["Canvas / Artefact", "Samen met AI werken in een interactieve werkruimte. Ideaal voor het stap-voor-stap bouwen van opdrachten of verslagen."], ["Multimodale input", "Ook afbeeldingen, video's of spraak als input gebruiken. Upload bijvoorbeeld een foto van een voedingsproduct of -etiket voor analyse."], ["Spraakoutput / Gesprekken voeren", "Gesproken antwoorden krijgen. Handig voor het oefenen van anamnese-gesprekken of mondeling iets uitleggen."]] }
       ]
     },
     {
@@ -135,7 +135,6 @@
     {
       "type": "resource-grid-container",
       "items": [
-        { "titel": "FysioAI LeerToolbox", "beschrijving": "De FysioAI LeerToolbox is een verzameling AI-tools speciaal ontwikkeld en geselecteerd voor fysiotherapiestudenten van de HAN. De tools helpen je effectiever te leren: je leert met behulp van AI, of gebruikt leermiddelen die door AI zijn ondersteund. Gebruik de filters om snel die tools te vinden die passen bij jouw leerdoelen en leerbehoeften.", "link": "https://ai-tools-phi-one.vercel.app" },
         { "titel": "There's An AI For That", "beschrijving": "Een zeer uitgebreide database met AI-tools voor vrijwel elke denkbare taak. Het is een uitstekende bron om nieuwe en gespecialiseerde AI-toepassingen te ontdekken.", "link": "https://theresanaiforthat.com" }
       ]
     },
