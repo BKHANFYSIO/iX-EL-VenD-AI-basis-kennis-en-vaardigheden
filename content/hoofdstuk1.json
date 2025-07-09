@@ -1,10 +1,11 @@
 {
+  "_WAARSCHUWING_VOOR_DEVELOPERS": "KRITIEKE COMPONENTEN IN DIT BESTAND: De 'leerdoelen-dynamic' component en 'Klaar voor de start?' sectie zijn VERPLICHT voor hoofdstuk 1 en mogen NOOIT worden verwijderd. Deze zijn essentieel voor de leerervaring.",
   "content": [
     {
       "type": "info-card",
       "classes": "welcome-card",
-      "titel": "Hé toekomstige fysiotherapeut!",
-      "tekst": "Welkom bij de e-learning \"AI basiskennis en vaardigheden\"! De eerste van drie elearnings over AI in de context van jouw studie. Je staat aan het begin van een superinteressante ontdekkingsreis. Een reis die je klaarstoomt voor een toekomst waarin Kunstmatige Intelligentie (AI) een mega-belangrijke rol speelt in de zorg, en dus ook in jouw vakgebied: fysiotherapie."
+      "titel": "Hé toekomstige diëtist!",
+      "tekst": "Welkom bij de e-learning \"AI basiskennis en vaardigheden\"! De eerste van drie elearnings over AI in de context van jouw studie. Je staat aan het begin van een superinteressante ontdekkingsreis. Een reis die je klaarstoomt voor een toekomst waarin Kunstmatige Intelligentie (AI) een mega-belangrijke rol speelt in de zorg, en dus ook in jouw vakgebied: voeding en diëtetiek."
     },
     {
       "type": "accordion",
@@ -20,8 +21,8 @@
           "items": [
             {
               "id": "h1_audio_1",
-              "titel": "Podcast: Introductie op AI in de Fysiotherapie",
-              "beschrijving": "Een audio-versie van de introductie op deze e-learning. Ontdek waarom AI nu al onmisbaar is voor de fysiotherapeut van de toekomst.",
+              "titel": "Podcast: Introductie op AI in Voeding en Diëtetiek",
+              "beschrijving": "Een audio-versie van de introductie op deze e-learning. Ontdek waarom AI nu al onmisbaar is voor de diëtist van de toekomst.",
               "bron": "audio/H1-introductie-podcast.wav",
               "meta": ""
             }
@@ -37,13 +38,13 @@
       "type": "scenario-container-horizontal",
       "scenarios": [
         {
-          "titel": "Jij als fysiotherapeut in 2027 (of misschien zelfs eerder!):",
+          "titel": "Jij als diëtist in 2027 (of misschien zelfs eerder!):",
           "beschrijving": "Een patiënt met chronische rugpijn stapt je praktijk binnen. In plaats van alleen op je eigen (super waardevolle!) kennis en ervaring te vertrouwen, heb je AI-systemen die je helpen om:",
           "punten": [
-            "Bewegingspatronen vlijmscherp te analyseren via draagbare sensoren of videobeelden.",
+            "Patiënteneducatiematerialen genereren met AI.",
             "Een slimme chatbot die al een deel van de anamnese (het vraaggesprek met je patiënt) heeft afgenomen nog voordat de patiënt bij jou op de stoep staat.",
-            "Samen met AI te redeneren en data te interpreteren om tot een nog completere fysiotherapeutische diagnose te komen.",
-            "Gepersonaliseerde oefenprogramma's op maat te genereren.",
+            "Samen met AI te redeneren en data te interpreteren om tot een nog completere diëtistische diagnose te komen.",
+            "Gepersonaliseerde voedingsplannen op maat te genereren.",
             "De voortgang van je patiënt automatisch en nauwkeurig bij te houden.",
             "Die berg administratieve taken? Die handel je af in een fractie van de tijd!"
           ],
@@ -68,7 +69,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Je ziet het, AI is geen ver-van-je-bed-show, maar een ontwikkeling die de fysiotherapie en jouw manier van studeren razendsnel verandert. Het is niet de vraag <strong>of</strong> je AI gebruikt, maar <strong>hoe</strong> je dat effectief en slim gaat doen."
+      "tekst": "Je ziet het, AI is geen ver-van-je-bed-show, maar een ontwikkeling die voeding en diëtetiek en jouw manier van studeren razendsnel verandert. Het is niet de vraag <strong>of</strong> je AI gebruikt, maar <strong>hoe</strong> je dat effectief en slim gaat doen."
     },
     {
       "type": "accent-blok",
@@ -127,7 +128,7 @@
         },
         {
           "titel": "Jij blijft aan het stuur",
-          "beschrijving": "AI kan een fantastische assistent zijn, maar het vervangt jouw denkwerk en expertise niet. In deze module leer je hoe je AI inzet als een hefboom voor je leren, niet als een vervanging ervan."
+          "beschrijving": "AI kan een fantastische assistent zijn, maar het vervangt jouw denkwerk en expertise niet. In deze elearning leer je hoe je AI inzet als een hefboom voor je leren, niet als een vervanging ervan."
         }
       ]
     },
@@ -139,7 +140,7 @@
       "type": "info-card",
       "classes": "ai-gebruik-card",
       "titel": "AI gebruiken? Absoluut!",
-      "tekst": "We moedigen je aan om AI-tools te gebruiken als ondersteuning bij je leerproces. Maar: combineer dit slim met effectieve leerstrategieën zoals actief ophalen van kennis, gespreid leren en samenwerken. Zo wordt AI jouw <strong>hefboom</strong> voor beter leren, niet je vervanging.<br><br><strong>💡 Tip:</strong> We nemen je hierin mee! In module 2 'AI als Jouw Slimme Studiebuddy' leer je precies hoe je dit effectief doet."
+      "tekst": "We moedigen je aan om AI-tools te gebruiken als ondersteuning bij je leerproces. Maar: combineer dit slim met effectieve leerstrategieën zoals actief ophalen van kennis, gespreid leren en samenwerken. Zo wordt AI jouw <strong>hefboom</strong> voor beter leren, niet je vervanging.<br><br><strong>💡 Tip:</strong> We nemen je hierin mee! In elearning 2 'AI als Jouw Slimme Studiebuddy' leer je precies hoe je dit effectief doet."
     },
     {
       "type": "practical-tips-grid",
@@ -153,7 +154,7 @@
         {
           "icon": "💼",
           "titel": "Voor je toekomst",
-          "beschrijving": "AI speelt een steeds grotere rol in de fysiotherapiepraktijk - ervaring nu = betere kansen later"
+          "beschrijving": "AI speelt een steeds grotere rol in de diëtistenpraktijk - ervaring nu = betere kansen later"
         },
         {
           "icon": "📋",
@@ -170,11 +171,11 @@
     },
     {
       "type": "content-text",
-      "tekst": "AI ontwikkelt razendsnel en beïnvloedt zowel onderwijs als het fysiotherapieberoep. We blijven hierover met jou in gesprek om samen te leren en ons beleid waar nodig bij te stellen. 🤝"
+      "tekst": "AI ontwikkelt razendsnel en beïnvloedt zowel onderwijs als het beroep van de diëtist. We blijven hierover met jou in gesprek om samen te leren en ons beleid waar nodig bij te stellen. 🤝"
     },
     {
       "type": "section-title",
-      "titel": "Jouw Leerpad: Een Serie van Drie Modules"
+      "titel": "Jouw Leerpad: Een Serie van Drie Elearnings"
     },
     {
       "type": "info-card",
@@ -185,28 +186,32 @@
         },
         {
           "type": "benefit-card",
-          "titel": "Module 1 (Deze module dus!): AI Basiskennis en Vaardigheden",
+          "titel": "Elearning 1 (Deze elearning dus!): AI Basiskennis en Vaardigheden",
           "beschrijving": "Hier leg je de fundering. Wat is AI nu eigenlijk, hoe werkt het en hoe 'praat' je ermee via prompts? We kijken naar kansen en risico's, en je gaat zelf aan de slag met kleine, praktische opdrachten."
         },
         {
           "type": "benefit-card",
-          "titel": "Module 2: AI als Jouw Slimme Studiebuddy",
-          "beschrijving": "In deze module ontdek je hoe je AI écht effectief kunt inzetten om slimmer te leren, zonder in de valkuilen van de 'e-bike illusie' te trappen. Denk aan AI als jouw persoonlijke coach die je helpt studiemateriaal te doorgronden, feedback te krijgen en je voor te bereiden op toetsen."
+          "titel": "Elearning 2: AI als Jouw Slimme Studiebuddy",
+          "beschrijving": "In deze elearning ontdek je hoe je AI écht effectief kunt inzetten om slimmer te leren, zonder in de valkuilen van de 'e-bike illusie' te trappen. Denk aan AI als jouw persoonlijke coach die je helpt studiemateriaal te doorgronden, feedback te krijgen en je voor te bereiden op toetsen."
         },
         {
           "type": "benefit-card",
-          "titel": "Module 3: AI in de Fysiotherapeutische Praktijk – Nu en in de Toekomst",
-          "beschrijving": "Hier duiken we dieper in de specifieke toepassingen van AI binnen de fysiotherapie. Van diagnostiek en behandeling tot revalidatie en preventie. Wat gebeurt er al en wat staat ons te wachten?"
+          "titel": "Elearning 3: AI in de Diëtistenpraktijk – Nu en in de Toekomst",
+          "beschrijving": "Hier duiken we dieper in de specifieke toepassingen van AI binnen voeding en diëtetiek. Van diagnostiek en behandelplannen tot voedingseducatie en preventie van voedingsgerelateerde aandoeningen."
         },
         {
           "type": "content-text",
-          "tekst": "Onthoud: zowel leren werken met AI als leren effectief te leren kost tijd — vooral dat laatste. Begin klein, blijf herhalen en bouw stap voor stap aan je kennis en vaardigheden. Deze modules begeleiden je daarbij."
+          "tekst": "Onthoud: zowel leren werken met AI als leren effectief te leren kost tijd — vooral dat laatste. Begin klein, blijf herhalen en bouw stap voor stap aan je kennis en vaardigheden. Deze elearnings begeleiden je daarbij."
         }
       ]
     },
     {
+      "type": "section-title",
+      "titel": "Leerdoelen van deze elearning"
+    },
+    {
       "type": "leerdoelen-dynamic",
-      "portfolio_tip": "De opdrachten in deze module tellen direct mee voor EVL 4. Na voltooiing ontvang je een certificaat dat je kunt toevoegen aan je portfolio."
+      "portfolio_tip": "Het doornemen van deze elearning en het maken en opslaan van de interacties kan je gebruiken om je ontwikkeling voor EVL 4 aan te tonen. Na voltooiing ontvang je een certificaat dat je kunt toevoegen aan je portfolio. Zie het afsluitende hoofdstuk voor meer informatie over het certificaat en gebruik in het portfolio."
     },
     {
       "type": "section-title",
@@ -214,7 +219,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Je hebt nu een eerste indruk van wat AI voor jou kan betekenen, zowel tijdens je studie als in je toekomstige werk als fysiotherapeut. Laten we in de volgende hoofdstukken dieper duiken in de fascinerende wereld van Kunstmatige Intelligentie!"
+      "tekst": "Je hebt nu een eerste indruk van wat AI voor jou kan betekenen, zowel tijdens je studie als in je toekomstige werk als diëtist. Laten we in de volgende hoofdstukken dieper duiken in de fascinerende wereld van Kunstmatige Intelligentie!"
     },
     {
       "type": "accent-blok",
@@ -242,8 +247,8 @@
       "id": "h1_reflection_1",
       "type": "reflection",
       "titel": "Mini-opdracht 1.1: Jouw AI Startpunt",
-      "vraag": "Om straks goed te kunnen zien wat je allemaal hebt opgestoken, beginnen we met een korte reflectie.\n\nOpdracht: Schrijf in ongeveer 100-150 woorden antwoord op de volgende vragen:\n1. Wat weet je al een beetje over AI en hoe het misschien in de zorg gebruikt wordt?\n2. Heb je zelf al eens AI-tools gebruikt (zoals ChatGPT, een vertaalapp, of iets anders)? Zo ja, welke en waarvoor?\n3. Wat hoop of verwacht je vooral te leren in deze eerste module over AI?",
-      "placeholder": "Bewaar je antwoorden goed! Aan het einde van deze module komen we hierop terug om te zien hoe jouw kennis en kijk op AI zijn gegroeid."
+      "vraag": "Om straks goed te kunnen zien wat je allemaal hebt opgestoken, beginnen we met een korte reflectie.\n\nOpdracht: Schrijf in ongeveer 100-150 woorden antwoord op de volgende vragen:\n1. Wat weet je al een beetje over AI en hoe het misschien in de zorg gebruikt wordt?\n2. Heb je zelf al eens AI-tools gebruikt (zoals ChatGPT, een vertaalapp, of iets anders)? Zo ja, welke en waarvoor?\n3. Wat hoop of verwacht je vooral te leren in deze eerste elearning over AI?",
+      "placeholder": "Bewaar je antwoorden goed! Aan het einde van deze elearning komen we hierop terug om te zien hoe jouw kennis en kijk op AI zijn gegroeid."
     }
   ]
 } 
