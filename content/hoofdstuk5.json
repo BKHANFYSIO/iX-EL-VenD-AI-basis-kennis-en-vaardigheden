@@ -108,11 +108,11 @@
           }
         },
         { 
-          "src": "images/oefenzaal.png", 
-          "alt": "Een realistische afbeelding van een fysiotherapie oefenzaal.", 
-          "onderschrift": "Voorbeeld van een realistische afbeelding voor een praktijkfolder of voorlichtingsmateriaal",
+          "src": "images/Fruit.png",
+          "alt": "Afbeelding van 7 verschillende porties fruit",
+          "onderschrift": "Voorbeeld van een afbeelding voor voedingsadvies",
           "bron": {
-            "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"maak een realistische afbeelding van een diëtist die in een praktijkruimte een cliënt over voeding adviseert\" via Google, Gemini (https://gemini.google.com)."
+            "naam": "Afbeelding gegenereerd door Sonja van Oers met de prompt \"maak een afbeelding van 7 verschillende porties fruit, denk hierbij aan 7 aardbeien een handje bosbessen een geschilde sinaasappel, een paar partjes meloen een paar stukjes mango, de partjes van twee mandarijnen en een handjevol kersen\""
           }
         }
       ]
