@@ -35,7 +35,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "AI maakt het mogelijk om in seconden afbeeldingen, video's en audio te genereren. Een anatomisch schema voor je presentatie, een oefenvideo voor een patiënt, of een podcast over behandelmethoden: met Media-AI kun je creatief aan de slag zonder expert te zijn. Ontdek hieronder hoe je deze tools inzet!"
+      "tekst": "AI maakt het mogelijk om in seconden afbeeldingen, video's en audio te genereren. Een voedingsschema voor je presentatie, een educatieve video voor een patiënt, of een podcast over nutritionele interventies: met Media-AI kun je creatief aan de slag zonder expert te zijn. Ontdek hieronder hoe je deze tools inzet!"
     },
     {
       "type": "content-subtitle",
@@ -102,7 +102,7 @@
         { 
           "src": "images/Squat-instructie.png", 
           "alt": "Een instructie-afbeelding voor een squat-oefening.", 
-          "onderschrift": "Voorbeeld van een afbeelding voor patiëntfolders of apps",
+          "onderschrift": "Voorbeeld van een afbeelding voor patiëntvoorlichting of educatiemateriaal",
           "bron": {
             "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"Maak een illustratieve afbeelding die geschikt is voor voorlichtingsmateriaal waar uitgelegd wordt hoe een SQUAT moet worden uitgevoerd. Voeg korte ondersteunende instructie tekst toe\" via OpenAI, ChatGPT (https://chatgpt.com)."
           }
@@ -110,9 +110,9 @@
         { 
           "src": "images/oefenzaal.png", 
           "alt": "Een realistische afbeelding van een fysiotherapie oefenzaal.", 
-          "onderschrift": "Voorbeeld van een realistische afbeelding voor een praktijkfolder",
+          "onderschrift": "Voorbeeld van een realistische afbeelding voor een praktijkfolder of voorlichtingsmateriaal",
           "bron": {
-            "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"maak een realistische afbeelding van een fysiotherapeut die in een praktijk ruimte een patient een squat oefening aanleert\" via Google, Gemini (https://gemini.google.com)."
+            "naam": "Afbeelding gegenereerd door Koekoek, B. (2025) met de prompt \"maak een realistische afbeelding van een diëtist die in een praktijkruimte een cliënt over voeding adviseert\" via Google, Gemini (https://gemini.google.com)."
           }
         }
       ]
@@ -214,11 +214,11 @@
             ],
             [
               "<b>Flashcard Tool voor Studie</b>",
-              "Tool om flashcards te oefenen. Ideaal voor begrippen en principes.<br><br><b>Tip:</b> Upload eerst een document en vraag AI om daarop gebaseerde flashcards te maken.<br><br><b>Let op:</b> Controleer de flashcards altijd - AI kan fouten maken.<br><br><b>Prompt:</b><em>Maak een flashcard-app over trainingsleerprincipes voor fysiotherapie: 'Overload', 'Specificiteit', 'Reversibiliteit', 'Individualiteit', en 'Periodisering'. De voorkant toont de term, de achterkant de uitleg. Ik moet door de kaarten kunnen klikken.</em>"
+              "Tool om flashcards te oefenen. Ideaal voor begrippen en principes.<br><br><b>Tip:</b> Upload eerst een document en vraag AI om daarop gebaseerde flashcards te maken.<br><br><b>Let op:</b> Controleer de flashcards altijd - AI kan fouten maken.<br><br><b>Prompt:</b><em>Maak een flashcard-app over basisprincipes van voedingsleer: 'Macronutriënten', 'Micronutriënten', 'Energiedichtheid', 'Glycemische Index', en 'Voedingsvezels'. De voorkant toont de term, de achterkant de uitleg. Ik moet door de kaarten kunnen klikken.</em>"
             ],
             [
-              "<b>Patiënten-info App: Enkelletsel</b>",
-              "App voor patiënten met enkelletsel. Geeft per herstelfase uitleg en advies.<br><br><b>Prompt:</b><em>Maak een mobiele app over herstelfasen van enkelletsel. Maak een hoofdmenu met drie fasen: 'Fase 1: Acuut (0-3 dagen)', 'Fase 2: Herstel (3 dagen - 6 weken)', 'Fase 3: Functioneel (na 6 weken)'. Elke fase krijgt een eigen pagina met uitleg en goede oefeningen. Zorg voor een rustige, professionele uitstraling. Gebruik alleen recente informatie zoals KNGF-richtlijnen. Gebruik GEEN RICE- of POLICE-principes.</em><br><br><b>Let op:</b> Controleer de informatie altijd - zorg dat alles klopt voordat je het gebruikt."
+              "<b>Patiënten-info App: Voedingsadvies bij Diabetes</b>",
+              "App voor patiënten met diabetes. Geeft uitleg en advies over voeding.<br><br><b>Prompt:</b><em>Maak een mobiele app over voedingsadviezen bij diabetes type 2. Maak een hoofdmenu met drie secties: 'Wat is diabetes type 2?', 'Voedingstips en adviezen', 'Recepten en maaltijdideeën'. Elke sectie krijgt een eigen pagina met uitleg en concrete aanbevelingen. Zorg voor een rustige, professionele uitstraling. Gebruik alleen recente informatie van de Nederlandse Diabetes Federatie (NDF) of Voedingscentrum. Gebruik GEEN algemene dieetadviezen zonder onderbouwing.</em><br><br><b>Let op:</b> Controleer de informatie altijd - zorg dat alles klopt voordat je het gebruikt."
             ],
             [
                 "<b>Klassieke 'Breakout' Game</b>",
@@ -255,13 +255,9 @@
               "beschrijving": "Maak een assistent die wetenschappelijke artikelen altijd in jouw favoriete format samenvat. Geef hem een paar goede voorbeelden en instructies over de gewenste stijl, lengte en structuur (bijv. 'maak altijd een conclusie van maximaal 50 woorden'). Upload vervolgens een artikel en vraag om een samenvatting."
           },
           {
-              "titel": "Fysio-Casus Generator",
-              "beschrijving": "Bouw een assistent die realistische patiëntcasussen genereert om mee te oefenen. Voed hem met KNGF-richtlijnen en voorbeelden van goede casuïstiek. Vervolgens kun je vragen om 'een casus over een 45-jarige man met lage rugpijn na het tillen' en de AI creëert een scenario inclusief rode vlaggen om te beoordelen."
-          },
-          {
-            "titel": "Ontdek Meer in de Toolbox",
-            "beschrijving": "In de <b>FysioAI LeerToolbox</b> vind je al veel door docenten gemaakte AI-assistenten (GPT's) die je kunt gebruiken voor je studie. <b>Tip:</b> Filter op 'GPT's' om ze te vinden en doe inspiratie op voor je eigen creaties!"
-        }
+              "titel": "Diëtetiek Casus Generator",
+              "beschrijving": "Bouw een assistent die realistische patiëntcasussen genereert om mee te oefenen. Voed hem met Voeding en diëtetiek richtlijnen en voorbeelden van goede casuïstiek. Vervolgens kun je vragen om 'een casus over een 45-jarige man met obesitas en insulineresistentie' en de AI creëert een scenario inclusief relevante voedingsanamnese vragen om te beoordelen."
+          }
       ]
     },
    
@@ -271,7 +267,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "In dit hoofdstuk heb je gezien hoe je met AI zelf creatieve content en zelfs complete applicaties kunt bouwen. Ook wij als opleiding experimenteren volop met tools die door AI geschreven zijn, waarbij we altijd kiezen voor 'Human in the Lead'. Dat betekent dat wij als docenten de eindcontrole houden en zorgen dat de inhoud en functionaliteit aansluiten bij wat jij voor je studie nodig hebt.<br><br>Nu is het aan jou! We nodigen je van harte uit om zelf te gaan experimenteren. Ontdek bijvoorbeeld de tools in de <b>FysioAI LeerToolbox</b> of probeer de prompts uit de tabel hierboven."
+      "tekst": "Nu is het aan jou! We nodigen je van harte uit om zelf te gaan experimenteren."
     },
     {
       "type": "info-card",
@@ -325,7 +321,7 @@
     {
       "id": "h5_reflection_1",
       "type": "reflection",
-      "vraag": "Na het lezen van dit hoofdstuk: welke creatieve AI-toepassing (beeld-AI, vibe-coding, of geavanceerd GPT-gebruik) spreekt jou het meest aan voor jouw studie of toekomstige werk als fysiotherapeut? Leg uit waarom en geef een concreet voorbeeld van hoe je deze toepassing zou willen gebruiken.",
+      "vraag": "Na het lezen van dit hoofdstuk: welke creatieve AI-toepassing (beeld-AI, vibe-coding, of geavanceerd GPT-gebruik) spreekt jou het meest aan voor jouw studie of toekomstige werk als diëtist? Leg uit waarom en geef een concreet voorbeeld van hoe je deze toepassing zou willen gebruiken.",
       "placeholder": "Beschrijf welke AI-toepassing je het meest aanspreekt en hoe je deze praktisch zou willen inzetten..."
     }
   ]
