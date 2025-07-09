@@ -44,7 +44,7 @@
   {
     "id": "quiz_mc_4",
     "title": "Hoofdstuk 4: Leren Prompten",
-    "text": "Waarom is het effectief om een AI een specifieke rol te geven in je prompt (bijv. 'Gedraag je als een expert-docent fysiotherapie')?",
+    "text": "Waarom is het effectief om een AI een specifieke rol te geven in je prompt (bijv. 'Gedraag je als een expert-docent Voeding en Diëtetiek')?",
     "options": [
       "Het maakt de AI sneller en efficiënter.",
       "Het activeert specifieke kennisdomeinen in het AI-model voor meer gerichte antwoorden.",
@@ -128,7 +128,7 @@
   {
     "id": "quiz_mc_10",
     "title": "Hoofdstuk 6: Kansen & Risico's",
-    "text": "Het risico van 'deskilling' of 'cognitive offloading' wordt besproken. Wat houdt dit risico in voor een fysiotherapeut?",
+    "text": "Het risico van 'deskilling' of 'cognitive offloading' wordt besproken. Wat houdt dit risico in voor een diëtist?",
     "options": [
       "Dat AI-implementatie te kostbaar wordt voor kleinere fysiotherapiepraktijken.",
       "Dat je eigen klinische redeneervaardigheden kunnen afnemen door overmatige AI-afhankelijkheid.",
@@ -142,7 +142,7 @@
   {
     "id": "quiz_mc_11",
     "title": "Hoofdstuk 1: De Basis",
-    "text": "Wat is, volgens de introductie, een van de belangrijkste redenen waarom AI-geletterdheid essentieel is voor jou als toekomstig fysiotherapeut?",
+    "text": "Wat is, volgens de introductie, een van de belangrijkste redenen waarom AI-geletterdheid essentieel is voor jou als toekomstig diëtist?",
     "options": [
       "Om zelf complexe AI-algoritmes en machine learning modellen te kunnen ontwikkelen.",
       "Om efficiënter te werken en meer tijd te hebben voor patiëntcontact.",
@@ -184,7 +184,7 @@
   {
     "id": "quiz_mc_14",
     "title": "Hoofdstuk 5: Creëren met AI",
-    "text": "Je wilt een AI-tool gebruiken om een serie afbeeldingen te genereren voor een voorlichtingsfolder over knierevalidatie. Na de eerste poging is de stijl van de afbeeldingen niet wat je zoekt. Wat is de meest efficiënte vervolgstap?",
+    "text": "Je wilt een AI-tool gebruiken om een serie afbeeldingen te genereren voor een voorlichtingsfolder over gezonde voeding. Na de eerste poging is de stijl van de afbeeldingen niet wat je zoekt. Wat is de meest efficiënte vervolgstap?",
     "options": [
       "De afbeeldingen accepteren en handmatig aanpassen in een fotobewerkingsprogramma.",
       "Een volledig andere AI-tool proberen voor mogelijk betere resultaten.",
@@ -212,7 +212,7 @@
   {
     "id": "quiz_mc_16",
     "title": "Hoofdstuk 6: Kansen & Risico's",
-    "text": "Stel, je gebruikt als fysiotherapeut een AI-assistent om een behandelplan op te stellen. Door een fout in het AI-advies loopt een patiënt letsel op. Wie is er wettelijk en ethisch eindverantwoordelijk?",
+    "text": "Stel, je gebruikt als diëtist een AI-assistent om een voedingsplan op te stellen. Door een fout in het AI-advies loopt een cliënt letsel op. Wie is er wettelijk en ethisch eindverantwoordelijk?",
     "options": [
       "De softwareontwikkelaar die het AI-algoritme heeft geprogrammeerd.",
       "De fysiotherapeut die het advies heeft toegepast in de zorg.",
@@ -240,7 +240,7 @@
   {
     "id": "quiz_mc_18",
     "title": "Hoofdstuk 6: Kansen & Risico's",
-    "text": "Hoe kan een fysiotherapeut AI op een praktische manier inzetten om meer patiëntgerichte zorg te leveren?",
+    "text": "Hoe kan een diëtist AI op een praktische manier inzetten om meer cliëntgerichte zorg te leveren?",
     "options": [
       "Door patiënten zelfstandig te laten diagnosticeren via AI-chatbots.",
       "Door administratieve taken te automatiseren, waardoor meer tijd vrijkomt voor patiëntcontact.",
