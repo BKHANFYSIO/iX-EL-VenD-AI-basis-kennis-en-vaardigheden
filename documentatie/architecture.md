@@ -37,6 +37,13 @@ Deze e-learning is gebouwd op een dynamische architectuur waarbij de content en 
 
 ---
 
+### 2.1. Git Repository
+
+De code van deze e-learning module wordt gehost op GitHub. De repository URL is:
+`https://github.com/BKHANFYSIO/iX-EL-VenD-AI-basis-kennis-en-vaardigheden.git`
+
+---
+
 ## 3. Content Structuur & JSON Schema's
 
 ### `config.json`
