@@ -135,7 +135,8 @@
     {
       "type": "resource-grid-container",
       "items": [
-        { "titel": "There's An AI For That", "beschrijving": "Een zeer uitgebreide database met AI-tools voor vrijwel elke denkbare taak. Het is een uitstekende bron om nieuwe en gespecialiseerde AI-toepassingen te ontdekken.", "link": "https://theresanaiforthat.com" }
+        { "titel": "There's An AI For That", "beschrijving": "Een zeer uitgebreide database met AI-tools voor vrijwel elke denkbare taak. Het is een uitstekende bron om nieuwe en gespecialiseerde AI-toepassingen te ontdekken.", "link": "https://theresanaiforthat.com" },
+        { "titel": "AI voor Studenten", "beschrijving": "Een platform met informatie en tools voor studenten die AI willen gebruiken in hun studie.", "link": "https://aivoorstudenten.nl/" }
       ]
     },
     {
