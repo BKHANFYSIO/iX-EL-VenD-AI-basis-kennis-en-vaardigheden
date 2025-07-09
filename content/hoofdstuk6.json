@@ -4,7 +4,7 @@
       "type": "info-card",
       "classes": "welcome-card",
       "titel": "AI: Grijp de Kansen, Beheers de Risico's",
-      "tekst": "AI is een krachtig hulpmiddel, maar geen wondermiddel. Het kan je studie versnellen en je werk als fysiotherapeut verbeteren, maar alleen als je het slim en veilig gebruikt. In dit hoofdstuk leer je de kansen te benutten en, nog belangrijker, de risico's te beheersen. Want professioneel omgaan met AI is geen optie, maar een vereiste."
+      "tekst": "AI is een krachtig hulpmiddel, maar geen wondermiddel. Het kan je studie versnellen en je werk als diëtist verbeteren, maar alleen als je het slim en veilig gebruikt. In dit hoofdstuk leer je de kansen te benutten en, nog belangrijker, de risico's te beheersen. Want professioneel omgaan met AI is geen optie, maar een vereiste."
     },
     {
       "type": "accordion",
@@ -35,7 +35,7 @@
     },
     {
       "type": "content-text",
-      "tekst": "Hier vind je alle kansen van AI op een rij: wat kun je nu al gebruiken om slimmer te studeren en je voor te bereiden op de toekomst van de fysiotherapie? Deze overzichtelijke lijst helpt je direct aan de slag te gaan."
+      "tekst": "Hier vind je alle kansen van AI op een rij: wat kun je nu al gebruiken om slimmer te studeren en je voor te bereiden op de toekomst van voeding en diëtetiek? Deze overzichtelijke lijst helpt je direct aan de slag te gaan."
     },
     {
       "type": "content-subtitle",
@@ -61,7 +61,7 @@
           "titel": "2. Efficiënter Studeren en Creëren",
           "content": [
             { "naam": "Automatisering van Routinetaken", "beschrijving": "Teksten samenvatten, herschrijven naar andere stijl of vertalen." },
-            { "naam": "Versneld Literatuuronderzoek", "beschrijving": "Sneller relevante artikelen vinden en analyseren voor behandelplannen, EBP-verslagen en scriptie." },
+            { "naam": "Versneld Literatuuronderzoek", "beschrijving": "Sneller relevante artikelen vinden en analyseren voor voedingsplannen, EBP-verslagen en scriptie." },
             { "naam": "Transcriptie", "beschrijving": "Gesprekken en colleges automatisch omzetten naar tekst." },
             { "naam": "Professionele Content", "beschrijving": "Snel afbeeldingen, video's en presentaties maken voor opdrachten." }
           ]
@@ -89,7 +89,7 @@
     },
     {
       "type": "content-subtitle",
-      "titel": "Kansen in het fysiotherapeutische werkveld"
+      "titel": "Kansen in het diëtetische werkveld"
     },
     {
       "type": "info-card",
@@ -100,7 +100,7 @@
           "titel": "1. Efficiënter Praktijkvoering",
           "content": [
             { "naam": "Verlichten van Administratie", "beschrijving": "Intakegesprekken automatisch omzetten naar gestructureerde verslagen." },
-            { "naam": "Up-to-date Blijven met Vakliteratuur", "beschrijving": "Snel inzichten uit nieuwe wetenschappelijke publicaties extraheren." },
+            { "naam": "Up-to-date Blijven met Vakliteratuur", "beschrijving": "Sneller inzichten uit nieuwe wetenschappelijke publicaties extraheren." },
             { "naam": "Intelligente Triage", "beschrijving": "Chatbots voor eerste inschatting van klachten op praktijkwebsite." },
             { "naam": "Interprofessioneel Samenwerken", "beschrijving": "Professionele overdrachten formuleren voor huisarts of andere zorgverleners." }
           ]
@@ -109,11 +109,11 @@
           "type": "accordion",
           "titel": "2. Verrijkte Diagnostiek & Behandeling",
           "content": [
-            { "naam": "AI als Klinische Sparringpartner", "beschrijving": "Hulp bij differentiële diagnoses en behandelopties overwegen." },
-            { "naam": "Creatieve Probleemoplossing", "beschrijving": "Brainstormen over alternatieve behandelmethoden voor complexe problematiek." },
+            { "naam": "AI als Klinische Sparringpartner", "beschrijving": "Hulp bij differentiële diagnoses en voedingsinterventies overwegen." },
+            { "naam": "Creatieve Probleemoplossing", "beschrijving": "Brainstormen over alternatieve voedingsstrategieën voor complexe problematiek." },
             { "naam": "Voorbereiden van Behandelsessies", "beschrijving": "Consulten structureren door belangrijkste vragen en tests voor te bereiden." },
-            { "naam": "Assistentie bij Oefenprogramma's", "beschrijving": "Snel basisoefenprogramma's opstellen met variaties voor specifieke doelen." },
-            { "naam": "Opkomende Bewegingsanalyse", "beschrijving": "Apps gebruiken voor objectievere bewegingsanalyse dan met het blote oog." }
+            { "naam": "Assistentie bij Oefenprogramma's", "beschrijving": "Snel basisvoedingsplannen opstellen met variaties voor specifieke doelen." },
+            { "naam": "Opkomende Bewegingsanalyse", "beschrijving": "Apps gebruiken voor objectievere voedingsinname-analyse dan met handmatige methoden." }
           ]
         },
         {
@@ -164,7 +164,7 @@
         },
         {
           "titel": "Historische Bias",
-          "tekst": "AI kan verouderde consensus als waarheid presenteren. Voorbeeld: koelen na trauma werd lang aanbevolen, terwijl dit inzicht inmiddels achterhaald is."
+          "tekst": ""
         }
       ]
     },
@@ -204,7 +204,7 @@
       "items": [
         { 
           "titel": "'Deskilling' (Vaardigheidsverlies) door 'Cognitive Offloading'", 
-          "tekst": "Door te veel denkwerk uit te besteden aan AI bestaat het risico dat je eigen vaardigheden zoals klinisch redeneren afnemen." 
+          "tekst": "Door te veel denkwerk uit te besteden aan AI bestaat het risico dat je eigen vaardigheden zoals diëtistisch redeneren afnemen." 
         },
         { 
           "titel": "Automatisering Bias", 
@@ -273,7 +273,7 @@
         {
           "icoon": "images/Human_in_the_lead.png",
           "titel": "Human in the Lead: De Eindverantwoordelijke Professional",
-          "beschrijving": "De kern van jouw professionele rol. Jij neemt de uiteindelijke beslissing en draagt eindverantwoordelijkheid. Zet AI strategisch in om vaardigheden te versterken, maar blijf zelf redeneren en bepalen wat past bij jouw patiënt.",
+          "beschrijving": "De kern van jouw professionele rol. Jij neemt de uiteindelijke beslissing en draagt eindverantwoordelijkheid. Zet AI strategisch in om vaardigheden te versterken, maar blijf zelf redeneren en bepalen wat past bij jouw cliënt.",
           "samenvatting": "De mens heeft de eindregie en neemt de uiteindelijke beslissing.",
           "dynamische_velden": [
             {"veldnaam": "beschrijving", "label": ""},
@@ -304,7 +304,7 @@
         },
         {
           "type": "content-text",
-          "tekst": "Voor <strong>persoonlijke studie</strong> mag je AI gebruiken als leerhulpmiddel, ook bij kennisopbouw. Wees je bewust dat AI foutieve informatie kan geven - vergelijk daarom altijd met andere bronnen en ontwikkel vaardigheden om AI-output kritisch te beoordelen. Bij <strong>ingeleverde producten</strong> is transparantie cruciaal: vermeld AI-gebruik en toon je eigen begrip. In <strong>patiëntenzorg</strong> is hoogste voorzichtigheid vereist."
+          "tekst": "Voor <strong>persoonlijke studie</strong> mag je AI gebruiken als leerhulpmiddel, ook bij kennisopbouw. Wees je bewust dat AI foutieve informatie kan geven - vergelijk daarom altijd met andere bronnen en ontwikkel vaardigheden om AI-output kritisch te beoordelen. Bij <strong>ingeleverde producten</strong> is transparantie cruciaal: vermeld AI-gebruik en toon je eigen begrip. In cliëntenzorg is hoogste voorzichtigheid vereist."
         }
       ]
     },
@@ -334,15 +334,15 @@
       "kaarten": [
         {
           "titel": "Scenario: De Verleidelijke Diagnose-App",
-          "beschrijving": "Een app claimt 95% zekerheid bij schouderdiagnoses. Een collega neemt diagnoses direct over in het EPD om tijd te besparen. Welke risico's zie je (deskilling, automatisering bias, aansprakelijkheid)? Hoe zou jij handelen?"
+          "beschrijving": "Een app claimt 95% zekerheid bij voedingsdiagnoses. Een collega neemt diagnoses direct over in het EPD om tijd te besparen. Welke risico's zie je (deskilling, automatisering bias, aansprakelijkheid)? Hoe zou jij handelen?"
         },
         {
           "titel": "Scenario: De Slimme Oefen-App met Privacy-risico",
-          "beschrijving": "Je wilt een gratis revalidatie-app aanbevelen, maar de voorwaarden vermelden dat data (inclusief video's) wordt gebruikt voor productverbetering. Hoe weeg je voordelen af tegen AVG-risico's? Wat communiceer je met je patiënt?"
+          "beschrijving": "Je wilt een gratis voedingsadvies-app aanbevelen, maar de voorwaarden vermelden dat data (inclusief voedingsdagboeken) wordt gebruikt voor productverbetering. Hoe weeg je voordelen af tegen AVG-risico's? Wat communiceer je met je cliënt?"
         },
         {
           "titel": "Scenario: De Verouderde Aanbeveling",
-          "beschrijving": "AI genereert een professionele folder over enkeltrauma, maar adviseert het verouderde RICE-protocol. Welk risico herken je (Historische Bias)? Welke stappen onderneem je voordat je de folder gebruikt?"
+          "beschrijving": "AI genereert een professionele folder over ondervoeding bij ouderen, maar adviseert een verouderd protocol. Welk risico herken je (Historische Bias)? Welke stappen onderneem je voordat je de folder gebruikt?"
         },
         {
           "titel": "Scenario: Het Gekopieerde Studieboek",
@@ -360,23 +360,23 @@
     },
     {
       "type": "content-text",
-      "tekst": "Je hebt nu een solide AI-basis: wat het is, welke tools er zijn en hoe je ze inzet. Als toekomstig fysiotherapeut moet je niet alleen vaardig zijn met AI, maar ook wijs. Zo benut je de enorme potentie en vermijd je de valkuilen!"
+      "tekst": "Je hebt nu een solide AI-basis: wat het is, welke tools er zijn en hoe je ze inzet. Als toekomstig diëtist moet je niet alleen vaardig zijn met AI, maar ook wijs. Zo benut je de enorme potentie en vermijd je de valkuilen!"
     }
   ],
   "interacties": [
     {
       "id": "h6_mc_1",
       "type": "mc",
-      "vraag": "Een collega gebruikt een AI om een eerste opzet voor een oefenprogramma te genereren. Vervolgens controleert hij alleen of de oefeningen veilig zijn, maar past het schema niet verder aan op de patiënt. Welk principe past hij toe en wat is het belangrijkste risico?",
+      "vraag": "Een collega gebruikt een AI om een eerste opzet voor een voedingsplan te genereren. Vervolgens controleert hij alleen of de voedingsadviezen veilig zijn, maar past het schema niet verder aan op de cliënt. Welk principe past hij toe en wat is het belangrijkste risico?",
       "options": [
         "Hij past 'Human in the Lead' toe; het risico is dat de AI verouderde informatie geeft.",
-        "Hij past 'Human in the Loop' toe; het risico is dat het advies niet is afgestemd op de unieke context van de patiënt.",
+        "Hij past 'Human in the Loop' toe; het risico is dat het advies niet is afgestemd op de unieke context van de cliënt.",
         "Hij past 'Human in the Loop' toe; het belangrijkste risico is dat de AI de data steelt.",
         "Hij past 'Human in the Lead' toe; er is geen risico, want de therapeut heeft gecontroleerd."
       ],
       "correctAnswer": 1,
-      "feedbackCorrect": "Precies goed! Hij controleert de output (Human in the Loop), maar neemt niet de volledige regie om het plan te personaliseren (Human in the Lead). Het risico is dat een generiek, niet-gepersonaliseerd advies wordt gegeven dat niet optimaal is voor de patiënt.",
-      "feedbackIncorrect": "Niet helemaal. Hij controleert wel (Human in the Loop), maar neemt niet de volledige regie (Human in the Lead). Het grootste risico hier is dat het advies, hoewel veilig, niet gepersonaliseerd is voor de unieke situatie van de patiënt."
+      "feedbackCorrect": "Precies goed! Hij controleert de output (Human in the Loop), maar neemt niet de volledige regie om het plan te personaliseren (Human in the Lead). Het risico is dat een generiek, niet-gepersonaliseerd advies wordt gegeven dat niet optimaal is voor de cliënt.",
+      "feedbackIncorrect": "Niet helemaal. Hij controleert wel (Human in the Loop), maar neemt niet de volledige regie (Human in the Lead). Het grootste risico hier is dat het advies, hoewel veilig, niet gepersonaliseerd is voor de unieke situatie van de cliënt."
     },
     {
       "id": "h6_flashcard_1",
