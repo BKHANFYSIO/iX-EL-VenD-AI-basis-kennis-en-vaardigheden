@@ -30,5 +30,6 @@
     "primairKleur": "#4CAF50",
     "secundairKleur": "#2196F3",
     "lettertype": "Arial, sans-serif"
-  }
+  },
+  "toonPodcasts": false
 } 

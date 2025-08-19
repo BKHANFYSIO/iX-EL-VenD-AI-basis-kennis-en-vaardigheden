@@ -553,6 +553,7 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
         return listHtml;
     };
 
+    const toonPodcasts = !!(window.elearningConfig && window.elearningConfig.toonPodcasts);
     content.forEach((block, blockIndex) => {
         const currentBlockId = `${parentBlockId}block${blockIndex}`;
         if (!block || !block.type) return;
@@ -1199,6 +1200,10 @@ function renderGenericChapterContent(content, chapterNumber, parentBlockId = '')
                 html += `</div>`;
                 break;
             case 'accordion':
+                // Verberg 'Podcast:' accordeons als toonPodcasts = false
+                if (!toonPodcasts && typeof block.titel === 'string' && block.titel.trim().toLowerCase().startsWith('podcast:')) {
+                    break;
+                }
                 const accordionId = `accordion-${chapterNumber}-${currentBlockId}`;
                 const toggleId = `accordion-toggle-${chapterNumber}-${currentBlockId}`;
                 const contentId = `accordion-content-${chapterNumber}-${currentBlockId}`;
