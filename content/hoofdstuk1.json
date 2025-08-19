@@ -39,7 +39,7 @@
       "scenarios": [
         {
           "titel": "Jij als diëtist in 2027 (of misschien zelfs eerder!):",
-          "beschrijving": "Een patiënt met chronische rugpijn stapt je praktijk binnen. In plaats van alleen op je eigen (super waardevolle!) kennis en ervaring te vertrouwen, heb je AI-systemen die je helpen om:",
+          "beschrijving": "Een cliënt met chronische darmklachten stapt je praktijk binnen. In plaats van alleen op je eigen (super waardevolle!) kennis en ervaring te vertrouwen, heb je AI-systemen die je helpen om:",
           "punten": [
             "Patiënteneducatiematerialen genereren met AI.",
             "Een slimme chatbot die al een deel van de anamnese (het vraaggesprek met je patiënt) heeft afgenomen nog voordat de patiënt bij jou op de stoep staat.",
@@ -191,12 +191,12 @@
         },
         {
           "type": "benefit-card",
-          "titel": "Elearning 2: AI als Jouw Slimme Studiebuddy",
+          "titel": "Elearning 2: AI als Jouw Slimme Studiebuddy (gepland, nog niet beschikbaar)",
           "beschrijving": "In deze elearning ontdek je hoe je AI écht effectief kunt inzetten om slimmer te leren, zonder in de valkuilen van de 'e-bike illusie' te trappen. Denk aan AI als jouw persoonlijke coach die je helpt studiemateriaal te doorgronden, feedback te krijgen en je voor te bereiden op toetsen."
         },
         {
           "type": "benefit-card",
-          "titel": "Elearning 3: AI in de Diëtistenpraktijk – Nu en in de Toekomst",
+          "titel": "Elearning 3: AI in de Diëtistenpraktijk – Nu en in de Toekomst (gepland, nog niet beschikbaar)",
           "beschrijving": "Hier duiken we dieper in de specifieke toepassingen van AI binnen voeding en diëtetiek. Van diagnostiek en behandelplannen tot voedingseducatie en preventie van voedingsgerelateerde aandoeningen."
         },
         {
@@ -211,7 +211,7 @@
     },
     {
       "type": "leerdoelen-dynamic",
-      "portfolio_tip": "Het doornemen van deze elearning en het maken en opslaan van de interacties kan je gebruiken om je ontwikkeling voor EVL 4 aan te tonen. Na voltooiing ontvang je een certificaat dat je kunt toevoegen aan je portfolio. Zie het afsluitende hoofdstuk voor meer informatie over het certificaat en gebruik in het portfolio."
+      "portfolio_tip": "Het doornemen van deze elearning en het maken en opslaan van de interacties kan je gebruiken om je ontwikkeling voor LUK 4 aan te tonen. Na voltooiing ontvang je een certificaat dat je kunt toevoegen aan je portfolio. Zie het afsluitende hoofdstuk voor meer informatie over het certificaat en gebruik in het portfolio."
     },
     {
       "type": "section-title",

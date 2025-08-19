@@ -89,7 +89,7 @@
     },
     {
       "type": "content-subtitle",
-      "titel": "Kansen in het diëtetische werkveld"
+      "titel": "Kansen in het diëtistische werkveld"
     },
     {
       "type": "info-card",
@@ -112,8 +112,8 @@
             { "naam": "AI als Klinische Sparringpartner", "beschrijving": "Hulp bij differentiële diagnoses en voedingsinterventies overwegen." },
             { "naam": "Creatieve Probleemoplossing", "beschrijving": "Brainstormen over alternatieve voedingsstrategieën voor complexe problematiek." },
             { "naam": "Voorbereiden van Behandelsessies", "beschrijving": "Consulten structureren door belangrijkste vragen en tests voor te bereiden." },
-            { "naam": "Assistentie bij Oefenprogramma's", "beschrijving": "Snel basisvoedingsplannen opstellen met variaties voor specifieke doelen." },
-            { "naam": "Opkomende Bewegingsanalyse", "beschrijving": "Apps gebruiken voor objectievere voedingsinname-analyse dan met handmatige methoden." }
+            { "naam": "Ingesproken voedingsanamnese en analyse", "beschrijving": "Ingesproken voedingsanamnese automatisch transcriberen en analyseren met AI voor een snellere en rijkere intake." },
+            { "naam": "AI-beoordeling van echografie (lichaamssamenstelling)", "beschrijving": "AI inzetten voor het beoordelen van echografie voor diagnostiek op lichaamssamenstelling." }
           ]
         },
         {
@@ -204,7 +204,7 @@
       "items": [
         { 
           "titel": "'Deskilling' (Vaardigheidsverlies) door 'Cognitive Offloading'", 
-          "tekst": "Door te veel denkwerk uit te besteden aan AI bestaat het risico dat je eigen vaardigheden zoals diëtistisch redeneren afnemen." 
+          "tekst": "Door te veel denkwerk uit te besteden aan AI bestaat het risico dat je eigen vaardigheden zoals kritisch redeneren afnemen." 
         },
         { 
           "titel": "Automatisering Bias", 
